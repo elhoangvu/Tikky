@@ -1,0 +1,23 @@
+
+//
+//  Prefix.h
+//  iOSCoco2dXApp
+//
+//  Created by Ngoc Tuan Le on 10/11/17.
+//  Copyright © 2017 LifeOfCoder. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "GPUImage.h"
+#endif
+
+#ifdef __cplusplus
+#include "cocos2d.h"
+#include "TKUtilities.h"
+#endif
+
+
+#define TKNotificationAppBackToForeground   @"TKNotificationAppBackToForeground"
+#define TKNotificationAppIsInBackground     @"TKNotificationAppIsInBackground"

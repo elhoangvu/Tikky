@@ -7,25 +7,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B70BD43D2196C634000A4EBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43C2196C634000A4EBF /* AppDelegate.m */; };
-		B70BD4402196C634000A4EBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43F2196C634000A4EBF /* ViewController.m */; };
+		B7089DAC219F4C1D001CA15D /* HelloWorld2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7089DA7219F4C1C001CA15D /* HelloWorld2.png */; };
+		B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43C2196C634000A4EBF /* AppDelegate.mm */; };
+		B70BD4402196C634000A4EBF /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43F2196C634000A4EBF /* ViewController.mm */; };
 		B70BD4432196C634000A4EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4412196C634000A4EBF /* Main.storyboard */; };
 		B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4442196C636000A4EBF /* Assets.xcassets */; };
 		B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */; };
 		B70BD44B2196C636000A4EBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B70BD44A2196C636000A4EBF /* main.m */; };
+		B70BD45E2196C73B000A4EBF /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD45B2196C6EA000A4EBF /* libcocos2d iOS.a */; };
+		B70BD4602196C748000A4EBF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD45F2196C748000A4EBF /* CoreText.framework */; };
+		B70BD4622196C74F000A4EBF /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4612196C74F000A4EBF /* libiconv.tbd */; };
+		B70BD4642196C754000A4EBF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4632196C754000A4EBF /* Security.framework */; };
+		B70BD4662196C75B000A4EBF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4652196C75B000A4EBF /* CoreMotion.framework */; };
+		B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4672196C762000A4EBF /* Foundation.framework */; };
+		B70BD46A2196C768000A4EBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4692196C768000A4EBF /* UIKit.framework */; };
+		B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD46B2196C76F000A4EBF /* CoreGraphics.framework */; };
+		B70BD46E2196C774000A4EBF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD46D2196C774000A4EBF /* OpenGLES.framework */; };
+		B70BD4702196C77B000A4EBF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD46F2196C77B000A4EBF /* libz.tbd */; };
+		B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4712196C782000A4EBF /* QuartzCore.framework */; };
+		B70BD4742196C788000A4EBF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4732196C787000A4EBF /* OpenAL.framework */; };
+		B70BD4762196C78F000A4EBF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4752196C78F000A4EBF /* AVFoundation.framework */; };
+		B70BD4782196C796000A4EBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4772196C796000A4EBF /* AudioToolbox.framework */; };
+		B70BD4832196C7E7000A4EBF /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD4802196C7C8000A4EBF /* libGPUImage.a */; };
+		B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B70BD48B2196C911000A4EBF /* StickerScene.cpp */; };
+		B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */; };
+		B70BD4952196C91D000A4EBF /* Cocos2dXGameController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD4922196C91D000A4EBF /* Cocos2dXGameController.mm */; };
+		B70BD4982196CC84000A4EBF /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4972196CC84000A4EBF /* HelloWorld.png */; };
+		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
+		B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */; };
+		B74AAB1C21A02EF4006DF9B0 /* GPUImageStickerOuput.mm in Sources */ = {isa = PBXBuildFile; fileRef = B74AAB1B21A02EF4006DF9B0 /* GPUImageStickerOuput.mm */; };
+		B75279C821A16F7000A59714 /* TKGLModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279C721A16F7000A59714 /* TKGLModel.mm */; };
+		B75279CB21A16FB600A59714 /* TKGLRectTextureCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279CA21A16FB600A59714 /* TKGLRectTextureCommand.mm */; };
+		B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKUtilities.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B70BD4582196C6EA000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
+			remoteInfo = "libcocos2d Mac";
+		};
+		B70BD45A2196C6EA000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A07A4D641783777C0073F6A7;
+			remoteInfo = "libcocos2d iOS";
+		};
+		B70BD45C2196C6EA000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 507B40FD1C31BDD30067B53E;
+			remoteInfo = "libcocos2d tvOS";
+		};
+		B70BD47F2196C7C8000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		B70BD4812196C7C8000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		B70BD4842196C7F2000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A07A4C241783777C0073F6A7;
+			remoteInfo = "libcocos2d iOS";
+		};
+		B70BD4862196C7F5000A4EBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B7089DA7219F4C1C001CA15D /* HelloWorld2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld2.png; sourceTree = "<group>"; };
 		B70BD4382196C634000A4EBF /* Tikky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tikky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70BD43B2196C634000A4EBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B70BD43C2196C634000A4EBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B70BD43C2196C634000A4EBF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		B70BD43E2196C634000A4EBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B70BD43F2196C634000A4EBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B70BD43F2196C634000A4EBF /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		B70BD4422196C634000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B70BD4442196C636000A4EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B70BD4472196C636000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B70BD4492196C636000A4EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B70BD44A2196C636000A4EBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "cocos2d-x/build/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
+		B70BD45F2196C748000A4EBF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B70BD4612196C74F000A4EBF /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		B70BD4632196C754000A4EBF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B70BD4652196C75B000A4EBF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B70BD4672196C762000A4EBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B70BD4692196C768000A4EBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B70BD46B2196C76F000A4EBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B70BD46D2196C774000A4EBF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B70BD46F2196C77B000A4EBF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B70BD4712196C782000A4EBF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B70BD4732196C787000A4EBF /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		B70BD4752196C78F000A4EBF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B70BD4772196C796000A4EBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		B70BD4882196C90C000A4EBF /* StickerScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StickerScene.h; sourceTree = "<group>"; };
+		B70BD4892196C90E000A4EBF /* CCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		B70BD48A2196C90F000A4EBF /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		B70BD48B2196C911000A4EBF /* StickerScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StickerScene.cpp; sourceTree = "<group>"; };
+		B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCAppDelegate.cpp; sourceTree = "<group>"; };
+		B70BD4922196C91D000A4EBF /* Cocos2dXGameController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Cocos2dXGameController.mm; sourceTree = "<group>"; };
+		B70BD4932196C91D000A4EBF /* Cocos2dXGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dXGameController.h; sourceTree = "<group>"; };
+		B70BD4972196CC84000A4EBF /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		B717051321985697006409F0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
+		B74AAB1A21A02EF4006DF9B0 /* GPUImageStickerOuput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageStickerOuput.h; sourceTree = "<group>"; };
+		B74AAB1B21A02EF4006DF9B0 /* GPUImageStickerOuput.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageStickerOuput.mm; sourceTree = "<group>"; };
+		B75279C621A16F7000A59714 /* TKGLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGLModel.h; sourceTree = "<group>"; };
+		B75279C721A16F7000A59714 /* TKGLModel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKGLModel.mm; sourceTree = "<group>"; };
+		B75279C921A16FB600A59714 /* TKGLRectTextureCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGLRectTextureCommand.h; sourceTree = "<group>"; };
+		B75279CA21A16FB600A59714 /* TKGLRectTextureCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKGLRectTextureCommand.mm; sourceTree = "<group>"; };
+		B75279CC21A1730400A59714 /* TKUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKUtilities.h; sourceTree = "<group>"; };
+		B75279CD21A1A73E00A59714 /* TKUtilities.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TKUtilities.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +145,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B717051421985698006409F0 /* Photos.framework in Frameworks */,
+				B70BD4832196C7E7000A4EBF /* libGPUImage.a in Frameworks */,
+				B70BD4782196C796000A4EBF /* AudioToolbox.framework in Frameworks */,
+				B70BD4762196C78F000A4EBF /* AVFoundation.framework in Frameworks */,
+				B70BD4742196C788000A4EBF /* OpenAL.framework in Frameworks */,
+				B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */,
+				B70BD4702196C77B000A4EBF /* libz.tbd in Frameworks */,
+				B70BD46E2196C774000A4EBF /* OpenGLES.framework in Frameworks */,
+				B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */,
+				B70BD46A2196C768000A4EBF /* UIKit.framework in Frameworks */,
+				B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */,
+				B70BD4662196C75B000A4EBF /* CoreMotion.framework in Frameworks */,
+				B70BD4642196C754000A4EBF /* Security.framework in Frameworks */,
+				B70BD4622196C74F000A4EBF /* libiconv.tbd in Frameworks */,
+				B70BD4602196C748000A4EBF /* CoreText.framework in Frameworks */,
+				B70BD45E2196C73B000A4EBF /* libcocos2d iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +170,7 @@
 		B70BD42F2196C634000A4EBF = {
 			isa = PBXGroup;
 			children = (
+				B70BD4512196C6AC000A4EBF /* Frameworks */,
 				B70BD43A2196C634000A4EBF /* Tikky */,
 				B70BD4392196C634000A4EBF /* Products */,
 			);
@@ -58,17 +187,93 @@
 		B70BD43A2196C634000A4EBF /* Tikky */ = {
 			isa = PBXGroup;
 			children = (
+				B70BD4962196CC6F000A4EBF /* Resources */,
+				B70BD4912196C91D000A4EBF /* Coco2dXGameController */,
+				B70BD4892196C90E000A4EBF /* CCAppDelegate.h */,
+				B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */,
+				B70BD4882196C90C000A4EBF /* StickerScene.h */,
+				B70BD48B2196C911000A4EBF /* StickerScene.cpp */,
+				B70BD48A2196C90F000A4EBF /* Prefix.pch */,
 				B70BD43B2196C634000A4EBF /* AppDelegate.h */,
-				B70BD43C2196C634000A4EBF /* AppDelegate.m */,
+				B70BD43C2196C634000A4EBF /* AppDelegate.mm */,
 				B70BD43E2196C634000A4EBF /* ViewController.h */,
-				B70BD43F2196C634000A4EBF /* ViewController.m */,
+				B70BD43F2196C634000A4EBF /* ViewController.mm */,
 				B70BD4412196C634000A4EBF /* Main.storyboard */,
 				B70BD4442196C636000A4EBF /* Assets.xcassets */,
 				B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */,
 				B70BD4492196C636000A4EBF /* Info.plist */,
 				B70BD44A2196C636000A4EBF /* main.m */,
+				B74AAB1A21A02EF4006DF9B0 /* GPUImageStickerOuput.h */,
+				B74AAB1B21A02EF4006DF9B0 /* GPUImageStickerOuput.mm */,
+				B75279C621A16F7000A59714 /* TKGLModel.h */,
+				B75279C721A16F7000A59714 /* TKGLModel.mm */,
+				B75279C921A16FB600A59714 /* TKGLRectTextureCommand.h */,
+				B75279CA21A16FB600A59714 /* TKGLRectTextureCommand.mm */,
+				B75279CC21A1730400A59714 /* TKUtilities.h */,
+				B75279CD21A1A73E00A59714 /* TKUtilities.c */,
 			);
 			path = Tikky;
+			sourceTree = "<group>";
+		};
+		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */,
+				B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */,
+				B70BD4772196C796000A4EBF /* AudioToolbox.framework */,
+				B70BD4752196C78F000A4EBF /* AVFoundation.framework */,
+				B70BD4732196C787000A4EBF /* OpenAL.framework */,
+				B70BD4712196C782000A4EBF /* QuartzCore.framework */,
+				B70BD46F2196C77B000A4EBF /* libz.tbd */,
+				B70BD46D2196C774000A4EBF /* OpenGLES.framework */,
+				B70BD46B2196C76F000A4EBF /* CoreGraphics.framework */,
+				B70BD4692196C768000A4EBF /* UIKit.framework */,
+				B70BD4672196C762000A4EBF /* Foundation.framework */,
+				B70BD4652196C75B000A4EBF /* CoreMotion.framework */,
+				B70BD4632196C754000A4EBF /* Security.framework */,
+				B70BD4612196C74F000A4EBF /* libiconv.tbd */,
+				B717051321985697006409F0 /* Photos.framework */,
+				B70BD45F2196C748000A4EBF /* CoreText.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		B70BD4532196C6EA000A4EBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B70BD4592196C6EA000A4EBF /* libcocos2d Mac.a */,
+				B70BD45B2196C6EA000A4EBF /* libcocos2d iOS.a */,
+				B70BD45D2196C6EA000A4EBF /* libcocos2d tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B70BD47A2196C7C7000A4EBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B70BD4802196C7C8000A4EBF /* libGPUImage.a */,
+				B70BD4822196C7C8000A4EBF /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B70BD4912196C91D000A4EBF /* Coco2dXGameController */ = {
+			isa = PBXGroup;
+			children = (
+				B70BD4922196C91D000A4EBF /* Cocos2dXGameController.mm */,
+				B70BD4932196C91D000A4EBF /* Cocos2dXGameController.h */,
+			);
+			path = Coco2dXGameController;
+			sourceTree = "<group>";
+		};
+		B70BD4962196CC6F000A4EBF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */,
+				B7089DA7219F4C1C001CA15D /* HelloWorld2.png */,
+				B70BD4972196CC84000A4EBF /* HelloWorld.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +290,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				B70BD4872196C7F5000A4EBF /* PBXTargetDependency */,
+				B70BD4852196C7F2000A4EBF /* PBXTargetDependency */,
 			);
 			name = Tikky;
 			productName = Tikky;
@@ -116,6 +323,16 @@
 			mainGroup = B70BD42F2196C634000A4EBF;
 			productRefGroup = B70BD4392196C634000A4EBF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B70BD4532196C6EA000A4EBF /* Products */;
+					ProjectRef = B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */;
+				},
+				{
+					ProductGroup = B70BD47A2196C7C7000A4EBF /* Products */;
+					ProjectRef = B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B70BD4372196C634000A4EBF /* Tikky */,
@@ -123,12 +340,53 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B70BD4592196C6EA000A4EBF /* libcocos2d Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d Mac.a";
+			remoteRef = B70BD4582196C6EA000A4EBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B70BD45B2196C6EA000A4EBF /* libcocos2d iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d iOS.a";
+			remoteRef = B70BD45A2196C6EA000A4EBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B70BD45D2196C6EA000A4EBF /* libcocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d tvOS.a";
+			remoteRef = B70BD45C2196C6EA000A4EBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B70BD4802196C7C8000A4EBF /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = B70BD47F2196C7C8000A4EBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B70BD4822196C7C8000A4EBF /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = B70BD4812196C7C8000A4EBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B70BD4362196C634000A4EBF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
+				B7089DAC219F4C1D001CA15D /* HelloWorld2.png in Resources */,
+				B70BD4982196CC84000A4EBF /* HelloWorld.png in Resources */,
+				B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
 			);
@@ -141,13 +399,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B70BD4402196C634000A4EBF /* ViewController.m in Sources */,
+				B70BD4402196C634000A4EBF /* ViewController.mm in Sources */,
+				B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */,
+				B75279C821A16F7000A59714 /* TKGLModel.mm in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
-				B70BD43D2196C634000A4EBF /* AppDelegate.m in Sources */,
+				B75279CB21A16FB600A59714 /* TKGLRectTextureCommand.mm in Sources */,
+				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,
+				B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */,
+				B70BD4952196C91D000A4EBF /* Cocos2dXGameController.mm in Sources */,
+				B74AAB1C21A02EF4006DF9B0 /* GPUImageStickerOuput.mm in Sources */,
+				B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B70BD4852196C7F2000A4EBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libcocos2d iOS";
+			targetProxy = B70BD4842196C7F2000A4EBF /* PBXContainerItemProxy */;
+		};
+		B70BD4872196C7F5000A4EBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = B70BD4862196C7F5000A4EBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B70BD4412196C634000A4EBF /* Main.storyboard */ = {
@@ -286,14 +564,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Frameworks/cocos2d-x",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos/audio/include",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos/editor-support",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos",
+					"$(SRCROOT)/Frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/Frameworks/cocos2d-x/external",
+					"$(SRCROOT)/Frameworks/cocos2d-x/extensions",
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/GPUImage/Resources",
+					"$(SRCROOT)/Frameworks/GPUImage/Source",
+					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS",
+					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS/Framework",
+				);
 				INFOPLIST_FILE = Tikky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.Tikky;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.CocosDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -303,14 +601,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/Frameworks/cocos2d-x",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos/audio/include",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos/editor-support",
+					"$(SRCROOT)/Frameworks/cocos2d-x/cocos",
+					"$(SRCROOT)/Frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
+					"$(SRCROOT)/Frameworks/cocos2d-x/external",
+					"$(SRCROOT)/Frameworks/cocos2d-x/extensions",
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks/GPUImage/Resources",
+					"$(SRCROOT)/Frameworks/GPUImage/Source",
+					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS",
+					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS/Framework",
+				);
 				INFOPLIST_FILE = Tikky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.Tikky;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.CocosDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

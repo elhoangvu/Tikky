@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "TKUtilities.h"
+
+TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
 @interface ViewController : UIViewController
 
