@@ -128,7 +128,7 @@ typedef void (*GLLogFunction) (GLuint program, GLsizei bufsize, GLsizei* length,
             {
                 self.fragmentShaderLog = [NSString stringWithFormat:@"%s", log];
             }
-
+            NSLog(@"%s", log);
 			free(log);
 		}
 	}	

@@ -52,11 +52,11 @@ TKPTVertex TKPTVertexMake(TKPosition position, TKTexCoord texCoord) {
     return tkptVertex;
 }
 
-TKRectTexture TKRectTextureMake(int textureID, TKPTVertex* ptVertex4) {
+TKRectTexture TKRectTextureMake(int textureID, TKPosition* position) {
     TKRectTexture tkRectTexture;
     tkRectTexture.textureID = textureID;
     for (int i = 0; i < 4; i++) {
-        tkRectTexture.ptVertex[i] = ptVertex4[i];
+        tkRectTexture.position[i] = position[i];
     }
     
     return tkRectTexture;

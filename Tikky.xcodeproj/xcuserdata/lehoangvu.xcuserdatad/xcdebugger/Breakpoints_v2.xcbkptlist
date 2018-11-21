@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageStillCamera.m"
-            timestampString = "563707300.938864"
+            timestampString = "564263355.616544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "327"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageStillCamera.m"
-            timestampString = "563707300.938913"
+            timestampString = "564263355.616837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCNode.cpp"
-            timestampString = "564094739.611951"
+            timestampString = "564267504.547143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1201"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/renderer/CCRenderer.cpp"
-            timestampString = "564081624.160815"
+            timestampString = "564261170.591153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "848"
@@ -378,12 +378,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCSprite.cpp"
-            timestampString = "564094739.612456"
+            timestampString = "564347235.279864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1735"
             endingLineNumber = "1735"
-            landmarkName = "Sprite::visit(std::vector&lt;TKTexture&gt;* texturesInScene)"
+            landmarkName = "Sprite::visit(std::vector&lt;TKCCTexture&gt;* texturesInScene)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCNode.cpp"
-            timestampString = "564094739.612944"
+            timestampString = "564267504.548934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2230"
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/base/CCDirector.cpp"
-            timestampString = "564094739.6130151"
+            timestampString = "564267504.548996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1562"
@@ -506,12 +506,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCSprite.cpp"
-            timestampString = "564094739.613263"
+            timestampString = "564347235.2802089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1742"
             endingLineNumber = "1742"
-            landmarkName = "Sprite::visit(std::vector&lt;TKTexture&gt;* texturesInScene)"
+            landmarkName = "Sprite::visit(std::vector&lt;TKCCTexture&gt;* texturesInScene)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
-            timestampString = "564142341.489921"
+            timestampString = "564263573.460842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -794,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
-            timestampString = "564142341.490236"
+            timestampString = "564263573.461062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
@@ -810,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "564142341.490322"
+            timestampString = "564347235.281207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
@@ -826,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "564142341.490764"
+            timestampString = "564347235.2816761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -842,12 +842,172 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "564142341.491191"
+            timestampString = "564347235.281975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/ViewController.mm"
+            timestampString = "564347235.2822551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-shoot:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/GLProgram.m"
+            timestampString = "564267504.551069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-initWithVertexShaderString:fragmentShaderString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/GLProgram.m"
+            timestampString = "564267504.551339"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-compileShader:type:string:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/GLProgram.m"
+            timestampString = "564267504.55188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-link"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/GPUImageStillCamera.m"
+            timestampString = "564263355.6215039"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "-capturePhotoAsJPEGProcessedUpToFilter:withCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
+            timestampString = "564263573.464929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-presentBufferForDisplay"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/ViewController.mm"
+            timestampString = "564347235.282841"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-shoot:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/GPUImageStickerFilter.mm"
+            timestampString = "564347235.283142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/GPUImageStickerFilter.mm"
+            timestampString = "564347235.283201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/GPUImageStickerFilter.mm"
+            timestampString = "564347235.283247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

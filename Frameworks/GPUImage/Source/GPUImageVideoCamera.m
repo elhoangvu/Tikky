@@ -834,7 +834,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
         -1.0f,  1.0f,
         1.0f,  1.0f,
     };
-    
+//    [[[GPUImageContext sharedImageProcessingContext] currentShaderProgram] use];
 	glActiveTexture(GL_TEXTURE4);
 	glBindTexture(GL_TEXTURE_2D, luminanceTexture);
 	glUniform1i(yuvConversionLuminanceTextureUniform, 4);

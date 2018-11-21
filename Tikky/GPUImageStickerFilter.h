@@ -1,23 +1,14 @@
-//
-//  GPUImageStickerFilter.h
-//  Tikky
-//
-//  Created by Le Hoang Vu on 11/17/18.
-//  Copyright © 2018 Le Hoang Vu. All rights reserved.
-//
+#import "GPUImageOutput.h"
+#include "TKUtilities.h"
 
-#import "GPUImage.h"
-#import "renderer/TKUtilities.h"
-#import <Foundation/Foundation.h>
+/** GPUImage's base filter class
+ 
+ Filters and other subsequent elements in the chain conform to the GPUImageInput protocol, which lets them take in the supplied or processed texture from the previous link in the chain and do something with it. Objects one step further down the chain are considered targets, and processing can be branched by adding multiple targets to a single output or filter.
+ */
+@interface GPUImageStickerFilter : GPUImageFilter {
+    std::vector<TKRectTexture>* _textureStickerList;
+}
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface GPUImageStickerOuput : GPUImageOutput <GPUImageInput>
-
-@property (nonatomic) std::vector<int>* queuedTriangleCommands;
-
-- (instancetype)initWithQueuedTriangleCommands:(std::vector<int> * __nullable)queuedTriangleCommands;
+- (void)setTextureStickerList:(std::vector<TKRectTexture> *)textureStickerList;
 
 @end
-
-NS_ASSUME_NONNULL_END
