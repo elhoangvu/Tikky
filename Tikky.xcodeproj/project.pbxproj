@@ -41,6 +41,7 @@
 		B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKUtilities.c */; };
 		B75279D121A1B51C00A59714 /* TKBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B75279D021A1B51C00A59714 /* TKBaseEffect.m */; };
 		B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */; };
+		B774E4F221B2FABD00446A06 /* TKLayerMask.mm in Sources */ = {isa = PBXBuildFile; fileRef = B774E4F121B2FABD00446A06 /* TKLayerMask.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,8 @@
 		B75279D021A1B51C00A59714 /* TKBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBaseEffect.m; sourceTree = "<group>"; };
 		B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageStickerFilter.mm; sourceTree = "<group>"; };
 		B75279D721A2003700A59714 /* GPUImageStickerFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageStickerFilter.h; sourceTree = "<group>"; };
+		B774E4F021B2FABD00446A06 /* TKLayerMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKLayerMask.h; sourceTree = "<group>"; };
+		B774E4F121B2FABD00446A06 /* TKLayerMask.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKLayerMask.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,12 +196,9 @@
 		B70BD43A2196C634000A4EBF /* Tikky */ = {
 			isa = PBXGroup;
 			children = (
+				B774E4EB21B2F7F100446A06 /* Cocos2dxCodes */,
 				B70BD4962196CC6F000A4EBF /* Resources */,
 				B70BD4912196C91D000A4EBF /* Coco2dXGameController */,
-				B70BD4892196C90E000A4EBF /* CCAppDelegate.h */,
-				B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */,
-				B70BD4882196C90C000A4EBF /* StickerScene.h */,
-				B70BD48B2196C911000A4EBF /* StickerScene.cpp */,
 				B70BD48A2196C90F000A4EBF /* Prefix.pch */,
 				B70BD43B2196C634000A4EBF /* AppDelegate.h */,
 				B70BD43C2196C634000A4EBF /* AppDelegate.mm */,
@@ -272,6 +272,8 @@
 			children = (
 				B70BD4922196C91D000A4EBF /* Cocos2dXGameController.mm */,
 				B70BD4932196C91D000A4EBF /* Cocos2dXGameController.h */,
+				B774E4F021B2FABD00446A06 /* TKLayerMask.h */,
+				B774E4F121B2FABD00446A06 /* TKLayerMask.mm */,
 			);
 			path = Coco2dXGameController;
 			sourceTree = "<group>";
@@ -284,6 +286,17 @@
 				B70BD4972196CC84000A4EBF /* HelloWorld.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B774E4EB21B2F7F100446A06 /* Cocos2dxCodes */ = {
+			isa = PBXGroup;
+			children = (
+				B70BD4892196C90E000A4EBF /* CCAppDelegate.h */,
+				B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */,
+				B70BD4882196C90C000A4EBF /* StickerScene.h */,
+				B70BD48B2196C911000A4EBF /* StickerScene.cpp */,
+			);
+			path = Cocos2dxCodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +426,7 @@
 				B70BD4402196C634000A4EBF /* ViewController.mm in Sources */,
 				B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */,
 				B75279C821A16F7000A59714 /* TKGLModel.mm in Sources */,
+				B774E4F221B2FABD00446A06 /* TKLayerMask.mm in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
 				B75279CB21A16FB600A59714 /* TKGLRectTextureCommand.mm in Sources */,
 				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,

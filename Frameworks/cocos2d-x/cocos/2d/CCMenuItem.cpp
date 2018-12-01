@@ -775,11 +775,15 @@ void MenuItemImage::setDisabledSpriteFrame(SpriteFrame * frame)
 void MenuItemImage::visit(std::vector<TKCCTexture>* texturesInScene)
 {
     // Selected sprite, that is not necessary
-    auto childAt1 = _children.at(1);
-    for (auto child : _children) {
-        if (child != childAt1) {
-            child->visit(texturesInScene);
+    if (_children.size() > 1) {
+        auto childAt1 = _children.at(1);
+        for (auto child : _children) {
+            if (child != childAt1) {
+                child->visit(texturesInScene);
+            }
         }
+    } else {
+        _children.at(0)->visit(texturesInScene);
     }
 }
 // TIKKY-ADD -->

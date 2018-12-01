@@ -21,6 +21,8 @@
 //#import <Photos/PHAsset.h>
 //#import <AssetsLibrary/AssetsLibrary.h>
 
+#import "TKLayerMask.h"
+
 NSString* const kTikkyStickerFragmentShaderString = SHADER_STRING
 (
 
@@ -80,6 +82,7 @@ varying mediump vec2 v_texCoord;
     [_filter addTarget:_cameraView];
     
     _stickerFilter = [[GPUImageStickerFilter alloc] init];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,6 +106,7 @@ varying mediump vec2 v_texCoord;
     [shootButton setTitle:@"Shoot" forState:(UIControlStateNormal)];
     [self.view addSubview:shootButton];
     [shootButton addTarget:self action:@selector(shoot:) forControlEvents:(UIControlEventTouchUpInside)];
+    
 }
 
 - (void)shoot:(UIButton *)sender {
@@ -173,6 +177,10 @@ varying mediump vec2 v_texCoord;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_camera startCameraCapture];
+    
+    NSString* path = [NSBundle.mainBundle pathForResource:@"HelloWorld" ofType:@"png"];
+    NSLog(@">>>> HV: %@", path);
+    [TKLayerMask.sharedInstance newStickerWithPath:path];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

@@ -37,9 +37,7 @@
         cocos2d::Director::getInstance()->setOpenGLView(glview);
         
         //run the cocos2d-x game scene
-        cocos2d::Application::getInstance()->run();
-        
-    
+        cocos2d::Application::getInstance()->run();    
     }
     
     return self;

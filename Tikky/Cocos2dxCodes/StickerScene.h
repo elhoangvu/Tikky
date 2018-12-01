@@ -29,13 +29,31 @@
 
 class StickerScene : public cocos2d::Scene
 {
+private:
+    int nextStickerZOrder;
+    cocos2d::Node* curSelectedSticker;
+    int curSelectedStickerZOrder;
+    cocos2d::DrawNode* drawNode;
+    
+    enum StickerType {
+        STATIC_STICKER,
+        ANIMATION_STICKER,
+        FRAME_STICKER
+    };
+    
+    void drawStickerRect();
 public:
+
     static cocos2d::Scene* createScene();
 
     virtual bool init();
 
     std::vector<TKCCTexture>* getTexturesInScene();
+    void newStickerWithPath(std::string path);
 
+    bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
+    bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
+    bool onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
     // implement the "static create()" method manually
     CREATE_FUNC(StickerScene);
 };
