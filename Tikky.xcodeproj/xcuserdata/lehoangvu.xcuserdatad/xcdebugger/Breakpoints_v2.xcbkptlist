@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCNode.cpp"
-            timestampString = "565452856.751948"
+            timestampString = "565464407.468504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1201"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCNode.cpp"
-            timestampString = "565452856.752328"
+            timestampString = "565464407.468902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2230"
@@ -714,7 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Coco2dXGameController/Cocos2dXGameController.mm"
-            timestampString = "565388015.675511"
+            timestampString = "565475961.035025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -810,7 +810,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "565452856.752715"
+            timestampString = "565475961.035152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -826,7 +826,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "565452856.752766"
+            timestampString = "565475961.035202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -842,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "565452856.752809"
+            timestampString = "565475961.035249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -938,7 +938,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "565452856.752924"
+            timestampString = "565475961.035393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
@@ -1001,24 +1001,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tikky/Cocos2dxCodes/StickerScene.cpp"
-            timestampString = "565452856.753011"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "StickerScene::init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tikky/Coco2dXGameController/TKLayerMask.mm"
-            timestampString = "565388015.676356"
+            timestampString = "565475961.035498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -1034,7 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Coco2dXGameController/TKLayerMask.mm"
-            timestampString = "565388015.6764081"
+            timestampString = "565475961.035542"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -1050,7 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/ViewController.mm"
-            timestampString = "565452856.753104"
+            timestampString = "565475961.035581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -1082,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/2d/CCNode.cpp"
-            timestampString = "565452856.753196"
+            timestampString = "565464407.469594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1249"
@@ -1114,12 +1098,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-            timestampString = "565452856.753306"
+            timestampString = "565475961.035691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "StickerEditViewController::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "StickerEditViewController::onPinch(PinchGestureRecognizer* recognizer)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PinchGestureRecognizer.cpp"
+            timestampString = "565464700.475454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "PinchGestureRecognizer::onTouchMoved(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PinchGestureRecognizer.cpp"
+            timestampString = "565464700.475786"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "PinchGestureRecognizer::onTouchBegan(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/GestureRecognizer.cpp"
+            timestampString = "565464306.142274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "GestureRecognizer::_onTouchBegan(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/GestureRecognizerUtils.cpp"
+            timestampString = "565464185.553749"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "nodeContainsThePoint(cocos2d::Node* node, const cocos2d::Vec2&amp; pt)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PinchGestureRecognizer.cpp"
+            timestampString = "565464700.476112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "PinchGestureRecognizer::onTouchBegan(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PinchGestureRecognizer.cpp"
+            timestampString = "565464700.476351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "PinchGestureRecognizer::onTouchBegan(Touch* touch, Event* ev)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1130,12 +1210,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-            timestampString = "565452856.753696"
+            timestampString = "565475961.036253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "StickerEditViewController::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "StickerEditViewController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1146,45 +1226,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-            timestampString = "565452856.754029"
+            timestampString = "565475961.036566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "StickerEditViewController::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "StickerEditViewController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StickerEditViewController::onTouchBegan(cocos2d::Touch*, cocos2d::Event*)"
-                  moduleName = "Tikky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lehoangvu/Documents/Tikky/Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-                  timestampString = "565451440.9324009"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "800">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StickerEditViewController::onTouchBegan(cocos2d::Touch*, cocos2d::Event*)"
-                  moduleName = "Tikky"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lehoangvu/Documents/Tikky/Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-                  timestampString = "565451440.934818"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "804">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1194,12 +1242,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
-            timestampString = "565452856.754302"
+            timestampString = "565475961.036868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "StickerEditViewController::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event)"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "StickerEditViewController::onPan(PanGestureRecognizer* recognizer)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
+            timestampString = "565475961.037168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "StickerEditViewController::onPan(PanGestureRecognizer* recognizer)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PanGestureRecognizer.cpp"
+            timestampString = "565475961.037454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "PanGestureRecognizer::onTouchEnded(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/Gestures/PanGestureRecognizer.cpp"
+            timestampString = "565475961.037506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "PanGestureRecognizer::onTouchMoved(Touch* touch, Event* ev)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/Cocos2dxCodes/StickerEditViewController.cpp"
+            timestampString = "565475961.037555"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "StickerEditViewController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

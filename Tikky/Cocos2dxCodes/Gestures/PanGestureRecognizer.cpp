@@ -109,6 +109,10 @@ void PanGestureRecognizer::onTouchEnded(Touch* touch, Event* ev)
         status = GestureStatus::RECOGNIZED;
         if (onPan)
             onPan(this); // 'GestureStatus::RECOGNIZED'
+    } else if (status == GestureStatus::BEGAN and touches.empty()) {
+        status = GestureStatus::FAILED;
+        if (onPan)
+            onPan(this); // 'GestureStatus::RECOGNIZED'
     }
 }
 

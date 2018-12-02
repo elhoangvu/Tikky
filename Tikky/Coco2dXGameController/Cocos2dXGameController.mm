@@ -28,14 +28,13 @@
                                            multiSampling: NO
                                          numberOfSamples: 0 ];
         eaglView.backgroundColor = [UIColor clearColor];
-        [eaglView setMultipleTouchEnabled:NO];
+        [eaglView setMultipleTouchEnabled:YES];
         
         self.view = eaglView;        
         
         // IMPORTANT: Setting the GLView should be done after creating the RootViewController
         cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView((__bridge void *)self.view);
         cocos2d::Director::getInstance()->setOpenGLView(glview);
-        
         //run the cocos2d-x game scene
         cocos2d::Application::getInstance()->run();    
     }

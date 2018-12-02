@@ -48,7 +48,7 @@
         return;
     }
     
-    stickerScene->newStickerWithPath([path UTF8String]);
+    stickerScene->newStaticStickerWithPath([path UTF8String]);
 }
 
 @end

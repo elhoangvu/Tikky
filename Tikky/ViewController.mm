@@ -181,6 +181,8 @@ varying mediump vec2 v_texCoord;
     NSString* path = [NSBundle.mainBundle pathForResource:@"HelloWorld" ofType:@"png"];
     NSLog(@">>>> HV: %@", path);
     [TKLayerMask.sharedInstance newStickerWithPath:path];
+    [TKLayerMask.sharedInstance newStickerWithPath:path];
+    [TKLayerMask.sharedInstance newStickerWithPath:path];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

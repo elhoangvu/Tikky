@@ -11,36 +11,29 @@
 
 #include "cocos2d.h"
 #include "StickerType.h"
+#include "PinchGestureRecognizer.h"
+#include "PanGestureRecognizer.h"
 
 class StickerEditViewController : public cocos2d::Node {
 protected:
-    cocos2d::Node* _stickersParent;
+    cocos2d::Sprite* _recyclingBin;
     cocos2d::Node* _sticker;
     bool _isEnable;
-    
+    bool _isPinching;
     int _frontZOrder;
-    int _isTouchCloseButton;
-    int _isTouchScaleButton;
-    cocos2d::DrawNode* _drawNode;
-    cocos2d::Sprite* _editStickerCloseButton;
-    cocos2d::Sprite* _scaleStickerButton;
-    
-    void drawStickerRect();
-    void clearEditView();
-    
-    enum StickerEditType {
-        CLOSE_EDIT_BUTTON = 200,
-        SCALE_STICKER_BUTTON
-    };
-    
+
 private:
     StickerEditViewController() {};
+    void tapStickerAnimation();
     
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
     bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
     bool onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
+    
+    void onPinch(cocos2d::PinchGestureRecognizer* recognizer);
+    void onPan(cocos2d::PanGestureRecognizer* recognizer);
 public:
-    static StickerEditViewController* create(cocos2d::Node* stickersParent, cocos2d::Node* sticker = nullptr);
+    static StickerEditViewController* create();
     
     cocos2d::Node* getSticker();
     void setSticker(cocos2d::Node* sticker);
@@ -49,8 +42,11 @@ public:
     bool isEnable();
     
     int getFrontZOrder();
+    
+    void addSticker(cocos2d::Sprite* sticker);
+    void removeAllSticker();
 
-    bool init(cocos2d::Node* stickersParent, cocos2d::Node* sticker);
+    bool init();
 };
 
 #endif /* StickerEditViewController_hpp */

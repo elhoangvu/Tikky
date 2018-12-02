@@ -31,8 +31,10 @@
 class StickerScene : public cocos2d::Scene
 {
 private:
-    int _nextStickerZOrder;
     StickerEditViewController* _stickerEditVC;
+    cocos2d::Sprite* _frameSticker;
+    cocos2d::Sprite* _twoPartFrameSticker[2];
+    bool _isAvailableFrameSticker;
 
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
     bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
@@ -44,8 +46,13 @@ public:
     virtual bool init();
 
     std::vector<TKCCTexture>* getTexturesInScene();
-    void newStickerWithPath(std::string path);
-
+    
+    void newStaticStickerWithPath(std::string path);
+    void newFrameStickerWithPath(std::string path);
+    void newFrameStickerWith2PartTopBot(std::string topFramePath, std::string bottomFramePath);
+    void newFrameStickerWith2PartLeftRight(std::string leftFramePath, std::string rightFramePath);
+    void removeFrameSticker();
+    void removeAllStaticSticker();
     // implement the "static create()" method manually
     CREATE_FUNC(StickerScene);
 };

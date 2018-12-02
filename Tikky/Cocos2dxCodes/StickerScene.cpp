@@ -104,20 +104,19 @@ bool StickerScene::init()
 //        this->addChild(label, 1);
 //    }
 //
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-    sprite->setPosition(Vec2(visibleSize.width/2.2 + origin.x, visibleSize.height/2.2 + origin.y));
-    sprite->setTag(StickerType::STATIC_STICKER);
-    this->addChild(sprite, 0);
-    
-    auto sprite2 = Sprite::create("HelloWorld2.png");
-    sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-    sprite2->setTag(StickerType::STATIC_STICKER);
-    this->addChild(sprite2, 1);
-        
-    _nextStickerZOrder = 2;
-    _stickerEditVC = StickerEditViewController::create(this);
-    this->addChild(_stickerEditVC, 100000);
+//    // add "HelloWorld" splash screen"
+//    auto sprite = Sprite::create("HelloWorld.png");
+//    sprite->setPosition(Vec2(visibleSize.width/2.2 + origin.x, visibleSize.height/2.2 + origin.y));
+//    sprite->setTag(StickerType::STATIC_STICKER);
+//    this->addChild(sprite, 0);
+//
+//    auto sprite2 = Sprite::create("HelloWorld2.png");
+//    sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+//    sprite2->setTag(StickerType::STATIC_STICKER);
+//    this->addChild(sprite2, 1);
+    _isAvailableFrameSticker = false;
+    _stickerEditVC = StickerEditViewController::create();
+    this->addChild(_stickerEditVC);
 //    ComponentLua* componentLua = ComponentLua::create("player.lua");
 //    sprite->addComponent(componentLua);
 
@@ -151,22 +150,124 @@ std::vector<TKCCTexture>* StickerScene::getTexturesInScene()
     //callback function
 }
 
-void StickerScene::newStickerWithPath(std::string path) {
+void StickerScene::newStaticStickerWithPath(std::string path) {
     
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     auto sticker = Sprite::create(path);
-    sticker->setTag(StickerType::STATIC_STICKER);
-    sticker->setPosition(Vec2(visibleSize.width/2.5 + origin.x, visibleSize.height/2.5 + origin.y));
-    log(">>>> %f %f", sticker->getPosition().x, sticker->getPosition().y);
-    int zOrder = _stickerEditVC->getFrontZOrder() + 1;
-    if (_nextStickerZOrder < zOrder) {
-        _nextStickerZOrder = zOrder;
+    if (!sticker) {
+        log(">>>> TIKKY: Can not create new sticker with path %s", path.c_str());
+        return;
     }
-    this->addChild(sticker, _nextStickerZOrder++);
+    sticker->setTag(StickerType::STATIC_STICKER);
+    sticker->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
+
+    _stickerEditVC->addSticker(sticker);
 }
 
+void StickerScene::newFrameStickerWithPath(std::string path) {
+    
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+    auto frameSticker = Sprite::create(path);
+    if (!_frameSticker) {
+        log(">>>> TIKKY: Can not create new sticker with path %s", path.c_str());
+        return;
+    }
+    if (_isAvailableFrameSticker) {
+        this->removeFrameSticker();
+        _frameSticker = frameSticker;
+    }
+    
+    _isAvailableFrameSticker = true;
+    _frameSticker->setTag(StickerType::FRAME_STICKER);
+    _frameSticker->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
+    float xscale = _frameSticker->getContentSize().width / visibleSize.width;
+    float yscale = _frameSticker->getContentSize().height / visibleSize.height;
+    _frameSticker->setScale(MIN(xscale, yscale));
+
+    this->addChild(_frameSticker, 100000);
+}
+
+void StickerScene::newFrameStickerWith2PartTopBot(std::string topFramePath, std::string bottomFramePath) {
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+    auto topSticker = Sprite::create(topFramePath);
+    auto botSticker = Sprite::create(bottomFramePath);
+    if (!topSticker || !botSticker) {
+        log(">>>> TIKKY: Can not create new sticker with path %s or %s", topFramePath.c_str(), bottomFramePath.c_str());
+        return;
+    }
+    if (_isAvailableFrameSticker) {
+        this->removeFrameSticker();
+        _twoPartFrameSticker[0] = topSticker;
+        _twoPartFrameSticker[1] = botSticker;
+    }
+    
+    _isAvailableFrameSticker = true;
+    topSticker->setTag(StickerType::FRAME_STICKER);
+    topSticker->setAnchorPoint(Vec2(0.0f, 1.0f));
+    topSticker->setPosition(Vec2(origin.x, visibleSize.height + origin.y));
+    topSticker->setScale(topSticker->getContentSize().width / visibleSize.width);
+    this->addChild(topSticker, 100000);
+    
+    botSticker->setTag(StickerType::FRAME_STICKER);
+    botSticker->setAnchorPoint(Vec2::ZERO);
+    botSticker->setPosition(Vec2(origin.x, origin.y));
+    botSticker->setScale(botSticker->getContentSize().width / visibleSize.width);
+    this->addChild(botSticker, 100000);
+}
+
+void StickerScene::newFrameStickerWith2PartLeftRight(std::string leftFramePath, std::string rightFramePath) {
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+    auto leftSticker = Sprite::create(leftFramePath);
+    auto rightSticker = Sprite::create(rightFramePath);
+    if (!leftSticker || !rightSticker) {
+        log(">>>> TIKKY: Can not create new sticker with path %s or %s", leftFramePath.c_str(), rightFramePath.c_str());
+        return;
+    }
+    if (_isAvailableFrameSticker) {
+        this->removeFrameSticker();
+        _twoPartFrameSticker[0] = leftSticker;
+        _twoPartFrameSticker[1] = rightSticker;
+    }
+    
+    _isAvailableFrameSticker = true;
+    leftSticker->setTag(StickerType::FRAME_STICKER);
+    leftSticker->setAnchorPoint(Vec2::ZERO);
+    leftSticker->setPosition(Vec2(origin.x, origin.y));
+    leftSticker->setScale(leftSticker->getContentSize().height / visibleSize.height);
+    this->addChild(leftSticker, 100000);
+    
+    rightSticker->setTag(StickerType::FRAME_STICKER);
+    rightSticker->setAnchorPoint(Vec2(1.0f, 0.0f));
+    rightSticker->setPosition(Vec2(visibleSize.width + origin.x, origin.y));
+    rightSticker->setScale(rightSticker->getContentSize().height / visibleSize.height);
+    this->addChild(rightSticker, 100000);
+}
+
+void StickerScene::removeFrameSticker() {
+    _isAvailableFrameSticker = false;
+    if (_frameSticker) {
+        _frameSticker->removeFromParentAndCleanup(true);
+    } else {
+        if (_twoPartFrameSticker[0]) {
+            _twoPartFrameSticker[0]->removeFromParentAndCleanup(true);
+        }
+        if (_twoPartFrameSticker[1]) {
+            _twoPartFrameSticker[1]->removeFromParentAndCleanup(true);
+        }
+    }
+}
+
+void StickerScene::removeAllStaticSticker() {
+    _stickerEditVC->removeAllSticker();
+}
 
 bool StickerScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
 
