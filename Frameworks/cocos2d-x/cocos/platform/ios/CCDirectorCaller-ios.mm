@@ -138,11 +138,11 @@ static id s_sharedDirectorCaller;
         cocos2d::Director* director = cocos2d::Director::getInstance();
         EAGLContext* cocos2dxContext = [(CCEAGLView*)director->getOpenGLView()->getEAGLView() context];
         if (cocos2dxContext != [EAGLContext currentContext])
-            // glFlush();
-            
+             glFlush();
+        
             // <!-- TIKKY-CHANGE
             // glFlush(); -> return;
-            return;
+//            return;
             // TIKKY-CHANGE -->
         
         [EAGLContext setCurrentContext: cocos2dxContext];

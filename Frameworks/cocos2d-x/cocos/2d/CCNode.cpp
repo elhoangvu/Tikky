@@ -2228,7 +2228,9 @@ __NodeRGBA::__NodeRGBA()
 void Node::visit(std::vector<TKCCTexture>* texturesInScene)
 {
     for (auto child : _children) {
-        child->visit(texturesInScene);
+        if (child->isVisible()) {
+            child->visit(texturesInScene);
+        }
     }
 }
 // TIKKY-ADD -->

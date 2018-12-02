@@ -114,20 +114,10 @@ bool StickerScene::init()
     sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     sprite2->setTag(StickerType::STATIC_STICKER);
     this->addChild(sprite2, 1);
-    
-    auto listener = EventListenerTouchOneByOne::create();
-    listener->onTouchBegan = CC_CALLBACK_2(StickerScene::onTouchBegan, this);
-    listener->onTouchMoved = CC_CALLBACK_2(StickerScene::onTouchMoved, this);
-    listener->onTouchEnded = CC_CALLBACK_2(StickerScene::onTouchEnded, this);
-    
-    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
-    
-    nextStickerZOrder = 2;
-    curSelectedStickerZOrder = -1;
-    curSelectedSticker = nullptr;
-    drawNode = DrawNode::create();
-    drawNode->setLineWidth(2.0f);
-    this->addChild(drawNode, 10000);
+        
+    _nextStickerZOrder = 2;
+    _stickerEditVC = StickerEditViewController::create(this);
+    this->addChild(_stickerEditVC, 100000);
 //    ComponentLua* componentLua = ComponentLua::create("player.lua");
 //    sprite->addComponent(componentLua);
 
@@ -170,63 +160,25 @@ void StickerScene::newStickerWithPath(std::string path) {
     sticker->setTag(StickerType::STATIC_STICKER);
     sticker->setPosition(Vec2(visibleSize.width/2.5 + origin.x, visibleSize.height/2.5 + origin.y));
     log(">>>> %f %f", sticker->getPosition().x, sticker->getPosition().y);
-    this->addChild(sticker, nextStickerZOrder++);
+    int zOrder = _stickerEditVC->getFrontZOrder() + 1;
+    if (_nextStickerZOrder < zOrder) {
+        _nextStickerZOrder = zOrder;
+    }
+    this->addChild(sticker, _nextStickerZOrder++);
 }
 
 
 bool StickerScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
-    auto childs = this->getChildren();
-    if (!childs.empty()) {
-        Node::sortDecsNodes(childs);
-        auto point = touch->getLocation();
-        for (auto child : childs) {
-            if (child->getTag() == StickerType::STATIC_STICKER) {
-                Sprite* sticker = dynamic_cast<Sprite *>(child);
-                if (sticker && sticker->getBoundingBox().containsPoint(point)) {
-                    curSelectedSticker = child;
-                    curSelectedStickerZOrder = child->getLocalZOrder();
-                    this->reorderChild(curSelectedSticker, 1000);
-                    this->drawStickerRect();
-                    return true;
-                }
-            }
-        }
-    }
 
-    if (curSelectedSticker) {
-        this->reorderChild(curSelectedSticker, curSelectedStickerZOrder);
-        curSelectedStickerZOrder = -1;
-        curSelectedSticker = nullptr;
-        drawNode->clear();
-    }
     return false;
 }
 
 bool StickerScene::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event) {
-    auto offsetVec2 = touch->getLocation() - touch->getPreviousLocation();
-    auto stickerPosition = curSelectedSticker->getPosition() + offsetVec2;
-    curSelectedSticker->setPosition(stickerPosition);
-    this->drawStickerRect();
+
     return true;
 }
 
 bool StickerScene::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
-    if (curSelectedSticker) {
-        log(">>>> %d", curSelectedSticker->getLocalZOrder());
-//        curSelectedSticker = nullptr;
-    }
-    
-    return true;
-}
 
-void StickerScene::drawStickerRect() {
-    drawNode->clear();
-    
-    auto stickerPosition = curSelectedSticker->getPosition();
-    auto contentSize = curSelectedSticker->getContentSize();
-    auto anchorPoint = curSelectedSticker->getAnchorPoint();
-    auto halfSize = Size(contentSize.width * anchorPoint.x, contentSize.height * anchorPoint.y);
-    auto topleft = Vec2(stickerPosition.x - halfSize.width, stickerPosition.y + contentSize.height - halfSize.height);
-    auto bottomright = Vec2(stickerPosition.x + contentSize.width - halfSize.width, stickerPosition.y - halfSize.height);
-    drawNode->drawRect(topleft + Vec2(-5, 5), bottomright + Vec2(5, -5), Color4F(1.0f, 1.0f ,1.0f , 0.5f));
+    return true;
 }

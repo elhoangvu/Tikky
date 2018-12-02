@@ -41,6 +41,16 @@
 		B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKUtilities.c */; };
 		B75279D121A1B51C00A59714 /* TKBaseEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = B75279D021A1B51C00A59714 /* TKBaseEffect.m */; };
 		B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */; };
+		B75C332621B3F626006BEED5 /* close50.png in Resources */ = {isa = PBXBuildFile; fileRef = B75C332021B3F626006BEED5 /* close50.png */; };
+		B75C332721B3F626006BEED5 /* scale50.png in Resources */ = {isa = PBXBuildFile; fileRef = B75C332521B3F626006BEED5 /* scale50.png */; };
+		B75C332B21B4064F006BEED5 /* StickerEditViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditViewController.cpp */; };
+		B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333021B432C2006BEED5 /* PanGestureRecognizer.cpp */; };
+		B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333121B432C2006BEED5 /* TapGestureRecognizer.cpp */; };
+		B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333421B432C2006BEED5 /* GestureRecognizerUtils.cpp */; };
+		B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333621B432C2006BEED5 /* PinchGestureRecognizer.cpp */; };
+		B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */; };
+		B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */; };
+		B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */; };
 		B774E4F221B2FABD00446A06 /* TKLayerMask.mm in Sources */ = {isa = PBXBuildFile; fileRef = B774E4F121B2FABD00446A06 /* TKLayerMask.mm */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +155,25 @@
 		B75279D021A1B51C00A59714 /* TKBaseEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBaseEffect.m; sourceTree = "<group>"; };
 		B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageStickerFilter.mm; sourceTree = "<group>"; };
 		B75279D721A2003700A59714 /* GPUImageStickerFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageStickerFilter.h; sourceTree = "<group>"; };
+		B75C332021B3F626006BEED5 /* close50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close50.png; sourceTree = "<group>"; };
+		B75C332521B3F626006BEED5 /* scale50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale50.png; sourceTree = "<group>"; };
+		B75C332921B4064F006BEED5 /* StickerEditViewController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StickerEditViewController.cpp; sourceTree = "<group>"; };
+		B75C332A21B4064F006BEED5 /* StickerEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerEditViewController.h; sourceTree = "<group>"; };
+		B75C332D21B40D44006BEED5 /* StickerType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickerType.h; sourceTree = "<group>"; };
+		B75C333021B432C2006BEED5 /* PanGestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanGestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333121B432C2006BEED5 /* TapGestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TapGestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333221B432C2006BEED5 /* PanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureRecognizer.h; sourceTree = "<group>"; };
+		B75C333321B432C2006BEED5 /* GestureRecognizerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureRecognizerUtils.h; sourceTree = "<group>"; };
+		B75C333421B432C2006BEED5 /* GestureRecognizerUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizerUtils.cpp; sourceTree = "<group>"; };
+		B75C333521B432C2006BEED5 /* GestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureRecognizer.h; sourceTree = "<group>"; };
+		B75C333621B432C2006BEED5 /* PinchGestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PinchGestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LongPressGestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333821B432C2006BEED5 /* PinchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchGestureRecognizer.h; sourceTree = "<group>"; };
+		B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwipeGestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333A21B432C2006BEED5 /* LongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressGestureRecognizer.h; sourceTree = "<group>"; };
+		B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizer.cpp; sourceTree = "<group>"; };
+		B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureRecognizer.h; sourceTree = "<group>"; };
+		B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureRecognizer.h; sourceTree = "<group>"; };
 		B774E4F021B2FABD00446A06 /* TKLayerMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKLayerMask.h; sourceTree = "<group>"; };
 		B774E4F121B2FABD00446A06 /* TKLayerMask.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKLayerMask.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +310,8 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B75C332021B3F626006BEED5 /* close50.png */,
+				B75C332521B3F626006BEED5 /* scale50.png */,
 				B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */,
 				B7089DA7219F4C1C001CA15D /* HelloWorld2.png */,
 				B70BD4972196CC84000A4EBF /* HelloWorld.png */,
@@ -288,13 +319,38 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B75C332F21B432C2006BEED5 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				B75C333021B432C2006BEED5 /* PanGestureRecognizer.cpp */,
+				B75C333121B432C2006BEED5 /* TapGestureRecognizer.cpp */,
+				B75C333221B432C2006BEED5 /* PanGestureRecognizer.h */,
+				B75C333321B432C2006BEED5 /* GestureRecognizerUtils.h */,
+				B75C333421B432C2006BEED5 /* GestureRecognizerUtils.cpp */,
+				B75C333521B432C2006BEED5 /* GestureRecognizer.h */,
+				B75C333621B432C2006BEED5 /* PinchGestureRecognizer.cpp */,
+				B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */,
+				B75C333821B432C2006BEED5 /* PinchGestureRecognizer.h */,
+				B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */,
+				B75C333A21B432C2006BEED5 /* LongPressGestureRecognizer.h */,
+				B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */,
+				B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */,
+				B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
 		B774E4EB21B2F7F100446A06 /* Cocos2dxCodes */ = {
 			isa = PBXGroup;
 			children = (
+				B75C332F21B432C2006BEED5 /* Gestures */,
 				B70BD4892196C90E000A4EBF /* CCAppDelegate.h */,
 				B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */,
 				B70BD4882196C90C000A4EBF /* StickerScene.h */,
 				B70BD48B2196C911000A4EBF /* StickerScene.cpp */,
+				B75C332A21B4064F006BEED5 /* StickerEditViewController.h */,
+				B75C332921B4064F006BEED5 /* StickerEditViewController.cpp */,
+				B75C332D21B40D44006BEED5 /* StickerType.h */,
 			);
 			path = Cocos2dxCodes;
 			sourceTree = "<group>";
@@ -409,9 +465,11 @@
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				B7089DAC219F4C1D001CA15D /* HelloWorld2.png in Resources */,
 				B70BD4982196CC84000A4EBF /* HelloWorld.png in Resources */,
+				B75C332721B3F626006BEED5 /* scale50.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
+				B75C332621B3F626006BEED5 /* close50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,13 +485,21 @@
 				B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */,
 				B75279C821A16F7000A59714 /* TKGLModel.mm in Sources */,
 				B774E4F221B2FABD00446A06 /* TKLayerMask.mm in Sources */,
+				B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */,
+				B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
+				B75C332B21B4064F006BEED5 /* StickerEditViewController.cpp in Sources */,
 				B75279CB21A16FB600A59714 /* TKGLRectTextureCommand.mm in Sources */,
+				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
 				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,
+				B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */,
 				B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */,
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
+				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
 				B70BD4952196C91D000A4EBF /* Cocos2dXGameController.mm in Sources */,
+				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
 				B74AAB1C21A02EF4006DF9B0 /* GPUImageStickerOutput.mm in Sources */,
+				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
