@@ -58,6 +58,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     _textureStickerList = nil;
     return self;
 }
+
 - (void)renderToTextureWithVertices:(const GLfloat *)vertices textureCoordinates:(const GLfloat *)textureCoordinates;
 {
     if (self.preventRendering)

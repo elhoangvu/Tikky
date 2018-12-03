@@ -25,13 +25,12 @@
 #ifndef __STICKER_SCENE_H__
 #define __STICKER_SCENE_H__
 
-#include "cocos2d.h"
-#include "StickerEditViewController.h"
+#include "StickerEditController.h"
 
 class StickerScene : public cocos2d::Scene
 {
 private:
-    StickerEditViewController* _stickerEditVC;
+    StickerEditController* _stickerEditVC;
     cocos2d::Sprite* _frameSticker;
     cocos2d::Sprite* _twoPartFrameSticker[2];
     bool _isAvailableFrameSticker;

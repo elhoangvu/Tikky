@@ -115,7 +115,7 @@ bool StickerScene::init()
 //    sprite2->setTag(StickerType::STATIC_STICKER);
 //    this->addChild(sprite2, 1);
     _isAvailableFrameSticker = false;
-    _stickerEditVC = StickerEditViewController::create();
+    _stickerEditVC = StickerEditController::create();
     this->addChild(_stickerEditVC);
 //    ComponentLua* componentLua = ComponentLua::create("player.lua");
 //    sprite->addComponent(componentLua);

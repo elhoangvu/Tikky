@@ -1736,33 +1736,37 @@ void Sprite::visit(std::vector<TKCCTexture>* texturesInScene)
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-//    auto runningScene = Director::getInstance()->getRunningScene();
-    
-    auto nodePosition = this->getPosition();
-    nodePosition = this->getParent()->convertToWorldSpace(nodePosition);
-    auto positionX = nodePosition.x;
-    auto positionY = nodePosition.y;
-    auto anchorPointX = this->getAnchorPoint().x;
-    auto anchorPointY = this->getAnchorPoint().y;
-    auto width = this->getContentSize().width;
-    auto height = this->getContentSize().height;
+
     auto visibleSizeWidth = visibleSize.width + origin.x;
     auto visibleSizeHeight = visibleSize.height + origin.y;
     
-    TKPositionsInRect positions;
-    
-    positions.topleft.x = (positionX - anchorPointX*width) / visibleSizeWidth;
-    positions.topleft.y = (positionY + (1.0f - anchorPointY)*height) / visibleSizeHeight;
-    
-    positions.bottomleft.x = positions.topleft.x;
-    positions.bottomleft.y = (positionY - anchorPointY*height) / visibleSizeHeight;
-    
-    positions.topright.x = (positionX + (1.0f - anchorPointX)*width) / visibleSizeWidth;
-    positions.topright.y = positions.topleft.y;
-    
-    positions.bottomright.x = positions.topright.x;
-    positions.bottomright.y = positions.bottomleft.y;
+    static TKPositionsInRect positions;
+    static Node* node = nullptr;
+    if (!node) {
+        node = Node::create();
+        this->addChild(node);
+    }
 
+    node->setPosition(Vec2::ZERO);
+    positions.bottomleft = this->convertToWorldSpace(node->getPosition());
+    positions.bottomleft.x = positions.bottomleft.x / visibleSizeWidth;
+    positions.bottomleft.y = positions.bottomleft.y / visibleSizeHeight;
+
+    node->setPosition(Vec2(this->getContentSize().width, 0));
+    positions.bottomright = this->convertToWorldSpace(node->getPosition());
+    positions.bottomright.x = positions.bottomright.x / visibleSizeWidth;
+    positions.bottomright.y = positions.bottomright.y / visibleSizeHeight;
+
+    node->setPosition(Vec2(this->getContentSize().width, this->getContentSize().height));
+    positions.topright = this->convertToWorldSpace(node->getPosition());
+    positions.topright.x = positions.topright.x / visibleSizeWidth;
+    positions.topright.y = positions.topright.y / visibleSizeHeight;
+
+    node->setPosition(Vec2(0, this->getContentSize().height));
+    positions.topleft = this->convertToWorldSpace(node->getPosition());
+    positions.topleft.x = positions.topleft.x / visibleSizeWidth;
+    positions.topleft.y = positions.topleft.y / visibleSizeHeight;
+    
     TKCCTexture texture = TKCCTexture(_texture->getName(), positions);
     texturesInScene->push_back(texture);
 }

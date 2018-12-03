@@ -162,11 +162,11 @@ bool CCAppDelegate::applicationDidFinishLaunching()
     
     register_all_packages();
     
-    // create a scene. it's an autorelease object
-    auto scene = StickerScene::createScene();
-    
-    // run
-    director->runWithScene(scene);
+//    // create a scene. it's an autorelease object
+//    auto scene = StickerScene::createScene();
+//    
+//    // run
+//    director->runWithScene(scene);
     return true;
 }
 

@@ -1,18 +1,18 @@
 //
-//  StickerEditViewController.cpp
+//  StickerEditController.cpp
 //  Tikky
 //
 //  Created by Le Hoang Vu on 12/2/18.
 //  Copyright © 2018 Le Hoang Vu. All rights reserved.
 //
 
-#include "StickerEditViewController.h"
+#include "StickerEditController.h"
 #include "GestureRecognizerUtils.h"
 
 using namespace cocos2d;
 
-StickerEditViewController* StickerEditViewController::create() {
-    StickerEditViewController* stickerVC = new (std::nothrow) StickerEditViewController();
+StickerEditController* StickerEditController::create() {
+    StickerEditController* stickerVC = new (std::nothrow) StickerEditController();
     if (stickerVC && stickerVC->init()) {
         return stickerVC;
     }
@@ -20,7 +20,7 @@ StickerEditViewController* StickerEditViewController::create() {
     return nullptr;
 }
 
-bool StickerEditViewController::init() {
+bool StickerEditController::init() {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
@@ -41,12 +41,12 @@ bool StickerEditViewController::init() {
 //    Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
     PinchGestureRecognizer* pinchGesture = PinchGestureRecognizer::create();
-    pinchGesture->onPinch = CC_CALLBACK_1(StickerEditViewController::onPinch, this);
+    pinchGesture->onPinch = CC_CALLBACK_1(StickerEditController::onPinch, this);
     pinchGesture->setContentSize(Director::getInstance()->getVisibleSize());
     this->addChild(pinchGesture, 0);
     
     PanGestureRecognizer* panGesture = PanGestureRecognizer::create(1);
-    panGesture->onPan = CC_CALLBACK_1(StickerEditViewController::onPan, this);
+    panGesture->onPan = CC_CALLBACK_1(StickerEditController::onPan, this);
     panGesture->setContentSize(Director::getInstance()->getVisibleSize());
     this->addChild(panGesture, 0);
     
@@ -54,7 +54,7 @@ bool StickerEditViewController::init() {
 }
 
 
-void StickerEditViewController::onPinch(PinchGestureRecognizer* recognizer)
+void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
 {
     log(">>>> Pinch");
     auto stato = recognizer->getStatus();
@@ -89,7 +89,7 @@ void StickerEditViewController::onPinch(PinchGestureRecognizer* recognizer)
     }
 }
 
-void StickerEditViewController::onPan(PanGestureRecognizer* recognizer) {
+void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
     auto stato = recognizer->getStatus();
     auto location = recognizer->getGestureLocation();
     
@@ -132,21 +132,20 @@ void StickerEditViewController::onPan(PanGestureRecognizer* recognizer) {
             if (_sticker) {
                 _sticker->setPosition(_sticker->getPosition() + recognizer->getTraslation());
                 _recyclingBin->setVisible(true);
+//                auto sprite = dynamic_cast<Sprite *>(_sticker);
                 if (_recyclingBin->getBoundingBox().containsPoint(location)) {
-//                    _recyclingBin->setScale(1.0f);
                     if (!isStickerScaling) {
                         _recyclingBin->runAction(ScaleTo::create(0.05f, 1.0f));
                         stickerScale = _sticker->getScale()*0.5f;
                         _sticker->runAction(ScaleTo::create(0.05f, stickerScale));
-//                        _sticker->setScale(stickerScale);
+                        _sticker->setOpacity(255.0f/2.0f);
                     }
                     isStickerScaling = true;
                 } else {
                     if (isStickerScaling) {
                         _recyclingBin->runAction(ScaleTo::create(0.05f, 0.5f));
                         _sticker->runAction(ScaleTo::create(0.05f, _sticker->getScale()*2.0f));
-//                        _recyclingBin->setScale(0.5f);
-//                        _sticker->setScale(_sticker->getScale()*2.0f);
+                        _sticker->setOpacity(255.0f);
                         isStickerScaling = false;
                     }
                 }
@@ -176,40 +175,40 @@ void StickerEditViewController::onPan(PanGestureRecognizer* recognizer) {
     }
 }
 
-void StickerEditViewController::tapStickerAnimation() {
+void StickerEditController::tapStickerAnimation() {
     auto scaleInAction = ScaleTo::create(0.05f, _sticker->getScale()*0.8f);
     auto scaleOutAction = ScaleTo::create(0.05f, _sticker->getScale());
     auto seqAction = Sequence::create(scaleInAction, scaleOutAction, nullptr);
     _sticker->runAction(seqAction);
 }
 
-cocos2d::Node* StickerEditViewController::getSticker() {
+cocos2d::Node* StickerEditController::getSticker() {
     return _sticker;
 }
 
-void StickerEditViewController::setSticker(cocos2d::Node* sticker) {
+void StickerEditController::setSticker(cocos2d::Node* sticker) {
     _sticker = sticker;
 }
 
-void StickerEditViewController::setEnable(bool enable) {
+void StickerEditController::setEnable(bool enable) {
     _isEnable = enable;
 }
 
-bool StickerEditViewController::isEnable() {
+bool StickerEditController::isEnable() {
     return _isEnable;
 }
 
-int StickerEditViewController::getFrontZOrder() {
+int StickerEditController::getFrontZOrder() {
     return _frontZOrder;
 }
 
-void StickerEditViewController::addSticker(cocos2d::Sprite* sticker) {
+void StickerEditController::addSticker(cocos2d::Sprite* sticker) {
     if (sticker) {
         this->addChild(sticker, ++_frontZOrder);
     }
 }
 
-void StickerEditViewController::removeAllSticker() {
+void StickerEditController::removeAllSticker() {
     auto childs = this->getChildren();
     if (!childs.empty()) {
         for (auto child : childs) {

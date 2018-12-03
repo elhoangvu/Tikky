@@ -11,7 +11,7 @@
 #import "Prefix.pch"
 //#import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
-#import "Coco2dXGameController/Cocos2dXGameController.h"
+#import "Coco2dXGameController/Cocos2dxGameController.h"
 #import "GPUImage.h"
 #import <Photos/Photos.h>
 #import "TKGLRectTextureCommand.h"
@@ -87,20 +87,18 @@ varying mediump vec2 v_texCoord;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    CGRect rect = CGRectMake(UIScreen.mainScreen.bounds.origin.x,
-//                             UIScreen.mainScreen.bounds.origin.y + UIScreen.mainScreen.bounds.size.height/2.0f,
-//                             UIScreen.mainScreen.bounds.size.width/2.0f,
-//                             UIScreen.mainScreen.bounds.size.height/2.0f);
+
     CGRect rect = CGRectMake(UIScreen.mainScreen.bounds.origin.x,
                              UIScreen.mainScreen.bounds.origin.y,
                              UIScreen.mainScreen.bounds.size.width,
                              UIScreen.mainScreen.bounds.size.height);
-    Cocos2dXGameController *gameController = [[Cocos2dXGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
+    Cocos2dxGameController *gameController = [[Cocos2dxGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
     gameController.delegate = self;
     _cceaglView = (CCEAGLView *)gameController.view;
+    [self.view addSubview:gameController.view];
     
     [self.view addSubview:_cameraView];
-    [self.view addSubview:gameController.view];
+
     
     UIButton* shootButton = [[UIButton alloc] initWithFrame:(CGRectMake(200, 300, 100, 50))];
     [shootButton setTitle:@"Shoot" forState:(UIControlStateNormal)];
@@ -231,7 +229,7 @@ varying mediump vec2 v_texCoord;
 
 #pragma mark - Cocos2dXGameControllerDelegate
 
-- (void)backToAppFromGameController:(Cocos2dXGameController *)gameController {
+- (void)backToAppFromGameController:(Cocos2dxGameController *)gameController {
     [UIView animateWithDuration:0.3f animations:^{
         gameController.view.alpha = 0.0f;
     } completion:^(BOOL finished) {

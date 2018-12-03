@@ -1,20 +1,20 @@
 //
-//  StickerEditViewController.hpp
+//  StickerEditController.h
 //  Tikky
 //
 //  Created by Le Hoang Vu on 12/2/18.
 //  Copyright © 2018 Le Hoang Vu. All rights reserved.
 //
 
-#ifndef StickerEditViewController_h
-#define StickerEditViewController_h
+#ifndef StickerEditController_h
+#define StickerEditController_h
 
 #include "cocos2d.h"
 #include "StickerType.h"
 #include "PinchGestureRecognizer.h"
 #include "PanGestureRecognizer.h"
 
-class StickerEditViewController : public cocos2d::Node {
+class StickerEditController : public cocos2d::Node {
 protected:
     cocos2d::Sprite* _recyclingBin;
     cocos2d::Node* _sticker;
@@ -23,7 +23,7 @@ protected:
     int _frontZOrder;
 
 private:
-    StickerEditViewController() {};
+    StickerEditController() {};
     void tapStickerAnimation();
     
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
@@ -33,7 +33,7 @@ private:
     void onPinch(cocos2d::PinchGestureRecognizer* recognizer);
     void onPan(cocos2d::PanGestureRecognizer* recognizer);
 public:
-    static StickerEditViewController* create();
+    static StickerEditController* create();
     
     cocos2d::Node* getSticker();
     void setSticker(cocos2d::Node* sticker);
@@ -49,4 +49,4 @@ public:
     bool init();
 };
 
-#endif /* StickerEditViewController_hpp */
+#endif /* StickerEditController_h */
