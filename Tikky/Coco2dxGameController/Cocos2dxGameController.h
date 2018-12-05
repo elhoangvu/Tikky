@@ -23,7 +23,8 @@
 @property (nonatomic, weak) id<Cocos2dXGameControllerDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame sharegroup:(EAGLSharegroup *)sharegroup;
-- (void *)getFirstScene;
+- (void)setInitialScene:(void *)initialScene;
+- (void *)getRunningScene;
 - (void)backToApp;
 
 @end

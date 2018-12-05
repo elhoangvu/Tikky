@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B7089DAC219F4C1D001CA15D /* HelloWorld2.png in Resources */ = {isa = PBXBuildFile; fileRef = B7089DA7219F4C1C001CA15D /* HelloWorld2.png */; };
 		B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43C2196C634000A4EBF /* AppDelegate.mm */; };
-		B70BD4402196C634000A4EBF /* TKDirector.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43F2196C634000A4EBF /* TKDirector.mm */; };
+		B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43F2196C634000A4EBF /* TikkyEngine.mm */; };
 		B70BD4432196C634000A4EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4412196C634000A4EBF /* Main.storyboard */; };
 		B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4442196C636000A4EBF /* Assets.xcassets */; };
 		B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */; };
@@ -38,6 +38,7 @@
 		B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */; };
 		B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKUtilities.c */; };
 		B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */; };
+		B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */ = {isa = PBXBuildFile; fileRef = B7558A5B21B8604A0045BBD7 /* TKImageInput.m */; };
 		B75C332621B3F626006BEED5 /* close50.png in Resources */ = {isa = PBXBuildFile; fileRef = B75C332021B3F626006BEED5 /* close50.png */; };
 		B75C332721B3F626006BEED5 /* scale50.png in Resources */ = {isa = PBXBuildFile; fileRef = B75C332521B3F626006BEED5 /* scale50.png */; };
 		B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333021B432C2006BEED5 /* PanGestureRecognizer.cpp */; };
@@ -110,8 +111,8 @@
 		B70BD4382196C634000A4EBF /* Tikky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tikky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70BD43B2196C634000A4EBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B70BD43C2196C634000A4EBF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		B70BD43E2196C634000A4EBF /* TKDirector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDirector.h; sourceTree = "<group>"; };
-		B70BD43F2196C634000A4EBF /* TKDirector.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKDirector.mm; sourceTree = "<group>"; };
+		B70BD43E2196C634000A4EBF /* TikkyEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TikkyEngine.h; sourceTree = "<group>"; };
+		B70BD43F2196C634000A4EBF /* TikkyEngine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TikkyEngine.mm; sourceTree = "<group>"; };
 		B70BD4422196C634000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B70BD4442196C636000A4EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B70BD4472196C636000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,6 +148,8 @@
 		B75279CD21A1A73E00A59714 /* TKUtilities.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TKUtilities.c; sourceTree = "<group>"; };
 		B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageStickerFilter.mm; sourceTree = "<group>"; };
 		B75279D721A2003700A59714 /* GPUImageStickerFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageStickerFilter.h; sourceTree = "<group>"; };
+		B7558A5A21B8604A0045BBD7 /* TKImageInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageInput.h; sourceTree = "<group>"; };
+		B7558A5B21B8604A0045BBD7 /* TKImageInput.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageInput.m; sourceTree = "<group>"; };
 		B75C332021B3F626006BEED5 /* close50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close50.png; sourceTree = "<group>"; };
 		B75C332521B3F626006BEED5 /* scale50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scale50.png; sourceTree = "<group>"; };
 		B75C332921B4064F006BEED5 /* StickerEditController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StickerEditController.cpp; sourceTree = "<group>"; };
@@ -293,8 +296,10 @@
 				B70BD4922196C91D000A4EBF /* Cocos2dxGameController.mm */,
 				B767ED8421B545C400CE264A /* TKStickerPreviewer.h */,
 				B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */,
-				B70BD43E2196C634000A4EBF /* TKDirector.h */,
-				B70BD43F2196C634000A4EBF /* TKDirector.mm */,
+				B70BD43E2196C634000A4EBF /* TikkyEngine.h */,
+				B70BD43F2196C634000A4EBF /* TikkyEngine.mm */,
+				B7558A5A21B8604A0045BBD7 /* TKImageInput.h */,
+				B7558A5B21B8604A0045BBD7 /* TKImageInput.m */,
 			);
 			path = Coco2dxGameController;
 			sourceTree = "<group>";
@@ -475,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
-				B70BD4402196C634000A4EBF /* TKDirector.mm in Sources */,
+				B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */,
 				B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */,
 				B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */,
 				B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */,
@@ -486,6 +491,7 @@
 				B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */,
 				B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */,
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
+				B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
 				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */,
 				B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */,

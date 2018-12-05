@@ -14,7 +14,7 @@
 #import "TKStickerPreviewer.h"
 
 @interface Cocos2dxGameController () {
-    cocos2d::Scene* _firstScene;
+    cocos2d::Scene* _initialScene;
 }
 
 @end
@@ -46,16 +46,23 @@
         cocos2d::Application::getInstance()->run();
         
         // create a scene. it's an autorelease object
-        _firstScene = StickerScene::createScene();
-        
-        cocos2d::Director::getInstance()->runWithScene(_firstScene);
     }
     
     return self;
 }
 
-- (void *)getFirstScene {
-    return (void *)_firstScene;
+- (void)setInitialScene:(void *)initialScene {
+    _initialScene = (cocos2d::Scene *)initialScene;
+    
+    cocos2d::Director::getInstance()->runWithScene(_initialScene);
+}
+
+- (void *)getRunningScene {
+    auto runningScene = cocos2d::Director::getInstance()->getRunningScene();
+    if (!runningScene) {
+        return (void *)_initialScene;
+    }
+    return (void *)runningScene;
 }
 
 - (void)appIsInBackground:(NSNotification *)notification {
