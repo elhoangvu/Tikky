@@ -33,6 +33,17 @@
 		B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B70BD48C2196C913000A4EBF /* CCAppDelegate.cpp */; };
 		B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD4922196C91D000A4EBF /* Cocos2dxGameController.mm */; };
 		B70BD4982196CC84000A4EBF /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4972196CC84000A4EBF /* HelloWorld.png */; };
+		B70E0FA921B9545700012236 /* emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B70E0F9321B9545600012236 /* emoji.png */; };
+		B70E0FAA21B9545700012236 /* capture_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B70E0F9421B9545600012236 /* capture_button.png */; };
+		B70E0FAB21B9545700012236 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = B70E0F9521B9545600012236 /* filter.png */; };
+		B70E0FAC21B9545700012236 /* assert_picker.png in Resources */ = {isa = PBXBuildFile; fileRef = B70E0F9621B9545600012236 /* assert_picker.png */; };
+		B70E0FAD21B9545700012236 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = B70E0F9721B9545600012236 /* frame.png */; };
+		B70E0FAE21B9545700012236 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0F9921B9545600012236 /* TKTopMenu.m */; };
+		B70E0FAF21B9545700012236 /* TKBottomSubMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0F9A21B9545600012236 /* TKBottomSubMenu.m */; };
+		B70E0FB021B9545700012236 /* TKTopSubMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0F9D21B9545600012236 /* TKTopSubMenuItem.m */; };
+		B70E0FB121B9545700012236 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0F9E21B9545600012236 /* TKTopMenuItem.m */; };
+		B70E0FB221B9545700012236 /* TKBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0FA121B9545600012236 /* TKBottomMenu.m */; };
+		B70E0FB321B9545700012236 /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0FA221B9545600012236 /* TKBottomMenuItem.m */; };
 		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
 		B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */; };
@@ -141,6 +152,23 @@
 		B70BD4922196C91D000A4EBF /* Cocos2dxGameController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Cocos2dxGameController.mm; sourceTree = "<group>"; };
 		B70BD4932196C91D000A4EBF /* Cocos2dxGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cocos2dxGameController.h; sourceTree = "<group>"; };
 		B70BD4972196CC84000A4EBF /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		B70E0F9321B9545600012236 /* emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji.png; sourceTree = "<group>"; };
+		B70E0F9421B9545600012236 /* capture_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capture_button.png; sourceTree = "<group>"; };
+		B70E0F9521B9545600012236 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		B70E0F9621B9545600012236 /* assert_picker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assert_picker.png; sourceTree = "<group>"; };
+		B70E0F9721B9545600012236 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
+		B70E0F9921B9545600012236 /* TKTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenu.m; sourceTree = "<group>"; };
+		B70E0F9A21B9545600012236 /* TKBottomSubMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomSubMenu.m; sourceTree = "<group>"; };
+		B70E0F9B21B9545600012236 /* TKBottomMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuItem.h; sourceTree = "<group>"; };
+		B70E0F9C21B9545600012236 /* TKBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenu.h; sourceTree = "<group>"; };
+		B70E0F9D21B9545600012236 /* TKTopSubMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubMenuItem.m; sourceTree = "<group>"; };
+		B70E0F9E21B9545600012236 /* TKTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenuItem.m; sourceTree = "<group>"; };
+		B70E0F9F21B9545600012236 /* TKTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenu.h; sourceTree = "<group>"; };
+		B70E0FA021B9545600012236 /* TKBottomSubMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomSubMenu.h; sourceTree = "<group>"; };
+		B70E0FA121B9545600012236 /* TKBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenu.m; sourceTree = "<group>"; };
+		B70E0FA221B9545600012236 /* TKBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuItem.m; sourceTree = "<group>"; };
+		B70E0FA321B9545600012236 /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
+		B70E0FA421B9545600012236 /* TKTopSubMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubMenuItem.h; sourceTree = "<group>"; };
 		B717051321985697006409F0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
@@ -224,6 +252,7 @@
 		B70BD43A2196C634000A4EBF /* Tikky */ = {
 			isa = PBXGroup;
 			children = (
+				B70E0F9121B9545600012236 /* Presentation */,
 				B774E4EB21B2F7F100446A06 /* Cocos2dxCodes */,
 				B70BD4962196CC6F000A4EBF /* Resources */,
 				B70BD4912196C91D000A4EBF /* Coco2dxGameController */,
@@ -315,6 +344,46 @@
 				B70BD4972196CC84000A4EBF /* HelloWorld.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B70E0F9121B9545600012236 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B70E0F9221B9545600012236 /* Images */,
+				B70E0F9821B9545600012236 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B70E0F9221B9545600012236 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B70E0F9321B9545600012236 /* emoji.png */,
+				B70E0F9421B9545600012236 /* capture_button.png */,
+				B70E0F9521B9545600012236 /* filter.png */,
+				B70E0F9621B9545600012236 /* assert_picker.png */,
+				B70E0F9721B9545600012236 /* frame.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B70E0F9821B9545600012236 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B70E0F9921B9545600012236 /* TKTopMenu.m */,
+				B70E0F9A21B9545600012236 /* TKBottomSubMenu.m */,
+				B70E0F9B21B9545600012236 /* TKBottomMenuItem.h */,
+				B70E0F9C21B9545600012236 /* TKBottomMenu.h */,
+				B70E0F9D21B9545600012236 /* TKTopSubMenuItem.m */,
+				B70E0F9E21B9545600012236 /* TKTopMenuItem.m */,
+				B70E0F9F21B9545600012236 /* TKTopMenu.h */,
+				B70E0FA021B9545600012236 /* TKBottomSubMenu.h */,
+				B70E0FA121B9545600012236 /* TKBottomMenu.m */,
+				B70E0FA221B9545600012236 /* TKBottomMenuItem.m */,
+				B70E0FA321B9545600012236 /* TKTopMenuItem.h */,
+				B70E0FA421B9545600012236 /* TKTopSubMenuItem.h */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B75C332F21B432C2006BEED5 /* Gestures */ = {
@@ -464,9 +533,14 @@
 				B7089DAC219F4C1D001CA15D /* HelloWorld2.png in Resources */,
 				B70BD4982196CC84000A4EBF /* HelloWorld.png in Resources */,
 				B75C332721B3F626006BEED5 /* scale50.png in Resources */,
+				B70E0FAA21B9545700012236 /* capture_button.png in Resources */,
+				B70E0FA921B9545700012236 /* emoji.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */,
+				B70E0FAC21B9545700012236 /* assert_picker.png in Resources */,
+				B70E0FAB21B9545700012236 /* filter.png in Resources */,
 				B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
+				B70E0FAD21B9545700012236 /* frame.png in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
 				B75C332621B3F626006BEED5 /* close50.png in Resources */,
 			);
@@ -480,17 +554,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
+				B70E0FAF21B9545700012236 /* TKBottomSubMenu.m in Sources */,
 				B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */,
 				B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */,
 				B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */,
+				B70E0FAE21B9545700012236 /* TKTopMenu.m in Sources */,
 				B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */,
+				B70E0FB021B9545700012236 /* TKTopSubMenuItem.m in Sources */,
+				B70E0FB121B9545700012236 /* TKTopMenuItem.m in Sources */,
 				B767ED8D21B54F2C00CE264A /* CameraViewController.mm in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
 				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
 				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,
+				B70E0FB221B9545700012236 /* TKBottomMenu.m in Sources */,
 				B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */,
 				B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */,
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
+				B70E0FB321B9545700012236 /* TKBottomMenuItem.m in Sources */,
 				B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
 				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */,
