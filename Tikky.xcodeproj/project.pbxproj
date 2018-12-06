@@ -46,6 +46,7 @@
 		B70E0FB321B9545700012236 /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0FA221B9545600012236 /* TKBottomMenuItem.m */; };
 		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
+		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
 		B74AAB19219FE79C006DF9B0 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */; };
 		B75279CE21A1A73E00A59714 /* TKUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKUtilities.c */; };
 		B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */; };
@@ -171,6 +172,8 @@
 		B70E0FA421B9545600012236 /* TKTopSubMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubMenuItem.h; sourceTree = "<group>"; };
 		B717051321985697006409F0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
+		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
+		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
 		B74AAB14219FE79C006DF9B0 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		B75279CC21A1730400A59714 /* TKUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKUtilities.h; sourceTree = "<group>"; };
 		B75279CD21A1A73E00A59714 /* TKUtilities.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TKUtilities.c; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */,
 				B767ED8B21B54F2C00CE264A /* CameraViewController.h */,
 				B767ED8C21B54F2C00CE264A /* CameraViewController.mm */,
+				B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */,
+				B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */,
 			);
 			path = Tikky;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B71B137F21B9B9E000DE1796 /* views */,
 				B71850B921B462BB00F66171 /* recyclingbin.png */,
 				B75C332021B3F626006BEED5 /* close50.png */,
 				B75C332521B3F626006BEED5 /* scale50.png */,
@@ -349,22 +355,9 @@
 		B70E0F9121B9545600012236 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B70E0F9221B9545600012236 /* Images */,
 				B70E0F9821B9545600012236 /* Views */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		B70E0F9221B9545600012236 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				B70E0F9321B9545600012236 /* emoji.png */,
-				B70E0F9421B9545600012236 /* capture_button.png */,
-				B70E0F9521B9545600012236 /* filter.png */,
-				B70E0F9621B9545600012236 /* assert_picker.png */,
-				B70E0F9721B9545600012236 /* frame.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		B70E0F9821B9545600012236 /* Views */ = {
@@ -384,6 +377,18 @@
 				B70E0FA421B9545600012236 /* TKTopSubMenuItem.h */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B71B137F21B9B9E000DE1796 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B70E0F9321B9545600012236 /* emoji.png */,
+				B70E0F9421B9545600012236 /* capture_button.png */,
+				B70E0F9521B9545600012236 /* filter.png */,
+				B70E0F9621B9545600012236 /* assert_picker.png */,
+				B70E0F9721B9545600012236 /* frame.png */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		B75C332F21B432C2006BEED5 /* Gestures */ = {
@@ -553,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */,
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
 				B70E0FAF21B9545700012236 /* TKBottomSubMenu.m in Sources */,
 				B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */,
@@ -759,7 +765,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.CocosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,7 +802,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.HoangVu.CocosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";

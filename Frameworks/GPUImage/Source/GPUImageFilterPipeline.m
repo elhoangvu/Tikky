@@ -4,7 +4,7 @@
 
 - (BOOL)_parseConfiguration:(NSDictionary *)configuration;
 
-- (void)_refreshFilters;
+- (void)refreshFilters;
 
 @end
 
@@ -23,7 +23,7 @@
             NSLog(@"Sorry, a parsing error occurred.");
             abort();
         }
-        [self _refreshFilters];
+        [self refreshFilters];
     }
     return self;
 }
@@ -143,48 +143,48 @@
         self.input = input;
         self.output = output;
         self.filters = [NSMutableArray arrayWithArray:filters];
-        [self _refreshFilters];
+        [self refreshFilters];
     }
     return self;
 }
 
 - (void)addFilter:(GPUImageOutput<GPUImageInput> *)filter atIndex:(NSUInteger)insertIndex {
     [self.filters insertObject:filter atIndex:insertIndex];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void)addFilter:(GPUImageOutput<GPUImageInput> *)filter {
     [self.filters addObject:filter];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void)replaceFilterAtIndex:(NSUInteger)index withFilter:(GPUImageOutput<GPUImageInput> *)filter {
     [self.filters replaceObjectAtIndex:index withObject:filter];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void) removeFilter:(GPUImageOutput<GPUImageInput> *)filter;
 {
     [self.filters removeObject:filter];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void)removeFilterAtIndex:(NSUInteger)index {
     [self.filters removeObjectAtIndex:index];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void)removeAllFilters {
     [self.filters removeAllObjects];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
 - (void)replaceAllFilters:(NSArray *)newFilters {
     self.filters = [NSMutableArray arrayWithArray:newFilters];
-    [self _refreshFilters];
+    [self refreshFilters];
 }
 
-- (void)_refreshFilters {
+- (void)refreshFilters {
     
     id prevFilter = self.input;
     GPUImageOutput<GPUImageInput> *theFilter = nil;

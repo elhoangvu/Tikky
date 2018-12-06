@@ -22,6 +22,7 @@
 - (void) removeFilter:(GPUImageOutput<GPUImageInput> *)filter;
 - (void) removeFilterAtIndex:(NSUInteger)index;
 - (void) removeAllFilters;
+- (void)refreshFilters;
 
 - (UIImage *) currentFilteredFrame;
 - (UIImage *) currentFilteredFrameWithOrientation:(UIImageOrientation)imageOrientation;

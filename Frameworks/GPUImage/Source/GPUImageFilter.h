@@ -68,7 +68,9 @@ typedef struct GPUMatrix3x3 GPUMatrix3x3;
 @property(readonly) CVPixelBufferRef renderTarget;
 @property(readwrite, nonatomic) BOOL preventRendering;
 @property(readwrite, nonatomic) BOOL currentlyReceivingMonochromeInput;
-
+// <!-- TIKKY-ADD
+@property (nonatomic) NSString* name;
+// TIKKY-ADD -->
 /// @name Initialization and teardown
 
 /**

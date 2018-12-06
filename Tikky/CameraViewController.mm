@@ -12,15 +12,18 @@
 
 #import "TKBottomMenu.h"
 #import "TKTopMenu.h"
-//#import <CTAssetsPickerController.h>
 
 @interface CameraViewController () <TKBottomItemDelegate>
-//@interface CameraViewController () <TKBottomItemDelegate, CTAssetsPickerControllerDelegate>
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
 @property (nonatomic) TKCamera* camera;
 
-@property (nonatomic, strong) TKBottomMenu *selectionBar;
+@property (nonatomic) TKBottomMenu *selectionBar;
+
+@property (nonatomic) NSMutableArray* stickers;
+@property (nonatomic) NSMutableArray* filters;
+
+@property (nonatomic) NSInteger lastFilterIndex;
 
 @end
 
@@ -28,6 +31,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSMutableArray* stickerName = [NSMutableArray array];
+    [stickerName addObject:@"recyclingbin"];
+    [stickerName addObject:@"lookup_amatorka"];
+    [stickerName addObject:@"scale50"];
+    [stickerName addObject:@"emoji"];
+    _stickers = [NSMutableArray array];
+
+    for (NSString* name in stickerName) {
+        NSString* path = [NSBundle.mainBundle pathForResource:name ofType:@"png"];
+        if (path) {
+            [_stickers addObject:path];
+        }
+    }
+    
+    _filters = [NSMutableArray array];
+    [_filters addObject:@"BRIGHTNESS"];
+    [_filters addObject:@"LEVELS"];
+    [_filters addObject:@"SATURATION"];
+    [_filters addObject:@"GAMMA"];
+    [_filters addObject:@"CONTRAST"];
+    [_filters addObject:@"DEFAULT"];
+
+    _lastFilterIndex = 0;
+    
     _tikkyEngine = TikkyEngine.sharedInstance;
     [self.view addSubview:_tikkyEngine.view];
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
@@ -76,11 +104,14 @@
     } else if ([nameItem isEqualToString:@"capture"]) {
         [self shoot:nil];
     } else if ([nameItem isEqualToString:@"filter"]) {
-        
+        long rand = (long)arc4random_uniform((unsigned int)_filters.count);
+        [_tikkyEngine.imageFilter replaceFilter:[_filters objectAtIndex:_lastFilterIndex] withFilter:[_filters objectAtIndex:rand] addNewFilterIfNotExist:YES];
+        _lastFilterIndex = rand;
     } else if ([nameItem isEqualToString:@"frame"]) {
         
     } else if ([nameItem isEqualToString:@"emoji"]) {
-        
+        long rand = (long)arc4random_uniform((unsigned int)_stickers.count);
+        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
     }
     
     
@@ -132,16 +163,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_camera startCameraCapture];
-    
-    NSString* path1 = [NSBundle.mainBundle pathForResource:@"HelloWorld" ofType:@"png"];
-    NSString* path2 = [NSBundle.mainBundle pathForResource:@"recyclingbin" ofType:@"png"];
-    NSString* path3 = [NSBundle.mainBundle pathForResource:@"lookup_amatorka" ofType:@"png"];
-    NSString* path4 = [NSBundle.mainBundle pathForResource:@"close50" ofType:@"png"];
-    
-    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:path1];
-    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:path2];
-    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:path3];
-    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:path4];
 }
 
 // For ios6, use supportedInterfaceOrientations & shouldAutorotate instead
