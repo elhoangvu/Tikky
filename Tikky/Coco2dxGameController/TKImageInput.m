@@ -95,6 +95,15 @@
     return _camera.cameraPosition;
 }
 
+- (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block; {
+    if (!block) {
+        return;
+    }
+    [_camera capturePhotoAsJPEGProcessedUpToFilter:(GPUImageOutput<GPUImageInput> *)filterObject withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        block(processedJPEG, error);
+    }];
+}
+
 #pragma mark - Properties's getter, setter
 
 - (BOOL)isRunning {

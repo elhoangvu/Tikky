@@ -10,13 +10,8 @@
 #import "Cocos2dxGameController.h"
 
 #import "TikkyEngine.h"
-#include "TKUtilities.h"
 
-#import "GPUImageStickerFilter.h"
-
-#import <Photos/Photos.h>
-
-TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
+//TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
 @interface TikkyEngine () <Cocos2dXGameControllerDelegate>
 
@@ -66,32 +61,21 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     
     return instance;
 }
-//
-//- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block {
-//    if (!block) {
-//        return;
-//    }
-//    NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
-//    std::vector<TKCCTexture>* texturesInScene = [_stickerPreviewer getStickerTextures];
-//    NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
-//    NSLog(@">>>> HV: time: %f", end - start);
-//    std::vector<TKRectTexture>* textureStickerList = new std::vector<TKRectTexture>;
-//    for (int i = 0; i < texturesInScene->size(); i++) {
-//        TKRectTexture rectTexture = convertTKCCTextureToTKRectTexture(texturesInScene[0][i]);
-//        textureStickerList->push_back(rectTexture);
-//    }
-//    if (_stickerFilter) {
-//        [(GPUImageStickerFilter *)_stickerFilter setTextureStickerList:textureStickerList];
-//    }
-//
-//    [_filter addTarget:_stickerFilter];
-//
-//    [_camera capturePhotoAsJPEGProcessedUpToFilter:_stickerFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-//        block(processedJPEG, error);
-//        if (textureStickerList)
-//            delete textureStickerList;
-//    }];
-//}
+
+- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block {
+    if (!block) {
+        return;
+    }
+    NSData* textures = [_stickerPreviewer getStickerTextures];
+    
+    if (_stickerPreviewer) {
+        [_imageFilter setAdditionalTexture:textures];
+    }
+
+    [_imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        block(processedJPEG, error);
+    }];
+}
 //
 //- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName {
 //    __weak __typeof(self)weakSelf = self;
@@ -193,32 +177,6 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
 @end
 
-TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
-    TKRectTexture tkRectTexture;
-    tkRectTexture.textureID = tkccTexture.textureID;
-    tkRectTexture.position[3] = {
-        tkccTexture.positionsInScene.bottomleft.x*2.0f - 1.0f,
-        (1.0f - tkccTexture.positionsInScene.bottomleft.y)*2.0f - 1.0f,
-        1.0f
-    };
-    tkRectTexture.position[2] = {
-        tkccTexture.positionsInScene.bottomright.x*2.0f - 1.0f,
-        (1.0f - tkccTexture.positionsInScene.bottomright.y)*2.0f - 1.0f,
-        1.0f
-    };
-    tkRectTexture.position[1] = {
-        tkccTexture.positionsInScene.topleft.x*2.0f - 1.0f,
-        (1.0f - tkccTexture.positionsInScene.topleft.y)*2.0f - 1.0f,
-        1.0f
-    };
-    tkRectTexture.position[0] = {
-        tkccTexture.positionsInScene.topright.x*2.0f - 1.0f,
-        (1.0f - tkccTexture.positionsInScene.topright.y)*2.0f - 1.0f,
-        1.0f
-    };
-    
-    return tkRectTexture;
-}
 
 //- (TKRectTexture)convertTKCCTextureToTKRectTexture:(TKCCTexture)tkccTexture {
 //    TKRectTexture tkRectTexture;

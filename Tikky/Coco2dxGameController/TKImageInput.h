@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)swapCamera;
 - (AVCaptureDevicePosition)cameraPosition;
 
+- (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+
 @end
 
 @interface TKPhoto : TKImageInput

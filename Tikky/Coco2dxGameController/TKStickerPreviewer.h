@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #include "StickerScene.h"
 #include "cocos2d.h"
+#include "TKUtilities.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene;
 
-- (std::vector<TKCCTexture> *)getStickerTextures;
+- (NSData *)getStickerTextures;
 
 - (void)newStaticStickerWithPath:(NSString *)path;
 - (void)newFrameStickerWithPath:(NSString *)path;

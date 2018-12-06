@@ -55,7 +55,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
         return nil;
     }
     
-    _textureStickerList = nil;
+    _textureStickers = nil;
     return self;
 }
 
@@ -104,20 +104,22 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
-    if (_textureStickerList) {
-        for (int i = 0; i < _textureStickerList->size(); i++) {
+    TKRectTexture* rectTextures = (TKRectTexture *)_textureStickers.bytes;
+    NSUInteger size = _textureStickers.length;
+    if (rectTextures) {
+        for (int i = 0; i < size; i++) {
             glActiveTexture(GL_TEXTURE2 + i + 1);
-            NSLog(@"%d", _textureStickerList[0][i].textureID);
-            glBindTexture(GL_TEXTURE_2D, _textureStickerList[0][i].textureID);
+            NSLog(@"%d", rectTextures[i].textureID);
+            glBindTexture(GL_TEXTURE_2D, rectTextures[i].textureID);
             
             glUniform1i(filterInputTextureUniform, i + 3);
             
-            glVertexAttribPointer(filterPositionAttribute, 3, GL_FLOAT, 0, 0, _textureStickerList[0][i].position);
+            glVertexAttribPointer(filterPositionAttribute, 3, GL_FLOAT, 0, 0, rectTextures[i].position);
             glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
             glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
         }
     }
-
+    
 //    //----->
 
 //    //----->
@@ -139,8 +141,8 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     }
 }
 
-- (void)setTextureStickerList:(std::vector<TKRectTexture> *)textureStickerList {
-    _textureStickerList = textureStickerList;
+- (void)setTextureStickers:(NSData *)textureStickers {
+    _textureStickers = textureStickers;
 }
 
 - (void)newFrameReadyAtTime:(CMTime)frameTime atIndex:(NSInteger)textureIndex;

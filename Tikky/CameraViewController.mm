@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 #import "TikkyEngine.h"
+#import <Photos/Photos.h>
 
 @interface CameraViewController ()
 
@@ -24,7 +25,7 @@
     [self.view addSubview:_tikkyEngine.view];
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
     [_camera swapCamera];
-    
+
     CGSize size = UIScreen.mainScreen.bounds.size;
     UIButton* shootButton = [[UIButton alloc] initWithFrame:(CGRectMake(0, size.height - 80, size.width, 80))];
     [shootButton setTitle:@"Shoot" forState:(UIControlStateNormal)];
@@ -33,7 +34,46 @@
 }
 
 - (void)shoot:(UIButton *)sender {
-//    [_tikkyEngine capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:@"Tikky"];
+    [_tikkyEngine capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            NSMutableArray* assets = [[NSMutableArray alloc] init];
+            PHAssetChangeRequest* assetRequest;
+            @autoreleasepool {
+                //                CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) processedJPEG, NULL);
+                //                NSMutableData* newImageData =  [[NSMutableData alloc] init];
+                //
+                //                CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)newImageData, CGImageSourceGetType(source), 1, nil);
+                //                CGImageDestinationAddImageFromSource(destination, source, 0, (__bridge CFDictionaryRef) weakSelf.camera.currentCaptureMetadata);
+                //                CGImageDestinationFinalize(destination);
+                //                CFRelease(source);
+                //                CFRelease(destination);
+                ////
+                assetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageWithData:processedJPEG]];
+                [assets addObject:assetRequest.placeholderForCreatedAsset];
+            }
+
+            __block PHAssetCollectionChangeRequest* assetCollectionRequest = nil;
+            PHFetchResult* result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                PHAssetCollection* collection = (PHAssetCollection*)obj;
+                if ([collection isKindOfClass:[PHAssetCollection class]]) {
+                    if ([[collection localizedTitle] isEqualToString:@"Tikky"]) {
+                        assetCollectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
+                        [assetCollectionRequest addAssets:assets];
+                        *stop = YES;
+                    }
+                }
+            }];
+            if (assetCollectionRequest == nil) {
+                assetCollectionRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"Tikky"];
+                [assetCollectionRequest addAssets:assets];
+            }
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            //            if (block) {
+            //                block(error);
+            //            }
+        }];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

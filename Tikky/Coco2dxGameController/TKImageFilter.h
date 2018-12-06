@@ -14,9 +14,11 @@
 @property (nonatomic, readonly) UIView* view;
 @property (nonatomic) TKImageInput* input;
 @property (nonatomic) NSString* filter;
+@property (nonatomic) NSData* additionalTexture;
 
 - (instancetype)initWithInput:(TKImageInput *)input filter:(NSString *)filter;
 - (EAGLSharegroup *)sharegroup;
+
 - (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
 //- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName;
 

@@ -8,13 +8,14 @@
 
 #import "TKImageFilter.h"
 #import "GPUImage.h"
+#import "GPUImageStickerFilter.h"
 
 @interface TKImageFilter ()
 
 @property (nonatomic) GPUImageOutput* gpuimageOutput;
 @property (nonatomic) GPUImageFilterGroup* gpuimageFilterGroup;
 @property (nonatomic) GPUImageView* gpuimageView;
-
+@property (nonatomic) GPUImageStickerFilter* gpuimageStickerFilter;
 @property (nonatomic) NSMutableDictionary* filterList;
 @property (nonatomic) NSMutableDictionary* lookupFilterList;
 
@@ -54,6 +55,7 @@
     [_lookupFilterList setObject:@"" forKey:@""];
     [_lookupFilterList setObject:@"" forKey:@""];
     
+    _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];
     _gpuimageOutput = nil;
     _gpuimageFilterGroup = [[GPUImageFilterGroup alloc] init];
     GPUImageFilter* defaultFilter = [[GPUImageFilter alloc] init];
@@ -66,6 +68,32 @@
     [defaultFilter addTarget:_gpuimageView];
 
     return self;
+}
+
+- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *, NSError *))block {
+    if (!block) {
+        return;
+    }
+    
+    TKCamera* camera = (TKCamera *)_input;
+    if (camera && [_input isKindOfClass:TKCamera.class]) {
+
+        if (_additionalTexture) {
+            [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
+            [_gpuimageFilterGroup.terminalFilter addTarget:_gpuimageStickerFilter];
+            [camera capturePhotoAsJPEGWithFilterObject:_gpuimageStickerFilter completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+                block(processedJPEG, error);
+            }];
+        } else {
+            __weak __typeof(self)weakSelf = self;
+            [camera capturePhotoAsJPEGWithFilterObject:_gpuimageFilterGroup.terminalFilter completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+                GPUImageFilter* prevOfLastFiler = [weakSelf.gpuimageFilterGroup.initialFilters objectAtIndex:weakSelf.gpuimageFilterGroup.initialFilters.count - 2];
+                [prevOfLastFiler removeTarget:weakSelf.gpuimageStickerFilter];
+                block(processedJPEG, error);
+            }];
+        }
+
+    }
 }
 
 #pragma mark - Properties's getter, setter
@@ -102,7 +130,7 @@
         _filter = nil;
         return;
     }
-    
+
     if (_gpuimageFilterGroup.terminalFilter) {
         [_gpuimageFilterGroup.terminalFilter removeTarget:_gpuimageView];
     }
@@ -112,5 +140,6 @@
     _gpuimageFilterGroup.terminalFilter = filterInstance;
     [filterInstance addTarget:_gpuimageView];
 }
+
 
 @end
