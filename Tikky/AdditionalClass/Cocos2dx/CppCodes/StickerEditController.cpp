@@ -162,8 +162,6 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             this->tapStickerAnimation();
             isTouchBeganInside = false;
         }
-        _recyclingBin->setVisible(false);
-        _recyclingBin->setScale(0.5f);
         
         if (_recyclingBin->getBoundingBox().containsPoint(location)) {
             auto scale0Action = ScaleTo::create(0.1f, 0.01f);
@@ -172,6 +170,9 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             _sticker->runAction(seqAction);
             _sticker = nullptr;
         }
+        
+        _recyclingBin->setVisible(false);
+        _recyclingBin->setScale(0.5f);
     }
 }
 

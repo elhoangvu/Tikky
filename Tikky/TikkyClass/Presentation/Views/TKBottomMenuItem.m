@@ -65,22 +65,22 @@
         [self addSubview:self.imageView];
 
         [self.imageView.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1];
-        [self.imageView.heightAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1];
+        [self.imageView.heightAnchor constraintEqualToAnchor:self.imageView.widthAnchor];
 
         _imageView.center = CGPointMake(self.frame.size.width  / 2,
                                          self.frame.size.height / 2);
     }
 }
 
-- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
-    CGSize newSize;
-    newSize.width = size.width / 2.0;
-    newSize.height = size.height / 2.0;
-    UIGraphicsBeginImageContext(newSize);
-    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return destImage;
-}
+//- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+//    CGSize newSize;
+//    newSize.width = size.width / 2.0;
+//    newSize.height = size.height / 2.0;
+//    UIGraphicsBeginImageContext(newSize);
+//    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+//    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    return destImage;
+//}
 
 @end

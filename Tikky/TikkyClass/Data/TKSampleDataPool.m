@@ -51,7 +51,10 @@
     _stickerList = [NSMutableArray array];
     
     NSMutableArray* stickerName = [NSMutableArray array];
-    [stickerName addObject:@"recyclingbin"];
+    [stickerName addObject:@"sticker-panda"];
+    [stickerName addObject:@"sticker-funny-king"];
+    [stickerName addObject:@"sticker-mario"];
+    [stickerName addObject:@"sticker-astronaut"];
     
     for (NSString* name in stickerName) {
         NSString* path = [NSBundle.mainBundle pathForResource:name ofType:@"png"];

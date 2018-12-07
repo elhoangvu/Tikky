@@ -42,6 +42,10 @@
 		B70E0FB121B9545700012236 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0F9E21B9545600012236 /* TKTopMenuItem.m */; };
 		B70E0FB221B9545700012236 /* TKBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0FA121B9545600012236 /* TKBottomMenu.m */; };
 		B70E0FB321B9545700012236 /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70E0FA221B9545600012236 /* TKBottomMenuItem.m */; };
+		B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */ = {isa = PBXBuildFile; fileRef = B70FDCB121BB16AC00FCCF8D /* sticker-panda.png */; };
+		B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */ = {isa = PBXBuildFile; fileRef = B70FDCB421BB1ADC00FCCF8D /* sticker-mario.png */; };
+		B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */ = {isa = PBXBuildFile; fileRef = B70FDCB621BB1AE200FCCF8D /* sticker-funny-king.png */; };
+		B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */ = {isa = PBXBuildFile; fileRef = B70FDCB821BB1AE500FCCF8D /* sticker-astronaut.png */; };
 		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
@@ -196,6 +200,10 @@
 		B70E0FA221B9545600012236 /* TKBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuItem.m; sourceTree = "<group>"; };
 		B70E0FA321B9545600012236 /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
 		B70E0FA421B9545600012236 /* TKTopSubMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubMenuItem.h; sourceTree = "<group>"; };
+		B70FDCB121BB16AC00FCCF8D /* sticker-panda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-panda.png"; sourceTree = "<group>"; };
+		B70FDCB421BB1ADC00FCCF8D /* sticker-mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-mario.png"; sourceTree = "<group>"; };
+		B70FDCB621BB1AE200FCCF8D /* sticker-funny-king.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-funny-king.png"; sourceTree = "<group>"; };
+		B70FDCB821BB1AE500FCCF8D /* sticker-astronaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-astronaut.png"; sourceTree = "<group>"; };
 		B717051321985697006409F0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
@@ -435,6 +443,10 @@
 		B74AA87821BB0FD500D63E19 /* Stickers */ = {
 			isa = PBXGroup;
 			children = (
+				B70FDCB821BB1AE500FCCF8D /* sticker-astronaut.png */,
+				B70FDCB621BB1AE200FCCF8D /* sticker-funny-king.png */,
+				B70FDCB421BB1ADC00FCCF8D /* sticker-mario.png */,
+				B70FDCB121BB16AC00FCCF8D /* sticker-panda.png */,
 			);
 			path = Stickers;
 			sourceTree = "<group>";
@@ -697,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */,
+				B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				B751918621BA9EF600F64A21 /* lookup-vintage.png in Resources */,
 				B751917121BA9EF600F64A21 /* lookup-floyd.png in Resources */,
@@ -730,9 +743,12 @@
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
 				B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
+				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
+				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
+				B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
 			);

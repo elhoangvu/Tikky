@@ -62,25 +62,25 @@
             });
         }];
     } else if ([nameItem isEqualToString:@"capture"]) {
-//        [self capturePhoto];
+        [self capturePhoto];
         
-        static bool isStart = NO;
-        static NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
-        if (!isStart) {
-            unlink([pathToMovie UTF8String]);
-        }
-        static NSURL* movieURL = [NSURL fileURLWithPath:pathToMovie];
-        if (isStart == NO) {
-            [_camera prepareVideoWriterWithURL:movieURL size:CGSizeMake(720, 1280)];
-            [_camera startVideoRecording];
-            isStart = YES;
-            NSLog(@">>>> HV > START RECORDING");
-        } else {
-            [_camera stopVideoRecording];
-            isStart = NO;
-            [self writeVideoToLibraryWithURL:movieURL];
-            NSLog(@">>>> HV > STOP RECORDING");
-        }
+//        static bool isStart = NO;
+//        static NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
+//        if (!isStart) {
+//            unlink([pathToMovie UTF8String]);
+//        }
+//        static NSURL* movieURL = [NSURL fileURLWithPath:pathToMovie];
+//        if (isStart == NO) {
+//            [_camera prepareVideoWriterWithURL:movieURL size:CGSizeMake(720, 1280)];
+//            [_camera startVideoRecording];
+//            isStart = YES;
+//            NSLog(@">>>> HV > START RECORDING");
+//        } else {
+//            [_camera stopVideoRecording];
+//            isStart = NO;
+//            [self writeVideoToLibraryWithURL:movieURL];
+//            NSLog(@">>>> HV > STOP RECORDING");
+//        }
     } else if ([nameItem isEqualToString:@"filter"]) {
         long rand = (long)arc4random_uniform((unsigned int)_filters.count);
         NSString* filterName = [_filters objectAtIndex:rand];
