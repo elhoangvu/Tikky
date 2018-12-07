@@ -9,14 +9,14 @@
 #import "TKImageFilter.h"
 #import "GPUImage.h"
 #import "GPUImageStickerFilter.h"
+#import "TKSampleDataPool.h"
 
 @interface TKImageFilter ()
 
 @property (nonatomic) GPUImageFilterPipeline* filterPipeline;
 @property (nonatomic) GPUImageView* gpuimageView;
 @property (nonatomic) GPUImageStickerFilter* gpuimageStickerFilter;
-@property (nonatomic) NSMutableDictionary* filterList;
-@property (nonatomic) NSMutableDictionary* lookupFilterList;
+@property (nonatomic) NSDictionary* filterList;
 
 @end
 
@@ -38,21 +38,7 @@
         return nil;
     }
     
-    _filterList = [NSMutableDictionary dictionary];
-    _lookupFilterList = [NSMutableDictionary dictionary];
-    
-    [_filterList setObject:@"GPUImageBrightnessFilter" forKey:@"BRIGHTNESS"];
-    [_filterList setObject:@"GPUImageLevelsFilter" forKey:@"LEVELS"];
-    [_filterList setObject:@"GPUImageSaturationFilter" forKey:@"SATURATION"];
-    [_filterList setObject:@"GPUImageContrastFilter" forKey:@"CONTRAST"];
-    [_filterList setObject:@"GPUImageGammaFilter" forKey:@"GAMMA"];
-    [_filterList setObject:@"GPUImageFilter" forKey:@"DEFAULT"];
-    
-    [_lookupFilterList setObject:@"" forKey:@""];
-    [_lookupFilterList setObject:@"" forKey:@""];
-    [_lookupFilterList setObject:@"" forKey:@""];
-    [_lookupFilterList setObject:@"" forKey:@""];
-    [_lookupFilterList setObject:@"" forKey:@""];
+    _filterList = TKSampleDataPool.sharedInstance.filterResources;
     
     self.input = input;
     
@@ -69,6 +55,11 @@
     if (!block) {
         return;
     }
+    
+    if (!_datasource || ![_datasource respondsToSelector:@selector(additionalTexturesForImageFilter:)]) {
+        return;
+    }
+    _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
     
     TKCamera* camera = (TKCamera *)_input;
     if (camera && [_input isKindOfClass:TKCamera.class]) {
@@ -125,27 +116,30 @@
     _input = input;
 }
 
-- (BOOL)addFilter:(NSString *)filter {
-    GPUImageFilter* newFilter = [self createFilterWithString:filter name:filter];
-    if (!filter) {
+- (BOOL)addFilter:(TKFilter *)filter {
+    GPUImageFilter* gpuiamgeFilter = (GPUImageFilter *)filter.sharedObject;
+    if (!gpuiamgeFilter) {
         return NO;
     }
-    [_filterPipeline addFilter:newFilter];
+    [_filterPipeline addFilter:gpuiamgeFilter];
     return YES;
 }
 
-- (BOOL)replaceFilter:(NSString *)filter withFilter:(NSString *)newFilter addNewFilterIfNotExist:(BOOL)isAdd {
-    GPUImageFilter* newFilter_ = [self createFilterWithString:newFilter name:newFilter];
+- (BOOL)replaceFilter:(TKFilter *)filter withFilter:(TKFilter *)newFilter addNewFilterIfNotExist:(BOOL)isAdd {
+    if (!newFilter) {
+        return NO;
+    }
+    GPUImageFilter* newFilter_ = (GPUImageFilter *)newFilter.sharedObject;
     if (!newFilter_) {
         return NO;
     }
     
     __block BOOL isReplace = NO;
-    if (filter) {
+    if (filter && filter.sharedObject) {
         __weak __typeof(self)weakSelf = self;
         for (NSUInteger i = 0; i < _filterPipeline.filters.count; i += 1) {
             GPUImageFilter* filter_ = (GPUImageFilter *)[_filterPipeline.filters objectAtIndex:i];
-            if ([filter_.name isEqualToString:filter]) {
+            if (filter_ == filter.sharedObject) {
                 [weakSelf.filterPipeline replaceFilterAtIndex:i withFilter:newFilter_];
                 isReplace = YES;
             }
@@ -156,34 +150,19 @@
         [_filterPipeline addFilter:newFilter_];
         isReplace = YES;
     }
+    
+//    if (_filterPipeline.filters.count > 1) {
+//        NSLog(@">>>> HV > BUG");
+//    }
     return isReplace;
 }
 
-- (GPUImageFilter *)createFilterWithString:(NSString *)filterString name:(NSString *)name {
-    if (!filterString || [filterString isEqualToString:@""]) {
-        return nil;
-    }
-    NSString* uppercaseFilter = filterString.uppercaseString;
-    NSString* filterClass = [_filterList objectForKey:uppercaseFilter];
-    if (!filterClass || [filterClass isEqualToString:@""]) {
-        return nil;
-    }
-    
-    GPUImageFilter* filterInstance = (GPUImageFilter *)[[NSClassFromString(filterClass) alloc] init];
-    filterInstance.name = name;
-    if ([name isEqualToString:@"GAMMA"]) {
-        GPUImageGammaFilter* gamma = (GPUImageGammaFilter *)filterInstance;
-        gamma.gamma = 2.0f;
-    }
-    return filterInstance;
-}
-
-- (BOOL)removeFilter:(NSString *)filter {
+- (BOOL)removeFilter:(TKFilter *)filter {
     __block BOOL isRemove = NO;
     __weak __typeof(self)weakSelf = self;
     for (NSUInteger i = 0; i < _filterPipeline.filters.count; i += 1) {
         GPUImageFilter* filter_ = (GPUImageFilter *)[_filterPipeline.filters objectAtIndex:i];
-        if ([filter_.name isEqualToString:filter]) {
+        if (filter_ == filter.sharedObject) {
             [weakSelf.filterPipeline removeFilter:filter_];
             isRemove = YES;
         }
@@ -191,13 +170,9 @@
 
     return isRemove;
 }
-//
-//- (BOOL)setFilter:(NSString *)filter property:(NSString *)property constant:(float)constant {
-//    
-//}
-//
-//- (NSDictionary *)getPropertyWithFilter:(NSString *)filter {
-//    
-//}
+
+- (void)removeAllFilter {
+    [_filterPipeline removeAllFilters];
+}
 
 @end

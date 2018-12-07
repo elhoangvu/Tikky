@@ -13,7 +13,7 @@
 
 //TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
-@interface TikkyEngine () <Cocos2dXGameControllerDelegate>
+@interface TikkyEngine () <Cocos2dXGameControllerDelegate, TKImageFilterDatasource>
 
 @property (nonatomic) CCEAGLView* cceaglView;
 
@@ -62,20 +62,20 @@
     return instance;
 }
 
-- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block {
-    if (!block) {
-        return;
-    }
-    NSData* textures = [_stickerPreviewer getStickerTextures];
-    
-    if (_stickerPreviewer) {
-        [_imageFilter setAdditionalTexture:textures];
-    }
-
-    [_imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-        block(processedJPEG, error);
-    }];
-}
+//- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block {
+//    if (!block) {
+//        return;
+//    }
+//    NSData* textures = [_stickerPreviewer getStickerTextures];
+//    
+//    if (_stickerPreviewer) {
+//        [_imageFilter setAdditionalTexture:textures];
+//    }
+//
+//    [_imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+//        block(processedJPEG, error);
+//    }];
+//}
 //
 //- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName {
 //    __weak __typeof(self)weakSelf = self;
@@ -173,6 +173,12 @@
         [gameController backToApp];
         [self.view removeFromSuperview];
     }];
+}
+
+#pragma mark - TKImageFilterDatasource
+
+- (NSData *)additionalTexturesForImageFilter:(TKImageFilter *)imageFilter {
+    return [_stickerPreviewer getStickerTextures];
 }
 
 @end

@@ -16,11 +16,8 @@
 @property (nonatomic, readonly) TKStickerPreviewer* stickerPreviewer;
 @property (nonatomic) TKImageFilter* imageFilter;
 
-//
-- (void)capture;
-
 + (instancetype)sharedInstance;
-- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+//- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
 //- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName;
 
 @end

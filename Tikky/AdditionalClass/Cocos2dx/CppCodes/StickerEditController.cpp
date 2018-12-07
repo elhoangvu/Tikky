@@ -205,6 +205,10 @@ int StickerEditController::getFrontZOrder() {
 void StickerEditController::addSticker(cocos2d::Sprite* sticker) {
     if (sticker) {
         this->addChild(sticker, ++_frontZOrder);
+        auto scaleInAction = ScaleTo::create(0.05f, 0.1f);
+        auto scaleOutAction = ScaleTo::create(0.05f, sticker->getScale());
+        auto seqAction = Sequence::create(scaleInAction, scaleOutAction, nullptr);
+        sticker->runAction(seqAction);
     }
 }
 

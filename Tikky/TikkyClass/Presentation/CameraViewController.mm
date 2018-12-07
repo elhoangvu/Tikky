@@ -12,6 +12,9 @@
 
 #import "TKBottomMenu.h"
 #import "TKTopMenu.h"
+#import "TKSampleDataPool.h"
+
+#import "GPUImage.h"
 
 @interface CameraViewController () <TKBottomItemDelegate>
 
@@ -23,7 +26,7 @@
 @property (nonatomic) NSMutableArray* stickers;
 @property (nonatomic) NSMutableArray* filters;
 
-@property (nonatomic) NSInteger lastFilterIndex;
+@property (nonatomic) TKFilter* lastFilter;
 
 @end
 
@@ -32,35 +35,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSMutableArray* stickerName = [NSMutableArray array];
-    [stickerName addObject:@"recyclingbin"];
-    [stickerName addObject:@"lookup_amatorka"];
-    [stickerName addObject:@"scale50"];
-    [stickerName addObject:@"emoji"];
-    _stickers = [NSMutableArray array];
-
-    for (NSString* name in stickerName) {
-        NSString* path = [NSBundle.mainBundle pathForResource:name ofType:@"png"];
-        if (path) {
-            [_stickers addObject:path];
-        }
-    }
-    
-    _filters = [NSMutableArray array];
-    [_filters addObject:@"BRIGHTNESS"];
-    [_filters addObject:@"LEVELS"];
-    [_filters addObject:@"SATURATION"];
-    [_filters addObject:@"GAMMA"];
-    [_filters addObject:@"CONTRAST"];
-    [_filters addObject:@"DEFAULT"];
-
-    _lastFilterIndex = 0;
+    _stickers = TKSampleDataPool.sharedInstance.stickerList;
+    _filters = TKSampleDataPool.sharedInstance.filterList;
     
     _tikkyEngine = TikkyEngine.sharedInstance;
     [self.view addSubview:_tikkyEngine.view];
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
     [_camera swapCamera];
-    
+    GPUImageFilter* filter = (GPUImageFilter *)[[NSClassFromString(@"GPUImageContrastFilter") alloc] init];
     //    CGSize size = UIScreen.mainScreen.bounds.size;
     //    UIButton* shootButton = [[UIButton alloc] initWithFrame:(CGRectMake(0, size.height - 80, size.width, 80))];
     //    [shootButton setTitle:@"Shoot" forState:(UIControlStateNormal)];
@@ -105,8 +87,14 @@
         [self shoot:nil];
     } else if ([nameItem isEqualToString:@"filter"]) {
         long rand = (long)arc4random_uniform((unsigned int)_filters.count);
-        [_tikkyEngine.imageFilter replaceFilter:[_filters objectAtIndex:_lastFilterIndex] withFilter:[_filters objectAtIndex:rand] addNewFilterIfNotExist:YES];
-        _lastFilterIndex = rand;
+        NSString* filterName = [_filters objectAtIndex:rand];
+        TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+        [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+        _lastFilter = filter;
+        if (!filter) {
+            NSLog(@">>>> HV > filter nil");
+        }
+        NSLog(@">>>> HV > filter name: %@", filterName);
     } else if ([nameItem isEqualToString:@"frame"]) {
         
     } else if ([nameItem isEqualToString:@"emoji"]) {
@@ -118,7 +106,7 @@
 }
 
 - (void)shoot:(UIButton *)sender {
-    [_tikkyEngine capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    [_tikkyEngine.imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             NSMutableArray* assets = [[NSMutableArray alloc] init];
             PHAssetChangeRequest* assetRequest;

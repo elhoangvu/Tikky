@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKFilterProperty.h"
 
 @interface TKFilter : NSObject
 
-@property (nonatomic, readonly, weak) NSObject* sharedObject;
+@property (nonatomic, readonly) NSObject* sharedObject;
 @property (nonatomic, readonly) NSString* name;
+@property (nonatomic, readonly) NSArray<TKFilterProperty *>* property;
 
 - (instancetype)initWithName:(NSString *)name;
 
