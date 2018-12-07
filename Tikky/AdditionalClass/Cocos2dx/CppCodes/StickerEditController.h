@@ -43,7 +43,7 @@ public:
     
     int getFrontZOrder();
     
-    void addSticker(cocos2d::Sprite* sticker);
+    void addSticker(cocos2d::Sprite* sticker, bool isAnimation = false);
     void removeAllSticker();
 
     bool init();

@@ -202,13 +202,17 @@ int StickerEditController::getFrontZOrder() {
     return _frontZOrder;
 }
 
-void StickerEditController::addSticker(cocos2d::Sprite* sticker) {
+void StickerEditController::addSticker(cocos2d::Sprite* sticker, bool isAnimation) {
     if (sticker) {
         this->addChild(sticker, ++_frontZOrder);
-        auto scaleInAction = ScaleTo::create(0.05f, 0.1f);
-        auto scaleOutAction = ScaleTo::create(0.05f, sticker->getScale());
-        auto seqAction = Sequence::create(scaleInAction, scaleOutAction, nullptr);
-        sticker->runAction(seqAction);
+        if (isAnimation) {
+            auto scaleOutAction = ScaleTo::create(0.25f, sticker->getScale()*1.2f);
+            auto scaleInAction = ScaleTo::create(0.075f, sticker->getScale());
+            sticker->setScale(0.01f);
+            
+            auto seqAction = Sequence::create(scaleOutAction, scaleInAction, nullptr);
+            sticker->runAction(seqAction);
+        }
     }
 }
 
@@ -222,125 +226,3 @@ void StickerEditController::removeAllSticker() {
         }
     }
 }
-//
-//bool StickerEditViewController::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
-//    if (!_stickersParent) {
-//        return false;
-//    }
-//
-//    auto childs = _stickersParent->getChildren();
-//    if (!childs.empty()) {
-//        Node::sortDecsNodes(childs);
-//        auto point = touch->getLocation();
-//        for (auto child : childs) {
-//            if (child->getTag() == StickerType::STATIC_STICKER && child->isVisible()) {
-//                auto zOrder = child->getLocalZOrder();
-//                if (_frontZOrder < zOrder) {
-//                    _frontZOrder = zOrder;
-//                }
-//                Sprite* sticker = dynamic_cast<Sprite *>(child);
-//                if (sticker && sticker->getBoundingBox().containsPoint(point)) {
-//                    _sticker = child;
-//                    _stickersParent->reorderChild(_sticker, 1000);
-//                    this->drawStickerRect();
-//                    return true;
-//                }
-//            }
-//        }
-//    }
-//
-//    childs = this->getChildren();
-//    if (!childs.empty()) {
-//        auto point = touch->getLocation();
-//        for (auto child : childs) {
-//            Sprite* sticker = dynamic_cast<Sprite *>(child);
-//            if (sticker && child->isVisible() && sticker->getBoundingBox().containsPoint(point)) {
-//                if (child->getTag() == StickerEditType::CLOSE_EDIT_BUTTON) {
-//                    _isTouchCloseButton = true;
-//                    return true;
-//                } else if (child->getTag() == StickerEditType::SCALE_STICKER_BUTTON) {
-//                    _isTouchScaleButton = true;
-//                    return true;
-//                }
-//            }
-//        }
-//    }
-//
-//    _isTouchScaleButton = false;
-//    _isTouchCloseButton = false;
-//    if (_sticker) {
-//        if (_frontZOrder != _sticker->getLocalZOrder()) {
-//            _frontZOrder++;
-//            _stickersParent->reorderChild(_sticker, _frontZOrder);
-//        }
-//
-//        this->clearEditView();
-//    }
-//    return false;
-//}
-//
-//bool StickerEditViewController::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event) {
-//    if (!_isTouchCloseButton) {
-//        auto offsetVec2 = touch->getDelta();
-//        if (!_isTouchScaleButton) {
-//            if (_sticker) {
-//                auto stickerPosition = _sticker->getPosition() + offsetVec2;
-//                _sticker->setPosition(stickerPosition);
-//                this->drawStickerRect();
-//            }
-//        } else {
-//
-//        }
-//    }
-//
-//    return true;
-//}
-//
-//bool StickerEditViewController::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
-//
-//    if (touch->getStartLocation() == touch->getLocation()) {
-//        if (_isTouchCloseButton) {
-//            auto scale0Action = ScaleTo::create(0.1f, 0.01f);
-//            auto removeAction = RemoveSelf::create();
-//            auto seqAction = Sequence::create(scale0Action, removeAction, NULL);
-//            _sticker->runAction(seqAction);
-//            this->clearEditView();
-//        } else if (_sticker) {
-//            log(">>>> %d", _sticker->getLocalZOrder());
-//            auto scaleInAction = ScaleTo::create(0.075f, 0.8f);
-//            auto scaleOutAction = ScaleTo::create(0.075f, 1.0f);
-//            auto seqAction = Sequence::create(scaleInAction, scaleOutAction, NULL);
-//            _sticker->runAction(seqAction);
-//        }
-//
-//    }
-////        _sticker = nullptr;
-//    _isTouchScaleButton = false;
-//    _isTouchCloseButton = false;
-//    return true;
-//}
-//
-//
-//void StickerEditViewController::drawStickerRect() {
-//    _drawNode->clear();
-//
-//    auto stickerPosition = _sticker->getPosition();
-//    auto contentSize = _sticker->getContentSize();
-//    auto anchorPoint = _sticker->getAnchorPoint();
-//    auto halfSize = Size(contentSize.width * anchorPoint.x, contentSize.height * anchorPoint.y);
-//    auto topleft = Vec2(stickerPosition.x - halfSize.width, stickerPosition.y + contentSize.height - halfSize.height) + Vec2(-5, 5);
-//    auto bottomright = Vec2(stickerPosition.x + contentSize.width - halfSize.width, stickerPosition.y - halfSize.height) + Vec2(5, -5);
-//    _drawNode->drawRect(topleft, bottomright, Color4F(1.0f, 1.0f ,1.0f , 0.5f));
-//
-//    _editStickerCloseButton->setPosition(topleft);
-//    _scaleStickerButton->setPosition(bottomright);
-//    _editStickerCloseButton->setVisible(true);
-//    _scaleStickerButton->setVisible(true);
-//}
-//
-//void StickerEditViewController::clearEditView() {
-//    _sticker = nullptr;
-//    _drawNode->clear();
-//    _editStickerCloseButton->setVisible(false);
-//    _scaleStickerButton->setVisible(false);
-//}

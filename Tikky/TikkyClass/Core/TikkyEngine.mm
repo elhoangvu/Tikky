@@ -29,6 +29,7 @@
     }
     
     _imageFilter = [[TKImageFilter alloc] init];
+    _imageFilter.datasource = self;
     _sharegroup = _imageFilter.sharegroup;
     
     CGRect rect = CGRectMake(UIScreen.mainScreen.bounds.origin.x,
@@ -62,107 +63,6 @@
     return instance;
 }
 
-//- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block {
-//    if (!block) {
-//        return;
-//    }
-//    NSData* textures = [_stickerPreviewer getStickerTextures];
-//    
-//    if (_stickerPreviewer) {
-//        [_imageFilter setAdditionalTexture:textures];
-//    }
-//
-//    [_imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-//        block(processedJPEG, error);
-//    }];
-//}
-//
-//- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName {
-//    __weak __typeof(self)weakSelf = self;
-//    [self capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-//        [weakSelf.filter removeTarget:weakSelf.stickerFilter];
-//        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-//            NSMutableArray* assets = [[NSMutableArray alloc] init];
-//            PHAssetChangeRequest* assetRequest;
-//            @autoreleasepool {
-//                //                CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef) processedJPEG, NULL);
-//                //                NSMutableData* newImageData =  [[NSMutableData alloc] init];
-//                //
-//                //                CGImageDestinationRef destination = CGImageDestinationCreateWithData((CFMutableDataRef)newImageData, CGImageSourceGetType(source), 1, nil);
-//                //                CGImageDestinationAddImageFromSource(destination, source, 0, (__bridge CFDictionaryRef) weakSelf.camera.currentCaptureMetadata);
-//                //                CGImageDestinationFinalize(destination);
-//                //                CFRelease(source);
-//                //                CFRelease(destination);
-//                ////
-//                assetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageWithData:processedJPEG]];
-//                [assets addObject:assetRequest.placeholderForCreatedAsset];
-//            }
-//
-//            __block PHAssetCollectionChangeRequest* assetCollectionRequest = nil;
-//            PHFetchResult* result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-//            [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                PHAssetCollection* collection = (PHAssetCollection*)obj;
-//                if ([collection isKindOfClass:[PHAssetCollection class]]) {
-//                    if ([[collection localizedTitle] isEqualToString:albumName]) {
-//                        assetCollectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
-//                        [assetCollectionRequest addAssets:assets];
-//                        *stop = YES;
-//                    }
-//                }
-//            }];
-//            if (assetCollectionRequest == nil) {
-//                assetCollectionRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:albumName];
-//                [assetCollectionRequest addAssets:assets];
-//            }
-//        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-//            //            if (block) {
-//            //                block(error);
-//            //            }
-//        }];
-//    }];
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    [_camera startCameraCapture];
-//
-//    NSString* path = [NSBundle.mainBundle pathForResource:@"HelloWorld" ofType:@"png"];
-//    NSLog(@">>>> HV: %@", path);
-//    [TKLayerMask.sharedInstance newStickerWithPath:path];
-//    [TKLayerMask.sharedInstance newStickerWithPath:path];
-//    [TKLayerMask.sharedInstance newStickerWithPath:path];
-//}
-
-//- (void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
-//}
-
-
-//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-//    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-//
-//    auto glview = cocos2d::Director::getInstance()->getOpenGLView();
-//
-//    if (glview)
-//    {
-//        CCEAGLView *eaglview = (__bridge CCEAGLView *)glview->getEAGLView();
-//
-//        if (eaglview)
-//        {
-//            CGSize s = CGSizeMake([eaglview getWidth], [eaglview getHeight]);
-//            cocos2d::Application::getInstance()->applicationScreenSizeChanged((int) s.width, (int) s.height);
-//        }
-//    }
-//}
-
-
-
-//- (void)didReceiveMemoryWarning {
-//    // Releases the view if it doesn't have a superview.
-//    [super didReceiveMemoryWarning];
-//    
-//    // Release any cached data, images, etc that aren't in use.
-//}
 
 #pragma mark - Cocos2dXGameControllerDelegate
 
@@ -183,14 +83,3 @@
 
 @end
 
-
-//- (TKRectTexture)convertTKCCTextureToTKRectTexture:(TKCCTexture)tkccTexture {
-//    TKRectTexture tkRectTexture;
-//    tkRectTexture.textureID = tkccTexture.textureID;
-//    tkRectTexture.ptVertex[0] = TKPTVertexMake(TKPositionMake(1, 1, 1), TKTexCoordMake(1, 1));
-//    tkRectTexture.ptVertex[1] = TKPTVertexMake(TKPositionMake(1, 1, 1), TKTexCoordMake(1, 1));
-//    tkRectTexture.ptVertex[2] = TKPTVertexMake(TKPositionMake(1, 1, 1), TKTexCoordMake(1, 1));
-//    tkRectTexture.ptVertex[3] = TKPTVertexMake(TKPositionMake(1, 1, 1), TKTexCoordMake(1, 1));
-//
-//    return tkRectTexture;
-//}

@@ -17,8 +17,6 @@
 @property (nonatomic) TKImageFilter* imageFilter;
 
 + (instancetype)sharedInstance;
-//- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
-//- (void)capturePhotoAsJPEGAndSaveToPhotoLibraryWithAlbumName:(NSString *)albumName;
 
 @end
 

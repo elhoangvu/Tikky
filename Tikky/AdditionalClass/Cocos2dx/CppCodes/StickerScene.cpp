@@ -163,7 +163,7 @@ void StickerScene::newStaticStickerWithPath(std::string path) {
     sticker->setTag(StickerType::STATIC_STICKER);
     sticker->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
 
-    _stickerEditVC->addSticker(sticker);
+    _stickerEditVC->addSticker(sticker, true);
 }
 
 void StickerScene::newFrameStickerWithPath(std::string path) {
