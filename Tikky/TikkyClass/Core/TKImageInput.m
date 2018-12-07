@@ -18,6 +18,7 @@
 @interface TKCamera ()
 
 @property (nonatomic) GPUImageStillCamera* camera;
+@property (nonatomic) GPUImageMovieWriter* movieWriter;
 
 @end
 
@@ -71,20 +72,52 @@
     [_camera stopCameraCapture];
 }
 
-- (void)startVideoRecording {
+- (void)prepareVideoWriterWithURL:(NSURL *)url size:(CGSize)size {
+    _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size];
+    _movieWriter.encodingLiveVideo = YES;
+    _movieWriter.shouldPassthroughAudio = YES;
     
+    AudioChannelLayout channelLayout;
+    memset(&channelLayout, 0, sizeof(AudioChannelLayout));
+    channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
+    
+    NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [ NSNumber numberWithInt: kAudioFormatMPEG4AAC], AVFormatIDKey,
+                                   [ NSNumber numberWithInt: 2 ], AVNumberOfChannelsKey,
+                                   [ NSNumber numberWithFloat: 16000.0 ], AVSampleRateKey,
+                                   [ NSData dataWithBytes:&channelLayout length: sizeof( AudioChannelLayout ) ], AVChannelLayoutKey,
+                                   [ NSNumber numberWithInt: 32000 ], AVEncoderBitRateKey,
+                                   nil];
+    [_movieWriter setHasAudioTrack:TRUE audioSettings:audioSettings];
+}
+
+- (void)startVideoRecording {
+    if (!_movieWriter) {
+        NSAssert(NO, @"You must call prepareVideoWriterWithURL:size: to prepare resource for video writer");
+    }
+//    [_camera addTarget:_movieWriter];
+    if (_delegate && [_delegate respondsToSelector:@selector(camera:willStartRecordingWithMovieWriterObject:)]) {
+        [_delegate camera:self willStartRecordingWithMovieWriterObject:_movieWriter];
+    }
+    _camera.audioEncodingTarget = _movieWriter;
+    [_movieWriter startRecording];
 }
 
 - (void)pauseVideoRecording {
-    
+    [_movieWriter setPaused:YES];
 }
 
 - (void)resumeVideoRecording {
-    
+    [_movieWriter setPaused:NO];
 }
 
 - (void)stopVideoRecording {
-    
+//    [_camera removeTarget:_movieWriter];
+    if (_delegate && [_delegate respondsToSelector:@selector(camera:willStopRecordingWithMovieWriterObject:)]) {
+        [_delegate camera:self willStopRecordingWithMovieWriterObject:_movieWriter];
+    }
+    _camera.audioEncodingTarget = nil;
+    [_movieWriter finishRecording];
 }
 
 - (void)swapCamera {

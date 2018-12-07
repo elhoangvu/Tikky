@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TKCameraDelegate;
+
 @interface TKImageInput : NSObject
 
 @property (nonatomic, readonly, weak) NSObject* sharedObject;
@@ -21,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int32_t frameRate;
 @property (nonatomic, readonly) BOOL isRunning;
 @property (nonatomic) UIInterfaceOrientation outputImageOrientation;
+@property (nonatomic) id<TKCameraDelegate> delegate;
 
 - (instancetype)initWithSessionPreset:(NSString *)sessionPreset cameraPosition:(AVCaptureDevicePosition)cameraPosition;
 
@@ -29,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resumeCameraCapture;
 - (void)stopCameraCapture;
 
+- (void)prepareVideoWriterWithURL:(NSURL *)url size:(CGSize)size;
 - (void)startVideoRecording;
 - (void)pauseVideoRecording;
 - (void)resumeVideoRecording;
@@ -38,6 +42,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (AVCaptureDevicePosition)cameraPosition;
 
 - (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+
+@end
+
+@protocol TKCameraDelegate <NSObject>
+
+- (void)camera:(TKCamera *)camera willStartRecordingWithMovieWriterObject:(NSObject *)object;
+- (void)camera:(TKCamera *)camera willStopRecordingWithMovieWriterObject:(NSObject *)object;
 
 @end
 

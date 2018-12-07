@@ -11,11 +11,12 @@
 #import "GPUImageStickerFilter.h"
 #import "TKSampleDataPool.h"
 
-@interface TKImageFilter ()
+@interface TKImageFilter () <TKCameraDelegate>
 
 @property (nonatomic) GPUImageFilterPipeline* filterPipeline;
 @property (nonatomic) GPUImageView* gpuimageView;
 @property (nonatomic) GPUImageStickerFilter* gpuimageStickerFilter;
+@property (nonatomic) GPUImageMovieWriter* gpuimageMovieWriter;
 @property (nonatomic) NSDictionary* filterList;
 
 @end
@@ -92,7 +93,8 @@
     }
 }
 
-#pragma mark - Properties's getter, setter
+#pragma mark -
+#pragma mark Properties's getter, setter
 
 - (EAGLSharegroup *)sharegroup {
     return [[[GPUImageContext sharedImageProcessingContext] context] sharegroup];
@@ -114,6 +116,10 @@
     GPUImageOutput* input_ = (GPUImageOutput *)input.sharedObject;
     _filterPipeline.input = input_;
     _input = input;
+    if ([_input isKindOfClass:TKCamera.class]) {
+        TKCamera* camera = (TKCamera *)input;
+        camera.delegate = self;
+    }
 }
 
 - (BOOL)addFilter:(TKFilter *)filter {
@@ -173,6 +179,50 @@
 
 - (void)removeAllFilter {
     [_filterPipeline removeAllFilters];
+}
+
+#pragma mark -
+#pragma mark TKCameraDelegate
+
+- (void)camera:(TKCamera *)camera willStartRecordingWithMovieWriterObject:(NSObject *)object {
+    GPUImageMovieWriter* movieWriter = (GPUImageMovieWriter *)object;
+    
+    if (!_datasource || ![_datasource respondsToSelector:@selector(additionalTexturesForImageFilter:)]) {
+        return;
+    }
+    _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
+    
+    if (camera && [_input isKindOfClass:TKCamera.class]) {
+        if (_additionalTexture) {
+            __block BOOL isEmpty = NO;
+            [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
+            if (_filterPipeline.filters.count == 0) {
+                [_filterPipeline addFilter:_gpuimageStickerFilter];
+                isEmpty = YES;
+            } else {
+                [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
+            }
+            [_gpuimageStickerFilter addTarget:movieWriter];
+        } else {
+            [_filterPipeline.filters.lastObject addTarget:movieWriter];
+        }
+        
+    }
+    
+}
+
+- (void)camera:(TKCamera *)camera willStopRecordingWithMovieWriterObject:(NSObject *)object {
+    GPUImageMovieWriter* movieWriter = (GPUImageMovieWriter *)object;
+    if (_additionalTexture) {
+        if (_filterPipeline.filters.count == 1) {
+            [_filterPipeline removeFilter:_gpuimageStickerFilter];
+        } else {
+            [_filterPipeline.filters.lastObject removeTarget:_gpuimageStickerFilter];
+        }
+        [_gpuimageStickerFilter removeTarget:movieWriter];
+    } else {
+        [_filterPipeline.filters.lastObject removeTarget:movieWriter];
+    }
 }
 
 @end

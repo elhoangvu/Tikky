@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CameraViewController : UIViewController
 
+- (void)writeAssetsToAlbum:(NSMutableArray *)assets;
+
 @end
 
 NS_ASSUME_NONNULL_END
