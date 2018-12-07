@@ -60,7 +60,7 @@
     view = _gpuimageView;
     
     _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];
-    _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *) input.publicObject output:_gpuimageView];
+    _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *) input.sharedObject output:_gpuimageView];
 
     return self;
 }
@@ -112,7 +112,7 @@
           || [input isKindOfClass:TKCamera.class]
           || [input isKindOfClass:TKMovie.class]
           || [input isKindOfClass:TKPhoto.class]
-          || input.publicObject)) {
+          || input.sharedObject)) {
         return;
     }
     if ([_filterPipeline.input isKindOfClass:GPUImageVideoCamera.class]) {
@@ -120,7 +120,7 @@
         [videoCamera stopCameraCapture];
     }
 
-    GPUImageOutput* input_ = (GPUImageOutput *)input.publicObject;
+    GPUImageOutput* input_ = (GPUImageOutput *)input.sharedObject;
     _filterPipeline.input = input_;
     _input = input;
 }

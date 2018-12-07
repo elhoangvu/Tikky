@@ -25,7 +25,7 @@
 
 @synthesize isRunning = isRunning;
 @synthesize frameRate = frameRate;
-@synthesize publicObject = publicObject;
+@synthesize sharedObject = sharedObject;
 
 - (instancetype)init
 {
@@ -49,7 +49,7 @@
     
     isRunning = NO;
     frameRate = 0;
-    publicObject = _camera;
+    sharedObject = _camera;
     _camera.outputImageOrientation = UIInterfaceOrientationPortrait;
     
     return self;

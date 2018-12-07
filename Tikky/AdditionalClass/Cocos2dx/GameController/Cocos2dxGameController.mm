@@ -10,7 +10,6 @@
 #import "cocos2d.h"
 #import "CCAppDelegate.h"
 #import "platform/ios/CCEAGLView-ios.h"
-#import "base/CCDirector.h"
 #import "TKStickerPreviewer.h"
 
 @interface Cocos2dxGameController () {

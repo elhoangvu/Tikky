@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #include "StickerScene.h"
-#include "cocos2d.h"
-#include "TKUtilities.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -1311,8 +1311,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "-newStaticStickerWithPath:"
-            landmarkType = "7">
+            landmarkName = "TKStickerPreviewer"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

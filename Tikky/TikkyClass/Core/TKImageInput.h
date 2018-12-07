@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKImageInput : NSObject
 
-@property (nonatomic, readonly, weak) NSObject* publicObject;
+@property (nonatomic, readonly, weak) NSObject* sharedObject;
 
 @end
 
