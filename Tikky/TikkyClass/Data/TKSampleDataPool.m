@@ -52,9 +52,6 @@
     
     NSMutableArray* stickerName = [NSMutableArray array];
     [stickerName addObject:@"recyclingbin"];
-    [stickerName addObject:@"lookup_amatorka"];
-    [stickerName addObject:@"scale50"];
-    [stickerName addObject:@"emoji"];
     
     for (NSString* name in stickerName) {
         NSString* path = [NSBundle.mainBundle pathForResource:name ofType:@"png"];
@@ -99,7 +96,8 @@
                            @"1971"       : @{ @"class" : @"GPUImageLUTFilter" },
                            @"B & W"      : @{ @"class" : @"GPUImageLUTFilter" },
                            @"CHARCOAL"   : @{ @"class" : @"GPUImageLUTFilter" },
-                           @"CLARITY"    : @{ @"class" : @"GPUImageLUTFilter" } };
+                           @"CLARITY"    : @{ @"class" : @"GPUImageLUTFilter" },
+                           @"AMATORKA"   : @{ @"class" : @"GPUImageLUTFilter" } };
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];
     __weak __typeof(self)weakSelf = self;
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString* _Nonnull key, NSDictionary*  _Nonnull value, BOOL * _Nonnull stop) {
