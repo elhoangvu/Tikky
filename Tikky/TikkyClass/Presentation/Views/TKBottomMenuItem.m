@@ -63,12 +63,11 @@
         _imageView = imageView;
         self.imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:self.imageView];
-
-        [self.imageView.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1];
-        [self.imageView.heightAnchor constraintEqualToAnchor:self.imageView.widthAnchor];
-
-        _imageView.center = CGPointMake(self.frame.size.width  / 2,
-                                         self.frame.size.height / 2);
+//        _imageView.center = self.center;
+//        [_imageView setFrame:CGRectMake(self.frame.origin.x + self.frame.size.width/4,
+//                                         self.frame.origin.y - self.frame.size.width/4,
+//                                         self.frame.size.width/2,
+//                                         self.frame.size.width/2)];
     }
 }
 
