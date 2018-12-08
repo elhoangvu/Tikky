@@ -50,16 +50,22 @@
     [self.view addSubview:_selectionBar];
     _selectionBar.viewController = self;
     [self.view addSubview:navigationBar];
-    
-    NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
-    _movieURL = [NSURL fileURLWithPath:pathToMovie];
-    
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_camera startCameraCapture];
+    
+    NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
+    unlink([pathToMovie UTF8String]);
+    _movieURL = [NSURL fileURLWithPath:pathToMovie];
+    [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+    [_camera setEnableAudioForVideoRecording:YES];
+}
 
 - (void)clickItem:(NSString *)nameItem {
     if ([nameItem isEqualToString:@"assert_picker"]) {
-        __weak typeof(self)weakSelf = self;
+
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status){
             dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -69,10 +75,16 @@
 //        [self capturePhoto];
         
         static bool isStart = NO;
+        static bool isPrepare = NO;
         if (isStart == NO) {
             unlink([_movieURL.path UTF8String]);
-            [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+            if (isPrepare) {
+                [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+            } else {
+                isPrepare = YES;
+            }
             [_camera startVideoRecording];
+
             isStart = YES;
             NSLog(@">>>> HV > START RECORDING");
         } else {
@@ -165,10 +177,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [_camera startCameraCapture];
-}
 
 // For ios6, use supportedInterfaceOrientations & shouldAutorotate instead
 #ifdef __IPHONE_6_0

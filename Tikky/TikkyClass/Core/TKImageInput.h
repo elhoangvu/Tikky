@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isRunning;
 @property (nonatomic) UIInterfaceOrientation outputImageOrientation;
 @property (nonatomic) id<TKCameraDelegate> delegate;
+@property (nonatomic) BOOL enableAudioForVideoRecording;
 
 - (instancetype)initWithSessionPreset:(NSString *)sessionPreset cameraPosition:(AVCaptureDevicePosition)cameraPosition;
 

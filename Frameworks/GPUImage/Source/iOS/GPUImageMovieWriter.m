@@ -33,8 +33,10 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
     
     dispatch_queue_t audioQueue, videoQueue;
     BOOL audioEncodingIsFinished, videoEncodingIsFinished;
-
-    BOOL isRecording;
+    
+// <!-- TIKKY-REMOVE
+    //BOOL isRecording;
+// TIKKY-REMOVE -->
 }
 
 // Movie recording
@@ -64,6 +66,10 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
 @synthesize movieWriterContext = _movieWriterContext;
 
 @synthesize delegate = _delegate;
+
+// <!-- TIKKY-ADD
+@synthesize isRecording = isRecording;
+// TIKKY-ADD -->
 
 #pragma mark -
 #pragma mark Initialization and teardown

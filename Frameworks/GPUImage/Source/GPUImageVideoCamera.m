@@ -257,7 +257,6 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
 {
     if (audioOutput)
         return NO;
-    
     [_captureSession beginConfiguration];
     
     _microphone = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeAudio];
@@ -267,7 +266,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
         [_captureSession addInput:audioInput];
     }
     audioOutput = [[AVCaptureAudioDataOutput alloc] init];
-    
+
     if ([_captureSession canAddOutput:audioOutput])
     {
         [_captureSession addOutput:audioOutput];
@@ -276,8 +275,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
     {
         NSLog(@"Couldn't add audio output");
     }
-    [audioOutput setSampleBufferDelegate:self queue:audioProcessingQueue];
     
+    [audioOutput setSampleBufferDelegate:self queue:audioProcessingQueue];
     [_captureSession commitConfiguration];
     return YES;
 }

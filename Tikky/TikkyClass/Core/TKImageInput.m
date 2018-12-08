@@ -15,7 +15,7 @@
 
 // ----------------------------------------------
 
-@interface TKCamera ()
+@interface TKCamera () <GPUImageMovieWriterDelegate>
 
 @property (nonatomic) GPUImageStillCamera* camera;
 @property (nonatomic) GPUImageMovieWriter* movieWriter;
@@ -48,6 +48,7 @@
         return nil;
     }
     
+    _enableAudioForVideoRecording = NO;
     isRunning = NO;
     frameRate = 0;
     sharedObject = _camera;
@@ -89,9 +90,11 @@
                                    [ NSNumber numberWithInt: 32000 ], AVEncoderBitRateKey,
                                    nil];
     [_movieWriter setHasAudioTrack:TRUE audioSettings:audioSettings];
+    _movieWriter.delegate = self;
 }
 
 - (void)startVideoRecording {
+    
     if (!_movieWriter) {
         NSAssert(NO, @"You must call prepareVideoWriterWithURL:size: to prepare resource for video writer");
     }
@@ -99,7 +102,7 @@
     if (_delegate && [_delegate respondsToSelector:@selector(camera:willStartRecordingWithMovieWriterObject:)]) {
         [_delegate camera:self willStartRecordingWithMovieWriterObject:_movieWriter];
     }
-    _camera.audioEncodingTarget = _movieWriter;
+
     [_movieWriter startRecording];
 }
 
@@ -116,8 +119,19 @@
     if (_delegate && [_delegate respondsToSelector:@selector(camera:willStopRecordingWithMovieWriterObject:)]) {
         [_delegate camera:self willStopRecordingWithMovieWriterObject:_movieWriter];
     }
-    _camera.audioEncodingTarget = nil;
     [_movieWriter finishRecording];
+}
+
+- (void)setEnableAudioForVideoRecording:(BOOL)enableAudioForVideoRecording {
+    if (!_movieWriter || _movieWriter.isRecording) {
+        return;
+    }
+    _enableAudioForVideoRecording = enableAudioForVideoRecording;
+    if (enableAudioForVideoRecording) {
+        _camera.audioEncodingTarget = _movieWriter;
+    } else {
+        _camera.audioEncodingTarget = nil;
+    }
 }
 
 - (void)swapCamera {
@@ -137,7 +151,8 @@
     }];
 }
 
-#pragma mark - Properties's getter, setter
+#pragma mark -
+#pragma mark Properties's getter, setter
 
 - (BOOL)isRunning {
     return _camera.isRunning;
@@ -159,7 +174,19 @@
     [_camera setFrameRate:frameRate];
 }
 
+#pragma -
+#pragma mark GPUImageMovieWriterDelegate
+
+- (void)movieRecordingCompleted {
+    NSLog(@">>>> HV > movieRecordingCompleted");
+}
+
+- (void)movieRecordingFailedWithError:(NSError*)error {
+    NSLog(@">>>> HV > movieRecordingFailedWithError: %@", error.description);
+}
+
 @end
+
 
 // ----------------------------------------------
 
