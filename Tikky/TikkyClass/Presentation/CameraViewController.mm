@@ -56,11 +56,21 @@
     [super viewDidAppear:animated];
     [_camera startCameraCapture];
     
-    NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
-    unlink([pathToMovie UTF8String]);
-    _movieURL = [NSURL fileURLWithPath:pathToMovie];
-    [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
-    [_camera setEnableAudioForVideoRecording:YES];
+    static BOOL isSetupAudio = false;
+    if (!isSetupAudio) {
+        // Record video setup
+        NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
+        unlink([pathToMovie UTF8String]);
+        _movieURL = [NSURL fileURLWithPath:pathToMovie];
+        [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+        [_camera setEnableAudioForVideoRecording:YES];
+        isSetupAudio = YES;
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [_camera stopCameraCapture];
 }
 
 - (void)clickItem:(NSString *)nameItem {
@@ -72,8 +82,10 @@
             });
         }];
     } else if ([nameItem isEqualToString:@"capture"]) {
+        // capture photo
 //        [self capturePhoto];
         
+        // Record video
         static bool isStart = NO;
         static bool isPrepare = NO;
         if (isStart == NO) {

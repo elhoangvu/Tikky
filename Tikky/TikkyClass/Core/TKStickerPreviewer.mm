@@ -43,6 +43,7 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     }
     
     if (!stickerScene) {
+        NSAssert(NO, @"stickerScene should be not nil");
         return nil;
     }
     

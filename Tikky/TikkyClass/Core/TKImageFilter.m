@@ -65,7 +65,7 @@
     TKCamera* camera = (TKCamera *)_input;
     if (camera && [_input isKindOfClass:TKCamera.class]) {
         __weak __typeof(self)weakSelf = self;
-        if (_additionalTexture) {
+        if (_additionalTexture && _additionalTexture.length > 0) {
             __block BOOL isEmpty = NO;
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
             if (_filterPipeline.filters.count == 0) {
@@ -193,7 +193,7 @@
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
     
     if (camera && [_input isKindOfClass:TKCamera.class]) {
-        if (_additionalTexture) {
+        if (_additionalTexture && _additionalTexture.length > 0) {
             __block BOOL isEmpty = NO;
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
             if (_filterPipeline.filters.count == 0) {
@@ -206,14 +206,12 @@
         } else {
             [_filterPipeline.filters.lastObject addTarget:movieWriter];
         }
-        
     }
-    
 }
 
 - (void)camera:(TKCamera *)camera willStopRecordingWithMovieWriterObject:(NSObject *)object {
     GPUImageMovieWriter* movieWriter = (GPUImageMovieWriter *)object;
-    if (_additionalTexture) {
+    if (_additionalTexture && _additionalTexture.length > 0) {
         if (_filterPipeline.filters.count == 1) {
             [_filterPipeline removeFilter:_gpuimageStickerFilter];
         } else {

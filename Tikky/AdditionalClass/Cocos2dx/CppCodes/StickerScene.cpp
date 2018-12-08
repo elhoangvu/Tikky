@@ -51,80 +51,9 @@ bool StickerScene::init()
         return false;
     }
 
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-//    auto closeItem = MenuItemImage::create(
-//                                           "HelloWorld.png",
-//                                           "HelloWorld.png",
-//                                           CC_CALLBACK_1(StickerScene::getTexturesInScene, this));
-//
-//    if (closeItem == nullptr ||
-//        closeItem->getContentSize().width <= 0 ||
-//        closeItem->getContentSize().height <= 0)
-//    {
-//        problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
-//    }
-//    else
-//    {
-////        float x = origin.x + visibleSize.width - closeItem->getContentSize().width/2;
-////        float y = origin.y + closeItem->getContentSize().height/2;
-////        closeItem->setPosition(Vec2(x,y));
-//        closeItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-//    }
-////
-////    // create menu, it's an autorelease object
-//    auto menu = Menu::create(closeItem, NULL);
-//    menu->setPosition(Vec2::ZERO);
-//    this->addChild(menu, 1);
-
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-
-//    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-//    if (label == nullptr)
-//    {
-//        problemLoading("'fonts/Marker Felt.ttf'");
-//    }
-//    else
-//    {
-//        // position the label on the center of the screen
-//        label->setPosition(Vec2(origin.x + visibleSize.width/2,
-//                                origin.y + visibleSize.height - label->getContentSize().height));
-//
-//        // add the label as a child to this layer
-//        this->addChild(label, 1);
-//    }
-//
-//    // add "HelloWorld" splash screen"
-//    auto sprite = Sprite::create("HelloWorld.png");
-//    sprite->setPosition(Vec2(visibleSize.width/2.2 + origin.x, visibleSize.height/2.2 + origin.y));
-//    sprite->setTag(StickerType::STATIC_STICKER);
-//    this->addChild(sprite, 0);
-//
-//    auto sprite2 = Sprite::create("HelloWorld2.png");
-//    sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-//    sprite2->setTag(StickerType::STATIC_STICKER);
-//    this->addChild(sprite2, 1);
     _isAvailableFrameSticker = false;
     _stickerEditVC = StickerEditController::create();
     this->addChild(_stickerEditVC);
-//    ComponentLua* componentLua = ComponentLua::create("player.lua");
-//    sprite->addComponent(componentLua);
-
-//    auto skeleton = spine::SkeletonAnimation::createWithJsonFile("alien-pro.json", "alien.atlas");
-//    skeleton->setPosition(visibleSize/2.0);
-//    skeleton->setScale(0.2f);
-//    skeleton->setAnimation(0, "run", true);
-//    this->addChild(skeleton);
 
     return true;
 }

@@ -45,6 +45,7 @@ public:
     virtual bool init();
 
     std::vector<TKCCTexture>* getTexturesInScene();
+    unsigned int getStickerCount();
     
     void newStaticStickerWithPath(std::string path);
     void newFrameStickerWithPath(std::string path);
