@@ -1,19 +1,16 @@
 //
-//  TKNavigationBar.h
+//  TKTopSubViewMenu.h
 //  TKPresentation
 //
-//  Created by LeHuuNghi on 12/3/18.
+//  Created by LeHuuNghi on 12/9/18.
 //  Copyright © 2018 LeHuuNghi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "TKTopMenuItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKTopMenu : UIView
-
-@property (nonatomic, strong) id viewController;
+@interface TKTopSubViewMenu : UIView
 
 @property (nonatomic, strong) NSArray *items;
 

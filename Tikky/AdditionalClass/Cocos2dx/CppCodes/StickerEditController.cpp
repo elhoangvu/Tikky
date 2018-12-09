@@ -24,6 +24,7 @@ bool StickerEditController::init() {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    _touchStickerCount = 0;
     _frontZOrder = 0;
     _isPinching = false;
     _sticker = nullptr;
@@ -32,7 +33,8 @@ bool StickerEditController::init() {
     _recyclingBin->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.92f + origin.y));
     _recyclingBin->setVisible(false);
     this->addChild(_recyclingBin, 100);
-    
+    onEditStickerBegan = nullptr;
+    onEditStickerEnded = nullptr;
 //    auto listener = EventListenerTouchOneByOne::create();
 //    listener->onTouchBegan = CC_CALLBACK_2(StickerEditViewController::onTouchBegan, this);
 //    listener->onTouchMoved = CC_CALLBACK_2(StickerEditViewController::onTouchMoved, this);
@@ -67,6 +69,10 @@ void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
         //CCLOG("Pinch Began");
         if (_sticker)
             filterTouch = not nodeContainsThePoint(_sticker, location);
+        
+        if (not filterTouch) {
+            _touchStickerCount++;
+        }
     }
     else if (stato == GestureStatus::CHANGED)
     {
@@ -86,6 +92,15 @@ void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
     {
         filterTouch = true;
         _isPinching = false;
+        _touchStickerCount--;
+        if (_touchStickerCount < 0) {
+            _touchStickerCount = 0;
+        }
+        if (_touchStickerCount == 0) {
+            if (this->onEditStickerEnded) {
+                this->onEditStickerEnded();
+            }
+        }
     }
 }
 
@@ -97,6 +112,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
     static bool isTouchBeganInside { false };
     static float stickerScale = 1.0f;
     static bool isStickerScaling = false;
+    static bool isChanged = false;
     
     if (stato == GestureStatus::BEGAN) {
         isStickerScaling = false;
@@ -118,6 +134,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
                         if (_sticker->getLocalZOrder() != _frontZOrder) {
                             this->reorderChild(_sticker, ++_frontZOrder);
                         }
+
                         return;
                     }
                 }
@@ -130,6 +147,13 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         if (isTouchBeganInside && !_isPinching && touchBeganLocation != location) {
             auto location = recognizer->getGestureLocation();
             if (_sticker) {
+                if (!isChanged) {
+                    _touchStickerCount++;
+                    if (this->onEditStickerBegan) {
+                        this->onEditStickerBegan();
+                    }
+                }
+                isChanged = true;
                 _sticker->setPosition(_sticker->getPosition() + recognizer->getTraslation());
                 _recyclingBin->setVisible(true);
 //                auto sprite = dynamic_cast<Sprite *>(_sticker);
@@ -153,14 +177,38 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         }
     } else if (stato == GestureStatus::FAILED) {
         log(">>>> end");
-        if (isTouchBeganInside && touchBeganLocation == location) {
-            this->tapStickerAnimation();
-            isTouchBeganInside = false;
+        if (isTouchBeganInside) {
+            if (touchBeganLocation == location) {
+                this->tapStickerAnimation();
+                isTouchBeganInside = false;
+            }
+            _touchStickerCount--;
+            if (_touchStickerCount < 0) {
+                _touchStickerCount = 0;
+            }
+            if (_touchStickerCount == 0) {
+                if (this->onEditStickerEnded) {
+                    this->onEditStickerEnded();
+                }
+            }
         }
+        isChanged = false;
     } else if (stato == GestureStatus::RECOGNIZED) {
-        if (isTouchBeganInside && touchBeganLocation == location) {
-            this->tapStickerAnimation();
-            isTouchBeganInside = false;
+        if (isTouchBeganInside) {
+            if (touchBeganLocation == location) {
+                this->tapStickerAnimation();
+                isTouchBeganInside = false;
+            }
+            
+            _touchStickerCount--;
+            if (_touchStickerCount < 0) {
+                _touchStickerCount = 0;
+            }
+            if (_touchStickerCount == 0) {
+                if (this->onEditStickerEnded) {
+                    this->onEditStickerEnded();
+                }
+            }
         }
         
         if (_recyclingBin->getBoundingBox().containsPoint(location)) {
@@ -173,6 +221,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         
         _recyclingBin->setVisible(false);
         _recyclingBin->setScale(0.5f);
+        isChanged = false;
     }
 }
 

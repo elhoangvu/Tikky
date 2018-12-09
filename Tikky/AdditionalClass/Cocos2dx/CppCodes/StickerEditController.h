@@ -21,6 +21,7 @@ protected:
     bool _isEnable;
     bool _isPinching;
     int _frontZOrder;
+    int _touchStickerCount;
 
 private:
     StickerEditController() {};
@@ -33,6 +34,9 @@ private:
     void onPinch(cocos2d::PinchGestureRecognizer* recognizer);
     void onPan(cocos2d::PanGestureRecognizer* recognizer);
 public:
+    std::function<void()> onEditStickerBegan;
+    std::function<void()> onEditStickerEnded;
+    
     static StickerEditController* create();
     
     cocos2d::Node* getSticker();

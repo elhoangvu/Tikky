@@ -13,6 +13,8 @@
 using namespace cocos2d;
 
 TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
+void onEditStickerBegan();
+void onEditStickerEnded();
 
 @interface TKStickerPreviewer ()
 
@@ -46,6 +48,18 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
         NSAssert(NO, @"stickerScene should be not nil");
         return nil;
     }
+    
+    stickerScene->onEditStickerBegan = [self](){
+        if (self.delegate && [self.delegate respondsToSelector:@selector(onEditStickerBegan)]) {
+            [self.delegate onEditStickerBegan];
+        }
+    };
+    
+    stickerScene->onEditStickerEnded = [self](){
+        if (self.delegate && [self.delegate respondsToSelector:@selector(onEditStickerEnded)]) {
+            [self.delegate onEditStickerEnded];
+        }
+    };
     
     _stickerScene = stickerScene;
     
@@ -115,4 +129,12 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
     };
     
     return tkRectTexture;
+}
+
+void onEditStickerBegan() {
+    
+}
+
+void onEditStickerEnded() {
+
 }

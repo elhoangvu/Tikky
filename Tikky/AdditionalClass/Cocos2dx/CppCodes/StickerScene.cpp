@@ -54,7 +54,21 @@ bool StickerScene::init()
     _isAvailableFrameSticker = false;
     _stickerEditVC = StickerEditController::create();
     this->addChild(_stickerEditVC);
-
+    onEditStickerBegan = nullptr;
+    onEditStickerEnded = nullptr;
+    
+    _stickerEditVC->onEditStickerBegan = [this]() {
+        if (this->onEditStickerBegan) {
+            this->onEditStickerBegan();
+        }
+    };
+    
+    _stickerEditVC->onEditStickerEnded = [this]() {
+        if (this->onEditStickerEnded) {
+            this->onEditStickerEnded();
+        }
+    };
+    
     return true;
 }
 

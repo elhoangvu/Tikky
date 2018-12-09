@@ -12,15 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKBottomItemDelegate <NSObject>
 @optional
-- (void)clickItem:(NSString *)nameItem;
+- (void)clickBottomMenuItem:(NSString *)nameItem;
 @end
 
-@interface TKBottomMenuItem : UIView
+@interface TKBottomMenuItem : UIImageView
+
+@property (nonatomic, strong) NSString *name;
 
 @property (nonatomic, strong) id<TKBottomItemDelegate> delegate;
-
-@property (nonatomic, strong) UIImageView *imageView;
-
 
 /**
  set path image for image button

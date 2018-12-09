@@ -7,10 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKTopSubViewMenu.h"
+
+@protocol TKTopItemDelegate <NSObject>
+@optional
+- (void)clickItem:(NSString *)nameItem;
+@end
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKTopMenuItem : UIView
+@interface TKTopMenuItem : UIImageView
+
+@property (nonatomic, strong) id<TKTopItemDelegate> delegate;
+
+@property (nonatomic, strong) NSString *name;
+
+-(instancetype)initWithName:(NSString *)name;
+
+@property (nonatomic, strong) TKTopSubViewMenu *subMenuView;
 
 @end
 

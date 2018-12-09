@@ -8,6 +8,10 @@
 
 #import "TKTopMenuItem.h"
 
+@interface TKTopMenuItem()
+
+@end
+
 @implementation TKTopMenuItem
 
 /*
@@ -17,5 +21,37 @@
     // Drawing code
 }
 */
+
+-(instancetype)initWithName:(NSString *)name {
+    self = [self init];
+    if (self) {
+        _name = name;
+        
+        [self setPathImage:[[NSBundle mainBundle] pathForResource:_name ofType:@"png"]];
+        
+//        _subMenuView = [TKTopSubViewMenu new];
+//        _subMenuView.translatesAutoresizingMaskIntoConstraints = NO;
+//        
+//        [self addSubview:_subMenuView];
+        
+        
+    }
+    return self;
+}
+
+- (void)setPathImage:(NSString *)path {
+    UIImage *image = [[UIImage alloc] initWithContentsOfFile:path];
+    
+    [self setImage:image];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+    singleTap.numberOfTapsRequired = 1;
+    [self setUserInteractionEnabled:YES];
+    [self addGestureRecognizer:singleTap];
+}
+
+-(void)tapDetected {
+    [self.delegate clickItem:self.name];
+}
 
 @end

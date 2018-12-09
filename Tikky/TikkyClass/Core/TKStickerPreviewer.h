@@ -11,9 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TKStickerPreviewerDelegate;
+
 @interface TKStickerPreviewer : NSObject
 
 @property (nonatomic, readonly) StickerScene* stickerScene;
+@property (nonatomic, weak) id<TKStickerPreviewerDelegate> delegate;
 
 - (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene;
 
@@ -25,6 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath;
 - (void)removeFrameSticker;
 - (void)removeAllStaticSticker;
+
+@end
+
+@protocol TKStickerPreviewerDelegate <NSObject>
+
+- (void)onEditStickerBegan;
+- (void)onEditStickerEnded;
 
 @end
 
