@@ -12,7 +12,7 @@
 
 @interface TikkyEngine : NSObject
 
-@property (nonatomic) UIView* view;
+//@property (nonatomic) UIView* view;
 @property (nonatomic, readonly) TKStickerPreviewer* stickerPreviewer;
 @property (nonatomic) TKImageFilter* imageFilter;
 

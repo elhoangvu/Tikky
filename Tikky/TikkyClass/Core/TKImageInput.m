@@ -98,12 +98,14 @@
     if (!_movieWriter) {
         NSAssert(NO, @"You must call prepareVideoWriterWithURL:size: to prepare resource for video writer");
     }
-//    [_camera addTarget:_movieWriter];
+    NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
     if (_delegate && [_delegate respondsToSelector:@selector(camera:willStartRecordingWithMovieWriterObject:)]) {
         [_delegate camera:self willStartRecordingWithMovieWriterObject:_movieWriter];
     }
 
     [_movieWriter startRecording];
+    NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
+    NSLog(@">>>> HV > time:%f", end - start);
 }
 
 - (void)pauseVideoRecording {
@@ -146,7 +148,16 @@
     if (!block) {
         return;
     }
-    [_camera capturePhotoAsJPEGProcessedUpToFilter:(GPUImageOutput<GPUImageInput> *)filterObject withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    GPUImageFilter* subFilter = (GPUImageFilter *)filterObject;
+    if (!filterObject) {
+        subFilter = [[GPUImageFilter alloc] init];
+        [_camera addTarget:subFilter];
+    }
+    __weak __typeof(self)weakSelf = self;
+    [_camera capturePhotoAsJPEGProcessedUpToFilter:(GPUImageOutput<GPUImageInput> *)subFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        if (!filterObject) {
+            [weakSelf.camera removeTarget:subFilter];
+        }
         block(processedJPEG, error);
     }];
 }

@@ -13,7 +13,7 @@
 
 //TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
-@interface TikkyEngine () <Cocos2dXGameControllerDelegate, TKImageFilterDatasource>
+@interface TikkyEngine () <TKImageFilterDatasource, Cocos2dXGameControllerDelegate>
 
 @property (nonatomic) CCEAGLView* cceaglView;
 
@@ -36,20 +36,20 @@
                              UIScreen.mainScreen.bounds.origin.y,
                              UIScreen.mainScreen.bounds.size.width,
                              UIScreen.mainScreen.bounds.size.height);
-    _view = [[UIView alloc] initWithFrame:rect];
+//    _view = [[UIView alloc] initWithFrame:rect];
     [_imageFilter.view setFrame:rect];
     
-
     Cocos2dxGameController* gameController = [[Cocos2dxGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
-    gameController.delegate = self;
+//    gameController.delegate = self;
     _cceaglView = (CCEAGLView *)gameController.view;
-    [_view addSubview:_imageFilter.view];
-    [_view addSubview:gameController.view];
+//    [_view addSubview:_imageFilter.view];
+//    [_view addSubview:gameController.view];
+
     StickerScene* stickerScene = (StickerScene *)StickerScene::createScene();
     [gameController setInitialScene:(void *)stickerScene];
     
-    _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene];
-
+    _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene cocos2dxGameController:gameController];
+    
     return self;
 }
 
@@ -71,7 +71,7 @@
         gameController.view.alpha = 0.0f;
     } completion:^(BOOL finished) {
         [gameController backToApp];
-        [self.view removeFromSuperview];
+//        [_cceaglView removeFromSuperview];
     }];
 }
 

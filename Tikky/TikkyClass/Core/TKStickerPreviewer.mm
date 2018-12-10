@@ -13,8 +13,6 @@
 using namespace cocos2d;
 
 TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
-void onEditStickerBegan();
-void onEditStickerEnded();
 
 @interface TKStickerPreviewer ()
 
@@ -22,24 +20,24 @@ void onEditStickerEnded();
 
 @implementation TKStickerPreviewer
 
-- (instancetype)init
-{
-    if (!(self = [super init])) {
-        return nil;
-    }
-    
-    Scene* runningScene = Director::getInstance()->getRunningScene();
-    StickerScene* stickerScene = dynamic_cast<StickerScene *>(runningScene);
-    if (!stickerScene) {
-        return nil;
-    }
-    
-    _stickerScene = stickerScene;
-    
-    return self;
-}
+//- (instancetype)init
+//{
+//    if (!(self = [super init])) {
+//        return nil;
+//    }
+//
+//    Scene* runningScene = Director::getInstance()->getRunningScene();
+//    StickerScene* stickerScene = dynamic_cast<StickerScene *>(runningScene);
+//    if (!stickerScene) {
+//        return nil;
+//    }
+//
+//    _stickerScene = stickerScene;
+//
+//    return self;
+//}
 
-- (instancetype)initWithStickerScene:(StickerScene *)stickerScene {
+- (instancetype)initWithStickerScene:(StickerScene *)stickerScene cocos2dxGameController:(Cocos2dxGameController *)ccGameController {
     if (!(self = [super init])) {
         return nil;
     }
@@ -61,6 +59,7 @@ void onEditStickerEnded();
         }
     };
     
+    _view = ccGameController.view;
     _stickerScene = stickerScene;
     
     return self;
@@ -129,12 +128,4 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
     };
     
     return tkRectTexture;
-}
-
-void onEditStickerBegan() {
-    
-}
-
-void onEditStickerEnded() {
-
 }

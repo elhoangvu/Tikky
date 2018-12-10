@@ -51,6 +51,7 @@ bool StickerEditController::init() {
     panGesture->onPan = CC_CALLBACK_1(StickerEditController::onPan, this);
     panGesture->setContentSize(Director::getInstance()->getVisibleSize());
     this->addChild(panGesture, 0);
+//    panGesture->setDebugMode(true);
     
     return true;
 }

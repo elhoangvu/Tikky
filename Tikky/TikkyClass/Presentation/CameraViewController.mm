@@ -41,7 +41,9 @@
     
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
-    [self.view addSubview:_tikkyEngine.view];
+//    [self.view addSubview:_tikkyEngine.view];
+    [self.view addSubview:_tikkyEngine.imageFilter.view];
+    
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
     [_camera swapCamera]; 
 //
@@ -53,6 +55,8 @@
 //    [self.view addSubview:navigationBar];
     
     [self setUpUI];
+    [self.view setMultipleTouchEnabled:YES];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -89,6 +93,15 @@
     [[self.rootView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:1.0] setActive:YES];
     [self.rootView.bottomMenuView setViewController:self];
     [self.rootView.topMenuView setViewController:self];
+    
+//    _tikkyEngine.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [_rootView addSubview:_tikkyEngine.stickerPreviewer.view];
+//    [[_tikkyEngine.view.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
+//    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
+//    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
+//    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
+    [_rootView bringSubviewToFront:_rootView.bottomMenuView];
+    [_rootView bringSubviewToFront:_rootView.topMenuView];
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
@@ -240,30 +253,32 @@
 #pragma mark TKStickerPreviewerDelegate
 
 - (void)onEditStickerBegan {
-    [_rootView setHidden:YES];
+    [_rootView.bottomMenuView setHidden:YES];
+    [_rootView.topMenuView setHidden:YES];
 }
 
 - (void)onEditStickerEnded {
-    [_rootView setHidden:NO];
+    [_rootView.bottomMenuView setHidden:NO];
+    [_rootView.topMenuView setHidden:NO];
 }
 
 #pragma mark -
 #pragma mark Override Touch Event
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesBegan:touches withEvent:event];
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesMoved:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesEnded:touches withEvent:event];
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesCancelled:touches withEvent:event];
-}
+//
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [_tikkyEngine.view.subviews.lastObject touchesBegan:touches withEvent:event];
+//}
+//
+//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [_tikkyEngine.view.subviews.lastObject touchesMoved:touches withEvent:event];
+//}
+//
+//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [_tikkyEngine.view.subviews.lastObject touchesEnded:touches withEvent:event];
+//}
+//
+//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [_tikkyEngine.view.subviews.lastObject touchesCancelled:touches withEvent:event];
+//}
 
 @end

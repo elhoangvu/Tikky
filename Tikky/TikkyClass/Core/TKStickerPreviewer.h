@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #include "StickerScene.h"
+#import "Cocos2dxGameController.h"
+#import "UIKit/UIKit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,10 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKStickerPreviewer : NSObject
 
+@property (nonatomic, readonly) UIView* view;
 @property (nonatomic, readonly) StickerScene* stickerScene;
 @property (nonatomic, weak) id<TKStickerPreviewerDelegate> delegate;
 
-- (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene;
+- (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene
+              cocos2dxGameController:(Cocos2dxGameController *)ccGameController;
 
 - (NSData *)getStickerTextures;
 

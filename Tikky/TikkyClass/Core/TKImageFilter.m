@@ -85,7 +85,7 @@
                 block(processedJPEG, error);
             }];
         } else {
-            [camera capturePhotoAsJPEGWithFilterObject:_filterPipeline completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+            [camera capturePhotoAsJPEGWithFilterObject:_filterPipeline.filters.lastObject completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
                 block(processedJPEG, error);
             }];
         }
@@ -194,17 +194,22 @@
     
     if (camera && [_input isKindOfClass:TKCamera.class]) {
         if (_additionalTexture && _additionalTexture.length > 0) {
-            __block BOOL isEmpty = NO;
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
             if (_filterPipeline.filters.count == 0) {
                 [_filterPipeline addFilter:_gpuimageStickerFilter];
-                isEmpty = YES;
             } else {
                 [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
             }
             [_gpuimageStickerFilter addTarget:movieWriter];
         } else {
-            [_filterPipeline.filters.lastObject addTarget:movieWriter];
+            if (_filterPipeline.filters.count == 0) {
+                GPUImageStillCamera* camera_ = (GPUImageStillCamera *)camera.sharedObject;
+                if (camera_) {
+                    [camera_ addTarget:movieWriter];
+                }
+            } else {
+                [_filterPipeline.filters.lastObject addTarget:movieWriter];
+            }
         }
     }
 }
@@ -219,7 +224,14 @@
         }
         [_gpuimageStickerFilter removeTarget:movieWriter];
     } else {
-        [_filterPipeline.filters.lastObject removeTarget:movieWriter];
+        if (_filterPipeline.filters.count == 1) {
+            GPUImageStillCamera* camera_ = (GPUImageStillCamera *)camera.sharedObject;
+            if (camera_) {
+                [camera_ removeTarget:movieWriter];
+            }
+        } else {
+            [_filterPipeline.filters.lastObject removeTarget:movieWriter];
+        }
     }
 }
 

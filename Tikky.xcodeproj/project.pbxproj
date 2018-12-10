@@ -61,7 +61,6 @@
 		B74D676821BD54EB00E11EC4 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675A21BD54E800E11EC4 /* TKTopMenuItem.m */; };
 		B74D676921BD54EB00E11EC4 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675C21BD54E900E11EC4 /* TKTopMenu.m */; };
 		B74D676A21BD54EB00E11EC4 /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675D21BD54E900E11EC4 /* TKTopSubViewMenu.m */; };
-		B74D676D21BD7AA300E11EC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D676C21BD7AA300E11EC4 /* ViewController.m */; };
 		B751913421BA6EC900F64A21 /* TKFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B751913321BA6EC900F64A21 /* TKFilter.m */; };
 		B751914221BA79EF00F64A21 /* TKSampleDataPool.m in Sources */ = {isa = PBXBuildFile; fileRef = B751914121BA79EF00F64A21 /* TKSampleDataPool.m */; };
 		B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B751914421BA80D200F64A21 /* TKFilterProperty.m */; };
@@ -234,8 +233,6 @@
 		B74D676021BD54EB00E11EC4 /* TKTopSubViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubViewMenu.h; sourceTree = "<group>"; };
 		B74D676121BD54EB00E11EC4 /* TKBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenu.h; sourceTree = "<group>"; };
 		B74D676221BD54EB00E11EC4 /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
-		B74D676B21BD7AA300E11EC4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B74D676C21BD7AA300E11EC4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B751913221BA6EC900F64A21 /* TKFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilter.h; sourceTree = "<group>"; };
 		B751913321BA6EC900F64A21 /* TKFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilter.m; sourceTree = "<group>"; };
 		B751914021BA79EF00F64A21 /* TKSampleDataPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSampleDataPool.h; sourceTree = "<group>"; };
@@ -360,8 +357,6 @@
 				B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */,
 				B70BD4492196C636000A4EBF /* Info.plist */,
 				B70BD44A2196C636000A4EBF /* main.m */,
-				B74D676B21BD7AA300E11EC4 /* ViewController.h */,
-				B74D676C21BD7AA300E11EC4 /* ViewController.m */,
 			);
 			path = Tikky;
 			sourceTree = "<group>";
@@ -855,7 +850,6 @@
 				B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */,
 				B74D676A21BD54EB00E11EC4 /* TKTopSubViewMenu.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
-				B74D676D21BD7AA300E11EC4 /* ViewController.m in Sources */,
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B74D676521BD54EB00E11EC4 /* TKBottomMenu.m in Sources */,
 				B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */,

@@ -1741,12 +1741,15 @@ void Sprite::visit(std::vector<TKCCTexture>* texturesInScene)
     auto visibleSizeHeight = visibleSize.height + origin.y;
     
     static TKPositionsInRect positions;
-    static Node* node = nullptr;
-    if (!node) {
-        node = Node::create();
-        this->addChild(node);
-    }
-
+//    static Node* node = nullptr;
+//    if (!node) {
+//        node = Node::create();
+//        this->addChild(node);
+//    }
+    
+    Node* node = Node::create();
+    this->addChild(node);
+    
     node->setPosition(Vec2::ZERO);
     positions.bottomleft = this->convertToWorldSpace(node->getPosition());
     positions.bottomleft.x = positions.bottomleft.x / visibleSizeWidth;
