@@ -141,12 +141,18 @@
             } else {
                 isPrepare = YES;
             }
-            [_camera startVideoRecording];
-            
-            isStart = YES;
-            NSLog(@">>>> HV > START RECORDING");
+            double delayToStartRecording = 0.5f;
+            __weak __typeof(self)weakSelf = self;
+            dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
+            dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
+                NSLog(@">>>> HV > START RECORDING");
+
+                [weakSelf.camera startVideoRecording];
+                isStart = YES;
+            });
         } else {
             [_camera stopVideoRecording];
+//            [_camera setEnableAudioForVideoRecording:NO];
             isStart = NO;
             [self writeVideoToLibraryWithURL:_movieURL];
             NSLog(@">>>> HV > STOP RECORDING");

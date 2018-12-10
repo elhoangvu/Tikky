@@ -9,7 +9,7 @@
 #import "TKCamera.h"
 
 
-@interface TKCamera () <GPUImageMovieWriterDelegate>
+@interface TKCamera ()
 
 @property (nonatomic) GPUImageStillCamera* camera;
 @property (nonatomic) GPUImageMovieWriter* movieWriter;
@@ -76,21 +76,7 @@
 - (void)prepareVideoWriterWithURL:(NSURL *)url size:(CGSize)size {
     _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:size];
     _movieWriter.encodingLiveVideo = YES;
-    _movieWriter.shouldPassthroughAudio = YES;
-    
-    AudioChannelLayout channelLayout;
-    memset(&channelLayout, 0, sizeof(AudioChannelLayout));
-    channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
-    
-    NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   [ NSNumber numberWithInt: kAudioFormatMPEG4AAC], AVFormatIDKey,
-                                   [ NSNumber numberWithInt: 2 ], AVNumberOfChannelsKey,
-                                   [ NSNumber numberWithFloat: 16000.0 ], AVSampleRateKey,
-                                   [ NSData dataWithBytes:&channelLayout length: sizeof( AudioChannelLayout ) ], AVChannelLayoutKey,
-                                   [ NSNumber numberWithInt: 32000 ], AVEncoderBitRateKey,
-                                   nil];
-    [_movieWriter setHasAudioTrack:TRUE audioSettings:audioSettings];
-    _movieWriter.delegate = self;
+    _movieWriter.shouldPassthroughAudio = NO;
 }
 
 - (void)startVideoRecording {
@@ -128,8 +114,23 @@
     if (!_movieWriter || _movieWriter.isRecording) {
         return;
     }
-    _enableAudioForVideoRecording = enableAudioForVideoRecording;
+    [_movieWriter setHasAudioTrack:enableAudioForVideoRecording];
     if (enableAudioForVideoRecording) {
+
+        
+//        AudioChannelLayout channelLayout;
+//        memset(&channelLayout, 0, sizeof(AudioChannelLayout));
+//        channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
+//
+//        NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                       [ NSNumber numberWithInt: kAudioFormatMPEG4AAC], AVFormatIDKey,
+//                                       [ NSNumber numberWithInt: 2 ], AVNumberOfChannelsKey,
+//                                       [ NSNumber numberWithFloat: 16000.0 ], AVSampleRateKey,
+//                                       [ NSData dataWithBytes:&channelLayout length: sizeof( AudioChannelLayout ) ], AVChannelLayoutKey,
+//                                       [ NSNumber numberWithInt: 32000 ], AVEncoderBitRateKey,
+//                                       nil];
+//        [_movieWriter setHasAudioTrack:TRUE audioSettings:audioSettings];
+        _enableAudioForVideoRecording = enableAudioForVideoRecording;
         _camera.audioEncodingTarget = _movieWriter;
     } else {
         _camera.audioEncodingTarget = nil;
@@ -217,16 +218,16 @@
     [_camera setFrameRate:frameRate];
 }
 
-#pragma -
-#pragma mark GPUImageMovieWriterDelegate
-
-- (void)movieRecordingCompleted {
-    NSLog(@">>>> HV > movieRecordingCompleted");
-}
-
-- (void)movieRecordingFailedWithError:(NSError*)error {
-    NSLog(@">>>> HV > movieRecordingFailedWithError: %@", error.description);
-}
+//#pragma -
+//#pragma mark GPUImageMovieWriterDelegate
+//
+//- (void)movieRecordingCompleted {
+//    NSLog(@">>>> HV > movieRecordingCompleted");
+//}
+//
+//- (void)movieRecordingFailedWithError:(NSError*)error {
+//    NSLog(@">>>> HV > movieRecordingFailedWithError: %@", error.description);
+//}
 
 #pragma mark -
 #pragma mark Static Func

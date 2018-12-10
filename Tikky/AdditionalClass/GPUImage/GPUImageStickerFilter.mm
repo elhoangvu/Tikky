@@ -109,7 +109,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     if (rectTextures) {
         for (int i = 0; i < size; i++) {
             glActiveTexture(GL_TEXTURE2 + i + 1);
-            NSLog(@"%d", rectTextures[i].textureID);
+//            NSLog(@"%d", rectTextures[i].textureID);
             glBindTexture(GL_TEXTURE_2D, rectTextures[i].textureID);
             
             glUniform1i(filterInputTextureUniform, i + 3);

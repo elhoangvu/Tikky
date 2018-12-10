@@ -795,7 +795,7 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
         void(^write)() = ^() {
             while( ! assetWriterVideoInput.readyForMoreMediaData && ! _encodingLiveVideo && ! videoEncodingIsFinished ) {
                 NSDate *maxDate = [NSDate dateWithTimeIntervalSinceNow:0.1];
-                //            NSLog(@"video waiting...");
+//                            NSLog(@"video waiting...");
                 [[NSRunLoop currentRunLoop] runUntilDate:maxDate];
             }
             if (!assetWriterVideoInput.readyForMoreMediaData)
