@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKStickerPreviewerDelegate <NSObject>
 
+- (void)onTouchStickerBegan;
 - (void)onEditStickerBegan;
 - (void)onEditStickerEnded;
 

@@ -1,5 +1,5 @@
 #import "GPUImageOutput.h"
-#include "TKUtilities.h"
+#include "TKTextureUtilities.h"
 
 /** GPUImage's base filter class
  

@@ -10,6 +10,9 @@
 #import "GPUImage.h"
 #import "GPUImageStickerFilter.h"
 #import "TKSampleDataPool.h"
+#import "TKCamera.h"
+#import "TKVideo.h"
+#import "TKPhoto.h"
 
 @interface TKImageFilter () <TKCameraDelegate>
 
@@ -103,7 +106,7 @@
 - (void)setInput:(TKImageInput *)input {
     if (!(input
           || [input isKindOfClass:TKCamera.class]
-          || [input isKindOfClass:TKMovie.class]
+          || [input isKindOfClass:TKVideo.class]
           || [input isKindOfClass:TKPhoto.class]
           || input.sharedObject)) {
         return;

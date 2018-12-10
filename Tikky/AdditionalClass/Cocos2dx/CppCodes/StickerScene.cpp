@@ -69,6 +69,12 @@ bool StickerScene::init()
         }
     };
     
+    _stickerEditVC->onTouchStickerBegan = [this]() {
+        if (this->onTouchStickerBegan) {
+            this->onTouchStickerBegan();
+        }
+    };
+    
     return true;
 }
 

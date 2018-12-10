@@ -7,9 +7,10 @@
 //
 
 #import "CameraViewController.h"
-#import "TikkyEngine.h"
+#import "Tikky.h"
 #import <Photos/Photos.h>
 
+#import "TKUtilities.h"
 #import "TKSampleDataPool.h"
 
 #import "GPUImage.h"
@@ -29,13 +30,15 @@
 @property (nonatomic) TKFilter* lastFilter;
 @property (nonatomic) NSURL* movieURL;
 
+@property (nonatomic) BOOL isTouchStickerBegan;
+
 @end
 
 @implementation CameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _isTouchStickerBegan = NO;
     _stickers = TKSampleDataPool.sharedInstance.stickerList;
     _filters = TKSampleDataPool.sharedInstance.filterList;
     
@@ -96,6 +99,10 @@
     
 //    _tikkyEngine.view.translatesAutoresizingMaskIntoConstraints = NO;
     [_rootView addSubview:_tikkyEngine.stickerPreviewer.view];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
+    [tapGesture setNumberOfTapsRequired:1];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [_tikkyEngine.stickerPreviewer.view addGestureRecognizer:tapGesture];
 //    [[_tikkyEngine.view.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
 //    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
 //    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
@@ -262,23 +269,21 @@
     [_rootView.topMenuView setHidden:NO];
 }
 
+- (void)onTouchStickerBegan {
+    _isTouchStickerBegan = YES;
+}
+
 #pragma mark -
-#pragma mark Override Touch Event
-//
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [_tikkyEngine.view.subviews.lastObject touchesBegan:touches withEvent:event];
-//}
-//
-//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [_tikkyEngine.view.subviews.lastObject touchesMoved:touches withEvent:event];
-//}
-//
-//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [_tikkyEngine.view.subviews.lastObject touchesEnded:touches withEvent:event];
-//}
-//
-//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [_tikkyEngine.view.subviews.lastObject touchesCancelled:touches withEvent:event];
-//}
+#pragma mark
+
+- (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
+    if (tapGesture.state == UIGestureRecognizerStateEnded) {
+        if (!_isTouchStickerBegan) {
+            CGPoint tapPoint = [tapGesture locationInView:_tikkyEngine.imageFilter.view];
+            [_camera focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
+        }
+        _isTouchStickerBegan = NO;
+    }
+}
 
 @end

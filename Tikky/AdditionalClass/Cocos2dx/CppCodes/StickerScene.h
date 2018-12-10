@@ -39,6 +39,7 @@ private:
     bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
     bool onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
 public:
+    std::function<void()> onTouchStickerBegan;
     std::function<void()> onEditStickerBegan;
     std::function<void()> onEditStickerEnded;
     

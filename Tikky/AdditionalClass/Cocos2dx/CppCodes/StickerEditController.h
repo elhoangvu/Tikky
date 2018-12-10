@@ -34,6 +34,7 @@ private:
     void onPinch(cocos2d::PinchGestureRecognizer* recognizer);
     void onPan(cocos2d::PanGestureRecognizer* recognizer);
 public:
+    std::function<void()> onTouchStickerBegan;
     std::function<void()> onEditStickerBegan;
     std::function<void()> onEditStickerEnded;
     

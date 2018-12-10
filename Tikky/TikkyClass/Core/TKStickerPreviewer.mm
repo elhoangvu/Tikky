@@ -7,7 +7,7 @@
 //
 
 #import "TKStickerPreviewer.h"
-#include "TKUtilities.h"
+#include "TKTextureUtilities.h"
 #include "cocos2d.h"
 
 using namespace cocos2d;
@@ -56,6 +56,12 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     stickerScene->onEditStickerEnded = [self](){
         if (self.delegate && [self.delegate respondsToSelector:@selector(onEditStickerEnded)]) {
             [self.delegate onEditStickerEnded];
+        }
+    };
+    
+    stickerScene->onTouchStickerBegan = [self](){
+        if (self.delegate && [self.delegate respondsToSelector:@selector(onTouchStickerBegan)]) {
+            [self.delegate onTouchStickerBegan];
         }
     };
     

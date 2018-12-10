@@ -73,6 +73,9 @@ void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
         
         if (not filterTouch) {
             _touchStickerCount++;
+            if (this->onTouchStickerBegan) {
+                this->onTouchStickerBegan();
+            }
         }
     }
     else if (stato == GestureStatus::CHANGED)
@@ -135,7 +138,9 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
                         if (_sticker->getLocalZOrder() != _frontZOrder) {
                             this->reorderChild(_sticker, ++_frontZOrder);
                         }
-
+                        if (this->onTouchStickerBegan) {
+                            this->onTouchStickerBegan();
+                        }
                         return;
                     }
                 }

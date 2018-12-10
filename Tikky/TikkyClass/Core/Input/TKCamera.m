@@ -1,19 +1,13 @@
 //
-//  TKImageInput.m
+//  TKCamera.m
 //  Tikky
 //
-//  Created by Le Hoang Vu on 12/6/18.
+//  Created by Le Hoang Vu on 12/11/18.
 //  Copyright © 2018 Le Hoang Vu. All rights reserved.
 //
 
-#import "TKImageInput.h"
-#import "GPUImage.h"
+#import "TKCamera.h"
 
-@implementation TKImageInput
-
-@end
-
-// ----------------------------------------------
 
 @interface TKCamera () <GPUImageMovieWriterDelegate>
 
@@ -46,6 +40,12 @@
     if (!_camera) {
         NSAssert(NO, @"Cannot create GPUImage camera for TKCamera");
         return nil;
+    }
+    
+    if ([sessionPreset containsString:@"Front"]) {
+        _isFrontCamera = YES;
+    } else {
+        _isFrontCamera = NO;
     }
     
     _enableAudioForVideoRecording = NO;
@@ -102,7 +102,7 @@
     if (_delegate && [_delegate respondsToSelector:@selector(camera:willStartRecordingWithMovieWriterObject:)]) {
         [_delegate camera:self willStartRecordingWithMovieWriterObject:_movieWriter];
     }
-
+    
     [_movieWriter startRecording];
     NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
     NSLog(@">>>> HV > time:%f", end - start);
@@ -117,7 +117,7 @@
 }
 
 - (void)stopVideoRecording {
-//    [_camera removeTarget:_movieWriter];
+    //    [_camera removeTarget:_movieWriter];
     if (_delegate && [_delegate respondsToSelector:@selector(camera:willStopRecordingWithMovieWriterObject:)]) {
         [_delegate camera:self willStopRecordingWithMovieWriterObject:_movieWriter];
     }
@@ -138,10 +138,42 @@
 
 - (void)swapCamera {
     [_camera rotateCamera];
+    _isFrontCamera = !_isFrontCamera;
 }
 
 - (AVCaptureDevicePosition)cameraPosition {
     return _camera.cameraPosition;
+}
+
+- (void)focusAtPoint:(CGPoint)point inFrame:(CGRect)frame {
+    AVCaptureDevice* device = _camera.inputCamera;
+    CGPoint pointOfInterest = [TKCamera convertToPointOfInterestFromViewCoordinates:point
+                                                                            inFrame:frame
+                                                                    withOrientation:(UIDeviceOrientation)_camera.outputImageOrientation
+                                                                        andFillMode:1
+                                                                           mirrored:_isFrontCamera];
+    
+    if ([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus])
+    {
+        NSError *error;
+        if ([device lockForConfiguration:&error])
+        {
+            [device setFocusPointOfInterest:pointOfInterest];
+            [device setFocusMode:AVCaptureFocusModeAutoFocus];
+            [device unlockForConfiguration];
+        }
+    }
+    
+    if ([device isExposurePointOfInterestSupported] && [device isExposureModeSupported:AVCaptureExposureModeAutoExpose])
+    {
+        NSError *error;
+        if ([device lockForConfiguration:&error])
+        {
+            [device setExposurePointOfInterest:pointOfInterest];
+            [device setExposureMode:AVCaptureExposureModeAutoExpose];
+            [device unlockForConfiguration];
+        }
+    }
 }
 
 - (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block; {
@@ -196,27 +228,71 @@
     NSLog(@">>>> HV > movieRecordingFailedWithError: %@", error.description);
 }
 
+#pragma mark -
+#pragma mark Static Func
+
++ (CGPoint)convertToPointOfInterestFromViewCoordinates:(CGPoint)viewCoordinates
+                                               inFrame:(CGRect)frame
+                                       withOrientation:(UIDeviceOrientation)orientation
+                                           andFillMode:(GPUImageFillModeType)fillMode
+                                              mirrored:(BOOL)mirrored;
+{
+    CGSize frameSize = frame.size;
+    CGPoint pointOfInterest = CGPointMake(0.5, 0.5);
+    
+    if (mirrored)
+    {
+        viewCoordinates.x = frameSize.width - viewCoordinates.x;
+    }
+    
+    if (fillMode == kGPUImageFillModeStretch) {
+        pointOfInterest = CGPointMake(viewCoordinates.y / frameSize.height, 1.f - (viewCoordinates.x / frameSize.width));
+    } else {
+        CGSize apertureSize = CGSizeMake(CGRectGetHeight(frame), CGRectGetWidth(frame));
+        if (!CGSizeEqualToSize(apertureSize, CGSizeZero)) {
+            CGPoint point = viewCoordinates;
+            CGFloat apertureRatio = apertureSize.height / apertureSize.width;
+            CGFloat viewRatio = frameSize.width / frameSize.height;
+            CGFloat xc = .5f;
+            CGFloat yc = .5f;
+            
+            if (fillMode == kGPUImageFillModePreserveAspectRatio) {
+                if (viewRatio > apertureRatio) {
+                    CGFloat y2 = frameSize.height;
+                    CGFloat x2 = frameSize.height * apertureRatio;
+                    CGFloat x1 = frameSize.width;
+                    CGFloat blackBar = (x1 - x2) / 2;
+                    if (point.x >= blackBar && point.x <= blackBar + x2) {
+                        xc = point.y / y2;
+                        yc = 1.f - ((point.x - blackBar) / x2);
+                    }
+                } else {
+                    CGFloat y2 = frameSize.width / apertureRatio;
+                    CGFloat y1 = frameSize.height;
+                    CGFloat x2 = frameSize.width;
+                    CGFloat blackBar = (y1 - y2) / 2;
+                    if (point.y >= blackBar && point.y <= blackBar + y2) {
+                        xc = ((point.y - blackBar) / y2);
+                        yc = 1.f - (point.x / x2);
+                    }
+                }
+            } else if (fillMode == kGPUImageFillModePreserveAspectRatioAndFill) {
+                if (viewRatio > apertureRatio) {
+                    CGFloat y2 = apertureSize.width * (frameSize.width / apertureSize.height);
+                    xc = (point.y + ((y2 - frameSize.height) / 2.f)) / y2;
+                    yc = (frameSize.width - point.x) / frameSize.width;
+                } else {
+                    CGFloat x2 = apertureSize.height * (frameSize.height / apertureSize.width);
+                    yc = 1.f - ((point.x + ((x2 - frameSize.width) / 2)) / x2);
+                    xc = point.y / frameSize.height;
+                }
+            }
+            
+            pointOfInterest = CGPointMake(xc, yc);
+        }
+    }
+    
+    return pointOfInterest;
+}
+
 @end
-
-
-// ----------------------------------------------
-
-@interface TKPhoto ()
-
-@end
-
-@implementation TKPhoto
-
-@end
-
-// ----------------------------------------------
-
-@interface TKMovie ()
-
-@end
-
-@implementation TKMovie
-
-@end
-
-// ----------------------------------------------
