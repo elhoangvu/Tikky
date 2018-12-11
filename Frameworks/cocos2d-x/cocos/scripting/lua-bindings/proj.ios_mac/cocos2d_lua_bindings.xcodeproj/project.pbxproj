@@ -1683,7 +1683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				EXECUTABLE_PREFIX = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -1693,10 +1693,12 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../../external/lua/luajit/prebuilt/ios";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "libluacocos2d iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../platform/ios $(SRCROOT)/../../../../external/curl/include/ios";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -1704,7 +1706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				EXECUTABLE_PREFIX = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1715,10 +1717,12 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../../external/lua/luajit/prebuilt/ios";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "libluacocos2d iOS";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../platform/ios $(SRCROOT)/../../../../external/curl/include/ios";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};

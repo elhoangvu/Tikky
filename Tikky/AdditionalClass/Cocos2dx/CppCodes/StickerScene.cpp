@@ -24,7 +24,7 @@
 
 #include "StickerScene.h"
 #include "SimpleAudioEngine.h"
-//#include "scripting/lua-bindings/manual/CCComponentLua.h"
+#include "scripting/lua-bindings/manual/CCComponentLua.h"
 //#include "editor-support/spine/SkeletonAnimation.h"
 
 USING_NS_CC;
@@ -111,7 +111,8 @@ void StickerScene::newStaticStickerWithPath(std::string path) {
     }
     sticker->setTag(StickerType::STATIC_STICKER);
     sticker->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
-
+//    ComponentLua* componentLua = ComponentLua::create("testLua.lua");
+//    sticker->addComponent(componentLua);
     _stickerEditVC->addSticker(sticker, true);
 }
 
