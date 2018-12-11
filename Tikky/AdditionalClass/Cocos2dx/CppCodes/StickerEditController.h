@@ -16,6 +16,7 @@
 
 class StickerEditController : public cocos2d::Node {
 protected:
+    cocos2d::Node* _recyclingArea;
     cocos2d::Sprite* _recyclingBin;
     cocos2d::Node* _sticker;
     bool _isEnable;

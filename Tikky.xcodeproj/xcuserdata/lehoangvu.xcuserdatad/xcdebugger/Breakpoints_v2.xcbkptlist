@@ -2329,7 +2329,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/Gestures/PinchGestureRecognizer.cpp"
-            timestampString = "566083835.311838"
+            timestampString = "566257037.140378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -2425,7 +2425,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerScene.cpp"
-            timestampString = "566251279.88192"
+            timestampString = "566257037.140517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -2441,11 +2441,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.584677"
+            timestampString = "566257037.140576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2457,11 +2457,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.584725"
+            timestampString = "566257037.140999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2473,11 +2473,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.5847681"
+            timestampString = "566257037.14132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2489,11 +2489,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.584811"
+            timestampString = "566257037.141639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2505,27 +2505,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.584864"
+            timestampString = "566257037.1419491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.584906"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2711,11 +2695,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.585127"
+            timestampString = "566257037.142342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "StickerEditController::onPinch(PinchGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2727,11 +2711,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.585175"
+            timestampString = "566257037.1426539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "StickerEditController::onPinch(PinchGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2743,11 +2727,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.58522"
+            timestampString = "566257037.142959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "StickerEditController::onPinch(PinchGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2759,11 +2743,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.585263"
+            timestampString = "566257037.14326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "StickerEditController::onPinch(PinchGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2775,11 +2759,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
-            timestampString = "566166698.585306"
+            timestampString = "566257037.1435601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2807,7 +2791,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/Gestures/PinchGestureRecognizer.cpp"
-            timestampString = "566083835.315622"
+            timestampString = "566257037.1438971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -2823,7 +2807,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/Gestures/PinchGestureRecognizer.cpp"
-            timestampString = "566083835.315681"
+            timestampString = "566257037.1439511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -2839,7 +2823,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/Gestures/PinchGestureRecognizer.cpp"
-            timestampString = "566083835.31573"
+            timestampString = "566257037.1440001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -3053,6 +3037,54 @@
             startingLineNumber = "732"
             endingLineNumber = "732"
             landmarkName = "-newFrameReadyAtTime:atIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
+            timestampString = "566257037.144228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
+            timestampString = "566257037.144627"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/Cocos2dx/CppCodes/StickerEditController.cpp"
+            timestampString = "566257037.144927"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
