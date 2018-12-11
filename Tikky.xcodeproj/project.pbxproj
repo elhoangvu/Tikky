@@ -107,6 +107,8 @@
 		B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */; };
 		B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */; };
 		B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */; };
+		B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */; };
+		B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */; };
 		B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */; };
 		B767ED8D21B54F2C00CE264A /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B767ED8C21B54F2C00CE264A /* CameraViewController.mm */; };
 		B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditController.cpp */; };
@@ -304,6 +306,8 @@
 		B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizer.cpp; sourceTree = "<group>"; };
 		B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureRecognizer.h; sourceTree = "<group>"; };
+		B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
+		B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
 		B767ED8421B545C400CE264A /* TKStickerPreviewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKStickerPreviewer.h; sourceTree = "<group>"; };
 		B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerPreviewer.mm; sourceTree = "<group>"; };
 		B767ED8B21B54F2C00CE264A /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B76036F421C040FF00A85F16 /* Frames */,
 				B74AA87821BB0FD500D63E19 /* Stickers */,
 				B751914921BA9D9500F64A21 /* Lookups */,
 				B71B137F21B9B9E000DE1796 /* ViewComponents */,
@@ -669,6 +674,15 @@
 			path = Gestures;
 			sourceTree = "<group>";
 		};
+		B76036F421C040FF00A85F16 /* Frames */ = {
+			isa = PBXGroup;
+			children = (
+				B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */,
+				B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */,
+			);
+			path = Frames;
+			sourceTree = "<group>";
+		};
 		B774E4EB21B2F7F100446A06 /* CppCodes */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,10 +850,12 @@
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
+				B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */,
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
 				B74D674721BD54C500E11EC4 /* filter.png in Resources */,
 				B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */,
+				B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
 				B74D674F21BD54C500E11EC4 /* 15s.png in Resources */,

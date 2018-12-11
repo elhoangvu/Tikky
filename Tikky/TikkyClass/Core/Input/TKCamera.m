@@ -53,7 +53,7 @@
     frameRate = 0;
     sharedObject = _camera;
     _camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    
+    _camera.horizontallyMirrorFrontFacingCamera = YES;
     return self;
 }
 

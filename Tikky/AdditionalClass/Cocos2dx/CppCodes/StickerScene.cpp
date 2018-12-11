@@ -160,13 +160,13 @@ void StickerScene::newFrameStickerWith2PartTopBot(std::string topFramePath, std:
     topSticker->setTag(StickerType::FRAME_STICKER);
     topSticker->setAnchorPoint(Vec2(0.0f, 1.0f));
     topSticker->setPosition(Vec2(origin.x, visibleSize.height + origin.y));
-    topSticker->setScale(topSticker->getContentSize().width / visibleSize.width);
+    topSticker->setScale(visibleSize.width / topSticker->getContentSize().width);
     this->addChild(topSticker, 100000);
     
     botSticker->setTag(StickerType::FRAME_STICKER);
     botSticker->setAnchorPoint(Vec2::ZERO);
     botSticker->setPosition(Vec2(origin.x, origin.y));
-    botSticker->setScale(botSticker->getContentSize().width / visibleSize.width);
+    botSticker->setScale(visibleSize.width / botSticker->getContentSize().width);
     this->addChild(botSticker, 100000);
 }
 
@@ -190,13 +190,13 @@ void StickerScene::newFrameStickerWith2PartLeftRight(std::string leftFramePath, 
     leftSticker->setTag(StickerType::FRAME_STICKER);
     leftSticker->setAnchorPoint(Vec2::ZERO);
     leftSticker->setPosition(Vec2(origin.x, origin.y));
-    leftSticker->setScale(leftSticker->getContentSize().height / visibleSize.height);
+    leftSticker->setScale(visibleSize.height / leftSticker->getContentSize().height);
     this->addChild(leftSticker, 100000);
     
     rightSticker->setTag(StickerType::FRAME_STICKER);
     rightSticker->setAnchorPoint(Vec2(1.0f, 0.0f));
     rightSticker->setPosition(Vec2(visibleSize.width + origin.x, origin.y));
-    rightSticker->setScale(rightSticker->getContentSize().height / visibleSize.height);
+    rightSticker->setScale(visibleSize.height / rightSticker->getContentSize().height);
     this->addChild(rightSticker, 100000);
 }
 

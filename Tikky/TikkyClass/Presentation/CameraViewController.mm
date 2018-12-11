@@ -48,7 +48,7 @@
     [self.view addSubview:_tikkyEngine.imageFilter.view];
     
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
-    [_camera swapCamera]; 
+//    [_camera swapCamera]; 
 //
 //    _bottomMenu = [TKBottomMenu new];
 //
@@ -76,6 +76,10 @@
         [_camera setEnableAudioForVideoRecording:YES];
         isSetupAudio = YES;
     }
+    
+    NSString* top = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-top.png" ofType:nil];
+    NSString* bot = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-bot.png" ofType:nil];
+    [_tikkyEngine.stickerPreviewer newFrameStickerWith2PartTopBot:top bottomFramePath:bot];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
