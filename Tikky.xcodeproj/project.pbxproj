@@ -42,6 +42,31 @@
 		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
+		B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */; };
+		B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */; };
+		B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */; };
+		B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */; };
+		B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */; };
+		B746992421C1F5EF00711F0E /* frame-flower-shakura-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */; };
+		B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */; };
+		B746992621C1F5EF00711F0E /* frame-flower-shakura-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */; };
+		B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */; };
+		B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */; };
+		B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */; };
+		B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */; };
+		B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */; };
+		B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */; };
+		B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */; };
+		B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */; };
+		B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */; };
+		B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */; };
+		B746993121C1F5EF00711F0E /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */; };
+		B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */; };
+		B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */; };
+		B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */; };
+		B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */; };
+		B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */; };
+		B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */; };
 		B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */; };
 		B74D674521BD54C500E11EC4 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D673721BD54C100E11EC4 /* flash.png */; };
 		B74D674621BD54C500E11EC4 /* capture.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D673821BD54C200E11EC4 /* capture.png */; };
@@ -116,7 +141,6 @@
 		B7B8523E21C04C4F005A3F3B /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523721C0490B005A3F3B /* libluacocos2d iOS.a */; };
 		B7B8524021C04C9C005A3F3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */; };
 		B7B8524221C04CC1005A3F3B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */; };
-		B7B8524421C04EFA005A3F3B /* testLua.lua in Resources */ = {isa = PBXBuildFile; fileRef = B7B8524321C04EFA005A3F3B /* testLua.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +273,31 @@
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
+		B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
+		B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
+		B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
+		B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-2.png"; sourceTree = "<group>"; };
+		B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-0.png"; sourceTree = "<group>"; };
+		B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-0.lua"; sourceTree = "<group>"; };
+		B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-1.lua"; sourceTree = "<group>"; };
+		B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-1.png"; sourceTree = "<group>"; };
+		B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-5.png"; sourceTree = "<group>"; };
+		B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-5.lua"; sourceTree = "<group>"; };
+		B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-4.lua"; sourceTree = "<group>"; };
+		B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-4.png"; sourceTree = "<group>"; };
+		B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-6.png"; sourceTree = "<group>"; };
+		B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-6.lua"; sourceTree = "<group>"; };
+		B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-7.lua"; sourceTree = "<group>"; };
+		B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
+		B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
+		B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
+		B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
+		B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
+		B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
+		B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
+		B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-11.lua"; sourceTree = "<group>"; };
+		B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-8.png"; sourceTree = "<group>"; };
+		B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
 		B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-amatorka.png"; sourceTree = "<group>"; };
 		B74D673721BD54C100E11EC4 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
 		B74D673821BD54C200E11EC4 /* capture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capture.png; sourceTree = "<group>"; };
@@ -349,7 +398,6 @@
 		B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		B7B8524321C04EFA005A3F3B /* testLua.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testLua.lua; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,7 +522,6 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B7B8524321C04EFA005A3F3B /* testLua.lua */,
 				B76036F421C040FF00A85F16 /* Frames */,
 				B74AA87821BB0FD500D63E19 /* Stickers */,
 				B751914921BA9D9500F64A21 /* Lookups */,
@@ -538,6 +585,38 @@
 				B74D672F21BD542300E11EC4 /* StickerUI */,
 			);
 			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		B746990521C1F5EF00711F0E /* frame-flower-shakura */ = {
+			isa = PBXGroup;
+			children = (
+				B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */,
+				B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */,
+				B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */,
+				B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */,
+				B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */,
+				B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */,
+				B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */,
+				B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */,
+				B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */,
+				B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */,
+				B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */,
+				B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */,
+				B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */,
+				B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */,
+				B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */,
+				B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */,
+				B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */,
+				B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */,
+				B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */,
+				B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */,
+				B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */,
+				B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */,
+				B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */,
+				B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */,
+				B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */,
+			);
+			path = "frame-flower-shakura";
 			sourceTree = "<group>";
 		};
 		B74AA87821BB0FD500D63E19 /* Stickers */ = {
@@ -720,6 +799,7 @@
 		B76036F421C040FF00A85F16 /* Frames */ = {
 			isa = PBXGroup;
 			children = (
+				B746990521C1F5EF00711F0E /* frame-flower-shakura */,
 				B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */,
 				B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */,
 			);
@@ -884,6 +964,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */,
 				B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */,
 				B74D675121BD54C500E11EC4 /* reverse.png in Resources */,
 				B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */,
@@ -891,21 +972,32 @@
 				B751918621BA9EF600F64A21 /* lookup-vintage.png in Resources */,
 				B751917121BA9EF600F64A21 /* lookup-floyd.png in Resources */,
 				B751917521BA9EF600F64A21 /* lookup-linda.png in Resources */,
+				B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */,
 				B751918821BA9EF600F64A21 /* lookup-clarity.png in Resources */,
 				B751918021BA9EF600F64A21 /* lookup-1971.png in Resources */,
+				B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */,
+				B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */,
 				B751918321BA9EF600F64A21 /* lookup-mental.png in Resources */,
+				B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */,
 				B751918C21BA9EF600F64A21 /* lookup-selena.png in Resources */,
 				B74D674621BD54C500E11EC4 /* capture.png in Resources */,
 				B74D674B21BD54C500E11EC4 /* more.png in Resources */,
 				B751916E21BA9EF600F64A21 /* lookup-summer.png in Resources */,
+				B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */,
+				B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */,
 				B751918B21BA9EF600F64A21 /* lookup-gray.png in Resources */,
+				B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */,
 				B751918D21BA9EF600F64A21 /* lookup-feel.png in Resources */,
-				B7B8524421C04EFA005A3F3B /* testLua.lua in Resources */,
+				B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */,
+				B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */,
+				B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */,
 				B751917721BA9EF600F64A21 /* lookup-charcoal.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */,
 				B74D674521BD54C500E11EC4 /* flash.png in Resources */,
 				B751917821BA9EF600F64A21 /* lookup-elizabeth.png in Resources */,
+				B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */,
 				B751916D21BA9EF600F64A21 /* lookup-guardian.png in Resources */,
+				B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */,
 				B751917921BA9EF600F64A21 /* lookup-brooklyn.png in Resources */,
 				B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */,
 				B751918721BA9EF600F64A21 /* lookup-gypsy.png in Resources */,
@@ -915,21 +1007,33 @@
 				B74D674A21BD54C500E11EC4 /* emoji.png in Resources */,
 				B74D674E21BD54C500E11EC4 /* time.png in Resources */,
 				B74D674821BD54C500E11EC4 /* 10s.png in Resources */,
+				B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */,
 				B751916F21BA9EF600F64A21 /* lookup-seven.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				B751918521BA9EF600F64A21 /* lookup-robinson.png in Resources */,
 				B74D674921BD54C500E11EC4 /* frame.png in Resources */,
+				B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */,
 				B751917221BA9EF600F64A21 /* lookup-mono cool.png in Resources */,
+				B746993121C1F5EF00711F0E /* frame-flower-shakura-10.png in Resources */,
+				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
+				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
+				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
+				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
 				B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */,
+				B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
+				B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */,
+				B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
+				B746992421C1F5EF00711F0E /* frame-flower-shakura-0.lua in Resources */,
+				B746992621C1F5EF00711F0E /* frame-flower-shakura-1.png in Resources */,
 				B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */,
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
