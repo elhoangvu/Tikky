@@ -64,7 +64,6 @@
         return;
     }
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
-    
     TKCamera* camera = (TKCamera *)_input;
     if (camera && [_input isKindOfClass:TKCamera.class]) {
         __weak __typeof(self)weakSelf = self;

@@ -10,9 +10,9 @@
 #define StickerType_h
 
 enum StickerType {
-    STATIC_STICKER = 100,
-    ANIMATION_STICKER,
-    FRAME_STICKER,
+    STATIC_STICKER      = 1,
+    FRAME_STICKER       = 1 << 1,
+    ANIMATION_STICKER   = 1 << 2,
 };
 
 #endif /* StickerTypes_h */

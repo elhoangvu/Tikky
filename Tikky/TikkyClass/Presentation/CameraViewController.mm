@@ -77,9 +77,23 @@
         isSetupAudio = YES;
     }
     
-    NSString* top = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-top.png" ofType:nil];
-    NSString* bot = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-bot.png" ofType:nil];
-    [_tikkyEngine.stickerPreviewer newFrameStickerWith2PartTopBot:top bottomFramePath:bot];
+//    NSString* top = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-top.png" ofType:nil];
+//    NSString* bot = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-bot.png" ofType:nil];
+//    [_tikkyEngine.stickerPreviewer newFrameStickerWith2PartTopBot:top bottomFramePath:bot];
+    
+    std::vector<TKSticker> stickers;
+    for (NSInteger i = 0; i < 12; i++) {
+        NSString* fileName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.png", (long)i];
+        NSString* luaName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.lua", (long)i];
+        NSString* path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+        NSString* luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+        TKSticker sticker;
+        sticker.path = path.UTF8String;
+        sticker.luaComponentPath = luaPath.UTF8String;
+        sticker.allowChanges = NO;
+        stickers.push_back(sticker);
+    }
+    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:stickers];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

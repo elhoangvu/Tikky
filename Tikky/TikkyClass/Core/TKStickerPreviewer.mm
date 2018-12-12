@@ -87,21 +87,33 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->newStaticStickerWithPath([path UTF8String]);
 }
 
-- (void)newFrameStickerWithPath:(NSString *)path {
-    _stickerScene->newFrameStickerWithPath([path UTF8String]);
+- (void)newStaticStickerWithSticker:(TKSticker)sticker {
+    _stickerScene->newStaticStickerWithSticker(sticker);
 }
 
-- (void)newFrameStickerWith2PartTopBot:(NSString *)topFramePath bottomFramePath:(NSString *)bottomFramePath {
-    _stickerScene->newFrameStickerWith2PartTopBot([topFramePath UTF8String], [bottomFramePath UTF8String]);
+- (void)newFrameStickerWithSticker:(TKSticker)sticker {
+    _stickerScene->newFrameStickerWithSticker(sticker);
 }
 
-- (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath {
-    _stickerScene->newFrameStickerWith2PartLeftRight([leftFramePath UTF8String], [rightFramePath UTF8String]);
+- (void)newFrameStickerWithStickers:(std::vector<TKSticker>&)stickers {
+    _stickerScene->newFrameStickerWithStickers(stickers);
 }
 
-- (void)removeFrameSticker {
-    _stickerScene->removeFrameSticker();
-}
+//- (void)newFrameStickerWithPath:(NSString *)path {
+//    _stickerScene->newFrameStickerWithPath([path UTF8String]);
+//}
+//
+//- (void)newFrameStickerWith2PartTopBot:(NSString *)topFramePath bottomFramePath:(NSString *)bottomFramePath {
+//    _stickerScene->newFrameStickerWith2PartTopBot([topFramePath UTF8String], [bottomFramePath UTF8String]);
+//}
+//
+//- (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath {
+//    _stickerScene->newFrameStickerWith2PartLeftRight([leftFramePath UTF8String], [rightFramePath UTF8String]);
+//}
+
+//- (void)removeFrameSticker {
+//    _stickerScene->removeFrameSticker();
+//}
 
 - (void)removeAllStaticSticker {
     _stickerScene->removeAllStaticSticker();

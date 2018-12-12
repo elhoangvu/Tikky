@@ -136,7 +136,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         if (!childs.empty()) {
             Node::sortDecsNodes(childs);
             for (auto child : childs) {
-                if (child->getTag() == StickerType::STATIC_STICKER && child->isVisible()) {
+                if (((child->getTag() & StickerType::STATIC_STICKER) == StickerType::STATIC_STICKER) && child->isVisible()) {
                     auto zOrder = child->getLocalZOrder();
                     if (_frontZOrder < zOrder) {
                         _frontZOrder = zOrder;
@@ -285,4 +285,12 @@ void StickerEditController::removeAllSticker() {
             }
         }
     }
+    _sticker = nullptr;
+}
+
+void StickerEditController::removeSticker(cocos2d::Node* sticker, bool isCleanup) {
+    if (_sticker == sticker) {
+        _sticker = nullptr;
+    }
+    sticker->removeFromParentAndCleanup(isCleanup);
 }

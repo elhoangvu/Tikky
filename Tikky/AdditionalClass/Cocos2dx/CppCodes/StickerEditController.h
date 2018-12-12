@@ -51,7 +51,7 @@ public:
     
     void addSticker(cocos2d::Sprite* sticker, bool isAnimation = false);
     void removeAllSticker();
-
+    void removeSticker(cocos2d::Node* sticker, bool isCleanup);
     bool init();
 };
 

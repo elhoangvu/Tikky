@@ -27,14 +27,22 @@
 
 #include "StickerEditController.h"
 
+typedef struct {
+    std::string path;
+    std::string luaComponentPath;
+    bool allowChanges;
+} TKSticker;
+
 class StickerScene : public cocos2d::Scene
 {
 private:
     StickerEditController* _stickerEditVC;
-    cocos2d::Sprite* _frameSticker;
-    cocos2d::Sprite* _twoPartFrameSticker[2];
-    bool _isAvailableFrameSticker;
+//    cocos2d::Sprite* _frameSticker;
+//    cocos2d::Sprite* _twoPartFrameSticker[2];
+//    bool _isAvailableFrameSticker;
+    std::vector<cocos2d::Node *> _frameStickers;
 
+    cocos2d::Node* newStickerWithSticker(TKSticker sticker, bool isFrameSticker = false);
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
     bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
     bool onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
@@ -51,10 +59,13 @@ public:
     unsigned int getStickerCount();
     
     void newStaticStickerWithPath(std::string path);
-    void newFrameStickerWithPath(std::string path);
-    void newFrameStickerWith2PartTopBot(std::string topFramePath, std::string bottomFramePath);
-    void newFrameStickerWith2PartLeftRight(std::string leftFramePath, std::string rightFramePath);
-    void removeFrameSticker();
+    void newStaticStickerWithSticker(TKSticker sticker);
+    void newFrameStickerWithSticker(TKSticker sticker);
+    void newFrameStickerWithStickers(std::vector<TKSticker>& stickers);
+//    void newFrameStickerWithPath(std::string path);
+//    void newFrameStickerWith2PartTopBot(std::string topFramePath, std::string bottomFramePath);
+//    void newFrameStickerWith2PartLeftRight(std::string leftFramePath, std::string rightFramePath);
+    void removeAllFrameSticker();
     void removeAllStaticSticker();
     // implement the "static create()" method manually
     CREATE_FUNC(StickerScene);
