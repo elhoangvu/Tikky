@@ -59,19 +59,24 @@
     if (!block) {
         return;
     }
-    
+
     if (!_datasource || ![_datasource respondsToSelector:@selector(additionalTexturesForImageFilter:)]) {
         return;
     }
+    
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
     TKCamera* camera = (TKCamera *)_input;
+    GPUImageStillCamera* gpuimageCamera = (GPUImageStillCamera *)camera.sharedObject;
     if (camera && [_input isKindOfClass:TKCamera.class]) {
         __weak __typeof(self)weakSelf = self;
         if (_additionalTexture && _additionalTexture.length > 0) {
             __block BOOL isEmpty = NO;
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
+
             if (_filterPipeline.filters.count == 0) {
-                [_filterPipeline addFilter:_gpuimageStickerFilter];
+                GPUImageFilter* filter = [[GPUImageFilter alloc] init];
+                [_filterPipeline addFilter:filter];
+                [gpuimageCamera addTarget:_gpuimageStickerFilter];
                 isEmpty = YES;
             } else {
                 [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
@@ -80,6 +85,7 @@
             [camera capturePhotoAsJPEGWithFilterObject:_gpuimageStickerFilter completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
                 if (isEmpty) {
                     [weakSelf.filterPipeline removeAllFilters];
+                    [gpuimageCamera removeTarget:weakSelf.gpuimageStickerFilter];
                 } else {
                     [weakSelf.filterPipeline.filters.lastObject removeTarget:weakSelf.gpuimageStickerFilter];
                 }
@@ -195,10 +201,11 @@
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
     
     if (camera && [_input isKindOfClass:TKCamera.class]) {
+        GPUImageStillCamera* stillCamera = (GPUImageStillCamera *)camera.sharedObject;
         if (_additionalTexture && _additionalTexture.length > 0) {
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
             if (_filterPipeline.filters.count == 0) {
-                [_filterPipeline addFilter:_gpuimageStickerFilter];
+                [stillCamera addTarget:_gpuimageStickerFilter];
             } else {
                 [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
             }
@@ -218,9 +225,10 @@
 
 - (void)camera:(TKCamera *)camera willStopRecordingWithMovieWriterObject:(NSObject *)object {
     GPUImageMovieWriter* movieWriter = (GPUImageMovieWriter *)object;
+    GPUImageStillCamera* stillCamera = (GPUImageStillCamera *)camera.sharedObject;
     if (_additionalTexture && _additionalTexture.length > 0) {
         if (_filterPipeline.filters.count == 1) {
-            [_filterPipeline removeFilter:_gpuimageStickerFilter];
+            [stillCamera removeTarget:_gpuimageStickerFilter];
         } else {
             [_filterPipeline.filters.lastObject removeTarget:_gpuimageStickerFilter];
         }

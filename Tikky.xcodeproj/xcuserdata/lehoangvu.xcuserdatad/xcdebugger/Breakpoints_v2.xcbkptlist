@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
-            timestampString = "564263573.460842"
+            timestampString = "566374410.929956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
-            timestampString = "564263573.461062"
+            timestampString = "566374410.930021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
@@ -906,7 +906,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/iOS/GPUImageContext.m"
-            timestampString = "564263573.464929"
+            timestampString = "566374410.9301569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "214"
@@ -1753,11 +1753,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Presentation/CameraViewController.mm"
-            timestampString = "566349050.286112"
+            timestampString = "566376136.365378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -2009,11 +2009,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286567"
+            timestampString = "566376136.365567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-addFilter:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2025,11 +2025,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286624"
+            timestampString = "566376136.3656271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-replaceFilter:withFilter:addNewFilterIfNotExist:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2041,11 +2041,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.28667"
+            timestampString = "566376136.365678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-replaceFilter:withFilter:addNewFilterIfNotExist:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2057,11 +2057,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286714"
+            timestampString = "566376136.365728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-replaceFilter:withFilter:addNewFilterIfNotExist:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2073,11 +2073,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286757"
+            timestampString = "566376136.365778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-replaceFilter:withFilter:addNewFilterIfNotExist:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2089,11 +2089,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.2868"
+            timestampString = "566376136.365826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-replaceFilter:withFilter:addNewFilterIfNotExist:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2137,7 +2137,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286869"
+            timestampString = "566376136.365903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -2153,7 +2153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.286914"
+            timestampString = "566376136.365954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -2233,11 +2233,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.287004"
+            timestampString = "566376136.366064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-camera:willStartRecordingWithMovieWriterObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2265,11 +2265,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.287065"
+            timestampString = "566376136.36613"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-setInput:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2297,11 +2297,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.287123"
+            timestampString = "566376136.366196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "-camera:willStartRecordingWithMovieWriterObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2313,11 +2313,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.287167"
+            timestampString = "566376136.366254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "-camera:willStartRecordingWithMovieWriterObject:"
             landmarkType = "7">
          </BreakpointContent>
@@ -2511,22 +2511,6 @@
             startingLineNumber = "207"
             endingLineNumber = "207"
             landmarkName = "StickerEditController::onPan(PanGestureRecognizer* recognizer)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tikky/TikkyClass/Core/TKImageFilter.m"
-            timestampString = "566349050.287336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-capturePhotoAsJPEGWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2808,11 +2792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Presentation/CameraViewController.mm"
-            timestampString = "566349050.287524"
+            timestampString = "566376136.3666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -2840,11 +2824,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClass/Presentation/CameraViewController.mm"
-            timestampString = "566349050.287791"
+            timestampString = "566376136.366663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-didTapStickerPreviewerView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3038,6 +3022,54 @@
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "SpriteBatchNode::initWithTexture(Texture2D *tex, ssize_t capacity"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/GPUImage/GPUImageStickerFilter.mm"
+            timestampString = "566376136.366855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/GPUImage/GPUImageStickerFilter.mm"
+            timestampString = "566376136.3672301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClass/GPUImage/GPUImageStickerFilter.mm"
+            timestampString = "566376136.367499"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-renderToTextureWithVertices:textureCoordinates:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

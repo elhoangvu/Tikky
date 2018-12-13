@@ -17,6 +17,8 @@
 
 #import "TKRootView.h"
 
+#include "cocos2d.h"
+
 @interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate>
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
@@ -225,8 +227,10 @@
 }
 
 - (void)capturePhoto {
+    cocos2d::Director::getInstance()->pause();
     __weak __typeof(self)weakSelf = self;
     [_tikkyEngine.imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        cocos2d::Director::getInstance()->resume();
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             NSMutableArray* assets = [[NSMutableArray alloc] init];
             PHAssetChangeRequest* assetRequest;
@@ -240,6 +244,7 @@
             //            if (block) {
             //                block(error);
             //            }
+            
         }];
     }];
 }
