@@ -7,12 +7,14 @@
 //
 
 #import "TKCamera.h"
-
+//#import "UIDevice+DeviceName.h"
 
 @interface TKCamera ()
 
 @property (nonatomic) GPUImageStillCamera* camera;
 @property (nonatomic) GPUImageMovieWriter* movieWriter;
+@property (nonatomic) AVCaptureDevicePosition devicePosition;
+//@property (nonatomic) GPUImageCropFilter* cropFilter;
 
 @end
 
@@ -24,7 +26,7 @@
 
 - (instancetype)init
 {
-    if (!(self = [[TKCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:(AVCaptureDevicePositionFront)])) {
+    if (!(self = [[TKCamera alloc] initWithSessionPreset:AVCaptureSessionPresetPhoto cameraPosition:(AVCaptureDevicePositionFront)])) {
         return nil;
     }
     
@@ -42,18 +44,16 @@
         return nil;
     }
     
-    if ([sessionPreset containsString:@"Front"]) {
-        _isFrontCamera = YES;
-    } else {
-        _isFrontCamera = NO;
-    }
-    
     _enableAudioForVideoRecording = NO;
     isRunning = NO;
     frameRate = 0;
     sharedObject = _camera;
     _camera.outputImageOrientation = UIInterfaceOrientationPortrait;
     _camera.horizontallyMirrorFrontFacingCamera = YES;
+    _captureSessionPreset = sessionPreset;
+//    _captureSessionRatio = [TKCamera capturesessionPressetToSessionRatio:sessionPreset];
+    _devicePosition = cameraPosition;
+    
     return self;
 }
 
@@ -116,20 +116,6 @@
     }
     [_movieWriter setHasAudioTrack:enableAudioForVideoRecording];
     if (enableAudioForVideoRecording) {
-
-        
-//        AudioChannelLayout channelLayout;
-//        memset(&channelLayout, 0, sizeof(AudioChannelLayout));
-//        channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
-//
-//        NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                       [ NSNumber numberWithInt: kAudioFormatMPEG4AAC], AVFormatIDKey,
-//                                       [ NSNumber numberWithInt: 2 ], AVNumberOfChannelsKey,
-//                                       [ NSNumber numberWithFloat: 16000.0 ], AVSampleRateKey,
-//                                       [ NSData dataWithBytes:&channelLayout length: sizeof( AudioChannelLayout ) ], AVChannelLayoutKey,
-//                                       [ NSNumber numberWithInt: 32000 ], AVEncoderBitRateKey,
-//                                       nil];
-//        [_movieWriter setHasAudioTrack:TRUE audioSettings:audioSettings];
         _enableAudioForVideoRecording = enableAudioForVideoRecording;
         _camera.audioEncodingTarget = _movieWriter;
     } else {
@@ -139,7 +125,11 @@
 
 - (void)swapCamera {
     [_camera rotateCamera];
-    _isFrontCamera = !_isFrontCamera;
+    if (self.isFrontCamera) {
+        _devicePosition = AVCaptureDevicePositionFront;
+    } else {
+        _devicePosition = AVCaptureDevicePositionBack;
+    }
 }
 
 - (AVCaptureDevicePosition)cameraPosition {
@@ -152,7 +142,7 @@
                                                                             inFrame:frame
                                                                     withOrientation:(UIDeviceOrientation)_camera.outputImageOrientation
                                                                         andFillMode:1
-                                                                           mirrored:_isFrontCamera];
+                                                                           mirrored:self.isFrontCamera];
     
     if ([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus])
     {
@@ -177,22 +167,26 @@
     }
 }
 
-- (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block; {
+- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block; {
     if (!block) {
         return;
     }
-    GPUImageFilter* subFilter = (GPUImageFilter *)filterObject;
-    if (!filterObject) {
-        subFilter = [[GPUImageFilter alloc] init];
-        [_camera addTarget:subFilter];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(camera:prepareToCapturePhotoWithCameraObject:completionHandler:)]) {
+        [_delegate camera:self prepareToCapturePhotoWithCameraObject:_camera completionHandler:block];
     }
-    __weak __typeof(self)weakSelf = self;
-    [_camera capturePhotoAsJPEGProcessedUpToFilter:(GPUImageOutput<GPUImageInput> *)subFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-        if (!filterObject) {
-            [weakSelf.camera removeTarget:subFilter];
-        }
-        block(processedJPEG, error);
-    }];
+}
+
+- (void)synchronizeCaptureOutputWithViewSize:(CGSize)size {
+    if (size.width <= 0
+        || size.height <= 0) {
+        NSAssert(NO, @"Cannot synch capture output with viewFrame.size.width <= 0 or viewFrame.size.height <= 0");
+        return;
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(camera:prepareToSynchronizeCaptureOutputWithViewSize:)]) {
+        [_delegate camera:self prepareToSynchronizeCaptureOutputWithViewSize:size];
+    }
 }
 
 #pragma mark -
@@ -218,15 +212,43 @@
     [_camera setFrameRate:frameRate];
 }
 
-//#pragma -
-//#pragma mark GPUImageMovieWriterDelegate
+- (void)setCaptureSessionPreset:(NSString *)captureSessionPreset {
+    if (captureSessionPreset == nil) {
+        NSAssert(NO, @"captureSessionPreset should be not nil");
+        return;
+    }
+    _captureSessionPreset = captureSessionPreset;
+//    _captureSessionRatio = [TKCamera capturesessionPressetToSessionRatio:captureSessionPreset];
+    _camera.captureSessionPreset = captureSessionPreset;
+}
+
+- (BOOL)isFrontCamera {
+    return _camera.isFrontFacingCameraPresent;
+}
+
+
 //
-//- (void)movieRecordingCompleted {
-//    NSLog(@">>>> HV > movieRecordingCompleted");
-//}
+//- (void)setCaptureSessionRatio:(TKCameraCaptureSessionRatio)captureSessionRatio {
+//    if (captureSessionRatio == TKCameraCaptureSessionRatioUnknown) {
+//        NSAssert(NO, @"captureSessionRatio should be not TKCameraCaptureSessionRatioUnknown");
+//        return;
+//    }
 //
-//- (void)movieRecordingFailedWithError:(NSError*)error {
-//    NSLog(@">>>> HV > movieRecordingFailedWithError: %@", error.description);
+//    if (captureSessionRatio == TKCameraCaptureSessionRatio4x3
+//        && !_isFrontCamera) {
+//        _captureSessionPreset = [TKCamera capturesessionRatioToSessionPreset:TKCameraCaptureSessionRatio16x9 withDevicePosition:_devicePosition];;
+//        _captureSessionRatio = captureSessionRatio;
+//        _camera.captureSessionPreset = _captureSessionPreset;
+//    } else {
+//        NSString* captureSessionPreset = [TKCamera capturesessionRatioToSessionPreset:captureSessionRatio withDevicePosition:_devicePosition];
+//        if (!captureSessionPreset) {
+//            NSAssert(NO, @"captureSessionRatio didn't found a capture session preset for this device postion. Maybe this device support TKCameraCaptureSessionRatio4x3 for front position only. Try setting it!");
+//            return;
+//        }
+//        _captureSessionPreset = captureSessionPreset;
+//        _captureSessionRatio = captureSessionRatio;
+//        _camera.captureSessionPreset = _captureSessionPreset;
+//    }
 //}
 
 #pragma mark -
@@ -236,8 +258,7 @@
                                                inFrame:(CGRect)frame
                                        withOrientation:(UIDeviceOrientation)orientation
                                            andFillMode:(GPUImageFillModeType)fillMode
-                                              mirrored:(BOOL)mirrored;
-{
+                                              mirrored:(BOOL)mirrored {
     CGSize frameSize = frame.size;
     CGPoint pointOfInterest = CGPointMake(0.5, 0.5);
     
@@ -295,5 +316,48 @@
     
     return pointOfInterest;
 }
+//
+//+ (TKCameraCaptureSessionRatio)capturesessionPressetToSessionRatio:(AVCaptureSessionPreset)captureSessionPrest {
+//    if ([captureSessionPrest isEqualToString:AVCaptureSessionPresetPhoto]
+//        || [captureSessionPrest isEqualToString:AVCaptureSessionPresetMedium]
+//        || [captureSessionPrest isEqualToString:AVCaptureSessionPresetLow]
+//        || [captureSessionPrest isEqualToString:AVCaptureSessionPreset640x480]) {
+//        return TKCameraCaptureSessionRatio4x3;
+//    } else if ([captureSessionPrest isEqualToString:AVCaptureSessionPresetHigh]
+//               || [captureSessionPrest isEqualToString:AVCaptureSessionPreset1280x720]
+//               || [captureSessionPrest isEqualToString:AVCaptureSessionPreset1920x1080]
+//               || [captureSessionPrest isEqualToString:AVCaptureSessionPreset3840x2160]) {
+//        NSString* deviceName = UIDevice.currentDevice.deviceName;
+//        if ([deviceName isEqualToString:@"iPhone 4S"]
+//            || [deviceName isEqualToString:@"iPad 2"]
+//            || [deviceName isEqualToString:@"iPad 3"]) {
+//            return TKCameraCaptureSessionRatio4x3;
+//        }
+//        return TKCameraCaptureSessionRatio16x9;
+//    }
+//    return TKCameraCaptureSessionRatioUnknown;
+//}
+//
+//+ (AVCaptureSessionPreset)capturesessionRatioToSessionPreset:(TKCameraCaptureSessionRatio)captureSessionRatio
+//                                          withDevicePosition:(AVCaptureDevicePosition)devicePosition {
+//    switch (captureSessionRatio) {
+//        case TKCameraCaptureSessionRatio4x3:
+//            return AVCaptureSessionPresetPhoto;
+//        case TKCameraCaptureSessionRatio16x9: {
+//            if (devicePosition == AVCaptureDevicePositionBack)
+//                return AVCaptureSessionPreset1920x1080;
+//            NSString* deviceName = UIDevice.currentDevice.deviceName;
+//            if ([deviceName isEqualToString:@"iPhone 4S"]
+//                || [deviceName isEqualToString:@"iPad 2"]
+//                || [deviceName isEqualToString:@"iPad 3"]) {
+//                return nil;
+//            }
+//            return AVCaptureSessionPreset1280x720;
+//        }
+//        default:
+//            return nil;
+//    }
+//    return nil;
+//}
 
 @end

@@ -67,7 +67,7 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     
     _view = ccGameController.view;
     _stickerScene = stickerScene;
-    
+
     return self;
 }
 
@@ -99,25 +99,21 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->newFrameStickerWithStickers(stickers);
 }
 
-//- (void)newFrameStickerWithPath:(NSString *)path {
-//    _stickerScene->newFrameStickerWithPath([path UTF8String]);
-//}
-//
-//- (void)newFrameStickerWith2PartTopBot:(NSString *)topFramePath bottomFramePath:(NSString *)bottomFramePath {
-//    _stickerScene->newFrameStickerWith2PartTopBot([topFramePath UTF8String], [bottomFramePath UTF8String]);
-//}
-//
-//- (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath {
-//    _stickerScene->newFrameStickerWith2PartLeftRight([leftFramePath UTF8String], [rightFramePath UTF8String]);
-//}
-
-//- (void)removeFrameSticker {
-//    _stickerScene->removeFrameSticker();
-//}
-
 - (void)removeAllStaticSticker {
     _stickerScene->removeAllStaticSticker();
 }
+
+//- (void)synchronizeStickerView {
+//    cocos2d::GLView* glview = cocos2d::Director::getInstance()->getOpenGLView();
+//    cocos2d::Size glviewSize = glview->getFrameSize();
+//    CGSize eaglViewSize = _view.frame.size;
+//    float widthRatio = frame.size.width/eaglViewSize.width;
+//    float heightRatio = frame.size.height/eaglViewSize.height;
+//    glview->setFrameSize(glviewSize.width*widthRatio, glviewSize.height*heightRatio);
+//
+//    cocos2d::Size designResolutionSize = glview->getDesignResolutionSize();
+//    glview->setDesignResolutionSize(designResolutionSize.width*widthRatio, designResolutionSize.height*heightRatio, ResolutionPolicy::NO_BORDER);
+//}
 
 @end
 

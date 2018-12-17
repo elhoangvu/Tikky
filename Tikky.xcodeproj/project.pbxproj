@@ -60,7 +60,6 @@
 		B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */; };
 		B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */; };
 		B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */; };
-		B746993121C1F5EF00711F0E /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */; };
 		B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */; };
 		B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */; };
 		B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */; };
@@ -90,6 +89,7 @@
 		B74D676821BD54EB00E11EC4 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675A21BD54E800E11EC4 /* TKTopMenuItem.m */; };
 		B74D676921BD54EB00E11EC4 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675C21BD54E900E11EC4 /* TKTopMenu.m */; };
 		B74D676A21BD54EB00E11EC4 /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74D675D21BD54E900E11EC4 /* TKTopSubViewMenu.m */; };
+		B74E611E21C2E5D0003A0E9A /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */; };
 		B751913421BA6EC900F64A21 /* TKFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B751913321BA6EC900F64A21 /* TKFilter.m */; };
 		B751914221BA79EF00F64A21 /* TKSampleDataPool.m in Sources */ = {isa = PBXBuildFile; fileRef = B751914121BA79EF00F64A21 /* TKSampleDataPool.m */; };
 		B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B751914421BA80D200F64A21 /* TKFilterProperty.m */; };
@@ -141,6 +141,8 @@
 		B7B8523E21C04C4F005A3F3B /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523721C0490B005A3F3B /* libluacocos2d iOS.a */; };
 		B7B8524021C04C9C005A3F3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */; };
 		B7B8524221C04CC1005A3F3B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */; };
+		B7E738B021C6D70500932ABD /* UIDevice+DeviceName.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E738AF21C6D70500932ABD /* UIDevice+DeviceName.m */; };
+		B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E738B821C6D70500932ABD /* UIView+Delegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,7 +293,6 @@
 		B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
 		B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
 		B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
-		B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
 		B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
 		B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
 		B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		B74D676021BD54EB00E11EC4 /* TKTopSubViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubViewMenu.h; sourceTree = "<group>"; };
 		B74D676121BD54EB00E11EC4 /* TKBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenu.h; sourceTree = "<group>"; };
 		B74D676221BD54EB00E11EC4 /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
+		B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
 		B751913221BA6EC900F64A21 /* TKFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilter.h; sourceTree = "<group>"; };
 		B751913321BA6EC900F64A21 /* TKFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilter.m; sourceTree = "<group>"; };
 		B751914021BA79EF00F64A21 /* TKSampleDataPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSampleDataPool.h; sourceTree = "<group>"; };
@@ -398,6 +400,10 @@
 		B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B7E738AE21C6D70500932ABD /* UIDevice+DeviceName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceName.h"; sourceTree = "<group>"; };
+		B7E738AF21C6D70500932ABD /* UIDevice+DeviceName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceName.m"; sourceTree = "<group>"; };
+		B7E738B721C6D70500932ABD /* UIView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Delegate.h"; sourceTree = "<group>"; };
+		B7E738B821C6D70500932ABD /* UIView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Delegate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,13 +616,24 @@
 				B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */,
 				B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */,
 				B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */,
-				B746991821C1F5EF00711F0E /* frame-flower-shakura-10.png */,
+				B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */,
 				B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */,
 				B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */,
 				B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */,
 				B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */,
 			);
 			path = "frame-flower-shakura";
+			sourceTree = "<group>";
+		};
+		B749AC9221C7E47600A7360D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7E738B721C6D70500932ABD /* UIView+Delegate.h */,
+				B7E738B821C6D70500932ABD /* UIView+Delegate.m */,
+				B7E738AE21C6D70500932ABD /* UIDevice+DeviceName.h */,
+				B7E738AF21C6D70500932ABD /* UIDevice+DeviceName.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B74AA87821BB0FD500D63E19 /* Stickers */ = {
@@ -662,6 +679,7 @@
 		B751913921BA714700F64A21 /* TikkyClass */ = {
 			isa = PBXGroup;
 			children = (
+				B749AC9221C7E47600A7360D /* Extensions */,
 				B751913C21BA71AF00F64A21 /* Utilities */,
 				B751913B21BA71A900F64A21 /* Data */,
 				B751913A21BA717300F64A21 /* Core */,
@@ -1014,13 +1032,13 @@
 				B74D674921BD54C500E11EC4 /* frame.png in Resources */,
 				B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */,
 				B751917221BA9EF600F64A21 /* lookup-mono cool.png in Resources */,
-				B746993121C1F5EF00711F0E /* frame-flower-shakura-10.png in Resources */,
 				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
 				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
+				B74E611E21C2E5D0003A0E9A /* frame-flower-shakura-10.png in Resources */,
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
 				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
 				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
@@ -1075,6 +1093,7 @@
 				B7107D0121BEE05300FEE948 /* TKUtilities.m in Sources */,
 				B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
+				B7E738B021C6D70500932ABD /* UIDevice+DeviceName.m in Sources */,
 				B7107D0B21BEE84400FEE948 /* TKVideo.m in Sources */,
 				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */,
 				B74D676321BD54EB00E11EC4 /* TKBottomMenuItem.m in Sources */,
@@ -1083,6 +1102,7 @@
 				B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */,
 				B74D676A21BD54EB00E11EC4 /* TKTopSubViewMenu.m in Sources */,
 				B7107D0521BEE81800FEE948 /* TKCamera.m in Sources */,
+				B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B74D676521BD54EB00E11EC4 /* TKBottomMenu.m in Sources */,

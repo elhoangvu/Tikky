@@ -157,6 +157,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 -(void) doAnimationWhenKeyboardMoveWithDuration:(float) duration distance:(float) dis;
 -(void) doAnimationWhenAnotherEditBeClicked;
+
 @end
 
 #endif // CC_PLATFORM_IOS

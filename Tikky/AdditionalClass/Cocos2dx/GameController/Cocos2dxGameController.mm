@@ -14,6 +14,8 @@
 
 @interface Cocos2dxGameController () {
     cocos2d::Scene* _initialScene;
+    CCEAGLView* _eaglView;
+    cocos2d::GLView* _glview;
 }
 
 @end
@@ -25,22 +27,21 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appIsInBackground:) name:TKNotificationAppIsInBackground object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appBackToForeground:) name:TKNotificationAppBackToForeground object:nil];
 
-
-        CCEAGLView *eaglView = [CCEAGLView viewWithFrame:frame
-                                             pixelFormat:(__bridge NSString *)cocos2d::GLViewImpl::_pixelFormat
-                                             depthFormat:cocos2d::GLViewImpl::_depthFormat
-                                      preserveBackbuffer:NO
-                                              sharegroup:sharegroup
-                                           multiSampling:NO
-                                         numberOfSamples:0];
-        eaglView.backgroundColor = [UIColor clearColor];
-        [eaglView setMultipleTouchEnabled:YES];
+        _eaglView = [CCEAGLView viewWithFrame:frame
+                                  pixelFormat:(__bridge NSString *)cocos2d::GLViewImpl::_pixelFormat
+                                  depthFormat:cocos2d::GLViewImpl::_depthFormat
+                           preserveBackbuffer:NO
+                                   sharegroup:sharegroup
+                                multiSampling:NO
+                              numberOfSamples:0];
+        _eaglView.backgroundColor = [UIColor clearColor];
+        [_eaglView setMultipleTouchEnabled:YES];
         
-        self.view = eaglView;        
+        _view = _eaglView;
         
         // IMPORTANT: Setting the GLView should be done after creating the RootViewController
-        cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView((__bridge void *)self.view);
-        cocos2d::Director::getInstance()->setOpenGLView(glview);
+        _glview = cocos2d::GLViewImpl::createWithEAGLView((__bridge void *)self.view);
+        cocos2d::Director::getInstance()->setOpenGLView(_glview);
         //run the cocos2d-x game scene
         cocos2d::Application::getInstance()->run();
         
@@ -48,6 +49,20 @@
     }
     
     return self;
+}
+
+- (void)setFrame:(CGRect)frame {
+    cocos2d::Size glviewSize = _glview->getFrameSize();
+    CGSize eaglViewSize = _eaglView.frame.size;
+    float widthRatio = frame.size.width/eaglViewSize.width;
+    float heightRatio = frame.size.height/eaglViewSize.height;
+    _glview->setFrameSize(glviewSize.width*widthRatio, glviewSize.height*heightRatio);
+    
+    cocos2d::Size designResolutionSize = _glview->getDesignResolutionSize();
+    _glview->setDesignResolutionSize(designResolutionSize.width*widthRatio, designResolutionSize.height*heightRatio, ResolutionPolicy::NO_BORDER);
+    //        [eaglView setFrame:CGRectMake(0, -(frame.size.height-frame.size.width*4/3)/2, frame.size.width, frame.size.height)];
+    [_eaglView setFrame:frame];
+    cocos2d::Director::getInstance()->getRunningScene()->onEnter();
 }
 
 - (void)setInitialScene:(void *)initialScene {

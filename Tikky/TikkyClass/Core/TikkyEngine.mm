@@ -8,12 +8,14 @@
 
 #import "platform/ios/CCEAGLView-ios.h"
 #import "Cocos2dxGameController.h"
-
+#import "UIView+Delegate.h"
 #import "TikkyEngine.h"
 
 //TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
-@interface TikkyEngine () <TKImageFilterDatasource, Cocos2dXGameControllerDelegate>
+@interface TikkyEngine () <TKImageFilterDatasource, UIViewDelegate, Cocos2dXGameControllerDelegate> {
+    Cocos2dxGameController* _cocos2dxGameController;
+}
 
 @property (nonatomic) CCEAGLView* cceaglView;
 
@@ -36,19 +38,21 @@
                              UIScreen.mainScreen.bounds.origin.y,
                              UIScreen.mainScreen.bounds.size.width,
                              UIScreen.mainScreen.bounds.size.height);
-//    _view = [[UIView alloc] initWithFrame:rect];
+    _view = [[UIView alloc] initWithFrame:rect];
     [_imageFilter.view setFrame:rect];
-    
-    Cocos2dxGameController* gameController = [[Cocos2dxGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
+    _view.delegate = self;
+//    [_imageFilter.view setFrame:(CGRectMake(0, 0, rect.size.width, rect.size.width*4/3))];
+    _cocos2dxGameController = [[Cocos2dxGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
 //    gameController.delegate = self;
-    _cceaglView = (CCEAGLView *)gameController.view;
-//    [_view addSubview:_imageFilter.view];
-//    [_view addSubview:gameController.view];
+    _cceaglView = (CCEAGLView *)_cocos2dxGameController.view;
 
     StickerScene* stickerScene = (StickerScene *)StickerScene::createScene();
-    [gameController setInitialScene:(void *)stickerScene];
+    [_cocos2dxGameController setInitialScene:(void *)stickerScene];
     
-    _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene cocos2dxGameController:gameController];
+    _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene cocos2dxGameController:_cocos2dxGameController];
+//
+    [_view addSubview:_imageFilter.view];
+    [_view addSubview:_cocos2dxGameController.view];
     
     return self;
 }
@@ -64,7 +68,8 @@
 }
 
 
-#pragma mark - Cocos2dXGameControllerDelegate
+#pragma mark -
+#pragma mark Cocos2dXGameControllerDelegate
 
 - (void)backToAppFromGameController:(Cocos2dxGameController *)gameController {
     [UIView animateWithDuration:0.3f animations:^{
@@ -75,11 +80,20 @@
     }];
 }
 
-#pragma mark - TKImageFilterDatasource
+#pragma mark -
+#pragma mark TKImageFilterDatasource
 
 - (NSData *)additionalTexturesForImageFilter:(TKImageFilter *)imageFilter {
     return [_stickerPreviewer getStickerTextures];
 }
 
-@end
+#pragma mark -
+#pragma mark UIViewDelegate
 
+- (void)view:(UIView *)view setFrame:(CGRect)frame {
+    CGRect newframe = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    [_imageFilter.view setFrame:frame];
+    [_cocos2dxGameController setFrame:newframe];
+}
+
+@end

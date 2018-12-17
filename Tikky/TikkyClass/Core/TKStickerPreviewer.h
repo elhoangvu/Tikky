@@ -30,10 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)newStaticStickerWithSticker:(TKSticker)sticker;
 - (void)newFrameStickerWithSticker:(TKSticker)sticker;
 - (void)newFrameStickerWithStickers:(std::vector<TKSticker>&)stickers;
-//- (void)newFrameStickerWith2PartTopBot:(NSString *)topFramePath bottomFramePath:(NSString *)bottomFramePath;
-//- (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath;
 - (void)removeFrameSticker;
 - (void)removeAllStaticSticker;
+
+- (void)synchronizeStickerView;
 
 @end
 

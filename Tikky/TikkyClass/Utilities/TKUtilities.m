@@ -7,32 +7,23 @@
 //
 
 #import "TKUtilities.h"
+#import <objc/runtime.h>
 
-@implementation TKFocusUtilities
-
-
-+ (void)setFocus:(CGPoint)focus forDevice:(AVCaptureDevice *)device {
-    if ([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus])
-    {
-        NSError *error;
-        if ([device lockForConfiguration:&error])
-        {
-            [device setFocusPointOfInterest:focus];
-            [device setFocusMode:AVCaptureFocusModeAutoFocus];
-            [device unlockForConfiguration];
-        }
-    }
+void swizzleInstanceMethod(Class swizzledClass, SEL originalSelector, SEL swizzledSelector) {
+    Method originalMethod = class_getInstanceMethod(swizzledClass, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(swizzledClass, swizzledSelector);
     
-    if ([device isExposurePointOfInterestSupported] && [device isExposureModeSupported:AVCaptureExposureModeAutoExpose])
-    {
-        NSError *error;
-        if ([device lockForConfiguration:&error])
-        {
-            [device setExposurePointOfInterest:focus];
-            [device setExposureMode:AVCaptureExposureModeAutoExpose];
-            [device unlockForConfiguration];
-        }
+    BOOL isAdded = class_addMethod(swizzledClass,
+                                   originalSelector,
+                                   method_getImplementation(swizzledMethod),
+                                   method_getTypeEncoding(swizzledMethod));
+    
+    if (isAdded) {
+        class_replaceMethod(swizzledClass,
+                            swizzledSelector,
+                            method_getImplementation(originalMethod),
+                            method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
-
-@end

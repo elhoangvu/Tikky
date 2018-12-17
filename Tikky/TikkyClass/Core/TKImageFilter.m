@@ -13,12 +13,14 @@
 #import "TKCamera.h"
 #import "TKVideo.h"
 #import "TKPhoto.h"
+#import "UIView+Delegate.h"
 
-@interface TKImageFilter () <TKCameraDelegate>
+@interface TKImageFilter () <TKCameraDelegate, UIViewDelegate>
 
 @property (nonatomic) GPUImageFilterPipeline* filterPipeline;
 @property (nonatomic) GPUImageView* gpuimageView;
 @property (nonatomic) GPUImageStickerFilter* gpuimageStickerFilter;
+@property (nonatomic) GPUImageCropFilter* gpuimageCropFilter;
 @property (nonatomic) GPUImageMovieWriter* gpuimageMovieWriter;
 @property (nonatomic) NSDictionary* filterList;
 
@@ -47,32 +49,29 @@
     self.input = input;
     
     _gpuimageView = [[GPUImageView alloc] init];
+    _gpuimageView.delegate = self;
+//    [_gpuimageView setFillMode:(kGPUImageFillModePreserveAspectRatioAndFill)];
     view = _gpuimageView;
     
     _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];
+    _gpuimageCropFilter = [[GPUImageCropFilter alloc] init];
     _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *) input.sharedObject output:_gpuimageView];
-
     return self;
 }
 
-- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *, NSError *))block {
-    if (!block) {
-        return;
-    }
-
+- (void)camera:(TKCamera *)camera prepareToCapturePhotoWithCameraObject:(NSObject *)object completionHandler:(void (^)(NSData *, NSError *))block {
     if (!_datasource || ![_datasource respondsToSelector:@selector(additionalTexturesForImageFilter:)]) {
         return;
     }
     
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
-    TKCamera* camera = (TKCamera *)_input;
-    GPUImageStillCamera* gpuimageCamera = (GPUImageStillCamera *)camera.sharedObject;
+    GPUImageStillCamera* gpuimageCamera = (GPUImageStillCamera *)object;
     if (camera && [_input isKindOfClass:TKCamera.class]) {
         __weak __typeof(self)weakSelf = self;
         if (_additionalTexture && _additionalTexture.length > 0) {
             __block BOOL isEmpty = NO;
             [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
-
+            
             if (_filterPipeline.filters.count == 0) {
                 GPUImageFilter* filter = [[GPUImageFilter alloc] init];
                 [_filterPipeline addFilter:filter];
@@ -81,8 +80,8 @@
             } else {
                 [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
             }
-
-            [camera capturePhotoAsJPEGWithFilterObject:_gpuimageStickerFilter completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+            
+            [gpuimageCamera capturePhotoAsJPEGProcessedUpToFilter:_gpuimageStickerFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
                 if (isEmpty) {
                     [weakSelf.filterPipeline removeAllFilters];
                     [gpuimageCamera removeTarget:weakSelf.gpuimageStickerFilter];
@@ -93,11 +92,41 @@
                 block(processedJPEG, error);
             }];
         } else {
-            [camera capturePhotoAsJPEGWithFilterObject:_filterPipeline.filters.lastObject completionHandler:^(NSData * _Nonnull processedJPEG, NSError * _Nonnull error) {
+            GPUImageFilter* subFilter = (GPUImageFilter *)_filterPipeline.filters.lastObject;
+            if (!subFilter) {
+                subFilter = [[GPUImageFilter alloc] init];
+                [gpuimageCamera addTarget:subFilter];
+            }
+            __weak __typeof(self)weakSelf = self;
+            [gpuimageCamera capturePhotoAsJPEGProcessedUpToFilter:subFilter withCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+                if (!weakSelf.filterPipeline.filters.lastObject) {
+                    [gpuimageCamera removeTarget:subFilter];
+                }
                 block(processedJPEG, error);
             }];
         }
+    }
+}
 
+- (void)camera:(TKCamera *)camera prepareToSynchronizeCaptureOutputWithViewSize:(CGSize)size {
+    if (camera.isFrontCamera) {
+        [camera setCaptureSessionPreset:AVCaptureSessionPreset1280x720];
+    } else {
+        [camera setCaptureSessionPreset:AVCaptureSessionPreset1920x1080];
+    }
+    if (size.width / size.height - 9.0f/16.0f < 0.00001) {
+        if ([_filterPipeline.filters.firstObject isKindOfClass:GPUImageCropFilter.class]) {
+            [_filterPipeline removeFilterAtIndex:0];
+        }
+    } else {
+        CGFloat height = 9.0f*size.height/(16.0f*size.width);
+        CGFloat y = (1.0f - height)/2.0f;
+        CGFloat x = 0;
+        CGFloat width = 1.0f;
+        [_gpuimageCropFilter setCropRegion:CGRectMake(x, y, width, height)];
+        if (![_filterPipeline.filters.firstObject isKindOfClass:GPUImageCropFilter.class]) {
+            [_filterPipeline addFilter:_gpuimageCropFilter atIndex:0];
+        }
     }
 }
 
@@ -242,6 +271,16 @@
         } else {
             [_filterPipeline.filters.lastObject removeTarget:movieWriter];
         }
+    }
+}
+
+#pragma -
+#pragma mark GPUImageViewDelegate
+
+- (void)view:(GPUImageView *)view setFrame:(CGRect)frame {
+    if ([_input isKindOfClass:TKCamera.class]) {
+        TKCamera* camera = (TKCamera *)_input;
+        [camera synchronizeCaptureOutputWithViewSize:frame.size];
     }
 }
 

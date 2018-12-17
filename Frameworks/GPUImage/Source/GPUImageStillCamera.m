@@ -113,7 +113,7 @@ void GPUImageCreateResizedSampleBuffer(CVPixelBufferRef cameraFrame, CGSize fina
     
     [self.captureSession commitConfiguration];
     
-    self.jpegCompressionQuality = 0.8;
+    self.jpegCompressionQuality = 0.8f;
     
     return self;
 }
@@ -314,6 +314,7 @@ void GPUImageCreateResizedSampleBuffer(CVPixelBufferRef cameraFrame, CGSize fina
         else
         {
             // This is a workaround for the corrupt images that are sometimes returned when taking a photo with the front camera and using the iOS 5.0 texture caches
+
             AVCaptureDevicePosition currentCameraPosition = [[videoInput device] position];
             if ( (currentCameraPosition != AVCaptureDevicePositionFront) || (![GPUImageContext supportsFastTextureUpload]) || !requiresFrontCameraTextureCacheCorruptionWorkaround)
             {

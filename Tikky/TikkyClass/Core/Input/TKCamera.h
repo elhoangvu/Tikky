@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "TKImageInput.h"
 
+//typedef NS_ENUM(NSUInteger, TKCameraCaptureSessionRatio) {
+//    TKCameraCaptureSessionRatio4x3,
+//    TKCameraCaptureSessionRatio16x9,
+//    TKCameraCaptureSessionRatio1x1,
+//    TKCameraCaptureSessionRatioUnknown
+//};
+
 @protocol TKCameraDelegate;
 
 @interface TKCamera : TKImageInput
@@ -18,7 +25,9 @@
 @property (nonatomic) UIInterfaceOrientation outputImageOrientation;
 @property (nonatomic) id<TKCameraDelegate> delegate;
 @property (nonatomic) BOOL enableAudioForVideoRecording;
-@property (nonatomic) BOOL isFrontCamera;
+@property (nonatomic, readonly) BOOL isFrontCamera;
+@property (nonatomic, copy) NSString* captureSessionPreset;
+//@property (nonatomic) TKCameraCaptureSessionRatio captureSessionRatio;
 
 - (instancetype)initWithSessionPreset:(NSString *)sessionPreset cameraPosition:(AVCaptureDevicePosition)cameraPosition;
 
@@ -37,8 +46,8 @@
 - (AVCaptureDevicePosition)cameraPosition;
 - (void)focusAtPoint:(CGPoint)point inFrame:(CGRect)frame;
 
-
-- (void)capturePhotoAsJPEGWithFilterObject:(NSObject *)filterObject completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+- (void)synchronizeCaptureOutputWithViewSize:(CGSize)size;
 
 @end
 
@@ -46,5 +55,7 @@
 
 - (void)camera:(TKCamera *)camera willStartRecordingWithMovieWriterObject:(NSObject *)object;
 - (void)camera:(TKCamera *)camera willStopRecordingWithMovieWriterObject:(NSObject *)object;
+- (void)camera:(TKCamera *)camera prepareToCapturePhotoWithCameraObject:(NSObject *)object completionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+- (void)camera:(TKCamera *)camera prepareToSynchronizeCaptureOutputWithViewSize:(CGSize)size;
 
 @end

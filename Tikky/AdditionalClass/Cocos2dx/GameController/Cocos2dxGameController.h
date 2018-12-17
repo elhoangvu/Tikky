@@ -24,6 +24,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame sharegroup:(EAGLSharegroup *)sharegroup;
 - (void)setInitialScene:(void *)initialScene;
+- (void)setFrame:(CGRect)frame;
 - (void *)getRunningScene;
 - (void)backToApp;
 

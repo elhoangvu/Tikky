@@ -7,15 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 
-@interface TKFocusUtilities : NSObject
+void swizzleInstanceMethod(Class swizzledClass, SEL originalSelector, SEL swizzledSelector);
 
-+ (CGPoint)convertToPointOfInterestFromViewCoordinates:(CGPoint)viewCoordinates
-                                               inFrame:(CGRect)frame
-                                       withOrientation:(UIDeviceOrientation)orientation
-                                           andFillMode:(GPUImageFillModeType)fillMode
-                                              mirrored:(BOOL)mirrored;
-+ (void)setFocus:(CGPoint)focus forDevice:(AVCaptureDevice *)device;
-
-@end

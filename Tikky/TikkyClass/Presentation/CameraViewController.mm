@@ -50,14 +50,7 @@
     [self.view addSubview:_tikkyEngine.imageFilter.view];
     
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
-//    [_camera swapCamera]; 
-//
-//    _bottomMenu = [TKBottomMenu new];
-//
-//    TKTopMenu *navigationBar = [TKTopMenu new];
-//    [self.view addSubview:_bottomMenu];
-//    _bottomMenu.viewController = self;
-//    [self.view addSubview:navigationBar];
+//    [_camera swapCamera];
     
     [self setUpUI];
     [self.view setMultipleTouchEnabled:YES];
@@ -118,7 +111,7 @@
     [self.rootView.topMenuView setViewController:self];
     
 //    _tikkyEngine.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [_rootView addSubview:_tikkyEngine.stickerPreviewer.view];
+    [_rootView addSubview:_tikkyEngine.view];
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
     [tapGesture setNumberOfTapsRequired:1];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -133,7 +126,19 @@
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
     if ([nameItem isEqualToString:@"photo"]) {
+        CGSize screenSize = UIScreen.mainScreen.bounds.size;
+        static BOOL is3x4 = NO;
         
+        if (is3x4) {
+            [_tikkyEngine.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+            is3x4 = NO;
+        } else {
+            [_tikkyEngine.view setFrame:CGRectMake(0,
+                                                   (screenSize.height - screenSize.width*4.0f/3.0f)/2.0f,
+                                                   screenSize.width,
+                                                   screenSize.width*4.0f/3.0f)];
+            is3x4 = YES;
+        }
     } else if ([nameItem isEqualToString:@"capture"]) {
         // capture photo
         [self capturePhoto];
@@ -229,7 +234,7 @@
 - (void)capturePhoto {
     cocos2d::Director::getInstance()->pause();
     __weak __typeof(self)weakSelf = self;
-    [_tikkyEngine.imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    [_camera capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         cocos2d::Director::getInstance()->resume();
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             NSMutableArray* assets = [[NSMutableArray alloc] init];
