@@ -34,24 +34,27 @@
                    [[TKTopMenuItem alloc] initWithName:@"flash"],
                    [[TKTopMenuItem alloc] initWithName:@"reverse"],];
         
-        __weak typeof(TKTopMenuItem *)frontItem = nil;
+        UIStackView *stackView = [UIStackView new];
+        stackView.axis = UILayoutConstraintAxisHorizontal;
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.distribution = UIStackViewDistributionEqualSpacing;
+        stackView.alignment = UIStackViewAlignmentCenter;
+        stackView.spacing = 30;
+        [self addSubview:stackView];
+        
         for (TKTopMenuItem *item in _items) {
             item.delegate = self;
             item.translatesAutoresizingMaskIntoConstraints = NO;
             item.contentMode = UIViewContentModeScaleAspectFit;
-            [self addSubview:item];
-            
-            [[item.centerYAnchor constraintEqualToAnchor:self.centerYAnchor constant:-40] setActive:YES];
-            
-            [[item.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.125] setActive:YES];
-            
-            if (!frontItem) {
-                [[item.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:50] setActive:YES];
-            } else {
-                [[item.leadingAnchor constraintEqualToAnchor:frontItem.trailingAnchor constant:50.0] setActive:YES];
-            }
-            frontItem = item;
+            [stackView addArrangedSubview:item];
+
+            [[item.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1] setActive:YES];
         }
+        [[stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:true];
+//        [stackView.widthAnchor constraintEqualToAnchor:self.widthAnchor];
+//        [stackView.heightAnchor constraintEqualToAnchor:self.heightAnchor];
+//        [stackView.topAnchor constraintEqualToAnchor:self.topAnchor];
+
     }
     return self;
 }

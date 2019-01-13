@@ -27,28 +27,48 @@
                    [[TKBottomMenuItem alloc] initWithName:@"frame"],
                    [[TKBottomMenuItem alloc] initWithName:@"filter"],];
         
-        __weak typeof(TKBottomMenuItem *)frontItem = nil;
+        UIStackView *stackView = [UIStackView new];
+        stackView.axis = UILayoutConstraintAxisHorizontal;
+        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.distribution = UIStackViewDistributionEqualSpacing;
+        stackView.alignment = UIStackViewAlignmentCenter;
+        stackView.spacing = 15;
+        [self addSubview:stackView];
+        
         for (TKBottomMenuItem *item in _items) {
+//            item.delegate = self;
             item.translatesAutoresizingMaskIntoConstraints = NO;
             item.contentMode = UIViewContentModeScaleAspectFit;
-            [self addSubview:item];
+            [stackView addArrangedSubview:item];
             
-            [[item.centerYAnchor constraintEqualToAnchor:self.centerYAnchor] setActive:YES];
-
             if ([item.name isEqualToString:@"capture"]) {
                 [[item.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.5] setActive:YES];
+                [[item.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.5] setActive:YES];
                 [[item.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
             } else {
-                [[item.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
-            
-                if (!frontItem) {
-                    [[item.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:20.0] setActive:YES];
-                } else {
-                    [[item.leadingAnchor constraintEqualToAnchor:frontItem.trailingAnchor constant:15.0] setActive:YES];
-                }
+                [[item.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.12] setActive:YES];
             }
-            frontItem = item;
         }
+        
+        
+        
+//        __weak typeof(TKBottomMenuItem *)frontItem = nil;
+//        float distance = 0;
+//        for (TKBottomMenuItem *item in _items) {
+//            item.translatesAutoresizingMaskIntoConstraints = NO;
+//            item.contentMode = UIViewContentModeScaleAspectFit;
+//            [self addSubview:item];
+//
+//            [[item.centerYAnchor constraintEqualToAnchor:self.centerYAnchor] setActive:YES];
+//
+//            if ([item.name isEqualToString:@"capture"]) {
+//                [[item.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.5] setActive:YES];
+//                [[item.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
+//            } else {
+//                [[item.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
+//                [[item.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:distance] setActive:YES];
+//            }
+//        }
     }
     return self;
 }
