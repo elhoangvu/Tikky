@@ -31,12 +31,12 @@
         
         [[self.bottomMenuView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:YES];
         [[self.bottomMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
-        [[self.bottomMenuView.leadingAnchor constraintEqualToSystemSpacingAfterAnchor:self.leadingAnchor multiplier:0.0] setActive:YES];
+        [[self.bottomMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[self.bottomMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
         
         [[self.topMenuView.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0] setActive:YES];
         [[self.topMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
-        [[self.topMenuView.leadingAnchor constraintEqualToSystemSpacingAfterAnchor:self.leadingAnchor multiplier:0.0] setActive:YES];
+        [[self.topMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[self.topMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.2] setActive:YES];
     }
     return self;
