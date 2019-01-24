@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeFrameSticker;
 - (void)removeAllStaticSticker;
 
-- (void)synchronizeStickerView;
+//- (void)synchronizeStickerView;
 
 @end
 

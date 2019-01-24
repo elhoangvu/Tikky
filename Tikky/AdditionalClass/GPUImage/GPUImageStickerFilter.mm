@@ -106,6 +106,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    // Unwrap TKRectTexture array from _textureStickers (NSData)
     TKRectTexture* rectTextures = (TKRectTexture *)_textureStickers.bytes;
     NSUInteger size = _textureStickers.length;
     if (rectTextures) {

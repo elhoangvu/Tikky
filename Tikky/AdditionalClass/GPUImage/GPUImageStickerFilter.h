@@ -1,14 +1,24 @@
 #import "GPUImageOutput.h"
 #include "TKTextureUtilities.h"
 
-/** GPUImage's base filter class
- 
- Filters and other subsequent elements in the chain conform to the GPUImageInput protocol, which lets them take in the supplied or processed texture from the previous link in the chain and do something with it. Objects one step further down the chain are considered targets, and processing can be branched by adding multiple targets to a single output or filter.
+/**
+ A filter to add stickers from external textures to GPUImage Engine
  */
 @interface GPUImageStickerFilter : GPUImageFilter {
     NSData* _textureStickers;
 }
 
+/**
+ Set textures for the filter
+
+ @param textureStickers A NSData wrapper for array of TKRectTexture
+ @see
+     TKRectTexture* rectTexture = (TKRectTexture *)malloc(sizeof(TKRectTexture)*textureList->size());
+     // set data for TKRectTexture array: rectTexture
+     NSData* textureStickers = [NSData dataWithBytesNoCopy:rectTexture length:textureList->size() freeWhenDone:YES];
+
+     [GPUImageStickerFilter setTextureStickers:textureStickers];
+ */
 - (void)setTextureStickers:(NSData *)textureStickers;
 
 @end

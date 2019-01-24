@@ -18,6 +18,9 @@
 
 @protocol UIViewDelegate <NSObject>
 
+/**
+ The delegate is called when the frame changed from UIView
+ */
 - (void)view:(UIView *)view setFrame:(CGRect)frame;
 
 @end

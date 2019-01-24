@@ -13,7 +13,6 @@
 #import "TKStickerPreviewer.h"
 
 @interface Cocos2dxGameController () {
-    cocos2d::Scene* _initialScene;
     CCEAGLView* _eaglView;
     cocos2d::GLView* _glview;
 }
@@ -52,6 +51,13 @@
 }
 
 - (void)setFrame:(CGRect)frame {
+    /*
+     When setting a frame for cocos view, notify:
+        - width and height ratio of ios-view are different from cocos view
+        - setDesignResolutionSize of GLView when setting frame of glview
+        - call onEnter() of running scene to re-animation to change position of stickers
+     */
+    
     cocos2d::Size glviewSize = _glview->getFrameSize();
     CGSize eaglViewSize = _eaglView.frame.size;
     float widthRatio = frame.size.width/eaglViewSize.width;
@@ -65,19 +71,18 @@
     cocos2d::Director::getInstance()->getRunningScene()->onEnter();
 }
 
-- (void)setInitialScene:(void *)initialScene {
-    _initialScene = (cocos2d::Scene *)initialScene;
-    
-    cocos2d::Director::getInstance()->runWithScene(_initialScene);
+- (void)runWithCocos2dxScene:(void *)cocos2dxScene {
+    cocos2d::Scene* scene = (cocos2d::Scene *)cocos2dxScene;
+    cocos2d::Director::getInstance()->runWithScene(scene);
 }
-
-- (void *)getRunningScene {
-    auto runningScene = cocos2d::Director::getInstance()->getRunningScene();
-    if (!runningScene) {
-        return (void *)_initialScene;
-    }
-    return (void *)runningScene;
-}
+//
+//- (void *)getRunningScene {
+//    auto runningScene = cocos2d::Director::getInstance()->getRunningScene();
+//    if (!runningScene) {
+//        return (void *)_initialScene;
+//    }
+//    return (void *)runningScene;
+//}
 
 - (void)appIsInBackground:(NSNotification *)notification {
     cocos2d::Application::getInstance()->applicationDidEnterBackground();

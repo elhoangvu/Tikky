@@ -53,10 +53,13 @@ bool StickerScene::init()
 
 //    _isAvailableFrameSticker = false;
     _stickerEditVC = StickerEditController::create();
+    
+
     this->addChild(_stickerEditVC);
     onEditStickerBegan = nullptr;
     onEditStickerEnded = nullptr;
     
+    // Set up callback functions for _stickerEditVC (StickerEditController)
     _stickerEditVC->onEditStickerBegan = [this]() {
         if (this->onEditStickerBegan) {
             this->onEditStickerBegan();
@@ -152,6 +155,7 @@ Node* StickerScene::newStickerWithSticker(TKSticker sticker, bool isFrameSticker
         return nullptr;
     }
 
+    // Set Lua component for sticker Node
     bool isHaveComponentLua = false;
     if (sticker.luaComponentPath != "") {
         ComponentLua* componentLua = ComponentLua::create(sticker.luaComponentPath);
@@ -161,6 +165,8 @@ Node* StickerScene::newStickerWithSticker(TKSticker sticker, bool isFrameSticker
             isHaveComponentLua = true;
         }
     }
+    
+    // If the node have not lua component, the node will be set by default properties: size, position.
     if (!isHaveComponentLua) {
         auto visibleSize = Director::getInstance()->getVisibleSize();
         Vec2 origin = Director::getInstance()->getVisibleOrigin();

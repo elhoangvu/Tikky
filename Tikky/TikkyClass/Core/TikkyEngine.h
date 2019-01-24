@@ -10,6 +10,11 @@
 #import "TKStickerPreviewer.h"
 #import "TKImageFilter.h"
 
+/**
+ The main class of project. Include:
+ - TKStickerPreviewer: a sticker previewer in the front of view
+ - TKImageFilter: a filter view (including camera view) in background view.
+ */
 @interface TikkyEngine : NSObject
 
 @property (nonatomic) UIView* view;

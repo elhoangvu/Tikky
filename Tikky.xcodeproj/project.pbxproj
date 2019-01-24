@@ -1297,7 +1297,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1337,7 +1337,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";

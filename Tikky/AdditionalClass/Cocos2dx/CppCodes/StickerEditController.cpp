@@ -135,6 +135,8 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         auto childs = this->getChildren();
         if (!childs.empty()) {
             Node::sortDecsNodes(childs);
+            
+            // Find sticker touched in the scene
             for (auto child : childs) {
                 if (((child->getTag() & StickerType::STATIC_STICKER) == StickerType::STATIC_STICKER) && child->isVisible()) {
                     auto zOrder = child->getLocalZOrder();
@@ -145,9 +147,13 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
                     if (sticker && sticker->getBoundingBox().containsPoint(location)) {
                         _sticker = child;
                         isTouchBeganInside = true;
+                        
                         if (_sticker->getLocalZOrder() != _frontZOrder) {
+                            // Move touched sticker to the front
                             this->reorderChild(_sticker, ++_frontZOrder);
                         }
+                        
+                        // Callback function
                         if (this->onTouchStickerBegan) {
                             this->onTouchStickerBegan();
                         }
@@ -165,14 +171,19 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             if (_sticker) {
                 if (!isChanged) {
                     _touchStickerCount++;
+                    
+                    // Callback function
                     if (this->onEditStickerBegan) {
                         this->onEditStickerBegan();
                     }
                 }
                 isChanged = true;
                 _sticker->setPosition(_sticker->getPosition() + recognizer->getTraslation());
+                
+                // Enable sticker editing mode
                 _recyclingBin->setVisible(true);
                 
+                // When moving sticker into to recycling area, show animation: scale+ recycling bin, scale- sticker,...
                 if (_recyclingArea->getBoundingBox().containsPoint(location)) {
                     if (!isStickerScaling) {
                         isStickerScaling = true;
@@ -203,7 +214,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
                 }
             }
         }
-    } else {
+    } else {   // Touch ended - release touch
         if (isTouchBeganInside) {
             if (touchBeganLocation == location) {
                 this->tapStickerAnimation();
@@ -221,6 +232,7 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             }
         }
         
+        // Sticker in recycling area, remove it
         if (_recyclingArea->getBoundingBox().containsPoint(location)) {
             auto scale0Action = ScaleTo::create(0.1f, 0.01f);
             auto removeAction = RemoveSelf::create();

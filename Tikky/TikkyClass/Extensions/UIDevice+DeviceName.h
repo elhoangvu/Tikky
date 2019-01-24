@@ -10,6 +10,9 @@
 
 @interface UIDevice (DeviceName)
 
+/**
+ Additional propery which is device name
+ */
 @property (nonatomic, readonly) NSString* deviceName;
 
 @end

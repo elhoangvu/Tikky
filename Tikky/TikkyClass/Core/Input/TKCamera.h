@@ -42,11 +42,24 @@
 - (void)resumeVideoRecording;
 - (void)stopVideoRecording;
 
+/**
+ Swap camera: front-rear, rear-front
+ */
 - (void)swapCamera;
 - (AVCaptureDevicePosition)cameraPosition;
+
+/**
+ Focus on the camera
+ */
 - (void)focusAtPoint:(CGPoint)point inFrame:(CGRect)frame;
 
 - (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
+
+/**
+ Call this function when changing the size of view frame. It will synchronize output with the view
+
+ @param size A size of new view frame was set
+ */
 - (void)synchronizeCaptureOutputWithViewSize:(CGSize)size;
 
 @end

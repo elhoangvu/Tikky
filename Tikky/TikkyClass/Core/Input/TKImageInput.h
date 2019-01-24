@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKImageInput : NSObject
 
+// A internal object which is TKImageInput want to sharing
 @property (nonatomic, readonly, weak) NSObject* sharedObject;
 
 @end

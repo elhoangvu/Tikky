@@ -13,7 +13,7 @@
 
 //TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
-@interface TikkyEngine () <TKImageFilterDatasource, UIViewDelegate, Cocos2dXGameControllerDelegate> {
+@interface TikkyEngine () <TKImageFilterDatasource, UIViewDelegate> {
     Cocos2dxGameController* _cocos2dxGameController;
 }
 
@@ -42,12 +42,18 @@
     [_imageFilter.view setFrame:rect];
     _view.delegate = self;
 //    [_imageFilter.view setFrame:(CGRectMake(0, 0, rect.size.width, rect.size.width*4/3))];
+    
+    /*
+     This method to create an instance of Cocos2dxGameController in the class,
+     this instance will push to an external class which is shared item.
+     */
     _cocos2dxGameController = [[Cocos2dxGameController alloc] initWithFrame:rect sharegroup:_sharegroup];
+    
 //    gameController.delegate = self;
     _cceaglView = (CCEAGLView *)_cocos2dxGameController.view;
 
     StickerScene* stickerScene = (StickerScene *)StickerScene::createScene();
-    [_cocos2dxGameController setInitialScene:(void *)stickerScene];
+    [_cocos2dxGameController runWithCocos2dxScene:(void *)stickerScene];
     
     _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene cocos2dxGameController:_cocos2dxGameController];
 //
@@ -65,19 +71,6 @@
     });
     
     return instance;
-}
-
-
-#pragma mark -
-#pragma mark Cocos2dXGameControllerDelegate
-
-- (void)backToAppFromGameController:(Cocos2dxGameController *)gameController {
-    [UIView animateWithDuration:0.3f animations:^{
-        gameController.view.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        [gameController backToApp];
-//        [_cceaglView removeFromSuperview];
-    }];
 }
 
 #pragma mark -
