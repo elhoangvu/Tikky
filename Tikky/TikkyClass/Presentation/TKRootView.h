@@ -9,16 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "TKBottomMenu.h"
 #import "TKTopMenu.h"
+#import "TKBottomMenuFactory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TKRootView : UIView
+
+@property (nonatomic, weak) id viewController;
 
 @property (nonatomic, strong) TKBottomMenu *bottomMenuView;
 
 @property (nonatomic, strong) TKTopMenu *topMenuView;
 
 -(instancetype)initWithView:(UIView *)view;
+
+-(void)setBottomMenuViewWithBottomMenuType:(TKBottomMenuType)bottomMenuType;
 
 @end
 

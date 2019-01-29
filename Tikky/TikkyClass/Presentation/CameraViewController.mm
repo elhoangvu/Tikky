@@ -7,16 +7,19 @@
 //
 
 #import "CameraViewController.h"
-#import "TikkyEngine.h"
+#import "Tikky.h"
 #import <Photos/Photos.h>
 
+#import "TKUtilities.h"
 #import "TKSampleDataPool.h"
 
 #import "GPUImage.h"
 
 #import "TKRootView.h"
 
-@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate>
+#include "cocos2d.h"
+
+@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate>
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
 @property (nonatomic) TKCamera* camera;
@@ -29,30 +32,29 @@
 @property (nonatomic) TKFilter* lastFilter;
 @property (nonatomic) NSURL* movieURL;
 
+@property (nonatomic) BOOL isTouchStickerBegan;
+
 @end
 
 @implementation CameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    _isTouchStickerBegan = NO;
     _stickers = TKSampleDataPool.sharedInstance.stickerList;
     _filters = TKSampleDataPool.sharedInstance.filterList;
     
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
-    [self.view addSubview:_tikkyEngine.view];
+//    [self.view addSubview:_tikkyEngine.view];
+    [self.view addSubview:_tikkyEngine.imageFilter.view];
+    
     _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
-    [_camera swapCamera]; 
-//
-//    _bottomMenu = [TKBottomMenu new];
-//
-//    TKTopMenu *navigationBar = [TKTopMenu new];
-//    [self.view addSubview:_bottomMenu];
-//    _bottomMenu.viewController = self;
-//    [self.view addSubview:navigationBar];
+//    [_camera swapCamera];
     
     [self setUpUI];
+    [self.view setMultipleTouchEnabled:YES];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -69,6 +71,24 @@
         [_camera setEnableAudioForVideoRecording:YES];
         isSetupAudio = YES;
     }
+    
+//    NSString* top = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-top.png" ofType:nil];
+//    NSString* bot = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-bot.png" ofType:nil];
+//    [_tikkyEngine.stickerPreviewer newFrameStickerWith2PartTopBot:top bottomFramePath:bot];
+    
+    std::vector<TKSticker> stickers;
+    for (NSInteger i = 0; i < 12; i++) {
+        NSString* fileName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.png", (long)i];
+        NSString* luaName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.lua", (long)i];
+        NSString* path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+        NSString* luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+        TKSticker sticker;
+        sticker.path = path.UTF8String;
+        sticker.luaComponentPath = luaPath.UTF8String;
+        sticker.allowChanges = NO;
+        stickers.push_back(sticker);
+    }
+    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:stickers];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -89,48 +109,92 @@
     [[self.rootView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:1.0] setActive:YES];
     [self.rootView.bottomMenuView setViewController:self];
     [self.rootView.topMenuView setViewController:self];
+    
+//    _tikkyEngine.view.translatesAutoresizingMaskIntoConstraints = NO;
+    [_rootView addSubview:_tikkyEngine.view];
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
+    [tapGesture setNumberOfTapsRequired:1];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [_tikkyEngine.stickerPreviewer.view addGestureRecognizer:tapGesture];
+//    [[_tikkyEngine.view.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
+//    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
+//    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
+//    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
+    [_rootView bringSubviewToFront:_rootView];
+    [_rootView bringSubviewToFront:_rootView.topMenuView];
+    [_rootView bringSubviewToFront:_rootView.bottomMenuView];
+
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
     if ([nameItem isEqualToString:@"photo"]) {
+        CGSize screenSize = UIScreen.mainScreen.bounds.size;
+        static BOOL is3x4 = NO;
         
+        if (is3x4) {
+            [_tikkyEngine.view setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+            is3x4 = NO;
+        } else {
+            [_tikkyEngine.view setFrame:CGRectMake(0,
+                                                   (screenSize.height - screenSize.width*4.0f/3.0f)/2.0f,
+                                                   screenSize.width,
+                                                   screenSize.width*4.0f/3.0f)];
+            is3x4 = YES;
+        }
     } else if ([nameItem isEqualToString:@"capture"]) {
         // capture photo
         [self capturePhoto];
     } else if ([nameItem isEqualToString:@"filter"]) {
-        long rand = (long)arc4random_uniform((unsigned int)_filters.count);
-        NSString* filterName = [_filters objectAtIndex:rand];
-        TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
-        [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
-        _lastFilter = filter;
-        if (!filter) {
-            NSLog(@">>>> HV > filter nil");
-        }
-        NSLog(@">>>> HV > filter name: %@", filterName);
+        [self.rootView setBottomMenuViewWithBottomMenuType:FilterMenu];
+
+//        long rand = (long)arc4random_uniform((unsigned int)_filters.count);
+//        NSString* filterName = [_filters objectAtIndex:rand];
+//        TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+//        [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+//        _lastFilter = filter;
+//        if (!filter) {
+//            NSLog(@">>>> HV > filter nil");
+//        }
+//        NSLog(@">>>> HV > filter name: %@", filterName);
     } else if ([nameItem isEqualToString:@"frame"]) {
-        long rand = (long)arc4random_uniform((unsigned int)_stickers.count);
-        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
+        [self.rootView setBottomMenuViewWithBottomMenuType:FrameMenu];
+
+//        long rand = (long)arc4random_uniform((unsigned int)_stickers.count);
+//        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
     } else if ([nameItem isEqualToString:@"emoji"]) {
+        [self.rootView setBottomMenuViewWithBottomMenuType:StickerMenu];
+        ((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers = [NSMutableArray new];
+        [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+            [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickerCollectionView reloadData];
+//        });
+ 
         // Record video
-        static bool isStart = NO;
-        static bool isPrepare = NO;
-        if (isStart == NO) {
-            unlink([_movieURL.path UTF8String]);
-            if (isPrepare) {
-                [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
-            } else {
-                isPrepare = YES;
-            }
-            [_camera startVideoRecording];
-            
-            isStart = YES;
-            NSLog(@">>>> HV > START RECORDING");
-        } else {
-            [_camera stopVideoRecording];
-            isStart = NO;
-            [self writeVideoToLibraryWithURL:_movieURL];
-            NSLog(@">>>> HV > STOP RECORDING");
-        }
+//        static bool isStart = NO;
+//        static bool isPrepare = NO;
+//        if (isStart == NO) {
+//            unlink([_movieURL.path UTF8String]);
+//            if (isPrepare) {
+//                [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+//            } else {
+//                isPrepare = YES;
+//            }
+//            double delayToStartRecording = 0.5f;
+//            __weak __typeof(self)weakSelf = self;
+//            dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
+//            dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
+//                NSLog(@">>>> HV > START RECORDING");
+//
+//                [weakSelf.camera startVideoRecording];
+//                isStart = YES;
+//            });
+//        } else {
+//            [_camera stopVideoRecording];
+////            [_camera setEnableAudioForVideoRecording:NO];
+//            isStart = NO;
+//            [self writeVideoToLibraryWithURL:_movieURL];
+//            NSLog(@">>>> HV > STOP RECORDING");
+//        }
     }
 }
 //
@@ -181,8 +245,10 @@
 }
 
 - (void)capturePhoto {
+    cocos2d::Director::getInstance()->pause();
     __weak __typeof(self)weakSelf = self;
-    [_tikkyEngine.imageFilter capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    [_camera capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+        cocos2d::Director::getInstance()->resume();
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             NSMutableArray* assets = [[NSMutableArray alloc] init];
             PHAssetChangeRequest* assetRequest;
@@ -196,6 +262,7 @@
             //            if (block) {
             //                block(error);
             //            }
+            
         }];
     }];
 }
@@ -240,30 +307,35 @@
 #pragma mark TKStickerPreviewerDelegate
 
 - (void)onEditStickerBegan {
-    [_rootView setHidden:YES];
+    [_rootView.bottomMenuView setHidden:YES];
+    [_rootView.topMenuView setHidden:YES];
 }
 
 - (void)onEditStickerEnded {
-    [_rootView setHidden:NO];
+    [_rootView.bottomMenuView setHidden:NO];
+    [_rootView.topMenuView setHidden:NO];
+}
+
+- (void)onTouchStickerBegan {
+    _isTouchStickerBegan = YES;
 }
 
 #pragma mark -
-#pragma mark Override Touch Event
+#pragma mark
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesBegan:touches withEvent:event];
+- (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
+    if (tapGesture.state == UIGestureRecognizerStateEnded) {
+        if (!_isTouchStickerBegan) {
+            CGPoint tapPoint = [tapGesture locationInView:_tikkyEngine.imageFilter.view];
+            [_camera focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
+        }
+        _isTouchStickerBegan = NO;
+    }
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesMoved:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesEnded:touches withEvent:event];
-}
-
-- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [_tikkyEngine.view.subviews.lastObject touchesCancelled:touches withEvent:event];
+#pragma UIStickerCollectionViewCellDelegate
+-(void)cellClickWith:(NSNumber *)identifier andType:(NSString *)type {
+    NSLog(@"sticker!!!");
 }
 
 @end
