@@ -36,7 +36,7 @@
         
         UIStackView *stackView = [UIStackView new];
         stackView.axis = UILayoutConstraintAxisHorizontal;
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.translatesAutoresizingMaskIntoConstraints = NO;
         stackView.distribution = UIStackViewDistributionEqualSpacing;
         stackView.alignment = UIStackViewAlignmentCenter;
         stackView.spacing = 30;
@@ -51,6 +51,9 @@
             [[item.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1] setActive:YES];
         }
         [[stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:true];
+//        [stackView.widthAnchor constraintEqualToAnchor:self.widthAnchor];
+//        [stackView.heightAnchor constraintEqualToAnchor:self.heightAnchor];
+//        [stackView.topAnchor constraintEqualToAnchor:self.topAnchor];
 
     }
     return self;
@@ -58,13 +61,28 @@
 
 - (void)clickItem:(NSString *)nameItem {
     
+
+    
 }
 
-- (void)setViewController:(id)viewController {
-    _viewController = viewController;
-    for (TKTopMenuItem *item in self.items) {
-        item.delegate = self.viewController;
-    }
-}
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        //draw
+//        CGRect newFrame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height / 10);
+//        [self setFrame:newFrame];
+//
+//        //add item
+//        _subViews = [[NSMutableDictionary alloc] init];
+//        [_subViews setValue:[TKTopMenuItem new] forKey:@"more_item"];
+//        [_subViews setValue:[TKTopMenuItem new] forKey:@"frame"];
+//        [_subViews setValue:[TKTopMenuItem new] forKey:@"timed"];
+//        [_subViews setValue:[TKTopMenuItem new] forKey:@"flash"];
+//        [_subViews setValue:[TKTopMenuItem new] forKey:@"reverse_camera"];
+//        [self drawItem];
+//    }
+//    return self;
+//}
 
 @end

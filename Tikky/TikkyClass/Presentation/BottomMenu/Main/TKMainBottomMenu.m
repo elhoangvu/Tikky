@@ -1,41 +1,42 @@
 //
-//  TKSelectionBar.m
+//  TKMainBottomMenu.m
 //  TKPresentation
 //
-//  Created by LeHuuNghi on 12/4/18.
-//  Copyright © 2018 LeHuuNghi. All rights reserved.
+//  Created by LeHuuNghi on 1/20/19.
+//  Copyright © 2019 LeHuuNghi. All rights reserved.
 //
 
-#import "TKBottomMenu.h"
-#import "TKBottomMenuItem.h"
+#import "TKMainBottomMenu.h"
+#import "TKMainBottomMenuItem.h"
 
-@interface TKBottomMenu()
+@interface TKMainBottomMenu()
 
-@property (nonatomic, strong) NSArray<TKBottomMenuItem *> *items;
+@property (nonatomic, strong) NSArray<TKMainBottomMenuItem *> *items;
 
 @end
 
-@implementation TKBottomMenu
+@implementation TKMainBottomMenu
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _items = @[[[TKBottomMenuItem alloc] initWithName:@"photo"],
-                   [[TKBottomMenuItem alloc] initWithName:@"emoji"],
-                   [[TKBottomMenuItem alloc] initWithName:@"capture"],
-                   [[TKBottomMenuItem alloc] initWithName:@"frame"],
-                   [[TKBottomMenuItem alloc] initWithName:@"filter"],];
+        _items = @[[[TKMainBottomMenuItem alloc] initWithName:@"photo"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"emoji"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"capture"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"frame"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"filter"],];
         
         UIStackView *stackView = [UIStackView new];
         stackView.axis = UILayoutConstraintAxisHorizontal;
-        stackView.translatesAutoresizingMaskIntoConstraints = false;
+        stackView.translatesAutoresizingMaskIntoConstraints = NO;
         stackView.distribution = UIStackViewDistributionEqualSpacing;
         stackView.alignment = UIStackViewAlignmentCenter;
         stackView.spacing = 15;
         [self addSubview:stackView];
         
-        for (TKBottomMenuItem *item in _items) {
+        for (TKMainBottomMenuItem *item in _items) {
+            //            item.delegate = self;
             item.translatesAutoresizingMaskIntoConstraints = NO;
             item.contentMode = UIViewContentModeScaleAspectFit;
             [stackView addArrangedSubview:item];
@@ -54,19 +55,11 @@
     return self;
 }
 
-- (void)clickItem:(NSString *)nameItem {
-    
-}
-
 - (void)setViewController:(id)viewController {
-    _viewController = viewController;
-    for (TKBottomMenuItem *item in self.items) {
-        item.delegate = self.viewController;
+    [super setViewController:viewController];
+    for (TKMainBottomMenuItem *item in self.items) {
+        item.delegate = viewController;
     }
-}
-
-- (void)drawItem {
-
 }
 
 @end

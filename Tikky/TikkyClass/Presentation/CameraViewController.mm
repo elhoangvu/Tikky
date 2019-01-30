@@ -19,7 +19,7 @@
 
 #include "cocos2d.h"
 
-@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate>
+@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate>
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
 @property (nonatomic) TKCamera* camera;
@@ -120,8 +120,10 @@
 //    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
 //    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
 //    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
-    [_rootView bringSubviewToFront:_rootView.bottomMenuView];
+
+    [_rootView bringSubviewToFront:_rootView];
     [_rootView bringSubviewToFront:_rootView.topMenuView];
+    [_rootView bringSubviewToFront:_rootView.bottomMenuView];
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
@@ -143,45 +145,84 @@
         // capture photo
         [self capturePhoto];
     } else if ([nameItem isEqualToString:@"filter"]) {
-        long rand = (long)arc4random_uniform((unsigned int)_filters.count);
-        NSString* filterName = [_filters objectAtIndex:rand];
-        TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
-        [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
-        _lastFilter = filter;
-        if (!filter) {
-            NSLog(@">>>> HV > filter nil");
-        }
-        NSLog(@">>>> HV > filter name: %@", filterName);
-    } else if ([nameItem isEqualToString:@"frame"]) {
-        long rand = (long)arc4random_uniform((unsigned int)_stickers.count);
-        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
-    } else if ([nameItem isEqualToString:@"emoji"]) {
-        // Record video
-        static bool isStart = NO;
-        static bool isPrepare = NO;
-        if (isStart == NO) {
-            unlink([_movieURL.path UTF8String]);
-            if (isPrepare) {
-                [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
-            } else {
-                isPrepare = YES;
-            }
-            double delayToStartRecording = 0.5f;
-            __weak __typeof(self)weakSelf = self;
-            dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
-            dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
-                NSLog(@">>>> HV > START RECORDING");
+        [self.rootView setBottomMenuViewWithBottomMenuType:FilterMenu];
 
-                [weakSelf.camera startVideoRecording];
-                isStart = YES;
-            });
-        } else {
-            [_camera stopVideoRecording];
-//            [_camera setEnableAudioForVideoRecording:NO];
-            isStart = NO;
-            [self writeVideoToLibraryWithURL:_movieURL];
-            NSLog(@">>>> HV > STOP RECORDING");
-        }
+//        long rand = (long)arc4random_uniform((unsigned int)_filters.count);
+//        NSString* filterName = [_filters objectAtIndex:rand];
+//        TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+//        [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+//        _lastFilter = filter;
+//        if (!filter) {
+//            NSLog(@">>>> HV > filter nil");
+//        }
+//        NSLog(@">>>> HV > filter name: %@", filterName);
+    } else if ([nameItem isEqualToString:@"frame"]) {
+        [self.rootView setBottomMenuViewWithBottomMenuType:FrameMenu];
+
+//        long rand = (long)arc4random_uniform((unsigned int)_stickers.count);
+//        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
+    } else if ([nameItem isEqualToString:@"emoji"]) {
+        [self.rootView setBottomMenuViewWithBottomMenuType:StickerMenu];
+        ((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers = [NSMutableArray new];
+        [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+            [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickerCollectionView reloadData];
+//        });
+ 
+        // Record video
+//<<<<<<< ui
+//        static bool isStart = NO;
+//        static bool isPrepare = NO;
+//        if (isStart == NO) {
+//            unlink([_movieURL.path UTF8String]);
+//            if (isPrepare) {
+//                [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+//            } else {
+//                isPrepare = YES;
+//            }
+//            double delayToStartRecording = 0.5f;
+//            __weak __typeof(self)weakSelf = self;
+//            dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
+//            dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
+//                NSLog(@">>>> HV > START RECORDING");
+//
+//                [weakSelf.camera startVideoRecording];
+//                isStart = YES;
+//            });
+//        } else {
+//            [_camera stopVideoRecording];
+////            [_camera setEnableAudioForVideoRecording:NO];
+//            isStart = NO;
+//            [self writeVideoToLibraryWithURL:_movieURL];
+//            NSLog(@">>>> HV > STOP RECORDING");
+//        }
+// =======
+//         static bool isStart = NO;
+//         static bool isPrepare = NO;
+//         if (isStart == NO) {
+//             unlink([_movieURL.path UTF8String]);
+//             if (isPrepare) {
+//                 [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+//             } else {
+//                 isPrepare = YES;
+//             }
+//             double delayToStartRecording = 0.5f;
+//             __weak __typeof(self)weakSelf = self;
+//             dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
+//             dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
+//                 NSLog(@">>>> HV > START RECORDING");
+
+//                 [weakSelf.camera startVideoRecording];
+//                 isStart = YES;
+//             });
+//         } else {
+//             [_camera stopVideoRecording];
+// //            [_camera setEnableAudioForVideoRecording:NO];
+//             isStart = NO;
+//             [self writeVideoToLibraryWithURL:_movieURL];
+//             NSLog(@">>>> HV > STOP RECORDING");
+//         }
+
     }
 }
 //
@@ -309,6 +350,7 @@
 
 #pragma mark -
 #pragma mark
+//<<<<<<< ui
 
 - (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
     if (tapGesture.state == UIGestureRecognizerStateEnded) {
@@ -318,6 +360,22 @@
         }
         _isTouchStickerBegan = NO;
     }
+}
+
+#pragma UIStickerCollectionViewCellDelegate
+-(void)cellClickWith:(NSNumber *)identifier andType:(NSString *)type {
+    NSLog(@"sticker!!!");
+// =======
+
+// - (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
+//     if (tapGesture.state == UIGestureRecognizerStateEnded) {
+//         if (!_isTouchStickerBegan) {
+//             CGPoint tapPoint = [tapGesture locationInView:_tikkyEngine.imageFilter.view];
+//             [_camera focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
+//         }
+//         _isTouchStickerBegan = NO;
+//     }
+// >>>>>>> master
 }
 
 @end

@@ -1,14 +1,14 @@
 //
-//  TKSubMenu.m
+//  TKStickerCollectionView.m
 //  TKPresentation
 //
-//  Created by LeHuuNghi on 12/4/18.
-//  Copyright © 2018 LeHuuNghi. All rights reserved.
+//  Created by LeHuuNghi on 1/28/19.
+//  Copyright © 2019 LeHuuNghi. All rights reserved.
 //
 
-#import "TKBottomSubMenu.h"
+#import "TKStickerCollectionView.h"
 
-@implementation TKBottomSubMenu
+@implementation TKStickerCollectionView
 
 /*
 // Only override drawRect: if you perform custom drawing.
