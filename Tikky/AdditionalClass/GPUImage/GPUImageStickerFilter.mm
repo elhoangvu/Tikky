@@ -2,6 +2,8 @@
 #import "GPUImagePicture.h"
 #import <AVFoundation/AVFoundation.h>
 
+#define GL_MAX_TEXTURE 6
+
 // Hardcode the vertex shader for standard filters, but this can be overridden
 NSString *const kGPUImageVertexShaderString = SHADER_STRING
 (
@@ -66,7 +68,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
         [firstInputFramebuffer unlock];
         return;
     }
-    
+    [GPUImageContext useImageProcessingContext];
     [GPUImageContext setActiveShaderProgram:filterProgram];
 
     outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO] textureOptions:self.outputTextureOptions onlyTexture:NO];
@@ -78,8 +80,8 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
 
     [self setUniformsForProgramAtIndex:0];
     
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glClearColor(backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha);
-    glClear(GL_COLOR_BUFFER_BIT);
     
     static const GLfloat imageVertices3[] = {
         -0.25f, -0.25f,
@@ -104,15 +106,16 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
+    // Unwrap TKRectTexture array from _textureStickers (NSData)
     TKRectTexture* rectTextures = (TKRectTexture *)_textureStickers.bytes;
     NSUInteger size = _textureStickers.length;
     if (rectTextures) {
         for (int i = 0; i < size; i++) {
-            glActiveTexture(GL_TEXTURE2 + i + 1);
-            NSLog(@"%d", rectTextures[i].textureID);
+            glActiveTexture(GL_TEXTURE2 + (i + 1) % (GL_MAX_TEXTURE - 2));
+            NSLog(@"Texture id: %d", rectTextures[i].textureID);
             glBindTexture(GL_TEXTURE_2D, rectTextures[i].textureID);
             
-            glUniform1i(filterInputTextureUniform, i + 3);
+            glUniform1i(filterInputTextureUniform, 2 + (i + 1) % (GL_MAX_TEXTURE - 2));
             
             glVertexAttribPointer(filterPositionAttribute, 3, GL_FLOAT, 0, 0, rectTextures[i].position);
             glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
@@ -156,6 +159,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     [self renderToTextureWithVertices:imageVertices textureCoordinates:[[self class] textureCoordinatesForRotation:inputRotation]];
     glDisable(GL_BLEND);
     [self informTargetsAboutNewFrameAtTime:frameTime];

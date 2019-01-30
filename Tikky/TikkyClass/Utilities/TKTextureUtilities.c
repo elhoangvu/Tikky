@@ -1,12 +1,12 @@
 //
-//  TKUtilities.c
+//  TKTextureUtilities.c
 //  Tikky
 //
 //  Created by Le Hoang Vu on 11/18/18.
 //  Copyright © 2018 Le Hoang Vu. All rights reserved.
 //
 
-#include "TKUtilities.h"
+#include "TKTextureUtilities.h"
 
 TKColor TKColorMake(float r, float g, float b, float a) {
     TKColor tkColor;
@@ -61,3 +61,4 @@ TKRectTexture TKRectTextureMake(int textureID, TKPosition* position) {
     
     return tkRectTexture;
 }
+

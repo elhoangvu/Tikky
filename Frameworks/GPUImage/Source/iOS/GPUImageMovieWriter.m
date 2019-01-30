@@ -39,6 +39,10 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
 // TIKKY-REMOVE -->
 }
 
+// <!-- TIKKY-ADD
+@property (nonatomic, readonly) BOOL allowWriteAudio;
+// TIKKY-ADD -->
+
 // Movie recording
 - (void)initializeMovieWithOutputSettings:(NSMutableDictionary *)outputSettings;
 
@@ -92,7 +96,8 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
     alreadyFinishedRecording = NO;
     videoEncodingIsFinished = NO;
     audioEncodingIsFinished = NO;
-
+    _allowWriteAudio = NO;
+    
     discont = NO;
     videoSize = newSize;
     movieURL = newMovieURL;
@@ -284,6 +289,9 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
         }
     });
     isRecording = YES;
+    // <!-- TIKKY-ADD
+    _allowWriteAudio = NO;
+    // TIKKY-ADD -->
 	//    [assetWriter startSessionAtSourceTime:kCMTimeZero];
 }
 
@@ -371,7 +379,20 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
 
 - (void)processAudioBuffer:(CMSampleBufferRef)audioBuffer;
 {
-    if (!isRecording || _paused)
+    // <!-- TIKKY-CHANGE
+    //    if (!isRecording || _paused)
+    //    {
+    //        return;
+    //    }
+    //
+    //    to
+    //
+    //    if (!isRecording || _paused || !_allowWriteAudio)
+    //    {
+    //        return;
+    //    }
+    // TIKKY-CHANGE -->
+    if (!isRecording || _paused || !_allowWriteAudio)
     {
         return;
     }
@@ -795,7 +816,7 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
         void(^write)() = ^() {
             while( ! assetWriterVideoInput.readyForMoreMediaData && ! _encodingLiveVideo && ! videoEncodingIsFinished ) {
                 NSDate *maxDate = [NSDate dateWithTimeIntervalSinceNow:0.1];
-                //            NSLog(@"video waiting...");
+//                            NSLog(@"video waiting...");
                 [[NSRunLoop currentRunLoop] runUntilDate:maxDate];
             }
             if (!assetWriterVideoInput.readyForMoreMediaData)
@@ -806,6 +827,9 @@ NSString *const kGPUImageColorSwizzlingFragmentShaderString = SHADER_STRING
             {
                 if (![assetWriterPixelBufferInput appendPixelBuffer:pixel_buffer withPresentationTime:frameTime])
                     NSLog(@"Problem appending pixel buffer at time: %@", CFBridgingRelease(CMTimeCopyDescription(kCFAllocatorDefault, frameTime)));
+                // <!-- TIKKY-ADD
+                _allowWriteAudio = YES;
+                // TIKKY-ADD -->
             }
             else
             {

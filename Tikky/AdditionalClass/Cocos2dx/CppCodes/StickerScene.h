@@ -27,34 +27,65 @@
 
 #include "StickerEditController.h"
 
+typedef struct {
+    std::string path;
+    std::string luaComponentPath;
+    bool allowChanges;
+} TKSticker;
+
 class StickerScene : public cocos2d::Scene
 {
 private:
+    
+    // A controller to handle and process events for the StickerScene
     StickerEditController* _stickerEditVC;
-    cocos2d::Sprite* _frameSticker;
-    cocos2d::Sprite* _twoPartFrameSticker[2];
-    bool _isAvailableFrameSticker;
 
+    // A array of frame sticker's stickers
+    std::vector<cocos2d::Node *> _frameStickers;
+    
+private:
+    /**
+     Create news sticker node frome TKSticker
+
+     @param sticker A TKSticker to descript a sticker node creation. See TKSticker struct
+     @param isFrameSticker If true, Scene will disable interactions for the sticker.
+     @return A cocos2d node sticker likes description
+     */
+    cocos2d::Node* newStickerWithSticker(TKSticker sticker, bool isFrameSticker = false);
+    
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
     bool onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
     bool onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event);
 public:
+    // Callback function for C++11
+    std::function<void()> onTouchStickerBegan;
     std::function<void()> onEditStickerBegan;
     std::function<void()> onEditStickerEnded;
     
+    // A static creater
     static cocos2d::Scene* createScene();
 
     virtual bool init();
 
+    /**
+     Get all stickers (textures) in the scene, wraping textures by TKCCTexture array
+
+     @return A array of TKCCTexture, see TKCCTexture struct.
+     */
     std::vector<TKCCTexture>* getTexturesInScene();
+    
     unsigned int getStickerCount();
     
+    // Add new sticker with optional args
     void newStaticStickerWithPath(std::string path);
-    void newFrameStickerWithPath(std::string path);
-    void newFrameStickerWith2PartTopBot(std::string topFramePath, std::string bottomFramePath);
-    void newFrameStickerWith2PartLeftRight(std::string leftFramePath, std::string rightFramePath);
-    void removeFrameSticker();
+    void newStaticStickerWithSticker(TKSticker sticker);
+    void newFrameStickerWithSticker(TKSticker sticker);
+    void newFrameStickerWithStickers(std::vector<TKSticker>& stickers);
+
+    // Remove stickers
+    void removeAllFrameSticker();
     void removeAllStaticSticker();
+    
     // implement the "static create()" method manually
     CREATE_FUNC(StickerScene);
 };

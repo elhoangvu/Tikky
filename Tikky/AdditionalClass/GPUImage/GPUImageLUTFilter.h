@@ -15,7 +15,19 @@
 
 @interface GPUImageLUTFilter : GPUImageFilterGroup
 
+/**
+ Init LUT filter with lookup image
+
+ @param lookupImage Lookup image to define filter color
+ @return Instancetype
+ */
 - (instancetype)initWithLookupImage:(UIImage *)lookupImage;
+
+/**
+ Set lookup image for current LUT filter
+
+ @param lookupImage New lookup image to define filter color
+ */
 - (void)setLookupImage:(UIImage *)lookupImage;
 
 @end

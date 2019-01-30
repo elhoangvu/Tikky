@@ -7,14 +7,12 @@
 //
 
 #import "TKStickerPreviewer.h"
-#include "TKUtilities.h"
+#include "TKTextureUtilities.h"
 #include "cocos2d.h"
 
 using namespace cocos2d;
 
 TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
-void onEditStickerBegan();
-void onEditStickerEnded();
 
 @interface TKStickerPreviewer ()
 
@@ -22,24 +20,24 @@ void onEditStickerEnded();
 
 @implementation TKStickerPreviewer
 
-- (instancetype)init
-{
-    if (!(self = [super init])) {
-        return nil;
-    }
-    
-    Scene* runningScene = Director::getInstance()->getRunningScene();
-    StickerScene* stickerScene = dynamic_cast<StickerScene *>(runningScene);
-    if (!stickerScene) {
-        return nil;
-    }
-    
-    _stickerScene = stickerScene;
-    
-    return self;
-}
+//- (instancetype)init
+//{
+//    if (!(self = [super init])) {
+//        return nil;
+//    }
+//
+//    Scene* runningScene = Director::getInstance()->getRunningScene();
+//    StickerScene* stickerScene = dynamic_cast<StickerScene *>(runningScene);
+//    if (!stickerScene) {
+//        return nil;
+//    }
+//
+//    _stickerScene = stickerScene;
+//
+//    return self;
+//}
 
-- (instancetype)initWithStickerScene:(StickerScene *)stickerScene {
+- (instancetype)initWithStickerScene:(StickerScene *)stickerScene cocos2dxGameController:(Cocos2dxGameController *)ccGameController {
     if (!(self = [super init])) {
         return nil;
     }
@@ -61,8 +59,15 @@ void onEditStickerEnded();
         }
     };
     
-    _stickerScene = stickerScene;
+    stickerScene->onTouchStickerBegan = [self](){
+        if (self.delegate && [self.delegate respondsToSelector:@selector(onTouchStickerBegan)]) {
+            [self.delegate onTouchStickerBegan];
+        }
+    };
     
+    _view = ccGameController.view;
+    _stickerScene = stickerScene;
+
     return self;
 }
 
@@ -82,25 +87,33 @@ void onEditStickerEnded();
     _stickerScene->newStaticStickerWithPath([path UTF8String]);
 }
 
-- (void)newFrameStickerWithPath:(NSString *)path {
-    _stickerScene->newFrameStickerWithPath([path UTF8String]);
+- (void)newStaticStickerWithSticker:(TKSticker)sticker {
+    _stickerScene->newStaticStickerWithSticker(sticker);
 }
 
-- (void)newFrameStickerWith2PartTopBot:(NSString *)topFramePath bottomFramePath:(NSString *)bottomFramePath {
-    _stickerScene->newFrameStickerWith2PartTopBot([topFramePath UTF8String], [bottomFramePath UTF8String]);
+- (void)newFrameStickerWithSticker:(TKSticker)sticker {
+    _stickerScene->newFrameStickerWithSticker(sticker);
 }
 
-- (void)newFrameStickerWith2PartLeftRight:(NSString *)leftFramePath rightFramePath:(NSString *)rightFramePath {
-    _stickerScene->newFrameStickerWith2PartLeftRight([leftFramePath UTF8String], [rightFramePath UTF8String]);
-}
-
-- (void)removeFrameSticker {
-    _stickerScene->removeFrameSticker();
+- (void)newFrameStickerWithStickers:(std::vector<TKSticker>&)stickers {
+    _stickerScene->newFrameStickerWithStickers(stickers);
 }
 
 - (void)removeAllStaticSticker {
     _stickerScene->removeAllStaticSticker();
 }
+
+//- (void)synchronizeStickerView {
+//    cocos2d::GLView* glview = cocos2d::Director::getInstance()->getOpenGLView();
+//    cocos2d::Size glviewSize = glview->getFrameSize();
+//    CGSize eaglViewSize = _view.frame.size;
+//    float widthRatio = frame.size.width/eaglViewSize.width;
+//    float heightRatio = frame.size.height/eaglViewSize.height;
+//    glview->setFrameSize(glviewSize.width*widthRatio, glviewSize.height*heightRatio);
+//
+//    cocos2d::Size designResolutionSize = glview->getDesignResolutionSize();
+//    glview->setDesignResolutionSize(designResolutionSize.width*widthRatio, designResolutionSize.height*heightRatio, ResolutionPolicy::NO_BORDER);
+//}
 
 @end
 
@@ -129,12 +142,4 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
     };
     
     return tkRectTexture;
-}
-
-void onEditStickerBegan() {
-    
-}
-
-void onEditStickerEnded() {
-
 }

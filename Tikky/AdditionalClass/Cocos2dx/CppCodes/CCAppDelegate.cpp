@@ -25,7 +25,8 @@
 #include "CCAppDelegate.h"
 //#include "scripting/lua-bindings/manual/CCLuaEngine.h"
 #include "cocos2d.h"
-//#include "scripting/lua-bindings/manual/lua_module_register.h"
+#include "scripting/lua-bindings/manual/CCLuaEngine.h"
+#include "scripting/lua-bindings/manual/lua_module_register.h"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -41,7 +42,7 @@ using namespace cocos2d::experimental;
 #include "audio/include/SimpleAudioEngine.h"
 using namespace CocosDenshion;
 #endif
-#include "StickerScene.h"
+
 USING_NS_CC;
 using namespace std;
 
@@ -134,8 +135,8 @@ bool CCAppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
     
-//    auto engine = LuaEngine::getInstance();
-//    ScriptEngineManager::getInstance()->setScriptEngine(engine);
+    auto engine = LuaEngine::getInstance();
+    ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
     //    LuaEngine::getInstance();
     //    ScriptEngineProtocol* engine = LuaEngine::getInstance();

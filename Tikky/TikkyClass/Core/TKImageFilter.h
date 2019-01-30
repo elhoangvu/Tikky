@@ -27,11 +27,6 @@
 - (BOOL)removeFilter:(TKFilter *)filter;
 - (void)removeAllFilter;
 
-//- (BOOL)setFilter:(NSString *)filter property:(NSString *)property constant:(float)constant;
-//- (NSDictionary *)getPropertyWithFilter:(NSString *)filter;
-
-- (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block;
-
 @end
 
 @protocol TKImageFilterDatasource <NSObject>

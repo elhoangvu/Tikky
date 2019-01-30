@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ The Sample data for unit test in project
+ */
 @interface TKSampleDataPool : NSObject
 
 @property (nonatomic, readonly) NSMutableArray* stickerList;

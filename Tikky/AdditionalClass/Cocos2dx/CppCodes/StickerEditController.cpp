@@ -28,11 +28,21 @@ bool StickerEditController::init() {
     _frontZOrder = 0;
     _isPinching = false;
     _sticker = nullptr;
+    _recyclingArea = Node::create();
+    _recyclingArea->setAnchorPoint(Vec2(0.5f, 0.5f));
+    _recyclingArea->setContentSize(Size(visibleSize.width*0.125f, visibleSize.width*0.125f));
+    _recyclingArea->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.92f + origin.y));
+    this->addChild(_recyclingArea, 1000);
+//    auto drawRectDebuger = DrawNode::create();
+//    drawRectDebuger->drawSolidRect(Vec2::ZERO, Vec2(_recyclingArea->getContentSize()), Color4F::RED);
+//    _recyclingArea->addChild(drawRectDebuger);
+    
     _recyclingBin = Sprite::create("recyclingbin.png");
     _recyclingBin->setScale(0.5f);
-    _recyclingBin->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.92f + origin.y));
+    _recyclingBin->setPosition(Vec2(_recyclingArea->getContentSize().width*0.5f, _recyclingArea->getContentSize().width*0.5f));
     _recyclingBin->setVisible(false);
-    this->addChild(_recyclingBin, 100);
+    _recyclingArea->addChild(_recyclingBin);
+
     onEditStickerBegan = nullptr;
     onEditStickerEnded = nullptr;
 //    auto listener = EventListenerTouchOneByOne::create();
@@ -51,6 +61,7 @@ bool StickerEditController::init() {
     panGesture->onPan = CC_CALLBACK_1(StickerEditController::onPan, this);
     panGesture->setContentSize(Director::getInstance()->getVisibleSize());
     this->addChild(panGesture, 0);
+//    panGesture->setDebugMode(true);
     
     return true;
 }
@@ -72,6 +83,9 @@ void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
         
         if (not filterTouch) {
             _touchStickerCount++;
+            if (this->onTouchStickerBegan) {
+                this->onTouchStickerBegan();
+            }
         }
     }
     else if (stato == GestureStatus::CHANGED)
@@ -88,7 +102,7 @@ void StickerEditController::onPinch(PinchGestureRecognizer* recognizer)
             _sticker->setPosition(_sticker->getPosition() + trasl);
         }
     }
-    else if (stato == GestureStatus::RECOGNIZED)
+    else
     {
         filterTouch = true;
         _isPinching = false;
@@ -110,9 +124,9 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
     
     static Vec2 touchBeganLocation;
     static bool isTouchBeganInside { false };
-    static float stickerScale = 1.0f;
     static bool isStickerScaling = false;
     static bool isChanged = false;
+    static float lastStickerScale = -1.0f;
     
     if (stato == GestureStatus::BEGAN) {
         isStickerScaling = false;
@@ -121,8 +135,10 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
         auto childs = this->getChildren();
         if (!childs.empty()) {
             Node::sortDecsNodes(childs);
+            
+            // Find sticker touched in the scene
             for (auto child : childs) {
-                if (child->getTag() == StickerType::STATIC_STICKER && child->isVisible()) {
+                if (((child->getTag() & StickerType::STATIC_STICKER) == StickerType::STATIC_STICKER) && child->isVisible()) {
                     auto zOrder = child->getLocalZOrder();
                     if (_frontZOrder < zOrder) {
                         _frontZOrder = zOrder;
@@ -131,10 +147,16 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
                     if (sticker && sticker->getBoundingBox().containsPoint(location)) {
                         _sticker = child;
                         isTouchBeganInside = true;
+                        
                         if (_sticker->getLocalZOrder() != _frontZOrder) {
+                            // Move touched sticker to the front
                             this->reorderChild(_sticker, ++_frontZOrder);
                         }
-
+                        
+                        // Callback function
+                        if (this->onTouchStickerBegan) {
+                            this->onTouchStickerBegan();
+                        }
                         return;
                     }
                 }
@@ -149,51 +171,50 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             if (_sticker) {
                 if (!isChanged) {
                     _touchStickerCount++;
+                    
+                    // Callback function
                     if (this->onEditStickerBegan) {
                         this->onEditStickerBegan();
                     }
                 }
                 isChanged = true;
                 _sticker->setPosition(_sticker->getPosition() + recognizer->getTraslation());
+                
+                // Enable sticker editing mode
                 _recyclingBin->setVisible(true);
-//                auto sprite = dynamic_cast<Sprite *>(_sticker);
-                if (_recyclingBin->getBoundingBox().containsPoint(location)) {
+                
+                // When moving sticker into to recycling area, show animation: scale+ recycling bin, scale- sticker,...
+                if (_recyclingArea->getBoundingBox().containsPoint(location)) {
                     if (!isStickerScaling) {
+                        isStickerScaling = true;
+                        lastStickerScale = _sticker->getScale()*0.5f;
                         _recyclingBin->runAction(ScaleTo::create(0.05f, 1.0f));
-                        stickerScale = _sticker->getScale()*0.5f;
-                        _sticker->runAction(ScaleTo::create(0.05f, stickerScale));
+                        auto scaleAction = ScaleTo::create(0.05f, lastStickerScale);
+//                        auto callFunc = CallFunc::create([&](){
+//                            isStickerScaling = true;
+//                        });
+//                        auto seqAction = Sequence::create(scaleAction, callFunc, NULL);
+                        _sticker->runAction(scaleAction);
                         _sticker->setOpacity(255.0f/2.0f);
                     }
-                    isStickerScaling = true;
                 } else {
                     if (isStickerScaling) {
-                        _recyclingBin->runAction(ScaleTo::create(0.05f, 0.5f));
-                        _sticker->runAction(ScaleTo::create(0.05f, _sticker->getScale()*2.0f));
-                        _sticker->setOpacity(255.0f);
                         isStickerScaling = false;
+                        lastStickerScale = lastStickerScale*2.0f;
+                        _recyclingBin->runAction(ScaleTo::create(0.05f, 0.5f));
+                        auto scaleAction = ScaleTo::create(0.05f, lastStickerScale);
+//                        auto callFunc = CallFunc::create([&](){
+//
+//                        });
+//                        auto seqAction = Sequence::create(scaleAction, callFunc, NULL);
+                        _sticker->runAction(scaleAction);
+                        _sticker->setOpacity(255.0f);
+                        lastStickerScale = _sticker->getScale();
                     }
                 }
             }
         }
-    } else if (stato == GestureStatus::FAILED) {
-        log(">>>> end");
-        if (isTouchBeganInside) {
-            if (touchBeganLocation == location) {
-                this->tapStickerAnimation();
-                isTouchBeganInside = false;
-            }
-            _touchStickerCount--;
-            if (_touchStickerCount < 0) {
-                _touchStickerCount = 0;
-            }
-            if (_touchStickerCount == 0) {
-                if (this->onEditStickerEnded) {
-                    this->onEditStickerEnded();
-                }
-            }
-        }
-        isChanged = false;
-    } else if (stato == GestureStatus::RECOGNIZED) {
+    } else {   // Touch ended - release touch
         if (isTouchBeganInside) {
             if (touchBeganLocation == location) {
                 this->tapStickerAnimation();
@@ -211,7 +232,8 @@ void StickerEditController::onPan(PanGestureRecognizer* recognizer) {
             }
         }
         
-        if (_recyclingBin->getBoundingBox().containsPoint(location)) {
+        // Sticker in recycling area, remove it
+        if (_recyclingArea->getBoundingBox().containsPoint(location)) {
             auto scale0Action = ScaleTo::create(0.1f, 0.01f);
             auto removeAction = RemoveSelf::create();
             auto seqAction = Sequence::create(scale0Action, removeAction, NULL);
@@ -275,4 +297,12 @@ void StickerEditController::removeAllSticker() {
             }
         }
     }
+    _sticker = nullptr;
+}
+
+void StickerEditController::removeSticker(cocos2d::Node* sticker, bool isCleanup) {
+    if (_sticker == sticker) {
+        _sticker = nullptr;
+    }
+    sticker->removeFromParentAndCleanup(isCleanup);
 }

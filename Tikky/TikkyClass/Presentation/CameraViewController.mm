@@ -120,10 +120,10 @@
 //    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
 //    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
 //    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
+
     [_rootView bringSubviewToFront:_rootView];
     [_rootView bringSubviewToFront:_rootView.topMenuView];
     [_rootView bringSubviewToFront:_rootView.bottomMenuView];
-
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
@@ -170,6 +170,7 @@
 //        });
  
         // Record video
+//<<<<<<< ui
 //        static bool isStart = NO;
 //        static bool isPrepare = NO;
 //        if (isStart == NO) {
@@ -195,6 +196,33 @@
 //            [self writeVideoToLibraryWithURL:_movieURL];
 //            NSLog(@">>>> HV > STOP RECORDING");
 //        }
+// =======
+//         static bool isStart = NO;
+//         static bool isPrepare = NO;
+//         if (isStart == NO) {
+//             unlink([_movieURL.path UTF8String]);
+//             if (isPrepare) {
+//                 [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+//             } else {
+//                 isPrepare = YES;
+//             }
+//             double delayToStartRecording = 0.5f;
+//             __weak __typeof(self)weakSelf = self;
+//             dispatch_time_t startTime = dispatch_time(DISPATCH_TIME_NOW, delayToStartRecording * NSEC_PER_SEC);
+//             dispatch_after(startTime, dispatch_get_main_queue(), ^(void){
+//                 NSLog(@">>>> HV > START RECORDING");
+
+//                 [weakSelf.camera startVideoRecording];
+//                 isStart = YES;
+//             });
+//         } else {
+//             [_camera stopVideoRecording];
+// //            [_camera setEnableAudioForVideoRecording:NO];
+//             isStart = NO;
+//             [self writeVideoToLibraryWithURL:_movieURL];
+//             NSLog(@">>>> HV > STOP RECORDING");
+//         }
+
     }
 }
 //
@@ -322,6 +350,7 @@
 
 #pragma mark -
 #pragma mark
+//<<<<<<< ui
 
 - (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
     if (tapGesture.state == UIGestureRecognizerStateEnded) {
@@ -336,6 +365,17 @@
 #pragma UIStickerCollectionViewCellDelegate
 -(void)cellClickWith:(NSNumber *)identifier andType:(NSString *)type {
     NSLog(@"sticker!!!");
+// =======
+
+// - (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
+//     if (tapGesture.state == UIGestureRecognizerStateEnded) {
+//         if (!_isTouchStickerBegan) {
+//             CGPoint tapPoint = [tapGesture locationInView:_tikkyEngine.imageFilter.view];
+//             [_camera focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
+//         }
+//         _isTouchStickerBegan = NO;
+//     }
+// >>>>>>> master
 }
 
 @end
