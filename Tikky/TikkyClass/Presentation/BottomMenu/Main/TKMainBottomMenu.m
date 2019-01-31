@@ -32,11 +32,11 @@
         stackView.translatesAutoresizingMaskIntoConstraints = NO;
         stackView.distribution = UIStackViewDistributionEqualSpacing;
         stackView.alignment = UIStackViewAlignmentCenter;
-        stackView.spacing = 15;
+        stackView.spacing = 20;
         [self addSubview:stackView];
         
         for (TKMainBottomMenuItem *item in _items) {
-            //            item.delegate = self;
+            //item.delegate = self;
             item.translatesAutoresizingMaskIntoConstraints = NO;
             item.contentMode = UIViewContentModeScaleAspectFit;
             [stackView addArrangedSubview:item];
@@ -46,7 +46,8 @@
                 [[item.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.5] setActive:YES];
                 [[item.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
             } else {
-                [[item.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.12] setActive:YES];
+                [[item.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.1] setActive:YES];
+                [[item.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
             }
         }
         
