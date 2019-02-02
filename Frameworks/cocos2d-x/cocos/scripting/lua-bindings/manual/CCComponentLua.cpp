@@ -60,6 +60,7 @@ namespace {
 }
 
 int ComponentLua::_index = 0;
+std::mutex ComponentLua::_luaMutex;
 
 ComponentLua* ComponentLua::create(const std::string& scriptFileName)
 {
@@ -105,8 +106,39 @@ void* ComponentLua::getScriptObject() const
     return nullptr;
 }
 
+// <!-- TIKKY-ADD
+void ComponentLua::executeFunctionWithFloatArgs(const char* funcName, const float* args, int n) {
+    ComponentLua::_luaMutex.lock();
+    if (_succeedLoadingScript && getLuaFunction(funcName))
+    {
+        getUserData();
+        
+        LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
+        lua_State* l = stack->getLuaState();
+        
+        // open/create table
+        lua_newtable(l);
+
+        for (int i = 0; i < n; i++) {
+            // new cell
+            lua_pushnumber(l, (lua_Number)i); // note, you can replace this with a string if you want to access table cells by 'key'
+            lua_pushnumber(l, (lua_Number)args[i]);
+            lua_rawset(l, -3); // insert the new cell (and pop index/value off stack)
+        }
+
+        lua_pushnumber(l, (lua_Number)n); // number of cells
+        stack->executeFunction(3);
+//        LuaEngine::getInstance()->getLuaStack()->clean();
+    }
+    ComponentLua::_luaMutex.unlock();
+}
+// TIKKY-ADD -->
+
 void ComponentLua::update(float delta)
 {
+    // <!-- TIKKY-ADD
+    ComponentLua::_luaMutex.lock();
+    // TIKKY-ADD -->
     if (_succeedLoadingScript && getLuaFunction(ComponentLua::UPDATE))
     {
         getUserData();
@@ -114,6 +146,9 @@ void ComponentLua::update(float delta)
         lua_pushnumber(l, delta);
         LuaEngine::getInstance()->getLuaStack()->executeFunction(2);
     }
+    // <!-- TIKKY-ADD
+    ComponentLua::_luaMutex.unlock();
+    // TIKKY-ADD -->
 }
 
 void ComponentLua::onEnter()

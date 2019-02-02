@@ -28,6 +28,9 @@
 #include <string>
 #include <unordered_map>
 #include "2d/CCComponent.h"
+// <!-- TIKKY-ADD
+#include <mutex>
+// TIKKY-ADD -->
 
 NS_CC_BEGIN
 
@@ -45,7 +48,11 @@ public:
     virtual void update(float dt);
     virtual void onEnter();
     virtual void onExit();
-
+    
+    // <!-- TIKKY-ADD
+    void executeFunctionWithFloatArgs(const char* funcName, const float* args, int n);
+    // TIKKY-ADD ->>
+    
 private:
     ~ComponentLua();
     void getScriptObjectInternal() const;
@@ -67,6 +74,10 @@ private:
     
     // string value of index
     std::string _strIndex;
+    
+    // <!-- TIKKY-ADD
+    static std::mutex _luaMutex;
+    // TIKKY-ADD ->>
     
     // the index used to get lua table, it is unique for every component
     static int _index;
