@@ -10,6 +10,7 @@
 #import "GPUImage.h"
 #import "TKSampleDataPool.h"
 #import "GPUImageLUTFilter.h"
+#import "LFGPUImageBeautyFilter.h"
 
 @interface TKFilter ()
 

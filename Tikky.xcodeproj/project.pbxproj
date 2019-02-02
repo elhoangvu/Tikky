@@ -159,6 +159,8 @@
 		B751918D21BA9EF600F64A21 /* lookup-feel.png in Resources */ = {isa = PBXBuildFile; fileRef = B751916C21BA9EF600F64A21 /* lookup-feel.png */; };
 		B75279CE21A1A73E00A59714 /* TKTextureUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = B75279CD21A1A73E00A59714 /* TKTextureUtilities.c */; };
 		B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */; };
+		B753FD37220550B500D805BB /* LFGPUImageBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B753FD33220550B500D805BB /* LFGPUImageBeautyFilter.m */; };
+		B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B753FD35220550B500D805BB /* LFGPUImageEmptyFilter.m */; };
 		B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */ = {isa = PBXBuildFile; fileRef = B7558A5B21B8604A0045BBD7 /* TKImageInput.m */; };
 		B7599C5C22045FA900DAAF54 /* sticker-dog-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B7599C5A22045FA900DAAF54 /* sticker-dog-1.lua */; };
 		B7599C5E22046A7E00DAAF54 /* sticker-dog-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B7599C5D22046A7E00DAAF54 /* sticker-dog-2.lua */; };
@@ -519,6 +521,10 @@
 		B75279CD21A1A73E00A59714 /* TKTextureUtilities.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TKTextureUtilities.c; sourceTree = "<group>"; };
 		B75279D521A2001E00A59714 /* GPUImageStickerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GPUImageStickerFilter.mm; sourceTree = "<group>"; };
 		B75279D721A2003700A59714 /* GPUImageStickerFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageStickerFilter.h; sourceTree = "<group>"; };
+		B753FD33220550B500D805BB /* LFGPUImageBeautyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFGPUImageBeautyFilter.m; sourceTree = "<group>"; };
+		B753FD34220550B500D805BB /* LFGPUImageEmptyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageEmptyFilter.h; sourceTree = "<group>"; };
+		B753FD35220550B500D805BB /* LFGPUImageEmptyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFGPUImageEmptyFilter.m; sourceTree = "<group>"; };
+		B753FD36220550B500D805BB /* LFGPUImageBeautyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageBeautyFilter.h; sourceTree = "<group>"; };
 		B7558A5A21B8604A0045BBD7 /* TKImageInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageInput.h; sourceTree = "<group>"; };
 		B7558A5B21B8604A0045BBD7 /* TKImageInput.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageInput.m; sourceTree = "<group>"; };
 		B7599C5A22045FA900DAAF54 /* sticker-dog-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-1.lua"; sourceTree = "<group>"; };
@@ -1183,6 +1189,10 @@
 		B751913F21BA71F100F64A21 /* GPUImageFilters */ = {
 			isa = PBXGroup;
 			children = (
+				B753FD36220550B500D805BB /* LFGPUImageBeautyFilter.h */,
+				B753FD33220550B500D805BB /* LFGPUImageBeautyFilter.m */,
+				B753FD34220550B500D805BB /* LFGPUImageEmptyFilter.h */,
+				B753FD35220550B500D805BB /* LFGPUImageEmptyFilter.m */,
 				B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */,
 				B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */,
 				B75279D721A2003700A59714 /* GPUImageStickerFilter.h */,
@@ -1526,6 +1536,7 @@
 				B70ABAB32201A11500B1F89A /* TKFilterCollectionView.m in Sources */,
 				B70ABABC2201A11500B1F89A /* TKRootView.m in Sources */,
 				B751914221BA79EF00F64A21 /* TKSampleDataPool.m in Sources */,
+				B753FD37220550B500D805BB /* LFGPUImageBeautyFilter.m in Sources */,
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
 				B70ABABB2201A11500B1F89A /* TKStickerModel.m in Sources */,
 				B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */,
@@ -1568,6 +1579,7 @@
 				B70ABAAF2201A11500B1F89A /* TKStickerCollectionView.m in Sources */,
 				B7107D0521BEE81800FEE948 /* TKCamera.m in Sources */,
 				B70ABAAA2201A11500B1F89A /* TKTopSubViewMenu.m in Sources */,
+				B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */,
 				B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,

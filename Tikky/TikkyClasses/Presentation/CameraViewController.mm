@@ -132,6 +132,9 @@
     sticker3.neededLandmarks.push_back(19);
     stickers.push_back(sticker3);
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers];
+//    NSString* filterName = [_filters lastObject];
+    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
+    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     
 }
 

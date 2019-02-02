@@ -100,7 +100,11 @@
                            @"B & W"      : @{ @"class" : @"GPUImageLUTFilter" },
                            @"CHARCOAL"   : @{ @"class" : @"GPUImageLUTFilter" },
                            @"CLARITY"    : @{ @"class" : @"GPUImageLUTFilter" },
-                           @"AMATORKA"   : @{ @"class" : @"GPUImageLUTFilter" } };
+                           @"AMATORKA"   : @{ @"class" : @"GPUImageLUTFilter" },
+                           @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
+                           @"BEAUTY2"     : @{ @"class" : @"YUGPUImageHighPassSkinSmoothingFilter" }
+                           };
+    
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];
     __weak __typeof(self)weakSelf = self;
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString* _Nonnull key, NSDictionary*  _Nonnull value, BOOL * _Nonnull stop) {
