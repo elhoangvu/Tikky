@@ -142,7 +142,8 @@
           || [input isKindOfClass:TKCamera.class]
           || [input isKindOfClass:TKVideo.class]
           || [input isKindOfClass:TKPhoto.class]
-          || input.sharedObject)) {
+          || input.sharedObject)
+          || input == _input) {
         return;
     }
     if ([_filterPipeline.input isKindOfClass:GPUImageVideoCamera.class]) {
@@ -156,6 +157,10 @@
     if ([_input isKindOfClass:TKCamera.class]) {
         TKCamera* camera = (TKCamera *)input;
         camera.delegate = self;
+    }
+    [_filterPipeline refreshFilters];
+    if (_delegate || [_delegate respondsToSelector:@selector(imageFilter:didChangeInput:)]) {
+        [_delegate imageFilter:self didChangeInput:_input];
     }
 }
 

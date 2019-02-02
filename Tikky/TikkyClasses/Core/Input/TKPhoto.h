@@ -21,6 +21,7 @@
 - (instancetype)initWithImage:(UIImage *)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput removePremultiplication:(BOOL)removePremultiplication;
 - (instancetype)initWithCGImage:(CGImageRef)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput removePremultiplication:(BOOL)removePremultiplication;
 
-- (void)processImageWithCompletionHandler:(void (^)(UIImage *processedImage))block;
+- (BOOL)processImageWithCompletionHandler:(void (^)(void))completion;
+- (void)processImageUpToFilter:(GPUImageOutput<GPUImageInput> *)finalFilterInChain withCompletionHandler:(void (^)(UIImage *processedImage))block;
 
 @end

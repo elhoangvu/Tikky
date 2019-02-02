@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, TKImageInputOrientaion) {
+    TKImageInputOrientaionLeft,
+    TKImageInputOrientaionRight,
+    TKImageInputOrientaionUp,
+    TKImageInputOrientaionDown
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TKImageInput : NSObject
@@ -15,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 // A internal object which is TKImageInput want to sharing
 @property (nonatomic, readonly, weak) NSObject* sharedObject;
 
-- (void)trackImageDataOutput:(void (^)(CMSampleBufferRef))callbackBlock;
+- (void)trackImageDataOutput:(void (^)(CVPixelBufferRef _Nullable imageBuffer, TKImageInputOrientaion orientation, BOOL flipHorizontal))callbackBlock;
 
 @end
 

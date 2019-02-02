@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeAllStaticSticker;
 - (void)removeFacialSticker;
 
+- (CGSize)getPreviewerDesignedSize;
+
 //- (void)synchronizeStickerView;
 
 @end

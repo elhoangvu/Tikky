@@ -15,7 +15,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] );
 @protocol GPUImageVideoCameraDelegate <NSObject>
 
 @optional
-- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+- (void)willOutputSampleBuffer:(CVPixelBufferRef)sampleBuffer;
 @end
 
 

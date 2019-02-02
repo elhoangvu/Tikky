@@ -82,8 +82,8 @@ me:setPosition(x , y)
 --print("landmark x: "..x.." y: "..y)
 end,
 
---update = function(self, dt)
---end
+update = function(self, dt)
+end
 
 }
 

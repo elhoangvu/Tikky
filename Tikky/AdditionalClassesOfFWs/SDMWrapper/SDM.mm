@@ -24,6 +24,8 @@ static SDM* instace = nil;
 
 @implementation SDM
 
+@synthesize isLandmarkDebugger = isLandmarkDebugger;
+
 - (instancetype)init
 {
     if (!(self = [super init])) {
@@ -35,6 +37,7 @@ static SDM* instace = nil;
     _modelt = new ldmarkmodel([haarPath UTF8String]);
     bool isLoadLmkModelt = load_ldmarkmodel([modelPath UTF8String], *_modelt);
     _currentShape = new std::vector<cv::Mat>(MAX_FACE_NUM);
+    isLandmarkDebugger = NO;
     
     if (!_modelt || !isLoadLmkModelt) {
         if (_modelt)
@@ -68,10 +71,12 @@ static SDM* instace = nil;
         delete[] _currentShape;
 }
 
-- (float *)detectLandmarkWithImage:(cv::Mat &)image {
+- (float *)detectLandmarkWithImage:(cv::Mat &)image newDetection:(BOOL)newDetection {
     static std::vector<cv::Mat> prevShape;
-    int ret = _modelt->track(image, *_currentShape);
-
+    int ret = _modelt->track(image, *_currentShape, newDetection);
+    if (newDetection) {
+        prevShape = *_currentShape;
+    }
     if (ret == SDM_ERROR_FACENO) {
         landmarks[0] = 0;
         landmarks[NUMBER_OF_LANDMARKS] = 0;
@@ -113,14 +118,16 @@ static SDM* instace = nil;
                         }
                     }
                 }
-//
-                for (int j = 0; j < numLandmarks; j++) {
-                    int x = landmarks[j];
-                    int y = landmarks[j + numLandmarks];
+                
+                if (isLandmarkDebugger) {
+                    for (int j = 0; j < numLandmarks; j++) {
+                        int x = landmarks[j];
+                        int y = landmarks[j + numLandmarks];
 
-                    cv::circle(image, cv::Point(x, y), 2, cv::Scalar(0, 0, 255), -1);
-                    NSString* lm = [NSString stringWithFormat:@"%d", j];
-                    cv::putText(image, lm.UTF8String, cv::Point(x + 5, y), 4, 0.6, cv::Scalar(0, 0, 125));
+                        cv::circle(image, cv::Point(x, y), 2, cv::Scalar(0, 0, 255), -1);
+                        NSString* lm = [NSString stringWithFormat:@"%d", j];
+                        cv::putText(image, lm.UTF8String, cv::Point(x + 5, y), 4, 0.6, cv::Scalar(0, 0, 125));
+                    }
                 }
             }
         }

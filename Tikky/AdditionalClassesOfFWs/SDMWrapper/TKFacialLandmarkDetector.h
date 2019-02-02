@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKFacialLandmarkDetector : NSObject
 
-- (float *)detectLandmarkWithImage:(cv::Mat &)image;
+@property (nonatomic) BOOL isLandmarkDebugger;
+
+- (float *)detectLandmarkWithImage:(cv::Mat &)image newDetection:(BOOL)newDetection;
 
 @end
 

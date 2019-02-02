@@ -122,6 +122,14 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->removeAllFacialSticker();
 }
 
+- (CGSize)getPreviewerDesignedSize {
+    CGSize size;
+    cocos2d::Size ccSize = cocos2d::Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
+    size.width = ccSize.width;
+    size.height = ccSize.height;
+    return size;
+}
+
 //- (void)synchronizeStickerView {
 //    cocos2d::GLView* glview = cocos2d::Director::getInstance()->getOpenGLView();
 //    cocos2d::Size glviewSize = glview->getFrameSize();

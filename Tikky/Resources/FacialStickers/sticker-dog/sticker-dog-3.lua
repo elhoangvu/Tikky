@@ -22,11 +22,11 @@ local rightX = args[3]
 local rightY = args[3 + numLandmark]
 local width = math.abs(rightX - leftX)
 local curScale = me:getScale()
-local scale = (width*2.5)/(me:getContentSize().width)
+local scale = (width*2.25)/(me:getContentSize().width)
 --print("width: "..width.." curScale: "..curScale.." scale: "..scale.." size w: "..me:getContentSize().width)
 me:setScale(scale)
 
-local scalar = (rightY-leftY)
+local scalar = (leftY-rightY)
 local vectorLength = math.sqrt((rightX-leftX)*(rightX-leftX) + (rightY-leftY)*(rightY-leftY))
 local alpha = math.acos(scalar/vectorLength)
 local pi = 3.1415926535897
@@ -41,8 +41,8 @@ me:setPosition(x , y)
 --print("landmark x: "..x.." y: "..y)
 end,
 
---update = function(self, dt)
---end
+update = function(self, dt)
+end
 
 }
 

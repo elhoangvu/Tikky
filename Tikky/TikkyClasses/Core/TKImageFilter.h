@@ -11,6 +11,7 @@
 #import "TKFilter.h"
 
 @protocol TKImageFilterDatasource;
+@protocol TKImageFilterDelegate;
 
 @interface TKImageFilter : NSObject
 
@@ -18,6 +19,7 @@
 @property (nonatomic) TKImageInput* input;
 @property (nonatomic) NSData* additionalTexture;
 @property (nonatomic, weak) id<TKImageFilterDatasource> datasource;
+@property (nonatomic, weak) id<TKImageFilterDelegate> delegate;
 
 - (instancetype)initWithInput:(TKImageInput *)input filter:(NSString *)filter;
 - (EAGLSharegroup *)sharegroup;
@@ -34,6 +36,14 @@
 @required
 
 - (NSData *)additionalTexturesForImageFilter:(TKImageFilter *)imageFilter;
+
+@end
+
+@protocol TKImageFilterDelegate <NSObject>
+
+@optional
+
+- (void)imageFilter:(TKImageFilter *)imageFilter didChangeInput:(TKImageInput *)input;
 
 @end
 

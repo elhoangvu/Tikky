@@ -614,6 +614,10 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
     
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
     CVImageBufferRef cameraFrame = CMSampleBufferGetImageBuffer(sampleBuffer);
+    if (self.delegate)
+    {
+        [self.delegate willOutputSampleBuffer:cameraFrame];
+    }
     int bufferWidth = (int) CVPixelBufferGetWidth(cameraFrame);
     int bufferHeight = (int) CVPixelBufferGetHeight(cameraFrame);
     CFTypeRef colorAttachments = CVBufferGetAttachment(cameraFrame, kCVImageBufferYCbCrMatrixKey, NULL);
@@ -891,11 +895,6 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
         CFRetain(sampleBuffer);
         runAsynchronouslyOnVideoProcessingQueue(^{
             //Feature Detection Hook.
-            if (self.delegate)
-            {
-                [self.delegate willOutputSampleBuffer:sampleBuffer];
-            }
-            
             [self processVideoSampleBuffer:sampleBuffer];
             
             CFRelease(sampleBuffer);

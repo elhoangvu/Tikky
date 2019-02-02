@@ -14,8 +14,7 @@
 @property (nonatomic) GPUImageStillCamera* camera;
 @property (nonatomic) GPUImageMovieWriter* movieWriter;
 @property (nonatomic) AVCaptureDevicePosition devicePosition;
-@property (nonatomic) void (^captureOutputCallback)(CMSampleBufferRef);
-//@property (nonatomic) GPUImageCropFilter* cropFilter;
+@property (nonatomic) void (^captureOutputCallback)(CVPixelBufferRef, TKImageInputOrientaion, BOOL);
 
 @end
 
@@ -51,7 +50,7 @@
     sharedObject = _camera;
     _camera.delegate = self;
     _camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    _camera.horizontallyMirrorFrontFacingCamera = YES;
+    _camera.horizontallyMirrorFrontFacingCamera = NO;
     _captureSessionPreset = sessionPreset;
 //    _captureSessionRatio = [TKCamera capturesessionPressetToSessionRatio:sessionPreset];
     _devicePosition = cameraPosition;
@@ -319,14 +318,20 @@
     return pointOfInterest;
 }
 
-- (void)trackImageDataOutput:(void (^)(CMSampleBufferRef _Nonnull))callbackBlock {
+- (void)trackImageDataOutput:(void (^)(CVPixelBufferRef _Nonnull, TKImageInputOrientaion, BOOL))callbackBlock {
     _captureOutputCallback = callbackBlock;
 }
 
 #pragma mark -
 #pragma mark GPUImageVideoCameraDelegate
-- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer {
-    _captureOutputCallback ? _captureOutputCallback(sampleBuffer) : nil;
+- (void)willOutputSampleBuffer:(CVPixelBufferRef)sampleBuffer {
+    BOOL isFlipH;
+    if (_camera.frontFacingCameraPresent) {
+        isFlipH = _camera.horizontallyMirrorFrontFacingCamera;
+    } else {
+        isFlipH = _camera.horizontallyMirrorRearFacingCamera;
+    }
+    _captureOutputCallback ? _captureOutputCallback(sampleBuffer, TKImageInputOrientaionRight, isFlipH) : nil;
 }
 
 @end

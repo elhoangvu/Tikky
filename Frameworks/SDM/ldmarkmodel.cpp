@@ -159,7 +159,7 @@ int ldmarkmodel::track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, 
 		}
 	}
 
-	if (cnt % 25 == 0){
+	if (cnt % 25 == 0 || isDetFace){
 		cnt = 0;
 		std::vector<cv::Rect> mFaceRects;
         double duration;

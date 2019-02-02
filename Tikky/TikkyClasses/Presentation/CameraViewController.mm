@@ -22,7 +22,7 @@
 @interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate>
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
-@property (nonatomic) TKCamera* camera;
+@property (nonatomic) TKImageInput* imageInput;
 
 @property (nonatomic) TKRootView* rootView;
 
@@ -49,7 +49,11 @@
 //    [self.view addSubview:_tikkyEngine.view];
     [self.view addSubview:_tikkyEngine.imageFilter.view];
     
-    _camera = (TKCamera *)_tikkyEngine.imageFilter.input;
+//    NSString* url = [NSBundle.mainBundle pathForResource:@"aquaman" ofType:@"png"];
+//    TKPhoto* photo = [[TKPhoto alloc] initWithImage:[UIImage imageWithContentsOfFile:url]];
+//    [_tikkyEngine.imageFilter setInput:photo];
+    _imageInput = _tikkyEngine.imageFilter.input;
+    
 //    [_camera swapCamera];
     
     [self setUpUI];
@@ -59,36 +63,21 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_camera startCameraCapture];
+    [((TKCamera *)_imageInput) startCameraCapture];
     
-    static BOOL isSetupAudio = false;
+    static BOOL isSetupAudio = true;
     if (!isSetupAudio) {
         // Record video setup
         NSString* pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/TIKKY.mp4"];
         unlink([pathToMovie UTF8String]);
         _movieURL = [NSURL fileURLWithPath:pathToMovie];
-        [_camera prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
-        [_camera setEnableAudioForVideoRecording:YES];
+        [((TKCamera *)_imageInput) prepareVideoWriterWithURL:_movieURL size:CGSizeMake(720, 1280)];
+        [((TKCamera *)_imageInput) setEnableAudioForVideoRecording:YES];
         isSetupAudio = YES;
     }
-    
-//    NSString* top = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-top.png" ofType:nil];
-//    NSString* bot = [NSBundle.mainBundle pathForResource:@"frames-xmas-5-bot.png" ofType:nil];
-//    [_tikkyEngine.stickerPreviewer newFrameStickerWith2PartTopBot:top bottomFramePath:bot];
+
     
     std::vector<TKSticker> stickers;
-//    for (NSInteger i = 0; i < 12; i++) {
-//        NSString* fileName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.png", (long)i];
-//        NSString* luaName = [NSString stringWithFormat:@"frame-flower-shakura-%ld.lua", (long)i];
-//        NSString* path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
-//        NSString* luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
-//        TKSticker sticker;
-//        sticker.path = path.UTF8String;
-//        sticker.luaComponentPath = luaPath.UTF8String;
-//        sticker.allowChanges = NO;
-//        stickers.push_back(sticker);
-//    }
-//    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:stickers];
     
     NSString* fileName = [NSString stringWithFormat:@"sticker-dog-3.png"];
     NSString* luaName = [NSString stringWithFormat:@"sticker-dog-3.lua"];
@@ -113,9 +102,10 @@
     sticker2.luaComponentPath = luaPath.UTF8String;
     sticker2.allowChanges = NO;
     sticker2.neededLandmarks.push_back(0);
-    sticker2.neededLandmarks.push_back(10);
+    sticker2.neededLandmarks.push_back(6);
     sticker2.neededLandmarks.push_back(16);
-    sticker2.neededLandmarks.push_back(24);
+    sticker2.neededLandmarks.push_back(19);
+
     stickers.push_back(sticker2);
     
     fileName = [NSString stringWithFormat:@"sticker-dog-2.png"];
@@ -127,20 +117,20 @@
     sticker3.luaComponentPath = luaPath.UTF8String;
     sticker3.allowChanges = NO;
     sticker3.neededLandmarks.push_back(0);
-    sticker3.neededLandmarks.push_back(6);
+    sticker3.neededLandmarks.push_back(10);
     sticker3.neededLandmarks.push_back(16);
-    sticker3.neededLandmarks.push_back(19);
+    sticker3.neededLandmarks.push_back(24);
     stickers.push_back(sticker3);
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers];
 //    NSString* filterName = [_filters lastObject];
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
-    
+//    [((TKPhoto*)_imageInput) processImageWithCompletionHandler:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [_camera stopCameraCapture];
+    [((TKCamera *)_imageInput) stopCameraCapture];
 }
 
 
@@ -322,7 +312,7 @@
 - (void)capturePhoto {
     cocos2d::Director::getInstance()->pause();
     __weak __typeof(self)weakSelf = self;
-    [_camera capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+    [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         cocos2d::Director::getInstance()->resume();
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             NSMutableArray* assets = [[NSMutableArray alloc] init];
@@ -403,7 +393,7 @@
     if (tapGesture.state == UIGestureRecognizerStateEnded) {
         if (!_isTouchStickerBegan) {
             CGPoint tapPoint = [tapGesture locationInView:_tikkyEngine.imageFilter.view];
-            [_camera focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
+            [((TKCamera *)_imageInput) focusAtPoint:tapPoint inFrame:_tikkyEngine.imageFilter.view.bounds];
         }
         _isTouchStickerBegan = NO;
     }
