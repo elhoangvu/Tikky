@@ -116,18 +116,22 @@ void ComponentLua::executeFunctionWithFloatArgs(const char* funcName, const floa
         LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
         lua_State* l = stack->getLuaState();
         
-        // open/create table
-        lua_newtable(l);
+        if (args && n > 0) {
+            // open/create table
+            lua_newtable(l);
 
-        for (int i = 0; i < n; i++) {
-            // new cell
-            lua_pushnumber(l, (lua_Number)i); // note, you can replace this with a string if you want to access table cells by 'key'
-            lua_pushnumber(l, (lua_Number)args[i]);
-            lua_rawset(l, -3); // insert the new cell (and pop index/value off stack)
+            for (int i = 0; i < n; i++) {
+                // new cell
+                lua_pushnumber(l, (lua_Number)i); // note, you can replace this with a string if you want to access table cells by 'key'
+                lua_pushnumber(l, (lua_Number)args[i]);
+                lua_rawset(l, -3); // insert the new cell (and pop index/value off stack)
+            }
+
+            lua_pushnumber(l, (lua_Number)n); // number of cells
+            stack->executeFunction(3);
+        } else {
+            stack->executeFunction(1);
         }
-
-        lua_pushnumber(l, (lua_Number)n); // number of cells
-        stack->executeFunction(3);
 //        LuaEngine::getInstance()->getLuaStack()->clean();
     }
     ComponentLua::_luaMutex.unlock();

@@ -19,7 +19,9 @@
 
 #include "cocos2d.h"
 
-@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate>
+@interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate> {
+    std::vector<std::vector<TKSticker>> stickers;
+}
 
 @property (nonatomic) TikkyEngine* tikkyEngine;
 @property (nonatomic) TKImageInput* imageInput;
@@ -49,7 +51,7 @@
 //    [self.view addSubview:_tikkyEngine.view];
     [self.view addSubview:_tikkyEngine.imageFilter.view];
     
-//    NSString* url = [NSBundle.mainBundle pathForResource:@"aquaman" ofType:@"png"];
+//    NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
 //    TKPhoto* photo = [[TKPhoto alloc] initWithImage:[UIImage imageWithContentsOfFile:url]];
 //    [_tikkyEngine.imageFilter setInput:photo];
     _imageInput = _tikkyEngine.imageFilter.input;
@@ -76,52 +78,114 @@
         isSetupAudio = YES;
     }
 
-    
-    std::vector<TKSticker> stickers;
-    
+
+    std::vector<TKSticker> stickers1;
+
     NSString* fileName = [NSString stringWithFormat:@"sticker-dog-3.png"];
     NSString* luaName = [NSString stringWithFormat:@"sticker-dog-3.lua"];
     NSString* path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
     NSString* luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
-    TKSticker sticker;
-    sticker.path = path.UTF8String;
-    sticker.luaComponentPath = luaPath.UTF8String;
-    sticker.allowChanges = NO;
-    sticker.neededLandmarks.push_back(30);
-    sticker.neededLandmarks.push_back(31);
-    sticker.neededLandmarks.push_back(33);
-    sticker.neededLandmarks.push_back(35);
-    stickers.push_back(sticker);
-    
+    TKSticker sticker11;
+    sticker11.path = path.UTF8String;
+    sticker11.luaComponentPath = luaPath.UTF8String;
+    sticker11.allowChanges = NO;
+    sticker11.neededLandmarks.push_back(30);
+    sticker11.neededLandmarks.push_back(31);
+    sticker11.neededLandmarks.push_back(33);
+    sticker11.neededLandmarks.push_back(35);
+    stickers1.push_back(sticker11);
+
     fileName = [NSString stringWithFormat:@"sticker-dog-1.png"];
     luaName = [NSString stringWithFormat:@"sticker-dog-1.lua"];
     path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
     luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
-    TKSticker sticker2;
-    sticker2.path = path.UTF8String;
-    sticker2.luaComponentPath = luaPath.UTF8String;
-    sticker2.allowChanges = NO;
-    sticker2.neededLandmarks.push_back(0);
-    sticker2.neededLandmarks.push_back(6);
-    sticker2.neededLandmarks.push_back(16);
-    sticker2.neededLandmarks.push_back(19);
+    TKSticker sticker12;
+    sticker12.path = path.UTF8String;
+    sticker12.luaComponentPath = luaPath.UTF8String;
+    sticker12.allowChanges = NO;
+    sticker12.neededLandmarks.push_back(0);
+    sticker12.neededLandmarks.push_back(6);
+    sticker12.neededLandmarks.push_back(16);
+    sticker12.neededLandmarks.push_back(19);
 
-    stickers.push_back(sticker2);
-    
+    stickers1.push_back(sticker12);
+
     fileName = [NSString stringWithFormat:@"sticker-dog-2.png"];
     luaName = [NSString stringWithFormat:@"sticker-dog-2.lua"];
     path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
     luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
-    TKSticker sticker3;
-    sticker3.path = path.UTF8String;
-    sticker3.luaComponentPath = luaPath.UTF8String;
-    sticker3.allowChanges = NO;
-    sticker3.neededLandmarks.push_back(0);
-    sticker3.neededLandmarks.push_back(10);
-    sticker3.neededLandmarks.push_back(16);
-    sticker3.neededLandmarks.push_back(24);
-    stickers.push_back(sticker3);
-    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers];
+    TKSticker sticker13;
+    sticker13.path = path.UTF8String;
+    sticker13.luaComponentPath = luaPath.UTF8String;
+    sticker13.allowChanges = NO;
+    sticker13.neededLandmarks.push_back(0);
+    sticker13.neededLandmarks.push_back(10);
+    sticker13.neededLandmarks.push_back(16);
+    sticker13.neededLandmarks.push_back(24);
+    stickers1.push_back(sticker13);
+
+    std::vector<TKSticker> stickers2;
+
+    fileName = [NSString stringWithFormat:@"sticker-fox-3.png"];
+    luaName = [NSString stringWithFormat:@"sticker-fox-3.lua"];
+    path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+    luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+    TKSticker sticker21;
+    sticker21.path = path.UTF8String;
+    sticker21.luaComponentPath = luaPath.UTF8String;
+    sticker21.allowChanges = NO;
+    sticker21.neededLandmarks.push_back(30);
+    sticker21.neededLandmarks.push_back(31);
+    sticker21.neededLandmarks.push_back(33);
+    sticker21.neededLandmarks.push_back(35);
+    stickers2.push_back(sticker21);
+
+    fileName = [NSString stringWithFormat:@"sticker-fox-1.png"];
+    luaName = [NSString stringWithFormat:@"sticker-fox-1.lua"];
+    path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+    luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+    TKSticker sticker22;
+    sticker22.path = path.UTF8String;
+    sticker22.luaComponentPath = luaPath.UTF8String;
+    sticker22.allowChanges = NO;
+    sticker22.neededLandmarks.push_back(0);
+    sticker22.neededLandmarks.push_back(6);
+    sticker22.neededLandmarks.push_back(16);
+    sticker22.neededLandmarks.push_back(19);
+
+    stickers2.push_back(sticker22);
+
+    fileName = [NSString stringWithFormat:@"sticker-fox-2.png"];
+    luaName = [NSString stringWithFormat:@"sticker-fox-2.lua"];
+    path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+    luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+    TKSticker sticker23;
+    sticker23.path = path.UTF8String;
+    sticker23.luaComponentPath = luaPath.UTF8String;
+    sticker23.allowChanges = NO;
+    sticker23.neededLandmarks.push_back(0);
+    sticker23.neededLandmarks.push_back(10);
+    sticker23.neededLandmarks.push_back(16);
+    sticker23.neededLandmarks.push_back(24);
+    stickers2.push_back(sticker23);
+
+    fileName = [NSString stringWithFormat:@"sticker-fox-4.png"];
+    luaName = [NSString stringWithFormat:@"sticker-fox-4.lua"];
+    path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
+    luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
+    TKSticker sticker24;
+    sticker24.path = path.UTF8String;
+    sticker24.luaComponentPath = luaPath.UTF8String;
+    sticker24.allowChanges = NO;
+    sticker24.neededLandmarks.push_back(36);
+    sticker24.neededLandmarks.push_back(39);
+    sticker24.neededLandmarks.push_back(42);
+    sticker24.neededLandmarks.push_back(45);
+    stickers2.push_back(sticker24);
+    
+    stickers.push_back(stickers1);
+    stickers.push_back(stickers2);
+    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[1]];
 //    NSString* filterName = [_filters lastObject];
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
@@ -164,6 +228,10 @@
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
+    static int touches = 0;
+    touches++;
+    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[touches%2]];
+    return;
     if ([nameItem isEqualToString:@"photo"]) {
         CGSize screenSize = UIScreen.mainScreen.bounds.size;
         static BOOL is3x4 = NO;

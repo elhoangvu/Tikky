@@ -1,4 +1,4 @@
-local shakura = {
+local facial_sticker_dog_2 = {
 
 onEnter = function(self)
 local director = cc.Director:getInstance()
@@ -6,7 +6,7 @@ local visibleOrigin = director:getVisibleOrigin()
 local winSize = director:getVisibleSize()
 local me = self:getOwner()
 local contentSize = me:getContentSize()
-me:setAnchorPoint(0.25, 0.28)
+me:setAnchorPoint(0.214, 0.172)
 
 end,
 
@@ -91,4 +91,4 @@ end
 
 
 -- it is needed to return shakura to let c++ nodes know it
-return shakura
+return facial_sticker_dog_2

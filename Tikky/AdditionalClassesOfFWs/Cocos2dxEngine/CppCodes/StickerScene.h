@@ -27,6 +27,8 @@
 
 #include "StickerEditController.h"
 
+#include <mutex>
+
 typedef struct {
     std::string path;
     std::string luaComponentPath;
@@ -45,6 +47,8 @@ private:
     std::vector<cocos2d::Node *> _frameStickers;
     
     std::vector<cocos2d::Node *> _facialStickers;
+    
+    std::mutex _facialStickerMutex;
     
     bool _enableFacialSticker;
     

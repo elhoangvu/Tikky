@@ -15,6 +15,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/ios.h>
 #import "TKPhoto.h"
+#include "TKFacialLandmarkUtilities.h"
 
 //TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
@@ -87,7 +88,6 @@
 - (void)refeshTKImageInput {
     __weak __typeof(self)weakSelf = self;
 //    CGRect rect = UIScreen.mainScreen.bounds;
-//    rect.origin.x = 100;
 //    UIImageView* imageview =  [[UIImageView alloc] initWithFrame:rect];
 //    [_imageFilter.view addSubview:imageview];
 //    imageview.contentMode = UIViewContentModeScaleAspectFit;
@@ -181,7 +181,9 @@
 
                 // Now cut it out again
                 result = rotated(cv::Rect(roi.y, roi.x, roi.height, roi.width)).clone();
-
+                if (flipHorizontal) {
+                    cv::flip(result, result, 1);
+                }
                 NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
                 NSLog(@">>>> HV > time 2: %f", end - start);
                 NSLog(@">>>> HV > size: %d %d", result.cols, result.rows);
@@ -199,31 +201,63 @@
             if ([weakSelf.imageFilter.input isKindOfClass:TKPhoto.class]) {
                 newDetection = YES;
             }
-            weakSelf.facialLandmarkDetector.isLandmarkDebugger = YES;
+            weakSelf.facialLandmarkDetector.isLandmarkDebugger = NO;
             float* landmarks = [weakSelf.facialLandmarkDetector detectLandmarkWithImage:result newDetection:newDetection];
             CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-//            UIImage *uiImage = MatToUIImage(result);
-//            NSLog(@">>>> HV > size 4: %f %f", uiImage.size.width, uiImage.size.height);
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                imageview.image = uiImage;
-//            });
+            
 
             if (landmarks[0] == 0 && landmarks[NUMBER_OF_LANDMARKS] == 0
                 && landmarks[16] == 0 && landmarks[16+NUMBER_OF_LANDMARKS] == 0) {
                 [weakSelf.stickerPreviewer notifyDetectNoFaces];
             } else {
                 CGSize previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                static const int hflippingConverter[68] = {
+                //  0     1     2     3     4     5     6     7     8     9
+                    16,  15,   14,   13,   12,   11,   10,    9,    8,   -1,
+                //  10   11    12    13    14    15    16    17    18    19
+                    -1,  -1,   -1,   -1,   -1,   -1,   -1,   26,   25,   24,
+                //  20   21    22    23    24    25    26    27    28    29
+                    23,  22,   -1,   -1,   -1,   -1,   -1,   27,   28,   29,
+                //  30   31    32    33    34    35    36    37    38    39
+                    30,  35,   34,   33,   -1,   -1,   45,   44,   43,   42,
+                //  40   41    42    43    44    45    46    47    48    49
+                    47,  46,   -1,   -1,   -1,   -1,   -1,   -1,   54,   53,
+                //  50   51    52    53    54    55    56    57    58    59
+                    52,  51,   -1,   -1,   -1,   59,   58,   57,   -1,   -1,
+                //  60   61    62    63    64    65    66    67    68    69
+                    64,  63,   62,   -1,   -1,   67,   66,   -1
+                };
                 CGSize imgSize = CGSizeMake(result.cols, result.rows);
                 float widthScale = previewerSize.width/imgSize.width;
                 float heightScale = previewerSize.height/imgSize.height;
+
                 for (int i = 0; i < NUMBER_OF_LANDMARKS; i++) {
-                    if (flipHorizontal) {
-                        landmarks[i] = (imgSize.width-landmarks[i])*widthScale;
-                    } else {
-                        landmarks[i] = landmarks[i]*widthScale;
-                    }
+//                    int j = hflippingConverter[i];
+//                    if (flipHorizontal) {
+//                        if (j >= 0 && j != i) {
+//                            std::swap(landmarks[i], landmarks[j]);
+//                        }
+//                    }
+//                    landmarks[i] = (imgSize.width-landmarks[i])*widthScale;
+                    landmarks[i] = landmarks[i]*widthScale;
                     landmarks[i+NUMBER_OF_LANDMARKS] = (imgSize.height-landmarks[i+NUMBER_OF_LANDMARKS])*heightScale;
                 }
+                
+//                for (int j = 0; j < NUMBER_OF_LANDMARKS; j++) {
+//                    int x = landmarks[j]/widthScale;
+////                    int y = landmarks[j + NUMBER_OF_LANDMARKS];
+//                    int y = (imgSize.height-landmarks[j + NUMBER_OF_LANDMARKS]/heightScale);
+//                    cv::circle(result, cv::Point(x, y), 2, cv::Scalar(0, 0, 255), -1);
+//                    NSString* lm = [NSString stringWithFormat:@"%d", j];
+//                    cv::putText(result, lm.UTF8String, cv::Point(x + 5, y), 4, 0.6, cv::Scalar(0, 0, 125));
+//                }
+//
+//                UIImage *uiImage = MatToUIImage(result);
+//                NSLog(@">>>> HV > size 4: %f %f", uiImage.size.width, uiImage.size.height);
+//                dispatch_sync(dispatch_get_main_queue(), ^{
+//                    imageview.image = uiImage;
+//                });
+                ////
 
                 dispatch_queue_t queue = dispatch_queue_create("FacialLandmarkQueue", DISPATCH_QUEUE_SERIAL);
                 dispatch_async(queue, ^{

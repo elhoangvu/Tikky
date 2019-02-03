@@ -50,7 +50,7 @@
     sharedObject = _camera;
     _camera.delegate = self;
     _camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    _camera.horizontallyMirrorFrontFacingCamera = NO;
+    _camera.horizontallyMirrorFrontFacingCamera = YES;
     _captureSessionPreset = sessionPreset;
 //    _captureSessionRatio = [TKCamera capturesessionPressetToSessionRatio:sessionPreset];
     _devicePosition = cameraPosition;

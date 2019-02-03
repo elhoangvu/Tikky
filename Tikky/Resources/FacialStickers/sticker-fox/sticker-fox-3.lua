@@ -1,4 +1,4 @@
-local facial_sticker_dog_3 = {
+local facial_sticker_fox_3 = {
 
 onEnter = function(self)
 local director = cc.Director:getInstance()
@@ -21,7 +21,8 @@ local leftY = args[1 + numLandmark]
 local rightX = args[3]
 local rightY = args[3 + numLandmark]
 local width = math.abs(rightX - leftX)
-local scale = (width*2.25)/(me:getContentSize().width)
+local curScale = me:getScale()
+local scale = (width*3.5)/(me:getContentSize().width)
 --print("width: "..width.." curScale: "..curScale.." scale: "..scale.." size w: "..me:getContentSize().width)
 me:setScale(scale)
 
@@ -47,4 +48,4 @@ end
 
 
 -- it is needed to return shakura to let c++ nodes know it
-return facial_sticker_dog_3
+return facial_sticker_fox_3

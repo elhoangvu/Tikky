@@ -74,6 +74,11 @@
 		B7107D0521BEE81800FEE948 /* TKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B7107D0421BEE81800FEE948 /* TKCamera.m */; };
 		B7107D0821BEE82200FEE948 /* TKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = B7107D0721BEE82200FEE948 /* TKPhoto.m */; };
 		B7107D0B21BEE84400FEE948 /* TKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = B7107D0A21BEE84400FEE948 /* TKVideo.m */; };
+		B711F69D2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B711F69B2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp */; };
+		B711F6B12206FAF80010DE40 /* sticker-fox-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6A72206FAF80010DE40 /* sticker-fox-1.lua */; };
+		B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6AE2206FAF80010DE40 /* sticker-fox-3.lua */; };
+		B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6AF2206FAF80010DE40 /* sticker-fox-4.lua */; };
+		B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */; };
 		B7137D532201FE44004BF34B /* SDM.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D522201FE44004BF34B /* SDM.mm */; };
 		B7137D5822020858004BF34B /* TKFacialLandmarkDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D5722020858004BF34B /* TKFacialLandmarkDetector.mm */; };
 		B7137D5B22021087004BF34B /* OpenCVUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D5A22021087004BF34B /* OpenCVUtilities.mm */; };
@@ -83,8 +88,8 @@
 		B713DF4222036E5D00006EC3 /* sticker-dog-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B713DF3E22036E5D00006EC3 /* sticker-dog-3.png */; };
 		B713DF4622036EB300006EC3 /* sticker-dog-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B713DF4522036EB300006EC3 /* sticker-dog-3.lua */; };
 		B717051421985698006409F0 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B717051321985697006409F0 /* Photos.framework */; };
-		B717B26922059D5200420F76 /* sticker-fox-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25C22059D5200420F76 /* sticker-fox-4.png */; };
-		B717B26A22059D5200420F76 /* sticker-fox-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25D22059D5200420F76 /* sticker-fox-3.png */; };
+		B717B26922059D5200420F76 /* sticker-fox-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25C22059D5200420F76 /* sticker-fox-3.png */; };
+		B717B26A22059D5200420F76 /* sticker-fox-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25D22059D5200420F76 /* sticker-fox-4.png */; };
 		B717B26B22059D5300420F76 /* sticker-fox-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25E22059D5200420F76 /* sticker-fox-2.png */; };
 		B717B26C22059D5300420F76 /* sticker-fox-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B25F22059D5200420F76 /* sticker-fox-1.png */; };
 		B717B26D22059D5300420F76 /* sticker-cat-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B26122059D5200420F76 /* sticker-cat-1.png */; };
@@ -440,6 +445,12 @@
 		B7107D0921BEE84400FEE948 /* TKVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKVideo.h; sourceTree = "<group>"; };
 		B7107D0A21BEE84400FEE948 /* TKVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKVideo.m; sourceTree = "<group>"; };
 		B7107D0C21BEE93900FEE948 /* Tikky.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tikky.h; sourceTree = "<group>"; };
+		B711F69B2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TKFacialLandmarkUtilities.cpp; sourceTree = "<group>"; };
+		B711F69C2206ACC00010DE40 /* TKFacialLandmarkUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFacialLandmarkUtilities.h; sourceTree = "<group>"; };
+		B711F6A72206FAF80010DE40 /* sticker-fox-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-1.lua"; sourceTree = "<group>"; };
+		B711F6AE2206FAF80010DE40 /* sticker-fox-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-3.lua"; sourceTree = "<group>"; };
+		B711F6AF2206FAF80010DE40 /* sticker-fox-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-4.lua"; sourceTree = "<group>"; };
+		B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-2.lua"; sourceTree = "<group>"; };
 		B7137D512201FE44004BF34B /* SDM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDM.h; sourceTree = "<group>"; };
 		B7137D522201FE44004BF34B /* SDM.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SDM.mm; sourceTree = "<group>"; };
 		B7137D5422020006004BF34B /* opencv+parallel_for_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "opencv+parallel_for_.h"; sourceTree = "<group>"; };
@@ -453,8 +464,8 @@
 		B713DF3E22036E5D00006EC3 /* sticker-dog-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-3.png"; sourceTree = "<group>"; };
 		B713DF4522036EB300006EC3 /* sticker-dog-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-3.lua"; sourceTree = "<group>"; };
 		B717051321985697006409F0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		B717B25C22059D5200420F76 /* sticker-fox-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-4.png"; sourceTree = "<group>"; };
-		B717B25D22059D5200420F76 /* sticker-fox-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-3.png"; sourceTree = "<group>"; };
+		B717B25C22059D5200420F76 /* sticker-fox-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-3.png"; sourceTree = "<group>"; };
+		B717B25D22059D5200420F76 /* sticker-fox-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-4.png"; sourceTree = "<group>"; };
 		B717B25E22059D5200420F76 /* sticker-fox-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-2.png"; sourceTree = "<group>"; };
 		B717B25F22059D5200420F76 /* sticker-fox-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-1.png"; sourceTree = "<group>"; };
 		B717B26122059D5200420F76 /* sticker-cat-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-1.png"; sourceTree = "<group>"; };
@@ -1057,8 +1068,12 @@
 		B717B25B22059D5200420F76 /* sticker-fox */ = {
 			isa = PBXGroup;
 			children = (
-				B717B25C22059D5200420F76 /* sticker-fox-4.png */,
-				B717B25D22059D5200420F76 /* sticker-fox-3.png */,
+				B711F6A72206FAF80010DE40 /* sticker-fox-1.lua */,
+				B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */,
+				B711F6AF2206FAF80010DE40 /* sticker-fox-4.lua */,
+				B711F6AE2206FAF80010DE40 /* sticker-fox-3.lua */,
+				B717B25C22059D5200420F76 /* sticker-fox-3.png */,
+				B717B25D22059D5200420F76 /* sticker-fox-4.png */,
 				B717B25E22059D5200420F76 /* sticker-fox-2.png */,
 				B717B25F22059D5200420F76 /* sticker-fox-1.png */,
 			);
@@ -1239,6 +1254,8 @@
 				B75279CD21A1A73E00A59714 /* TKTextureUtilities.c */,
 				B7107CFF21BEE05300FEE948 /* TKUtilities.h */,
 				B7107D0021BEE05300FEE948 /* TKUtilities.m */,
+				B711F69C2206ACC00010DE40 /* TKFacialLandmarkUtilities.h */,
+				B711F69B2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1543,12 +1560,14 @@
 				B74D674521BD54C500E11EC4 /* flash.png in Resources */,
 				B751917821BA9EF600F64A21 /* lookup-elizabeth.png in Resources */,
 				B7599C5E22046A7E00DAAF54 /* sticker-dog-2.lua in Resources */,
+				B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */,
 				B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */,
 				B751916D21BA9EF600F64A21 /* lookup-guardian.png in Resources */,
 				B713DF4022036E5D00006EC3 /* sticker-dog-1.png in Resources */,
 				B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */,
+				B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */,
 				B717B27122059D5300420F76 /* sticker-dog2-3.png in Resources */,
-				B717B26A22059D5200420F76 /* sticker-fox-3.png in Resources */,
+				B717B26A22059D5200420F76 /* sticker-fox-4.png in Resources */,
 				B751917921BA9EF600F64A21 /* lookup-brooklyn.png in Resources */,
 				B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */,
 				B751918721BA9EF600F64A21 /* lookup-gypsy.png in Resources */,
@@ -1572,6 +1591,7 @@
 				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
 				B717B26E22059D5300420F76 /* sticker-cat-3.png in Resources */,
 				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
+				B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
@@ -1586,7 +1606,7 @@
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
 				B713DF4622036EB300006EC3 /* sticker-dog-3.lua in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
-				B717B26922059D5200420F76 /* sticker-fox-4.png in Resources */,
+				B717B26922059D5200420F76 /* sticker-fox-3.png in Resources */,
 				B70ABB2E2201C66000B1F89A /* haar_facedetection.xml in Resources */,
 				B717B26F22059D5300420F76 /* sticker-cat-2.png in Resources */,
 				B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */,
@@ -1605,6 +1625,7 @@
 				B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
+				B711F6B12206FAF80010DE40 /* sticker-fox-1.lua in Resources */,
 				B74D674F21BD54C500E11EC4 /* 15s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1674,6 +1695,7 @@
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B7137D532201FE44004BF34B /* SDM.mm in Sources */,
 				B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */,
+				B711F69D2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp in Sources */,
 				B717B27B2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m in Sources */,
 				B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */,
 				B70ABAA82201A11500B1F89A /* CameraViewController.mm in Sources */,
