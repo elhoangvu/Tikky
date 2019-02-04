@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) BOOL isLandmarkDebugger;
 
-- (float *)detectLandmarkWithImage:(cv::Mat &)image newDetection:(BOOL)newDetection;
+- (void)detectLandmarksWithImage:(cv::Mat &)image
+                    newDetection:(BOOL)newDetection
+                      completion:(void (^)(float** _Nullable landmarks, int faceNum))completion;
 
 @end
 

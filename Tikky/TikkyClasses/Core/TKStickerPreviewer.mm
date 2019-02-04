@@ -102,8 +102,8 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->newFrameStickerWithStickers(stickers);
 }
 
-- (void)updateFacialLandmarks:(const float *)landmarks size:(int)size {
-    _stickerScene->updateFacialLandmarks(landmarks, size);
+- (void)updateFacialLandmarks:(float **)landmarks landmarkNum:(int)landmarkNum faceNum:(int)faceNum {
+    _stickerScene->updateFacialLandmarks(landmarks, landmarkNum, faceNum);
 }
 
 - (void)notifyDetectNoFaces {
@@ -132,6 +132,10 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     size.width = ccSize.width;
     size.height = ccSize.height;
     return size;
+}
+
+- (void)setMaxFaceNum:(int)maxFaceNum {
+    _stickerScene->setMaxFaceNum(maxFaceNum);
 }
 
 @end

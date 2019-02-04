@@ -139,7 +139,6 @@ int ldmarkmodel::track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, 
 
 	for (int i = 0; i < MAX_FACE_NUM; i++)
 	{
-
 		if (!current_shape[i].empty()){
 			faceBox[i] = get_enclosing_bbox(current_shape[i]);
 		}

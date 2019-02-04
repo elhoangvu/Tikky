@@ -480,6 +480,7 @@
 		B717B2792205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CVPixelBufferRefConverter.h"; sourceTree = "<group>"; };
 		B717B27A2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CVPixelBufferRefConverter.m"; sourceTree = "<group>"; };
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
+		B719730F220851E700B5FB27 /* TKDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDefinition.h; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
 		B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
@@ -1256,6 +1257,7 @@
 				B7107D0021BEE05300FEE948 /* TKUtilities.m */,
 				B711F69C2206ACC00010DE40 /* TKFacialLandmarkUtilities.h */,
 				B711F69B2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp */,
+				B719730F220851E700B5FB27 /* TKDefinition.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

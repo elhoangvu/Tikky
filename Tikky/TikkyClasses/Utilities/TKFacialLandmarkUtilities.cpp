@@ -7,9 +7,11 @@
 //
 
 #include "TKFacialLandmarkUtilities.h"
+#include "opencv+parallel_for_.h"
 
-void flipLandmarks(float* landmarks,
-                   int numLandmark,
+void flipLandmarks(float** landmarks,
+                   int numLandmarks,
+                   int numFaces,
                    bool flipHorizontal,
                    bool flipVertical,
                    float outputWidth,
@@ -32,24 +34,28 @@ void flipLandmarks(float* landmarks,
     //  60   61    62    63    64    65    66    67    68    69
         64,  63,   62,   -1,   -1,   67,   66,   -1
     };
-    if (numLandmark != 68) {
+    if (numLandmarks != 68) {
         printf("Flip horizotal landmarks support 68 landmark points only.");
     }
-    for (int i = 0; i < numLandmark; i++) {
-        int j = hflippingConverter[i];
-        if (flipHorizontal) {
-            if (j >= 0 && j != i) {
-                std::swap(landmarks[i], landmarks[j]);
-                std::swap(landmarks[i+numLandmark], landmarks[j+numLandmark]);
+    parallel_for_(cv::Range(0, numFaces), [&](const cv::Range& range) {
+        for (int i = range.start; i < range.end; i++) {
+            for (int j = 0; j < numLandmarks; j++) {
+                int k = hflippingConverter[j];
+                if (flipHorizontal) {
+                    if (k >= 0 && k != j) {
+                        std::swap(landmarks[i][j], landmarks[i][k]);
+                        std::swap(landmarks[i][j+numLandmarks], landmarks[i][k+numLandmarks]);
+                    }
+                    landmarks[i][j] = (outputWidth-landmarks[i][j])*outputWidthScale;
+                } else {
+                    landmarks[i][j] = landmarks[i][j]*outputWidthScale;
+                }
+                if (flipVertical) {
+                    landmarks[i][j+numLandmarks] = (outputHeight-landmarks[i][j+numLandmarks])*outputHeightScale;
+                } else {
+                    landmarks[i][j+numLandmarks] = landmarks[i][j+numLandmarks]*outputHeightScale;
+                }
             }
-            landmarks[i] = (outputWidth-landmarks[i])*outputWidthScale;
-        } else {
-            landmarks[i] = landmarks[i]*outputWidthScale;
         }
-        if (flipVertical) {
-            landmarks[i+numLandmark] = (outputHeight-landmarks[i+numLandmark])*outputHeightScale;
-        } else {
-            landmarks[i+numLandmark] = landmarks[i+numLandmark]*outputHeightScale;
-        }
-    }
+    });
 }

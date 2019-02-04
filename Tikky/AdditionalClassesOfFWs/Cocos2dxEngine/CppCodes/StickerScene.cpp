@@ -54,6 +54,7 @@ bool StickerScene::init()
 //    _isAvailableFrameSticker = false;
     _stickerEditVC = StickerEditController::create();
     _enableFacialSticker = false;
+    this->setMaxFaceNum(1);
     
     this->addChild(_stickerEditVC);
     onEditStickerBegan = nullptr;
@@ -170,52 +171,65 @@ void StickerScene::newFacialStickerWithStickers(std::vector<TKSticker>& stickers
     if (stickers.size() == 0) {
         return;
     }
-//    _facialStickerMutex.lock();
+
     this->removeAllFacialSticker();
     _enableFacialSticker = true;
-    for (auto sticker : stickers) {
-        Node* sticker_ = this->newStickerWithSticker(sticker);
-        if (sticker_) {
-            sticker_->setVisible(false);
-            _facialStickers.push_back(sticker_);
-            if (sticker.neededLandmarks.size() > 0) {
-                sticker_->setUserData(new std::vector<int>(sticker.neededLandmarks));
+    
+    for (int i = 0; i < _maxFaceNum; i++) {
+        for (auto sticker : stickers) {
+            Node* sticker_ = this->newStickerWithSticker(sticker);
+            if (sticker_) {
+                sticker_->setVisible(false);
+                _facialStickers[i].push_back(sticker_);
+                if (sticker.neededLandmarks.size() > 0) {
+                    sticker_->setUserData(new std::vector<int>(sticker.neededLandmarks));
+                }
             }
         }
     }
-//    _facialStickerMutex.unlock();
 }
 
-void StickerScene::updateFacialLandmarks(const float* landmarks, int numLandmarks) {
+void StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, int numFaces) {
     if (!landmarks || numLandmarks <= 0) {
         return;
     }
-//    _facialStickerMutex.lock();
 
-    for (auto sticker : _facialStickers) {
-        ComponentLua* compLua = dynamic_cast<ComponentLua *>(sticker->getComponent("TKComponent"));
-        if (sticker && compLua) {
-            sticker->setVisible(true);
-            std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
-            if (neededLmks) {
-                int numLmks = (int)neededLmks->size();
-                float* lmks = new float[numLmks*2];
-                for (int i = 0; i < numLmks; i++) {
-                    lmks[i] = landmarks[neededLmks->at(i)];
-                    lmks[i + numLmks] = landmarks[neededLmks->at(i) + numLandmarks];
+    int i;
+    for (i = 0; i < numFaces; i++) {
+        std::vector<Node *> visibleStickers = _facialStickers.at(i);
+        for (auto sticker : visibleStickers) {
+            ComponentLua* compLua = dynamic_cast<ComponentLua *>(sticker->getComponent("TKComponent"));
+            if (sticker && compLua) {
+                std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
+                if (neededLmks) {
+                    int numLmks = (int)neededLmks->size();
+                    float* lmks = new float[numLmks*2];
+                    for (int j = 0; j < numLmks; j++) {
+                        lmks[j] = landmarks[i][neededLmks->at(j)];
+                        lmks[j + numLmks] = landmarks[i][neededLmks->at(j) + numLandmarks];
+                    }
+                    compLua->executeFunctionWithFloatArgs("updateLandmarks", lmks, numLmks*2);
+                    if (lmks)
+                        delete[] lmks;
                 }
-                compLua->executeFunctionWithFloatArgs("updateLandmarks", lmks, numLmks*2);
-                if (lmks)
-                    delete[] lmks;
+//                sticker->setVisible(true);
             }
         }
     }
-//    _facialStickerMutex.unlock();
+    for (; i < _maxFaceNum; i++) {
+        std::vector<Node *> visibleStickers = _facialStickers.at(i);
+        for (auto sticker : visibleStickers) {
+            sticker->setVisible(false);
+        }
+    }
+    
 }
 
 void StickerScene::notifyDetectNoFaces() {
-    for (auto sticker : _facialStickers) {
-        sticker->setVisible(false);
+    for (auto stickerPacket : _facialStickers) {
+        for (auto sticker : stickerPacket) {
+            sticker->setVisible(false);
+        }
     }
 }
 
@@ -237,17 +251,19 @@ void StickerScene::removeAllFrameSticker() {
 
 void StickerScene::removeAllFacialSticker() {
 //    _facialStickerMutex.lock();
-    for (Node* sticker : _facialStickers) {
-        std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
-        if (neededLmks)
-            delete neededLmks;
-        if (sticker->getTag() == StickerType::FRAME_STICKER) {
-            sticker->removeFromParentAndCleanup(true);
-        } else {
-            _stickerEditVC->removeSticker(sticker, true);
+    for (auto stickerPacket : _facialStickers) {
+        for (Node* sticker : stickerPacket) {
+            std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
+            if (neededLmks)
+                delete neededLmks;
+            if (sticker->getTag() == StickerType::FRAME_STICKER) {
+                sticker->removeFromParentAndCleanup(true);
+            } else {
+                _stickerEditVC->removeSticker(sticker, true);
+            }
         }
+        stickerPacket.clear();
     }
-    _facialStickers.clear();
 //    _facialStickerMutex.unlock();
 }
 
@@ -264,4 +280,9 @@ bool StickerScene::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event) {
 bool StickerScene::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
 
     return true;
+}
+
+void StickerScene::setMaxFaceNum(int maxFaceNum) {
+    _maxFaceNum = maxFaceNum;
+    _facialStickers.resize(_maxFaceNum);
 }

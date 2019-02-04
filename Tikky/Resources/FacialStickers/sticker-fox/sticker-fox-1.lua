@@ -80,6 +80,7 @@ end
 
 me:setPosition(x , y)
 --print("landmark x: "..x.." y: "..y)
+me:setVisible(true)
 end,
 
 update = function(self, dt)

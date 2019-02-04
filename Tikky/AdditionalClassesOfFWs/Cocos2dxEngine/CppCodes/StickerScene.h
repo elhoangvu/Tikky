@@ -46,11 +46,13 @@ private:
     // A array of frame sticker's stickers
     std::vector<cocos2d::Node *> _frameStickers;
     
-    std::vector<cocos2d::Node *> _facialStickers;
+    std::vector<std::vector<cocos2d::Node *>> _facialStickers;
     
     std::mutex _facialStickerMutex;
     
     bool _enableFacialSticker;
+    
+    int _maxFaceNum;
     
 private:
     /**
@@ -77,6 +79,8 @@ public:
     virtual bool init();
     
     bool enableFacialSticker();
+    
+    void setMaxFaceNum(int maxFaceNum);
 
     /**
      Get all stickers (textures) in the scene, wraping textures by TKCCTexture array
@@ -94,7 +98,7 @@ public:
     void newFrameStickerWithStickers(std::vector<TKSticker>& stickers);
     void newFacialStickerWithStickers(std::vector<TKSticker>& stickers);
     
-    void updateFacialLandmarks(const float* landmarks, int numLandmarks);
+    void updateFacialLandmarks(float** landmarks, int numLandmarks, int numFaces);
     void notifyDetectNoFaces();
 
     // Remove stickers

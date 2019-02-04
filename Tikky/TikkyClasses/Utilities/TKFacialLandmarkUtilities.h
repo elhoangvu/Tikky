@@ -9,8 +9,9 @@
 #ifndef TKFacialLandmarkUtilities_h
 #define TKFacialLandmarkUtilities_h
 
-void flipLandmarks(float* landmarks,
-                   int numLandmark,
+void flipLandmarks(float** landmarks,
+                   int numLandmarks,
+                   int numFaces,
                    bool flipHorizontal,
                    bool flipVertical,
                    float outputWidth,

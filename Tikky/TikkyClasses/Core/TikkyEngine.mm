@@ -59,7 +59,8 @@
     [_cocos2dxGameController runWithCocos2dxScene:(void *)stickerScene];
     
     _stickerPreviewer = [[TKStickerPreviewer alloc] initWithStickerScene:stickerScene cocos2dxGameController:_cocos2dxGameController];
-
+    [_stickerPreviewer setMaxFaceNum:MAX_FACE_NUM];
+    
     [_view addSubview:_imageFilter.view];
     [_view addSubview:_cocos2dxGameController.view];
     
@@ -136,21 +137,27 @@
                     newDetection = YES;
                 }
                 weakSelf.facialLandmarkDetector.isLandmarkDebugger = NO;
-                float* landmarks = [weakSelf.facialLandmarkDetector detectLandmarkWithImage:rotatedImage newDetection:newDetection];
-                CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-                
-                if (landmarks[0] == 0 && landmarks[NUMBER_OF_LANDMARKS] == 0
-                    && landmarks[16] == 0 && landmarks[16+NUMBER_OF_LANDMARKS] == 0) {
-                    [weakSelf.stickerPreviewer notifyDetectNoFaces];
-                } else {
-                    CGSize previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
-                    CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
-                    float widthScale = previewerSize.width/imgSize.width;
-                    float heightScale = previewerSize.height/imgSize.height;
+//                [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage newDetection:newDetection];
+                [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage
+                                                             newDetection:newDetection
+                                                               completion:^(float ** _Nullable landmarks, int faceNum) {
+                    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
                     
-                    flipLandmarks(landmarks, NUMBER_OF_LANDMARKS, flipHorizontal, true, imgSize.width, imgSize.height, widthScale, heightScale);
-                    [weakSelf.stickerPreviewer updateFacialLandmarks:landmarks size:NUMBER_OF_LANDMARKS];
-                }
+                    if (faceNum == 0) {
+                        [weakSelf.stickerPreviewer notifyDetectNoFaces];
+                    } else {
+                        CGSize previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                        CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
+                        float widthScale = previewerSize.width/imgSize.width;
+                        float heightScale = previewerSize.height/imgSize.height;
+                        
+                        NSLog(@">>>> HV > face: %d", faceNum);
+                        
+                        flipLandmarks(landmarks, NUMBER_OF_LANDMARKS, faceNum, flipHorizontal, true, imgSize.width, imgSize.height, widthScale, heightScale);
+                        [weakSelf.stickerPreviewer updateFacialLandmarks:landmarks landmarkNum:NUMBER_OF_LANDMARKS faceNum:faceNum];
+                    }
+                }];
+                
             });
         }
     }];

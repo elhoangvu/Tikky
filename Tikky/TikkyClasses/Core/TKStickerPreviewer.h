@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) StickerScene* stickerScene;
 @property (nonatomic, weak) id<TKStickerPreviewerDelegate> delegate;
 @property (nonatomic, readonly) BOOL enableFacialSticker;
+@property (nonatomic) int maxFaceNum;
 
 - (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene
               cocos2dxGameController:(Cocos2dxGameController *)ccGameController;
@@ -32,12 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)newFrameStickerWithSticker:(TKSticker)sticker;
 - (void)newFrameStickerWithStickers:(std::vector<TKSticker>&)stickers;
 - (void)newFacialStickerWithStickers:(std::vector<TKSticker>&)sticker;
-- (void)updateFacialLandmarks:(const float *)landmarks size:(int)size;
+- (void)updateFacialLandmarks:(float ** _Nullable)landmarks landmarkNum:(int)landmarkNum faceNum:(int)faceNum;
 - (void)notifyDetectNoFaces;
 
 - (void)removeAllFrameStickers;
 - (void)removeAllStaticStickers;
 - (void)removeAllFacialStickers;
+
 
 - (CGSize)getPreviewerDesignedSize;
 

@@ -12,6 +12,8 @@
 
 #import "TKFacialLandmarkDetector.h"
 
+#include "ldmarkmodel.h"
+
 #define NUMBER_OF_LANDMARKS 68
 
 NS_ASSUME_NONNULL_BEGIN
