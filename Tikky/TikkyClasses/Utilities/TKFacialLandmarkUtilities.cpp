@@ -36,19 +36,16 @@ void flipLandmarks(float* landmarks,
         printf("Flip horizotal landmarks support 68 landmark points only.");
     }
     for (int i = 0; i < numLandmark; i++) {
+        int j = hflippingConverter[i];
         if (flipHorizontal) {
-            int j = hflippingConverter[i];
-            if (j == i) {
-                landmarks[i] = (outputWidth-landmarks[i])*outputWidthScale;
-            } else if (j >= 0) {
-                float hLandmarkI = landmarks[i];
-                landmarks[i] = (outputWidth-landmarks[j])*outputWidthScale;
-                landmarks[j] = (outputWidth-hLandmarkI)*outputWidthScale;
+            if (j >= 0 && j != i) {
+                std::swap(landmarks[i], landmarks[j]);
+                std::swap(landmarks[i+numLandmark], landmarks[j+numLandmark]);
             }
+            landmarks[i] = (outputWidth-landmarks[i])*outputWidthScale;
         } else {
             landmarks[i] = landmarks[i]*outputWidthScale;
         }
-        
         if (flipVertical) {
             landmarks[i+numLandmark] = (outputHeight-landmarks[i+numLandmark])*outputHeightScale;
         } else {

@@ -4398,9 +4398,9 @@
 		B6DD2FF61B04825B00E47F5F /* fastlz.c in Sources */ = {isa = PBXBuildFile; fileRef = B6DD2FA51B04825B00E47F5F /* fastlz.c */; };
 		B6DD2FF71B04825B00E47F5F /* fastlz.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DD2FA61B04825B00E47F5F /* fastlz.h */; };
 		B6DD2FF81B04825B00E47F5F /* fastlz.h in Headers */ = {isa = PBXBuildFile; fileRef = B6DD2FA61B04825B00E47F5F /* fastlz.h */; };
-		B7089DAE219F5980001CA15D /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B7089DAD219F5980001CA15D /* TKCCUtilities.h */; };
-		B7089DAF219F5980001CA15D /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B7089DAD219F5980001CA15D /* TKCCUtilities.h */; };
-		B7089DB0219F5980001CA15D /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B7089DAD219F5980001CA15D /* TKCCUtilities.h */; };
+		B73001BA220817B700412A4B /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B73001B9220817B700412A4B /* TKCCUtilities.h */; };
+		B73001BB220817B700412A4B /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B73001B9220817B700412A4B /* TKCCUtilities.h */; };
+		B73001BC220817B700412A4B /* TKCCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B73001B9220817B700412A4B /* TKCCUtilities.h */; };
 		BA6249A81E77D2850096291C /* tinydir.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6249A71E77D2850096291C /* tinydir.h */; };
 		BA6249A91E77D2850096291C /* tinydir.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6249A71E77D2850096291C /* tinydir.h */; };
 		BA6249AA1E77D2850096291C /* tinydir.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6249A71E77D2850096291C /* tinydir.h */; };
@@ -6040,7 +6040,7 @@
 		B6DD2FA31B04825B00E47F5F /* DetourTileCacheBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetourTileCacheBuilder.h; sourceTree = "<group>"; };
 		B6DD2FA51B04825B00E47F5F /* fastlz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fastlz.c; sourceTree = "<group>"; };
 		B6DD2FA61B04825B00E47F5F /* fastlz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fastlz.h; sourceTree = "<group>"; };
-		B7089DAD219F5980001CA15D /* TKCCUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCCUtilities.h; sourceTree = "<group>"; };
+		B73001B9220817B700412A4B /* TKCCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKCCUtilities.h; path = ../2d/TKCCUtilities.h; sourceTree = "<group>"; };
 		BA6249A51E77D2850096291C /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		BA6249A61E77D2850096291C /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		BA6249A71E77D2850096291C /* tinydir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinydir.h; sourceTree = "<group>"; };
@@ -8021,7 +8021,7 @@
 				5012169F1AC473AD009A4BEA /* CCMaterial.h */,
 				5053850A1B02819E00793096 /* CCVertexAttribBinding.cpp */,
 				5053850B1B02819E00793096 /* CCVertexAttribBinding.h */,
-				B7089DAD219F5980001CA15D /* TKCCUtilities.h */,
+				B73001B9220817B700412A4B /* TKCCUtilities.h */,
 			);
 			name = renderer;
 			path = ../cocos/renderer;
@@ -9225,7 +9225,6 @@
 				15AE18ED19AAD35000C27E9E /* CCActionObject.h in Headers */,
 				ED9C6A9618599AD8000A5232 /* CCNodeGrid.h in Headers */,
 				2962D5F71C61DBBF004821A3 /* CCUIPasswordTextField.h in Headers */,
-				B7089DAE219F5980001CA15D /* TKCCUtilities.h in Headers */,
 				15AE18A719AAD33D00C27E9E /* CCScrollViewLoader.h in Headers */,
 				15FB20891AE7C57D00C31518 /* shapes.h in Headers */,
 				15AE184819AAD2F700C27E9E /* cocos3d.h in Headers */,
@@ -9563,6 +9562,7 @@
 				5020A1AD1D49912500E80C72 /* IkConstraint.h in Headers */,
 				50ABC01B1926664800A911A9 /* CCSAXParser.h in Headers */,
 				50ABBED51925AB6F00A911A9 /* utlist.h in Headers */,
+				B73001BA220817B700412A4B /* TKCCUtilities.h in Headers */,
 				1A5702F4180BCE750088DEC7 /* CCTMXObjectGroup.h in Headers */,
 				43015DC11B60DF4000E75161 /* CCComExtensionData.h in Headers */,
 				50ABBDAF1925AB4100A911A9 /* CCRenderer.h in Headers */,
@@ -10039,7 +10039,6 @@
 				507B3DD31C31BDD30067B53E /* CCNode+CCBRelativePositioning.h in Headers */,
 				507B3DD41C31BDD30067B53E /* NodeReaderDefine.h in Headers */,
 				507B3DD51C31BDD30067B53E /* CCEventListenerTouch.h in Headers */,
-				B7089DB0219F5980001CA15D /* TKCCUtilities.h in Headers */,
 				507B3DD61C31BDD30067B53E /* WebSocket.h in Headers */,
 				507B3DD81C31BDD30067B53E /* CCPUMaterialManager.h in Headers */,
 				507B3DD91C31BDD30067B53E /* FlatBuffersSerialize.h in Headers */,
@@ -10377,6 +10376,7 @@
 				507B3F721C31BDD30067B53E /* CCBoneNode.h in Headers */,
 				507B3F731C31BDD30067B53E /* CCPUCollisionAvoidanceAffectorTranslator.h in Headers */,
 				507B3F761C31BDD30067B53E /* CCNodeLoaderLibrary.h in Headers */,
+				B73001BC220817B700412A4B /* TKCCUtilities.h in Headers */,
 				50864C961C7BC1B000B3BAB1 /* chipmunk_types.h in Headers */,
 				507B3F791C31BDD30067B53E /* UITextView+CCUITextInput.h in Headers */,
 				507B3F7A1C31BDD30067B53E /* CCEventListenerMouse.h in Headers */,
@@ -10853,7 +10853,6 @@
 				1A57007C180BC5A10088DEC7 /* CCActionInstant.h in Headers */,
 				3E6176751960F89B00DE83F5 /* CCEventController.h in Headers */,
 				15AE18CD19AAD33D00C27E9E /* CCNode+CCBRelativePositioning.h in Headers */,
-				B7089DAF219F5980001CA15D /* TKCCUtilities.h in Headers */,
 				382384121A259092002C4610 /* NodeReaderDefine.h in Headers */,
 				50ABBE781925AB6F00A911A9 /* CCEventListenerTouch.h in Headers */,
 				15AE1BC019AADFF000C27E9E /* WebSocket.h in Headers */,
@@ -11191,6 +11190,7 @@
 				B665E2491AA80A6500DDB1C5 /* CCPUCollisionAvoidanceAffectorTranslator.h in Headers */,
 				15AE18D119AAD33D00C27E9E /* CCNodeLoaderLibrary.h in Headers */,
 				50864C951C7BC1B000B3BAB1 /* chipmunk_types.h in Headers */,
+				B73001BB220817B700412A4B /* TKCCUtilities.h in Headers */,
 				2980F02B1BA9A5550059E678 /* UITextView+CCUITextInput.h in Headers */,
 				50ABBE741925AB6F00A911A9 /* CCEventListenerMouse.h in Headers */,
 				D0FD03581A3B51AA00825BB5 /* CCAllocatorMutex.h in Headers */,

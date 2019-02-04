@@ -110,15 +110,19 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->notifyDetectNoFaces();
 }
 
+- (void)removeAllFrameStickers {
+    _stickerScene->removeAllFrameSticker();
+}
+
 - (BOOL)enableFacialSticker {
     return _stickerScene->enableFacialSticker();
 }
 
-- (void)removeAllStaticSticker {
+- (void)removeAllStaticStickers {
     _stickerScene->removeAllStaticSticker();
 }
 
-- (void)removeFacialSticker {
+- (void)removeAllFacialStickers {
     _stickerScene->removeAllFacialSticker();
 }
 
@@ -130,19 +134,8 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     return size;
 }
 
-//- (void)synchronizeStickerView {
-//    cocos2d::GLView* glview = cocos2d::Director::getInstance()->getOpenGLView();
-//    cocos2d::Size glviewSize = glview->getFrameSize();
-//    CGSize eaglViewSize = _view.frame.size;
-//    float widthRatio = frame.size.width/eaglViewSize.width;
-//    float heightRatio = frame.size.height/eaglViewSize.height;
-//    glview->setFrameSize(glviewSize.width*widthRatio, glviewSize.height*heightRatio);
-//
-//    cocos2d::Size designResolutionSize = glview->getDesignResolutionSize();
-//    glview->setDesignResolutionSize(designResolutionSize.width*widthRatio, designResolutionSize.height*heightRatio, ResolutionPolicy::NO_BORDER);
-//}
-
 @end
+
 
 TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
     TKRectTexture tkRectTexture;

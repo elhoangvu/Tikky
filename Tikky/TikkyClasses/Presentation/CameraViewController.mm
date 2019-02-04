@@ -230,7 +230,7 @@
 - (void)clickBottomMenuItem:(NSString *)nameItem {
     static int touches = 0;
     touches++;
-    [_tikkyEngine.stickerPreviewer removeFacialSticker];
+    [_tikkyEngine.stickerPreviewer removeAllFacialStickers];
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[touches%2]];
     return;
     if ([nameItem isEqualToString:@"photo"]) {

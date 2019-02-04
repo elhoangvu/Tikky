@@ -35,9 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateFacialLandmarks:(const float *)landmarks size:(int)size;
 - (void)notifyDetectNoFaces;
 
-- (void)removeFrameSticker;
-- (void)removeAllStaticSticker;
-- (void)removeFacialSticker;
+- (void)removeAllFrameStickers;
+- (void)removeAllStaticStickers;
+- (void)removeAllFacialStickers;
 
 - (CGSize)getPreviewerDesignedSize;
 

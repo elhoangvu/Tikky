@@ -1,5 +1,5 @@
 //
-//  TKFacialLandmarkUtilities.hpp
+//  TKFacialLandmarkUtilities.h
 //  Tikky
 //
 //  Created by Le Hoang Vu on 2/3/19.
@@ -17,7 +17,5 @@ void flipLandmarks(float* landmarks,
                    float outputHeight,
                    float outputWidthScale,
                    float outputHeightScale);
-
-#include <stdio.h>
 
 #endif /* TKFacialLandmarkUtilities_h */

@@ -25,9 +25,6 @@ void rotate(cv::Mat& src, double angle, cv::Mat& dst)
     size_t width;
     size_t height;
     size_t bytesPerRow;
-//    
-//    CGColorSpaceRef colorSpace;
-//    CGContextRef context;
     
     int format_opencv;
     
@@ -57,6 +54,49 @@ void rotate(cv::Mat& src, double angle, cv::Mat& dst)
     
     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
     return image;
+}
+
++ (void)rotateImage:(cv::Mat &)src angle:(float)angle dst:(cv::Mat &)dst {
+    NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
+    if (angle == 0) {
+        dst = src.clone();
+        return;
+    }
+    // Make larger image
+    int rows = src.rows;
+    int cols = src.cols;
+    int largest = 0;
+    if ( rows > cols ){
+        largest = rows;
+    }else{
+        largest = cols;
+    }
+    
+    cv::Mat temp = cv::Mat::zeros(largest, largest, src.type());
+    
+    // Copy your original image
+    // First define the roi in the large image --> draw this on a paper to make it clear
+    // There are two possible cases
+    cv::Rect roi;
+    if (src.rows > src.cols){
+        roi = cv::Rect((temp.cols - src.cols)/2, 0, src.cols, src.rows);
+    }
+    if (src.cols > src.rows){
+        roi = cv::Rect(0, (temp.rows - src.rows)/2, src.cols, src.rows);
+    }
+    
+    // Copy the original to the black large temp image
+    src.copyTo(temp(roi));
+    
+    // Rotate the image
+    cv::Mat rotated = temp.clone();
+    rotate(temp, -90, rotated);
+    
+    // Now cut it out again
+    dst = rotated(cv::Rect(roi.y, roi.x, roi.height, roi.width)).clone();
+    
+    NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
+    NSLog(@">>>> HV > rotation time: %f", end - start);
 }
 
 @end

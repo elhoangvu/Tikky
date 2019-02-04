@@ -12,11 +12,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-void rotate(cv::Mat& src, double angle, cv::Mat& dst);
-
 @interface OpenCVUtilities : NSObject
 
 + (cv::Mat)matFromSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+
++ (void)rotateImage:(cv::Mat &)src angle:(float)angle dst:(cv::Mat &)dst;
 
 @end
 

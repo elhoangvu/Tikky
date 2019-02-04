@@ -61,4 +61,3 @@ TKRectTexture TKRectTextureMake(int textureID, TKPosition* position) {
     
     return tkRectTexture;
 }
-
