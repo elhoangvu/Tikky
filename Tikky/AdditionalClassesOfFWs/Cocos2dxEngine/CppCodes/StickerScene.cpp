@@ -236,19 +236,19 @@ void StickerScene::removeAllFrameSticker() {
 }
 
 void StickerScene::removeAllFacialSticker() {
-    _facialStickerMutex.lock();
+//    _facialStickerMutex.lock();
     for (Node* sticker : _facialStickers) {
+        std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
+        if (neededLmks)
+            delete neededLmks;
         if (sticker->getTag() == StickerType::FRAME_STICKER) {
             sticker->removeFromParentAndCleanup(true);
         } else {
             _stickerEditVC->removeSticker(sticker, true);
         }
-        std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
-        if (neededLmks)
-            delete neededLmks;
     }
     _facialStickers.clear();
-    _facialStickerMutex.unlock();
+//    _facialStickerMutex.unlock();
 }
 
 bool StickerScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {

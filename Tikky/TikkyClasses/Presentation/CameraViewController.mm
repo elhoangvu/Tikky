@@ -185,7 +185,7 @@
     
     stickers.push_back(stickers1);
     stickers.push_back(stickers2);
-    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[1]];
+//    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[1]];
 //    NSString* filterName = [_filters lastObject];
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
@@ -230,6 +230,7 @@
 - (void)clickBottomMenuItem:(NSString *)nameItem {
     static int touches = 0;
     touches++;
+    [_tikkyEngine.stickerPreviewer removeFacialSticker];
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[touches%2]];
     return;
     if ([nameItem isEqualToString:@"photo"]) {
