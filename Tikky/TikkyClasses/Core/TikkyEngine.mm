@@ -140,6 +140,7 @@
 //                [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage newDetection:newDetection];
                 [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage
                                                              newDetection:newDetection
+                                                             sortFaceRect:YES
                                                                completion:^(float ** _Nullable landmarks, int faceNum) {
                     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
                     

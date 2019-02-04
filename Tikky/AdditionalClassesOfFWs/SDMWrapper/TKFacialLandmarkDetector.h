@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)detectLandmarksWithImage:(cv::Mat &)image
                     newDetection:(BOOL)newDetection
+                    sortFaceRect:(BOOL)sortFaceRect
                       completion:(void (^)(float** _Nullable landmarks, int faceNum))completion;
 
 @end

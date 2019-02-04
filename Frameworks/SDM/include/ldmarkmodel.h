@@ -72,7 +72,7 @@ public:
 
     void loadFaceDetModelFile(std::string filePath);
 
-    int  track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, bool isDetFace=false);
+    int  track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, bool sortFaceRect = false, bool isDetFace=false);
 
     void  EstimateHeadPose(cv::Mat &current_shape, cv::Vec3d &eav);
 

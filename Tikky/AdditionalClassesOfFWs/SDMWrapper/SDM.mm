@@ -79,10 +79,13 @@ static SDM* instace = nil;
     }
 }
 
-- (void)detectLandmarksWithImage:(cv::Mat &)image newDetection:(BOOL)newDetection completion:(void (^)(float** landmarks, int faceNum))completion {
+- (void)detectLandmarksWithImage:(cv::Mat &)image
+                    newDetection:(BOOL)newDetection
+                    sortFaceRect:(BOOL)sortFaceRect
+                      completion:(void (^)(float** landmarks, int faceNum))completion {
     static std::vector<cv::Mat> prevShape;
     int facenum = 0;
-    int ret = _modelt->track(image, *_currentShape, newDetection);
+    int ret = _modelt->track(image, *_currentShape, sortFaceRect, newDetection);
     if (newDetection) {
         prevShape = *_currentShape;
     }
@@ -135,14 +138,15 @@ static SDM* instace = nil;
                                 landmarks[i][k] = (*_currentShape)[i].at<float>(k);
                                 landmarks[i][k + numLandmarks] = (*_currentShape)[i].at<float>(k + numLandmarks);
                             }
-                        } else {
-                            for (int k = 0; k < numLandmarks; k++) {
-                                landmarks[i][k] = (*_currentShape)[i].at<float>(k);
-                                landmarks[i][k + numLandmarks] = (*_currentShape)[i].at<float>(k + numLandmarks);
-                            }
+                            break;
                         }
-                        
-                        break;
+                    }
+                    
+                    if (j == MAX_FACE_NUM - 1) {
+                        for (int k = 0; k < numLandmarks; k++) {
+                            landmarks[i][k] = (*_currentShape)[i].at<float>(k);
+                            landmarks[i][k + numLandmarks] = (*_currentShape)[i].at<float>(k + numLandmarks);
+                        }
                     }
                 }
                 

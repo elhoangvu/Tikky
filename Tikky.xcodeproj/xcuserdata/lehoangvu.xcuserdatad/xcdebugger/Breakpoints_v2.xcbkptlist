@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/cocos2d-x/cocos/platform/ios/CCDirectorCaller-ios.mm"
-            timestampString = "570814921.384269"
+            timestampString = "570994470.05221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
@@ -1418,7 +1418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
-            timestampString = "570975091.269945"
+            timestampString = "570997408.9542969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "880"
@@ -3064,7 +3064,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
-            timestampString = "570975091.271242"
+            timestampString = "570997408.955676"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "366"
@@ -3256,7 +3256,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.4253941"
+            timestampString = "570997789.5283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
@@ -3272,7 +3272,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.425456"
+            timestampString = "570997789.528374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -3288,7 +3288,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.425503"
+            timestampString = "570997789.528422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
@@ -3335,22 +3335,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.4255821"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Utilities/OpenCVUtilities.mm"
             timestampString = "570955123.795162"
             startingColumnNumber = "9223372036854775807"
@@ -3368,7 +3352,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.4256459"
+            timestampString = "570997789.5285161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -3384,7 +3368,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.425689"
+            timestampString = "570997789.528563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
@@ -3400,7 +3384,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
-            timestampString = "570975091.271538"
+            timestampString = "570997408.956148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1041"
@@ -3416,7 +3400,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
-            timestampString = "570975091.271585"
+            timestampString = "570997408.956192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1040"
@@ -3432,7 +3416,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
-            timestampString = "570975091.27163"
+            timestampString = "570997408.956233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "932"
@@ -3496,11 +3480,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.425844"
+            timestampString = "570997789.5287009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "StickerScene::removeAllFrameSticker()"
             landmarkType = "7">
             <Locations>
@@ -3560,11 +3544,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.426329"
+            timestampString = "570997789.528784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "StickerScene::removeAllFacialSticker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3576,11 +3560,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.426648"
+            timestampString = "570997789.528843"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "StickerScene::removeAllFrameSticker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3592,59 +3576,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.426958"
+            timestampString = "570997789.528899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "StickerScene::removeAllFrameSticker()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/SDMWrapper/SDM.mm"
+            timestampString = "570997789.528957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-detectLandmarksWithImage:newDetection:sortFaceRect:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/SDMWrapper/SDM.mm"
+            timestampString = "570997789.529001"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-detectLandmarksWithImage:newDetection:sortFaceRect:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+            timestampString = "570997789.529043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
             endingLineNumber = "251"
-            landmarkName = "StickerScene::removeAllFrameSticker()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tikky/AdditionalClassesOfFWs/SDMWrapper/SDM.mm"
-            timestampString = "570975837.427249"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-detectLandmarksWithImage:newDetection:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tikky/AdditionalClassesOfFWs/SDMWrapper/SDM.mm"
-            timestampString = "570975837.427304"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-detectLandmarksWithImage:newDetection:completion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.427353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -3656,7 +3640,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.145215"
+            timestampString = "570993849.5472929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -3688,11 +3672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "570901064.028383"
+            timestampString = "570997789.529134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-clickBottomMenuItem:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3704,7 +3688,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.145614"
+            timestampString = "570993849.547888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -3720,11 +3704,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
-            timestampString = "570814921.386902"
+            timestampString = "570997789.52922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "-initWithImage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3736,7 +3720,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.145892"
+            timestampString = "570993849.547976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -3752,7 +3736,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.146142"
+            timestampString = "570993849.548026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
@@ -3816,11 +3800,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
-            timestampString = "570814921.386999"
+            timestampString = "570997789.529318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-processImageWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3832,11 +3816,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
-            timestampString = "570814921.387043"
+            timestampString = "570997789.5293649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-processImageWithCompletionHandler:"
             landmarkType = "7">
             <Locations>
@@ -3880,11 +3864,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
-            timestampString = "570814921.387085"
+            timestampString = "570997789.529408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "-processImageWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3896,11 +3880,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.427843"
+            timestampString = "570997789.529451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190">
+            startingLineNumber = "191"
+            endingLineNumber = "191">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3910,7 +3894,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.146449"
+            timestampString = "570993849.548195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
@@ -3926,11 +3910,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
-            timestampString = "570814921.387571"
+            timestampString = "570997789.5295171"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-processImageWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -3942,12 +3926,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/SDMWrapper/SDM.mm"
-            timestampString = "570975837.4279391"
+            timestampString = "570997789.529563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "-detectLandmarksWithImage:newDetection:completion:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-detectLandmarksWithImage:newDetection:sortFaceRect:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3958,7 +3942,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.4279931"
+            timestampString = "570997789.529605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -3974,11 +3958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.428037"
+            timestampString = "570997789.5296479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3990,11 +3974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Frameworks/SDM/ldmarkmodel.cpp"
-            timestampString = "570975837.428076"
+            timestampString = "570997789.52969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4006,7 +3990,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.428118"
+            timestampString = "570997789.529731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -4022,7 +4006,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKCamera.m"
-            timestampString = "570975837.428167"
+            timestampString = "570997789.529776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "328"
@@ -4038,11 +4022,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.4282089"
+            timestampString = "570997789.529824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-view:setFrame:"
             landmarkType = "7">
          </BreakpointContent>
@@ -4054,7 +4038,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/Input/TKCamera.m"
-            timestampString = "570975837.4282579"
+            timestampString = "570997789.529866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "329"
@@ -4070,7 +4054,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TKImageFilter.m"
-            timestampString = "570815076.146826"
+            timestampString = "570993849.548653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -4086,7 +4070,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.428322"
+            timestampString = "570997789.529935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -4102,7 +4086,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.4286211"
+            timestampString = "570997789.529992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
@@ -4118,7 +4102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "570901064.0293469"
+            timestampString = "570997789.5300649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "234"
@@ -4133,24 +4117,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "570901073.230046"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-clickBottomMenuItem:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Utilities/TKFacialLandmarkUtilities.cpp"
-            timestampString = "570975837.428966"
+            timestampString = "570997789.530125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -4166,7 +4134,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.429018"
+            timestampString = "570997789.530463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -4182,11 +4150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.4290709"
+            timestampString = "570997789.530514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-refeshTKImageInput"
             landmarkType = "7">
          </BreakpointContent>
@@ -4198,11 +4166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.429118"
+            timestampString = "570997789.53056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-refeshTKImageInput"
             landmarkType = "7">
          </BreakpointContent>
@@ -4214,11 +4182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
-            timestampString = "570975837.4291641"
+            timestampString = "570997789.530604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-refeshTKImageInput"
             landmarkType = "7">
          </BreakpointContent>
@@ -4230,7 +4198,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.429208"
+            timestampString = "570997789.53065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -4246,11 +4214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.4294831"
+            timestampString = "570997789.530717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "StickerScene::setMaxFaceNum(int maxFaceNum)"
             landmarkType = "7">
          </BreakpointContent>
@@ -4262,7 +4230,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.429762"
+            timestampString = "570997789.530775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -4278,12 +4246,268 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
-            timestampString = "570975837.430029"
+            timestampString = "570997789.53083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
             endingLineNumber = "199"
             landmarkName = "StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, int numFaces)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/SDM/ldmarkmodel.cpp"
+            timestampString = "570997789.530888"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/SDM/ldmarkmodel.cpp"
+            timestampString = "570997789.530935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/SDM/ldmarkmodel.cpp"
+            timestampString = "570997789.5309761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "ldmarkmodel::track(const cv::Mat&amp; src, std::vector&lt;cv::Mat&gt;&amp; current_shape, bool isDetFace)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Core/TikkyEngine.mm"
+            timestampString = "570997789.531021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-refeshTKImageInput"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
+            timestampString = "570997789.531069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "-clickBottomMenuItem:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+            timestampString = "570997789.5311249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "StickerScene::newFacialStickerWithStickers(std::vector&lt;TKSticker&gt;&amp; stickers)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StickerScene::newFacialStickerWithStickers(std::__1::vector&lt;TKSticker, std::__1::allocator&lt;TKSticker&gt; &gt;&amp;)"
+                  moduleName = "Tikky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lehoangvu/Documents/GitHub/Tikky/Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+                  timestampString = "570993940.5297821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "1052">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StickerScene::newFacialStickerWithStickers(std::__1::vector&lt;TKSticker, std::__1::allocator&lt;TKSticker&gt; &gt;&amp;)"
+                  moduleName = "Tikky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lehoangvu/Documents/GitHub/Tikky/Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+                  timestampString = "570993940.534815"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "1208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Core/Input/TKPhoto.m"
+            timestampString = "570997789.531181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "-processImageWithCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+            timestampString = "570997789.5312279"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "StickerScene::removeAllFacialSticker()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StickerScene::removeAllFacialSticker()"
+                  moduleName = "Tikky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lehoangvu/Documents/GitHub/Tikky/Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+                  timestampString = "570995396.560395"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "708">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StickerScene::removeAllFacialSticker()"
+                  moduleName = "Tikky"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lehoangvu/Documents/GitHub/Tikky/Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+                  timestampString = "570995396.563473"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "1388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/AdditionalClassesOfFWs/Cocos2dxEngine/CppCodes/StickerScene.cpp"
+            timestampString = "570997789.531298"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "StickerScene::removeAllFacialSticker()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Core/Input/TKCamera.m"
+            timestampString = "570997789.531369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "-willOutputSampleBuffer:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Core/Input/TKCamera.m"
+            timestampString = "570997789.531423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "-willOutputSampleBuffer:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/GPUImage/Source/GPUImageVideoCamera.m"
+            timestampString = "570997408.959712"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "-isFrontFacingCameraPresent"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

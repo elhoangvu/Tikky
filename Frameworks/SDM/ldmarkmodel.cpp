@@ -125,7 +125,7 @@ void ldmarkmodel::loadFaceDetModelFile(std::string filePath){
 }
 
 
-int ldmarkmodel::track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, bool isDetFace){
+int ldmarkmodel::track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, bool sortFaceRect, bool isDetFace){
     cv::Mat grayImage;
     if(src.channels() == 1){
         grayImage = src;
@@ -166,6 +166,20 @@ int ldmarkmodel::track(const cv::Mat& src, std::vector<cv::Mat>& current_shape, 
         start = std::clock();
         
 		face_cascade.detectMultiScale(grayImage, mFaceRects, 1.3, 3, 0, cv::Size(100, 100));
+//
+        for (int i = 0; i < (int)mFaceRects.size()-1; i++) {
+            for (int j = i+1; j < mFaceRects.size(); j++) {
+                if (mFaceRects[i].x <= mFaceRects[j].x) {
+                    if (mFaceRects[i].x == mFaceRects[j].x) {
+                        if (mFaceRects[i].y < mFaceRects[j].y) {
+                            std::swap(mFaceRects[i], mFaceRects[j]);
+                        }
+                    } else {
+                        std::swap(mFaceRects[i], mFaceRects[j]);
+                    }
+                }
+            }
+        }
         
         duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
         

@@ -39,7 +39,7 @@ local y = (args[0 + numLandmark]+args[2 + numLandmark])/2.0
 --local y = args[2 + numLandmark]
 me:setPosition(x , y)
 --print("landmark x: "..x.." y: "..y)
-me:setVisible(true)
+--me:setVisible(true)
 end,
 
 update = function(self, dt)

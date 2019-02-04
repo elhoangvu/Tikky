@@ -326,7 +326,7 @@
 #pragma mark GPUImageVideoCameraDelegate
 - (void)willOutputSampleBuffer:(CVPixelBufferRef)sampleBuffer {
     BOOL isFlipH;
-    if (_camera.frontFacingCameraPresent) {
+    if (_camera.cameraPosition == AVCaptureDevicePositionFront) {
         isFlipH = _camera.horizontallyMirrorFrontFacingCamera;
     } else {
         isFlipH = _camera.horizontallyMirrorRearFacingCamera;

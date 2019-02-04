@@ -16,6 +16,8 @@
 
 @property (nonatomic) void (^photoOutputCallback)(CVPixelBufferRef, TKImageInputOrientaion, BOOL);
 
+@property (nonatomic) UIImage* processedImage;
+
 @end
 
 @implementation TKPhoto
@@ -26,12 +28,14 @@
     if (!(self = [super init])) {
         return nil;
     }
-
+    
+    _processedImage = nil;
+    
     return self;
 }
 
 - (instancetype)initWithURL:(NSURL *)url {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -41,7 +45,7 @@
 }
 
 - (instancetype)initWithImage:(UIImage *)newImageSource {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -51,7 +55,7 @@
 }
 
 - (instancetype)initWithCGImage:(CGImageRef)newImageSource {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -61,7 +65,7 @@
 }
 
 - (instancetype)initWithImage:(UIImage *)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -71,7 +75,7 @@
 }
 
 - (instancetype)initWithCGImage:(CGImageRef)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -81,7 +85,7 @@
 }
 
 - (instancetype)initWithImage:(UIImage *)newImageSource removePremultiplication:(BOOL)removePremultiplication {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -91,7 +95,7 @@
 }
 
 - (instancetype)initWithCGImage:(CGImageRef)newImageSource removePremultiplication:(BOOL)removePremultiplication {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -101,7 +105,7 @@
 }
 
 - (instancetype)initWithImage:(UIImage *)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput removePremultiplication:(BOOL)removePremultiplication {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -111,7 +115,7 @@
 }
 
 - (instancetype)initWithCGImage:(CGImageRef)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput removePremultiplication:(BOOL)removePremultiplication {
-    if (!(self = [super init])) {
+    if (!(self = [self init])) {
         return nil;
     }
     
@@ -125,11 +129,16 @@
     GPUImageFilter* filter = [[GPUImageFilter alloc] init];
     [_picture addTarget:filter];
     
-    __weak __typeof(self)weakSelf = self;
-    [_picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
-        [weakSelf.picture removeTarget:filter];
-        weakSelf.photoOutputCallback ? weakSelf.photoOutputCallback(processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
-    }];
+    if (_processedImage) {
+        _photoOutputCallback ? _photoOutputCallback(_processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
+    } else {
+        __weak __typeof(self)weakSelf = self;
+        [_picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
+            weakSelf.processedImage = processedImage;
+            [weakSelf.picture removeTarget:filter];
+            weakSelf.photoOutputCallback ? weakSelf.photoOutputCallback(processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
+        }];
+    }
     return processed;
 }
 

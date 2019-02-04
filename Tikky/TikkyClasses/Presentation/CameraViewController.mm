@@ -56,7 +56,7 @@
 //    [_tikkyEngine.imageFilter setInput:photo];
     _imageInput = _tikkyEngine.imageFilter.input;
     
-//    [_camera swapCamera];
+    [(TKCamera *)_imageInput swapCamera];
     
     [self setUpUI];
     [self.view setMultipleTouchEnabled:YES];
@@ -230,8 +230,9 @@
 - (void)clickBottomMenuItem:(NSString *)nameItem {
     static int touches = 0;
     touches++;
-    [_tikkyEngine.stickerPreviewer removeAllFacialStickers];
+//    [_tikkyEngine.stickerPreviewer removeAllFacialStickers];
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:stickers[touches%2]];
+//    [((TKPhoto*)_imageInput) processImageWithCompletionHandler:nil];
     return;
     if ([nameItem isEqualToString:@"photo"]) {
         CGSize screenSize = UIScreen.mainScreen.bounds.size;

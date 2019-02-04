@@ -176,7 +176,7 @@ void StickerScene::newFacialStickerWithStickers(std::vector<TKSticker>& stickers
     _enableFacialSticker = true;
     
     for (int i = 0; i < _maxFaceNum; i++) {
-        for (auto sticker : stickers) {
+        for (auto& sticker : stickers) {
             Node* sticker_ = this->newStickerWithSticker(sticker);
             if (sticker_) {
                 sticker_->setVisible(false);
@@ -193,7 +193,7 @@ void StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, in
     if (!landmarks || numLandmarks <= 0) {
         return;
     }
-
+    _facialStickerMutex.lock();
     int i;
     for (i = 0; i < numFaces; i++) {
         std::vector<Node *> visibleStickers = _facialStickers.at(i);
@@ -212,7 +212,7 @@ void StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, in
                     if (lmks)
                         delete[] lmks;
                 }
-//                sticker->setVisible(true);
+                sticker->setVisible(true);
             }
         }
     }
@@ -222,11 +222,11 @@ void StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, in
             sticker->setVisible(false);
         }
     }
-    
+    _facialStickerMutex.unlock();
 }
 
 void StickerScene::notifyDetectNoFaces() {
-    for (auto stickerPacket : _facialStickers) {
+    for (auto& stickerPacket : _facialStickers) {
         for (auto sticker : stickerPacket) {
             sticker->setVisible(false);
         }
@@ -250,8 +250,8 @@ void StickerScene::removeAllFrameSticker() {
 }
 
 void StickerScene::removeAllFacialSticker() {
-//    _facialStickerMutex.lock();
-    for (auto stickerPacket : _facialStickers) {
+    _facialStickerMutex.lock();
+    for (auto& stickerPacket : _facialStickers) {
         for (Node* sticker : stickerPacket) {
             std::vector<int>* neededLmks = (std::vector<int> *)sticker->getUserData();
             if (neededLmks)
@@ -262,9 +262,9 @@ void StickerScene::removeAllFacialSticker() {
                 _stickerEditVC->removeSticker(sticker, true);
             }
         }
-        stickerPacket.clear();
+        stickerPacket.resize(0);
     }
-//    _facialStickerMutex.unlock();
+    _facialStickerMutex.unlock();
 }
 
 bool StickerScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
