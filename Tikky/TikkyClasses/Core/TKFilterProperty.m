@@ -8,9 +8,9 @@
 
 #import "TKFilterProperty.h"
 
-@interface TKFilterProperty () {
-    CGFloat* _rPointer;
-}
+@interface TKFilterProperty ()
+
+@property (nonatomic) void (^valueSetter)(CGFloat);
 
 @end
 
@@ -37,20 +37,20 @@
         return nil;
     }
     
-    _rPointer = NULL;
+    _valueSetter = NULL;
     
     return self;
 }
 
-- (void)bindingRefValue:(CGFloat *)rValue {
-    _rPointer = rValue;
+- (void)bindingValueChangeCallback:(void (^)(CGFloat value))callback {
+    _valueSetter = callback;
 }
 
 - (void)setValue:(CGFloat)value {
     _value = value;
     
-    if (_rPointer) {
-        *_rPointer = value;
+    if (_valueSetter) {
+        _valueSetter(value);
     }
 }
 

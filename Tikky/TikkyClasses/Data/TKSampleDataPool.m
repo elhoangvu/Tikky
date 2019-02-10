@@ -70,6 +70,7 @@
                            @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
                            @"CONTRAST"   : @{ @"class" : @"GPUImageContrastFilter"   },
                            @"GAMMA"      : @{ @"class" : @"GPUImageGammaFilter"      },
+                           @"RGB"        : @{ @"class" : @"GPUImageRGBFilter"           },
                            @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
                           
                            @"MENTAL"     : @{ @"class" : @"GPUImageLUTFilter" },

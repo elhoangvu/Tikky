@@ -56,7 +56,7 @@
 //    [_tikkyEngine.imageFilter setInput:photo];
     _imageInput = _tikkyEngine.imageFilter.input;
     
-    [(TKCamera *)_imageInput swapCamera];
+//    [(TKCamera *)_imageInput swapCamera];
     
     [self setUpUI];
     [self.view setMultipleTouchEnabled:YES];

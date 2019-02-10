@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
                     maxValue:(CGFloat)maxValue
                        value:(CGFloat)value;
 
-- (void)bindingRefValue:(CGFloat *)rValue;
+- (void)bindingValueChangeCallback:(void (^)(CGFloat value))callback;
 
 @end
 
