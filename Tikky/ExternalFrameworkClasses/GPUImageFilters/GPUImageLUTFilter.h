@@ -15,6 +15,8 @@
 
 @interface GPUImageLUTFilter : GPUImageFilterGroup
 
+@property (nonatomic) CGFloat intensity;
+
 /**
  Init LUT filter with lookup image
 

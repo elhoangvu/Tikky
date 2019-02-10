@@ -8,22 +8,50 @@
 
 #import "TKFilterProperty.h"
 
+@interface TKFilterProperty () {
+    CGFloat* _rPointer;
+}
+
+@end
+
 @implementation TKFilterProperty
 
 - (instancetype)initWithName:(NSString *)name
-                    minValue:(NSInteger)minValue
-                    maxValue:(NSInteger)maxValue
-                defaultValue:(NSInteger)defaultValue {
-    if (!(self = [super init])) {
+                    minValue:(CGFloat)minValue
+                    maxValue:(CGFloat)maxValue
+                       value:(CGFloat)value {
+    if (!(self = [self init])) {
         return nil;
     }
     
     _name = name;
     _minValue = minValue;
     _maxValue = maxValue;
-    _defaultValue = defaultValue;
+    _value = value;
+
+    return self;
+}
+
+- (instancetype)init {
+    if (!(self = [super init])) {
+        return nil;
+    }
+    
+    _rPointer = NULL;
     
     return self;
+}
+
+- (void)bindingRefValue:(CGFloat *)rValue {
+    _rPointer = rValue;
+}
+
+- (void)setValue:(CGFloat)value {
+    _value = value;
+    
+    if (_rPointer) {
+        *_rPointer = value;
+    }
 }
 
 @end

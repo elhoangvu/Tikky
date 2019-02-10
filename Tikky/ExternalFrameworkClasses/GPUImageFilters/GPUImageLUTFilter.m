@@ -46,6 +46,7 @@
     _lookupImage = lookupImage;
     _sourcePicture = [[GPUImagePicture alloc] initWithImage:lookupImage];
     _lookupFilter = [[GPUImageLookupFilter alloc] init];
+    _intensity = _lookupFilter.intensity;
     [_sourcePicture addTarget:_lookupFilter atTextureLocation:1];
     [_sourcePicture useNextFrameForImageCapture];
     [_sourcePicture processImage];
@@ -61,6 +62,10 @@
 - (void)newFrameReadyAtTime:(CMTime)frameTime atIndex:(NSInteger)textureIndex {
     [_sourcePicture processImage];
     [super newFrameReadyAtTime:frameTime atIndex:textureIndex];
+}
+
+- (void)setIntensity:(CGFloat)intensity {
+    _lookupFilter.intensity = intensity;
 }
 
 @end

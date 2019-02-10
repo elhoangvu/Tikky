@@ -13,14 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TKFilterProperty : NSObject
 
 @property (nonatomic, readonly) NSString* name;
-@property (nonatomic, readonly) NSInteger minValue;
-@property (nonatomic, readonly) NSInteger maxValue;
-@property (nonatomic, readonly) NSInteger defaultValue;
+@property (nonatomic, readonly) CGFloat minValue;
+@property (nonatomic, readonly) CGFloat maxValue;
+@property (nonatomic) CGFloat value;
 
 - (instancetype)initWithName:(NSString *)name
-                    minValue:(NSInteger)minValue
-                    maxValue:(NSInteger)maxValue
-                defaultValue:(NSInteger)defaultValue;
+                    minValue:(CGFloat)minValue
+                    maxValue:(CGFloat)maxValue
+                       value:(CGFloat)value;
+
+- (void)bindingRefValue:(CGFloat *)rValue;
 
 @end
 

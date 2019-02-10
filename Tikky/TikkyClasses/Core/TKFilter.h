@@ -13,8 +13,10 @@
 
 @property (nonatomic, readonly) NSObject* sharedObject;
 @property (nonatomic, readonly) NSString* name;
-@property (nonatomic, readonly) NSArray<TKFilterProperty *>* property;
+@property (nonatomic, readonly) NSArray<TKFilterProperty *>* propertyList;
 
 - (instancetype)initWithName:(NSString *)name;
+
+- (BOOL)bindingFilterObj:(NSObject *)filterObject withPropertyList:(NSArray<TKFilterProperty *>*)propertyList;
 
 @end

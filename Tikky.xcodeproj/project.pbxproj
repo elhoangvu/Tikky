@@ -195,6 +195,7 @@
 		B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */; };
 		B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditController.cpp */; };
 		B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B767ED9C21B5BECE00CE264A /* TKImageFilter.m */; };
+		B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = B77E59782210320700EB1468 /* TKFilterCreator.m */; };
 		B7B8523E21C04C4F005A3F3B /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523721C0490B005A3F3B /* libluacocos2d iOS.a */; };
 		B7B8524021C04C9C005A3F3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */; };
 		B7B8524221C04CC1005A3F3B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */; };
@@ -593,6 +594,8 @@
 		B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerPreviewer.mm; sourceTree = "<group>"; };
 		B767ED9B21B5BECE00CE264A /* TKImageFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
 		B767ED9C21B5BECE00CE264A /* TKImageFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageFilter.m; sourceTree = "<group>"; };
+		B77E59772210320700EB1468 /* TKFilterCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilterCreator.h; sourceTree = "<group>"; };
+		B77E59782210320700EB1468 /* TKFilterCreator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilterCreator.m; sourceTree = "<group>"; };
 		B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		B7B8523F21C04C9C005A3F3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -927,7 +930,7 @@
 		B70BD43A2196C634000A4EBF /* Tikky */ = {
 			isa = PBXGroup;
 			children = (
-				B751913D21BA71C200F64A21 /* AdditionalClassesOfFWs */,
+				B751913D21BA71C200F64A21 /* ExternalFrameworkClasses */,
 				B751913921BA714700F64A21 /* TikkyClasses */,
 				B70BD4962196CC6F000A4EBF /* Resources */,
 				B70BD48A2196C90F000A4EBF /* Prefix.pch */,
@@ -1230,6 +1233,8 @@
 				B767ED9C21B5BECE00CE264A /* TKImageFilter.m */,
 				B751913221BA6EC900F64A21 /* TKFilter.h */,
 				B751913321BA6EC900F64A21 /* TKFilter.m */,
+				B77E59772210320700EB1468 /* TKFilterCreator.h */,
+				B77E59782210320700EB1468 /* TKFilterCreator.m */,
 				B751914321BA80D200F64A21 /* TKFilterProperty.h */,
 				B751914421BA80D200F64A21 /* TKFilterProperty.m */,
 				B7107D0221BEE7BC00FEE948 /* Input */,
@@ -1262,14 +1267,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		B751913D21BA71C200F64A21 /* AdditionalClassesOfFWs */ = {
+		B751913D21BA71C200F64A21 /* ExternalFrameworkClasses */ = {
 			isa = PBXGroup;
 			children = (
 				B7137D55220207F8004BF34B /* SDMWrapper */,
 				B751913F21BA71F100F64A21 /* GPUImageFilters */,
 				B751913E21BA71EA00F64A21 /* Cocos2dxEngine */,
 			);
-			path = AdditionalClassesOfFWs;
+			path = ExternalFrameworkClasses;
 			sourceTree = "<group>";
 		};
 		B751913E21BA71EA00F64A21 /* Cocos2dxEngine */ = {
@@ -1684,6 +1689,7 @@
 				B70ABAAD2201A11500B1F89A /* TKStickerItem.m in Sources */,
 				B7107D0821BEE82200FEE948 /* TKPhoto.m in Sources */,
 				B70ABAB42201A11500B1F89A /* TKFilterBottomMenu.m in Sources */,
+				B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */,
 				B70ABAB92201A11500B1F89A /* TKFilterModel.m in Sources */,
 				B70ABABD2201A11500B1F89A /* TKBottomMenuFactory.m in Sources */,
 				B751913421BA6EC900F64A21 /* TKFilter.m in Sources */,

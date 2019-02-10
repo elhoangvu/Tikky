@@ -67,7 +67,6 @@
 - (void)initfilterResources {
 
     NSDictionary* dic = @{ @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
-                           @"LEVELS"     : @{ @"class" : @"GPUImageLevelsFilter"     },
                            @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
                            @"CONTRAST"   : @{ @"class" : @"GPUImageContrastFilter"   },
                            @"GAMMA"      : @{ @"class" : @"GPUImageGammaFilter"      },
@@ -101,8 +100,7 @@
                            @"CHARCOAL"   : @{ @"class" : @"GPUImageLUTFilter" },
                            @"CLARITY"    : @{ @"class" : @"GPUImageLUTFilter" },
                            @"AMATORKA"   : @{ @"class" : @"GPUImageLUTFilter" },
-                           @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
-                           @"BEAUTY2"     : @{ @"class" : @"YUGPUImageHighPassSkinSmoothingFilter" }
+                           @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" }
                            };
     
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];
