@@ -1,4 +1,4 @@
-local facial_sticker_dog_2 = {
+local facial_sticker_cat_2 = {
 
 onEnter = function(self)
 local director = cc.Director:getInstance()
@@ -6,7 +6,7 @@ local visibleOrigin = director:getVisibleOrigin()
 local winSize = director:getVisibleSize()
 local me = self:getOwner()
 local contentSize = me:getContentSize()
-me:setAnchorPoint(0.214, 0.172)
+me:setAnchorPoint(0.35, 0.35)
 me:setVisible(false)
 
 end,
@@ -31,7 +31,7 @@ local heightright = math.abs(toprightY-bottomrightY)
 local offsetright = heightright*0.2935
 
 local curScale = me:getScale()
-local scale = (width*0.65)/(me:getContentSize().width)
+local scale = (width*0.4)/(me:getContentSize().width)
 -- print("width: "..width.." curScale: "..curScale.." scale: "..scale.." size w: "..me:getContentSize().width)
 me:setScale(scale)
 
@@ -84,6 +84,7 @@ end
 me:setPosition(x , y)
 me:setVisible(true)
 --print("landmark x: "..x.." y: "..y)
+--me:setVisible(true)
 end,
 
 notifyNoFaceDetected = function(self)
@@ -98,4 +99,4 @@ end
 
 
 -- it is needed to return shakura to let c++ nodes know it
-return facial_sticker_dog_2
+return facial_sticker_cat_2

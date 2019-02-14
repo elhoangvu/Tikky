@@ -7,6 +7,7 @@ local winSize = director:getVisibleSize()
 local me = self:getOwner()
 local contentSize = me:getContentSize()
 me:setAnchorPoint(0.786, 0.172)
+me:setVisible(false)
 
 end,
 
@@ -79,7 +80,13 @@ else
 end
 
 me:setPosition(x , y)
+me:setVisible(true)
 --print("landmark x: "..x.." y: "..y)
+end,
+
+notifyNoFaceDetected = function(self)
+local me = self:getOwner()
+me:setVisible(false)
 end,
 
 update = function(self, dt)

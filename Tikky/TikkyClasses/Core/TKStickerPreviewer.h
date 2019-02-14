@@ -33,8 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)newFrameStickerWithSticker:(TKSticker)sticker;
 - (void)newFrameStickerWithStickers:(std::vector<TKSticker>&)stickers;
 - (void)newFacialStickerWithStickers:(std::vector<TKSticker>&)sticker;
-- (void)updateFacialLandmarks:(float ** _Nullable)landmarks landmarkNum:(int)landmarkNum faceNum:(int)faceNum;
-- (void)notifyDetectNoFaces;
+- (void)updateFacialLandmarks:(float * _Nullable * _Nullable)landmarks landmarkNum:(int)landmarkNum faceNum:(int)faceNum;
+- (void)notifyNoFaceDetected;
 
 - (void)removeAllFrameStickers;
 - (void)removeAllStaticStickers;

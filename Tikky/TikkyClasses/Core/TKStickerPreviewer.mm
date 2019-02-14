@@ -106,8 +106,8 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->updateFacialLandmarks(landmarks, landmarkNum, faceNum);
 }
 
-- (void)notifyDetectNoFaces {
-    _stickerScene->notifyDetectNoFaces();
+- (void)notifyNoFaceDetected {
+    _stickerScene->notifyNoFaceDetected();
 }
 
 - (void)removeAllFrameStickers {

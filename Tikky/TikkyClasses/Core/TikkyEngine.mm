@@ -145,7 +145,7 @@
                     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
                     
                     if (faceNum == 0) {
-                        [weakSelf.stickerPreviewer notifyDetectNoFaces];
+                        [weakSelf.stickerPreviewer notifyNoFaceDetected];
                     } else {
                         CGSize previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
                         CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);

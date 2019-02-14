@@ -27,6 +27,8 @@
 #include "scripting/lua-bindings/manual/CCComponentLua.h"
 //#include "editor-support/spine/SkeletonAnimation.h"
 
+#define FRAME_STICKER_Z_POSITION 100000
+
 USING_NS_CC;
 
 Scene* StickerScene::createScene()
@@ -106,8 +108,8 @@ void StickerScene::newStaticStickerWithSticker(TKSticker sticker) {
 }
 
 void StickerScene::newFrameStickerWithSticker(TKSticker sticker) {
-    Node* sticker_ = this->newStickerWithSticker(sticker);
-
+    Node* sticker_ = this->newStickerWithSticker(sticker, true);
+    
     if (sticker_) {
         if (!sticker_->getComponent("TKComponent")) {
             auto visibleSize = Director::getInstance()->getVisibleSize();
@@ -161,7 +163,7 @@ Node* StickerScene::newStickerWithSticker(TKSticker sticker, bool isFrameSticker
         _stickerEditVC->addSticker(sticker_, true);
     } else {
         sticker_->setTag(StickerType::FRAME_STICKER);
-        this->addChild(sticker_);
+        this->addChild(sticker_, FRAME_STICKER_Z_POSITION);
     }
     
     return sticker_;
@@ -179,7 +181,6 @@ void StickerScene::newFacialStickerWithStickers(std::vector<TKSticker>& stickers
         for (auto& sticker : stickers) {
             Node* sticker_ = this->newStickerWithSticker(sticker);
             if (sticker_) {
-                sticker_->setVisible(false);
                 _facialStickers[i].push_back(sticker_);
                 if (sticker.neededLandmarks.size() > 0) {
                     sticker_->setUserData(new std::vector<int>(sticker.neededLandmarks));
@@ -212,23 +213,28 @@ void StickerScene::updateFacialLandmarks(float** landmarks, int numLandmarks, in
                     if (lmks)
                         delete[] lmks;
                 }
-                sticker->setVisible(true);
             }
         }
     }
     for (; i < _maxFaceNum; i++) {
         std::vector<Node *> visibleStickers = _facialStickers.at(i);
         for (auto sticker : visibleStickers) {
-            sticker->setVisible(false);
+            ComponentLua* compLua = dynamic_cast<ComponentLua *>(sticker->getComponent("TKComponent"));
+            if (sticker && compLua) {
+                compLua->executeFunctionWithFloatArgs("notifyNoFaceDetected", nullptr, 0);
+            }
         }
     }
     _facialStickerMutex.unlock();
 }
 
-void StickerScene::notifyDetectNoFaces() {
+void StickerScene::notifyNoFaceDetected() {
     for (auto& stickerPacket : _facialStickers) {
         for (auto sticker : stickerPacket) {
-            sticker->setVisible(false);
+            ComponentLua* compLua = dynamic_cast<ComponentLua *>(sticker->getComponent("TKComponent"));
+            if (sticker && compLua) {
+                compLua->executeFunctionWithFloatArgs("notifyNoFaceDetected", nullptr, 0);
+            }
         }
     }
 }

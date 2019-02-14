@@ -99,7 +99,7 @@ public:
     void newFacialStickerWithStickers(std::vector<TKSticker>& stickers);
     
     void updateFacialLandmarks(float** landmarks, int numLandmarks, int numFaces);
-    void notifyDetectNoFaces();
+    void notifyNoFaceDetected();
 
     // Remove stickers
     void removeAllFrameSticker();
