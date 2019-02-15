@@ -309,12 +309,20 @@
     
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
-    [((TKPhoto*)_imageInput) processImageWithCompletionHandler:nil];
+    
+    // Delay 2 seconds
+    __weak __typeof(self)weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [((TKPhoto*)weakSelf.imageInput) processImageWithCompletionHandler:nil];
+    });
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-//    [((TKCamera *)_imageInput) stopCameraCapture];
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+        [((TKCamera *)_imageInput) stopCameraCapture];
+    }
 }
 
 

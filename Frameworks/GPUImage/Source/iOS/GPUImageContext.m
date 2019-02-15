@@ -1,6 +1,9 @@
 #import "GPUImageContext.h"
 #import <OpenGLES/EAGLDrawable.h>
 #import <AVFoundation/AVFoundation.h>
+// <!-- TIKKY-ADD
+#import "TKRenderQueue.h"
+// TIKKY-ADD -->
 
 #define MAXSHADERPROGRAMSALLOWEDINCACHE 40
 
@@ -33,7 +36,11 @@ static void *openGLESContextQueueKey;
     }
 
 	openGLESContextQueueKey = &openGLESContextQueueKey;
-    _contextQueue = dispatch_queue_create("com.sunsetlakesoftware.GPUImage.openGLESContextQueue", GPUImageDefaultQueueAttribute());
+    // <!-- TIKKY-CHANGE
+//    _contextQueue = dispatch_queue_create("com.sunsetlakesoftware.GPUImage.openGLESContextQueue", GPUImageDefaultQueueAttribute());
+    // TO
+    _contextQueue = TKRenderQueue.sharedInstance.renderQueue;
+    // TIKKY-CHANGE -->
     
 #if OS_OBJECT_USE_OBJC
 	dispatch_queue_set_specific(_contextQueue, openGLESContextQueueKey, (__bridge void *)self, NULL);
@@ -80,6 +87,10 @@ static void *openGLESContextQueueKey;
     EAGLContext *imageProcessingContext = [self context];
     if ([EAGLContext currentContext] != imageProcessingContext)
     {
+        // <!-- TIKKY-ADD
+        glFinish();
+//        glFlush();
+        // TIKKY-ADD -->
         [EAGLContext setCurrentContext:imageProcessingContext];
     }
 }
@@ -92,11 +103,15 @@ static void *openGLESContextQueueKey;
 
 - (void)setContextShaderProgram:(GLProgram *)shaderProgram;
 {
-    EAGLContext *imageProcessingContext = [self context];
-    if ([EAGLContext currentContext] != imageProcessingContext)
-    {
-        [EAGLContext setCurrentContext:imageProcessingContext];
-    }
+    // <!-- TIKKI-CHANGE
+    [self useAsCurrentContext];
+    // FROM
+//    EAGLContext *imageProcessingContext = [self context];
+//    if ([EAGLContext currentContext] != imageProcessingContext)
+//    {
+//        [EAGLContext setCurrentContext:imageProcessingContext];
+//    }
+    // TIKKY-CHANGE -->
     
     if (self.currentShaderProgram != shaderProgram)
     {

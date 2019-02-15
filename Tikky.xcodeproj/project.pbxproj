@@ -217,6 +217,7 @@
 		B7B8524221C04CC1005A3F3B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8524121C04CC1005A3F3B /* MediaPlayer.framework */; };
 		B7E738B021C6D70500932ABD /* UIDevice+DeviceName.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E738AF21C6D70500932ABD /* UIDevice+DeviceName.m */; };
 		B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E738B821C6D70500932ABD /* UIView+Delegate.m */; };
+		B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7FE3F082216B7AD00A82D93 /* TKRenderQueue.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -635,6 +636,8 @@
 		B7E738AF21C6D70500932ABD /* UIDevice+DeviceName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceName.m"; sourceTree = "<group>"; };
 		B7E738B721C6D70500932ABD /* UIView+Delegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Delegate.h"; sourceTree = "<group>"; };
 		B7E738B821C6D70500932ABD /* UIView+Delegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Delegate.m"; sourceTree = "<group>"; };
+		B7FE3F072216B7AD00A82D93 /* TKRenderQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKRenderQueue.h; sourceTree = "<group>"; };
+		B7FE3F082216B7AD00A82D93 /* TKRenderQueue.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKRenderQueue.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -980,6 +983,8 @@
 		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7FE3F072216B7AD00A82D93 /* TKRenderQueue.h */,
+				B7FE3F082216B7AD00A82D93 /* TKRenderQueue.mm */,
 				B70ABAD62201C66000B1F89A /* SDM */,
 				B70ABAD42201C26900B1F89A /* opencv2.framework */,
 				B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */,
@@ -1778,6 +1783,7 @@
 				B7107D0821BEE82200FEE948 /* TKPhoto.m in Sources */,
 				B70ABAB42201A11500B1F89A /* TKFilterBottomMenu.m in Sources */,
 				B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */,
+				B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */,
 				B70ABAB92201A11500B1F89A /* TKFilterModel.m in Sources */,
 				B70ABABD2201A11500B1F89A /* TKBottomMenuFactory.m in Sources */,
 				B751913421BA6EC900F64A21 /* TKFilter.m in Sources */,

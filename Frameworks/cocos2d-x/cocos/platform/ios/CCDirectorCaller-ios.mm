@@ -37,6 +37,10 @@
 #import "base/CCDirector.h"
 #import "platform/ios/CCEAGLView-ios.h"
 
+// <!-- TIKKY-ADD
+#import "TKRenderQueue.h"
+// TIKKY-ADD -->
+
 static id s_sharedDirectorCaller;
 
 @interface NSObject(CADisplayLink)
@@ -135,21 +139,26 @@ static id s_sharedDirectorCaller;
 -(void) doCaller: (id) sender
 {
     if (isAppActive) {
-        cocos2d::Director* director = cocos2d::Director::getInstance();
-        EAGLContext* cocos2dxContext = [(CCEAGLView*)director->getOpenGLView()->getEAGLView() context];
-        if (cocos2dxContext != [EAGLContext currentContext])
-             glFlush();
-        
-            // <!-- TIKKY-CHANGE
-            // glFlush(); -> return;
-//            return;
-            // TIKKY-CHANGE -->
-        
-        [EAGLContext setCurrentContext: cocos2dxContext];
-
-        CFTimeInterval dt = ((CADisplayLink*)displayLink).timestamp - lastDisplayTime;
-        lastDisplayTime = ((CADisplayLink*)displayLink).timestamp;
-        director->mainLoop(dt);
+        // <!-- TIKKY-ADD
+        runSynchronouslyOnRenderQueue(^{
+        // TIKKY-ADD -->
+            cocos2d::Director* director = cocos2d::Director::getInstance();
+            EAGLContext* cocos2dxContext = [(CCEAGLView*)director->getOpenGLView()->getEAGLView() context];
+            if (cocos2dxContext != [EAGLContext currentContext]) {
+                // <!-- TIKKY-ADD
+                glFinish();
+                // TIKKY-ADD -->
+                //            glFlush();
+            }
+            
+            [EAGLContext setCurrentContext: cocos2dxContext];
+            
+            CFTimeInterval dt = ((CADisplayLink*)displayLink).timestamp - lastDisplayTime;
+            lastDisplayTime = ((CADisplayLink*)displayLink).timestamp;
+            director->mainLoop(dt);
+        // <!-- TIKKY-ADD
+        });
+        // TIKKY-ADD -->
     }
 }
 

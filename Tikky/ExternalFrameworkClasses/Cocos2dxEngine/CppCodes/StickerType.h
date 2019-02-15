@@ -13,6 +13,7 @@ enum StickerType {
     STATIC_STICKER      = 1,
     FRAME_STICKER       = 1 << 1,
     ANIMATION_STICKER   = 1 << 2,
+    FACIAL_STICKER       = 1 << 1,
 };
 
 #endif /* StickerTypes_h */

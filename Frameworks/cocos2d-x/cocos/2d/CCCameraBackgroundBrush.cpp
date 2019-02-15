@@ -203,7 +203,7 @@ void CameraBackgroundDepthBrush::drawBackground(Camera* /*camera*/)
     
     _glProgramState->setUniformFloat("depth", _depth);
     _glProgramState->apply(Mat4::IDENTITY);
-    
+
     auto supportVAO = Configuration::getInstance()->supportsShareableVAO();
     if (supportVAO)
         GL::bindVAO(_vao);

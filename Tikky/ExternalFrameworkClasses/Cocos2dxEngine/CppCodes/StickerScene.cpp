@@ -163,7 +163,12 @@ Node* StickerScene::newStickerWithSticker(TKSticker sticker, bool isFrameSticker
         _stickerEditVC->addSticker(sticker_, true);
     } else {
         sticker_->setTag(StickerType::FRAME_STICKER);
-        this->addChild(sticker_, FRAME_STICKER_Z_POSITION);
+        if (isFrameSticker) {
+            this->addChild(sticker_, FRAME_STICKER_Z_POSITION);
+        } else {
+            this->addChild(sticker_);
+        }
+        
     }
     
     return sticker_;
