@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKSampleDataPool.h"
+#import "TKStickerCollectionViewBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKStickerCollectionView : UICollectionView
+@interface TKStickerCollectionView : TKStickerCollectionViewBase
+
 
 @end
 

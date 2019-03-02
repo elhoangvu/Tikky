@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TKStickerItem.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TKStickerCollectionViewCell : UICollectionViewCell
