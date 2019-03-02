@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TKStickerCollectionViewCellBase.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKFrameCollectionViewCell : UICollectionViewCell
+@interface TKFrameCollectionViewCell : TKStickerCollectionViewCellBase
 
 @property (nonatomic) UIImageView *imageView;
 
