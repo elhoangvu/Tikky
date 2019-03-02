@@ -57,7 +57,7 @@
 //    NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
 //    TKPhoto* photo = [[TKPhoto alloc] initWithImage:[UIImage imageWithContentsOfFile:url]];
 //    [_tikkyEngine.imageFilter setInput:photo];
-//    _imageInput = _tikkyEngine.imageFilter.input;
+    _imageInput = _tikkyEngine.imageFilter.input;
     
 //    [(TKCamera *)_imageInput swapCamera];
     
@@ -68,7 +68,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [((TKCamera *)_imageInput) startCameraCapture];
+    [((TKCamera *)_imageInput) startCameraCapture];
     
     static BOOL isSetupAudio = true;
     if (!isSetupAudio) {
@@ -313,10 +313,10 @@
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     
     // Delay 2 seconds
-    __weak __typeof(self)weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [((TKPhoto*)weakSelf.imageInput) processImageWithCompletionHandler:nil];
-    });
+//    __weak __typeof(self)weakSelf = self;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [((TKPhoto*)weakSelf.imageInput) processImageWithCompletionHandler:nil];
+//    });
     
 }
 
