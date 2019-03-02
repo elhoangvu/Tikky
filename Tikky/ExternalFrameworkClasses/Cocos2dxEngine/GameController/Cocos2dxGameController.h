@@ -1,9 +1,9 @@
 //
-//  Cocos2dXGameController.h
-//  iOSCoco2dXApp
+//  Cocos2dxGameController.h
+//  Tikky
 //
-//  Created by Ngoc Tuan Le on 10/10/17.
-//  Copyright © 2017 LifeOfCoder. All rights reserved.
+//  Created by Le Hoang Vu on 12/3/18.
+//  Copyright © 2018 Le Hoang Vu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

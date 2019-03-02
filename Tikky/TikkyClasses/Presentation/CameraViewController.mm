@@ -371,6 +371,8 @@
         [_tikkyEngine.imageFilter setInput:camera];
         _imageInput = _tikkyEngine.imageFilter.input;
         [((TKCamera *)_imageInput) startCameraCapture];
+    } else if ([nameItem isEqualToString:@"capture"]) {
+        [self capturePhoto];
     }
     return;
     

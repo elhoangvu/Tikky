@@ -201,6 +201,129 @@
 		B773F65A222B000500F6FB7E /* TKStickerModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F650222B000500F6FB7E /* TKStickerModelView.m */; };
 		B773F65D222B005600F6FB7E /* TKModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F65C222B005600F6FB7E /* TKModelObject.m */; };
 		B773F669222B00F400F6FB7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F668222B00F300F6FB7E /* ViewController.m */; };
+		B773F7C7222B0EC900F6FB7E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */; };
+		B773F7C8222B0EC900F6FB7E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */; };
+		B773F7C9222B0EC900F6FB7E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */; };
+		B773F84C222B123F00F6FB7E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7CD222B123E00F6FB7E /* frame-flower-shakura-3.png */; };
+		B773F84D222B123F00F6FB7E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7CE222B123E00F6FB7E /* frame-flower-shakura-3.lua */; };
+		B773F84E222B123F00F6FB7E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7CF222B123E00F6FB7E /* frame-flower-shakura-2.lua */; };
+		B773F84F222B123F00F6FB7E /* frame-flower-shakura-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D0222B123E00F6FB7E /* frame-flower-shakura-2.png */; };
+		B773F850222B123F00F6FB7E /* frame-flower-shakura-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D1222B123E00F6FB7E /* frame-flower-shakura-0.png */; };
+		B773F851222B123F00F6FB7E /* frame-flower-shakura-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D2222B123E00F6FB7E /* frame-flower-shakura-0.lua */; };
+		B773F852222B123F00F6FB7E /* frame-flower-shakura-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D3222B123E00F6FB7E /* frame-flower-shakura-1.lua */; };
+		B773F853222B123F00F6FB7E /* frame-flower-shakura-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D4222B123E00F6FB7E /* frame-flower-shakura-1.png */; };
+		B773F854222B123F00F6FB7E /* frame-flower-shakura-5.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D5222B123E00F6FB7E /* frame-flower-shakura-5.png */; };
+		B773F855222B123F00F6FB7E /* frame-flower-shakura-5.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D6222B123E00F6FB7E /* frame-flower-shakura-5.lua */; };
+		B773F856222B123F00F6FB7E /* frame-flower-shakura-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D7222B123E00F6FB7E /* frame-flower-shakura-4.lua */; };
+		B773F857222B123F00F6FB7E /* frame-flower-shakura-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D8222B123E00F6FB7E /* frame-flower-shakura-4.png */; };
+		B773F858222B123F00F6FB7E /* frame-flower-shakura-6.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7D9222B123E00F6FB7E /* frame-flower-shakura-6.png */; };
+		B773F859222B123F00F6FB7E /* frame-flower-shakura-6.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DA222B123E00F6FB7E /* frame-flower-shakura-6.lua */; };
+		B773F85A222B123F00F6FB7E /* frame-flower-shakura-7.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DB222B123E00F6FB7E /* frame-flower-shakura-7.lua */; };
+		B773F85B222B123F00F6FB7E /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DC222B123E00F6FB7E /* frame-flower-shakura-7.png */; };
+		B773F85C222B123F00F6FB7E /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DD222B123E00F6FB7E /* frame-flower-shakura-9.png */; };
+		B773F85D222B123F00F6FB7E /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DE222B123E00F6FB7E /* frame-flower-shakura-10.lua */; };
+		B773F85E222B123F00F6FB7E /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7DF222B123E00F6FB7E /* frame-flower-shakura-10.png */; };
+		B773F85F222B123F00F6FB7E /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E0222B123E00F6FB7E /* frame-flower-shakura-9.lua */; };
+		B773F860222B123F00F6FB7E /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E1222B123E00F6FB7E /* frame-flower-shakura-8.lua */; };
+		B773F861222B123F00F6FB7E /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E2222B123E00F6FB7E /* frame-flower-shakura-11.png */; };
+		B773F862222B123F00F6FB7E /* frame-flower-shakura-11.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E3222B123E00F6FB7E /* frame-flower-shakura-11.lua */; };
+		B773F863222B123F00F6FB7E /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E4222B123E00F6FB7E /* frame-flower-shakura-8.png */; };
+		B773F864222B123F00F6FB7E /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E5222B123E00F6FB7E /* frame-flower-shakura-thumb.png */; };
+		B773F865222B123F00F6FB7E /* sticker-xmas-hat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E7222B123E00F6FB7E /* sticker-xmas-hat-thumb.png */; };
+		B773F866222B123F00F6FB7E /* sticker-xmas-hat-6-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E8222B123E00F6FB7E /* sticker-xmas-hat-6-thumb.png */; };
+		B773F867222B123F00F6FB7E /* sticker-xmas-santa-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7E9222B123E00F6FB7E /* sticker-xmas-santa-thumb.png */; };
+		B773F868222B123F00F6FB7E /* sticker-xmas-snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7EA222B123E00F6FB7E /* sticker-xmas-snowman.png */; };
+		B773F869222B123F00F6FB7E /* sticker-xmas-red-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7EB222B123E00F6FB7E /* sticker-xmas-red-gift.png */; };
+		B773F86A222B123F00F6FB7E /* sticker-xmas-hat-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7EC222B123E00F6FB7E /* sticker-xmas-hat-8.png */; };
+		B773F86B222B123F00F6FB7E /* sticker-xmas-hat-7-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7ED222B123E00F6FB7E /* sticker-xmas-hat-7-thumb.png */; };
+		B773F86C222B123F00F6FB7E /* sticker-xmas-hat.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7EE222B123E00F6FB7E /* sticker-xmas-hat.png */; };
+		B773F86D222B123F00F6FB7E /* stickers.json in Resources */ = {isa = PBXBuildFile; fileRef = B773F7EF222B123E00F6FB7E /* stickers.json */; };
+		B773F86E222B123F00F6FB7E /* sticker-xmas-violet-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F0222B123E00F6FB7E /* sticker-xmas-violet-gift.png */; };
+		B773F86F222B123F00F6FB7E /* sticker-xmas-snowman-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F1222B123E00F6FB7E /* sticker-xmas-snowman-thumb.png */; };
+		B773F870222B123F00F6FB7E /* sticker-xmas-reindeer.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F2222B123E00F6FB7E /* sticker-xmas-reindeer.png */; };
+		B773F871222B123F00F6FB7E /* sticker-xmas-hat-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F3222B123E00F6FB7E /* sticker-xmas-hat-4-thumb.png */; };
+		B773F872222B123F00F6FB7E /* sticker-xmas-pink-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F4222B123E00F6FB7E /* sticker-xmas-pink-gift-thumb.png */; };
+		B773F873222B123F00F6FB7E /* sticker-xmas-hat-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F5222B123E00F6FB7E /* sticker-xmas-hat-2-thumb.png */; };
+		B773F874222B123F00F6FB7E /* sticker-xmas-violet-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F6222B123E00F6FB7E /* sticker-xmas-violet-gift-thumb.png */; };
+		B773F875222B123F00F6FB7E /* sticker-xmas-pink-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F7222B123E00F6FB7E /* sticker-xmas-pink-gift.png */; };
+		B773F876222B123F00F6FB7E /* sticker-xmas-santa.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F8222B123E00F6FB7E /* sticker-xmas-santa.png */; };
+		B773F877222B123F00F6FB7E /* sticker-xmas-hat-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7F9222B123E00F6FB7E /* sticker-xmas-hat-4.png */; };
+		B773F878222B123F00F6FB7E /* sticker-xmas-hat-5.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FA222B123E00F6FB7E /* sticker-xmas-hat-5.png */; };
+		B773F879222B123F00F6FB7E /* sticker-xmas-hat-5-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FB222B123E00F6FB7E /* sticker-xmas-hat-5-thumb.png */; };
+		B773F87A222B123F00F6FB7E /* sticker-xmas-reindeer-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FC222B123E00F6FB7E /* sticker-xmas-reindeer-thumb.png */; };
+		B773F87B222B123F00F6FB7E /* sticker-xmas-hat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FD222B123E00F6FB7E /* sticker-xmas-hat-7.png */; };
+		B773F87C222B123F00F6FB7E /* sticker-xmas-hat-6.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FE222B123E00F6FB7E /* sticker-xmas-hat-6.png */; };
+		B773F87D222B123F00F6FB7E /* sticker-xmas-hat-8-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F7FF222B123E00F6FB7E /* sticker-xmas-hat-8-thumb.png */; };
+		B773F87E222B123F00F6FB7E /* sticker-xmas-hat-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F800222B123E00F6FB7E /* sticker-xmas-hat-3-thumb.png */; };
+		B773F87F222B123F00F6FB7E /* sticker-xmas-red-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F801222B123E00F6FB7E /* sticker-xmas-red-gift-thumb.png */; };
+		B773F880222B123F00F6FB7E /* sticker-xmas-hat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F802222B123E00F6FB7E /* sticker-xmas-hat-2.png */; };
+		B773F881222B123F00F6FB7E /* sticker-xmas-hat-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */; };
+		B773F882222B123F00F6FB7E /* had.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F804222B123E00F6FB7E /* had.png */; };
+		B773F883222B123F00F6FB7E /* sticker-dog-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F806222B123E00F6FB7E /* sticker-dog-4.png */; };
+		B773F884222B123F00F6FB7E /* sticker-dog-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F807222B123E00F6FB7E /* sticker-dog-1.png */; };
+		B773F885222B123F00F6FB7E /* sticker-dog-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F808222B123E00F6FB7E /* sticker-dog-2.png */; };
+		B773F886222B123F00F6FB7E /* sticker-dog-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F809222B123E00F6FB7E /* sticker-dog-3.png */; };
+		B773F887222B123F00F6FB7E /* frame-xmas-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */; };
+		B773F888222B123F00F6FB7E /* frame-flower-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */; };
+		B773F889222B123F00F6FB7E /* frame-flower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80D222B123E00F6FB7E /* frame-flower-2.png */; };
+		B773F88A222B123F00F6FB7E /* frame-flower-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80E222B123E00F6FB7E /* frame-flower-3.png */; };
+		B773F88B222B123F00F6FB7E /* frames-xmas-5-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80F222B123E00F6FB7E /* frames-xmas-5-bot.png */; };
+		B773F88C222B123F00F6FB7E /* frame-flower-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F810222B123E00F6FB7E /* frame-flower-4.png */; };
+		B773F88D222B123F00F6FB7E /* frame-flower-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F811222B123E00F6FB7E /* frame-flower-thumb.png */; };
+		B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F812222B123E00F6FB7E /* frame-xmas-2.png */; };
+		B773F88F222B123F00F6FB7E /* frame-flower-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */; };
+		B773F890222B123F00F6FB7E /* frame-xmas-4-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */; };
+		B773F891222B123F00F6FB7E /* frames-xmas-5-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */; };
+		B773F892222B123F00F6FB7E /* frame-flower-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */; };
+		B773F893222B123F00F6FB7E /* frame-flower-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F817222B123E00F6FB7E /* frame-flower-bottom.png */; };
+		B773F894222B123F00F6FB7E /* frame-xmas-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */; };
+		B773F895222B123F00F6FB7E /* frames.json in Resources */ = {isa = PBXBuildFile; fileRef = B773F819222B123E00F6FB7E /* frames.json */; };
+		B773F896222B123F00F6FB7E /* frame-xmas-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */; };
+		B773F897222B123F00F6FB7E /* frame-xmas-3-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */; };
+		B773F898222B123F00F6FB7E /* frames-xmas-5-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81C222B123E00F6FB7E /* frames-xmas-5-top.png */; };
+		B773F899222B123F00F6FB7E /* frame-xmas-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */; };
+		B773F89A222B123F00F6FB7E /* frame-flower-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81E222B123E00F6FB7E /* frame-flower-top.png */; };
+		B773F89B222B123F00F6FB7E /* frame-xmas.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81F222B123E00F6FB7E /* frame-xmas.png */; };
+		B773F89C222B123F00F6FB7E /* frame-flower-shakura.psd in Resources */ = {isa = PBXBuildFile; fileRef = B773F820222B123E00F6FB7E /* frame-flower-shakura.psd */; };
+		B773F89D222B123F00F6FB7E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F823222B123E00F6FB7E /* frame-flower-shakura-3.png */; };
+		B773F89E222B123F00F6FB7E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F824222B123E00F6FB7E /* frame-flower-shakura-3.lua */; };
+		B773F89F222B123F00F6FB7E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F825222B123E00F6FB7E /* frame-flower-shakura-2.lua */; };
+		B773F8A0222B123F00F6FB7E /* frame-flower-shakura-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F826222B123E00F6FB7E /* frame-flower-shakura-2.png */; };
+		B773F8A1222B123F00F6FB7E /* frame-flower-shakura-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F827222B123E00F6FB7E /* frame-flower-shakura-0.png */; };
+		B773F8A2222B123F00F6FB7E /* frame-flower-shakura-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F828222B123E00F6FB7E /* frame-flower-shakura-0.lua */; };
+		B773F8A3222B123F00F6FB7E /* frame-flower-shakura-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F829222B123E00F6FB7E /* frame-flower-shakura-1.lua */; };
+		B773F8A4222B123F00F6FB7E /* frame-flower-shakura-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F82A222B123E00F6FB7E /* frame-flower-shakura-1.png */; };
+		B773F8A5222B123F00F6FB7E /* frame-flower-shakura-5.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F82B222B123E00F6FB7E /* frame-flower-shakura-5.png */; };
+		B773F8A6222B123F00F6FB7E /* frame-flower-shakura-5.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F82C222B123E00F6FB7E /* frame-flower-shakura-5.lua */; };
+		B773F8A7222B123F00F6FB7E /* frame-flower-shakura-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F82D222B123E00F6FB7E /* frame-flower-shakura-4.lua */; };
+		B773F8A8222B123F00F6FB7E /* frame-flower-shakura-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F82E222B123E00F6FB7E /* frame-flower-shakura-4.png */; };
+		B773F8A9222B123F00F6FB7E /* frame-flower-shakura-6.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F82F222B123E00F6FB7E /* frame-flower-shakura-6.png */; };
+		B773F8AA222B123F00F6FB7E /* frame-flower-shakura-6.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F830222B123E00F6FB7E /* frame-flower-shakura-6.lua */; };
+		B773F8AB222B123F00F6FB7E /* frame-flower-shakura-7.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F831222B123E00F6FB7E /* frame-flower-shakura-7.lua */; };
+		B773F8AC222B123F00F6FB7E /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F832222B123E00F6FB7E /* frame-flower-shakura-7.png */; };
+		B773F8AD222B123F00F6FB7E /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F833222B123E00F6FB7E /* frame-flower-shakura-9.png */; };
+		B773F8AE222B123F00F6FB7E /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F834222B123E00F6FB7E /* frame-flower-shakura-10.lua */; };
+		B773F8AF222B123F00F6FB7E /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F835222B123E00F6FB7E /* frame-flower-shakura-10.png */; };
+		B773F8B0222B123F00F6FB7E /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F836222B123E00F6FB7E /* frame-flower-shakura-9.lua */; };
+		B773F8B1222B123F00F6FB7E /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F837222B123E00F6FB7E /* frame-flower-shakura-8.lua */; };
+		B773F8B2222B123F00F6FB7E /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F838222B123E00F6FB7E /* frame-flower-shakura-11.png */; };
+		B773F8B3222B123F00F6FB7E /* frame-flower-shakura-11.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F839222B123E00F6FB7E /* frame-flower-shakura-11.lua */; };
+		B773F8B4222B123F00F6FB7E /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F83A222B123E00F6FB7E /* frame-flower-shakura-8.png */; };
+		B773F8B5222B123F00F6FB7E /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F83B222B123E00F6FB7E /* frame-flower-shakura-thumb.png */; };
+		B773F8B7222B123F00F6FB7E /* frame-lotus-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F83E222B123E00F6FB7E /* frame-lotus-0.png */; };
+		B773F8B8222B123F00F6FB7E /* frame-lotus-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F83F222B123E00F6FB7E /* frame-lotus-0.lua */; };
+		B773F8B9222B123F00F6FB7E /* frame-lotus-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F840222B123E00F6FB7E /* frame-lotus-1.lua */; };
+		B773F8BA222B123F00F6FB7E /* frame-lotus-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F841222B123E00F6FB7E /* frame-lotus-1.png */; };
+		B773F8BB222B123F00F6FB7E /* frame-lotus-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F842222B123E00F6FB7E /* frame-lotus-3.png */; };
+		B773F8BC222B123F00F6FB7E /* frame-lotus-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F843222B123E00F6FB7E /* frame-lotus-3.lua */; };
+		B773F8BE222B123F00F6FB7E /* frame-leaves-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F846222B123E00F6FB7E /* frame-leaves-0.lua */; };
+		B773F8BF222B123F00F6FB7E /* frame-leaves-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F847222B123E00F6FB7E /* frame-leaves-0.png */; };
+		B773F8C0222B123F00F6FB7E /* frame-leaves-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F848222B123E00F6FB7E /* frame-leaves-1.png */; };
+		B773F8C1222B123F00F6FB7E /* frame-leaves-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B773F849222B123E00F6FB7E /* frame-leaves-1.lua */; };
+		B773F8C3222B123F00F6FB7E /* nonla.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F84B222B123E00F6FB7E /* nonla.png */; };
+		B773F8D0222B144F00F6FB7E /* SocialNetworkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CD222B144F00F6FB7E /* SocialNetworkSDK.m */; };
+		B773F8D2222B15EA00F6FB7E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */; };
+		B773F8D4222B15EF00F6FB7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D3222B15EF00F6FB7E /* AddressBook.framework */; };
 		B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = B77E59782210320700EB1468 /* TKFilterCreator.m */; };
 		B7878E9C2214A1610036EFA7 /* sticker-nonla-hat.png in Resources */ = {isa = PBXBuildFile; fileRef = B7878E942214A1610036EFA7 /* sticker-nonla-hat.png */; };
 		B7878E9D2214A1610036EFA7 /* sticker-nonla-hat.lua in Resources */ = {isa = PBXBuildFile; fileRef = B7878E952214A1610036EFA7 /* sticker-nonla-hat.lua */; };
@@ -629,6 +752,137 @@
 		B773F65C222B005600F6FB7E /* TKModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModelObject.m; sourceTree = "<group>"; };
 		B773F661222B00F300F6FB7E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B773F668222B00F300F6FB7E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		B773F7CD222B123E00F6FB7E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
+		B773F7CE222B123E00F6FB7E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
+		B773F7CF222B123E00F6FB7E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
+		B773F7D0222B123E00F6FB7E /* frame-flower-shakura-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-2.png"; sourceTree = "<group>"; };
+		B773F7D1222B123E00F6FB7E /* frame-flower-shakura-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-0.png"; sourceTree = "<group>"; };
+		B773F7D2222B123E00F6FB7E /* frame-flower-shakura-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-0.lua"; sourceTree = "<group>"; };
+		B773F7D3222B123E00F6FB7E /* frame-flower-shakura-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-1.lua"; sourceTree = "<group>"; };
+		B773F7D4222B123E00F6FB7E /* frame-flower-shakura-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-1.png"; sourceTree = "<group>"; };
+		B773F7D5222B123E00F6FB7E /* frame-flower-shakura-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-5.png"; sourceTree = "<group>"; };
+		B773F7D6222B123E00F6FB7E /* frame-flower-shakura-5.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-5.lua"; sourceTree = "<group>"; };
+		B773F7D7222B123E00F6FB7E /* frame-flower-shakura-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-4.lua"; sourceTree = "<group>"; };
+		B773F7D8222B123E00F6FB7E /* frame-flower-shakura-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-4.png"; sourceTree = "<group>"; };
+		B773F7D9222B123E00F6FB7E /* frame-flower-shakura-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-6.png"; sourceTree = "<group>"; };
+		B773F7DA222B123E00F6FB7E /* frame-flower-shakura-6.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-6.lua"; sourceTree = "<group>"; };
+		B773F7DB222B123E00F6FB7E /* frame-flower-shakura-7.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-7.lua"; sourceTree = "<group>"; };
+		B773F7DC222B123E00F6FB7E /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
+		B773F7DD222B123E00F6FB7E /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
+		B773F7DE222B123E00F6FB7E /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
+		B773F7DF222B123E00F6FB7E /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
+		B773F7E0222B123E00F6FB7E /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
+		B773F7E1222B123E00F6FB7E /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
+		B773F7E2222B123E00F6FB7E /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
+		B773F7E3222B123E00F6FB7E /* frame-flower-shakura-11.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-11.lua"; sourceTree = "<group>"; };
+		B773F7E4222B123E00F6FB7E /* frame-flower-shakura-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-8.png"; sourceTree = "<group>"; };
+		B773F7E5222B123E00F6FB7E /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
+		B773F7E7222B123E00F6FB7E /* sticker-xmas-hat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-thumb.png"; sourceTree = "<group>"; };
+		B773F7E8222B123E00F6FB7E /* sticker-xmas-hat-6-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-6-thumb.png"; sourceTree = "<group>"; };
+		B773F7E9222B123E00F6FB7E /* sticker-xmas-santa-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-santa-thumb.png"; sourceTree = "<group>"; };
+		B773F7EA222B123E00F6FB7E /* sticker-xmas-snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-snowman.png"; sourceTree = "<group>"; };
+		B773F7EB222B123E00F6FB7E /* sticker-xmas-red-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-red-gift.png"; sourceTree = "<group>"; };
+		B773F7EC222B123E00F6FB7E /* sticker-xmas-hat-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-8.png"; sourceTree = "<group>"; };
+		B773F7ED222B123E00F6FB7E /* sticker-xmas-hat-7-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-7-thumb.png"; sourceTree = "<group>"; };
+		B773F7EE222B123E00F6FB7E /* sticker-xmas-hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat.png"; sourceTree = "<group>"; };
+		B773F7EF222B123E00F6FB7E /* stickers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stickers.json; sourceTree = "<group>"; };
+		B773F7F0222B123E00F6FB7E /* sticker-xmas-violet-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-violet-gift.png"; sourceTree = "<group>"; };
+		B773F7F1222B123E00F6FB7E /* sticker-xmas-snowman-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-snowman-thumb.png"; sourceTree = "<group>"; };
+		B773F7F2222B123E00F6FB7E /* sticker-xmas-reindeer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-reindeer.png"; sourceTree = "<group>"; };
+		B773F7F3222B123E00F6FB7E /* sticker-xmas-hat-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-4-thumb.png"; sourceTree = "<group>"; };
+		B773F7F4222B123E00F6FB7E /* sticker-xmas-pink-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-pink-gift-thumb.png"; sourceTree = "<group>"; };
+		B773F7F5222B123E00F6FB7E /* sticker-xmas-hat-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-2-thumb.png"; sourceTree = "<group>"; };
+		B773F7F6222B123E00F6FB7E /* sticker-xmas-violet-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-violet-gift-thumb.png"; sourceTree = "<group>"; };
+		B773F7F7222B123E00F6FB7E /* sticker-xmas-pink-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-pink-gift.png"; sourceTree = "<group>"; };
+		B773F7F8222B123E00F6FB7E /* sticker-xmas-santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-santa.png"; sourceTree = "<group>"; };
+		B773F7F9222B123E00F6FB7E /* sticker-xmas-hat-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-4.png"; sourceTree = "<group>"; };
+		B773F7FA222B123E00F6FB7E /* sticker-xmas-hat-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-5.png"; sourceTree = "<group>"; };
+		B773F7FB222B123E00F6FB7E /* sticker-xmas-hat-5-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-5-thumb.png"; sourceTree = "<group>"; };
+		B773F7FC222B123E00F6FB7E /* sticker-xmas-reindeer-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-reindeer-thumb.png"; sourceTree = "<group>"; };
+		B773F7FD222B123E00F6FB7E /* sticker-xmas-hat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-7.png"; sourceTree = "<group>"; };
+		B773F7FE222B123E00F6FB7E /* sticker-xmas-hat-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-6.png"; sourceTree = "<group>"; };
+		B773F7FF222B123E00F6FB7E /* sticker-xmas-hat-8-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-8-thumb.png"; sourceTree = "<group>"; };
+		B773F800222B123E00F6FB7E /* sticker-xmas-hat-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-3-thumb.png"; sourceTree = "<group>"; };
+		B773F801222B123E00F6FB7E /* sticker-xmas-red-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-red-gift-thumb.png"; sourceTree = "<group>"; };
+		B773F802222B123E00F6FB7E /* sticker-xmas-hat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-2.png"; sourceTree = "<group>"; };
+		B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-3.png"; sourceTree = "<group>"; };
+		B773F804222B123E00F6FB7E /* had.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = had.png; sourceTree = "<group>"; };
+		B773F806222B123E00F6FB7E /* sticker-dog-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-4.png"; sourceTree = "<group>"; };
+		B773F807222B123E00F6FB7E /* sticker-dog-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-1.png"; sourceTree = "<group>"; };
+		B773F808222B123E00F6FB7E /* sticker-dog-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-2.png"; sourceTree = "<group>"; };
+		B773F809222B123E00F6FB7E /* sticker-dog-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-3.png"; sourceTree = "<group>"; };
+		B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-thumb.png"; sourceTree = "<group>"; };
+		B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3-thumb.png"; sourceTree = "<group>"; };
+		B773F80D222B123E00F6FB7E /* frame-flower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2.png"; sourceTree = "<group>"; };
+		B773F80E222B123E00F6FB7E /* frame-flower-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3.png"; sourceTree = "<group>"; };
+		B773F80F222B123E00F6FB7E /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
+		B773F810222B123E00F6FB7E /* frame-flower-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4.png"; sourceTree = "<group>"; };
+		B773F811222B123E00F6FB7E /* frame-flower-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-thumb.png"; sourceTree = "<group>"; };
+		B773F812222B123E00F6FB7E /* frame-xmas-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2.png"; sourceTree = "<group>"; };
+		B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2-thumb.png"; sourceTree = "<group>"; };
+		B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-toponly.png"; sourceTree = "<group>"; };
+		B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-thumb.png"; sourceTree = "<group>"; };
+		B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4-thumb.png"; sourceTree = "<group>"; };
+		B773F817222B123E00F6FB7E /* frame-flower-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-bottom.png"; sourceTree = "<group>"; };
+		B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2-thumb.png"; sourceTree = "<group>"; };
+		B773F819222B123E00F6FB7E /* frames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frames.json; sourceTree = "<group>"; };
+		B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-thumb.png"; sourceTree = "<group>"; };
+		B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-toponly.png"; sourceTree = "<group>"; };
+		B773F81C222B123E00F6FB7E /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
+		B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-thumb.png"; sourceTree = "<group>"; };
+		B773F81E222B123E00F6FB7E /* frame-flower-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-top.png"; sourceTree = "<group>"; };
+		B773F81F222B123E00F6FB7E /* frame-xmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas.png"; sourceTree = "<group>"; };
+		B773F820222B123E00F6FB7E /* frame-flower-shakura.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "frame-flower-shakura.psd"; sourceTree = "<group>"; };
+		B773F823222B123E00F6FB7E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
+		B773F824222B123E00F6FB7E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
+		B773F825222B123E00F6FB7E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
+		B773F826222B123E00F6FB7E /* frame-flower-shakura-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-2.png"; sourceTree = "<group>"; };
+		B773F827222B123E00F6FB7E /* frame-flower-shakura-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-0.png"; sourceTree = "<group>"; };
+		B773F828222B123E00F6FB7E /* frame-flower-shakura-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-0.lua"; sourceTree = "<group>"; };
+		B773F829222B123E00F6FB7E /* frame-flower-shakura-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-1.lua"; sourceTree = "<group>"; };
+		B773F82A222B123E00F6FB7E /* frame-flower-shakura-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-1.png"; sourceTree = "<group>"; };
+		B773F82B222B123E00F6FB7E /* frame-flower-shakura-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-5.png"; sourceTree = "<group>"; };
+		B773F82C222B123E00F6FB7E /* frame-flower-shakura-5.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-5.lua"; sourceTree = "<group>"; };
+		B773F82D222B123E00F6FB7E /* frame-flower-shakura-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-4.lua"; sourceTree = "<group>"; };
+		B773F82E222B123E00F6FB7E /* frame-flower-shakura-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-4.png"; sourceTree = "<group>"; };
+		B773F82F222B123E00F6FB7E /* frame-flower-shakura-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-6.png"; sourceTree = "<group>"; };
+		B773F830222B123E00F6FB7E /* frame-flower-shakura-6.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-6.lua"; sourceTree = "<group>"; };
+		B773F831222B123E00F6FB7E /* frame-flower-shakura-7.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-7.lua"; sourceTree = "<group>"; };
+		B773F832222B123E00F6FB7E /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
+		B773F833222B123E00F6FB7E /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
+		B773F834222B123E00F6FB7E /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
+		B773F835222B123E00F6FB7E /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
+		B773F836222B123E00F6FB7E /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
+		B773F837222B123E00F6FB7E /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
+		B773F838222B123E00F6FB7E /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
+		B773F839222B123E00F6FB7E /* frame-flower-shakura-11.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-11.lua"; sourceTree = "<group>"; };
+		B773F83A222B123E00F6FB7E /* frame-flower-shakura-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-8.png"; sourceTree = "<group>"; };
+		B773F83B222B123E00F6FB7E /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
+		B773F83C222B123E00F6FB7E /* _DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = _DS_Store; sourceTree = "<group>"; };
+		B773F83E222B123E00F6FB7E /* frame-lotus-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-0.png"; sourceTree = "<group>"; };
+		B773F83F222B123E00F6FB7E /* frame-lotus-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-0.lua"; sourceTree = "<group>"; };
+		B773F840222B123E00F6FB7E /* frame-lotus-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-1.lua"; sourceTree = "<group>"; };
+		B773F841222B123E00F6FB7E /* frame-lotus-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-1.png"; sourceTree = "<group>"; };
+		B773F842222B123E00F6FB7E /* frame-lotus-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-3.png"; sourceTree = "<group>"; };
+		B773F843222B123E00F6FB7E /* frame-lotus-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-3.lua"; sourceTree = "<group>"; };
+		B773F844222B123E00F6FB7E /* _DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = _DS_Store; sourceTree = "<group>"; };
+		B773F846222B123E00F6FB7E /* frame-leaves-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-leaves-0.lua"; sourceTree = "<group>"; };
+		B773F847222B123E00F6FB7E /* frame-leaves-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-leaves-0.png"; sourceTree = "<group>"; };
+		B773F848222B123E00F6FB7E /* frame-leaves-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-leaves-1.png"; sourceTree = "<group>"; };
+		B773F849222B123E00F6FB7E /* frame-leaves-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-leaves-1.lua"; sourceTree = "<group>"; };
+		B773F84A222B123E00F6FB7E /* _DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = _DS_Store; sourceTree = "<group>"; };
+		B773F84B222B123E00F6FB7E /* nonla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonla.png; sourceTree = "<group>"; };
+		B773F8C6222B144F00F6FB7E /* SNFacebookSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNFacebookSDK.m; sourceTree = "<group>"; };
+		B773F8C7222B144F00F6FB7E /* SNFacebookSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNFacebookSDK.h; sourceTree = "<group>"; };
+		B773F8C9222B144F00F6FB7E /* SNUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNUserInfo.h; sourceTree = "<group>"; };
+		B773F8CA222B144F00F6FB7E /* SNUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNUserInfo.m; sourceTree = "<group>"; };
+		B773F8CC222B144F00F6FB7E /* SocialNetworkSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkSDK.h; sourceTree = "<group>"; };
+		B773F8CD222B144F00F6FB7E /* SocialNetworkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialNetworkSDK.m; sourceTree = "<group>"; };
+		B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B773F8D3222B15EF00F6FB7E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		B77E59772210320700EB1468 /* TKFilterCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilterCreator.h; sourceTree = "<group>"; };
 		B77E59782210320700EB1468 /* TKFilterCreator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilterCreator.m; sourceTree = "<group>"; };
 		B7878E942214A1610036EFA7 /* sticker-nonla-hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-nonla-hat.png"; sourceTree = "<group>"; };
@@ -663,6 +917,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */,
+				B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */,
+				B70BD46A2196C768000A4EBF /* UIKit.framework in Frameworks */,
+				B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */,
+				B773F8D4222B15EF00F6FB7E /* AddressBook.framework in Frameworks */,
+				B773F8D2222B15EA00F6FB7E /* CoreLocation.framework in Frameworks */,
+				B773F7C7222B0EC900F6FB7E /* FBSDKLoginKit.framework in Frameworks */,
+				B773F7C8222B0EC900F6FB7E /* FBSDKCoreKit.framework in Frameworks */,
+				B773F7C9222B0EC900F6FB7E /* FBSDKShareKit.framework in Frameworks */,
 				B7B8524021C04C9C005A3F3B /* CFNetwork.framework in Frameworks */,
 				B70BD4662196C75B000A4EBF /* CoreMotion.framework in Frameworks */,
 				B70BD4642196C754000A4EBF /* Security.framework in Frameworks */,
@@ -671,19 +934,15 @@
 				B70ABACD2201AE8700B1F89A /* Accelerate.framework in Frameworks */,
 				B70ABACB2201AE8300B1F89A /* AssetsLibrary.framework in Frameworks */,
 				B70ABAC92201AE7C00B1F89A /* CoreVideo.framework in Frameworks */,
-				B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */,
-				B70BD46A2196C768000A4EBF /* UIKit.framework in Frameworks */,
 				B7B8524221C04CC1005A3F3B /* MediaPlayer.framework in Frameworks */,
 				B7B8523E21C04C4F005A3F3B /* libluacocos2d iOS.a in Frameworks */,
 				B70BD4832196C7E7000A4EBF /* libGPUImage.a in Frameworks */,
 				B70BD4782196C796000A4EBF /* AudioToolbox.framework in Frameworks */,
 				B70BD4762196C78F000A4EBF /* AVFoundation.framework in Frameworks */,
 				B70BD4742196C788000A4EBF /* OpenAL.framework in Frameworks */,
-				B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */,
 				B70BD4702196C77B000A4EBF /* libz.tbd in Frameworks */,
 				B70ABAD52201C26A00B1F89A /* opencv2.framework in Frameworks */,
 				B70BD46E2196C774000A4EBF /* OpenGLES.framework in Frameworks */,
-				B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */,
 				B70BD4622196C74F000A4EBF /* libiconv.tbd in Frameworks */,
 				B70BD4602196C748000A4EBF /* CoreText.framework in Frameworks */,
 				B70BD45E2196C73B000A4EBF /* libcocos2d iOS.a in Frameworks */,
@@ -1000,6 +1259,11 @@
 		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B773F8D3222B15EF00F6FB7E /* AddressBook.framework */,
+				B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */,
+				B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */,
+				B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */,
+				B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */,
 				B7FE3F072216B7AD00A82D93 /* TKRenderQueue.h */,
 				B7FE3F082216B7AD00A82D93 /* TKRenderQueue.mm */,
 				B70ABAD62201C66000B1F89A /* SDM */,
@@ -1062,6 +1326,7 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B773F7CA222B0FD400F6FB7E /* Demo */,
 				B717B27422059D6400420F76 /* PhotoDemo */,
 				B713DF3922036E4700006EC3 /* FacialStickers */,
 				B76036F421C040FF00A85F16 /* Frames */,
@@ -1271,7 +1536,7 @@
 		B751913921BA714700F64A21 /* TikkyClasses */ = {
 			isa = PBXGroup;
 			children = (
-				B773F66B222B04EF00F6FB7E /* Social */,
+				B773F8C4222B144F00F6FB7E /* SocialNetworkSDK */,
 				B751913A21BA717300F64A21 /* Core */,
 				B70ABA742201A11500B1F89A /* Presentation */,
 				B749AC9221C7E47600A7360D /* Extensions */,
@@ -1468,11 +1733,240 @@
 			path = ModelView;
 			sourceTree = "<group>";
 		};
-		B773F66B222B04EF00F6FB7E /* Social */ = {
+		B773F7CA222B0FD400F6FB7E /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				B773F7CB222B123E00F6FB7E /* decoration */,
 			);
-			path = Social;
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		B773F7CB222B123E00F6FB7E /* decoration */ = {
+			isa = PBXGroup;
+			children = (
+				B773F7CC222B123E00F6FB7E /* frame-flower-shakura */,
+				B773F7E6222B123E00F6FB7E /* stickers */,
+				B773F804222B123E00F6FB7E /* had.png */,
+				B773F805222B123E00F6FB7E /* sticker-dog */,
+				B773F80A222B123E00F6FB7E /* frames */,
+				B773F820222B123E00F6FB7E /* frame-flower-shakura.psd */,
+				B773F821222B123E00F6FB7E /* frame-14-2 */,
+				B773F84B222B123E00F6FB7E /* nonla.png */,
+			);
+			path = decoration;
+			sourceTree = "<group>";
+		};
+		B773F7CC222B123E00F6FB7E /* frame-flower-shakura */ = {
+			isa = PBXGroup;
+			children = (
+				B773F7CD222B123E00F6FB7E /* frame-flower-shakura-3.png */,
+				B773F7CE222B123E00F6FB7E /* frame-flower-shakura-3.lua */,
+				B773F7CF222B123E00F6FB7E /* frame-flower-shakura-2.lua */,
+				B773F7D0222B123E00F6FB7E /* frame-flower-shakura-2.png */,
+				B773F7D1222B123E00F6FB7E /* frame-flower-shakura-0.png */,
+				B773F7D2222B123E00F6FB7E /* frame-flower-shakura-0.lua */,
+				B773F7D3222B123E00F6FB7E /* frame-flower-shakura-1.lua */,
+				B773F7D4222B123E00F6FB7E /* frame-flower-shakura-1.png */,
+				B773F7D5222B123E00F6FB7E /* frame-flower-shakura-5.png */,
+				B773F7D6222B123E00F6FB7E /* frame-flower-shakura-5.lua */,
+				B773F7D7222B123E00F6FB7E /* frame-flower-shakura-4.lua */,
+				B773F7D8222B123E00F6FB7E /* frame-flower-shakura-4.png */,
+				B773F7D9222B123E00F6FB7E /* frame-flower-shakura-6.png */,
+				B773F7DA222B123E00F6FB7E /* frame-flower-shakura-6.lua */,
+				B773F7DB222B123E00F6FB7E /* frame-flower-shakura-7.lua */,
+				B773F7DC222B123E00F6FB7E /* frame-flower-shakura-7.png */,
+				B773F7DD222B123E00F6FB7E /* frame-flower-shakura-9.png */,
+				B773F7DE222B123E00F6FB7E /* frame-flower-shakura-10.lua */,
+				B773F7DF222B123E00F6FB7E /* frame-flower-shakura-10.png */,
+				B773F7E0222B123E00F6FB7E /* frame-flower-shakura-9.lua */,
+				B773F7E1222B123E00F6FB7E /* frame-flower-shakura-8.lua */,
+				B773F7E2222B123E00F6FB7E /* frame-flower-shakura-11.png */,
+				B773F7E3222B123E00F6FB7E /* frame-flower-shakura-11.lua */,
+				B773F7E4222B123E00F6FB7E /* frame-flower-shakura-8.png */,
+				B773F7E5222B123E00F6FB7E /* frame-flower-shakura-thumb.png */,
+			);
+			path = "frame-flower-shakura";
+			sourceTree = "<group>";
+		};
+		B773F7E6222B123E00F6FB7E /* stickers */ = {
+			isa = PBXGroup;
+			children = (
+				B773F7E7222B123E00F6FB7E /* sticker-xmas-hat-thumb.png */,
+				B773F7E8222B123E00F6FB7E /* sticker-xmas-hat-6-thumb.png */,
+				B773F7E9222B123E00F6FB7E /* sticker-xmas-santa-thumb.png */,
+				B773F7EA222B123E00F6FB7E /* sticker-xmas-snowman.png */,
+				B773F7EB222B123E00F6FB7E /* sticker-xmas-red-gift.png */,
+				B773F7EC222B123E00F6FB7E /* sticker-xmas-hat-8.png */,
+				B773F7ED222B123E00F6FB7E /* sticker-xmas-hat-7-thumb.png */,
+				B773F7EE222B123E00F6FB7E /* sticker-xmas-hat.png */,
+				B773F7EF222B123E00F6FB7E /* stickers.json */,
+				B773F7F0222B123E00F6FB7E /* sticker-xmas-violet-gift.png */,
+				B773F7F1222B123E00F6FB7E /* sticker-xmas-snowman-thumb.png */,
+				B773F7F2222B123E00F6FB7E /* sticker-xmas-reindeer.png */,
+				B773F7F3222B123E00F6FB7E /* sticker-xmas-hat-4-thumb.png */,
+				B773F7F4222B123E00F6FB7E /* sticker-xmas-pink-gift-thumb.png */,
+				B773F7F5222B123E00F6FB7E /* sticker-xmas-hat-2-thumb.png */,
+				B773F7F6222B123E00F6FB7E /* sticker-xmas-violet-gift-thumb.png */,
+				B773F7F7222B123E00F6FB7E /* sticker-xmas-pink-gift.png */,
+				B773F7F8222B123E00F6FB7E /* sticker-xmas-santa.png */,
+				B773F7F9222B123E00F6FB7E /* sticker-xmas-hat-4.png */,
+				B773F7FA222B123E00F6FB7E /* sticker-xmas-hat-5.png */,
+				B773F7FB222B123E00F6FB7E /* sticker-xmas-hat-5-thumb.png */,
+				B773F7FC222B123E00F6FB7E /* sticker-xmas-reindeer-thumb.png */,
+				B773F7FD222B123E00F6FB7E /* sticker-xmas-hat-7.png */,
+				B773F7FE222B123E00F6FB7E /* sticker-xmas-hat-6.png */,
+				B773F7FF222B123E00F6FB7E /* sticker-xmas-hat-8-thumb.png */,
+				B773F800222B123E00F6FB7E /* sticker-xmas-hat-3-thumb.png */,
+				B773F801222B123E00F6FB7E /* sticker-xmas-red-gift-thumb.png */,
+				B773F802222B123E00F6FB7E /* sticker-xmas-hat-2.png */,
+				B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */,
+			);
+			path = stickers;
+			sourceTree = "<group>";
+		};
+		B773F805222B123E00F6FB7E /* sticker-dog */ = {
+			isa = PBXGroup;
+			children = (
+				B773F806222B123E00F6FB7E /* sticker-dog-4.png */,
+				B773F807222B123E00F6FB7E /* sticker-dog-1.png */,
+				B773F808222B123E00F6FB7E /* sticker-dog-2.png */,
+				B773F809222B123E00F6FB7E /* sticker-dog-3.png */,
+			);
+			path = "sticker-dog";
+			sourceTree = "<group>";
+		};
+		B773F80A222B123E00F6FB7E /* frames */ = {
+			isa = PBXGroup;
+			children = (
+				B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */,
+				B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */,
+				B773F80D222B123E00F6FB7E /* frame-flower-2.png */,
+				B773F80E222B123E00F6FB7E /* frame-flower-3.png */,
+				B773F80F222B123E00F6FB7E /* frames-xmas-5-bot.png */,
+				B773F810222B123E00F6FB7E /* frame-flower-4.png */,
+				B773F811222B123E00F6FB7E /* frame-flower-thumb.png */,
+				B773F812222B123E00F6FB7E /* frame-xmas-2.png */,
+				B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */,
+				B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */,
+				B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */,
+				B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */,
+				B773F817222B123E00F6FB7E /* frame-flower-bottom.png */,
+				B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */,
+				B773F819222B123E00F6FB7E /* frames.json */,
+				B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */,
+				B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */,
+				B773F81C222B123E00F6FB7E /* frames-xmas-5-top.png */,
+				B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */,
+				B773F81E222B123E00F6FB7E /* frame-flower-top.png */,
+				B773F81F222B123E00F6FB7E /* frame-xmas.png */,
+			);
+			path = frames;
+			sourceTree = "<group>";
+		};
+		B773F821222B123E00F6FB7E /* frame-14-2 */ = {
+			isa = PBXGroup;
+			children = (
+				B773F822222B123E00F6FB7E /* frame-flower-shakura */,
+				B773F83D222B123E00F6FB7E /* frame-lotus */,
+				B773F845222B123E00F6FB7E /* frame-leaves */,
+			);
+			path = "frame-14-2";
+			sourceTree = "<group>";
+		};
+		B773F822222B123E00F6FB7E /* frame-flower-shakura */ = {
+			isa = PBXGroup;
+			children = (
+				B773F823222B123E00F6FB7E /* frame-flower-shakura-3.png */,
+				B773F824222B123E00F6FB7E /* frame-flower-shakura-3.lua */,
+				B773F825222B123E00F6FB7E /* frame-flower-shakura-2.lua */,
+				B773F826222B123E00F6FB7E /* frame-flower-shakura-2.png */,
+				B773F827222B123E00F6FB7E /* frame-flower-shakura-0.png */,
+				B773F828222B123E00F6FB7E /* frame-flower-shakura-0.lua */,
+				B773F829222B123E00F6FB7E /* frame-flower-shakura-1.lua */,
+				B773F82A222B123E00F6FB7E /* frame-flower-shakura-1.png */,
+				B773F82B222B123E00F6FB7E /* frame-flower-shakura-5.png */,
+				B773F82C222B123E00F6FB7E /* frame-flower-shakura-5.lua */,
+				B773F82D222B123E00F6FB7E /* frame-flower-shakura-4.lua */,
+				B773F82E222B123E00F6FB7E /* frame-flower-shakura-4.png */,
+				B773F82F222B123E00F6FB7E /* frame-flower-shakura-6.png */,
+				B773F830222B123E00F6FB7E /* frame-flower-shakura-6.lua */,
+				B773F831222B123E00F6FB7E /* frame-flower-shakura-7.lua */,
+				B773F832222B123E00F6FB7E /* frame-flower-shakura-7.png */,
+				B773F833222B123E00F6FB7E /* frame-flower-shakura-9.png */,
+				B773F834222B123E00F6FB7E /* frame-flower-shakura-10.lua */,
+				B773F835222B123E00F6FB7E /* frame-flower-shakura-10.png */,
+				B773F836222B123E00F6FB7E /* frame-flower-shakura-9.lua */,
+				B773F837222B123E00F6FB7E /* frame-flower-shakura-8.lua */,
+				B773F838222B123E00F6FB7E /* frame-flower-shakura-11.png */,
+				B773F839222B123E00F6FB7E /* frame-flower-shakura-11.lua */,
+				B773F83A222B123E00F6FB7E /* frame-flower-shakura-8.png */,
+				B773F83B222B123E00F6FB7E /* frame-flower-shakura-thumb.png */,
+				B773F83C222B123E00F6FB7E /* _DS_Store */,
+			);
+			path = "frame-flower-shakura";
+			sourceTree = "<group>";
+		};
+		B773F83D222B123E00F6FB7E /* frame-lotus */ = {
+			isa = PBXGroup;
+			children = (
+				B773F83E222B123E00F6FB7E /* frame-lotus-0.png */,
+				B773F83F222B123E00F6FB7E /* frame-lotus-0.lua */,
+				B773F840222B123E00F6FB7E /* frame-lotus-1.lua */,
+				B773F841222B123E00F6FB7E /* frame-lotus-1.png */,
+				B773F842222B123E00F6FB7E /* frame-lotus-3.png */,
+				B773F843222B123E00F6FB7E /* frame-lotus-3.lua */,
+				B773F844222B123E00F6FB7E /* _DS_Store */,
+			);
+			path = "frame-lotus";
+			sourceTree = "<group>";
+		};
+		B773F845222B123E00F6FB7E /* frame-leaves */ = {
+			isa = PBXGroup;
+			children = (
+				B773F846222B123E00F6FB7E /* frame-leaves-0.lua */,
+				B773F847222B123E00F6FB7E /* frame-leaves-0.png */,
+				B773F848222B123E00F6FB7E /* frame-leaves-1.png */,
+				B773F849222B123E00F6FB7E /* frame-leaves-1.lua */,
+				B773F84A222B123E00F6FB7E /* _DS_Store */,
+			);
+			path = "frame-leaves";
+			sourceTree = "<group>";
+		};
+		B773F8C4222B144F00F6FB7E /* SocialNetworkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				B773F8C5222B144F00F6FB7E /* FacebookSDK */,
+				B773F8C8222B144F00F6FB7E /* Model */,
+				B773F8CB222B144F00F6FB7E /* Base */,
+			);
+			path = SocialNetworkSDK;
+			sourceTree = "<group>";
+		};
+		B773F8C5222B144F00F6FB7E /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				B773F8C6222B144F00F6FB7E /* SNFacebookSDK.m */,
+				B773F8C7222B144F00F6FB7E /* SNFacebookSDK.h */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		B773F8C8222B144F00F6FB7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B773F8C9222B144F00F6FB7E /* SNUserInfo.h */,
+				B773F8CA222B144F00F6FB7E /* SNUserInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B773F8CB222B144F00F6FB7E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B773F8CC222B144F00F6FB7E /* SocialNetworkSDK.h */,
+				B773F8CD222B144F00F6FB7E /* SocialNetworkSDK.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		B774E4EB21B2F7F100446A06 /* CppCodes */ = {
@@ -1666,38 +2160,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B773F8B1222B123F00F6FB7E /* frame-flower-shakura-8.lua in Resources */,
+				B773F89C222B123F00F6FB7E /* frame-flower-shakura.psd in Resources */,
+				B773F853222B123F00F6FB7E /* frame-flower-shakura-1.png in Resources */,
+				B773F889222B123F00F6FB7E /* frame-flower-2.png in Resources */,
+				B773F882222B123F00F6FB7E /* had.png in Resources */,
+				B773F871222B123F00F6FB7E /* sticker-xmas-hat-4-thumb.png in Resources */,
 				B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */,
+				B773F887222B123F00F6FB7E /* frame-xmas-thumb.png in Resources */,
 				B7599C5C22045FA900DAAF54 /* sticker-dog-1.lua in Resources */,
+				B773F8AF222B123F00F6FB7E /* frame-flower-shakura-10.png in Resources */,
+				B773F858222B123F00F6FB7E /* frame-flower-shakura-6.png in Resources */,
+				B773F84F222B123F00F6FB7E /* frame-flower-shakura-2.png in Resources */,
 				B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */,
 				B74D675121BD54C500E11EC4 /* reverse.png in Resources */,
 				B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */,
 				B717B26C22059D5300420F76 /* sticker-fox-1.png in Resources */,
+				B773F859222B123F00F6FB7E /* frame-flower-shakura-6.lua in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				B751918621BA9EF600F64A21 /* lookup-vintage.png in Resources */,
 				B751917121BA9EF600F64A21 /* lookup-floyd.png in Resources */,
 				B751917521BA9EF600F64A21 /* lookup-linda.png in Resources */,
+				B773F865222B123F00F6FB7E /* sticker-xmas-hat-thumb.png in Resources */,
 				B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */,
 				B751918821BA9EF600F64A21 /* lookup-clarity.png in Resources */,
+				B773F876222B123F00F6FB7E /* sticker-xmas-santa.png in Resources */,
+				B773F881222B123F00F6FB7E /* sticker-xmas-hat-3.png in Resources */,
 				B717B27722059D6400420F76 /* aquaman.png in Resources */,
 				B751918021BA9EF600F64A21 /* lookup-1971.png in Resources */,
+				B773F860222B123F00F6FB7E /* frame-flower-shakura-8.lua in Resources */,
+				B773F855222B123F00F6FB7E /* frame-flower-shakura-5.lua in Resources */,
+				B773F86E222B123F00F6FB7E /* sticker-xmas-violet-gift.png in Resources */,
+				B773F85A222B123F00F6FB7E /* frame-flower-shakura-7.lua in Resources */,
+				B773F864222B123F00F6FB7E /* frame-flower-shakura-thumb.png in Resources */,
 				B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */,
 				B78F083622156B25002E31CD /* frame-leaves-1.lua in Resources */,
 				B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */,
+				B773F8BC222B123F00F6FB7E /* frame-lotus-3.lua in Resources */,
 				B751918321BA9EF600F64A21 /* lookup-mental.png in Resources */,
+				B773F886222B123F00F6FB7E /* sticker-dog-3.png in Resources */,
 				B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */,
+				B773F86B222B123F00F6FB7E /* sticker-xmas-hat-7-thumb.png in Resources */,
+				B773F8BE222B123F00F6FB7E /* frame-leaves-0.lua in Resources */,
+				B773F89B222B123F00F6FB7E /* frame-xmas.png in Resources */,
+				B773F878222B123F00F6FB7E /* sticker-xmas-hat-5.png in Resources */,
 				B751918C21BA9EF600F64A21 /* lookup-selena.png in Resources */,
 				B74D674621BD54C500E11EC4 /* capture.png in Resources */,
 				B74D674B21BD54C500E11EC4 /* more.png in Resources */,
 				B751916E21BA9EF600F64A21 /* lookup-summer.png in Resources */,
+				B773F870222B123F00F6FB7E /* sticker-xmas-reindeer.png in Resources */,
+				B773F88D222B123F00F6FB7E /* frame-flower-thumb.png in Resources */,
 				B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */,
+				B773F87E222B123F00F6FB7E /* sticker-xmas-hat-3-thumb.png in Resources */,
 				B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */,
 				B751918B21BA9EF600F64A21 /* lookup-gray.png in Resources */,
+				B773F8A2222B123F00F6FB7E /* frame-flower-shakura-0.lua in Resources */,
 				B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */,
+				B773F893222B123F00F6FB7E /* frame-flower-bottom.png in Resources */,
+				B773F88A222B123F00F6FB7E /* frame-flower-3.png in Resources */,
+				B773F856222B123F00F6FB7E /* frame-flower-shakura-4.lua in Resources */,
+				B773F8C0222B123F00F6FB7E /* frame-leaves-1.png in Resources */,
+				B773F862222B123F00F6FB7E /* frame-flower-shakura-11.lua in Resources */,
 				B751918D21BA9EF600F64A21 /* lookup-feel.png in Resources */,
+				B773F898222B123F00F6FB7E /* frames-xmas-5-top.png in Resources */,
 				B717B26D22059D5300420F76 /* sticker-cat-1.png in Resources */,
 				B78F083D22156B25002E31CD /* frame-lotus-0.lua in Resources */,
 				B78F083B22156B25002E31CD /* frame-lotus-0.png in Resources */,
+				B773F851222B123F00F6FB7E /* frame-flower-shakura-0.lua in Resources */,
 				B70ABB2F2201C66000B1F89A /* haar_facedetection2.xml in Resources */,
+				B773F879222B123F00F6FB7E /* sticker-xmas-hat-5-thumb.png in Resources */,
+				B773F896222B123F00F6FB7E /* frame-xmas-4-thumb.png in Resources */,
 				B78F083722156B25002E31CD /* frame-leaves-0.png in Resources */,
 				B70ABB2D2201C66000B1F89A /* landmark-model.bin in Resources */,
 				B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */,
@@ -1705,53 +2237,102 @@
 				B78F083822156B25002E31CD /* frame-leaves-1.png in Resources */,
 				B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */,
 				B717B27322059D5300420F76 /* sticker-dog2-4.png in Resources */,
+				B773F88B222B123F00F6FB7E /* frames-xmas-5-bot.png in Resources */,
+				B773F8A9222B123F00F6FB7E /* frame-flower-shakura-6.png in Resources */,
+				B773F86C222B123F00F6FB7E /* sticker-xmas-hat.png in Resources */,
 				B717B27822059D6400420F76 /* tonystark.png in Resources */,
 				B751917721BA9EF600F64A21 /* lookup-charcoal.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */,
+				B773F891222B123F00F6FB7E /* frames-xmas-5-thumb.png in Resources */,
+				B773F8B7222B123F00F6FB7E /* frame-lotus-0.png in Resources */,
+				B773F85F222B123F00F6FB7E /* frame-flower-shakura-9.lua in Resources */,
+				B773F8AC222B123F00F6FB7E /* frame-flower-shakura-7.png in Resources */,
+				B773F84E222B123F00F6FB7E /* frame-flower-shakura-2.lua in Resources */,
+				B773F8A7222B123F00F6FB7E /* frame-flower-shakura-4.lua in Resources */,
 				B74D674521BD54C500E11EC4 /* flash.png in Resources */,
+				B773F86A222B123F00F6FB7E /* sticker-xmas-hat-8.png in Resources */,
 				B751917821BA9EF600F64A21 /* lookup-elizabeth.png in Resources */,
+				B773F857222B123F00F6FB7E /* frame-flower-shakura-4.png in Resources */,
 				B7599C5E22046A7E00DAAF54 /* sticker-dog-2.lua in Resources */,
+				B773F863222B123F00F6FB7E /* frame-flower-shakura-8.png in Resources */,
 				B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */,
+				B773F8A6222B123F00F6FB7E /* frame-flower-shakura-5.lua in Resources */,
 				B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */,
 				B751916D21BA9EF600F64A21 /* lookup-guardian.png in Resources */,
+				B773F86F222B123F00F6FB7E /* sticker-xmas-snowman-thumb.png in Resources */,
+				B773F8A4222B123F00F6FB7E /* frame-flower-shakura-1.png in Resources */,
+				B773F867222B123F00F6FB7E /* sticker-xmas-santa-thumb.png in Resources */,
+				B773F84C222B123F00F6FB7E /* frame-flower-shakura-3.png in Resources */,
+				B773F880222B123F00F6FB7E /* sticker-xmas-hat-2.png in Resources */,
 				B78F083C22156B25002E31CD /* frame-lotus-1.lua in Resources */,
+				B773F89E222B123F00F6FB7E /* frame-flower-shakura-3.lua in Resources */,
 				B713DF4022036E5D00006EC3 /* sticker-dog-1.png in Resources */,
 				B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */,
+				B773F8AE222B123F00F6FB7E /* frame-flower-shakura-10.lua in Resources */,
+				B773F873222B123F00F6FB7E /* sticker-xmas-hat-2-thumb.png in Resources */,
 				B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */,
+				B773F87C222B123F00F6FB7E /* sticker-xmas-hat-6.png in Resources */,
+				B773F868222B123F00F6FB7E /* sticker-xmas-snowman.png in Resources */,
 				B717B27122059D5300420F76 /* sticker-dog2-3.png in Resources */,
+				B773F874222B123F00F6FB7E /* sticker-xmas-violet-gift-thumb.png in Resources */,
 				B717B26A22059D5200420F76 /* sticker-fox-4.png in Resources */,
 				B751917921BA9EF600F64A21 /* lookup-brooklyn.png in Resources */,
 				B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */,
 				B751918721BA9EF600F64A21 /* lookup-gypsy.png in Resources */,
+				B773F888222B123F00F6FB7E /* frame-flower-3-thumb.png in Resources */,
+				B773F866222B123F00F6FB7E /* sticker-xmas-hat-6-thumb.png in Resources */,
 				B751918421BA9EF600F64A21 /* lookup-saha.png in Resources */,
 				B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */,
 				B74D675021BD54C500E11EC4 /* 5s.png in Resources */,
 				B717B26B22059D5300420F76 /* sticker-fox-2.png in Resources */,
+				B773F8A1222B123F00F6FB7E /* frame-flower-shakura-0.png in Resources */,
+				B773F8C3222B123F00F6FB7E /* nonla.png in Resources */,
 				B713DF4222036E5D00006EC3 /* sticker-dog-3.png in Resources */,
 				B74D674A21BD54C500E11EC4 /* emoji.png in Resources */,
+				B773F861222B123F00F6FB7E /* frame-flower-shakura-11.png in Resources */,
 				B7878EA12214AD490036EFA7 /* sticker-cat-1.lua in Resources */,
+				B773F85D222B123F00F6FB7E /* frame-flower-shakura-10.lua in Resources */,
 				B74D674E21BD54C500E11EC4 /* time.png in Resources */,
+				B773F87A222B123F00F6FB7E /* sticker-xmas-reindeer-thumb.png in Resources */,
 				B74D674821BD54C500E11EC4 /* 10s.png in Resources */,
+				B773F87D222B123F00F6FB7E /* sticker-xmas-hat-8-thumb.png in Resources */,
 				B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */,
 				B751916F21BA9EF600F64A21 /* lookup-seven.png in Resources */,
+				B773F89A222B123F00F6FB7E /* frame-flower-top.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				B717B27222059D5300420F76 /* sticker-dog2-1.png in Resources */,
+				B773F897222B123F00F6FB7E /* frame-xmas-3-toponly.png in Resources */,
+				B773F87B222B123F00F6FB7E /* sticker-xmas-hat-7.png in Resources */,
+				B773F88F222B123F00F6FB7E /* frame-flower-2-thumb.png in Resources */,
+				B773F8B3222B123F00F6FB7E /* frame-flower-shakura-11.lua in Resources */,
+				B773F8BA222B123F00F6FB7E /* frame-lotus-1.png in Resources */,
+				B773F883222B123F00F6FB7E /* sticker-dog-4.png in Resources */,
 				B751918521BA9EF600F64A21 /* lookup-robinson.png in Resources */,
 				B7878E9C2214A1610036EFA7 /* sticker-nonla-hat.png in Resources */,
+				B773F89F222B123F00F6FB7E /* frame-flower-shakura-2.lua in Resources */,
 				B713DF3F22036E5D00006EC3 /* sticker-dog-4.png in Resources */,
 				B74D674921BD54C500E11EC4 /* frame.png in Resources */,
+				B773F850222B123F00F6FB7E /* frame-flower-shakura-0.png in Resources */,
+				B773F877222B123F00F6FB7E /* sticker-xmas-hat-4.png in Resources */,
+				B773F8B8222B123F00F6FB7E /* frame-lotus-0.lua in Resources */,
 				B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */,
+				B773F8B0222B123F00F6FB7E /* frame-flower-shakura-9.lua in Resources */,
 				B78F083922156B25002E31CD /* frame-leaves-0.lua in Resources */,
 				B751917221BA9EF600F64A21 /* lookup-mono cool.png in Resources */,
 				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
+				B773F869222B123F00F6FB7E /* sticker-xmas-red-gift.png in Resources */,
 				B7878E9D2214A1610036EFA7 /* sticker-nonla-hat.lua in Resources */,
+				B773F8A0222B123F00F6FB7E /* frame-flower-shakura-2.png in Resources */,
 				B78F084322157CD2002E31CD /* sticker-dog-4.lua in Resources */,
 				B717B26E22059D5300420F76 /* sticker-cat-3.png in Resources */,
+				B773F88C222B123F00F6FB7E /* frame-flower-4.png in Resources */,
 				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
 				B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */,
 				B7878EA32214AD490036EFA7 /* sticker-cat-3.lua in Resources */,
+				B773F884222B123F00F6FB7E /* sticker-dog-1.png in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
+				B773F8BF222B123F00F6FB7E /* frame-leaves-0.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
 				B78F083F22156B25002E31CD /* frame-lotus-2.png in Resources */,
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
@@ -1759,16 +2340,37 @@
 				B78F084022156B25002E31CD /* frame-lotus-2.lua in Resources */,
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
 				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
+				B773F85B222B123F00F6FB7E /* frame-flower-shakura-7.png in Resources */,
+				B773F8A3222B123F00F6FB7E /* frame-flower-shakura-1.lua in Resources */,
 				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
 				B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */,
+				B773F8B5222B123F00F6FB7E /* frame-flower-shakura-thumb.png in Resources */,
+				B773F89D222B123F00F6FB7E /* frame-flower-shakura-3.png in Resources */,
 				B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */,
+				B773F8A5222B123F00F6FB7E /* frame-flower-shakura-5.png in Resources */,
+				B773F8C1222B123F00F6FB7E /* frame-leaves-1.lua in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
+				B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */,
+				B773F8BB222B123F00F6FB7E /* frame-lotus-3.png in Resources */,
+				B773F875222B123F00F6FB7E /* sticker-xmas-pink-gift.png in Resources */,
+				B773F85C222B123F00F6FB7E /* frame-flower-shakura-9.png in Resources */,
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
 				B713DF4622036EB300006EC3 /* sticker-dog-3.lua in Resources */,
+				B773F890222B123F00F6FB7E /* frame-xmas-4-toponly.png in Resources */,
+				B773F872222B123F00F6FB7E /* sticker-xmas-pink-gift-thumb.png in Resources */,
+				B773F84D222B123F00F6FB7E /* frame-flower-shakura-3.lua in Resources */,
+				B773F8AA222B123F00F6FB7E /* frame-flower-shakura-6.lua in Resources */,
+				B773F86D222B123F00F6FB7E /* stickers.json in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
 				B717B26922059D5200420F76 /* sticker-fox-3.png in Resources */,
 				B70ABB2E2201C66000B1F89A /* haar_facedetection.xml in Resources */,
+				B773F8B4222B123F00F6FB7E /* frame-flower-shakura-8.png in Resources */,
+				B773F8B2222B123F00F6FB7E /* frame-flower-shakura-11.png in Resources */,
+				B773F8B9222B123F00F6FB7E /* frame-lotus-1.lua in Resources */,
+				B773F8A8222B123F00F6FB7E /* frame-flower-shakura-4.png in Resources */,
 				B717B26F22059D5300420F76 /* sticker-cat-2.png in Resources */,
+				B773F895222B123F00F6FB7E /* frames.json in Resources */,
+				B773F8AB222B123F00F6FB7E /* frame-flower-shakura-7.lua in Resources */,
 				B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */,
 				B713DF4122036E5D00006EC3 /* sticker-dog-2.png in Resources */,
 				B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */,
@@ -1783,11 +2385,20 @@
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
 				B74D674721BD54C500E11EC4 /* filter.png in Resources */,
+				B773F85E222B123F00F6FB7E /* frame-flower-shakura-10.png in Resources */,
+				B773F87F222B123F00F6FB7E /* sticker-xmas-red-gift-thumb.png in Resources */,
 				B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */,
+				B773F8AD222B123F00F6FB7E /* frame-flower-shakura-9.png in Resources */,
 				B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */,
+				B773F852222B123F00F6FB7E /* frame-flower-shakura-1.lua in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
+				B773F892222B123F00F6FB7E /* frame-flower-4-thumb.png in Resources */,
+				B773F894222B123F00F6FB7E /* frame-xmas-2-thumb.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
 				B711F6B12206FAF80010DE40 /* sticker-fox-1.lua in Resources */,
+				B773F885222B123F00F6FB7E /* sticker-dog-2.png in Resources */,
+				B773F854222B123F00F6FB7E /* frame-flower-shakura-5.png in Resources */,
+				B773F899222B123F00F6FB7E /* frame-xmas-3-thumb.png in Resources */,
 				B74D674F21BD54C500E11EC4 /* 15s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1834,6 +2445,7 @@
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
 				B70ABAB62201A11500B1F89A /* TKBottomMenuItem.m in Sources */,
 				B7137D5822020858004BF34B /* TKFacialLandmarkDetector.mm in Sources */,
+				B773F8D0222B144F00F6FB7E /* SocialNetworkSDK.m in Sources */,
 				B70ABB302201C66000B1F89A /* ldmarkmodel.cpp in Sources */,
 				B70ABB2B2201C66000B1F89A /* helper.cpp in Sources */,
 				B7107D0121BEE05300FEE948 /* TKUtilities.m in Sources */,
@@ -2030,11 +2642,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2054,6 +2668,7 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2064,8 +2679,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2080,11 +2696,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2104,6 +2722,7 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2114,8 +2733,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
