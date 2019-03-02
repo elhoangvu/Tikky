@@ -13,9 +13,9 @@
 -(instancetype)initWithIdentifier:(NSNumber *)identifier andName:(NSString *)name andType:(NSString *)type andCategory:(NSString *)category andIsFromBundle:(BOOL)isFromBundle andThumbnailPath:(NSString *)thumbnailPath andPath:(NSString *)path {
     self = [super init];
     if (self) {
-        _identifier = identifier;
+        self.identifier = identifier;
         _name = name;
-        _type = type;
+        self.type = type;
         _category = category;
         _isFromBundle = isFromBundle;
         _thumbnailPath = thumbnailPath;

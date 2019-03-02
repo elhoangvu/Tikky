@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TKModelObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKStickerModel : NSObject
-@property (nonatomic) NSNumber *identifier;
-@property (nonatomic) NSString *type;
+@interface TKStickerModel : TKModelObject
 @property (nonatomic) NSString *category;
 @property (nonatomic) NSString *name;
 @property (nonatomic) BOOL isFromBundle;

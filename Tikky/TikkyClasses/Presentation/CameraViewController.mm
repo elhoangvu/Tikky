@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+#import "ViewController.h"
 #import "Tikky.h"
 #import <Photos/Photos.h>
 
@@ -28,6 +29,7 @@
 @property (nonatomic) TKImageInput* imageInput;
 
 @property (nonatomic) TKRootView* rootView;
+@property (nonatomic) ViewController *viewController;
 
 @property (nonatomic) NSMutableArray* stickers;
 @property (nonatomic) NSMutableArray* filters;
@@ -46,16 +48,16 @@
     _isTouchStickerBegan = NO;
     _stickers = TKSampleDataPool.sharedInstance.stickerList;
     _filters = TKSampleDataPool.sharedInstance.filterList;
-    
+
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
 //    [self.view addSubview:_tikkyEngine.view];
-    [self.view addSubview:_tikkyEngine.imageFilter.view];
-    
-    NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
-    TKPhoto* photo = [[TKPhoto alloc] initWithImage:[UIImage imageWithContentsOfFile:url]];
-    [_tikkyEngine.imageFilter setInput:photo];
-    _imageInput = _tikkyEngine.imageFilter.input;
+//    [self.view addSubview:_tikkyEngine.imageFilter.view];
+//    
+//    NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
+//    TKPhoto* photo = [[TKPhoto alloc] initWithImage:[UIImage imageWithContentsOfFile:url]];
+//    [_tikkyEngine.imageFilter setInput:photo];
+//    _imageInput = _tikkyEngine.imageFilter.input;
     
 //    [(TKCamera *)_imageInput swapCamera];
     
@@ -327,20 +329,9 @@
 
 
 -(void)setUpUI {
-    _rootView = [TKRootView new];
-    _rootView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:_rootView];
-    
-    [self.rootView setBackgroundColor:[UIColor clearColor]];
-    [[self.rootView.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
-    [[self.rootView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:0.0] setActive:YES];
-    [[self.rootView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:1.0] setActive:YES];
-    [[self.rootView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:1.0] setActive:YES];
-    [self.rootView.bottomMenuView setViewController:self];
-    [self.rootView.topMenuView setViewController:self];
-    
+
 //    _tikkyEngine.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [_rootView addSubview:_tikkyEngine.view];
+    [self.view addSubview:_tikkyEngine.view];
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
     [tapGesture setNumberOfTapsRequired:1];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -349,10 +340,11 @@
 //    [[_tikkyEngine.view.leftAnchor constraintEqualToAnchor:self.view.leftAnchor] setActive:YES];
 //    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
 //    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
-
-    [_rootView bringSubviewToFront:_rootView];
-    [_rootView bringSubviewToFront:_rootView.topMenuView];
-    [_rootView bringSubviewToFront:_rootView.bottomMenuView];
+    
+    _viewController = [ViewController new];
+    _viewController.view.backgroundColor = [UIColor clearColor];
+//    [self addChildViewController:_viewController];
+    [self.view addSubview:_viewController.view];
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
@@ -423,10 +415,10 @@
 //        [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:rand]];
     } else if ([nameItem isEqualToString:@"emoji"]) {
         [self.rootView setBottomMenuViewWithBottomMenuType:StickerMenu];
-        ((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers = [NSMutableArray new];
-        [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-            [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickerCollectionView reloadData];
+//        ((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers = [NSMutableArray new];
+//        [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickers addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
+////        dispatch_async(dispatch_get_main_queue(), ^{
+//            [((TKStickerBottomMenu *)self.rootView.bottomMenuView).stickerCollectionView reloadData];
 //        });
  
         // Record video

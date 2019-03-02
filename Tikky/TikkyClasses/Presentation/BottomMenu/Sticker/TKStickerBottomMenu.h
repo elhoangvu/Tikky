@@ -7,9 +7,7 @@
 //
 
 #import "TKBottomMenu.h"
-#import "TKStickerTypeSelection.h"
 #import "TKStickerCollectionView.h"
-#import "TKStickerCollectionViewCell.h"
 #import "TKSampleDataPool.h"
 #import "TKStickerModel.h"
 
@@ -27,11 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) id<TKStickerCollectionViewCellDelegate> delegate;
 
-@property (nonatomic) UIView *selectionView;
+@property (nonatomic) UICollectionView *selectionView;
 
 @property (nonatomic) UICollectionView *stickerCollectionView;
 
-@property (nonatomic) NSMutableArray<TKStickerModel *> *stickers;
 
 
 

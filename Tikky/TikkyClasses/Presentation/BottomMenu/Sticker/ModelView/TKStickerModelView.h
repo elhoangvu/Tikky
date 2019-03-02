@@ -18,15 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TKStickerItem : UIImageView
+@interface TKStickerModelView : NSObject
 
 @property (nonatomic, strong) id<TKStickerCollectionViewCellDelegate> delegate;
 
 @property (nonatomic) NSNumber *identifier;
 
-- (instancetype)initWithPath:(NSString *)path;
+@property (nonatomic) NSString *path;
 
-- (void)setTap:(Boolean)granted;
+- (instancetype)initWithPath:(NSString *)path;
 
 @end
 
