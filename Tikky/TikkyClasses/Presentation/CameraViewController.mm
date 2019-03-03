@@ -362,7 +362,7 @@
     
     _viewController = [ViewController new];
     _viewController.view.backgroundColor = [UIColor clearColor];
-//    [self addChildViewController:_viewController];
+    [self addChildViewController:_viewController];
     [self.view addSubview:_viewController.view];
 }
 

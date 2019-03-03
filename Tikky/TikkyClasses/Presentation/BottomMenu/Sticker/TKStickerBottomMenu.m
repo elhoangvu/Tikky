@@ -136,7 +136,7 @@
         }
         self.stickerCollectionView.delegate = self;
     } else {
-        ((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).identifier;
+        [((TKStickerCollectionViewBase *)collectionView).delegate cellClickWith:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).identifier andType:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).type];
     }
     
 }
