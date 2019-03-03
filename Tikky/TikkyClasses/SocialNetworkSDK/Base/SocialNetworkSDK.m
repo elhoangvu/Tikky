@@ -9,5 +9,15 @@
 #import "SocialNetworkSDK.h"
 
 @implementation SocialNetworkSDK
+    
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken;
+    static id instance = nil;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    
+    return instance;
+}
 
 @end

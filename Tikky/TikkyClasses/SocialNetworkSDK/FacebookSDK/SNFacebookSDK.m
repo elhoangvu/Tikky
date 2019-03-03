@@ -30,7 +30,7 @@
     
     return self;
 }
-
+    
 - (BOOL)login {
     FBSDKLoginButton* fbLoginButton = [[FBSDKLoginButton alloc] init];
     [fbLoginButton sendActionsForControlEvents:UIControlEventTouchUpInside];
@@ -84,12 +84,12 @@
                hashtagString:(NSString *)hashtagString
         showedViewController:(UIViewController *)showedViewController
                     delegate:(id<SocialNetworkSDKDelegate>)delegate {
-    if (!assets || (![assetClass isKindOfClass:UIImage.class] && ![assetClass isKindOfClass:NSURL.class])) {
+    if (!assets || assets.count == 0 || (assetClass != UIImage.class && assetClass != NSURL.class)) {
         return;
     }
     
     BOOL isURL = YES;
-    if ([assetClass isKindOfClass:UIImage.class]) {
+    if (assetClass == UIImage.class) {
         isURL = NO;
     }
     

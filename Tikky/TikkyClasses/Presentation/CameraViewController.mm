@@ -20,6 +20,10 @@
 
 #include "cocos2d.h"
 
+#import "SNFacebookSDK.h"
+
+#import "FeatureDefinition.h"
+
 @interface CameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate> {
     std::vector<std::vector<TKSticker>> facialStickers;
     std::vector<std::vector<TKSticker>> frameStickers;
@@ -69,6 +73,21 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [((TKCamera *)_imageInput) startCameraCapture];
+    
+    // <!-- Test FB SDK
+#ifdef ENDABLE_FB_SHARE_TEST
+    NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
+
+    UIImage* img = [UIImage imageWithContentsOfFile:url];
+
+    [SNFacebookSDK.sharedInstance sharePhotoWithPhoto:@[img]
+                                              caption:@"Test caption"
+                                        userGenerated:YES
+                                        hashtagString:@"Tikky"
+                                 showedViewController:self
+                                             delegate:nil];
+#endif
+    // Test FB SDK -->
     
     static BOOL isSetupAudio = true;
     if (!isSetupAudio) {

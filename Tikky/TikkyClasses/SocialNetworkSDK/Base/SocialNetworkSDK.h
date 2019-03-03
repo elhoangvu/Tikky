@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger, SNGetAvatarType) {
 @interface SocialNetworkSDK : NSObject
 
 @property (nonatomic, readonly) BOOL isLogin;
+    
++ (instancetype)sharedInstance;
 
 - (BOOL)login;
 

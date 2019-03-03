@@ -99,6 +99,8 @@
 		B717B27B2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B717B27A2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
+		B71BE51F222B98B8005EA8AE /* SNFacebookSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8C6222B144F00F6FB7E /* SNFacebookSDK.m */; };
+		B71BE520222B98B8005EA8AE /* SNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CA222B144F00F6FB7E /* SNUserInfo.m */; };
 		B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */; };
 		B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */; };
 		B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */; };
@@ -620,6 +622,7 @@
 		B719730F220851E700B5FB27 /* TKDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDefinition.h; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
+		B71BE521222B9E08005EA8AE /* FeatureDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDefinition.h; sourceTree = "<group>"; };
 		B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
 		B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
 		B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
@@ -1536,6 +1539,7 @@
 		B751913921BA714700F64A21 /* TikkyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				B71BE521222B9E08005EA8AE /* FeatureDefinition.h */,
 				B773F8C4222B144F00F6FB7E /* SocialNetworkSDK */,
 				B751913A21BA717300F64A21 /* Core */,
 				B70ABA742201A11500B1F89A /* Presentation */,
@@ -1945,8 +1949,8 @@
 		B773F8C5222B144F00F6FB7E /* FacebookSDK */ = {
 			isa = PBXGroup;
 			children = (
-				B773F8C6222B144F00F6FB7E /* SNFacebookSDK.m */,
 				B773F8C7222B144F00F6FB7E /* SNFacebookSDK.h */,
+				B773F8C6222B144F00F6FB7E /* SNFacebookSDK.m */,
 			);
 			path = FacebookSDK;
 			sourceTree = "<group>";
@@ -2410,6 +2414,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71BE51F222B98B8005EA8AE /* SNFacebookSDK.m in Sources */,
+				B71BE520222B98B8005EA8AE /* SNUserInfo.m in Sources */,
 				B70ABAB72201A11500B1F89A /* TKMainBottomMenuItem.m in Sources */,
 				B70ABAAB2201A11500B1F89A /* TKTopSubMenuItem.m in Sources */,
 				B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */,
@@ -2683,7 +2689,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2737,7 +2743,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
