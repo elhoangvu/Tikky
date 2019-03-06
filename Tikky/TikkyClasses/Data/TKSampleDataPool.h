@@ -20,12 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSMutableArray* stickerModelList;
 @property (nonatomic, readonly) NSMutableArray* frameModelList;
 
-@property (nonatomic, readonly) NSMutableArray<TKStickerModel *>* stickerList;
+@property (nonatomic, readonly) NSMutableArray* stickerList;
 @property (nonatomic, readonly) NSMutableArray* filterList;
 
 @property (nonatomic, readonly) NSMutableDictionary* filterResources;
 
 + (instancetype)sharedInstance;
+
+- (void *)facialStickers;
+- (void *)frameStickers;
 
 @end
 

@@ -3672,7 +3672,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "573283691.880654"
+            timestampString = "573316364.132656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "407"
@@ -4102,7 +4102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "573283691.882345"
+            timestampString = "573316364.133458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "404"
@@ -4326,7 +4326,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "573283691.8834291"
+            timestampString = "573316364.133953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "374"
@@ -4518,7 +4518,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
-            timestampString = "573283691.884076"
+            timestampString = "573316364.134347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "387"
@@ -4636,6 +4636,38 @@
             startingLineNumber = "87"
             endingLineNumber = "87"
             landmarkName = "-sharePhotoWithAssets:assetClass:caption:userGenerated:hashtagString:showedViewController:delegate:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
+            timestampString = "573316364.134747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
+            landmarkName = "-clickBottomMenuItem:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Presentation/TKCameraViewController.mm"
+            timestampString = "573590825.629011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

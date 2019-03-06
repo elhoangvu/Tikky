@@ -9,9 +9,9 @@
 #ifndef FeatureDefinition_h
 #define FeatureDefinition_h
 
-#ifndef ENDABLE_FB_SHARE_TEST
-#define ENDABLE_FB_SHARE_TEST 1
-#endif
+#define ENDABLE_FB_SHARE_TEST 0
+
+#define ENDABLE_STICKER_TEST 0
 
 
 #endif /* FeatureDefinition_h */

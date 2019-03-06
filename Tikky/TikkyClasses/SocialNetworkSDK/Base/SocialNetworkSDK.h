@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SNUserInfo.h"
+#import "TKSNUserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, SNGetAvatarType) {
 
 @protocol SocialNetworkSDKDelegate;
 
-@interface SocialNetworkSDK : NSObject
+@interface TKSocialNetworkSDK : NSObject
 
 @property (nonatomic, readonly) BOOL isLogin;
     
@@ -56,11 +56,11 @@ typedef NS_ENUM(NSInteger, SNGetAvatarType) {
 
 @protocol SocialNetworkSDKDelegate <NSObject>
 
-- (void)socialNetworkSDK:(SocialNetworkSDK *)socialNetworkSDK didCompleteWithResults:(NSDictionary *)results;
+- (void)socialNetworkSDK:(TKSocialNetworkSDK *)socialNetworkSDK didCompleteWithResults:(NSDictionary *)results;
 
-- (void)socialNetworkSDK:(SocialNetworkSDK *)socialNetworkSDK didFailWithError:(NSError *)error;
+- (void)socialNetworkSDK:(TKSocialNetworkSDK *)socialNetworkSDK didFailWithError:(NSError *)error;
 
-- (void)socialNetworkSDKDidCancel:(SocialNetworkSDK *)socialNetworkSDK;
+- (void)socialNetworkSDKDidCancel:(TKSocialNetworkSDK *)socialNetworkSDK;
 
 @end
 
