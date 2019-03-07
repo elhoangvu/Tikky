@@ -52,30 +52,30 @@
 - (void)initStickerModelList {
     _stickerModelList = [NSMutableArray array];
     
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-2-thumb" andPath:@"sticker-xmas-hat-2"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:0] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-2-thumb" andPath:@"sticker-xmas-hat-2"]];
     [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-3-thumb" andPath:@"sticker-xmas-hat-3"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-4-thumb" andPath:@"sticker-xmas-hat-4"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-5-thumb" andPath:@"sticker-xmas-hat-5"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-6-thumb" andPath:@"sticker-xmas-hat-6"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-7-thumb" andPath:@"sticker-xmas-hat-7"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-8-thumb" andPath:@"sticker-xmas-hat-8"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-thumb" andPath:@"sticker-xmas-hat"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-pink-gift-thumb" andPath:@"sticker-xmas-pink-gift"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-reindeer-thumb" andPath:@"sticker-xmas-reindeer"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-santa-thumb" andPath:@"sticker-xmas-santa"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-snowman-thumb" andPath:@"sticker-xmas-snowman"]];
-    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-violet-gift-thumb" andPath:@"sticker-xmas-violet-gift"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:2] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-4-thumb" andPath:@"sticker-xmas-hat-4"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:3] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-5-thumb" andPath:@"sticker-xmas-hat-5"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-6-thumb" andPath:@"sticker-xmas-hat-6"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-7-thumb" andPath:@"sticker-xmas-hat-7"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:6] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-8-thumb" andPath:@"sticker-xmas-hat-8"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:7] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-hat-thumb" andPath:@"sticker-xmas-hat"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:8] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-pink-gift-thumb" andPath:@"sticker-xmas-pink-gift"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:9] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-reindeer-thumb" andPath:@"sticker-xmas-reindeer"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:10] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-santa-thumb" andPath:@"sticker-xmas-santa"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:11] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-snowman-thumb" andPath:@"sticker-xmas-snowman"]];
+    [_stickerModelList addObject:[[TKStickerModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:12] andName:@"X mas" andType:@"sticker" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"sticker-xmas-violet-gift-thumb" andPath:@"sticker-xmas-violet-gift"]];
 }
 
 - (void)initFrameModelList {
     _frameModelList = [NSMutableArray array];
     
-    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Flower" andIsFromBundle:1 andThumbnailPath:@"frame-flower-2-thumb" andPath:@"frame-flower-2"]];
+    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:0] andName:@"X mas" andType:@"frame" andCategory:@"Flower" andIsFromBundle:1 andThumbnailPath:@"frame-flower-2-thumb" andPath:@"frame-flower-2"]];
     [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Flower" andIsFromBundle:1 andThumbnailPath:@"frame-flower-3-thumb" andPath:@"frame-flower-3"]];
-    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Flower" andIsFromBundle:1 andThumbnailPath:@"frame-flower-4-thumb" andPath:@"frame-flower-4"]];
-    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
-    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-3-thumb" andPath:@"frame-xmas-3-toponly"]];
-    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-4-thumb" andPath:@"frame-xmas-4-toponly"]];
+    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:2] andName:@"X mas" andType:@"frame" andCategory:@"Flower" andIsFromBundle:1 andThumbnailPath:@"frame-flower-4-thumb" andPath:@"frame-flower-4"]];
+    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:3] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-2-thumb" andPath:@"frame-xmas-2"]];
+    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-3-thumb" andPath:@"frame-xmas-3-toponly"]];
+    [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-4-thumb" andPath:@"frame-xmas-4-toponly"]];
 }
 
 
