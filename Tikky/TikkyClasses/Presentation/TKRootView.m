@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) TKBottomMenuFactory *bottomMenuFactory;
 
+@property (nonatomic) TKBottomMenuType typeBottom;
+
 @end
 
 @implementation TKRootView
@@ -42,18 +44,22 @@
 }
 
 -(void)setBottomMenuViewWithBottomMenuType:(TKBottomMenuType)bottomMenuType {
-    if (self.bottomMenuView) {
-        [self.bottomMenuView removeFromSuperview];
+    if (bottomMenuType != self.typeBottom) {
+        _typeBottom = bottomMenuType;
+        if (self.bottomMenuView) {
+            [self.bottomMenuView removeFromSuperview];
+        }
+        _bottomMenuView = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
+        _bottomMenuView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self addSubview:_bottomMenuView];
+        
+        [[self.bottomMenuView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:YES];
+        [[self.bottomMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
+        [[self.bottomMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
+        [[self.bottomMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
     }
-    _bottomMenuView = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
-    _bottomMenuView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self addSubview:_bottomMenuView];
-    
-    [[self.bottomMenuView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:YES];
-    [[self.bottomMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
-    [[self.bottomMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
-    [[self.bottomMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
 
 }
 /*
