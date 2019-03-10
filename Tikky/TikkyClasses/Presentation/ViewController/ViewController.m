@@ -39,9 +39,7 @@
     [[self.rootView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:1.0] setActive:YES];
     [[self.rootView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:1.0] setActive:YES];
     
-    [self.rootView.bottomMenuView setViewController:self];
-    [self.rootView.topMenuView setViewController:self];
-    
+    [_rootView setViewController:self];
     [_rootView bringSubviewToFront:_rootView];
     [_rootView bringSubviewToFront:_rootView.topMenuView];
     [_rootView bringSubviewToFront:_rootView.bottomMenuView];

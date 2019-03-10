@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKStickerModelView : NSObject
 
-@property (nonatomic, strong) id<TKStickerCollectionViewCellDelegate> delegate;
+@property (nonatomic) id<TKStickerCollectionViewCellDelegate> delegate;
 
 @property (nonatomic) NSNumber *identifier;
 
