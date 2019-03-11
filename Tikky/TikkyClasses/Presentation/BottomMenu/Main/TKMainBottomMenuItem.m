@@ -43,8 +43,12 @@
     return self;
 }
 
--(void)tapDetected {
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
     [self.delegate clickBottomMenuItem:self.name];
+}
+
+-(void)tapDetected {
 }
 
 - (void)setPathImage:(NSString *)path {

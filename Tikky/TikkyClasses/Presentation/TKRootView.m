@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) TKBottomMenuFactory *bottomMenuFactory;
 
+@property (nonatomic) TKBottomMenuType typeBottom;
+
 @end
 
 @implementation TKRootView
@@ -35,6 +37,12 @@
     return self;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self setBottomMenuViewWithBottomMenuType:MainMenu];
+    [self.bottomMenuView setViewController:self.viewController];
+}
+
 - (void)setViewController:(id)viewController {
     _viewController = viewController;
     [self.bottomMenuView setViewController:viewController];
@@ -42,18 +50,38 @@
 }
 
 -(void)setBottomMenuViewWithBottomMenuType:(TKBottomMenuType)bottomMenuType {
-    if (self.bottomMenuView) {
-        [self.bottomMenuView removeFromSuperview];
+    if (bottomMenuType != _typeBottom) {
+        _typeBottom = bottomMenuType;
+        if (self.bottomMenuView) {
+            [self.bottomMenuView removeFromSuperview];
+        }
+        
+        TKBottomMenu *newBottomMenu = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
+
+        
+        newBottomMenu.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self addSubview:newBottomMenu];
+        
+        NSLayoutConstraint *top = [newBottomMenu.topAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
+        [top setActive:YES];
+        NSLayoutConstraint *top1 = [newBottomMenu.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
+        [[newBottomMenu.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
+        [[newBottomMenu.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
+        [[newBottomMenu.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
+        [self layoutIfNeeded];
+        
+        [UIView animateWithDuration:0.5  animations:^{
+            [top setActive:NO];
+            [top1 setActive:YES];
+            [self layoutIfNeeded];
+        }];
+        
+        _bottomMenuView = newBottomMenu;
     }
-    _bottomMenuView = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
-    _bottomMenuView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self addSubview:_bottomMenuView];
     
-    [[self.bottomMenuView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:YES];
-    [[self.bottomMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
-    [[self.bottomMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
-    [[self.bottomMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
+    
 
 }
 /*

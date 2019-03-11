@@ -14,6 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
+    NoMenu,
     MainMenu,
     FilterMenu,
     StickerMenu,

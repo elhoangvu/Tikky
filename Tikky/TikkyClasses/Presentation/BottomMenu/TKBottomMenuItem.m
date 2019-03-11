@@ -31,6 +31,11 @@
     return self;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.delegate clickBottomMenuItem:self.name];
+}
+
 -(instancetype)initWithName:(NSString *)name {
     self = [self init];
     if (self) {
@@ -53,7 +58,6 @@
 }
 
 -(void)tapDetected {
-    [self.delegate clickBottomMenuItem:self.name];
 }
 
 @end

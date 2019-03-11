@@ -10,7 +10,7 @@
 
 @interface TKStickerModelView()
 
-@property (nonatomic, strong) UITapGestureRecognizer *singleTap;
+@property (nonatomic) UITapGestureRecognizer *singleTap;
 
 @end
 

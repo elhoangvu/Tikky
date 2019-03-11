@@ -44,11 +44,12 @@
     [self addSubview:self.stickerCollectionView];
     
     [_selectionView setBackgroundColor:[[UIColor alloc] initWithWhite:0 alpha:0.3]];
-     
+    
     _selectionView.dataSource = self;
     _selectionView.delegate = self;
     _selectionView.scrollEnabled = NO;
     
+    _stickerCollectionView.backgroundColor = [UIColor whiteColor];
     _stickerCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
     [[self.stickerCollectionView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
     [[self.stickerCollectionView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];

@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKMainBottomMenuItem : UIImageView
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic) NSString *name;
 
-@property (nonatomic, strong) id<TKBottomItemDelegate> delegate;
+@property (nonatomic) id<TKBottomItemDelegate> delegate;
 
 /**
  set path image for image button

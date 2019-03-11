@@ -24,9 +24,6 @@
         [[_label.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
         [[_label.topAnchor constraintEqualToAnchor:self.topAnchor] setActive:YES];
         [[_label.heightAnchor constraintEqualToAnchor:self.heightAnchor] setActive:YES];
-
-
-        
     }
 }
 
