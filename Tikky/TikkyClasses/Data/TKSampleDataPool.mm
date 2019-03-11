@@ -389,11 +389,12 @@
 
 - (void)initfilterResources {
 
-    NSDictionary* dic = @{ @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
+    NSDictionary* dic = @{ @"GLITCH"     : @{ @"class" : @"GPUImageGlitchFilter"     },
+                           @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
                            @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
                            @"CONTRAST"   : @{ @"class" : @"GPUImageContrastFilter"   },
                            @"GAMMA"      : @{ @"class" : @"GPUImageGammaFilter"      },
-                           @"RGB"        : @{ @"class" : @"GPUImageRGBFilter"           },
+                           @"RGB"        : @{ @"class" : @"GPUImageRGBFilter"        },
                            @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
                           
                            @"MENTAL"     : @{ @"class" : @"GPUImageLUTFilter" },

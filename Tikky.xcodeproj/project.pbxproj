@@ -77,6 +77,8 @@
 		B717B27822059D6400420F76 /* tonystark.png in Resources */ = {isa = PBXBuildFile; fileRef = B717B27622059D6400420F76 /* tonystark.png */; };
 		B717B27B2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B717B27A2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m */; };
 		B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = B71850B921B462BB00F66171 /* recyclingbin.png */; };
+		B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = B71A8D852230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m */; };
+		B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */; };
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
 		B71BE51F222B98B8005EA8AE /* TKSNFacebookSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8C6222B144F00F6FB7E /* TKSNFacebookSDK.m */; };
 		B71BE520222B98B8005EA8AE /* TKSNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CA222B144F00F6FB7E /* TKSNUserInfo.m */; };
@@ -532,6 +534,10 @@
 		B717B27A2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CVPixelBufferRefConverter.m"; sourceTree = "<group>"; };
 		B71850B921B462BB00F66171 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		B719730F220851E700B5FB27 /* TKDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDefinition.h; sourceTree = "<group>"; };
+		B71A8D852230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GPUImageFilter+GPUVector2.m"; sourceTree = "<group>"; };
+		B71A8D8C2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GPUImageFilter+GPUVector2.h"; sourceTree = "<group>"; };
+		B71A8D8D2230A06D00E1FC58 /* GPUImageGlitchFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageGlitchFilter.h; sourceTree = "<group>"; };
+		B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageGlitchFilter.m; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
 		B71BE521222B9E08005EA8AE /* FeatureDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDefinition.h; sourceTree = "<group>"; };
@@ -1547,6 +1553,10 @@
 		B751913F21BA71F100F64A21 /* GPUImageFilters */ = {
 			isa = PBXGroup;
 			children = (
+				B71A8D8C2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.h */,
+				B71A8D852230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m */,
+				B71A8D8D2230A06D00E1FC58 /* GPUImageGlitchFilter.h */,
+				B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */,
 				B753FD36220550B500D805BB /* LFGPUImageBeautyFilter.h */,
 				B753FD33220550B500D805BB /* LFGPUImageBeautyFilter.m */,
 				B753FD34220550B500D805BB /* LFGPUImageEmptyFilter.h */,
@@ -2192,6 +2202,7 @@
 				B74A143A222C1B8600C367F9 /* TKStickerCollectionView.m in Sources */,
 				B70ABB2C2201C66000B1F89A /* feature_descriptor.cpp in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
+				B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */,
 				B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */,
 				B74A142F222C1B8600C367F9 /* TKTopMenu.m in Sources */,
 				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
@@ -2234,6 +2245,7 @@
 				B74A1449222C1B8600C367F9 /* TKBottomMenuFactory.m in Sources */,
 				B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */,
 				B74A1434222C1B8600C367F9 /* TKTypeSelectionCollectionViewCell.m in Sources */,
+				B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */,
 				B74A143D222C1B8600C367F9 /* TKFilterCollectionViewCell.m in Sources */,
 				B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,

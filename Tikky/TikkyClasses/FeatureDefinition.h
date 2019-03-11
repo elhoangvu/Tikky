@@ -11,7 +11,7 @@
 
 #define ENDABLE_FB_SHARE_TEST 0
 
-#define ENDABLE_STICKER_TEST 0
+#define ENDABLE_STICKER_TEST 1
 
 
 #endif /* FeatureDefinition_h */
