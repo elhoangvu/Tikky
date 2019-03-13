@@ -82,6 +82,9 @@
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
 		B71BE51F222B98B8005EA8AE /* TKSNFacebookSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8C6222B144F00F6FB7E /* TKSNFacebookSDK.m */; };
 		B71BE520222B98B8005EA8AE /* TKSNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CA222B144F00F6FB7E /* TKSNUserInfo.m */; };
+		B7328E1722395A6100E14ACB /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1122395A6100E14ACB /* CameraViewController.mm */; };
+		B7328E1822395A6100E14ACB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1222395A6100E14ACB /* EditViewController.m */; };
+		B7328E1922395A6100E14ACB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1322395A6100E14ACB /* ViewController.m */; };
 		B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */; };
 		B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */; };
 		B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */; };
@@ -107,7 +110,6 @@
 		B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */; };
 		B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */; };
 		B74A142D222C1B8600C367F9 /* TKCameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B74A13E9222C1B8600C367F9 /* TKCameraViewController.mm */; };
-		B74A142E222C1B8600C367F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13EB222C1B8600C367F9 /* ViewController.m */; };
 		B74A142F222C1B8600C367F9 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13ED222C1B8600C367F9 /* TKTopMenu.m */; };
 		B74A1430222C1B8600C367F9 /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13EE222C1B8600C367F9 /* TKTopSubViewMenu.m */; };
 		B74A1431222C1B8600C367F9 /* TKTopSubMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13EF222C1B8600C367F9 /* TKTopSubMenuItem.m */; };
@@ -169,7 +171,6 @@
 		B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */ = {isa = PBXBuildFile; fileRef = B751915A21BA9EF000F64A21 /* lookup-polaroid.png */; };
 		B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */ = {isa = PBXBuildFile; fileRef = B751915B21BA9EF100F64A21 /* lookup-gotham.png */; };
 		B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */ = {isa = PBXBuildFile; fileRef = B751915C21BA9EF100F64A21 /* lookup-solar.png */; };
-		B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */ = {isa = PBXBuildFile; fileRef = B751915E21BA9EF200F64A21 /* lookup-b & w.png */; };
 		B751918021BA9EF600F64A21 /* lookup-1971.png in Resources */ = {isa = PBXBuildFile; fileRef = B751915F21BA9EF200F64A21 /* lookup-1971.png */; };
 		B751918221BA9EF600F64A21 /* lookup-run.png in Resources */ = {isa = PBXBuildFile; fileRef = B751916121BA9EF300F64A21 /* lookup-run.png */; };
 		B751918321BA9EF600F64A21 /* lookup-mental.png in Resources */ = {isa = PBXBuildFile; fileRef = B751916221BA9EF300F64A21 /* lookup-mental.png */; };
@@ -541,6 +542,12 @@
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
 		B71BE521222B9E08005EA8AE /* FeatureDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDefinition.h; sourceTree = "<group>"; };
+		B7328E1122395A6100E14ACB /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
+		B7328E1222395A6100E14ACB /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		B7328E1322395A6100E14ACB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B7328E1422395A6100E14ACB /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		B7328E1522395A6100E14ACB /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		B7328E1622395A6100E14ACB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
 		B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
 		B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
@@ -567,7 +574,6 @@
 		B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
 		B74A13E9222C1B8600C367F9 /* TKCameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKCameraViewController.mm; sourceTree = "<group>"; };
 		B74A13EA222C1B8600C367F9 /* TKRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRootView.h; sourceTree = "<group>"; };
-		B74A13EB222C1B8600C367F9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B74A13ED222C1B8600C367F9 /* TKTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenu.m; sourceTree = "<group>"; };
 		B74A13EE222C1B8600C367F9 /* TKTopSubViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubViewMenu.m; sourceTree = "<group>"; };
 		B74A13EF222C1B8600C367F9 /* TKTopSubMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubMenuItem.m; sourceTree = "<group>"; };
@@ -620,7 +626,6 @@
 		B74A1426222C1B8600C367F9 /* TKFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterModel.h; sourceTree = "<group>"; };
 		B74A1427222C1B8600C367F9 /* TKFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFrameModel.h; sourceTree = "<group>"; };
 		B74A1428222C1B8600C367F9 /* TKRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRootView.m; sourceTree = "<group>"; };
-		B74A1429222C1B8600C367F9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B74A142B222C1B8600C367F9 /* TKBottomMenuFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuFactory.m; sourceTree = "<group>"; };
 		B74A142C222C1B8600C367F9 /* TKBottomMenuFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuFactory.h; sourceTree = "<group>"; };
 		B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-amatorka.png"; sourceTree = "<group>"; };
@@ -660,7 +665,6 @@
 		B751915A21BA9EF000F64A21 /* lookup-polaroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-polaroid.png"; sourceTree = "<group>"; };
 		B751915B21BA9EF100F64A21 /* lookup-gotham.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-gotham.png"; sourceTree = "<group>"; };
 		B751915C21BA9EF100F64A21 /* lookup-solar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-solar.png"; sourceTree = "<group>"; };
-		B751915E21BA9EF200F64A21 /* lookup-b & w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-b & w.png"; sourceTree = "<group>"; };
 		B751915F21BA9EF200F64A21 /* lookup-1971.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-1971.png"; sourceTree = "<group>"; };
 		B751916121BA9EF300F64A21 /* lookup-run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-run.png"; sourceTree = "<group>"; };
 		B751916221BA9EF300F64A21 /* lookup-mental.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-mental.png"; sourceTree = "<group>"; };
@@ -1239,6 +1243,19 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		B7328E1022395A6100E14ACB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7328E1122395A6100E14ACB /* CameraViewController.mm */,
+				B7328E1222395A6100E14ACB /* EditViewController.m */,
+				B7328E1322395A6100E14ACB /* ViewController.m */,
+				B7328E1422395A6100E14ACB /* CameraViewController.h */,
+				B7328E1522395A6100E14ACB /* EditViewController.h */,
+				B7328E1622395A6100E14ACB /* ViewController.h */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		B746990521C1F5EF00711F0E /* frame-flower-shakura */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,12 +1305,11 @@
 		B74A13E8222C1B8600C367F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B7328E1022395A6100E14ACB /* ViewController */,
 				B74A13F5222C1B8600C367F9 /* TKCameraViewController.h */,
 				B74A13E9222C1B8600C367F9 /* TKCameraViewController.mm */,
 				B74A13EA222C1B8600C367F9 /* TKRootView.h */,
 				B74A1428222C1B8600C367F9 /* TKRootView.m */,
-				B74A1429222C1B8600C367F9 /* ViewController.h */,
-				B74A13EB222C1B8600C367F9 /* ViewController.m */,
 				B74A13EC222C1B8600C367F9 /* TopMenu */,
 				B74A13F6222C1B8600C367F9 /* BottomMenu */,
 				B74A141F222C1B8600C367F9 /* Model */,
@@ -1574,7 +1590,6 @@
 			children = (
 				B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */,
 				B751915F21BA9EF200F64A21 /* lookup-1971.png */,
-				B751915E21BA9EF200F64A21 /* lookup-b & w.png */,
 				B751915821BA9EF000F64A21 /* lookup-brooklyn.png */,
 				B751915621BA9EEF00F64A21 /* lookup-charcoal.png */,
 				B751916721BA9EF500F64A21 /* lookup-clarity.png */,
@@ -2134,7 +2149,6 @@
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
 				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
 				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
-				B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */,
 				B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
 				B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */,
@@ -2190,6 +2204,7 @@
 				B74A1432222C1B8600C367F9 /* TKTopMenuItem.m in Sources */,
 				B74A1437222C1B8600C367F9 /* TKFrameCollectionView.m in Sources */,
 				B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */,
+				B7328E1922395A6100E14ACB /* ViewController.m in Sources */,
 				B74A143E222C1B8600C367F9 /* TKFilterCollectionView.m in Sources */,
 				B751914221BA79EF00F64A21 /* TKSampleDataPool.mm in Sources */,
 				B753FD37220550B500D805BB /* LFGPUImageBeautyFilter.m in Sources */,
@@ -2235,10 +2250,11 @@
 				B74A1440222C1B8600C367F9 /* TKBottomMenu.m in Sources */,
 				B7107D0821BEE82200FEE948 /* TKPhoto.m in Sources */,
 				B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */,
+				B7328E1722395A6100E14ACB /* CameraViewController.mm in Sources */,
+				B7328E1822395A6100E14ACB /* EditViewController.m in Sources */,
 				B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */,
 				B751913421BA6EC900F64A21 /* TKFilter.m in Sources */,
 				B74A1436222C1B8600C367F9 /* TKStickerCollectionViewCell.m in Sources */,
-				B74A142E222C1B8600C367F9 /* ViewController.m in Sources */,
 				B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */,
 				B74A1439222C1B8600C367F9 /* TKStickerCollectionViewBase.m in Sources */,
 				B7107D0521BEE81800FEE948 /* TKCamera.m in Sources */,
