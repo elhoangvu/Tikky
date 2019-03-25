@@ -7,23 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TKModelObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKFilterModel : TKModelObject
-//@property (nonatomic) NSString *category;
-//@property (nonatomic) NSString *name;
-//@property (nonatomic) BOOL isFromBundle;
+@interface TKFilterModel : NSObject
+@property (nonatomic) NSNumber *identifier;
+@property (nonatomic) NSString *type;
+@property (nonatomic) NSString *category;
+@property (nonatomic) NSString *name;
+@property (nonatomic) BOOL isFromBundle;
 @property (nonatomic) NSString *thumbnailPath;
-//@property (nonatomic) NSArray<NSString *> *paths;
-//@property (nonatomic) NSString *path;
+@property (nonatomic) NSArray<NSString *> *paths;
+@property (nonatomic) NSString *path;
 
 
-//-(instancetype)initWithIdentifier:(NSNumber *)identifier andName:(NSString *)name andType:(NSString *)type andCategory:(NSString *)category andIsFromBundle:(BOOL)isFromBundle andThumbnailPath:(NSString *)thumbnailPath;
-
-- (instancetype)initWithIdentifier:(NSNumber *)identifier andType:(NSString *)type andThumbnailPath:(NSString *)thumbnailPath;
-
+-(instancetype)initWithIdentifier:(NSNumber *)identifier andName:(NSString *)name andType:(NSString *)type andCategory:(NSString *)category andIsFromBundle:(BOOL)isFromBundle andThumbnailPath:(NSString *)thumbnailPath andPath:(NSString *)path;
 @end
 
 NS_ASSUME_NONNULL_END

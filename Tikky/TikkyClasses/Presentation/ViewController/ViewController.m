@@ -78,11 +78,13 @@
     } else if ([nameItem isEqualToString:@"filter"]) {
         [self.rootView setBottomMenuViewWithBottomMenuType:FilterMenu];
         
-    } else if ([nameItem isEqualToString:@"emoji"]) {
-
-
     } else if ([nameItem isEqualToString:@"frame"]) {
         [self.rootView setBottomMenuViewWithBottomMenuType:StickerMenu];
+
+
+    } else if ([nameItem isEqualToString:@"emoji"]) {
+        [self.rootView setBottomMenuViewWithBottomMenuType:StickerMenu];
+        
     }
 }
 
