@@ -49,7 +49,6 @@
 }
 
 -(void)tapDetected {
-    
 }
 
 - (void)setPathImage:(NSString *)path {

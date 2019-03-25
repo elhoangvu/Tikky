@@ -137,10 +137,9 @@
         }
         self.stickerCollectionView.delegate = self;
     } else {
-        if ([((TKStickerCollectionViewBase *)collectionView).delegate respondsToSelector:@selector(cellClickWith:)]) {
-                [((TKStickerCollectionViewBase *)collectionView).delegate cellClickWith:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).identifier andType:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).type];
-        }
-    };
+        [((TKStickerCollectionViewBase *)collectionView).delegate cellClickWith:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).identifier andType:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).type];
+    }
+    
 }
 
 @end

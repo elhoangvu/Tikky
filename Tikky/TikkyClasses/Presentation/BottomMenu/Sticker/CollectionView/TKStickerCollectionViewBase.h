@@ -10,7 +10,7 @@
 #import "TKModelObject.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TKStickerCellClick <NSObject>
+@protocol TKStickerCellClick
 
 @optional
 -(void)cellClickWith:(NSNumber *)identifier andType:(NSString *)type;
