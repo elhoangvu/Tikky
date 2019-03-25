@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #include "cocos2d.h"
 #import "CCAppDelegate.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,10 +22,10 @@ static CCAppDelegate s_sharedApplication;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    cocos2d::Application *app = cocos2d::Application::getInstance();
+    cocos2d::Application* cocosApp = cocos2d::Application::getInstance();
     
     // Initialize the GLView attributes
-    app->initGLContextAttrs();
+    cocosApp->initGLContextAttrs();
     cocos2d::GLViewImpl::convertAttrs();
     
     return YES;
