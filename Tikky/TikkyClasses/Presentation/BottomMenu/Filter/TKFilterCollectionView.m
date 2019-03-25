@@ -9,7 +9,7 @@
 #import "TKFilterCollectionView.h"
 #import "TKFilterCollectionViewCell.h"
 
-@interface TKFilterCollectionView()
+@interface TKFilterCollectionView() <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
 
@@ -27,9 +27,44 @@
 {
     self = [super init];
     if (self) {
+        self.dataArray = [[TKSampleDataPool sharedInstance] filterModelList];
+        self.dataSource = self;
+        [self registerClass:[TKFilterCollectionViewCell class] forCellWithReuseIdentifier:@"filter_cell"];
     }
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+    self =  [super initWithFrame:frame collectionViewLayout:layout];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        
+        self.dataArray = [[TKSampleDataPool sharedInstance] filterModelList];
+        self.dataSource = self;
+        [self registerClass:[TKFilterCollectionViewCell class] forCellWithReuseIdentifier:@"filter_cell"];
+    }
+    return self;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (collectionView == self) {
+        return self.dataArray.count;
+    }
+    return 0;
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TKFilterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"filter_cell" forIndexPath:indexPath];
+    if (cell) {
+        UIImage *image= [UIImage imageNamed:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath];
+//        UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath ofType:@"png"]];
+        cell.imageView.image = image;
+//        cell.nameLabel.text = ((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath;
+        cell.nameLabel.text = @"filter";
+        [cell.nameLabel adjustsFontSizeToFitWidth];
+    }
+    return cell;
+}
 
 @end

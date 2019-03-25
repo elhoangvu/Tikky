@@ -7,6 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770545D422293265007F931C /* TKTypeStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 770545D322293265007F931C /* TKTypeStickerCollectionView.m */; };
+		770545D72229386D007F931C /* TKFrameCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 770545D62229386D007F931C /* TKFrameCollectionView.m */; };
+		770545DD22293A07007F931C /* TKFrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 770545DC22293A07007F931C /* TKFrameCollectionViewCell.m */; };
+		770545F422294C1B007F931C /* frame-xmas-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E022294C17007F931C /* frame-xmas-3-thumb.png */; };
+		770545F522294C1B007F931C /* frame-flower-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E122294C17007F931C /* frame-flower-2-thumb.png */; };
+		770545F622294C1B007F931C /* frame-xmas-4-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E222294C17007F931C /* frame-xmas-4-toponly.png */; };
+		770545F722294C1B007F931C /* frame-flower-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E322294C18007F931C /* frame-flower-3.png */; };
+		770545F822294C1B007F931C /* frame-flower-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E422294C18007F931C /* frame-flower-top.png */; };
+		770545F922294C1B007F931C /* frame-flower-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E522294C18007F931C /* frame-flower-4-thumb.png */; };
+		770545FB22294C1B007F931C /* frame-xmas-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E722294C18007F931C /* frame-xmas-thumb.png */; };
+		770545FC22294C1B007F931C /* frame-flower-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E822294C19007F931C /* frame-flower-bottom.png */; };
+		770545FD22294C1B007F931C /* frame-flower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545E922294C19007F931C /* frame-flower-2.png */; };
+		770545FE22294C1B007F931C /* frame-xmas-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545EA22294C19007F931C /* frame-xmas-2-thumb.png */; };
+		770545FF22294C1B007F931C /* frame-flower-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545EB22294C19007F931C /* frame-flower-thumb.png */; };
+		7705460022294C1B007F931C /* frame-flower-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545EC22294C1A007F931C /* frame-flower-4.png */; };
+		7705460122294C1B007F931C /* frame-xmas-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545ED22294C1A007F931C /* frame-xmas-2.png */; };
+		7705460222294C1B007F931C /* frame-xmas-3-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545EE22294C1A007F931C /* frame-xmas-3-toponly.png */; };
+		7705460522294C1C007F931C /* frame-xmas-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545F122294C1B007F931C /* frame-xmas-4-thumb.png */; };
+		7705460622294C1C007F931C /* frame-flower-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545F222294C1B007F931C /* frame-flower-3-thumb.png */; };
+		7705460722294C1C007F931C /* frame-xmas.png in Resources */ = {isa = PBXBuildFile; fileRef = 770545F322294C1B007F931C /* frame-xmas.png */; };
+		7705460D222A4347007F931C /* TKModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7705460C222A4347007F931C /* TKModelObject.m */; };
+		77054616222A4662007F931C /* TKStickerCollectionViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 77054615222A4662007F931C /* TKStickerCollectionViewBase.m */; };
+		7717D9DD2238DD8000C99B3A /* shareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717D9DC2238DD8000C99B3A /* shareView.m */; };
+		7717D9E02238EE7200C99B3A /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7717D9DE2238EE7100C99B3A /* facebook.png */; };
+		7717D9E12238EE7200C99B3A /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7717D9DF2238EE7100C99B3A /* twitter.png */; };
+		7718E0A22230959E00DC1AA7 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 7718E0992230959E00DC1AA7 /* delete.png */; };
+		7718E0A32230959E00DC1AA7 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 7718E0A02230959E00DC1AA7 /* share.png */; };
+		7718E0A42230959E00DC1AA7 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7718E0A12230959E00DC1AA7 /* edit.png */; };
+		7718E0B32236408900DC1AA7 /* TKFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7718E0B22236408900DC1AA7 /* TKFilterCollectionViewCell.m */; };
+		771D7D7122243D5800137A90 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D7D7022243D5800137A90 /* ViewController.m */; };
+		771D7D942225105600137A90 /* sticker-xmas-hat-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D782225105000137A90 /* sticker-xmas-hat-2-thumb.png */; };
+		771D7D952225105600137A90 /* sticker-xmas-red-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D792225105000137A90 /* sticker-xmas-red-gift-thumb.png */; };
+		771D7D962225105600137A90 /* sticker-xmas-hat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7A2225105100137A90 /* sticker-xmas-hat-thumb.png */; };
+		771D7D972225105600137A90 /* sticker-xmas-snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7B2225105100137A90 /* sticker-xmas-snowman.png */; };
+		771D7D982225105600137A90 /* sticker-xmas-hat-5-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7C2225105100137A90 /* sticker-xmas-hat-5-thumb.png */; };
+		771D7D992225105600137A90 /* sticker-xmas-hat-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7D2225105100137A90 /* sticker-xmas-hat-8.png */; };
+		771D7D9A2225105600137A90 /* sticker-xmas-hat-7-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7E2225105100137A90 /* sticker-xmas-hat-7-thumb.png */; };
+		771D7D9B2225105600137A90 /* sticker-xmas-violet-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D7F2225105200137A90 /* sticker-xmas-violet-gift-thumb.png */; };
+		771D7D9C2225105600137A90 /* sticker-xmas-hat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D802225105200137A90 /* sticker-xmas-hat-7.png */; };
+		771D7D9D2225105600137A90 /* sticker-xmas-pink-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D812225105200137A90 /* sticker-xmas-pink-gift-thumb.png */; };
+		771D7D9E2225105600137A90 /* sticker-xmas-hat-6-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D822225105200137A90 /* sticker-xmas-hat-6-thumb.png */; };
+		771D7D9F2225105600137A90 /* sticker-xmas-hat-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D832225105300137A90 /* sticker-xmas-hat-4-thumb.png */; };
+		771D7DA02225105600137A90 /* sticker-xmas-hat-8-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D842225105300137A90 /* sticker-xmas-hat-8-thumb.png */; };
+		771D7DA12225105600137A90 /* sticker-xmas-reindeer.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D852225105300137A90 /* sticker-xmas-reindeer.png */; };
+		771D7DA22225105600137A90 /* sticker-xmas-hat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D862225105300137A90 /* sticker-xmas-hat-2.png */; };
+		771D7DA32225105600137A90 /* sticker-xmas-pink-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D872225105400137A90 /* sticker-xmas-pink-gift.png */; };
+		771D7DA42225105600137A90 /* sticker-xmas-hat.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D882225105400137A90 /* sticker-xmas-hat.png */; };
+		771D7DA52225105600137A90 /* sticker-xmas-violet-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D892225105400137A90 /* sticker-xmas-violet-gift.png */; };
+		771D7DA62225105600137A90 /* sticker-xmas-santa.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8A2225105400137A90 /* sticker-xmas-santa.png */; };
+		771D7DA72225105600137A90 /* sticker-xmas-hat-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8B2225105400137A90 /* sticker-xmas-hat-3-thumb.png */; };
+		771D7DA82225105600137A90 /* sticker-xmas-reindeer-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8C2225105500137A90 /* sticker-xmas-reindeer-thumb.png */; };
+		771D7DA92225105600137A90 /* sticker-xmas-red-gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8D2225105500137A90 /* sticker-xmas-red-gift.png */; };
+		771D7DAA2225105600137A90 /* sticker-xmas-snowman-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8E2225105500137A90 /* sticker-xmas-snowman-thumb.png */; };
+		771D7DAB2225105600137A90 /* sticker-xmas-hat-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D8F2225105500137A90 /* sticker-xmas-hat-3.png */; };
+		771D7DAC2225105600137A90 /* sticker-xmas-hat-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D902225105600137A90 /* sticker-xmas-hat-5.png */; };
+		771D7DAD2225105600137A90 /* sticker-xmas-hat-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D912225105600137A90 /* sticker-xmas-hat-4.png */; };
+		771D7DAE2225105600137A90 /* sticker-xmas-santa-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D922225105600137A90 /* sticker-xmas-santa-thumb.png */; };
+		771D7DAF2225105600137A90 /* sticker-xmas-hat-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 771D7D932225105600137A90 /* sticker-xmas-hat-6.png */; };
+		771D7DB22226823700137A90 /* TKTypeSelectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D7DB12226823700137A90 /* TKTypeSelectionCollectionViewCell.m */; };
+		7722F7BA222FB900000220BB /* TKStickerCollectionViewCellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722F7B9222FB900000220BB /* TKStickerCollectionViewCellBase.m */; };
+		7722F7C8222FD5D4000220BB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7722F7C7222FD5D4000220BB /* EditViewController.m */; };
+		7723B335221DE82D007F54DE /* frame-flower-shakura-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B31C221DE825007F54DE /* frame-flower-shakura-0.png */; };
+		7723B336221DE82D007F54DE /* frame-flower-shakura-5.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B31D221DE825007F54DE /* frame-flower-shakura-5.lua */; };
+		7723B337221DE82D007F54DE /* frame-flower-shakura-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B31E221DE825007F54DE /* frame-flower-shakura-2.png */; };
+		7723B338221DE82D007F54DE /* frame-flower-shakura-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B31F221DE826007F54DE /* frame-flower-shakura-4.lua */; };
+		7723B339221DE82D007F54DE /* frame-flower-shakura-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B320221DE826007F54DE /* frame-flower-shakura-6.png */; };
+		7723B33A221DE82D007F54DE /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B321221DE826007F54DE /* frame-flower-shakura-8.lua */; };
+		7723B33B221DE82D007F54DE /* frame-flower-shakura-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B322221DE827007F54DE /* frame-flower-shakura-4.png */; };
+		7723B33C221DE82D007F54DE /* frame-flower-shakura-7.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B323221DE827007F54DE /* frame-flower-shakura-7.lua */; };
+		7723B33D221DE82D007F54DE /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B324221DE827007F54DE /* frame-flower-shakura-11.png */; };
+		7723B33E221DE82D007F54DE /* frame-flower-shakura-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B325221DE828007F54DE /* frame-flower-shakura-5.png */; };
+		7723B33F221DE82D007F54DE /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B326221DE828007F54DE /* frame-flower-shakura-10.png */; };
+		7723B340221DE82D007F54DE /* frame-flower-shakura-11.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B327221DE828007F54DE /* frame-flower-shakura-11.lua */; };
+		7723B341221DE82D007F54DE /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B328221DE829007F54DE /* frame-flower-shakura-3.png */; };
+		7723B342221DE82D007F54DE /* frame-flower-shakura-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B329221DE829007F54DE /* frame-flower-shakura-1.lua */; };
+		7723B343221DE82D007F54DE /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32A221DE829007F54DE /* frame-flower-shakura-7.png */; };
+		7723B344221DE82D007F54DE /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32B221DE82A007F54DE /* frame-flower-shakura-3.lua */; };
+		7723B345221DE82D007F54DE /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32C221DE82A007F54DE /* frame-flower-shakura-8.png */; };
+		7723B346221DE82D007F54DE /* frame-flower-shakura-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32D221DE82A007F54DE /* frame-flower-shakura-0.lua */; };
+		7723B347221DE82D007F54DE /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32E221DE82B007F54DE /* frame-flower-shakura-9.lua */; };
+		7723B348221DE82D007F54DE /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B32F221DE82B007F54DE /* frame-flower-shakura-2.lua */; };
+		7723B349221DE82D007F54DE /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B330221DE82B007F54DE /* frame-flower-shakura-10.lua */; };
+		7723B34A221DE82D007F54DE /* frame-flower-shakura-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B331221DE82C007F54DE /* frame-flower-shakura-1.png */; };
+		7723B34B221DE82D007F54DE /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B332221DE82C007F54DE /* frame-flower-shakura-9.png */; };
+		7723B34C221DE82D007F54DE /* frame-flower-shakura-6.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B333221DE82C007F54DE /* frame-flower-shakura-6.lua */; };
+		7723B34D221DE82D007F54DE /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B334221DE82C007F54DE /* frame-flower-shakura-thumb.png */; };
+		7723B354221DECF5007F54DE /* frame-lotus-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B34E221DECF4007F54DE /* frame-lotus-2.lua */; };
+		7723B355221DECF5007F54DE /* frame-lotus-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B34F221DECF4007F54DE /* frame-lotus-1.png */; };
+		7723B356221DECF5007F54DE /* frame-lotus-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B350221DECF4007F54DE /* frame-lotus-0.png */; };
+		7723B357221DECF5007F54DE /* frame-lotus-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B351221DECF5007F54DE /* frame-lotus-2.png */; };
+		7723B358221DECF5007F54DE /* frame-lotus-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B352221DECF5007F54DE /* frame-lotus-0.lua */; };
+		7723B359221DECF5007F54DE /* frame-lotus-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B353221DECF5007F54DE /* frame-lotus-1.lua */; };
+		7723B35E221DED8A007F54DE /* frame-leaves-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B35A221DED89007F54DE /* frame-leaves-1.png */; };
+		7723B35F221DED8A007F54DE /* frame-leaves-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B35B221DED89007F54DE /* frame-leaves-0.lua */; };
+		7723B360221DED8A007F54DE /* frame-leaves-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7723B35C221DED8A007F54DE /* frame-leaves-0.png */; };
+		7723B361221DED8A007F54DE /* frame-leaves-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 7723B35D221DED8A007F54DE /* frame-leaves-1.lua */; };
+		775A5756222B176300A54D07 /* frames-xmas-5-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 775A5753222B176200A54D07 /* frames-xmas-5-thumb.png */; };
+		775A5757222B176300A54D07 /* frames-xmas-5-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 775A5754222B176300A54D07 /* frames-xmas-5-top.png */; };
+		775A5758222B176300A54D07 /* frames-xmas-5-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 775A5755222B176300A54D07 /* frames-xmas-5-bot.png */; };
+		B70ABAA82201A11500B1F89A /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA752201A11500B1F89A /* CameraViewController.mm */; };
+		B70ABAA92201A11500B1F89A /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA782201A11500B1F89A /* TKTopMenu.m */; };
+		B70ABAAA2201A11500B1F89A /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA792201A11500B1F89A /* TKTopSubViewMenu.m */; };
+		B70ABAAB2201A11500B1F89A /* TKTopSubMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA7A2201A11500B1F89A /* TKTopSubMenuItem.m */; };
+		B70ABAAC2201A11500B1F89A /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA7B2201A11500B1F89A /* TKTopMenuItem.m */; };
+		B70ABAAD2201A11500B1F89A /* TKStickerModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA862201A11500B1F89A /* TKStickerModelView.m */; };
+		B70ABAAF2201A11500B1F89A /* TKStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA8B2201A11500B1F89A /* TKStickerCollectionView.m */; };
+		B70ABAB02201A11500B1F89A /* TKStickerBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA8D2201A11500B1F89A /* TKStickerBottomMenu.m */; };
+		B70ABAB12201A11500B1F89A /* TKStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA8E2201A11500B1F89A /* TKStickerCollectionViewCell.m */; };
+		B70ABAB32201A11500B1F89A /* TKFilterCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA932201A11500B1F89A /* TKFilterCollectionView.m */; };
+		B70ABAB42201A11500B1F89A /* TKFilterBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA952201A11500B1F89A /* TKFilterBottomMenu.m */; };
+		B70ABAB52201A11500B1F89A /* TKBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA962201A11500B1F89A /* TKBottomMenu.m */; };
+		B70ABAB62201A11500B1F89A /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA972201A11500B1F89A /* TKBottomMenuItem.m */; };
+		B70ABAB72201A11500B1F89A /* TKMainBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA992201A11500B1F89A /* TKMainBottomMenuItem.m */; };
+		B70ABAB82201A11500B1F89A /* TKMainBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA9A2201A11500B1F89A /* TKMainBottomMenu.m */; };
+		B70ABAB92201A11500B1F89A /* TKFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABA9F2201A11500B1F89A /* TKFilterModel.m */; };
+		B70ABABA2201A11500B1F89A /* TKFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABAA02201A11500B1F89A /* TKFrameModel.m */; };
+		B70ABABB2201A11500B1F89A /* TKStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABAA12201A11500B1F89A /* TKStickerModel.m */; };
+		B70ABABC2201A11500B1F89A /* TKRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABAA42201A11500B1F89A /* TKRootView.m */; };
+		B70ABABD2201A11500B1F89A /* TKBottomMenuFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B70ABAA62201A11500B1F89A /* TKBottomMenuFactory.m */; };
 		B70ABAC92201AE7C00B1F89A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70ABAC82201AE7C00B1F89A /* CoreVideo.framework */; };
 		B70ABACB2201AE8300B1F89A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70ABACA2201AE8300B1F89A /* AssetsLibrary.framework */; };
 		B70ABACD2201AE8700B1F89A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70ABACC2201AE8700B1F89A /* Accelerate.framework */; };
@@ -80,63 +199,6 @@
 		B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */ = {isa = PBXBuildFile; fileRef = B71A8D852230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m */; };
 		B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */; };
 		B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */; };
-		B71BE51F222B98B8005EA8AE /* TKSNFacebookSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8C6222B144F00F6FB7E /* TKSNFacebookSDK.m */; };
-		B71BE520222B98B8005EA8AE /* TKSNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CA222B144F00F6FB7E /* TKSNUserInfo.m */; };
-		B7328E1722395A6100E14ACB /* CameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1122395A6100E14ACB /* CameraViewController.mm */; };
-		B7328E1822395A6100E14ACB /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1222395A6100E14ACB /* EditViewController.m */; };
-		B7328E1922395A6100E14ACB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7328E1322395A6100E14ACB /* ViewController.m */; };
-		B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */; };
-		B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */; };
-		B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */; };
-		B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */; };
-		B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */; };
-		B746992421C1F5EF00711F0E /* frame-flower-shakura-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */; };
-		B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */; };
-		B746992621C1F5EF00711F0E /* frame-flower-shakura-1.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */; };
-		B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */ = {isa = PBXBuildFile; fileRef = B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */; };
-		B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */; };
-		B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */; };
-		B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */; };
-		B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */; };
-		B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */; };
-		B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */; };
-		B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */; };
-		B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */; };
-		B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */; };
-		B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */; };
-		B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */; };
-		B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */; };
-		B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */ = {isa = PBXBuildFile; fileRef = B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */; };
-		B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */; };
-		B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */; };
-		B74A142D222C1B8600C367F9 /* TKCameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B74A13E9222C1B8600C367F9 /* TKCameraViewController.mm */; };
-		B74A142F222C1B8600C367F9 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13ED222C1B8600C367F9 /* TKTopMenu.m */; };
-		B74A1430222C1B8600C367F9 /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13EE222C1B8600C367F9 /* TKTopSubViewMenu.m */; };
-		B74A1431222C1B8600C367F9 /* TKTopSubMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13EF222C1B8600C367F9 /* TKTopSubMenuItem.m */; };
-		B74A1432222C1B8600C367F9 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13F0222C1B8600C367F9 /* TKTopMenuItem.m */; };
-		B74A1433222C1B8600C367F9 /* TKStickerCollectionViewCellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13FC222C1B8600C367F9 /* TKStickerCollectionViewCellBase.m */; };
-		B74A1434222C1B8600C367F9 /* TKTypeSelectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13FE222C1B8600C367F9 /* TKTypeSelectionCollectionViewCell.m */; };
-		B74A1435222C1B8600C367F9 /* TKFrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A13FF222C1B8600C367F9 /* TKFrameCollectionViewCell.m */; };
-		B74A1436222C1B8600C367F9 /* TKStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1402222C1B8600C367F9 /* TKStickerCollectionViewCell.m */; };
-		B74A1437222C1B8600C367F9 /* TKFrameCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1405222C1B8600C367F9 /* TKFrameCollectionView.m */; };
-		B74A1438222C1B8600C367F9 /* TKTypeStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1406222C1B8600C367F9 /* TKTypeStickerCollectionView.m */; };
-		B74A1439222C1B8600C367F9 /* TKStickerCollectionViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1407222C1B8600C367F9 /* TKStickerCollectionViewBase.m */; };
-		B74A143A222C1B8600C367F9 /* TKStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1408222C1B8600C367F9 /* TKStickerCollectionView.m */; };
-		B74A143B222C1B8600C367F9 /* TKStickerModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A140F222C1B8600C367F9 /* TKStickerModelView.m */; };
-		B74A143C222C1B8600C367F9 /* TKStickerBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1410222C1B8600C367F9 /* TKStickerBottomMenu.m */; };
-		B74A143D222C1B8600C367F9 /* TKFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1413222C1B8600C367F9 /* TKFilterCollectionViewCell.m */; };
-		B74A143E222C1B8600C367F9 /* TKFilterCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1415222C1B8600C367F9 /* TKFilterCollectionView.m */; };
-		B74A143F222C1B8600C367F9 /* TKFilterBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1417222C1B8600C367F9 /* TKFilterBottomMenu.m */; };
-		B74A1440222C1B8600C367F9 /* TKBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1418222C1B8600C367F9 /* TKBottomMenu.m */; };
-		B74A1441222C1B8600C367F9 /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1419222C1B8600C367F9 /* TKBottomMenuItem.m */; };
-		B74A1442222C1B8600C367F9 /* TKMainBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A141B222C1B8600C367F9 /* TKMainBottomMenuItem.m */; };
-		B74A1443222C1B8600C367F9 /* TKMainBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A141C222C1B8600C367F9 /* TKMainBottomMenu.m */; };
-		B74A1444222C1B8600C367F9 /* TKFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1421222C1B8600C367F9 /* TKFilterModel.m */; };
-		B74A1445222C1B8600C367F9 /* TKModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1422222C1B8600C367F9 /* TKModelObject.m */; };
-		B74A1446222C1B8600C367F9 /* TKFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1423222C1B8600C367F9 /* TKFrameModel.m */; };
-		B74A1447222C1B8600C367F9 /* TKStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1424222C1B8600C367F9 /* TKStickerModel.m */; };
-		B74A1448222C1B8600C367F9 /* TKRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A1428222C1B8600C367F9 /* TKRootView.m */; };
-		B74A1449222C1B8600C367F9 /* TKBottomMenuFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B74A142B222C1B8600C367F9 /* TKBottomMenuFactory.m */; };
 		B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */; };
 		B74D674521BD54C500E11EC4 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D673721BD54C100E11EC4 /* flash.png */; };
 		B74D674621BD54C500E11EC4 /* capture.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D673821BD54C200E11EC4 /* capture.png */; };
@@ -152,7 +214,6 @@
 		B74D675021BD54C500E11EC4 /* 5s.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D674221BD54C500E11EC4 /* 5s.png */; };
 		B74D675121BD54C500E11EC4 /* reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D674321BD54C500E11EC4 /* reverse.png */; };
 		B74D675221BD54C500E11EC4 /* 3s.png in Resources */ = {isa = PBXBuildFile; fileRef = B74D674421BD54C500E11EC4 /* 3s.png */; };
-		B74E611E21C2E5D0003A0E9A /* frame-flower-shakura-10.png in Resources */ = {isa = PBXBuildFile; fileRef = B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */; };
 		B751913421BA6EC900F64A21 /* TKFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B751913321BA6EC900F64A21 /* TKFilter.m */; };
 		B751914221BA79EF00F64A21 /* TKSampleDataPool.mm in Sources */ = {isa = PBXBuildFile; fileRef = B751914121BA79EF00F64A21 /* TKSampleDataPool.mm */; };
 		B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B751914421BA80D200F64A21 /* TKFilterProperty.m */; };
@@ -198,8 +259,6 @@
 		B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */; };
 		B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */; };
 		B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */; };
-		B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */; };
-		B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */; };
 		B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */; };
 		B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditController.cpp */; };
 		B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B767ED9C21B5BECE00CE264A /* TKImageFilter.m */; };
@@ -385,6 +444,156 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		770545D222293265007F931C /* TKTypeStickerCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTypeStickerCollectionView.h; sourceTree = "<group>"; };
+		770545D322293265007F931C /* TKTypeStickerCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTypeStickerCollectionView.m; sourceTree = "<group>"; };
+		770545D52229386D007F931C /* TKFrameCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFrameCollectionView.h; sourceTree = "<group>"; };
+		770545D62229386D007F931C /* TKFrameCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFrameCollectionView.m; sourceTree = "<group>"; };
+		770545DB22293A07007F931C /* TKFrameCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFrameCollectionViewCell.h; sourceTree = "<group>"; };
+		770545DC22293A07007F931C /* TKFrameCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFrameCollectionViewCell.m; sourceTree = "<group>"; };
+		770545DF22293FC5007F931C /* TKStickerModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerModelView.h; sourceTree = "<group>"; };
+		770545E022294C17007F931C /* frame-xmas-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-thumb.png"; sourceTree = "<group>"; };
+		770545E122294C17007F931C /* frame-flower-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2-thumb.png"; sourceTree = "<group>"; };
+		770545E222294C17007F931C /* frame-xmas-4-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-toponly.png"; sourceTree = "<group>"; };
+		770545E322294C18007F931C /* frame-flower-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3.png"; sourceTree = "<group>"; };
+		770545E422294C18007F931C /* frame-flower-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-top.png"; sourceTree = "<group>"; };
+		770545E522294C18007F931C /* frame-flower-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4-thumb.png"; sourceTree = "<group>"; };
+		770545E722294C18007F931C /* frame-xmas-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-thumb.png"; sourceTree = "<group>"; };
+		770545E822294C19007F931C /* frame-flower-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-bottom.png"; sourceTree = "<group>"; };
+		770545E922294C19007F931C /* frame-flower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2.png"; sourceTree = "<group>"; };
+		770545EA22294C19007F931C /* frame-xmas-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2-thumb.png"; sourceTree = "<group>"; };
+		770545EB22294C19007F931C /* frame-flower-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-thumb.png"; sourceTree = "<group>"; };
+		770545EC22294C1A007F931C /* frame-flower-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4.png"; sourceTree = "<group>"; };
+		770545ED22294C1A007F931C /* frame-xmas-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2.png"; sourceTree = "<group>"; };
+		770545EE22294C1A007F931C /* frame-xmas-3-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-toponly.png"; sourceTree = "<group>"; };
+		770545F122294C1B007F931C /* frame-xmas-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-thumb.png"; sourceTree = "<group>"; };
+		770545F222294C1B007F931C /* frame-flower-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3-thumb.png"; sourceTree = "<group>"; };
+		770545F322294C1B007F931C /* frame-xmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas.png"; sourceTree = "<group>"; };
+		7705460B222A4347007F931C /* TKModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKModelObject.h; sourceTree = "<group>"; };
+		7705460C222A4347007F931C /* TKModelObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKModelObject.m; sourceTree = "<group>"; };
+		77054614222A4662007F931C /* TKStickerCollectionViewBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewBase.h; sourceTree = "<group>"; };
+		77054615222A4662007F931C /* TKStickerCollectionViewBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewBase.m; sourceTree = "<group>"; };
+		7717D9DB2238DD8000C99B3A /* shareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shareView.h; sourceTree = "<group>"; };
+		7717D9DC2238DD8000C99B3A /* shareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shareView.m; sourceTree = "<group>"; };
+		7717D9DE2238EE7100C99B3A /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		7717D9DF2238EE7100C99B3A /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		7718E0992230959E00DC1AA7 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		7718E0A02230959E00DC1AA7 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		7718E0A12230959E00DC1AA7 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		7718E0B12236408900DC1AA7 /* TKFilterCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKFilterCollectionViewCell.h; path = ../Sticker/CollectionViewCell/TKFilterCollectionViewCell.h; sourceTree = "<group>"; };
+		7718E0B22236408900DC1AA7 /* TKFilterCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKFilterCollectionViewCell.m; path = ../Sticker/CollectionViewCell/TKFilterCollectionViewCell.m; sourceTree = "<group>"; };
+		771D7D6F22243D5800137A90 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		771D7D7022243D5800137A90 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		771D7D782225105000137A90 /* sticker-xmas-hat-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-2-thumb.png"; sourceTree = "<group>"; };
+		771D7D792225105000137A90 /* sticker-xmas-red-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-red-gift-thumb.png"; sourceTree = "<group>"; };
+		771D7D7A2225105100137A90 /* sticker-xmas-hat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-thumb.png"; sourceTree = "<group>"; };
+		771D7D7B2225105100137A90 /* sticker-xmas-snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-snowman.png"; sourceTree = "<group>"; };
+		771D7D7C2225105100137A90 /* sticker-xmas-hat-5-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-5-thumb.png"; sourceTree = "<group>"; };
+		771D7D7D2225105100137A90 /* sticker-xmas-hat-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-8.png"; sourceTree = "<group>"; };
+		771D7D7E2225105100137A90 /* sticker-xmas-hat-7-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-7-thumb.png"; sourceTree = "<group>"; };
+		771D7D7F2225105200137A90 /* sticker-xmas-violet-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-violet-gift-thumb.png"; sourceTree = "<group>"; };
+		771D7D802225105200137A90 /* sticker-xmas-hat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-7.png"; sourceTree = "<group>"; };
+		771D7D812225105200137A90 /* sticker-xmas-pink-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-pink-gift-thumb.png"; sourceTree = "<group>"; };
+		771D7D822225105200137A90 /* sticker-xmas-hat-6-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-6-thumb.png"; sourceTree = "<group>"; };
+		771D7D832225105300137A90 /* sticker-xmas-hat-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-4-thumb.png"; sourceTree = "<group>"; };
+		771D7D842225105300137A90 /* sticker-xmas-hat-8-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-8-thumb.png"; sourceTree = "<group>"; };
+		771D7D852225105300137A90 /* sticker-xmas-reindeer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-reindeer.png"; sourceTree = "<group>"; };
+		771D7D862225105300137A90 /* sticker-xmas-hat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-2.png"; sourceTree = "<group>"; };
+		771D7D872225105400137A90 /* sticker-xmas-pink-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-pink-gift.png"; sourceTree = "<group>"; };
+		771D7D882225105400137A90 /* sticker-xmas-hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat.png"; sourceTree = "<group>"; };
+		771D7D892225105400137A90 /* sticker-xmas-violet-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-violet-gift.png"; sourceTree = "<group>"; };
+		771D7D8A2225105400137A90 /* sticker-xmas-santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-santa.png"; sourceTree = "<group>"; };
+		771D7D8B2225105400137A90 /* sticker-xmas-hat-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-3-thumb.png"; sourceTree = "<group>"; };
+		771D7D8C2225105500137A90 /* sticker-xmas-reindeer-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-reindeer-thumb.png"; sourceTree = "<group>"; };
+		771D7D8D2225105500137A90 /* sticker-xmas-red-gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-red-gift.png"; sourceTree = "<group>"; };
+		771D7D8E2225105500137A90 /* sticker-xmas-snowman-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-snowman-thumb.png"; sourceTree = "<group>"; };
+		771D7D8F2225105500137A90 /* sticker-xmas-hat-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-3.png"; sourceTree = "<group>"; };
+		771D7D902225105600137A90 /* sticker-xmas-hat-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-5.png"; sourceTree = "<group>"; };
+		771D7D912225105600137A90 /* sticker-xmas-hat-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-4.png"; sourceTree = "<group>"; };
+		771D7D922225105600137A90 /* sticker-xmas-santa-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-santa-thumb.png"; sourceTree = "<group>"; };
+		771D7D932225105600137A90 /* sticker-xmas-hat-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-6.png"; sourceTree = "<group>"; };
+		771D7DB02226823700137A90 /* TKTypeSelectionCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTypeSelectionCollectionViewCell.h; sourceTree = "<group>"; };
+		771D7DB12226823700137A90 /* TKTypeSelectionCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTypeSelectionCollectionViewCell.m; sourceTree = "<group>"; };
+		7722F7B8222FB900000220BB /* TKStickerCollectionViewCellBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewCellBase.h; sourceTree = "<group>"; };
+		7722F7B9222FB900000220BB /* TKStickerCollectionViewCellBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewCellBase.m; sourceTree = "<group>"; };
+		7722F7C6222FD5D4000220BB /* EditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		7722F7C7222FD5D4000220BB /* EditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		7723B31C221DE825007F54DE /* frame-flower-shakura-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-0.png"; sourceTree = "<group>"; };
+		7723B31D221DE825007F54DE /* frame-flower-shakura-5.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-5.lua"; sourceTree = "<group>"; };
+		7723B31E221DE825007F54DE /* frame-flower-shakura-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-2.png"; sourceTree = "<group>"; };
+		7723B31F221DE826007F54DE /* frame-flower-shakura-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-4.lua"; sourceTree = "<group>"; };
+		7723B320221DE826007F54DE /* frame-flower-shakura-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-6.png"; sourceTree = "<group>"; };
+		7723B321221DE826007F54DE /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
+		7723B322221DE827007F54DE /* frame-flower-shakura-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-4.png"; sourceTree = "<group>"; };
+		7723B323221DE827007F54DE /* frame-flower-shakura-7.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-7.lua"; sourceTree = "<group>"; };
+		7723B324221DE827007F54DE /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
+		7723B325221DE828007F54DE /* frame-flower-shakura-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-5.png"; sourceTree = "<group>"; };
+		7723B326221DE828007F54DE /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
+		7723B327221DE828007F54DE /* frame-flower-shakura-11.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-11.lua"; sourceTree = "<group>"; };
+		7723B328221DE829007F54DE /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
+		7723B329221DE829007F54DE /* frame-flower-shakura-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-1.lua"; sourceTree = "<group>"; };
+		7723B32A221DE829007F54DE /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
+		7723B32B221DE82A007F54DE /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
+		7723B32C221DE82A007F54DE /* frame-flower-shakura-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-8.png"; sourceTree = "<group>"; };
+		7723B32D221DE82A007F54DE /* frame-flower-shakura-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-0.lua"; sourceTree = "<group>"; };
+		7723B32E221DE82B007F54DE /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
+		7723B32F221DE82B007F54DE /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
+		7723B330221DE82B007F54DE /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
+		7723B331221DE82C007F54DE /* frame-flower-shakura-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-1.png"; sourceTree = "<group>"; };
+		7723B332221DE82C007F54DE /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
+		7723B333221DE82C007F54DE /* frame-flower-shakura-6.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-6.lua"; sourceTree = "<group>"; };
+		7723B334221DE82C007F54DE /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
+		7723B34E221DECF4007F54DE /* frame-lotus-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-2.lua"; sourceTree = "<group>"; };
+		7723B34F221DECF4007F54DE /* frame-lotus-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-1.png"; sourceTree = "<group>"; };
+		7723B350221DECF4007F54DE /* frame-lotus-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-0.png"; sourceTree = "<group>"; };
+		7723B351221DECF5007F54DE /* frame-lotus-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-lotus-2.png"; sourceTree = "<group>"; };
+		7723B352221DECF5007F54DE /* frame-lotus-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-0.lua"; sourceTree = "<group>"; };
+		7723B353221DECF5007F54DE /* frame-lotus-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-lotus-1.lua"; sourceTree = "<group>"; };
+		7723B35A221DED89007F54DE /* frame-leaves-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-leaves-1.png"; sourceTree = "<group>"; };
+		7723B35B221DED89007F54DE /* frame-leaves-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-leaves-0.lua"; sourceTree = "<group>"; };
+		7723B35C221DED8A007F54DE /* frame-leaves-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-leaves-0.png"; sourceTree = "<group>"; };
+		7723B35D221DED8A007F54DE /* frame-leaves-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-leaves-1.lua"; sourceTree = "<group>"; };
+		775A5753222B176200A54D07 /* frames-xmas-5-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-thumb.png"; sourceTree = "<group>"; };
+		775A5754222B176300A54D07 /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
+		775A5755222B176300A54D07 /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
+		B70ABA752201A11500B1F89A /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
+		B70ABA762201A11500B1F89A /* TKRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRootView.h; sourceTree = "<group>"; };
+		B70ABA782201A11500B1F89A /* TKTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenu.m; sourceTree = "<group>"; };
+		B70ABA792201A11500B1F89A /* TKTopSubViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubViewMenu.m; sourceTree = "<group>"; };
+		B70ABA7A2201A11500B1F89A /* TKTopSubMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubMenuItem.m; sourceTree = "<group>"; };
+		B70ABA7B2201A11500B1F89A /* TKTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenuItem.m; sourceTree = "<group>"; };
+		B70ABA7C2201A11500B1F89A /* TKTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenu.h; sourceTree = "<group>"; };
+		B70ABA7D2201A11500B1F89A /* TKTopSubViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubViewMenu.h; sourceTree = "<group>"; };
+		B70ABA7E2201A11500B1F89A /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
+		B70ABA7F2201A11500B1F89A /* TKTopSubMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubMenuItem.h; sourceTree = "<group>"; };
+		B70ABA802201A11500B1F89A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		B70ABA822201A11500B1F89A /* TKBottomMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuItem.h; sourceTree = "<group>"; };
+		B70ABA832201A11500B1F89A /* TKBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenu.h; sourceTree = "<group>"; };
+		B70ABA852201A11500B1F89A /* TKStickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionView.h; sourceTree = "<group>"; };
+		B70ABA862201A11500B1F89A /* TKStickerModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerModelView.m; sourceTree = "<group>"; };
+		B70ABA882201A11500B1F89A /* TKStickerBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerBottomMenu.h; sourceTree = "<group>"; };
+		B70ABA892201A11500B1F89A /* TKStickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewCell.h; sourceTree = "<group>"; };
+		B70ABA8B2201A11500B1F89A /* TKStickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionView.m; sourceTree = "<group>"; };
+		B70ABA8D2201A11500B1F89A /* TKStickerBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerBottomMenu.m; sourceTree = "<group>"; };
+		B70ABA8E2201A11500B1F89A /* TKStickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewCell.m; sourceTree = "<group>"; };
+		B70ABA902201A11500B1F89A /* TKFilterCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterCollectionView.h; sourceTree = "<group>"; };
+		B70ABA922201A11500B1F89A /* TKFilterBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterBottomMenu.h; sourceTree = "<group>"; };
+		B70ABA932201A11500B1F89A /* TKFilterCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterCollectionView.m; sourceTree = "<group>"; };
+		B70ABA952201A11500B1F89A /* TKFilterBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterBottomMenu.m; sourceTree = "<group>"; };
+		B70ABA962201A11500B1F89A /* TKBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenu.m; sourceTree = "<group>"; };
+		B70ABA972201A11500B1F89A /* TKBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuItem.m; sourceTree = "<group>"; };
+		B70ABA992201A11500B1F89A /* TKMainBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainBottomMenuItem.m; sourceTree = "<group>"; };
+		B70ABA9A2201A11500B1F89A /* TKMainBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainBottomMenu.m; sourceTree = "<group>"; };
+		B70ABA9B2201A11500B1F89A /* TKMainBottomMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainBottomMenuItem.h; sourceTree = "<group>"; };
+		B70ABA9C2201A11500B1F89A /* TKMainBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainBottomMenu.h; sourceTree = "<group>"; };
+		B70ABA9E2201A11500B1F89A /* TKStickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerModel.h; sourceTree = "<group>"; };
+		B70ABA9F2201A11500B1F89A /* TKFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterModel.m; sourceTree = "<group>"; };
+		B70ABAA02201A11500B1F89A /* TKFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFrameModel.m; sourceTree = "<group>"; };
+		B70ABAA12201A11500B1F89A /* TKStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerModel.m; sourceTree = "<group>"; };
+		B70ABAA22201A11500B1F89A /* TKFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterModel.h; sourceTree = "<group>"; };
+		B70ABAA32201A11500B1F89A /* TKFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFrameModel.h; sourceTree = "<group>"; };
+		B70ABAA42201A11500B1F89A /* TKRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRootView.m; sourceTree = "<group>"; };
+		B70ABAA62201A11500B1F89A /* TKBottomMenuFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuFactory.m; sourceTree = "<group>"; };
+		B70ABAA72201A11500B1F89A /* TKBottomMenuFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuFactory.h; sourceTree = "<group>"; };
 		B70ABAC82201AE7C00B1F89A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B70ABACA2201AE8300B1F89A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		B70ABACC2201AE8700B1F89A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -541,93 +750,6 @@
 		B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageGlitchFilter.m; sourceTree = "<group>"; };
 		B71B138221B9C1A800DE1796 /* GPUImageLUTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageLUTFilter.h; sourceTree = "<group>"; };
 		B71B138321B9C1A900DE1796 /* GPUImageLUTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageLUTFilter.m; sourceTree = "<group>"; };
-		B71BE521222B9E08005EA8AE /* FeatureDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureDefinition.h; sourceTree = "<group>"; };
-		B7328E1122395A6100E14ACB /* CameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CameraViewController.mm; sourceTree = "<group>"; };
-		B7328E1222395A6100E14ACB /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
-		B7328E1322395A6100E14ACB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B7328E1422395A6100E14ACB /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		B7328E1522395A6100E14ACB /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
-		B7328E1622395A6100E14ACB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
-		B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
-		B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
-		B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-2.png"; sourceTree = "<group>"; };
-		B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-0.png"; sourceTree = "<group>"; };
-		B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-0.lua"; sourceTree = "<group>"; };
-		B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-1.lua"; sourceTree = "<group>"; };
-		B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-1.png"; sourceTree = "<group>"; };
-		B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-5.png"; sourceTree = "<group>"; };
-		B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-5.lua"; sourceTree = "<group>"; };
-		B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-4.lua"; sourceTree = "<group>"; };
-		B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-4.png"; sourceTree = "<group>"; };
-		B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-6.png"; sourceTree = "<group>"; };
-		B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-6.lua"; sourceTree = "<group>"; };
-		B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-7.lua"; sourceTree = "<group>"; };
-		B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-7.png"; sourceTree = "<group>"; };
-		B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-9.png"; sourceTree = "<group>"; };
-		B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-10.lua"; sourceTree = "<group>"; };
-		B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-9.lua"; sourceTree = "<group>"; };
-		B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-8.lua"; sourceTree = "<group>"; };
-		B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-11.png"; sourceTree = "<group>"; };
-		B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-11.lua"; sourceTree = "<group>"; };
-		B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-8.png"; sourceTree = "<group>"; };
-		B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-thumb.png"; sourceTree = "<group>"; };
-		B74A13E9222C1B8600C367F9 /* TKCameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKCameraViewController.mm; sourceTree = "<group>"; };
-		B74A13EA222C1B8600C367F9 /* TKRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKRootView.h; sourceTree = "<group>"; };
-		B74A13ED222C1B8600C367F9 /* TKTopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenu.m; sourceTree = "<group>"; };
-		B74A13EE222C1B8600C367F9 /* TKTopSubViewMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubViewMenu.m; sourceTree = "<group>"; };
-		B74A13EF222C1B8600C367F9 /* TKTopSubMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopSubMenuItem.m; sourceTree = "<group>"; };
-		B74A13F0222C1B8600C367F9 /* TKTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTopMenuItem.m; sourceTree = "<group>"; };
-		B74A13F1222C1B8600C367F9 /* TKTopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenu.h; sourceTree = "<group>"; };
-		B74A13F2222C1B8600C367F9 /* TKTopSubViewMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubViewMenu.h; sourceTree = "<group>"; };
-		B74A13F3222C1B8600C367F9 /* TKTopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopMenuItem.h; sourceTree = "<group>"; };
-		B74A13F4222C1B8600C367F9 /* TKTopSubMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTopSubMenuItem.h; sourceTree = "<group>"; };
-		B74A13F5222C1B8600C367F9 /* TKCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCameraViewController.h; sourceTree = "<group>"; };
-		B74A13F7222C1B8600C367F9 /* TKBottomMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuItem.h; sourceTree = "<group>"; };
-		B74A13F8222C1B8600C367F9 /* TKBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenu.h; sourceTree = "<group>"; };
-		B74A13FB222C1B8600C367F9 /* TKFrameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFrameCollectionViewCell.h; sourceTree = "<group>"; };
-		B74A13FC222C1B8600C367F9 /* TKStickerCollectionViewCellBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewCellBase.m; sourceTree = "<group>"; };
-		B74A13FD222C1B8600C367F9 /* TKStickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewCell.h; sourceTree = "<group>"; };
-		B74A13FE222C1B8600C367F9 /* TKTypeSelectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTypeSelectionCollectionViewCell.m; sourceTree = "<group>"; };
-		B74A13FF222C1B8600C367F9 /* TKFrameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFrameCollectionViewCell.m; sourceTree = "<group>"; };
-		B74A1400222C1B8600C367F9 /* TKStickerCollectionViewCellBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewCellBase.h; sourceTree = "<group>"; };
-		B74A1401222C1B8600C367F9 /* TKTypeSelectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTypeSelectionCollectionViewCell.h; sourceTree = "<group>"; };
-		B74A1402222C1B8600C367F9 /* TKStickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewCell.m; sourceTree = "<group>"; };
-		B74A1404222C1B8600C367F9 /* TKStickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionView.h; sourceTree = "<group>"; };
-		B74A1405222C1B8600C367F9 /* TKFrameCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFrameCollectionView.m; sourceTree = "<group>"; };
-		B74A1406222C1B8600C367F9 /* TKTypeStickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTypeStickerCollectionView.m; sourceTree = "<group>"; };
-		B74A1407222C1B8600C367F9 /* TKStickerCollectionViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionViewBase.m; sourceTree = "<group>"; };
-		B74A1408222C1B8600C367F9 /* TKStickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerCollectionView.m; sourceTree = "<group>"; };
-		B74A1409222C1B8600C367F9 /* TKFrameCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFrameCollectionView.h; sourceTree = "<group>"; };
-		B74A140A222C1B8600C367F9 /* TKStickerCollectionViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerCollectionViewBase.h; sourceTree = "<group>"; };
-		B74A140B222C1B8600C367F9 /* TKTypeStickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTypeStickerCollectionView.h; sourceTree = "<group>"; };
-		B74A140C222C1B8600C367F9 /* TKStickerBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerBottomMenu.h; sourceTree = "<group>"; };
-		B74A140E222C1B8600C367F9 /* TKStickerModelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerModelView.h; sourceTree = "<group>"; };
-		B74A140F222C1B8600C367F9 /* TKStickerModelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerModelView.m; sourceTree = "<group>"; };
-		B74A1410222C1B8600C367F9 /* TKStickerBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerBottomMenu.m; sourceTree = "<group>"; };
-		B74A1412222C1B8600C367F9 /* TKFilterCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterCollectionView.h; sourceTree = "<group>"; };
-		B74A1413222C1B8600C367F9 /* TKFilterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterCollectionViewCell.m; sourceTree = "<group>"; };
-		B74A1414222C1B8600C367F9 /* TKFilterBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterBottomMenu.h; sourceTree = "<group>"; };
-		B74A1415222C1B8600C367F9 /* TKFilterCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterCollectionView.m; sourceTree = "<group>"; };
-		B74A1416222C1B8600C367F9 /* TKFilterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterCollectionViewCell.h; sourceTree = "<group>"; };
-		B74A1417222C1B8600C367F9 /* TKFilterBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterBottomMenu.m; sourceTree = "<group>"; };
-		B74A1418222C1B8600C367F9 /* TKBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenu.m; sourceTree = "<group>"; };
-		B74A1419222C1B8600C367F9 /* TKBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuItem.m; sourceTree = "<group>"; };
-		B74A141B222C1B8600C367F9 /* TKMainBottomMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainBottomMenuItem.m; sourceTree = "<group>"; };
-		B74A141C222C1B8600C367F9 /* TKMainBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMainBottomMenu.m; sourceTree = "<group>"; };
-		B74A141D222C1B8600C367F9 /* TKMainBottomMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainBottomMenuItem.h; sourceTree = "<group>"; };
-		B74A141E222C1B8600C367F9 /* TKMainBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMainBottomMenu.h; sourceTree = "<group>"; };
-		B74A1420222C1B8600C367F9 /* TKStickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerModel.h; sourceTree = "<group>"; };
-		B74A1421222C1B8600C367F9 /* TKFilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterModel.m; sourceTree = "<group>"; };
-		B74A1422222C1B8600C367F9 /* TKModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModelObject.m; sourceTree = "<group>"; };
-		B74A1423222C1B8600C367F9 /* TKFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFrameModel.m; sourceTree = "<group>"; };
-		B74A1424222C1B8600C367F9 /* TKStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStickerModel.m; sourceTree = "<group>"; };
-		B74A1425222C1B8600C367F9 /* TKModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKModelObject.h; sourceTree = "<group>"; };
-		B74A1426222C1B8600C367F9 /* TKFilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterModel.h; sourceTree = "<group>"; };
-		B74A1427222C1B8600C367F9 /* TKFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFrameModel.h; sourceTree = "<group>"; };
-		B74A1428222C1B8600C367F9 /* TKRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKRootView.m; sourceTree = "<group>"; };
-		B74A142B222C1B8600C367F9 /* TKBottomMenuFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBottomMenuFactory.m; sourceTree = "<group>"; };
-		B74A142C222C1B8600C367F9 /* TKBottomMenuFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBottomMenuFactory.h; sourceTree = "<group>"; };
 		B74AAB14219FE79C006DF9B0 /* lookup-amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-amatorka.png"; sourceTree = "<group>"; };
 		B74D673721BD54C100E11EC4 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
 		B74D673821BD54C200E11EC4 /* capture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = capture.png; sourceTree = "<group>"; };
@@ -643,7 +765,6 @@
 		B74D674221BD54C500E11EC4 /* 5s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5s.png; sourceTree = "<group>"; };
 		B74D674321BD54C500E11EC4 /* reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverse.png; sourceTree = "<group>"; };
 		B74D674421BD54C500E11EC4 /* 3s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3s.png; sourceTree = "<group>"; };
-		B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-10.png"; sourceTree = "<group>"; };
 		B751913221BA6EC900F64A21 /* TKFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilter.h; sourceTree = "<group>"; };
 		B751913321BA6EC900F64A21 /* TKFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilter.m; sourceTree = "<group>"; };
 		B751914021BA79EF00F64A21 /* TKSampleDataPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSampleDataPool.h; sourceTree = "<group>"; };
@@ -707,8 +828,6 @@
 		B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizer.cpp; sourceTree = "<group>"; };
 		B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureRecognizer.h; sourceTree = "<group>"; };
-		B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
-		B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
 		B767ED8421B545C400CE264A /* TKStickerPreviewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKStickerPreviewer.h; sourceTree = "<group>"; };
 		B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerPreviewer.mm; sourceTree = "<group>"; };
 		B767ED9B21B5BECE00CE264A /* TKImageFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
@@ -865,6 +984,179 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770545CA22292793007F931C /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				77054614222A4662007F931C /* TKStickerCollectionViewBase.h */,
+				77054615222A4662007F931C /* TKStickerCollectionViewBase.m */,
+				770545D222293265007F931C /* TKTypeStickerCollectionView.h */,
+				770545D322293265007F931C /* TKTypeStickerCollectionView.m */,
+				B70ABA852201A11500B1F89A /* TKStickerCollectionView.h */,
+				B70ABA8B2201A11500B1F89A /* TKStickerCollectionView.m */,
+				770545D52229386D007F931C /* TKFrameCollectionView.h */,
+				770545D62229386D007F931C /* TKFrameCollectionView.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		770545D122292847007F931C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7722F7B8222FB900000220BB /* TKStickerCollectionViewCellBase.h */,
+				7722F7B9222FB900000220BB /* TKStickerCollectionViewCellBase.m */,
+				771D7DB02226823700137A90 /* TKTypeSelectionCollectionViewCell.h */,
+				771D7DB12226823700137A90 /* TKTypeSelectionCollectionViewCell.m */,
+				B70ABA892201A11500B1F89A /* TKStickerCollectionViewCell.h */,
+				B70ABA8E2201A11500B1F89A /* TKStickerCollectionViewCell.m */,
+				770545DB22293A07007F931C /* TKFrameCollectionViewCell.h */,
+				770545DC22293A07007F931C /* TKFrameCollectionViewCell.m */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		770545DE22293AFE007F931C /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				770545DF22293FC5007F931C /* TKStickerModelView.h */,
+				B70ABA862201A11500B1F89A /* TKStickerModelView.m */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		7717D9DA2238DD6600C99B3A /* shareView */ = {
+			isa = PBXGroup;
+			children = (
+				7717D9DB2238DD8000C99B3A /* shareView.h */,
+				7717D9DC2238DD8000C99B3A /* shareView.m */,
+			);
+			path = shareView;
+			sourceTree = "<group>";
+		};
+		7722F7C4222FC642000220BB /* TKPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TKPhotoPicker;
+			sourceTree = "<group>";
+		};
+		7722F7C5222FD5AA000220BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				771D7D6F22243D5800137A90 /* ViewController.h */,
+				771D7D7022243D5800137A90 /* ViewController.m */,
+				B70ABA802201A11500B1F89A /* CameraViewController.h */,
+				B70ABA752201A11500B1F89A /* CameraViewController.mm */,
+				7722F7C6222FD5D4000220BB /* EditViewController.h */,
+				7722F7C7222FD5D4000220BB /* EditViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B70ABA742201A11500B1F89A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7717D9DA2238DD6600C99B3A /* shareView */,
+				7722F7C5222FD5AA000220BB /* ViewController */,
+				7722F7C4222FC642000220BB /* TKPhotoPicker */,
+				B70ABA762201A11500B1F89A /* TKRootView.h */,
+				B70ABAA42201A11500B1F89A /* TKRootView.m */,
+				B70ABA772201A11500B1F89A /* TopMenu */,
+				B70ABA812201A11500B1F89A /* BottomMenu */,
+				B70ABA9D2201A11500B1F89A /* Model */,
+				B70ABAA52201A11500B1F89A /* BottomMenuFactory */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B70ABA772201A11500B1F89A /* TopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABA782201A11500B1F89A /* TKTopMenu.m */,
+				B70ABA792201A11500B1F89A /* TKTopSubViewMenu.m */,
+				B70ABA7A2201A11500B1F89A /* TKTopSubMenuItem.m */,
+				B70ABA7B2201A11500B1F89A /* TKTopMenuItem.m */,
+				B70ABA7C2201A11500B1F89A /* TKTopMenu.h */,
+				B70ABA7D2201A11500B1F89A /* TKTopSubViewMenu.h */,
+				B70ABA7E2201A11500B1F89A /* TKTopMenuItem.h */,
+				B70ABA7F2201A11500B1F89A /* TKTopSubMenuItem.h */,
+			);
+			path = TopMenu;
+			sourceTree = "<group>";
+		};
+		B70ABA812201A11500B1F89A /* BottomMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABA832201A11500B1F89A /* TKBottomMenu.h */,
+				B70ABA962201A11500B1F89A /* TKBottomMenu.m */,
+				B70ABA822201A11500B1F89A /* TKBottomMenuItem.h */,
+				B70ABA972201A11500B1F89A /* TKBottomMenuItem.m */,
+				B70ABA842201A11500B1F89A /* Sticker */,
+				B70ABA8F2201A11500B1F89A /* Filter */,
+				B70ABA982201A11500B1F89A /* Main */,
+			);
+			path = BottomMenu;
+			sourceTree = "<group>";
+		};
+		B70ABA842201A11500B1F89A /* Sticker */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABA882201A11500B1F89A /* TKStickerBottomMenu.h */,
+				B70ABA8D2201A11500B1F89A /* TKStickerBottomMenu.m */,
+				770545DE22293AFE007F931C /* ModelView */,
+				770545CA22292793007F931C /* CollectionView */,
+				770545D122292847007F931C /* CollectionViewCell */,
+			);
+			path = Sticker;
+			sourceTree = "<group>";
+		};
+		B70ABA8F2201A11500B1F89A /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				7718E0B12236408900DC1AA7 /* TKFilterCollectionViewCell.h */,
+				7718E0B22236408900DC1AA7 /* TKFilterCollectionViewCell.m */,
+				B70ABA902201A11500B1F89A /* TKFilterCollectionView.h */,
+				B70ABA932201A11500B1F89A /* TKFilterCollectionView.m */,
+				B70ABA922201A11500B1F89A /* TKFilterBottomMenu.h */,
+				B70ABA952201A11500B1F89A /* TKFilterBottomMenu.m */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		B70ABA982201A11500B1F89A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABA992201A11500B1F89A /* TKMainBottomMenuItem.m */,
+				B70ABA9A2201A11500B1F89A /* TKMainBottomMenu.m */,
+				B70ABA9B2201A11500B1F89A /* TKMainBottomMenuItem.h */,
+				B70ABA9C2201A11500B1F89A /* TKMainBottomMenu.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B70ABA9D2201A11500B1F89A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABA9E2201A11500B1F89A /* TKStickerModel.h */,
+				B70ABAA12201A11500B1F89A /* TKStickerModel.m */,
+				B70ABAA22201A11500B1F89A /* TKFilterModel.h */,
+				B70ABA9F2201A11500B1F89A /* TKFilterModel.m */,
+				B70ABAA32201A11500B1F89A /* TKFrameModel.h */,
+				B70ABAA02201A11500B1F89A /* TKFrameModel.m */,
+				7705460B222A4347007F931C /* TKModelObject.h */,
+				7705460C222A4347007F931C /* TKModelObject.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B70ABAA52201A11500B1F89A /* BottomMenuFactory */ = {
+			isa = PBXGroup;
+			children = (
+				B70ABAA62201A11500B1F89A /* TKBottomMenuFactory.m */,
+				B70ABAA72201A11500B1F89A /* TKBottomMenuFactory.h */,
+			);
+			path = BottomMenuFactory;
+			sourceTree = "<group>";
+		};
 		B70ABAD62201C66000B1F89A /* SDM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,31 +1551,9 @@
 		B746990521C1F5EF00711F0E /* frame-flower-shakura */ = {
 			isa = PBXGroup;
 			children = (
-				B746990A21C1F5EF00711F0E /* frame-flower-shakura-0.png */,
-				B746990B21C1F5EF00711F0E /* frame-flower-shakura-0.lua */,
-				B746990D21C1F5EF00711F0E /* frame-flower-shakura-1.png */,
-				B746990C21C1F5EF00711F0E /* frame-flower-shakura-1.lua */,
-				B746990921C1F5EF00711F0E /* frame-flower-shakura-2.png */,
-				B746990821C1F5EF00711F0E /* frame-flower-shakura-2.lua */,
-				B746990621C1F5EF00711F0E /* frame-flower-shakura-3.png */,
-				B746990721C1F5EF00711F0E /* frame-flower-shakura-3.lua */,
-				B746991121C1F5EF00711F0E /* frame-flower-shakura-4.png */,
-				B746991021C1F5EF00711F0E /* frame-flower-shakura-4.lua */,
-				B746990E21C1F5EF00711F0E /* frame-flower-shakura-5.png */,
-				B746990F21C1F5EF00711F0E /* frame-flower-shakura-5.lua */,
-				B746991221C1F5EF00711F0E /* frame-flower-shakura-6.png */,
-				B746991321C1F5EF00711F0E /* frame-flower-shakura-6.lua */,
-				B746991521C1F5EF00711F0E /* frame-flower-shakura-7.png */,
-				B746991421C1F5EF00711F0E /* frame-flower-shakura-7.lua */,
-				B746991D21C1F5EF00711F0E /* frame-flower-shakura-8.png */,
-				B746991A21C1F5EF00711F0E /* frame-flower-shakura-8.lua */,
-				B746991621C1F5EF00711F0E /* frame-flower-shakura-9.png */,
-				B746991921C1F5EF00711F0E /* frame-flower-shakura-9.lua */,
-				B74E611D21C2E5D0003A0E9A /* frame-flower-shakura-10.png */,
-				B746991721C1F5EF00711F0E /* frame-flower-shakura-10.lua */,
-				B746991B21C1F5EF00711F0E /* frame-flower-shakura-11.png */,
-				B746991C21C1F5EF00711F0E /* frame-flower-shakura-11.lua */,
-				B746991E21C1F5EF00711F0E /* frame-flower-shakura-thumb.png */,
+				775A5755222B176300A54D07 /* frames-xmas-5-bot.png */,
+				775A5753222B176200A54D07 /* frames-xmas-5-thumb.png */,
+				775A5754222B176300A54D07 /* frames-xmas-5-top.png */,
 			);
 			path = "frame-flower-shakura";
 			sourceTree = "<group>";
@@ -1450,6 +1720,34 @@
 		B74AA87821BB0FD500D63E19 /* Stickers */ = {
 			isa = PBXGroup;
 			children = (
+				771D7D782225105000137A90 /* sticker-xmas-hat-2-thumb.png */,
+				771D7D862225105300137A90 /* sticker-xmas-hat-2.png */,
+				771D7D8B2225105400137A90 /* sticker-xmas-hat-3-thumb.png */,
+				771D7D8F2225105500137A90 /* sticker-xmas-hat-3.png */,
+				771D7D832225105300137A90 /* sticker-xmas-hat-4-thumb.png */,
+				771D7D912225105600137A90 /* sticker-xmas-hat-4.png */,
+				771D7D7C2225105100137A90 /* sticker-xmas-hat-5-thumb.png */,
+				771D7D902225105600137A90 /* sticker-xmas-hat-5.png */,
+				771D7D822225105200137A90 /* sticker-xmas-hat-6-thumb.png */,
+				771D7D932225105600137A90 /* sticker-xmas-hat-6.png */,
+				771D7D7E2225105100137A90 /* sticker-xmas-hat-7-thumb.png */,
+				771D7D802225105200137A90 /* sticker-xmas-hat-7.png */,
+				771D7D842225105300137A90 /* sticker-xmas-hat-8-thumb.png */,
+				771D7D7D2225105100137A90 /* sticker-xmas-hat-8.png */,
+				771D7D7A2225105100137A90 /* sticker-xmas-hat-thumb.png */,
+				771D7D882225105400137A90 /* sticker-xmas-hat.png */,
+				771D7D812225105200137A90 /* sticker-xmas-pink-gift-thumb.png */,
+				771D7D872225105400137A90 /* sticker-xmas-pink-gift.png */,
+				771D7D792225105000137A90 /* sticker-xmas-red-gift-thumb.png */,
+				771D7D8D2225105500137A90 /* sticker-xmas-red-gift.png */,
+				771D7D8C2225105500137A90 /* sticker-xmas-reindeer-thumb.png */,
+				771D7D852225105300137A90 /* sticker-xmas-reindeer.png */,
+				771D7D922225105600137A90 /* sticker-xmas-santa-thumb.png */,
+				771D7D8A2225105400137A90 /* sticker-xmas-santa.png */,
+				771D7D8E2225105500137A90 /* sticker-xmas-snowman-thumb.png */,
+				771D7D7B2225105100137A90 /* sticker-xmas-snowman.png */,
+				771D7D7F2225105200137A90 /* sticker-xmas-violet-gift-thumb.png */,
+				771D7D892225105400137A90 /* sticker-xmas-violet-gift.png */,
 				B70FDCB821BB1AE500FCCF8D /* sticker-astronaut.png */,
 				B70FDCB621BB1AE200FCCF8D /* sticker-funny-king.png */,
 				B70FDCB421BB1ADC00FCCF8D /* sticker-mario.png */,
@@ -1469,6 +1767,11 @@
 		B74D673421BD548100E11EC4 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				7717D9DE2238EE7100C99B3A /* facebook.png */,
+				7717D9DF2238EE7100C99B3A /* twitter.png */,
+				7718E0992230959E00DC1AA7 /* delete.png */,
+				7718E0A12230959E00DC1AA7 /* edit.png */,
+				7718E0A02230959E00DC1AA7 /* share.png */,
 				B74D674421BD54C500E11EC4 /* 3s.png */,
 				B74D674221BD54C500E11EC4 /* 5s.png */,
 				B74D673A21BD54C300E11EC4 /* 10s.png */,
@@ -1645,12 +1948,51 @@
 		B76036F421C040FF00A85F16 /* Frames */ = {
 			isa = PBXGroup;
 			children = (
-				B7754A2322303B3100F6DA51 /* frame-flower-peony */,
+				770545E122294C17007F931C /* frame-flower-2-thumb.png */,
+				770545E922294C19007F931C /* frame-flower-2.png */,
+				770545F222294C1B007F931C /* frame-flower-3-thumb.png */,
+				770545E322294C18007F931C /* frame-flower-3.png */,
+				770545E522294C18007F931C /* frame-flower-4-thumb.png */,
+				770545EC22294C1A007F931C /* frame-flower-4.png */,
+				770545E822294C19007F931C /* frame-flower-bottom.png */,
+				770545EB22294C19007F931C /* frame-flower-thumb.png */,
+				770545E422294C18007F931C /* frame-flower-top.png */,
+				770545EA22294C19007F931C /* frame-xmas-2-thumb.png */,
+				770545ED22294C1A007F931C /* frame-xmas-2.png */,
+				770545E022294C17007F931C /* frame-xmas-3-thumb.png */,
+				770545EE22294C1A007F931C /* frame-xmas-3-toponly.png */,
+				770545F122294C1B007F931C /* frame-xmas-4-thumb.png */,
+				770545E222294C17007F931C /* frame-xmas-4-toponly.png */,
+				770545E722294C18007F931C /* frame-xmas-thumb.png */,
+				770545F322294C1B007F931C /* frame-xmas.png */,
+				7723B32D221DE82A007F54DE /* frame-flower-shakura-0.lua */,
+				7723B31C221DE825007F54DE /* frame-flower-shakura-0.png */,
+				7723B329221DE829007F54DE /* frame-flower-shakura-1.lua */,
+				7723B331221DE82C007F54DE /* frame-flower-shakura-1.png */,
+				7723B32F221DE82B007F54DE /* frame-flower-shakura-2.lua */,
+				7723B31E221DE825007F54DE /* frame-flower-shakura-2.png */,
+				7723B32B221DE82A007F54DE /* frame-flower-shakura-3.lua */,
+				7723B328221DE829007F54DE /* frame-flower-shakura-3.png */,
+				7723B31F221DE826007F54DE /* frame-flower-shakura-4.lua */,
+				7723B322221DE827007F54DE /* frame-flower-shakura-4.png */,
+				7723B31D221DE825007F54DE /* frame-flower-shakura-5.lua */,
+				7723B325221DE828007F54DE /* frame-flower-shakura-5.png */,
+				7723B333221DE82C007F54DE /* frame-flower-shakura-6.lua */,
+				7723B320221DE826007F54DE /* frame-flower-shakura-6.png */,
+				7723B323221DE827007F54DE /* frame-flower-shakura-7.lua */,
+				7723B32A221DE829007F54DE /* frame-flower-shakura-7.png */,
+				7723B321221DE826007F54DE /* frame-flower-shakura-8.lua */,
+				7723B32C221DE82A007F54DE /* frame-flower-shakura-8.png */,
+				7723B32E221DE82B007F54DE /* frame-flower-shakura-9.lua */,
+				7723B332221DE82C007F54DE /* frame-flower-shakura-9.png */,
+				7723B330221DE82B007F54DE /* frame-flower-shakura-10.lua */,
+				7723B326221DE828007F54DE /* frame-flower-shakura-10.png */,
+				7723B327221DE828007F54DE /* frame-flower-shakura-11.lua */,
+				7723B324221DE827007F54DE /* frame-flower-shakura-11.png */,
+				7723B334221DE82C007F54DE /* frame-flower-shakura-thumb.png */,
 				B78F082222156B24002E31CD /* frame-leaves */,
 				B78F082E22156B24002E31CD /* frame-lotus */,
 				B746990521C1F5EF00711F0E /* frame-flower-shakura */,
-				B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */,
-				B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */,
 			);
 			path = Frames;
 			sourceTree = "<group>";
@@ -1836,6 +2178,10 @@
 		B78F082222156B24002E31CD /* frame-leaves */ = {
 			isa = PBXGroup;
 			children = (
+				7723B35B221DED89007F54DE /* frame-leaves-0.lua */,
+				7723B35C221DED8A007F54DE /* frame-leaves-0.png */,
+				7723B35D221DED8A007F54DE /* frame-leaves-1.lua */,
+				7723B35A221DED89007F54DE /* frame-leaves-1.png */,
 				B78F082622156B24002E31CD /* frame-leaves-0.lua */,
 				B78F082422156B24002E31CD /* frame-leaves-0.png */,
 				B78F082322156B24002E31CD /* frame-leaves-1.lua */,
@@ -1848,9 +2194,15 @@
 			isa = PBXGroup;
 			children = (
 				B78F083122156B24002E31CD /* frame-lotus-0.lua */,
+				7723B352221DECF5007F54DE /* frame-lotus-0.lua */,
 				B78F082F22156B24002E31CD /* frame-lotus-0.png */,
 				B78F083022156B24002E31CD /* frame-lotus-1.lua */,
+				7723B350221DECF4007F54DE /* frame-lotus-0.png */,
+				7723B353221DECF5007F54DE /* frame-lotus-1.lua */,
 				B78F083222156B24002E31CD /* frame-lotus-1.png */,
+				7723B34F221DECF4007F54DE /* frame-lotus-1.png */,
+				7723B34E221DECF4007F54DE /* frame-lotus-2.lua */,
+				7723B351221DECF5007F54DE /* frame-lotus-2.png */,
 				B78F083422156B24002E31CD /* frame-lotus-2.lua */,
 				B78F083322156B24002E31CD /* frame-lotus-2.png */,
 			);
@@ -2000,191 +2352,199 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B773F889222B123F00F6FB7E /* frame-flower-2.png in Resources */,
-				B773F871222B123F00F6FB7E /* sticker-xmas-hat-4-thumb.png in Resources */,
-				B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */,
-				B773F887222B123F00F6FB7E /* frame-xmas-thumb.png in Resources */,
 				B7599C5C22045FA900DAAF54 /* sticker-dog-1.lua in Resources */,
 				B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */,
+				770545FE22294C1B007F931C /* frame-xmas-2-thumb.png in Resources */,
 				B74D675121BD54C500E11EC4 /* reverse.png in Resources */,
 				B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */,
+				775A5757222B176300A54D07 /* frames-xmas-5-top.png in Resources */,
 				B717B26C22059D5300420F76 /* sticker-fox-1.png in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				B751918621BA9EF600F64A21 /* lookup-vintage.png in Resources */,
 				B751917121BA9EF600F64A21 /* lookup-floyd.png in Resources */,
+				7717D9E02238EE7200C99B3A /* facebook.png in Resources */,
 				B751917521BA9EF600F64A21 /* lookup-linda.png in Resources */,
-				B773F865222B123F00F6FB7E /* sticker-xmas-hat-thumb.png in Resources */,
-				B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */,
 				B751918821BA9EF600F64A21 /* lookup-clarity.png in Resources */,
-				B773F876222B123F00F6FB7E /* sticker-xmas-santa.png in Resources */,
-				B773F881222B123F00F6FB7E /* sticker-xmas-hat-3.png in Resources */,
+				770545FB22294C1B007F931C /* frame-xmas-thumb.png in Resources */,
+				7723B349221DE82D007F54DE /* frame-flower-shakura-10.lua in Resources */,
+				771D7DA12225105600137A90 /* sticker-xmas-reindeer.png in Resources */,
 				B717B27722059D6400420F76 /* aquaman.png in Resources */,
 				B751918021BA9EF600F64A21 /* lookup-1971.png in Resources */,
-				B773F86E222B123F00F6FB7E /* sticker-xmas-violet-gift.png in Resources */,
-				B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */,
+				771D7DA52225105600137A90 /* sticker-xmas-violet-gift.png in Resources */,
+				7723B340221DE82D007F54DE /* frame-flower-shakura-11.lua in Resources */,
 				B78F083622156B25002E31CD /* frame-leaves-1.lua in Resources */,
-				B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */,
+				7705460622294C1C007F931C /* frame-flower-3-thumb.png in Resources */,
 				B751918321BA9EF600F64A21 /* lookup-mental.png in Resources */,
-				B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */,
-				B773F86B222B123F00F6FB7E /* sticker-xmas-hat-7-thumb.png in Resources */,
-				B773F89B222B123F00F6FB7E /* frame-xmas.png in Resources */,
-				B773F878222B123F00F6FB7E /* sticker-xmas-hat-5.png in Resources */,
-				B7754A4322303B3100F6DA51 /* frame-flower-peony-1.lua in Resources */,
+				7723B34D221DE82D007F54DE /* frame-flower-shakura-thumb.png in Resources */,
+				7723B343221DE82D007F54DE /* frame-flower-shakura-7.png in Resources */,
+				7723B356221DECF5007F54DE /* frame-lotus-0.png in Resources */,
+				7723B337221DE82D007F54DE /* frame-flower-shakura-2.png in Resources */,
+				771D7D9E2225105600137A90 /* sticker-xmas-hat-6-thumb.png in Resources */,
+				771D7D972225105600137A90 /* sticker-xmas-snowman.png in Resources */,
 				B751918C21BA9EF600F64A21 /* lookup-selena.png in Resources */,
 				B74D674621BD54C500E11EC4 /* capture.png in Resources */,
 				B74D674B21BD54C500E11EC4 /* more.png in Resources */,
 				B751916E21BA9EF600F64A21 /* lookup-summer.png in Resources */,
-				B773F870222B123F00F6FB7E /* sticker-xmas-reindeer.png in Resources */,
-				B773F88D222B123F00F6FB7E /* frame-flower-thumb.png in Resources */,
-				B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */,
-				B773F87E222B123F00F6FB7E /* sticker-xmas-hat-3-thumb.png in Resources */,
-				B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */,
+				771D7D982225105600137A90 /* sticker-xmas-hat-5-thumb.png in Resources */,
+				7723B35F221DED8A007F54DE /* frame-leaves-0.lua in Resources */,
+				770545F922294C1B007F931C /* frame-flower-4-thumb.png in Resources */,
 				B751918B21BA9EF600F64A21 /* lookup-gray.png in Resources */,
-				B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */,
-				B773F893222B123F00F6FB7E /* frame-flower-bottom.png in Resources */,
-				B773F88A222B123F00F6FB7E /* frame-flower-3.png in Resources */,
+				771D7DAF2225105600137A90 /* sticker-xmas-hat-6.png in Resources */,
+				771D7DA92225105600137A90 /* sticker-xmas-red-gift.png in Resources */,
 				B751918D21BA9EF600F64A21 /* lookup-feel.png in Resources */,
 				B717B26D22059D5300420F76 /* sticker-cat-1.png in Resources */,
 				B78F083D22156B25002E31CD /* frame-lotus-0.lua in Resources */,
+				7723B34B221DE82D007F54DE /* frame-flower-shakura-9.png in Resources */,
+				771D7DAD2225105600137A90 /* sticker-xmas-hat-4.png in Resources */,
 				B78F083B22156B25002E31CD /* frame-lotus-0.png in Resources */,
+				7723B33D221DE82D007F54DE /* frame-flower-shakura-11.png in Resources */,
 				B70ABB2F2201C66000B1F89A /* haar_facedetection2.xml in Resources */,
-				B773F879222B123F00F6FB7E /* sticker-xmas-hat-5-thumb.png in Resources */,
-				B7754A3E22303B3100F6DA51 /* frame-flower-peony-2.png in Resources */,
-				B7754A4E223044AD00F6DA51 /* sticker-flag-vn-1.lua in Resources */,
-				B773F896222B123F00F6FB7E /* frame-xmas-4-thumb.png in Resources */,
+				771D7DA02225105600137A90 /* sticker-xmas-hat-8-thumb.png in Resources */,
 				B78F083722156B25002E31CD /* frame-leaves-0.png in Resources */,
+				7718E0A22230959E00DC1AA7 /* delete.png in Resources */,
+				770545F422294C1B007F931C /* frame-xmas-3-thumb.png in Resources */,
+				771D7DA62225105600137A90 /* sticker-xmas-santa.png in Resources */,
 				B70ABB2D2201C66000B1F89A /* landmark-model.bin in Resources */,
-				B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */,
-				B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */,
+				7723B34A221DE82D007F54DE /* frame-flower-shakura-1.png in Resources */,
 				B78F083822156B25002E31CD /* frame-leaves-1.png in Resources */,
-				B746993621C1F5EF00711F0E /* frame-flower-shakura-8.png in Resources */,
-				B773F86C222B123F00F6FB7E /* sticker-xmas-hat.png in Resources */,
+				B717B27322059D5300420F76 /* sticker-dog2-4.png in Resources */,
 				B717B27822059D6400420F76 /* tonystark.png in Resources */,
 				B7754A4122303B3100F6DA51 /* frame-flower-peony-3.png in Resources */,
 				B7754A4F223044AD00F6DA51 /* sticker-flag-vn-0.lua in Resources */,
 				B751917721BA9EF600F64A21 /* lookup-charcoal.png in Resources */,
+				7723B33A221DE82D007F54DE /* frame-flower-shakura-8.lua in Resources */,
+				7723B355221DECF5007F54DE /* frame-lotus-1.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */,
 				B773F891222B123F00F6FB7E /* frames-xmas-5-thumb.png in Resources */,
 				B74D674521BD54C500E11EC4 /* flash.png in Resources */,
-				B773F86A222B123F00F6FB7E /* sticker-xmas-hat-8.png in Resources */,
+				771D7DA72225105600137A90 /* sticker-xmas-hat-3-thumb.png in Resources */,
 				B751917821BA9EF600F64A21 /* lookup-elizabeth.png in Resources */,
+				7723B348221DE82D007F54DE /* frame-flower-shakura-2.lua in Resources */,
 				B7599C5E22046A7E00DAAF54 /* sticker-dog-2.lua in Resources */,
 				B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */,
-				B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */,
 				B751916D21BA9EF600F64A21 /* lookup-guardian.png in Resources */,
-				B773F86F222B123F00F6FB7E /* sticker-xmas-snowman-thumb.png in Resources */,
-				B773F867222B123F00F6FB7E /* sticker-xmas-santa-thumb.png in Resources */,
-				B7754A4722303B3100F6DA51 /* frame-flower-peony-8.lua in Resources */,
-				B773F880222B123F00F6FB7E /* sticker-xmas-hat-2.png in Resources */,
+				7723B357221DECF5007F54DE /* frame-lotus-2.png in Resources */,
 				B78F083C22156B25002E31CD /* frame-lotus-1.lua in Resources */,
 				B713DF4022036E5D00006EC3 /* sticker-dog-1.png in Resources */,
-				B7754A3722303B3100F6DA51 /* frame-flower-peony-4.lua in Resources */,
-				B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */,
-				B773F873222B123F00F6FB7E /* sticker-xmas-hat-2-thumb.png in Resources */,
 				B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */,
-				B773F87C222B123F00F6FB7E /* sticker-xmas-hat-6.png in Resources */,
-				B773F868222B123F00F6FB7E /* sticker-xmas-snowman.png in Resources */,
-				B7754A3922303B3100F6DA51 /* frame-flower-peony-5.png in Resources */,
-				B773F874222B123F00F6FB7E /* sticker-xmas-violet-gift-thumb.png in Resources */,
+				7723B347221DE82D007F54DE /* frame-flower-shakura-9.lua in Resources */,
+				771D7D942225105600137A90 /* sticker-xmas-hat-2-thumb.png in Resources */,
+				771D7DA32225105600137A90 /* sticker-xmas-pink-gift.png in Resources */,
+				B717B27122059D5300420F76 /* sticker-dog2-3.png in Resources */,
+				770545F522294C1B007F931C /* frame-flower-2-thumb.png in Resources */,
+				771D7DA22225105600137A90 /* sticker-xmas-hat-2.png in Resources */,
 				B717B26A22059D5200420F76 /* sticker-fox-4.png in Resources */,
 				B751917921BA9EF600F64A21 /* lookup-brooklyn.png in Resources */,
+				771D7D9C2225105600137A90 /* sticker-xmas-hat-7.png in Resources */,
+				771D7DA82225105600137A90 /* sticker-xmas-reindeer-thumb.png in Resources */,
 				B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */,
 				B751918721BA9EF600F64A21 /* lookup-gypsy.png in Resources */,
-				B773F888222B123F00F6FB7E /* frame-flower-3-thumb.png in Resources */,
-				B7754A4222303B3100F6DA51 /* frame-flower-peony-1.png in Resources */,
-				B773F866222B123F00F6FB7E /* sticker-xmas-hat-6-thumb.png in Resources */,
+				771D7D9B2225105600137A90 /* sticker-xmas-violet-gift-thumb.png in Resources */,
 				B751918421BA9EF600F64A21 /* lookup-saha.png in Resources */,
+				7705460022294C1B007F931C /* frame-flower-4.png in Resources */,
 				B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */,
 				B74D675021BD54C500E11EC4 /* 5s.png in Resources */,
+				771D7DAA2225105600137A90 /* sticker-xmas-snowman-thumb.png in Resources */,
+				7723B345221DE82D007F54DE /* frame-flower-shakura-8.png in Resources */,
 				B717B26B22059D5300420F76 /* sticker-fox-2.png in Resources */,
 				B713DF4222036E5D00006EC3 /* sticker-dog-3.png in Resources */,
 				B74D674A21BD54C500E11EC4 /* emoji.png in Resources */,
+				770545FC22294C1B007F931C /* frame-flower-bottom.png in Resources */,
 				B7878EA12214AD490036EFA7 /* sticker-cat-1.lua in Resources */,
 				B74D674E21BD54C500E11EC4 /* time.png in Resources */,
 				B773F87A222B123F00F6FB7E /* sticker-xmas-reindeer-thumb.png in Resources */,
 				B74D674821BD54C500E11EC4 /* 10s.png in Resources */,
-				B773F87D222B123F00F6FB7E /* sticker-xmas-hat-8-thumb.png in Resources */,
-				B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */,
-				B7754A4022303B3100F6DA51 /* frame-flower-peony-3.lua in Resources */,
+				771D7DAB2225105600137A90 /* sticker-xmas-hat-3.png in Resources */,
+				7723B33E221DE82D007F54DE /* frame-flower-shakura-5.png in Resources */,
 				B751916F21BA9EF600F64A21 /* lookup-seven.png in Resources */,
 				B773F89A222B123F00F6FB7E /* frame-flower-top.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
-				B7754A3822303B3100F6DA51 /* frame-flower-peony-5.lua in Resources */,
-				B773F897222B123F00F6FB7E /* frame-xmas-3-toponly.png in Resources */,
-				B773F87B222B123F00F6FB7E /* sticker-xmas-hat-7.png in Resources */,
-				B7754A4D223044AD00F6DA51 /* sticker-flag-vn-1.png in Resources */,
-				B773F88F222B123F00F6FB7E /* frame-flower-2-thumb.png in Resources */,
+				B717B27222059D5300420F76 /* sticker-dog2-1.png in Resources */,
+				7723B361221DED8A007F54DE /* frame-leaves-1.lua in Resources */,
 				B751918521BA9EF600F64A21 /* lookup-robinson.png in Resources */,
 				B7878E9C2214A1610036EFA7 /* sticker-nonla-hat.png in Resources */,
+				7705460722294C1C007F931C /* frame-xmas.png in Resources */,
 				B713DF3F22036E5D00006EC3 /* sticker-dog-4.png in Resources */,
 				B74D674921BD54C500E11EC4 /* frame.png in Resources */,
-				B773F877222B123F00F6FB7E /* sticker-xmas-hat-4.png in Resources */,
-				B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */,
 				B78F083922156B25002E31CD /* frame-leaves-0.lua in Resources */,
+				7723B358221DECF5007F54DE /* frame-lotus-0.lua in Resources */,
 				B751917221BA9EF600F64A21 /* lookup-mono cool.png in Resources */,
-				B7754A3D22303B3100F6DA51 /* frame-flower-peony-6.png in Resources */,
-				B7754A3A22303B3100F6DA51 /* frame-flower-peony-7.png in Resources */,
-				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
-				B773F869222B123F00F6FB7E /* sticker-xmas-red-gift.png in Resources */,
-				B7754A3622303B3100F6DA51 /* frame-flower-peony-4.png in Resources */,
 				B7878E9D2214A1610036EFA7 /* sticker-nonla-hat.lua in Resources */,
 				B7754A50223044AD00F6DA51 /* sticker-flag-vn-0.png in Resources */,
 				B78F084322157CD2002E31CD /* sticker-dog-4.lua in Resources */,
+				7723B336221DE82D007F54DE /* frame-flower-shakura-5.lua in Resources */,
+				771D7DA42225105600137A90 /* sticker-xmas-hat.png in Resources */,
 				B717B26E22059D5300420F76 /* sticker-cat-3.png in Resources */,
-				B773F88C222B123F00F6FB7E /* frame-flower-4.png in Resources */,
-				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
+				7723B339221DE82D007F54DE /* frame-flower-shakura-6.png in Resources */,
+				7723B359221DECF5007F54DE /* frame-lotus-1.lua in Resources */,
+				7723B354221DECF5007F54DE /* frame-lotus-2.lua in Resources */,
+				7723B338221DE82D007F54DE /* frame-flower-shakura-4.lua in Resources */,
 				B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */,
 				B7878EA32214AD490036EFA7 /* sticker-cat-3.lua in Resources */,
-				B7754A3F22303B3100F6DA51 /* frame-flower-peony-2.lua in Resources */,
+				7723B344221DE82D007F54DE /* frame-flower-shakura-3.lua in Resources */,
+				7723B33C221DE82D007F54DE /* frame-flower-shakura-7.lua in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
+				771D7D962225105600137A90 /* sticker-xmas-hat-thumb.png in Resources */,
+				7723B33F221DE82D007F54DE /* frame-flower-shakura-10.png in Resources */,
+				7723B335221DE82D007F54DE /* frame-flower-shakura-0.png in Resources */,
+				7705460522294C1C007F931C /* frame-xmas-4-thumb.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
+				7723B346221DE82D007F54DE /* frame-flower-shakura-0.lua in Resources */,
+				771D7D992225105600137A90 /* sticker-xmas-hat-8.png in Resources */,
+				7718E0A42230959E00DC1AA7 /* edit.png in Resources */,
+				770545F622294C1B007F931C /* frame-xmas-4-toponly.png in Resources */,
 				B78F083F22156B25002E31CD /* frame-lotus-2.png in Resources */,
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
-				B7754A4522303B3100F6DA51 /* frame-flower-peony-0.png in Resources */,
-				B7754A3C22303B3100F6DA51 /* frame-flower-peony-6.lua in Resources */,
-				B74E611E21C2E5D0003A0E9A /* frame-flower-shakura-10.png in Resources */,
+				7723B35E221DED8A007F54DE /* frame-leaves-1.png in Resources */,
+				771D7D9D2225105600137A90 /* sticker-xmas-pink-gift-thumb.png in Resources */,
+				7723B33B221DE82D007F54DE /* frame-flower-shakura-4.png in Resources */,
+				770545FD22294C1B007F931C /* frame-flower-2.png in Resources */,
+				771D7DAC2225105600137A90 /* sticker-xmas-hat-5.png in Resources */,
+				7723B360221DED8A007F54DE /* frame-leaves-0.png in Resources */,
 				B78F084022156B25002E31CD /* frame-lotus-2.lua in Resources */,
-				B7754A4622303B3100F6DA51 /* frame-flower-peony-8.png in Resources */,
+				771D7D952225105600137A90 /* sticker-xmas-red-gift-thumb.png in Resources */,
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
-				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
-				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
-				B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */,
+				B751917F21BA9EF600F64A21 /* lookup-b & w.png in Resources */,
+				771D7D9A2225105600137A90 /* sticker-xmas-hat-7-thumb.png in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
 				B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */,
 				B773F875222B123F00F6FB7E /* sticker-xmas-pink-gift.png in Resources */,
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
 				B713DF4622036EB300006EC3 /* sticker-dog-3.lua in Resources */,
-				B773F890222B123F00F6FB7E /* frame-xmas-4-toponly.png in Resources */,
-				B773F872222B123F00F6FB7E /* sticker-xmas-pink-gift-thumb.png in Resources */,
-				B773F86D222B123F00F6FB7E /* stickers.json in Resources */,
+				775A5758222B176300A54D07 /* frames-xmas-5-bot.png in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
+				770545F822294C1B007F931C /* frame-flower-top.png in Resources */,
 				B717B26922059D5200420F76 /* sticker-fox-3.png in Resources */,
 				B70ABB2E2201C66000B1F89A /* haar_facedetection.xml in Resources */,
 				B717B26F22059D5300420F76 /* sticker-cat-2.png in Resources */,
-				B773F895222B123F00F6FB7E /* frames.json in Resources */,
-				B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */,
 				B713DF4122036E5D00006EC3 /* sticker-dog-2.png in Resources */,
-				B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */,
+				770545FF22294C1B007F931C /* frame-flower-thumb.png in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
+				7717D9E12238EE7200C99B3A /* twitter.png in Resources */,
 				B78F083E22156B25002E31CD /* frame-lotus-1.png in Resources */,
-				B746992421C1F5EF00711F0E /* frame-flower-shakura-0.lua in Resources */,
-				B746992621C1F5EF00711F0E /* frame-flower-shakura-1.png in Resources */,
-				B7754A3B22303B3100F6DA51 /* frame-flower-peony-7.lua in Resources */,
+				7718E0A32230959E00DC1AA7 /* share.png in Resources */,
+				7723B341221DE82D007F54DE /* frame-flower-shakura-3.png in Resources */,
+				771D7D9F2225105600137A90 /* sticker-xmas-hat-4-thumb.png in Resources */,
+				7723B34C221DE82D007F54DE /* frame-flower-shakura-6.lua in Resources */,
+				7705460222294C1B007F931C /* frame-xmas-3-toponly.png in Resources */,
+				7723B342221DE82D007F54DE /* frame-flower-shakura-1.lua in Resources */,
 				B7878EA22214AD490036EFA7 /* sticker-cat-2.lua in Resources */,
-				B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */,
+				B717B27022059D5300420F76 /* sticker-dog2-2.png in Resources */,
 				B70ABB2A2201C66000B1F89A /* manual.html in Resources */,
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
+				770545F722294C1B007F931C /* frame-flower-3.png in Resources */,
 				B74D674721BD54C500E11EC4 /* filter.png in Resources */,
 				B773F87F222B123F00F6FB7E /* sticker-xmas-red-gift-thumb.png in Resources */,
 				B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */,
-				B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */,
-				B7754A4422303B3100F6DA51 /* frame-flower-peony-0.lua in Resources */,
+				7705460122294C1B007F931C /* frame-xmas-2.png in Resources */,
+				771D7DAE2225105600137A90 /* sticker-xmas-santa-thumb.png in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
 				B773F892222B123F00F6FB7E /* frame-flower-4-thumb.png in Resources */,
 				B773F894222B123F00F6FB7E /* frame-xmas-2-thumb.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
+				775A5756222B176300A54D07 /* frames-xmas-5-thumb.png in Resources */,
 				B711F6B12206FAF80010DE40 /* sticker-fox-1.lua in Resources */,
 				B773F899222B123F00F6FB7E /* frame-xmas-3-thumb.png in Resources */,
 				B74D674F21BD54C500E11EC4 /* 15s.png in Resources */,
@@ -2198,26 +2558,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71BE51F222B98B8005EA8AE /* TKSNFacebookSDK.m in Sources */,
-				B74A1444222C1B8600C367F9 /* TKFilterModel.m in Sources */,
-				B71BE520222B98B8005EA8AE /* TKSNUserInfo.m in Sources */,
-				B74A1432222C1B8600C367F9 /* TKTopMenuItem.m in Sources */,
-				B74A1437222C1B8600C367F9 /* TKFrameCollectionView.m in Sources */,
+				B70ABAB02201A11500B1F89A /* TKStickerBottomMenu.m in Sources */,
+				B70ABAB72201A11500B1F89A /* TKMainBottomMenuItem.m in Sources */,
+				B70ABAAB2201A11500B1F89A /* TKTopSubMenuItem.m in Sources */,
+				771D7DB22226823700137A90 /* TKTypeSelectionCollectionViewCell.m in Sources */,
 				B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */,
-				B7328E1922395A6100E14ACB /* ViewController.m in Sources */,
-				B74A143E222C1B8600C367F9 /* TKFilterCollectionView.m in Sources */,
-				B751914221BA79EF00F64A21 /* TKSampleDataPool.mm in Sources */,
+				B70ABABA2201A11500B1F89A /* TKFrameModel.m in Sources */,
+				7722F7BA222FB900000220BB /* TKStickerCollectionViewCellBase.m in Sources */,
+				B70ABAAC2201A11500B1F89A /* TKTopMenuItem.m in Sources */,
+				B70ABAB32201A11500B1F89A /* TKFilterCollectionView.m in Sources */,
+				7717D9DD2238DD8000C99B3A /* shareView.m in Sources */,
+				B70ABABC2201A11500B1F89A /* TKRootView.m in Sources */,
+				B751914221BA79EF00F64A21 /* TKSampleDataPool.m in Sources */,
 				B753FD37220550B500D805BB /* LFGPUImageBeautyFilter.m in Sources */,
 				B74A1431222C1B8600C367F9 /* TKTopSubMenuItem.m in Sources */,
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
 				B70BD4402196C634000A4EBF /* TikkyEngine.mm in Sources */,
 				B75279CE21A1A73E00A59714 /* TKTextureUtilities.c in Sources */,
 				B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */,
+				7718E0B32236408900DC1AA7 /* TKFilterCollectionViewCell.m in Sources */,
+				771D7D7122243D5800137A90 /* ViewController.m in Sources */,
+				770545D72229386D007F931C /* TKFrameCollectionView.m in Sources */,
+				770545D422293265007F931C /* TKTypeStickerCollectionView.m in Sources */,
+				7705460D222A4347007F931C /* TKModelObject.m in Sources */,
 				B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */,
 				B74A143A222C1B8600C367F9 /* TKStickerCollectionView.m in Sources */,
 				B70ABB2C2201C66000B1F89A /* feature_descriptor.cpp in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
-				B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */,
+				7722F7C8222FD5D4000220BB /* EditViewController.m in Sources */,
 				B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */,
 				B74A142F222C1B8600C367F9 /* TKTopMenu.m in Sources */,
 				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
@@ -2240,14 +2608,14 @@
 				B7107D0121BEE05300FEE948 /* TKUtilities.m in Sources */,
 				B74A1446222C1B8600C367F9 /* TKFrameModel.m in Sources */,
 				B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */,
-				B74A143B222C1B8600C367F9 /* TKStickerModelView.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
 				B7E738B021C6D70500932ABD /* UIDevice+DeviceName.m in Sources */,
 				B74A1438222C1B8600C367F9 /* TKTypeStickerCollectionView.m in Sources */,
 				B74A143C222C1B8600C367F9 /* TKStickerBottomMenu.m in Sources */,
 				B7107D0B21BEE84400FEE948 /* TKVideo.m in Sources */,
-				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */,
-				B74A1440222C1B8600C367F9 /* TKBottomMenu.m in Sources */,
+				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */
+				B70ABAB52201A11500B1F89A /* TKBottomMenu.m in Sources */,
+				B70ABAAD2201A11500B1F89A /* TKStickerModelView.m in Sources */,
 				B7107D0821BEE82200FEE948 /* TKPhoto.m in Sources */,
 				B77E59792210320700EB1468 /* TKFilterCreator.m in Sources */,
 				B7328E1722395A6100E14ACB /* CameraViewController.mm in Sources */,
@@ -2264,11 +2632,11 @@
 				B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */,
 				B74A143D222C1B8600C367F9 /* TKFilterCollectionViewCell.m in Sources */,
 				B7E738B921C6D70500932ABD /* UIView+Delegate.m in Sources */,
+				770545DD22293A07007F931C /* TKFrameCollectionViewCell.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B7137D532201FE44004BF34B /* SDM.mm in Sources */,
-				B74A1447222C1B8600C367F9 /* TKStickerModel.m in Sources */,
-				B74A1448222C1B8600C367F9 /* TKRootView.m in Sources */,
+				77054616222A4662007F931C /* TKStickerCollectionViewBase.m in Sources */,
 				B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */,
 				B711F69D2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp in Sources */,
 				B717B27B2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m in Sources */,
@@ -2370,7 +2738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2423,7 +2791,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2435,8 +2803,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
 				ENABLE_BITCODE = NO;
@@ -2466,7 +2836,6 @@
 					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2478,8 +2847,10 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2489,8 +2860,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
+
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WDZJX7VYT8;
 				ENABLE_BITCODE = NO;
@@ -2520,7 +2893,6 @@
 					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2532,8 +2904,10 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

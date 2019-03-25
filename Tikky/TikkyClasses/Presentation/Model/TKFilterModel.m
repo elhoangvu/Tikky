@@ -10,16 +10,22 @@
 
 @implementation TKFilterModel
 
--(instancetype)initWithIdentifier:(NSNumber *)identifier andName:(NSString *)name andType:(NSString *)type andCategory:(NSString *)category andIsFromBundle:(BOOL)isFromBundle andThumbnailPath:(NSString *)thumbnailPath andPath:(NSString *)path {
+//-(instancetype)initWithIdentifier:(NSNumber *)identifier andName:(NSString *)name andType:(NSString *)type andCategory:(NSString *)category andIsFromBundle:(BOOL)isFromBundle andThumbnailPath:(NSString *)thumbnailPath{
+//    self = [super init];
+//    if (self) {
+//        _category = category;
+//        _isFromBundle = isFromBundle;
+//        _thumbnailPath = thumbnailPath;
+//    }
+//    return self;
+//}
+
+-(instancetype)initWithIdentifier:(NSNumber *)identifier andType:(NSString *)type andThumbnailPath:(NSString *)thumbnailPath {
     self = [super init];
     if (self) {
-        _identifier = identifier;
-        _name = name;
-        _type = type;
-        _category = category;
-        _isFromBundle = isFromBundle;
+        self.identifier = identifier;
+        self.type = type;
         _thumbnailPath = thumbnailPath;
-        _path = path;
     }
     return self;
 }
