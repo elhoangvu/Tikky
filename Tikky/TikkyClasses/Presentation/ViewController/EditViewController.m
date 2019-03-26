@@ -34,6 +34,10 @@
     _deleteButton.contentMode = UIViewContentModeScaleAspectFit;
     
     
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shareTapDetected)];
+    singleTap.numberOfTapsRequired = 1;
+    [_shareButton setUserInteractionEnabled:YES];
+    [_shareButton addGestureRecognizer:singleTap];
     
     UIStackView *stackView = [UIStackView new];
     [self.view addSubview:stackView];
@@ -69,6 +73,10 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)shareTapDetected{
+    NSLog(@"single Tap on imageview");
 }
 
 

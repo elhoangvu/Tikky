@@ -41,6 +41,7 @@
     [self initStickerModelList];
     [self initFrameModelList];
     [self initFrameStickerList];
+    [self initFilterModelList];
     [self initFacialStickerList];
 
     [GPUImageContrastFilter load];
@@ -87,6 +88,42 @@
     [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-3-thumb" andPath:@"frame-xmas-3-toponly"]];
     [_frameModelList addObject:[[TKFrameModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"X mas" andType:@"frame" andCategory:@"Xmas" andIsFromBundle:1 andThumbnailPath:@"frame-xmas-4-thumb" andPath:@"frame-xmas-4-toponly"]];
 }
+
+- (void)initFilterModelList {
+    _filterModelList = [NSMutableArray new];
+    
+    //    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"" andType:@"filter" andCategory:@"beauty" andIsFromBundle:YES andThumbnailPath:@"model-1971"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-1971"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-B & W"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-brooklyn"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-charcoal"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-clarity"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-club"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-elizabeth"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-fashion"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-feel"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-floyd"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-fresh"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-gotham"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-gray"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-guardian"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-gypsy"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-hipster"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-hudson"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-indigo"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-linda"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-mental"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-mono cool"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-normal"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-polaroid"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-robinson"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-romance"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-run"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-saha"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-selena"]];
+    
+}
+
 
 - (void)initFacialStickerList {
     _facialStickers = new std::vector<std::vector<TKSticker>>();

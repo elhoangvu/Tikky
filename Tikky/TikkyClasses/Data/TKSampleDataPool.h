@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TKStickerModel.h"
 #import "TKFrameModel.h"
+#import "TKFilterModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSMutableArray* stickerModelList;
 @property (nonatomic, readonly) NSMutableArray* frameModelList;
+@property (nonatomic, readonly) NSMutableArray* filterModelList;
 
 @property (nonatomic, readonly) NSMutableArray* stickerList;
 @property (nonatomic, readonly) NSMutableArray* filterList;
