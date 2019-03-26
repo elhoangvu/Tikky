@@ -88,7 +88,7 @@
         
         [self layoutIfNeeded];
 
-        [UIView animateWithDuration:0.5  animations:^{
+        [UIView animateWithDuration:0.4  animations:^{
             [self.firstConstraint setActive:NO];
             [self.secondConstraint setActive:YES];
             [self layoutIfNeeded];

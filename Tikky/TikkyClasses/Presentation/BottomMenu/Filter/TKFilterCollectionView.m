@@ -57,12 +57,12 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFilterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"filter_cell" forIndexPath:indexPath];
     if (cell) {
-        UIImage *image= [UIImage imageNamed:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath];
-//        UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath ofType:@"png"]];
+//        UIImage *image= [UIImage imageNamed:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath];
+        UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath ofType:@"png"]];
         cell.imageView.image = image;
 //        cell.nameLabel.text = ((TKFilterModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath;
-        cell.nameLabel.text = @"filter";
-        [cell.nameLabel adjustsFontSizeToFitWidth];
+//        cell.nameLabel.text = @"filter";
+//        [cell.nameLabel adjustsFontSizeToFitWidth];
     }
     return cell;
 }
