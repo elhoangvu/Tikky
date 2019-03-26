@@ -437,6 +437,7 @@
 - (void)initfilterResources {
 
     NSDictionary* dic = @{ @"GLITCH"     : @{ @"class" : @"GPUImageGlitchFilter"     },
+                           @"SNOWDROP"   : @{ @"class" : @"GPUImageSnowFilter"       },
                            @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
                            @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
                            @"CONTRAST"   : @{ @"class" : @"GPUImageContrastFilter"   },

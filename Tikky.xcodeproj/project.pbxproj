@@ -57,6 +57,49 @@
 		B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6AE2206FAF80010DE40 /* sticker-fox-3.lua */; };
 		B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6AF2206FAF80010DE40 /* sticker-fox-4.lua */; };
 		B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */; };
+		B7136CC3224A968B00CF2FE8 /* TKFacialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136CBB224A968B00CF2FE8 /* TKFacialModel.m */; };
+		B7136CCB224A96C900CF2FE8 /* TKFacialBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136CC5224A96C900CF2FE8 /* TKFacialBottomMenu.m */; };
+		B7136CCC224A96C900CF2FE8 /* TKFacialCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136CC6224A96C900CF2FE8 /* TKFacialCollectionViewCell.m */; };
+		B7136CCD224A96C900CF2FE8 /* TKFacialCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136CCA224A96C900CF2FE8 /* TKFacialCollectionView.m */; };
+		B7136CCF224A9A1000CF2FE8 /* sticker-cat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136CCE224A9A1000CF2FE8 /* sticker-cat-thumb.png */; };
+		B7136CD1224A9A1900CF2FE8 /* sticker-dog-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136CD0224A9A1900CF2FE8 /* sticker-dog-thumb.png */; };
+		B7136CD3224A9A2100CF2FE8 /* sticker-flag-vn-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136CD2224A9A2100CF2FE8 /* sticker-flag-vn-thumb.png */; };
+		B7136CD5224A9A2800CF2FE8 /* sticker-fox-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136CD4224A9A2800CF2FE8 /* sticker-fox-thumb.png */; };
+		B7136CD7224A9A2E00CF2FE8 /* sticker-nonla-hat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136CD6224A9A2E00CF2FE8 /* sticker-nonla-hat-thumb.png */; };
+		B7136DA7224AA05A00CF2FE8 /* model-1971.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D86224AA05A00CF2FE8 /* model-1971.png */; };
+		B7136DA8224AA05A00CF2FE8 /* model-guardian.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D87224AA05A00CF2FE8 /* model-guardian.png */; };
+		B7136DA9224AA05A00CF2FE8 /* model-western.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D88224AA05A00CF2FE8 /* model-western.png */; };
+		B7136DAA224AA05A00CF2FE8 /* model-linda.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D89224AA05A00CF2FE8 /* model-linda.png */; };
+		B7136DAB224AA05A00CF2FE8 /* model-mono cool.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8A224AA05A00CF2FE8 /* model-mono cool.png */; };
+		B7136DAC224AA05A00CF2FE8 /* model-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8B224AA05A00CF2FE8 /* model-gray.png */; };
+		B7136DAD224AA05A00CF2FE8 /* model_normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8C224AA05A00CF2FE8 /* model_normal.jpg */; };
+		B7136DAE224AA05A00CF2FE8 /* model-indigo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8D224AA05A00CF2FE8 /* model-indigo.png */; };
+		B7136DAF224AA05A00CF2FE8 /* model-elizabeth.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8E224AA05A00CF2FE8 /* model-elizabeth.png */; };
+		B7136DB0224AA05A00CF2FE8 /* model-sutro.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D8F224AA05A00CF2FE8 /* model-sutro.png */; };
+		B7136DB1224AA05A00CF2FE8 /* modal-brooklyn.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D90224AA05A00CF2FE8 /* modal-brooklyn.png */; };
+		B7136DB2224AA05A00CF2FE8 /* model-hipster.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D91224AA05A00CF2FE8 /* model-hipster.png */; };
+		B7136DB3224AA05A00CF2FE8 /* model-fresh.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D92224AA05A00CF2FE8 /* model-fresh.png */; };
+		B7136DB4224AA05A00CF2FE8 /* model-selena.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D93224AA05A00CF2FE8 /* model-selena.png */; };
+		B7136DB5224AA05A00CF2FE8 /* model-hudson.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D94224AA05A00CF2FE8 /* model-hudson.png */; };
+		B7136DB6224AA05A00CF2FE8 /* model-floyd.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D95224AA05A00CF2FE8 /* model-floyd.png */; };
+		B7136DB7224AA05A00CF2FE8 /* model-gypsy.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D96224AA05A00CF2FE8 /* model-gypsy.png */; };
+		B7136DB8224AA05A00CF2FE8 /* model-fashion.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D97224AA05A00CF2FE8 /* model-fashion.png */; };
+		B7136DB9224AA05A00CF2FE8 /* model-summer.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D98224AA05A00CF2FE8 /* model-summer.png */; };
+		B7136DBA224AA05A00CF2FE8 /* model-run.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D99224AA05A00CF2FE8 /* model-run.png */; };
+		B7136DBB224AA05A00CF2FE8 /* model-polaroid.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9A224AA05A00CF2FE8 /* model-polaroid.png */; };
+		B7136DBC224AA05A00CF2FE8 /* model-clarity.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9B224AA05A00CF2FE8 /* model-clarity.png */; };
+		B7136DBD224AA05A00CF2FE8 /* model-B & W.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9C224AA05A00CF2FE8 /* model-B & W.png */; };
+		B7136DBE224AA05A00CF2FE8 /* model-mental.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9D224AA05A00CF2FE8 /* model-mental.png */; };
+		B7136DBF224AA05A00CF2FE8 /* model-robinson.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9E224AA05A00CF2FE8 /* model-robinson.png */; };
+		B7136DC0224AA05A00CF2FE8 /* model-saha.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136D9F224AA05A00CF2FE8 /* model-saha.png */; };
+		B7136DC1224AA05A00CF2FE8 /* model-gotham.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA0224AA05A00CF2FE8 /* model-gotham.png */; };
+		B7136DC2224AA05A00CF2FE8 /* model-solar.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA1224AA05A00CF2FE8 /* model-solar.png */; };
+		B7136DC3224AA05A00CF2FE8 /* model-romance.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA2224AA05A00CF2FE8 /* model-romance.png */; };
+		B7136DC4224AA05A00CF2FE8 /* model-feel.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA3224AA05A00CF2FE8 /* model-feel.png */; };
+		B7136DC5224AA05A00CF2FE8 /* model-vintage.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA4224AA05A00CF2FE8 /* model-vintage.png */; };
+		B7136DC6224AA05A00CF2FE8 /* model-club.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA5224AA05A00CF2FE8 /* model-club.png */; };
+		B7136DC7224AA05A00CF2FE8 /* model-seven.png in Resources */ = {isa = PBXBuildFile; fileRef = B7136DA6224AA05A00CF2FE8 /* model-seven.png */; };
+		B7136DCA224AA1EA00CF2FE8 /* GPUImageSnowFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B7136DC9224AA1EA00CF2FE8 /* GPUImageSnowFilter.m */; };
 		B7137D532201FE44004BF34B /* SDM.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D522201FE44004BF34B /* SDM.mm */; };
 		B7137D5822020858004BF34B /* TKFacialLandmarkDetector.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D5722020858004BF34B /* TKFacialLandmarkDetector.mm */; };
 		B7137D5B22021087004BF34B /* OpenCVUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7137D5A22021087004BF34B /* OpenCVUtilities.mm */; };
@@ -198,8 +241,6 @@
 		B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333721B432C2006BEED5 /* LongPressGestureRecognizer.cpp */; };
 		B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */; };
 		B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */; };
-		B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */; };
-		B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */; };
 		B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */; };
 		B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditController.cpp */; };
 		B767ED9D21B5BECE00CE264A /* TKImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B767ED9C21B5BECE00CE264A /* TKImageFilter.m */; };
@@ -235,25 +276,6 @@
 		B773F87F222B123F00F6FB7E /* sticker-xmas-red-gift-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F801222B123E00F6FB7E /* sticker-xmas-red-gift-thumb.png */; };
 		B773F880222B123F00F6FB7E /* sticker-xmas-hat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F802222B123E00F6FB7E /* sticker-xmas-hat-2.png */; };
 		B773F881222B123F00F6FB7E /* sticker-xmas-hat-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */; };
-		B773F887222B123F00F6FB7E /* frame-xmas-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */; };
-		B773F888222B123F00F6FB7E /* frame-flower-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */; };
-		B773F889222B123F00F6FB7E /* frame-flower-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80D222B123E00F6FB7E /* frame-flower-2.png */; };
-		B773F88A222B123F00F6FB7E /* frame-flower-3.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F80E222B123E00F6FB7E /* frame-flower-3.png */; };
-		B773F88C222B123F00F6FB7E /* frame-flower-4.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F810222B123E00F6FB7E /* frame-flower-4.png */; };
-		B773F88D222B123F00F6FB7E /* frame-flower-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F811222B123E00F6FB7E /* frame-flower-thumb.png */; };
-		B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F812222B123E00F6FB7E /* frame-xmas-2.png */; };
-		B773F88F222B123F00F6FB7E /* frame-flower-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */; };
-		B773F890222B123F00F6FB7E /* frame-xmas-4-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */; };
-		B773F891222B123F00F6FB7E /* frames-xmas-5-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */; };
-		B773F892222B123F00F6FB7E /* frame-flower-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */; };
-		B773F893222B123F00F6FB7E /* frame-flower-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F817222B123E00F6FB7E /* frame-flower-bottom.png */; };
-		B773F894222B123F00F6FB7E /* frame-xmas-2-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */; };
-		B773F895222B123F00F6FB7E /* frames.json in Resources */ = {isa = PBXBuildFile; fileRef = B773F819222B123E00F6FB7E /* frames.json */; };
-		B773F896222B123F00F6FB7E /* frame-xmas-4-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */; };
-		B773F897222B123F00F6FB7E /* frame-xmas-3-toponly.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */; };
-		B773F899222B123F00F6FB7E /* frame-xmas-3-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */; };
-		B773F89A222B123F00F6FB7E /* frame-flower-top.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81E222B123E00F6FB7E /* frame-flower-top.png */; };
-		B773F89B222B123F00F6FB7E /* frame-xmas.png in Resources */ = {isa = PBXBuildFile; fileRef = B773F81F222B123E00F6FB7E /* frame-xmas.png */; };
 		B773F8D0222B144F00F6FB7E /* TKSocialNetworkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B773F8CD222B144F00F6FB7E /* TKSocialNetworkSDK.m */; };
 		B773F8D2222B15EA00F6FB7E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */; };
 		B773F8D4222B15EF00F6FB7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D3222B15EF00F6FB7E /* AddressBook.framework */; };
@@ -509,6 +531,54 @@
 		B711F6AE2206FAF80010DE40 /* sticker-fox-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-3.lua"; sourceTree = "<group>"; };
 		B711F6AF2206FAF80010DE40 /* sticker-fox-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-4.lua"; sourceTree = "<group>"; };
 		B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-2.lua"; sourceTree = "<group>"; };
+		B7136CBB224A968B00CF2FE8 /* TKFacialModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFacialModel.m; sourceTree = "<group>"; };
+		B7136CC2224A968B00CF2FE8 /* TKFacialModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFacialModel.h; sourceTree = "<group>"; };
+		B7136CC5224A96C900CF2FE8 /* TKFacialBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFacialBottomMenu.m; sourceTree = "<group>"; };
+		B7136CC6224A96C900CF2FE8 /* TKFacialCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFacialCollectionViewCell.m; sourceTree = "<group>"; };
+		B7136CC7224A96C900CF2FE8 /* TKFacialCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFacialCollectionView.h; sourceTree = "<group>"; };
+		B7136CC8224A96C900CF2FE8 /* TKFacialBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFacialBottomMenu.h; sourceTree = "<group>"; };
+		B7136CC9224A96C900CF2FE8 /* TKFacialCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFacialCollectionViewCell.h; sourceTree = "<group>"; };
+		B7136CCA224A96C900CF2FE8 /* TKFacialCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFacialCollectionView.m; sourceTree = "<group>"; };
+		B7136CCE224A9A1000CF2FE8 /* sticker-cat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-thumb.png"; sourceTree = "<group>"; };
+		B7136CD0224A9A1900CF2FE8 /* sticker-dog-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-thumb.png"; sourceTree = "<group>"; };
+		B7136CD2224A9A2100CF2FE8 /* sticker-flag-vn-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-flag-vn-thumb.png"; sourceTree = "<group>"; };
+		B7136CD4224A9A2800CF2FE8 /* sticker-fox-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-thumb.png"; sourceTree = "<group>"; };
+		B7136CD6224A9A2E00CF2FE8 /* sticker-nonla-hat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-nonla-hat-thumb.png"; sourceTree = "<group>"; };
+		B7136D86224AA05A00CF2FE8 /* model-1971.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-1971.png"; sourceTree = "<group>"; };
+		B7136D87224AA05A00CF2FE8 /* model-guardian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-guardian.png"; sourceTree = "<group>"; };
+		B7136D88224AA05A00CF2FE8 /* model-western.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-western.png"; sourceTree = "<group>"; };
+		B7136D89224AA05A00CF2FE8 /* model-linda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-linda.png"; sourceTree = "<group>"; };
+		B7136D8A224AA05A00CF2FE8 /* model-mono cool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-mono cool.png"; sourceTree = "<group>"; };
+		B7136D8B224AA05A00CF2FE8 /* model-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-gray.png"; sourceTree = "<group>"; };
+		B7136D8C224AA05A00CF2FE8 /* model_normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = model_normal.jpg; sourceTree = "<group>"; };
+		B7136D8D224AA05A00CF2FE8 /* model-indigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-indigo.png"; sourceTree = "<group>"; };
+		B7136D8E224AA05A00CF2FE8 /* model-elizabeth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-elizabeth.png"; sourceTree = "<group>"; };
+		B7136D8F224AA05A00CF2FE8 /* model-sutro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-sutro.png"; sourceTree = "<group>"; };
+		B7136D90224AA05A00CF2FE8 /* modal-brooklyn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modal-brooklyn.png"; sourceTree = "<group>"; };
+		B7136D91224AA05A00CF2FE8 /* model-hipster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-hipster.png"; sourceTree = "<group>"; };
+		B7136D92224AA05A00CF2FE8 /* model-fresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-fresh.png"; sourceTree = "<group>"; };
+		B7136D93224AA05A00CF2FE8 /* model-selena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-selena.png"; sourceTree = "<group>"; };
+		B7136D94224AA05A00CF2FE8 /* model-hudson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-hudson.png"; sourceTree = "<group>"; };
+		B7136D95224AA05A00CF2FE8 /* model-floyd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-floyd.png"; sourceTree = "<group>"; };
+		B7136D96224AA05A00CF2FE8 /* model-gypsy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-gypsy.png"; sourceTree = "<group>"; };
+		B7136D97224AA05A00CF2FE8 /* model-fashion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-fashion.png"; sourceTree = "<group>"; };
+		B7136D98224AA05A00CF2FE8 /* model-summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-summer.png"; sourceTree = "<group>"; };
+		B7136D99224AA05A00CF2FE8 /* model-run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-run.png"; sourceTree = "<group>"; };
+		B7136D9A224AA05A00CF2FE8 /* model-polaroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-polaroid.png"; sourceTree = "<group>"; };
+		B7136D9B224AA05A00CF2FE8 /* model-clarity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-clarity.png"; sourceTree = "<group>"; };
+		B7136D9C224AA05A00CF2FE8 /* model-B & W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-B & W.png"; sourceTree = "<group>"; };
+		B7136D9D224AA05A00CF2FE8 /* model-mental.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-mental.png"; sourceTree = "<group>"; };
+		B7136D9E224AA05A00CF2FE8 /* model-robinson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-robinson.png"; sourceTree = "<group>"; };
+		B7136D9F224AA05A00CF2FE8 /* model-saha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-saha.png"; sourceTree = "<group>"; };
+		B7136DA0224AA05A00CF2FE8 /* model-gotham.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-gotham.png"; sourceTree = "<group>"; };
+		B7136DA1224AA05A00CF2FE8 /* model-solar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-solar.png"; sourceTree = "<group>"; };
+		B7136DA2224AA05A00CF2FE8 /* model-romance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-romance.png"; sourceTree = "<group>"; };
+		B7136DA3224AA05A00CF2FE8 /* model-feel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-feel.png"; sourceTree = "<group>"; };
+		B7136DA4224AA05A00CF2FE8 /* model-vintage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-vintage.png"; sourceTree = "<group>"; };
+		B7136DA5224AA05A00CF2FE8 /* model-club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-club.png"; sourceTree = "<group>"; };
+		B7136DA6224AA05A00CF2FE8 /* model-seven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "model-seven.png"; sourceTree = "<group>"; };
+		B7136DC8224AA1EA00CF2FE8 /* GPUImageSnowFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageSnowFilter.h; sourceTree = "<group>"; };
+		B7136DC9224AA1EA00CF2FE8 /* GPUImageSnowFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageSnowFilter.m; sourceTree = "<group>"; };
 		B7137D512201FE44004BF34B /* SDM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDM.h; sourceTree = "<group>"; };
 		B7137D522201FE44004BF34B /* SDM.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SDM.mm; sourceTree = "<group>"; };
 		B7137D5422020006004BF34B /* opencv+parallel_for_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "opencv+parallel_for_.h"; sourceTree = "<group>"; };
@@ -707,8 +777,6 @@
 		B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizer.cpp; sourceTree = "<group>"; };
 		B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureRecognizer.h; sourceTree = "<group>"; };
-		B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
-		B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
 		B767ED8421B545C400CE264A /* TKStickerPreviewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKStickerPreviewer.h; sourceTree = "<group>"; };
 		B767ED8521B545C400CE264A /* TKStickerPreviewer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerPreviewer.mm; sourceTree = "<group>"; };
 		B767ED9B21B5BECE00CE264A /* TKImageFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
@@ -745,27 +813,6 @@
 		B773F801222B123E00F6FB7E /* sticker-xmas-red-gift-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-red-gift-thumb.png"; sourceTree = "<group>"; };
 		B773F802222B123E00F6FB7E /* sticker-xmas-hat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-2.png"; sourceTree = "<group>"; };
 		B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-xmas-hat-3.png"; sourceTree = "<group>"; };
-		B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-thumb.png"; sourceTree = "<group>"; };
-		B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3-thumb.png"; sourceTree = "<group>"; };
-		B773F80D222B123E00F6FB7E /* frame-flower-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2.png"; sourceTree = "<group>"; };
-		B773F80E222B123E00F6FB7E /* frame-flower-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-3.png"; sourceTree = "<group>"; };
-		B773F80F222B123E00F6FB7E /* frames-xmas-5-bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-bot.png"; sourceTree = "<group>"; };
-		B773F810222B123E00F6FB7E /* frame-flower-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4.png"; sourceTree = "<group>"; };
-		B773F811222B123E00F6FB7E /* frame-flower-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-thumb.png"; sourceTree = "<group>"; };
-		B773F812222B123E00F6FB7E /* frame-xmas-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2.png"; sourceTree = "<group>"; };
-		B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-2-thumb.png"; sourceTree = "<group>"; };
-		B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-toponly.png"; sourceTree = "<group>"; };
-		B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-thumb.png"; sourceTree = "<group>"; };
-		B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-4-thumb.png"; sourceTree = "<group>"; };
-		B773F817222B123E00F6FB7E /* frame-flower-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-bottom.png"; sourceTree = "<group>"; };
-		B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-2-thumb.png"; sourceTree = "<group>"; };
-		B773F819222B123E00F6FB7E /* frames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = frames.json; sourceTree = "<group>"; };
-		B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-4-thumb.png"; sourceTree = "<group>"; };
-		B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-toponly.png"; sourceTree = "<group>"; };
-		B773F81C222B123E00F6FB7E /* frames-xmas-5-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frames-xmas-5-top.png"; sourceTree = "<group>"; };
-		B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas-3-thumb.png"; sourceTree = "<group>"; };
-		B773F81E222B123E00F6FB7E /* frame-flower-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-top.png"; sourceTree = "<group>"; };
-		B773F81F222B123E00F6FB7E /* frame-xmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-xmas.png"; sourceTree = "<group>"; };
 		B773F8C6222B144F00F6FB7E /* TKSNFacebookSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSNFacebookSDK.m; sourceTree = "<group>"; };
 		B773F8C7222B144F00F6FB7E /* TKSNFacebookSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSNFacebookSDK.h; sourceTree = "<group>"; };
 		B773F8C9222B144F00F6FB7E /* TKSNUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSNUserInfo.h; sourceTree = "<group>"; };
@@ -1133,6 +1180,7 @@
 		B70BD4962196CC6F000A4EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B7136D85224AA05A00CF2FE8 /* Models */,
 				B773F7CA222B0FD400F6FB7E /* Demo */,
 				B717B27422059D6400420F76 /* PhotoDemo */,
 				B713DF3922036E4700006EC3 /* FacialStickers */,
@@ -1157,6 +1205,59 @@
 				B7107D0A21BEE84400FEE948 /* TKVideo.m */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		B7136CC4224A96C900CF2FE8 /* Facial */ = {
+			isa = PBXGroup;
+			children = (
+				B7136CC5224A96C900CF2FE8 /* TKFacialBottomMenu.m */,
+				B7136CC6224A96C900CF2FE8 /* TKFacialCollectionViewCell.m */,
+				B7136CC7224A96C900CF2FE8 /* TKFacialCollectionView.h */,
+				B7136CC8224A96C900CF2FE8 /* TKFacialBottomMenu.h */,
+				B7136CC9224A96C900CF2FE8 /* TKFacialCollectionViewCell.h */,
+				B7136CCA224A96C900CF2FE8 /* TKFacialCollectionView.m */,
+			);
+			path = Facial;
+			sourceTree = "<group>";
+		};
+		B7136D85224AA05A00CF2FE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7136D86224AA05A00CF2FE8 /* model-1971.png */,
+				B7136D87224AA05A00CF2FE8 /* model-guardian.png */,
+				B7136D88224AA05A00CF2FE8 /* model-western.png */,
+				B7136D89224AA05A00CF2FE8 /* model-linda.png */,
+				B7136D8A224AA05A00CF2FE8 /* model-mono cool.png */,
+				B7136D8B224AA05A00CF2FE8 /* model-gray.png */,
+				B7136D8C224AA05A00CF2FE8 /* model_normal.jpg */,
+				B7136D8D224AA05A00CF2FE8 /* model-indigo.png */,
+				B7136D8E224AA05A00CF2FE8 /* model-elizabeth.png */,
+				B7136D8F224AA05A00CF2FE8 /* model-sutro.png */,
+				B7136D90224AA05A00CF2FE8 /* modal-brooklyn.png */,
+				B7136D91224AA05A00CF2FE8 /* model-hipster.png */,
+				B7136D92224AA05A00CF2FE8 /* model-fresh.png */,
+				B7136D93224AA05A00CF2FE8 /* model-selena.png */,
+				B7136D94224AA05A00CF2FE8 /* model-hudson.png */,
+				B7136D95224AA05A00CF2FE8 /* model-floyd.png */,
+				B7136D96224AA05A00CF2FE8 /* model-gypsy.png */,
+				B7136D97224AA05A00CF2FE8 /* model-fashion.png */,
+				B7136D98224AA05A00CF2FE8 /* model-summer.png */,
+				B7136D99224AA05A00CF2FE8 /* model-run.png */,
+				B7136D9A224AA05A00CF2FE8 /* model-polaroid.png */,
+				B7136D9B224AA05A00CF2FE8 /* model-clarity.png */,
+				B7136D9C224AA05A00CF2FE8 /* model-B & W.png */,
+				B7136D9D224AA05A00CF2FE8 /* model-mental.png */,
+				B7136D9E224AA05A00CF2FE8 /* model-robinson.png */,
+				B7136D9F224AA05A00CF2FE8 /* model-saha.png */,
+				B7136DA0224AA05A00CF2FE8 /* model-gotham.png */,
+				B7136DA1224AA05A00CF2FE8 /* model-solar.png */,
+				B7136DA2224AA05A00CF2FE8 /* model-romance.png */,
+				B7136DA3224AA05A00CF2FE8 /* model-feel.png */,
+				B7136DA4224AA05A00CF2FE8 /* model-vintage.png */,
+				B7136DA5224AA05A00CF2FE8 /* model-club.png */,
+				B7136DA6224AA05A00CF2FE8 /* model-seven.png */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B7137D55220207F8004BF34B /* SDMWrapper */ = {
@@ -1185,6 +1286,7 @@
 		B713DF3A22036E5D00006EC3 /* sticker-dog */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CD0224A9A1900CF2FE8 /* sticker-dog-thumb.png */,
 				B7599C5A22045FA900DAAF54 /* sticker-dog-1.lua */,
 				B713DF3C22036E5D00006EC3 /* sticker-dog-1.png */,
 				B7599C5D22046A7E00DAAF54 /* sticker-dog-2.lua */,
@@ -1200,6 +1302,7 @@
 		B717B25B22059D5200420F76 /* sticker-fox */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CD4224A9A2800CF2FE8 /* sticker-fox-thumb.png */,
 				B711F6A72206FAF80010DE40 /* sticker-fox-1.lua */,
 				B717B25F22059D5200420F76 /* sticker-fox-1.png */,
 				B711F6B02206FAF80010DE40 /* sticker-fox-2.lua */,
@@ -1215,6 +1318,7 @@
 		B717B26022059D5200420F76 /* sticker-cat */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CCE224A9A1000CF2FE8 /* sticker-cat-thumb.png */,
 				B7878E9E2214AD480036EFA7 /* sticker-cat-1.lua */,
 				B717B26122059D5200420F76 /* sticker-cat-1.png */,
 				B7878E9F2214AD480036EFA7 /* sticker-cat-2.lua */,
@@ -1339,6 +1443,7 @@
 			children = (
 				B74A13F7222C1B8600C367F9 /* TKBottomMenuItem.h */,
 				B74A13F8222C1B8600C367F9 /* TKBottomMenu.h */,
+				B7136CC4224A96C900CF2FE8 /* Facial */,
 				B74A13F9222C1B8600C367F9 /* Sticker */,
 				B74A1411222C1B8600C367F9 /* Filter */,
 				B74A1418222C1B8600C367F9 /* TKBottomMenu.m */,
@@ -1426,6 +1531,8 @@
 		B74A141F222C1B8600C367F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CC2224A968B00CF2FE8 /* TKFacialModel.h */,
+				B7136CBB224A968B00CF2FE8 /* TKFacialModel.m */,
 				B74A1420222C1B8600C367F9 /* TKStickerModel.h */,
 				B74A1421222C1B8600C367F9 /* TKFilterModel.m */,
 				B74A1422222C1B8600C367F9 /* TKModelObject.m */,
@@ -1569,6 +1676,8 @@
 		B751913F21BA71F100F64A21 /* GPUImageFilters */ = {
 			isa = PBXGroup;
 			children = (
+				B7136DC8224AA1EA00CF2FE8 /* GPUImageSnowFilter.h */,
+				B7136DC9224AA1EA00CF2FE8 /* GPUImageSnowFilter.m */,
 				B71A8D8C2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.h */,
 				B71A8D852230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m */,
 				B71A8D8D2230A06D00E1FC58 /* GPUImageGlitchFilter.h */,
@@ -1649,8 +1758,6 @@
 				B78F082222156B24002E31CD /* frame-leaves */,
 				B78F082E22156B24002E31CD /* frame-lotus */,
 				B746990521C1F5EF00711F0E /* frame-flower-shakura */,
-				B76036F921C0410C00A85F16 /* frames-xmas-5-bot.png */,
-				B76036FA21C0410C00A85F16 /* frames-xmas-5-top.png */,
 			);
 			path = Frames;
 			sourceTree = "<group>";
@@ -1667,7 +1774,6 @@
 			isa = PBXGroup;
 			children = (
 				B773F7E6222B123E00F6FB7E /* stickers */,
-				B773F80A222B123E00F6FB7E /* frames */,
 			);
 			path = decoration;
 			sourceTree = "<group>";
@@ -1706,34 +1812,6 @@
 				B773F803222B123E00F6FB7E /* sticker-xmas-hat-3.png */,
 			);
 			path = stickers;
-			sourceTree = "<group>";
-		};
-		B773F80A222B123E00F6FB7E /* frames */ = {
-			isa = PBXGroup;
-			children = (
-				B773F80B222B123E00F6FB7E /* frame-xmas-thumb.png */,
-				B773F80C222B123E00F6FB7E /* frame-flower-3-thumb.png */,
-				B773F80D222B123E00F6FB7E /* frame-flower-2.png */,
-				B773F80E222B123E00F6FB7E /* frame-flower-3.png */,
-				B773F80F222B123E00F6FB7E /* frames-xmas-5-bot.png */,
-				B773F810222B123E00F6FB7E /* frame-flower-4.png */,
-				B773F811222B123E00F6FB7E /* frame-flower-thumb.png */,
-				B773F812222B123E00F6FB7E /* frame-xmas-2.png */,
-				B773F813222B123E00F6FB7E /* frame-flower-2-thumb.png */,
-				B773F814222B123E00F6FB7E /* frame-xmas-4-toponly.png */,
-				B773F815222B123E00F6FB7E /* frames-xmas-5-thumb.png */,
-				B773F816222B123E00F6FB7E /* frame-flower-4-thumb.png */,
-				B773F817222B123E00F6FB7E /* frame-flower-bottom.png */,
-				B773F818222B123E00F6FB7E /* frame-xmas-2-thumb.png */,
-				B773F819222B123E00F6FB7E /* frames.json */,
-				B773F81A222B123E00F6FB7E /* frame-xmas-4-thumb.png */,
-				B773F81B222B123E00F6FB7E /* frame-xmas-3-toponly.png */,
-				B773F81C222B123E00F6FB7E /* frames-xmas-5-top.png */,
-				B773F81D222B123E00F6FB7E /* frame-xmas-3-thumb.png */,
-				B773F81E222B123E00F6FB7E /* frame-flower-top.png */,
-				B773F81F222B123E00F6FB7E /* frame-xmas.png */,
-			);
-			path = frames;
 			sourceTree = "<group>";
 		};
 		B773F8C4222B144F00F6FB7E /* SocialNetworkSDK */ = {
@@ -1816,6 +1894,7 @@
 		B7754A48223044AD00F6DA51 /* sticker-flag-vn */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CD2224A9A2100CF2FE8 /* sticker-flag-vn-thumb.png */,
 				B7754A49223044AD00F6DA51 /* sticker-flag-vn-1.png */,
 				B7754A4A223044AD00F6DA51 /* sticker-flag-vn-1.lua */,
 				B7754A4B223044AD00F6DA51 /* sticker-flag-vn-0.lua */,
@@ -1827,6 +1906,7 @@
 		B7878E932214A1610036EFA7 /* sticker-nonla-hat */ = {
 			isa = PBXGroup;
 			children = (
+				B7136CD6224A9A2E00CF2FE8 /* sticker-nonla-hat-thumb.png */,
 				B7878E952214A1610036EFA7 /* sticker-nonla-hat.lua */,
 				B7878E942214A1610036EFA7 /* sticker-nonla-hat.png */,
 			);
@@ -2000,49 +2080,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B773F889222B123F00F6FB7E /* frame-flower-2.png in Resources */,
 				B773F871222B123F00F6FB7E /* sticker-xmas-hat-4-thumb.png in Resources */,
 				B746993321C1F5EF00711F0E /* frame-flower-shakura-8.lua in Resources */,
-				B773F887222B123F00F6FB7E /* frame-xmas-thumb.png in Resources */,
+				B7136CD5224A9A2800CF2FE8 /* sticker-fox-thumb.png in Resources */,
 				B7599C5C22045FA900DAAF54 /* sticker-dog-1.lua in Resources */,
 				B751917D21BA9EF600F64A21 /* lookup-solar.png in Resources */,
+				B7136DC6224AA05A00CF2FE8 /* model-club.png in Resources */,
 				B74D675121BD54C500E11EC4 /* reverse.png in Resources */,
 				B70FDCB921BB1AE500FCCF8D /* sticker-astronaut.png in Resources */,
 				B717B26C22059D5300420F76 /* sticker-fox-1.png in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				B751918621BA9EF600F64A21 /* lookup-vintage.png in Resources */,
 				B751917121BA9EF600F64A21 /* lookup-floyd.png in Resources */,
+				B7136CD3224A9A2100CF2FE8 /* sticker-flag-vn-thumb.png in Resources */,
 				B751917521BA9EF600F64A21 /* lookup-linda.png in Resources */,
 				B773F865222B123F00F6FB7E /* sticker-xmas-hat-thumb.png in Resources */,
+				B7136DC3224AA05A00CF2FE8 /* model-romance.png in Resources */,
 				B746992721C1F5EF00711F0E /* frame-flower-shakura-5.png in Resources */,
 				B751918821BA9EF600F64A21 /* lookup-clarity.png in Resources */,
 				B773F876222B123F00F6FB7E /* sticker-xmas-santa.png in Resources */,
 				B773F881222B123F00F6FB7E /* sticker-xmas-hat-3.png in Resources */,
 				B717B27722059D6400420F76 /* aquaman.png in Resources */,
+				B7136DBA224AA05A00CF2FE8 /* model-run.png in Resources */,
 				B751918021BA9EF600F64A21 /* lookup-1971.png in Resources */,
 				B773F86E222B123F00F6FB7E /* sticker-xmas-violet-gift.png in Resources */,
 				B746992F21C1F5EF00711F0E /* frame-flower-shakura-9.png in Resources */,
 				B78F083622156B25002E31CD /* frame-leaves-1.lua in Resources */,
 				B746993421C1F5EF00711F0E /* frame-flower-shakura-11.png in Resources */,
 				B751918321BA9EF600F64A21 /* lookup-mental.png in Resources */,
+				B7136DC5224AA05A00CF2FE8 /* model-vintage.png in Resources */,
 				B746993021C1F5EF00711F0E /* frame-flower-shakura-10.lua in Resources */,
 				B773F86B222B123F00F6FB7E /* sticker-xmas-hat-7-thumb.png in Resources */,
-				B773F89B222B123F00F6FB7E /* frame-xmas.png in Resources */,
 				B773F878222B123F00F6FB7E /* sticker-xmas-hat-5.png in Resources */,
 				B7754A4322303B3100F6DA51 /* frame-flower-peony-1.lua in Resources */,
 				B751918C21BA9EF600F64A21 /* lookup-selena.png in Resources */,
 				B74D674621BD54C500E11EC4 /* capture.png in Resources */,
 				B74D674B21BD54C500E11EC4 /* more.png in Resources */,
 				B751916E21BA9EF600F64A21 /* lookup-summer.png in Resources */,
+				B7136DB3224AA05A00CF2FE8 /* model-fresh.png in Resources */,
 				B773F870222B123F00F6FB7E /* sticker-xmas-reindeer.png in Resources */,
-				B773F88D222B123F00F6FB7E /* frame-flower-thumb.png in Resources */,
 				B746993721C1F5EF00711F0E /* frame-flower-shakura-thumb.png in Resources */,
 				B773F87E222B123F00F6FB7E /* sticker-xmas-hat-3-thumb.png in Resources */,
 				B746992821C1F5EF00711F0E /* frame-flower-shakura-5.lua in Resources */,
 				B751918B21BA9EF600F64A21 /* lookup-gray.png in Resources */,
 				B746991F21C1F5EF00711F0E /* frame-flower-shakura-3.png in Resources */,
-				B773F893222B123F00F6FB7E /* frame-flower-bottom.png in Resources */,
-				B773F88A222B123F00F6FB7E /* frame-flower-3.png in Resources */,
 				B751918D21BA9EF600F64A21 /* lookup-feel.png in Resources */,
 				B717B26D22059D5300420F76 /* sticker-cat-1.png in Resources */,
 				B78F083D22156B25002E31CD /* frame-lotus-0.lua in Resources */,
@@ -2050,9 +2131,10 @@
 				B70ABB2F2201C66000B1F89A /* haar_facedetection2.xml in Resources */,
 				B773F879222B123F00F6FB7E /* sticker-xmas-hat-5-thumb.png in Resources */,
 				B7754A3E22303B3100F6DA51 /* frame-flower-peony-2.png in Resources */,
+				B7136DC0224AA05A00CF2FE8 /* model-saha.png in Resources */,
 				B7754A4E223044AD00F6DA51 /* sticker-flag-vn-1.lua in Resources */,
-				B773F896222B123F00F6FB7E /* frame-xmas-4-thumb.png in Resources */,
 				B78F083722156B25002E31CD /* frame-leaves-0.png in Resources */,
+				B7136DBF224AA05A00CF2FE8 /* model-robinson.png in Resources */,
 				B70ABB2D2201C66000B1F89A /* landmark-model.bin in Resources */,
 				B746992D21C1F5EF00711F0E /* frame-flower-shakura-7.lua in Resources */,
 				B746992E21C1F5EF00711F0E /* frame-flower-shakura-7.png in Resources */,
@@ -2061,24 +2143,33 @@
 				B773F86C222B123F00F6FB7E /* sticker-xmas-hat.png in Resources */,
 				B717B27822059D6400420F76 /* tonystark.png in Resources */,
 				B7754A4122303B3100F6DA51 /* frame-flower-peony-3.png in Resources */,
+				B7136DC4224AA05A00CF2FE8 /* model-feel.png in Resources */,
 				B7754A4F223044AD00F6DA51 /* sticker-flag-vn-0.lua in Resources */,
 				B751917721BA9EF600F64A21 /* lookup-charcoal.png in Resources */,
 				B74AAB19219FE79C006DF9B0 /* lookup-amatorka.png in Resources */,
-				B773F891222B123F00F6FB7E /* frames-xmas-5-thumb.png in Resources */,
+				B7136CD1224A9A1900CF2FE8 /* sticker-dog-thumb.png in Resources */,
 				B74D674521BD54C500E11EC4 /* flash.png in Resources */,
 				B773F86A222B123F00F6FB7E /* sticker-xmas-hat-8.png in Resources */,
+				B7136DAD224AA05A00CF2FE8 /* model_normal.jpg in Resources */,
 				B751917821BA9EF600F64A21 /* lookup-elizabeth.png in Resources */,
 				B7599C5E22046A7E00DAAF54 /* sticker-dog-2.lua in Resources */,
+				B7136DA8224AA05A00CF2FE8 /* model-guardian.png in Resources */,
 				B711F6B22206FAF80010DE40 /* sticker-fox-3.lua in Resources */,
 				B746992A21C1F5EF00711F0E /* frame-flower-shakura-4.png in Resources */,
 				B751916D21BA9EF600F64A21 /* lookup-guardian.png in Resources */,
+				B7136CD7224A9A2E00CF2FE8 /* sticker-nonla-hat-thumb.png in Resources */,
 				B773F86F222B123F00F6FB7E /* sticker-xmas-snowman-thumb.png in Resources */,
+				B7136DB0224AA05A00CF2FE8 /* model-sutro.png in Resources */,
 				B773F867222B123F00F6FB7E /* sticker-xmas-santa-thumb.png in Resources */,
 				B7754A4722303B3100F6DA51 /* frame-flower-peony-8.lua in Resources */,
 				B773F880222B123F00F6FB7E /* sticker-xmas-hat-2.png in Resources */,
 				B78F083C22156B25002E31CD /* frame-lotus-1.lua in Resources */,
 				B713DF4022036E5D00006EC3 /* sticker-dog-1.png in Resources */,
+				B7136DB9224AA05A00CF2FE8 /* model-summer.png in Resources */,
+				B7136DB6224AA05A00CF2FE8 /* model-floyd.png in Resources */,
+				B7136DA7224AA05A00CF2FE8 /* model-1971.png in Resources */,
 				B7754A3722303B3100F6DA51 /* frame-flower-peony-4.lua in Resources */,
+				B7136DC7224AA05A00CF2FE8 /* model-seven.png in Resources */,
 				B746992B21C1F5EF00711F0E /* frame-flower-shakura-6.png in Resources */,
 				B773F873222B123F00F6FB7E /* sticker-xmas-hat-2-thumb.png in Resources */,
 				B711F6B42206FAF80010DE40 /* sticker-fox-2.lua in Resources */,
@@ -2090,12 +2181,12 @@
 				B751917921BA9EF600F64A21 /* lookup-brooklyn.png in Resources */,
 				B751917C21BA9EF600F64A21 /* lookup-gotham.png in Resources */,
 				B751918721BA9EF600F64A21 /* lookup-gypsy.png in Resources */,
-				B773F888222B123F00F6FB7E /* frame-flower-3-thumb.png in Resources */,
 				B7754A4222303B3100F6DA51 /* frame-flower-peony-1.png in Resources */,
 				B773F866222B123F00F6FB7E /* sticker-xmas-hat-6-thumb.png in Resources */,
 				B751918421BA9EF600F64A21 /* lookup-saha.png in Resources */,
 				B71850BE21B462BB00F66171 /* recyclingbin.png in Resources */,
 				B74D675021BD54C500E11EC4 /* 5s.png in Resources */,
+				B7136DB1224AA05A00CF2FE8 /* modal-brooklyn.png in Resources */,
 				B717B26B22059D5300420F76 /* sticker-fox-2.png in Resources */,
 				B713DF4222036E5D00006EC3 /* sticker-dog-3.png in Resources */,
 				B74D674A21BD54C500E11EC4 /* emoji.png in Resources */,
@@ -2107,13 +2198,12 @@
 				B746993221C1F5EF00711F0E /* frame-flower-shakura-9.lua in Resources */,
 				B7754A4022303B3100F6DA51 /* frame-flower-peony-3.lua in Resources */,
 				B751916F21BA9EF600F64A21 /* lookup-seven.png in Resources */,
-				B773F89A222B123F00F6FB7E /* frame-flower-top.png in Resources */,
+				B7136DC2224AA05A00CF2FE8 /* model-solar.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
+				B7136DAB224AA05A00CF2FE8 /* model-mono cool.png in Resources */,
 				B7754A3822303B3100F6DA51 /* frame-flower-peony-5.lua in Resources */,
-				B773F897222B123F00F6FB7E /* frame-xmas-3-toponly.png in Resources */,
 				B773F87B222B123F00F6FB7E /* sticker-xmas-hat-7.png in Resources */,
 				B7754A4D223044AD00F6DA51 /* sticker-flag-vn-1.png in Resources */,
-				B773F88F222B123F00F6FB7E /* frame-flower-2-thumb.png in Resources */,
 				B751918521BA9EF600F64A21 /* lookup-robinson.png in Resources */,
 				B7878E9C2214A1610036EFA7 /* sticker-nonla-hat.png in Resources */,
 				B713DF3F22036E5D00006EC3 /* sticker-dog-4.png in Resources */,
@@ -2121,72 +2211,79 @@
 				B773F877222B123F00F6FB7E /* sticker-xmas-hat-4.png in Resources */,
 				B746992321C1F5EF00711F0E /* frame-flower-shakura-0.png in Resources */,
 				B78F083922156B25002E31CD /* frame-leaves-0.lua in Resources */,
+				B7136DC1224AA05A00CF2FE8 /* model-gotham.png in Resources */,
 				B751917221BA9EF600F64A21 /* lookup-mono cool.png in Resources */,
+				B7136DBD224AA05A00CF2FE8 /* model-B & W.png in Resources */,
 				B7754A3D22303B3100F6DA51 /* frame-flower-peony-6.png in Resources */,
 				B7754A3A22303B3100F6DA51 /* frame-flower-peony-7.png in Resources */,
 				B746992521C1F5EF00711F0E /* frame-flower-shakura-1.lua in Resources */,
 				B773F869222B123F00F6FB7E /* sticker-xmas-red-gift.png in Resources */,
+				B7136DAA224AA05A00CF2FE8 /* model-linda.png in Resources */,
 				B7754A3622303B3100F6DA51 /* frame-flower-peony-4.png in Resources */,
 				B7878E9D2214A1610036EFA7 /* sticker-nonla-hat.lua in Resources */,
 				B7754A50223044AD00F6DA51 /* sticker-flag-vn-0.png in Resources */,
 				B78F084322157CD2002E31CD /* sticker-dog-4.lua in Resources */,
 				B717B26E22059D5300420F76 /* sticker-cat-3.png in Resources */,
-				B773F88C222B123F00F6FB7E /* frame-flower-4.png in Resources */,
 				B746992921C1F5EF00711F0E /* frame-flower-shakura-4.lua in Resources */,
 				B711F6B32206FAF80010DE40 /* sticker-fox-4.lua in Resources */,
 				B7878EA32214AD490036EFA7 /* sticker-cat-3.lua in Resources */,
 				B7754A3F22303B3100F6DA51 /* frame-flower-peony-2.lua in Resources */,
 				B74D674C21BD54C500E11EC4 /* photo.png in Resources */,
+				B7136DBB224AA05A00CF2FE8 /* model-polaroid.png in Resources */,
+				B7136DB7224AA05A00CF2FE8 /* model-gypsy.png in Resources */,
 				B751918A21BA9EF600F64A21 /* lookup-fashion.png in Resources */,
 				B74D674D21BD54C500E11EC4 /* raito.png in Resources */,
+				B7136DAC224AA05A00CF2FE8 /* model-gray.png in Resources */,
 				B78F083F22156B25002E31CD /* frame-lotus-2.png in Resources */,
 				B751917B21BA9EF600F64A21 /* lookup-polaroid.png in Resources */,
 				B7754A4522303B3100F6DA51 /* frame-flower-peony-0.png in Resources */,
 				B7754A3C22303B3100F6DA51 /* frame-flower-peony-6.lua in Resources */,
 				B74E611E21C2E5D0003A0E9A /* frame-flower-shakura-10.png in Resources */,
+				B7136DBE224AA05A00CF2FE8 /* model-mental.png in Resources */,
 				B78F084022156B25002E31CD /* frame-lotus-2.lua in Resources */,
 				B7754A4622303B3100F6DA51 /* frame-flower-peony-8.png in Resources */,
 				B74D675221BD54C500E11EC4 /* 3s.png in Resources */,
 				B746992C21C1F5EF00711F0E /* frame-flower-shakura-6.lua in Resources */,
+				B7136DB8224AA05A00CF2FE8 /* model-fashion.png in Resources */,
 				B746992221C1F5EF00711F0E /* frame-flower-shakura-2.png in Resources */,
 				B746993521C1F5EF00711F0E /* frame-flower-shakura-11.lua in Resources */,
 				B751918921BA9EF600F64A21 /* lookup-western.png in Resources */,
-				B773F88E222B123F00F6FB7E /* frame-xmas-2.png in Resources */,
+				B7136CCF224A9A1000CF2FE8 /* sticker-cat-thumb.png in Resources */,
 				B773F875222B123F00F6FB7E /* sticker-xmas-pink-gift.png in Resources */,
 				B70FDCB321BB172C00FCCF8D /* sticker-panda.png in Resources */,
+				B7136DB5224AA05A00CF2FE8 /* model-hudson.png in Resources */,
 				B713DF4622036EB300006EC3 /* sticker-dog-3.lua in Resources */,
-				B773F890222B123F00F6FB7E /* frame-xmas-4-toponly.png in Resources */,
 				B773F872222B123F00F6FB7E /* sticker-xmas-pink-gift-thumb.png in Resources */,
 				B773F86D222B123F00F6FB7E /* stickers.json in Resources */,
+				B7136DBC224AA05A00CF2FE8 /* model-clarity.png in Resources */,
+				B7136DA9224AA05A00CF2FE8 /* model-western.png in Resources */,
 				B70FDCB521BB1ADC00FCCF8D /* sticker-mario.png in Resources */,
 				B717B26922059D5200420F76 /* sticker-fox-3.png in Resources */,
 				B70ABB2E2201C66000B1F89A /* haar_facedetection.xml in Resources */,
 				B717B26F22059D5300420F76 /* sticker-cat-2.png in Resources */,
-				B773F895222B123F00F6FB7E /* frames.json in Resources */,
 				B746992121C1F5EF00711F0E /* frame-flower-shakura-2.lua in Resources */,
 				B713DF4122036E5D00006EC3 /* sticker-dog-2.png in Resources */,
 				B746992021C1F5EF00711F0E /* frame-flower-shakura-3.lua in Resources */,
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
+				B7136DAE224AA05A00CF2FE8 /* model-indigo.png in Resources */,
 				B78F083E22156B25002E31CD /* frame-lotus-1.png in Resources */,
 				B746992421C1F5EF00711F0E /* frame-flower-shakura-0.lua in Resources */,
 				B746992621C1F5EF00711F0E /* frame-flower-shakura-1.png in Resources */,
+				B7136DB2224AA05A00CF2FE8 /* model-hipster.png in Resources */,
 				B7754A3B22303B3100F6DA51 /* frame-flower-peony-7.lua in Resources */,
 				B7878EA22214AD490036EFA7 /* sticker-cat-2.lua in Resources */,
-				B76036FB21C0410C00A85F16 /* frames-xmas-5-bot.png in Resources */,
+				B7136DB4224AA05A00CF2FE8 /* model-selena.png in Resources */,
 				B70ABB2A2201C66000B1F89A /* manual.html in Resources */,
 				B751917421BA9EF600F64A21 /* lookup-indigo.png in Resources */,
 				B751918221BA9EF600F64A21 /* lookup-run.png in Resources */,
 				B74D674721BD54C500E11EC4 /* filter.png in Resources */,
 				B773F87F222B123F00F6FB7E /* sticker-xmas-red-gift-thumb.png in Resources */,
 				B70FDCB721BB1AE200FCCF8D /* sticker-funny-king.png in Resources */,
-				B76036FC21C0410C00A85F16 /* frames-xmas-5-top.png in Resources */,
 				B7754A4422303B3100F6DA51 /* frame-flower-peony-0.lua in Resources */,
 				B751917321BA9EF600F64A21 /* lookup-fresh.png in Resources */,
-				B773F892222B123F00F6FB7E /* frame-flower-4-thumb.png in Resources */,
-				B773F894222B123F00F6FB7E /* frame-xmas-2-thumb.png in Resources */,
 				B751917A21BA9EF600F64A21 /* lookup-hipster.png in Resources */,
+				B7136DAF224AA05A00CF2FE8 /* model-elizabeth.png in Resources */,
 				B711F6B12206FAF80010DE40 /* sticker-fox-1.lua in Resources */,
-				B773F899222B123F00F6FB7E /* frame-xmas-3-thumb.png in Resources */,
 				B74D674F21BD54C500E11EC4 /* 15s.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2220,6 +2317,7 @@
 				B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */,
 				B751914521BA80D200F64A21 /* TKFilterProperty.m in Sources */,
 				B74A142F222C1B8600C367F9 /* TKTopMenu.m in Sources */,
+				B7136CCC224A96C900CF2FE8 /* TKFacialCollectionViewCell.m in Sources */,
 				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
 				B74A1435222C1B8600C367F9 /* TKFrameCollectionViewCell.m in Sources */,
 				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,
@@ -2233,7 +2331,9 @@
 				B7137D5B22021087004BF34B /* OpenCVUtilities.mm in Sources */,
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
 				B7137D5822020858004BF34B /* TKFacialLandmarkDetector.mm in Sources */,
+				B7136DCA224AA1EA00CF2FE8 /* GPUImageSnowFilter.m in Sources */,
 				B773F8D0222B144F00F6FB7E /* TKSocialNetworkSDK.m in Sources */,
+				B7136CC3224A968B00CF2FE8 /* TKFacialModel.m in Sources */,
 				B70ABB302201C66000B1F89A /* ldmarkmodel.cpp in Sources */,
 				B74A1430222C1B8600C367F9 /* TKTopSubViewMenu.m in Sources */,
 				B70ABB2B2201C66000B1F89A /* helper.cpp in Sources */,
@@ -2241,6 +2341,7 @@
 				B74A1446222C1B8600C367F9 /* TKFrameModel.m in Sources */,
 				B7558A5C21B8604A0045BBD7 /* TKImageInput.m in Sources */,
 				B74A143B222C1B8600C367F9 /* TKStickerModelView.m in Sources */,
+				B7136CCD224A96C900CF2FE8 /* TKFacialCollectionView.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
 				B7E738B021C6D70500932ABD /* UIDevice+DeviceName.m in Sources */,
 				B74A1438222C1B8600C367F9 /* TKTypeStickerCollectionView.m in Sources */,
@@ -2269,6 +2370,7 @@
 				B7137D532201FE44004BF34B /* SDM.mm in Sources */,
 				B74A1447222C1B8600C367F9 /* TKStickerModel.m in Sources */,
 				B74A1448222C1B8600C367F9 /* TKRootView.m in Sources */,
+				B7136CCB224A96C900CF2FE8 /* TKFacialBottomMenu.m in Sources */,
 				B767ED8621B545C400CE264A /* TKStickerPreviewer.mm in Sources */,
 				B711F69D2206ACC00010DE40 /* TKFacialLandmarkUtilities.cpp in Sources */,
 				B717B27B2205BC1C00420F76 /* UIImage+CVPixelBufferRefConverter.m in Sources */,
@@ -2478,7 +2580,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.Camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2532,7 +2634,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.BeautyCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.Camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";

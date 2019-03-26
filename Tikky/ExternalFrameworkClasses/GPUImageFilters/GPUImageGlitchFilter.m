@@ -178,7 +178,7 @@ NSString *const kGPUImageGlitchFragmentShaderString = SHADER_STRING
     GLint _resolutionUniform;
 }
 
-@property (nonatomic) CGFloat timeDelta;
+@property (nonatomic) CGFloat time;
 @property (nonatomic) GPUVector2 resolution;
 @property (nonatomic) CADisplayLink* displayLink;
 @property (nonatomic) NSInteger lastTextureIndex;
@@ -200,25 +200,25 @@ NSString *const kGPUImageGlitchFragmentShaderString = SHADER_STRING
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(doCaller:)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
-    self.stillImage = NO;
-    self.timeDelta = 0;
+    self.stillImage = YES;
+    self.time = 0;
     self.fps = 12.0;
     
     return self;
 }
 
 - (void)doCaller:(id)sender {
-    self.timeDelta += 1.0/_fps;
-    if (_stillImage) {
+    self.time += 1.0/_fps;
+    if (!_stillImage) {
         [super newFrameReadyAtTime:kCMTimeZero atIndex:_lastTextureIndex];
     }
 }
 
-- (void)setTimeDelta:(CGFloat)timeDelta;
+- (void)setTime:(CGFloat)time;
 {
-    _timeDelta = timeDelta;
+    _time = time;
     
-    [self setFloat:_timeDelta forUniform:_glitchUniform program:filterProgram];
+    [self setFloat:_time forUniform:_glitchUniform program:filterProgram];
 }
 
 - (void)setResolution:(GPUVector2)resolution
@@ -230,7 +230,12 @@ NSString *const kGPUImageGlitchFragmentShaderString = SHADER_STRING
 
 - (void)setFps:(NSInteger)fps {
     _fps = fps;
-    _displayLink.preferredFramesPerSecond = _fps;
+    
+    if (@available(iOS 10.0, *)) {
+        _displayLink.preferredFramesPerSecond = self.fps;
+    } else {
+        _displayLink.frameInterval = 1.0/self.fps;
+    }
 }
 
 - (void)setInputSize:(CGSize)newSize atIndex:(NSInteger)textureIndex {

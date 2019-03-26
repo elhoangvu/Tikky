@@ -17,6 +17,7 @@
 #import "GPUImageLUTFilter.h"
 #import "LFGPUImageBeautyFilter.h"
 #import "GPUImageGlitchFilter.h"
+#import "GPUImageSnowFilter.h"
 
 @implementation TKFilterCreator
 
