@@ -52,7 +52,7 @@
     _isTouchStickerBegan = NO;
     _stickers = TKSampleDataPool.sharedInstance.stickerList;
     _filters = TKSampleDataPool.sharedInstance.filterList;
-#if ENDABLE_CAMERA
+
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
 //    [self.view addSubview:_tikkyEngine.view];
@@ -64,7 +64,7 @@
     _imageInput = _tikkyEngine.imageFilter.input;
     
 //    [(TKCamera *)_imageInput swapCamera];
-#endif
+    
     _facialStickers = (std::vector<std::vector<TKSticker>>*)TKSampleDataPool.sharedInstance.facialStickers;
     _frameStickers = (std::vector<std::vector<TKSticker>>*)TKSampleDataPool.sharedInstance.frameStickers;
     
@@ -75,9 +75,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-#if ENDABLE_CAMERA
     [((TKCamera *)_imageInput) startCameraCapture];
-#endif
     
     // <!-- Test FB SDK
 #if ENDABLE_FB_SHARE_TEST
@@ -105,10 +103,8 @@
         isSetupAudio = YES;
     }
     
-#if ENDABLE_CAMERA
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
-#endif
     
     // <!-- Test capture
 #if ENDABLE_STICKER_TEST
@@ -134,11 +130,9 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-#if ENDABLE_CAMERA
     if ([_imageInput isKindOfClass:TKCamera.class]) {
         [((TKCamera *)_imageInput) stopCameraCapture];
     }
-#endif
 }
 
 

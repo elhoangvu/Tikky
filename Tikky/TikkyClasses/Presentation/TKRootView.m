@@ -14,6 +14,11 @@
 
 @property (nonatomic) TKBottomMenuType typeBottom;
 
+@property (nonatomic) NSLayoutConstraint *firstConstraint;
+
+@property (nonatomic) NSLayoutConstraint *secondConstraint;
+
+
 @end
 
 @implementation TKRootView
@@ -52,37 +57,53 @@
 -(void)setBottomMenuViewWithBottomMenuType:(TKBottomMenuType)bottomMenuType {
     if (bottomMenuType != _typeBottom) {
         _typeBottom = bottomMenuType;
-        if (self.bottomMenuView) {
-            [self.bottomMenuView removeFromSuperview];
-        }
         
         TKBottomMenu *newBottomMenu = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
-
-        
         newBottomMenu.translatesAutoresizingMaskIntoConstraints = NO;
         
-        [self addSubview:newBottomMenu];
         
-        NSLayoutConstraint *top = [newBottomMenu.topAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
-        [top setActive:YES];
-        NSLayoutConstraint *top1 = [newBottomMenu.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
+        if (bottomMenuType == MainMenu) {
+            [self addSubview:newBottomMenu];
+            if (self.bottomMenuView) {
+                [self bringSubviewToFront:self.bottomMenuView];
+            }
+        } else {
+            [self addSubview:newBottomMenu];
+        }
         [[newBottomMenu.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
         [[newBottomMenu.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[newBottomMenu.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
-        [self layoutIfNeeded];
         
-        [UIView animateWithDuration:0.5  animations:^{
-            [top setActive:NO];
-            [top1 setActive:YES];
-            [self layoutIfNeeded];
-        }];
-        
-        _bottomMenuView = newBottomMenu;
-    }
-    
-    
-    
+        if (_typeBottom == MainMenu) {
+            [[newBottomMenu.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:true];
 
+            NSLayoutConstraint *temp = _firstConstraint;
+            _firstConstraint = _secondConstraint;
+            _secondConstraint = temp;
+        } else {
+            _firstConstraint = [newBottomMenu.topAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
+            [_firstConstraint setActive:YES];
+            _secondConstraint = [newBottomMenu.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0];
+        }
+        
+        [self layoutIfNeeded];
+
+        [UIView animateWithDuration:0.4  animations:^{
+            [self.firstConstraint setActive:NO];
+            [self.secondConstraint setActive:YES];
+            [self layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            if (finished) {
+                //remove old menu
+                if (self.bottomMenuView) {
+                    [self.bottomMenuView removeFromSuperview];
+                }
+                self.bottomMenuView = newBottomMenu;
+                [self layoutIfNeeded];
+            }
+        }];
+        //transition new menu
+    }
 }
 /*
 // Only override drawRect: if you perform custom drawing.

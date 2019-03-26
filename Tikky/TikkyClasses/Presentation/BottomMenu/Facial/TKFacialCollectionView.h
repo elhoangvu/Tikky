@@ -1,5 +1,5 @@
 //
-//  TKFilterCollectionView.h
+//  TKFacialCollectionView.h
 //  Tikky
 //
 //  Created by LeHuuNghi on 1/29/19.
@@ -7,8 +7,8 @@
 //
 #import "TKSampleDataPool.h"
 
-@interface TKFilterCollectionView : UICollectionView
+@interface TKFacialCollectionView : UICollectionView
 
-@property (nonatomic) NSMutableArray<TKFilterModel *> *dataArray;
+@property (nonatomic) NSMutableArray<TKFacialModel *> *dataArray;
 
 @end

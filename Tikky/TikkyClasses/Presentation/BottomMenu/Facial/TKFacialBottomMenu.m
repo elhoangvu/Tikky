@@ -1,17 +1,17 @@
 //
-//  TKFilterBottomMenu.m
+//  TKFacialBottomMenu.m
 //  TKPresentation
 //
 //  Created by LeHuuNghi on 1/20/19.
 //  Copyright © 2019 LeHuuNghi. All rights reserved.
 //
 
-#import "TKFilterBottomMenu.h"
+#import "TKFacialBottomMenu.h"
 
-@interface TKFilterBottomMenu()
+@interface TKFacialBottomMenu()
 @end
 
-@implementation TKFilterBottomMenu
+@implementation TKFacialBottomMenu
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -28,7 +28,7 @@
         [self setBackgroundColor:[UIColor whiteColor]];
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-        _filterCollectionView=[[TKFilterCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
+        _filterCollectionView=[[TKFacialCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
         [self addSubview:self.filterCollectionView];
         
         _filterCollectionView.translatesAutoresizingMaskIntoConstraints = NO;

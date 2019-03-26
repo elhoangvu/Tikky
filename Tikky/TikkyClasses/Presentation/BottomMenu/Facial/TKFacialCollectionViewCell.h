@@ -1,5 +1,5 @@
 //
-//  TKFilterCollectionViewCell.h
+//  TKFacialCollectionViewCell.h
 //  Tikky
 //
 //  Created by LeHuuNghi on 3/11/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKFilterCollectionViewCell : TKStickerCollectionViewCellBase
+@interface TKFacialCollectionViewCell : TKStickerCollectionViewCellBase
 
 @property (nonatomic) UIImageView *imageView;
  

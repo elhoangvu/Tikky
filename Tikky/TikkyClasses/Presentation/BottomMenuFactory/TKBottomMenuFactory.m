@@ -18,6 +18,8 @@
         return [TKStickerBottomMenu new];
     } else if (type == MainMenu) {
         return [TKMainBottomMenu new];
+    } else if (type == FacialMenu) {
+        return [TKFacialBottomMenu new];
     }
     return nil;
 }

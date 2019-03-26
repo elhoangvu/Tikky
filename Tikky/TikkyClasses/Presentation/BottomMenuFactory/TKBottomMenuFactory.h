@@ -10,6 +10,7 @@
 #import "TKFilterBottomMenu.h"
 #import "TKMainBottomMenu.h"
 #import "TKStickerBottomMenu.h"
+#import "TKFacialBottomMenu.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +20,7 @@ typedef enum : NSUInteger {
     FilterMenu,
     StickerMenu,
     FrameMenu,
+    FacialMenu
 } TKBottomMenuType;
 
 @interface TKBottomMenuFactory : NSObject
