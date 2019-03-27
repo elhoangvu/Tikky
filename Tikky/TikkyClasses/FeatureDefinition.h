@@ -13,6 +13,8 @@
 
 #define ENDABLE_STICKER_TEST  0
 
-#define ENDABLE_CAMERA        0
+#define ENDABLE_CAMERA        1
+
+#define ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING 1
 
 #endif /* FeatureDefinition_h */

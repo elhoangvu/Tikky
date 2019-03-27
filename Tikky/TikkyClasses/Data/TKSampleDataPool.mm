@@ -473,7 +473,23 @@
                            @"CHARCOAL"   : @{ @"class" : @"GPUImageLUTFilter" },
                            @"CLARITY"    : @{ @"class" : @"GPUImageLUTFilter" },
                            @"AMATORKA"   : @{ @"class" : @"GPUImageLUTFilter" },
-                           @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" }
+                           @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
+                           @"XPROLL"     : @{ @"class" : @"IFXproIIFilter"      },
+                           @"AMARO"      : @{ @"class" : @"IFAmaroFilter"       },
+                           @"LOMOFI"     : @{ @"class" : @"IFLomofiFilter"      },
+                           @"LORDKELVIN" : @{ @"class" : @"IFLordKelvinFilter"  },
+                           @"HEFE"       : @{ @"class" : @"IFHefeFilter"        },
+                           @"SUTRO"      : @{ @"class" : @"IFSutroFilter"       },
+                           @"1977"       : @{ @"class" : @"IF1977Filter"        },
+                           @"BRANNAN"    : @{ @"class" : @"IFBrannanFilter"     },
+                           @"EARLYBIRD"  : @{ @"class" : @"IFEarlybirdFilter"   },
+                           @"RISE"       : @{ @"class" : @"IFRiseFilter.h"      },
+                           @"SIERRA"     : @{ @"class" : @"IFSierraFilter"      },
+                           @"WALDEN"     : @{ @"class" : @"IFWaldenFilter"      },
+                           @"VALENCIA"   : @{ @"class" : @"IFValenciaFilter"    },
+                           @"HUDSON"     : @{ @"class" : @"IFHudsonFilter"      },
+                           @"INKWELL"    : @{ @"class" : @"IFInkwellFilter"     },
+                           @"TOASTER"    : @{ @"class" : @"IFToasterFilter"     }
                            };
     
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];

@@ -33,7 +33,7 @@
 }
 
 - (BOOL)bindingFilterObj:(NSObject *)filterObject withPropertyList:(NSArray<TKFilterProperty *>*)propertyList {
-    if (![filterObject isKindOfClass:GPUImageFilter.class]) {
+    if (!([filterObject isKindOfClass:GPUImageFilter.class] || [filterObject isKindOfClass:GPUImageFilterGroup.class])) {
         return NO;
     }
     

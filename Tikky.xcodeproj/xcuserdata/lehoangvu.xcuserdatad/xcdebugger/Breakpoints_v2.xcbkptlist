@@ -3655,22 +3655,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tikky/TikkyClasses/Core/TKFilter.m"
-            timestampString = "570781818.832414"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-bindingFilterObj:withPropertyList:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/CameraViewController.mm"
             timestampString = "573316364.132656"
             startingColumnNumber = "9223372036854775807"
@@ -4662,7 +4646,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/TKCameraViewController.mm"
-            timestampString = "574184360.478832"
+            timestampString = "575402838.139299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
