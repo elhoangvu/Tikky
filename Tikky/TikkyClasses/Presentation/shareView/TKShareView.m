@@ -21,13 +21,13 @@
         stackView.axis = UILayoutConstraintAxisHorizontal;
         stackView.translatesAutoresizingMaskIntoConstraints = NO;
         stackView.distribution = UIStackViewDistributionEqualSpacing;
+        stackView.spacing = 30;
         stackView.alignment = UIStackViewAlignmentCenter;
         [self addSubview:stackView];
         
         [[stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
         [[stackView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor] setActive:YES];
         [[stackView.heightAnchor constraintEqualToAnchor:self.heightAnchor] setActive:YES];
-        [[stackView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
 
         [stackView addArrangedSubview:_facebook];
         [stackView addArrangedSubview:_twitter];

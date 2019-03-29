@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface shareView : UIView
+@interface TKShareView : UIView
 
 @property (nonatomic) UIImageView *facebook;
 

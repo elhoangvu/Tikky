@@ -54,21 +54,17 @@
         
         PHFetchResult *userAlbums = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:userAlbumsOptions];
         
-//        PHFetchResult *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:userAlbumsOptions];
-        
         PHAsset *asset = [userAlbums objectAtIndex:0];
         PHImageRequestOptions *option = [PHImageRequestOptions new];
         option.resizeMode   = PHImageRequestOptionsResizeModeExact;
         option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-        option.networkAccessAllowed = YES;
         option.synchronous = NO;
 
         
-        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:self.view.frame.size contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:self.view.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                EditViewController *editViewController = [EditViewController new];
-                editViewController.imageView = [[UIImageView alloc] initWithImage:result];
+                EditViewController *editViewController = [[EditViewController alloc] initWithImage:result];
                 [self presentViewController:editViewController animated:YES completion:nil];
             });
         }];
