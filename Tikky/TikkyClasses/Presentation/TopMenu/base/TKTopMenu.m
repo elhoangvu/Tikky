@@ -56,18 +56,16 @@
             [[item.heightAnchor constraintEqualToAnchor:stackView.heightAnchor] setActive:YES];
             [[item.centerYAnchor constraintEqualToAnchor:stackView.centerYAnchor] setActive:true];
             
-            [((id)item) addTarget:self action:@selector(aloha:) forControlEvents:UIControlEventTouchUpInside];
-            
             RCEasyTipPreferences *preferences = [[RCEasyTipPreferences alloc] initWithDefaultPreferences];
             preferences.drawing.backgroundColor = [UIColor purpleColor];
             preferences.drawing.arrowPostion = Top;
-            preferences.animating.showDuration = 1.5;
-            preferences.animating.dismissDuration = 1.5;
-            preferences.animating.dismissTransform = CGAffineTransformMakeTranslation(0, -15);
-            preferences.animating.showInitialTransform = CGAffineTransformMakeTranslation(0, -15);
+            preferences.animating.showDuration = 0.4;
+            preferences.animating.dismissDuration = 0.4;
+            preferences.animating.dismissTransform = CGAffineTransformMakeTranslation(0, -100);
+            preferences.animating.showInitialTransform = CGAffineTransformMakeTranslation(0, -100);
             
             _tipView = [[RCEasyTipView alloc] initWithPreferences:preferences];
-            _tipView.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+            _tipView.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
         }
         
     }
@@ -81,8 +79,22 @@
         if([self.delegate respondsToSelector:@selector(didReverseCamera)]) {
             [self.delegate didReverseCamera];
         }
-    } else if ([nameItem isEqualToString:@"more"]) {
-        [self.tipView showAnimated:YES forView:self.items[0] withinSuperView:self];
+    } else {
+        if ([nameItem isEqualToString:@"more"]) {
+            if ([self.tipView isHidden]) {
+                [self.tipView showAnimated:YES forView:self.items[0] withinSuperView:nil];
+                [self.tipView setHidden:NO];
+            } else {
+                [self.tipView dismissWithCompletion:nil];
+                [self.tipView setHidden:YES];
+            }
+        } else if ([nameItem isEqualToString:@"more"]) {
+            
+        } else if ([nameItem isEqualToString:@"raito"]) {
+            
+        } else if ([nameItem isEqualToString:@"flash"]) {
+            
+        }
     }
     
     
