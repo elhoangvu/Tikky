@@ -16,6 +16,7 @@
 @property (nonatomic) NSLayoutConstraint *bottomConstraint;
 
 @property (nonatomic) TKShareView *shareView;
+
 @end
 
 @implementation EditViewController
@@ -97,11 +98,6 @@
         [_bottomConstraint setActive:YES];
     }
     return self;
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesMoved:touches withEvent:event];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

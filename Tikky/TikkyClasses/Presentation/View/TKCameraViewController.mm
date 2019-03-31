@@ -185,7 +185,7 @@
 //    } else if ([nameItem isEqualToString:@"capture"]) {
 //        [self capturePhoto];
 //    }
-    return;
+//    return;
     
     
 //    [_tikkyEngine.stickerPreviewer removeAllFacialStickers];

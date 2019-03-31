@@ -39,7 +39,7 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         
-        self.dataArray = [[TKSampleDataPool sharedInstance] facialModelList];
+        self.dataArray = [[TKSampleDataPool sharedInstance] facialModelViewList];
         self.dataSource = self;
         [self registerClass:[TKFacialCollectionViewCell class] forCellWithReuseIdentifier:@"facial_cell"];
     }
@@ -58,8 +58,8 @@
     TKFacialCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"facial_cell" forIndexPath:indexPath];
     if (cell) {
 //        UIImage *image= [UIImage imageNamed:((TKFacialModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath];
-        UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:((TKFacialModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath ofType:@"png"]];
-        cell.imageView.image = image;
+        cell.imageView = ((TKFacialModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView;
+
 //        cell.nameLabel.text = ((TKFacialModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath;
 //        cell.nameLabel.text = @"filter";
 //        [cell.nameLabel adjustsFontSizeToFitWidth];

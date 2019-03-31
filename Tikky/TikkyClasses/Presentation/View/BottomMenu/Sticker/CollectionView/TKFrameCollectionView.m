@@ -14,7 +14,7 @@
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
-        self.dataArray = [[TKSampleDataPool sharedInstance] frameModelList];
+        self.dataArray = [[TKSampleDataPool sharedInstance] frameModelViewList];
         self.dataSource = self;
         [self registerClass:[TKFrameCollectionViewCell class] forCellWithReuseIdentifier:@"frame_cell"];
     }
@@ -37,8 +37,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"frame_cell" forIndexPath:indexPath];
     if (cell) {
-        UIImage *image = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:((TKStickerModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath ofType:@"png"]];
-        cell.imageView = [[UIImageView alloc] initWithImage:image];
+        cell.imageView = ((TKStickerModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView;
     }
     return cell;
 }

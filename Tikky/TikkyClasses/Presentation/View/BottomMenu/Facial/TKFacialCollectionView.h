@@ -9,6 +9,6 @@
 
 @interface TKFacialCollectionView : UICollectionView
 
-@property (nonatomic) NSMutableArray<TKFacialModel *> *dataArray;
+@property (nonatomic) NSMutableArray<TKFacialModelView *> *dataArray;
 
 @end

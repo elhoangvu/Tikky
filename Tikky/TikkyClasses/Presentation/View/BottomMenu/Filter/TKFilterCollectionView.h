@@ -9,6 +9,6 @@
 
 @interface TKFilterCollectionView : UICollectionView
 
-@property (nonatomic) NSMutableArray<TKFilterModel *> *dataArray;
+@property (nonatomic) NSMutableArray<TKFilterModelView *> *dataArray;
 
 @end

@@ -18,6 +18,8 @@
 
 @property (nonatomic) NSLayoutConstraint *secondConstraint;
 
+@property (nonatomic) dispatch_queue_t serialQueue;
+
 
 @end
 
@@ -27,6 +29,8 @@
 {
     self = [super init];
     if (self) {
+        _serialQueue = dispatch_queue_create("rootview_serial_queue", DISPATCH_QUEUE_SERIAL);
+        
         _topMenuView = [TKTopMenu new];
         
         _topMenuView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -52,11 +56,13 @@
     _viewController = viewController;
     [self.bottomMenuView setViewController:viewController];
     [self.topMenuView setViewController:viewController];
-}
+};
 
 -(void)setBottomMenuViewWithBottomMenuType:(TKBottomMenuType)bottomMenuType {
-    if (bottomMenuType != _typeBottom) {
-        _typeBottom = bottomMenuType;
+    if (bottomMenuType != self.typeBottom) {
+        dispatch_async(self.serialQueue, ^{
+            self.typeBottom = bottomMenuType;
+        });
         
         TKBottomMenu *newBottomMenu = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
         newBottomMenu.translatesAutoresizingMaskIntoConstraints = NO;
@@ -74,7 +80,7 @@
         [[newBottomMenu.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[newBottomMenu.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
         
-        if (_typeBottom == MainMenu) {
+        if (self.typeBottom == MainMenu) {
             [[newBottomMenu.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0.0] setActive:true];
 
             NSLayoutConstraint *temp = _firstConstraint;

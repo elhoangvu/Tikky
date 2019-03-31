@@ -6,8 +6,8 @@
 //  Copyright © 2019 Le Hoang Vu. All rights reserved.
 //
 
-#import "TKModelViewObject.h"
+#import "TKModelObject.h"
 
-@implementation TKModelViewObject
+@implementation TKModelObject
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TKModelObject.h"
+#import "TKModelViewObject.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKStickerCellClick <NSObject>
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKStickerCollectionViewBase : UICollectionView
 
-@property (nonatomic) NSMutableArray<TKModelObject *> *dataArray;
+@property (nonatomic) NSMutableArray<TKModelViewObject *> *dataArray;
 
 @property (nonatomic) id<TKStickerCellClick> delegate;
 
