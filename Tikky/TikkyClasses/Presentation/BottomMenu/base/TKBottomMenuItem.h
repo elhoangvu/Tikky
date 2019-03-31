@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TKBottomItemDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol TKBottomItemDelegate <NSObject>
-@optional
-- (void)clickBottomMenuItem:(NSString *)nameItem;
-@end
 
 @interface TKBottomMenuItem : UIImageView
 

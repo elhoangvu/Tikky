@@ -28,13 +28,18 @@
         _name = name;
         
         [self setPathImage:[[NSBundle mainBundle] pathForResource:_name ofType:@"png"]];
-        
-//        _subMenuView = [TKTopSubViewMenu new];
-//        _subMenuView.translatesAutoresizingMaskIntoConstraints = NO;
-//        
-//        [self addSubview:_subMenuView];
-        
-        
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+        singleTap.numberOfTapsRequired = 1;
+        [self setUserInteractionEnabled:YES];
+        [self addGestureRecognizer:singleTap];
     }
     return self;
 }
@@ -44,14 +49,13 @@
     
     [self setImage:image];
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
-    singleTap.numberOfTapsRequired = 1;
-    [self setUserInteractionEnabled:YES];
-    [self addGestureRecognizer:singleTap];
+
 }
 
 -(void)tapDetected {
-    [self.delegate clickItem:self.name];
+    if([self.delegate respondsToSelector:@selector(tapTopItem:)]) {
+        [self.delegate tapTopItem:self.name];
+    }
 }
 
 @end

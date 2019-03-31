@@ -11,7 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol TKTopItemDelegate <NSObject>
+
+@optional
+
+-(void)didReverseCamera;
+
+@end
+
 @interface TKTopMenu : UIView
+
+@property (nonatomic, strong) id<TKTopItemDelegate> delegate;
 
 @property (nonatomic, strong) id viewController;
 

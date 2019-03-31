@@ -40,10 +40,6 @@
         
         [[_facebook.heightAnchor constraintEqualToAnchor:stackView.heightAnchor] setActive:YES];
         [[_twitter.heightAnchor constraintEqualToAnchor:stackView.heightAnchor] setActive:YES];
-
-        
-
-        
         
     }
     return self;
