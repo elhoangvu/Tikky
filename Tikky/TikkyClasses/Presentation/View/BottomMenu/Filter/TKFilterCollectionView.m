@@ -34,6 +34,10 @@
     return self;
 }
 
+- (NSInteger)numberOfSections {
+    return 1;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
