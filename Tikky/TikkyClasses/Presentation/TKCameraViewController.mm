@@ -7,7 +7,7 @@
 //
 
 #import "TKCameraViewController.h"
-#import "ViewController.h"
+#import "GUIViewController.h"
 #import "Tikky.h"
 #import <Photos/Photos.h>
 
@@ -24,7 +24,7 @@
 
 #import "FeatureDefinition.h"
 
-@interface TKCameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate> {
+@interface TKCameraViewController () <TKBottomItemDelegate, TKStickerPreviewerDelegate, TKStickerCollectionViewCellDelegate, TKTopItemDelegate> {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
 }
@@ -33,7 +33,7 @@
 @property (nonatomic) TKImageInput* imageInput;
 
 @property (nonatomic) TKRootView* rootView;
-@property (nonatomic) ViewController *viewController;
+@property (nonatomic) GUIViewController *guiViewController;
 
 @property (nonatomic) NSMutableArray* stickers;
 @property (nonatomic) NSMutableArray* filters;
@@ -149,10 +149,13 @@
 //    [[_tikkyEngine.view.rightAnchor constraintEqualToAnchor:self.view.rightAnchor] setActive:YES];
 //    [[_tikkyEngine.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
     
-    _viewController = [ViewController new];
-    _viewController.view.backgroundColor = [UIColor clearColor];
+    _guiViewController = [GUIViewController new];
+    _guiViewController.view.backgroundColor = [UIColor clearColor];
 //    [self addChildViewController:_viewController];
-    [self.view addSubview:_viewController.view];
+    [self.view addSubview:_guiViewController.view];
+    
+
+    _guiViewController.cameraController = self;
 }
 
 - (void)clickBottomMenuItem:(NSString *)nameItem {
@@ -438,6 +441,12 @@
 //         _isTouchStickerBegan = NO;
 //     }
 // >>>>>>> master
+}
+
+#pragma TKTopItemDelegate
+
+-(void)didReverseCamera {
+    NSLog(@"Change camera");
 }
 
 @end

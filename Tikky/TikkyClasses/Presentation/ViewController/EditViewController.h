@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UIImageView *deleteButton;
 
+- (instancetype)initWithImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

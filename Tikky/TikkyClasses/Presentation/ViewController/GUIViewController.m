@@ -32,10 +32,8 @@
     [_rootView setBackgroundColor:[UIColor clearColor]];
     _rootView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_rootView];
-
-#if ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING
+    
     [self.rootView setBackgroundColor:[UIColor blueColor]];
-#endif
     [[self.rootView.topAnchor constraintEqualToAnchor:self.view.topAnchor] setActive:YES];
     [[self.rootView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:0.0] setActive:YES];
     [[self.rootView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:1.0] setActive:YES];
