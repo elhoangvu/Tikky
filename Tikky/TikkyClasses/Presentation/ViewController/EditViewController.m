@@ -39,7 +39,7 @@
         [[_imageView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor] setActive:YES];
         [[_imageView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor] setActive:YES];
         [[_imageView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.8] setActive:YES];
-        
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.view layoutIfNeeded];
         
         _stackView = [UIStackView new];

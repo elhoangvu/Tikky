@@ -66,10 +66,10 @@
             PHImageRequestOptions *option = [PHImageRequestOptions new];
             option.resizeMode   = PHImageRequestOptionsResizeModeExact;
             option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-            option.synchronous = NO;
+            option.synchronous = YES;
+            option.networkAccessAllowed = YES;
             
-            
-            [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:self.view.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+            [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     EditViewController *editViewController = [[EditViewController alloc] initWithImage:result];
