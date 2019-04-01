@@ -31,16 +31,24 @@
     return self;
 }
 
-- (void)setImageView:(UIImageView *)imageView {
-    _imageView = imageView;
-    [self.contentView addSubview:_imageView];
-    
-    _imageView.translatesAutoresizingMaskIntoConstraints = NO;
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [[_imageView.widthAnchor constraintEqualToConstant:[UIScreen mainScreen].bounds.size.width / 7] setActive:YES];
-    [[_imageView.heightAnchor constraintEqualToConstant:[UIScreen mainScreen].bounds.size.height / 7] setActive:YES];
-    [[_imageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:10] setActive:YES];
-    [[_imageView.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor] setActive:YES];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setBackgroundColor:[UIColor whiteColor]];
+        _imageView = [UIImageView new];
+        
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self addSubview:_imageView];
+        
+        [[_imageView.topAnchor constraintEqualToAnchor:self.topAnchor constant:5] setActive:YES];
+        [[_imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
+        [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.7] setActive:YES];
+    }
+    return self;
 }
 
 

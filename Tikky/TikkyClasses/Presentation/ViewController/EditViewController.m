@@ -116,6 +116,7 @@
         [[_backButton.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10] setActive:YES];
         [[_backButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:20] setActive:YES];
         [[_backButton.bottomAnchor constraintEqualToAnchor:self.imageView.topAnchor constant:-20] setActive:YES];
+        [[_backButton.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:0.1] setActive:YES];
         [_backButton setUserInteractionEnabled:YES];
         [_backButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoBack)]];
 

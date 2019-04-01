@@ -20,6 +20,7 @@
         
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         _nameLabel.contentMode = UIViewContentModeScaleToFill;
+        
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
         _nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [_nameLabel setTextAlignment:NSTextAlignmentCenter];

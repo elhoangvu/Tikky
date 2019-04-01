@@ -9,12 +9,17 @@
 #import "TKFrameCollectionView.h"
 #import "TKFrameCollectionViewCell.h"
 
+@interface TKFrameCollectionView()<UICollectionViewDataSource>
+
+@end
+
 @implementation TKFrameCollectionView
 
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
         self.dataArray = [[TKSampleDataPool sharedInstance] frameModelViewList];
+        self.backgroundColor = [UIColor whiteColor];
         self.dataSource = self;
         [self registerClass:[TKFrameCollectionViewCell class] forCellWithReuseIdentifier:@"frame_cell"];
     }
@@ -37,7 +42,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"frame_cell" forIndexPath:indexPath];
     if (cell) {
-        cell.imageView = ((TKStickerModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView;
+        cell.imageView.image = ((TKFrameModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
     }
     return cell;
 }

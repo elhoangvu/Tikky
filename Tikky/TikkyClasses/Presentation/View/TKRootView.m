@@ -48,7 +48,10 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    [self setBottomMenuViewWithBottomMenuType:MainMenu];
+    CGPoint locationPoint = [[touches anyObject] locationInView:self.bottomMenuView];
+    if (locationPoint.y < 0) {
+        [self setBottomMenuViewWithBottomMenuType:MainMenu];
+    }
     [self.bottomMenuView setViewController:self.viewController];
 }
 
