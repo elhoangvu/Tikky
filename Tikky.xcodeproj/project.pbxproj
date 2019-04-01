@@ -1889,7 +1889,6 @@
 				B771DCE922527B6B00B96E14 /* TKImageFilter.h */,
 				B771DCEA22527B6B00B96E14 /* Tikky.h */,
 				B771DCEB22527B6B00B96E14 /* TKFilterCreator.h */,
-				B771DCEC22527B6B00B96E14 /* Input */,
 				B771DCF522527B6B00B96E14 /* TikkyEngine.h */,
 				B771DCF622527B6B00B96E14 /* TKFilterProperty.m */,
 				B771DCF722527B6B00B96E14 /* TKFilter.m */,
@@ -1899,6 +1898,7 @@
 				B771DCFC22527B6B00B96E14 /* TKStickerPreviewer.h */,
 				B771DCFD22527B6B00B96E14 /* TKFilter.h */,
 				B771DCFE22527B6B00B96E14 /* TKFilterProperty.h */,
+				B771DCEC22527B6B00B96E14 /* Input */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1959,6 +1959,8 @@
 		B771DD0A22527B6B00B96E14 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B771DD3822527B6B00B96E14 /* TKCameraViewController.h */,
+				B771DD7122527B6B00B96E14 /* TKCameraViewController.mm */,
 				B771DD0B22527B6B00B96E14 /* library */,
 				B771DD1522527B6B00B96E14 /* protocol */,
 				B771DD1722527B6B00B96E14 /* ModelView */,
@@ -2040,10 +2042,8 @@
 				B771DD2E22527B6B00B96E14 /* PageView */,
 				B771DD3322527B6B00B96E14 /* TKRootView.h */,
 				B771DD3422527B6B00B96E14 /* shareView */,
-				B771DD3822527B6B00B96E14 /* TKCameraViewController.h */,
 				B771DD3922527B6B00B96E14 /* TopMenu */,
 				B771DD4322527B6B00B96E14 /* BottomMenu */,
-				B771DD7122527B6B00B96E14 /* TKCameraViewController.mm */,
 				B771DD7222527B6B00B96E14 /* TKRootView.m */,
 				B771DD7322527B6B00B96E14 /* BottomMenuFactory */,
 			);

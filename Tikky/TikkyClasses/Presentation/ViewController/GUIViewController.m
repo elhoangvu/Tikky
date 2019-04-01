@@ -11,6 +11,7 @@
 #import "TKSampleDataPool.h"
 #import <Photos/Photos.h>
 #import "EditViewController.h"
+#import "FeatureDefinition.h"
 
 @interface GUIViewController ()<TKBottomItemDelegate>
 
