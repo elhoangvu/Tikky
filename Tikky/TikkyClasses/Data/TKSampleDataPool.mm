@@ -112,7 +112,7 @@
     //    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andName:@"" andType:@"filter" andCategory:@"beauty" andIsFromBundle:YES andThumbnailPath:@"model-1971"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-1971"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-B & W"]];
-    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-brooklyn"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"modal-brooklyn"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-charcoal"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-clarity"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-club"]];
@@ -546,12 +546,10 @@
 - (void)initFrameModelViewList {
     _frameModelViewList = [NSMutableArray new];
     
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-flower-2-thumb" ofType:@"png"]]]]];
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-flower-3-thumb" ofType:@"png"]]]]];
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-flower-4-thumb" ofType:@"png"]]]]];
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-xmas-2-thumb" ofType:@"png"]]]]];
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-xmas-3-thumb" ofType:@"png"]]]]];
-    [_frameModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-xmas-4-thumb" ofType:@"png"]]]]];
+    [_frameModelViewList addObject:[[TKFrameModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"frame" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-flower-shakura-thumb" ofType:@"png"]]]]];
+    [_frameModelViewList addObject:[[TKFrameModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"frame" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-lotus-thumb" ofType:@"png"]]]]];
+    [_frameModelViewList addObject:[[TKFrameModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"frame" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-leaves-thumb" ofType:@"png"]]]]];
+    [_frameModelViewList addObject:[[TKFrameModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"frame" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"frame-flower-peony-thumb" ofType:@"png"]]]]];
 }
 
 - (void)initFilterModelViewList {
@@ -559,7 +557,7 @@
     
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-B & W" ofType:@"png"]]]]];
-    [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-brooklyn" ofType:@"png"]]]]];
+    [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"modal-brooklyn" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-charcoal" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
