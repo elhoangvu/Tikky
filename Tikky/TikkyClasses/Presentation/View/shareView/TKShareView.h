@@ -10,11 +10,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TKShareViewDataSource;
+
 @interface TKShareView : UIView
 
 @property (nonatomic) UIImageView *facebook;
 
 @property (nonatomic) UIImageView *twitter;
+
+@property (nonatomic, weak) id<TKShareViewDataSource> dataSource;
+
+@end
+
+@protocol TKShareViewDataSource <NSObject>
+
+@required
+- (UIImage *)sharedImage;
+
+- (UIViewController *)myViewController;
 
 @end
 

@@ -9,7 +9,7 @@
 #import "EditViewController.h"
 #import "TKShareView.h"
 
-@interface EditViewController ()<UIGestureRecognizerDelegate>
+@interface EditViewController () <UIGestureRecognizerDelegate, TKShareViewDataSource>
 
 @property (nonatomic) UIStackView *stackView;
 
@@ -91,6 +91,7 @@
         [self.view layoutIfNeeded];
         
         _shareView = [TKShareView new];
+        _shareView.dataSource = self;
         _shareView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_shareView];
         
@@ -151,5 +152,12 @@
 //    self.view.center = CGPointMake(self.view.center.x, self.view.center.y + translation.y);
 }
 
+- (UIImage *)sharedImage {
+    return _imageView.image;
+}
+
+- (UIViewController *)myViewController {
+    return self;
+}
 
 @end

@@ -2041,7 +2041,7 @@
 			children = (
 				B771DD2E22527B6B00B96E14 /* PageView */,
 				B771DD3322527B6B00B96E14 /* TKRootView.h */,
-				B771DD3422527B6B00B96E14 /* shareView */,
+				B771DD3422527B6B00B96E14 /* ShareView */,
 				B771DD3922527B6B00B96E14 /* TopMenu */,
 				B771DD4322527B6B00B96E14 /* BottomMenu */,
 				B771DD7222527B6B00B96E14 /* TKRootView.m */,
@@ -2061,13 +2061,13 @@
 			path = PageView;
 			sourceTree = "<group>";
 		};
-		B771DD3422527B6B00B96E14 /* shareView */ = {
+		B771DD3422527B6B00B96E14 /* ShareView */ = {
 			isa = PBXGroup;
 			children = (
 				B771DD3522527B6B00B96E14 /* TKShareView.m */,
 				B771DD3722527B6B00B96E14 /* TKShareView.h */,
 			);
-			path = shareView;
+			path = ShareView;
 			sourceTree = "<group>";
 		};
 		B771DD3922527B6B00B96E14 /* TopMenu */ = {
