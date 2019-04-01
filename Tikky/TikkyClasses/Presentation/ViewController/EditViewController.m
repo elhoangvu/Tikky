@@ -9,13 +9,18 @@
 #import "EditViewController.h"
 #import "TKShareView.h"
 
-@interface EditViewController ()
+@interface EditViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic) UIStackView *stackView;
 
 @property (nonatomic) NSLayoutConstraint *bottomConstraint;
 
 @property (nonatomic) TKShareView *shareView;
+
+@property (nonatomic) UIPanGestureRecognizer *panGestureRecognize;
+
+@property (nonatomic) UIImageView *backButton;
+
 @end
 
 @implementation EditViewController
@@ -30,6 +35,7 @@
 {
     self = [super init];
     if (self) {
+
         _imageView = [[UIImageView alloc] initWithImage:image];
         
         [self.view addSubview:_imageView];
@@ -39,7 +45,7 @@
         [[_imageView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor] setActive:YES];
         [[_imageView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor] setActive:YES];
         [[_imageView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.8] setActive:YES];
-        
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.view layoutIfNeeded];
         
         _stackView = [UIStackView new];
@@ -95,12 +101,30 @@
         [[_shareView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.2] setActive:YES];
         _bottomConstraint = [_shareView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:2*self.stackView.frame.size.height];
         [_bottomConstraint setActive:YES];
+        
+        self.panGestureRecognize = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        [self.view addGestureRecognizer:self.panGestureRecognize];
+        [self.panGestureRecognize setMinimumNumberOfTouches:1];
+        [self.panGestureRecognize setMaximumNumberOfTouches:1];
+        self.panGestureRecognize.delegate = self;
+        
+        _backButton = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cross" ofType:@"png"]]];
+        _backButton.contentMode = UIViewContentModeScaleAspectFit;
+        _backButton.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self.view addSubview:_backButton];
+        [[_backButton.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10] setActive:YES];
+        [[_backButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:20] setActive:YES];
+        [[_backButton.bottomAnchor constraintEqualToAnchor:self.imageView.topAnchor constant:-20] setActive:YES];
+        [_backButton setUserInteractionEnabled:YES];
+        [_backButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoBack)]];
+
+    
     }
     return self;
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesMoved:touches withEvent:event];
+-(void)gotoBack {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -121,15 +145,10 @@
     }];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)pan:(UIPanGestureRecognizer *)panGesture {
+//    CGPoint translation = [panGesture translationInView:self.view];
+//    self.view.center = CGPointMake(self.view.center.x, self.view.center.y + translation.y);
 }
-*/
+
 
 @end

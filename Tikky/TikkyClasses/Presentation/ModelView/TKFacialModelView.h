@@ -1,0 +1,23 @@
+//
+//  TKFacialModel.h
+//  Tikky
+//
+//  Created by LeHuuNghi on 3/26/19.
+//  Copyright © 2019 Le Hoang Vu. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "TKModelViewObject.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TKFacialModelView : TKModelViewObject
+
+@property (nonatomic) UIImageView *thumbImageView;
+
+-(instancetype)initWithIdentifier:(NSNumber *)identifier andType:(NSString *)type andThumbnailImage:(UIImageView *)imageView;
+
+
+@end
+
+NS_ASSUME_NONNULL_END
