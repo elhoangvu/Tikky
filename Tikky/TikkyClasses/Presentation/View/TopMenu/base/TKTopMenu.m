@@ -13,9 +13,11 @@
 
 @property (nonatomic, strong) TKTopSubViewMenu *subMenuView;
 
-@property (nonatomic) NSMutableArray<RCEasyTipView *> *tipView;
+@property (nonatomic) RCEasyTipView *tipView;
 
-@property (nonatomic) UIView *subView;
+@property (nonatomic) RCEasyTipView *subView;
+
+@property (nonatomic) BOOL isHiddenSubView;
 
 @end
 
@@ -60,17 +62,24 @@
             [[item.heightAnchor constraintEqualToAnchor:stackView.heightAnchor] setActive:YES];
             [[item.centerYAnchor constraintEqualToAnchor:stackView.centerYAnchor] setActive:true];
             
-            RCEasyTipPreferences *preferences = [[RCEasyTipPreferences alloc] initWithDefaultPreferences];
-            preferences.drawing.backgroundColor = [UIColor purpleColor];
-            preferences.drawing.arrowPostion = Top;
-            preferences.animating.showDuration = 0.4;
-            preferences.animating.dismissDuration = 0.4;
-            preferences.animating.dismissTransform = CGAffineTransformMakeTranslation(0, -100);
-            preferences.animating.showInitialTransform = CGAffineTransformMakeTranslation(0, -100);
             
-            [_tipView addObject:[[RCEasyTipView alloc] initWithPreferences:preferences]];
 //            _tipView.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
         }
+        
+        RCEasyTipPreferences *preferences = [[RCEasyTipPreferences alloc] initWithDefaultPreferences];
+        preferences.drawing.backgroundColor = [UIColor purpleColor];
+        preferences.drawing.arrowPostion = Top;
+        preferences.animating.showDuration = 0.4;
+        preferences.animating.dismissDuration = 0.4;
+        preferences.animating.dismissTransform = CGAffineTransformMakeTranslation(0, -100);
+        preferences.animating.showInitialTransform = CGAffineTransformMakeTranslation(0, -100);
+        
+        _tipView =[[RCEasyTipView alloc] initWithPreferences:preferences];
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"123";
+        [_tipView addSubview:label];
+        
+        _isHiddenSubView = YES;
         
     }
     return self;
@@ -84,20 +93,42 @@
             [self.delegate didReverseCamera];
         }
     } else {
+        if (self.isHiddenSubView == NO) {
+            [self.subView dismissWithCompletion:nil];
+            self.isHiddenSubView = YES;
+        }
+        
         if ([nameItem isEqualToString:@"more"]) {
-            if ([self.tipView[0] isHidden]) {
-                [self.tipView[0] showAnimated:YES forView:self.items[0] withinSuperView:nil];
-                [self.tipView[0] setHidden:NO];
-            } else {
-                [self.tipView[0] dismissWithCompletion:nil];
-                [self.tipView[0] setHidden:YES];
+//            if ([self.tipView[0] isHidden]) {
+//                [self.tipView[0] showAnimated:YES forView:self.items[0] withinSuperView:nil];
+//                [self.tipView[0] setHidden:NO];
+//            } else {
+//                [self.tipView[0] dismissWithCompletion:nil];
+//                [self.tipView[0] setHidden:YES];
+//            }
+            if (self.subView != self.tipView) {
+                self.subView = self.tipView;
+                self.isHiddenSubView = NO;
+                [self.tipView showAnimated:YES forView:self.items[0] withinSuperView:nil];
             }
         } else if ([nameItem isEqualToString:@"raito"]) {
-            
+            if (self.subView != self.tipView) {
+                self.subView = self.tipView;
+                self.isHiddenSubView = NO;
+                [self.tipView showAnimated:YES forView:self.items[1] withinSuperView:nil];
+            }
         } else if ([nameItem isEqualToString:@"time"]) {
-            
+            if (self.subView != self.tipView) {
+                self.subView = self.tipView;
+                self.isHiddenSubView = NO;
+                [self.tipView showAnimated:YES forView:self.items[2] withinSuperView:nil];
+            }
         } else if ([nameItem isEqualToString:@"flash"]) {
-            
+            if (self.subView != self.tipView) {
+                self.subView = self.tipView;
+                self.isHiddenSubView = NO;
+                [self.tipView showAnimated:YES forView:self.items[3] withinSuperView:nil];
+            }
         }
     }
     

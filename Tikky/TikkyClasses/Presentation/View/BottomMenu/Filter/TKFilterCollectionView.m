@@ -9,7 +9,7 @@
 #import "TKFilterCollectionView.h"
 #import "TKFilterCollectionViewCell.h"
 
-@interface TKFilterCollectionView() <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface TKFilterCollectionView() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -64,6 +64,10 @@
         cell.imageView.image = ((TKFilterModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
     }
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height * 0.8);
 }
 
 @end
