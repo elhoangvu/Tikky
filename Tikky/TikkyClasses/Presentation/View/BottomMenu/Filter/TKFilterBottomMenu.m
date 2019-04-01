@@ -9,6 +9,8 @@
 #import "TKFilterBottomMenu.h"
 
 @interface TKFilterBottomMenu()
+
+@property (nonatomic) UIImageView *captureButton;
 @end
 
 @implementation TKFilterBottomMenu
@@ -25,7 +27,7 @@
 {
     self = [super init];
     if (self) {
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor blackColor]];
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         _filterCollectionView=[[TKFilterCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
@@ -36,7 +38,16 @@
         [[self.filterCollectionView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
         [[self.filterCollectionView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.6] setActive:YES];
         [[self.filterCollectionView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
-    
+        [self layoutIfNeeded];
+        
+        _captureButton = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"capture" ofType:@"png"]]];
+        _captureButton.contentMode = UIViewContentModeScaleAspectFit;
+        _captureButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:_captureButton];
+        
+        [[_captureButton.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
+        [[_captureButton.topAnchor constraintEqualToAnchor:self.filterCollectionView.bottomAnchor] setActive:YES];
+        [[_captureButton.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
     }
     return self;
 }

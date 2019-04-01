@@ -57,12 +57,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFacialCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"facial_cell" forIndexPath:indexPath];
     if (cell) {
-//        UIImage *image= [UIImage imageNamed:((TKFacialModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath];
-        cell.imageView = ((TKFacialModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView;
-
-//        cell.nameLabel.text = ((TKFacialModel *)[self.dataArray objectAtIndex:indexPath.row]).thumbnailPath;
-//        cell.nameLabel.text = @"filter";
-//        [cell.nameLabel adjustsFontSizeToFitWidth];
+        cell.imageView.image = ((TKFacialModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
     }
     return cell;
 }

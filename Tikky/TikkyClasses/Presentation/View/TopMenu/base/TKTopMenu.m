@@ -13,7 +13,9 @@
 
 @property (nonatomic, strong) TKTopSubViewMenu *subMenuView;
 
-@property (nonatomic) RCEasyTipView *tipView;
+@property (nonatomic) NSMutableArray<RCEasyTipView *> *tipView;
+
+@property (nonatomic) UIView *subView;
 
 @end
 
@@ -46,6 +48,8 @@
         [[stackView.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.9] setActive:YES];
         [[stackView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.25] setActive:YES];
         
+        _tipView = [NSMutableArray new];
+        
         for (TKTopMenuItem *item in _items) {
             item.delegate = self;
             item.translatesAutoresizingMaskIntoConstraints = NO;
@@ -64,8 +68,8 @@
             preferences.animating.dismissTransform = CGAffineTransformMakeTranslation(0, -100);
             preferences.animating.showInitialTransform = CGAffineTransformMakeTranslation(0, -100);
             
-            _tipView = [[RCEasyTipView alloc] initWithPreferences:preferences];
-            _tipView.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+            [_tipView addObject:[[RCEasyTipView alloc] initWithPreferences:preferences]];
+//            _tipView.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
         }
         
     }
@@ -81,16 +85,16 @@
         }
     } else {
         if ([nameItem isEqualToString:@"more"]) {
-            if ([self.tipView isHidden]) {
-                [self.tipView showAnimated:YES forView:self.items[0] withinSuperView:nil];
-                [self.tipView setHidden:NO];
+            if ([self.tipView[0] isHidden]) {
+                [self.tipView[0] showAnimated:YES forView:self.items[0] withinSuperView:nil];
+                [self.tipView[0] setHidden:NO];
             } else {
-                [self.tipView dismissWithCompletion:nil];
-                [self.tipView setHidden:YES];
+                [self.tipView[0] dismissWithCompletion:nil];
+                [self.tipView[0] setHidden:YES];
             }
-        } else if ([nameItem isEqualToString:@"more"]) {
-            
         } else if ([nameItem isEqualToString:@"raito"]) {
+            
+        } else if ([nameItem isEqualToString:@"time"]) {
             
         } else if ([nameItem isEqualToString:@"flash"]) {
             

@@ -41,7 +41,7 @@
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blackColor];
         
         self.dataArray = [[TKSampleDataPool sharedInstance] filterModelViewList];
         self.dataSource = self;
@@ -61,7 +61,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFilterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"filter_cell" forIndexPath:indexPath];
     if (cell) {
-        cell.imageView = ((TKFilterModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView;
+        cell.imageView.image = ((TKFilterModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
     }
     return cell;
 }
