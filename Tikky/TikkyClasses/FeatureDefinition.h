@@ -15,6 +15,6 @@
 
 #define ENDABLE_CAMERA        1
 
-#define ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING 1
+#define ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING 0
 
 #endif /* FeatureDefinition_h */
