@@ -10,6 +10,7 @@
 #import "TKBottomMenu.h"
 #import "TKTopMenu.h"
 #import "TKBottomMenuFactory.h"
+#import "TKHorizontalPageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -20,6 +20,8 @@
 
 @property (nonatomic) dispatch_queue_t serialQueue;
 
+@property (nonatomic) TKHorizontalPageView *horizontalPageView;
+
 
 @end
 
@@ -34,14 +36,26 @@
         _topMenuView = [TKTopMenu new];
         
         _topMenuView.translatesAutoresizingMaskIntoConstraints = NO;
+        _horizontalPageView = [[TKHorizontalPageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _horizontalPageView.translatesAutoresizingMaskIntoConstraints = NO;
+        
         
         [self addSubview:_topMenuView];
+        [self addSubview:_horizontalPageView];
+
         [self setBottomMenuViewWithBottomMenuType:MainMenu];
         
         [[self.topMenuView.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0] setActive:YES];
         [[self.topMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
         [[self.topMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[self.topMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.2] setActive:YES];
+        
+        [[_horizontalPageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
+        [[_horizontalPageView.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:0.5] setActive:YES];
+        [[_horizontalPageView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
+        [[_horizontalPageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.1] setActive:YES];
+        [self bringSubviewToFront:self.horizontalPageView];
+        [_horizontalPageView updateConstraints];
     }
     return self;
 }
@@ -76,6 +90,7 @@
             if (self.bottomMenuView) {
                 [self bringSubviewToFront:self.bottomMenuView];
             }
+            [self bringSubviewToFront:self.horizontalPageView];
         } else {
             [self addSubview:newBottomMenu];
         }
