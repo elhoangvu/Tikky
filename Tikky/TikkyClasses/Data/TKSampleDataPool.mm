@@ -506,7 +506,7 @@
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString* _Nonnull key, NSDictionary*  _Nonnull value, BOOL * _Nonnull stop) {
         NSMutableDictionary* value_ = [NSMutableDictionary dictionaryWithDictionary:value];
         NSString* className = [value_ objectForKey:@"class"];
-        if ([className isEqualToString:@"GPUImageLUTFilter"]) {
+        if (className && [className isEqualToString:@"GPUImageLUTFilter"]) {
             NSString* imageName = [NSString stringWithFormat:@"lookup-%@", key.lowercaseString];
             NSString* imagePath = [NSBundle.mainBundle pathForResource:imageName ofType:@"png"];
             if (!imagePath) {

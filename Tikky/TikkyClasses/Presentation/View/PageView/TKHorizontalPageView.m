@@ -26,11 +26,20 @@
     
     _pageData = [NSArray arrayWithObjects:@"Photo", @"Video", nil];
     _selectedIndex = 0;
+    [self initNewPageCollectionView];
+    return self;
+}
+
+- (void)initNewPageCollectionView {
+    if (_pageCollectionView) {
+        [_pageCollectionView removeFromSuperview];
+    }
+    
     UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(frame.size.height, frame.size.height);
+    flowLayout.itemSize = CGSizeMake(self.frame.size.height, self.frame.size.height);
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    flowLayout.minimumLineSpacing = 10;
-    _pageCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) collectionViewLayout:flowLayout];
+    flowLayout.minimumLineSpacing = self.frame.size.width*0.03;
+    _pageCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:flowLayout];
     _pageCollectionView.backgroundColor = [UIColor clearColor];
     [_pageCollectionView setAlwaysBounceHorizontal:YES];
     [_pageCollectionView setScrollEnabled:YES];
@@ -40,11 +49,23 @@
     _pageCollectionView.dataSource = self;
     [_pageCollectionView registerClass:TKPageCollectionViewCell.class forCellWithReuseIdentifier:@"PageCollectionViewCell"];
     [self addSubview:_pageCollectionView];
-//    [_pageCollectionView setContentInset:UIEdgeInsetsMake(0, self.frame.size.width/2.0 - self.frame.size.height/2.0, 0, 0)];
     [_pageCollectionView reloadData];
-    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:_selectedIndex inSection:0];
     [self performSelectCellWithIndexPath:indexPath];
-    return self;
+}
+
+- (void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    
+    // Can be optimized by re-setting frame for collectionview
+    [self initNewPageCollectionView];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    // Can be optimized by re-setting frame for collectionview
+    [self initNewPageCollectionView];
 }
 
 - (instancetype)init {
@@ -74,15 +95,30 @@
     [self performSelectCellWithIndexPath:indexPath];
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    static BOOL endableScrolling = YES;
+    if (endableScrolling) {
+        CGFloat cellWidth = self.frame.size.height;
+        CGFloat scrollOffset = _pageCollectionView.contentInset.left + scrollView.contentOffset.x;
+        NSInteger passedCell = roundf(scrollOffset/cellWidth);
+        NSInteger scrollingRow = _selectedIndex + passedCell;
+        if (scrollingRow < 0) {
+            scrollingRow = 0;
+        } else if (scrollingRow >= _pageData.count) {
+            scrollingRow = _pageData.count - 1;
+        }
+        endableScrolling = NO;
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:scrollingRow inSection:0];
+        [self performSelectCellWithIndexPath:indexPath];
+        endableScrolling = YES;
+    }
+}
+
 - (void)performSelectCellWithIndexPath:(NSIndexPath *)indexPath {
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.15 animations:^{
-        [weakSelf.pageCollectionView setContentInset:UIEdgeInsetsMake(0,
-                                                                      weakSelf.frame.size.width/2.0
-                                                                      - weakSelf.frame.size.height/2.0
-                                                                      - weakSelf.frame.size.height*indexPath.row,
-                                                                      0,
-                                                                      0)];
+        CGFloat cellOffset = [self calculateCellOffsetWithCellIndex:indexPath.row];
+        [weakSelf.pageCollectionView setContentInset:UIEdgeInsetsMake(0, cellOffset, 0, 0)];
     }];
     
     if (_delegate && [_delegate respondsToSelector:@selector(horizontalPageView:didSelectPageType:)]) {
@@ -96,6 +132,14 @@
     TKPageCollectionViewCell* cell = (TKPageCollectionViewCell *)[_pageCollectionView cellForItemAtIndexPath:indexPath];
     cell.isBold = YES;
     _selectedIndex = indexPath.row;
+}
+
+- (CGFloat)calculateCellOffsetWithCellIndex:(NSUInteger)cellIndex {
+    
+    return self.frame.size.width/2.0
+         - self.frame.size.height/2.0
+         - self.frame.size.height*cellIndex
+         - self.frame.size.width*0.03*cellIndex;
 }
 
 @end
