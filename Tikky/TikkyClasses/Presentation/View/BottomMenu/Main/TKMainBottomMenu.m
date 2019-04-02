@@ -9,9 +9,14 @@
 #import "TKMainBottomMenu.h"
 #import "TKMainBottomMenuItem.h"
 
+
+
 @interface TKMainBottomMenu()
 
 @property (nonatomic, strong) NSArray<TKMainBottomMenuItem *> *items;
+
+@property (nonatomic) NSArray<UIImage *> *images;
+
 
 @end
 
@@ -27,6 +32,10 @@
                    [[TKMainBottomMenuItem alloc] initWithName:@"frame"],
                    [[TKMainBottomMenuItem alloc] initWithName:@"filter"],];
         
+        _images = @[[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"capture" ofType:@"png"]],
+                [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rec-start-button" ofType:@"png"]],
+                [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rec-stop-button" ofType:@"png"]]];
+        
         UIStackView *stackView = [UIStackView new];
         stackView.axis = UILayoutConstraintAxisHorizontal;
         stackView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -36,7 +45,7 @@
         [self addSubview:stackView];
         
         for (TKMainBottomMenuItem *item in _items) {
-            //item.delegate = self;
+            item.delegate = self.viewController;
             item.translatesAutoresizingMaskIntoConstraints = NO;
             item.contentMode = UIViewContentModeScaleAspectFit;
             [stackView addArrangedSubview:item];
@@ -56,10 +65,25 @@
     return self;
 }
 
-- (void)setViewController:(id)viewController {
-    [super setViewController:viewController];
-    for (TKMainBottomMenuItem *item in self.items) {
-        item.delegate = viewController;
+- (void)setCaptureType:(CaptureButtonType)captureType {
+    if (self.captureType != captureType) {
+        TKMainBottomMenuItem *item = _items[2];
+        if (captureType == capture) {
+            item.image = self.images[0];
+        } else if (captureType == startvideo) {
+            item.image = self.images[1];
+        } else if (captureType == stopvideo) {
+            item.image = self.images[2];
+        }
+        _captureType = captureType;
+    }
+}
+
+-(void)setIsCapturePhotoType:(BOOL)isCapturePhotoType {
+    if (isCapturePhotoType) {
+        [self setCaptureType:capture];
+    } else {
+        [self setCaptureType:startvideo];
     }
 }
 

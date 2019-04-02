@@ -43,6 +43,7 @@
     if (self) {
         self.backgroundColor = [UIColor blackColor];
         
+        [self setShowsHorizontalScrollIndicator:NO];
         self.dataArray = [[TKSampleDataPool sharedInstance] filterModelViewList];
         self.dataSource = self;
         [self registerClass:[TKFilterCollectionViewCell class] forCellWithReuseIdentifier:@"filter_cell"];

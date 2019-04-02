@@ -19,6 +19,7 @@
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
         self.dataArray = [[TKSampleDataPool sharedInstance] stickerModelViewList];
+        [self setShowsVerticalScrollIndicator:NO];
         self.dataSource = self;
         [self registerClass:[TKStickerCollectionViewCell class] forCellWithReuseIdentifier:@"sticker_cell"];
     }

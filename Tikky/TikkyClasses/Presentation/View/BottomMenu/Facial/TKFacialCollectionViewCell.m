@@ -34,4 +34,8 @@
     return self;
 }
 
+- (void)setDelegate:(id<TKFacialItemDelegate>)delegate {
+    _delegate = delegate;
+}
+
 @end

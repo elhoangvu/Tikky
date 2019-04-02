@@ -8,9 +8,19 @@
 
 #import "TKStickerCollectionViewCellBase.h"
 
+@protocol TKFacialItemDelegate <NSObject>
+
+@optional
+
+-(void)didSelectFacialWithIdentifier:(NSInteger)identifier;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TKFacialCollectionViewCell : TKStickerCollectionViewCellBase
+
+@property (nonatomic) id<TKFacialItemDelegate> delegate;
 
 @property (nonatomic) UIImageView *imageView;
  

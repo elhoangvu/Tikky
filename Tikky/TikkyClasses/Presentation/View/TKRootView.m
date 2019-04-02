@@ -8,7 +8,7 @@
 
 #import "TKRootView.h"
 
-@interface TKRootView()
+@interface TKRootView()<TKHorizontalPageViewDelegate>
 
 @property (strong, nonatomic) TKBottomMenuFactory *bottomMenuFactory;
 
@@ -38,6 +38,7 @@
         _topMenuView.translatesAutoresizingMaskIntoConstraints = NO;
         _horizontalPageView = [[TKHorizontalPageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         _horizontalPageView.translatesAutoresizingMaskIntoConstraints = NO;
+        _horizontalPageView.delegate = self;
         
         
         [self addSubview:_topMenuView];
@@ -58,6 +59,12 @@
         [_horizontalPageView updateConstraints];
     }
     return self;
+}
+
+- (void)setCameraViewController:(id)cameraViewController {
+    self.bottomMenuView.cameraViewController = cameraViewController;
+    self.topMenuView.cameraViewController = cameraViewController;
+    _cameraViewController = cameraViewController;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -82,10 +89,15 @@
         });
         
         TKBottomMenu *newBottomMenu = [[TKBottomMenuFactory class] getMenuWithMenuType:bottomMenuType];
+        
+        newBottomMenu.viewController = self.viewController;
+        newBottomMenu.cameraViewController = self.cameraViewController;
         newBottomMenu.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         if (bottomMenuType == MainMenu) {
+            TKMainBottomMenu *mainMenu = (TKMainBottomMenu *)self.bottomMenuView;
+            mainMenu.delegate = self.viewController;
             [self addSubview:newBottomMenu];
             if (self.bottomMenuView) {
                 [self bringSubviewToFront:self.bottomMenuView];
@@ -129,12 +141,17 @@
         //transition new menu
     }
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+#pragma TKHorizontalPageViewDelegate
+- (void)horizontalPageView:(TKHorizontalPageView *)horizontalPageView didSelectPageType:(TKPageSelectedType)pageType {
+    if (self.typeBottom == MainMenu) {
+        TKMainBottomMenu *mainMenu = self.bottomMenuView;
+        if (pageType == TKPageSelectedTypePhoto) {
+            [mainMenu setIsCapturePhotoType:YES];
+        } else if (pageType == TKPageSelectedTypeVideo) {
+            [mainMenu setIsCapturePhotoType:NO];
+        }
+    }
 }
-*/
 
 @end

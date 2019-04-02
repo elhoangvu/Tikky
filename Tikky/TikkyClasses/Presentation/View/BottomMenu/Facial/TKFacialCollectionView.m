@@ -28,7 +28,6 @@
     self = [super init];
     if (self) {
         self.dataArray = [[TKSampleDataPool sharedInstance] facialModelList];
-        self.dataSource = self;
         [self registerClass:[TKFacialCollectionViewCell class] forCellWithReuseIdentifier:@"filter_cell"];
     }
     return self;
@@ -39,11 +38,18 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         
+        [self setShowsVerticalScrollIndicator:NO];
         self.dataArray = [[TKSampleDataPool sharedInstance] facialModelViewList];
         self.dataSource = self;
+        self.delegate = self;
         [self registerClass:[TKFacialCollectionViewCell class] forCellWithReuseIdentifier:@"facial_cell"];
     }
     return self;
+}
+
+- (void)setCameraViewController:(id)cameraViewController {
+    _cameraViewController = cameraViewController;
+    [self reloadData];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -58,8 +64,19 @@
     TKFacialCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"facial_cell" forIndexPath:indexPath];
     if (cell) {
         cell.imageView.image = ((TKFacialModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
+            [cell setClipsToBounds:YES];
+        if (self.cameraViewController) {
+            cell.delegate = self.cameraViewController;
+        }
     }
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    TKFacialCollectionViewCell *cell = (TKFacialCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell.delegate respondsToSelector:@selector(didSelectFacialWithIdentifier:)]) {
+        [cell.delegate didSelectFacialWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
+    }
 }
 
 @end

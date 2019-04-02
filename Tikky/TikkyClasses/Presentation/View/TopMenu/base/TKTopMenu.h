@@ -24,8 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) id<TKTopItemDelegate> delegate;
 
-@property (nonatomic, strong) id viewController;
+@property (nonatomic, weak) id cameraViewController;
 
+@property (nonatomic, weak) id viewController;
 @property (nonatomic, strong) NSArray *items;
 
 @end

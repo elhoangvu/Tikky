@@ -18,7 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKBottomMenu : UIView
 
-@property (nonatomic, strong) id viewController;
+@property (nonatomic, weak) id cameraViewController;
+
+@property (nonatomic, weak) id viewController;
 
 @property (nonatomic, strong) NSMutableDictionary *subViews;
 

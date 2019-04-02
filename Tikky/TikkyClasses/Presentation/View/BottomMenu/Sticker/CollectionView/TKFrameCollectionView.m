@@ -19,6 +19,7 @@
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
         self.dataArray = [[TKSampleDataPool sharedInstance] frameModelViewList];
+        [self setShowsVerticalScrollIndicator:NO];
         self.backgroundColor = [UIColor whiteColor];
         self.dataSource = self;
         [self registerClass:[TKFrameCollectionViewCell class] forCellWithReuseIdentifier:@"frame_cell"];

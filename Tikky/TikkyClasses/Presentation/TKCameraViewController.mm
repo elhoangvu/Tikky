@@ -29,7 +29,9 @@
 TKBottomItemDelegate,
 TKStickerPreviewerDelegate,
 TKStickerCollectionViewCellDelegate,
-TKTopItemDelegate
+TKTopItemDelegate,
+TKFacialItemDelegate,
+TKButtonCaptureVideoDelegate
 > {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
@@ -279,6 +281,27 @@ TKTopItemDelegate
 
 - (void)didReverseCamera {
     [((TKCamera *)_imageInput) swapCamera];
+}
+
+#pragma TKFacialItemDelegate
+-(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
+    NSLog(@"tap facial item!");
+}
+
+#pragma getMenuWithMenuType
+
+
+-(void)didCapturePhoto {
+    NSLog(@"capture!");
+}
+
+-(void)didActionVideoWithType:(CaptureButtonType)type {
+    if (type == startvideo) {
+        NSLog(@"start video");
+    } else if (type == stopvideo) {
+        NSLog(@"stop video");
+    }
+    
 }
 
 @end

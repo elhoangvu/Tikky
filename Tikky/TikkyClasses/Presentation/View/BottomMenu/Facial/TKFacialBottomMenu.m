@@ -36,9 +36,14 @@
         [[self.filterCollectionView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
         [[self.filterCollectionView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.6] setActive:YES];
         [[self.filterCollectionView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
+        _filterCollectionView.viewController = self.viewController;
     
     }
     return self;
+}
+
+- (void)setCameraViewController:(id)cameraViewController {
+    _filterCollectionView.cameraViewController = cameraViewController;
 }
 
 @end

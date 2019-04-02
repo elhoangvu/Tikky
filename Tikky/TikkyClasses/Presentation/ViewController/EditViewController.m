@@ -132,10 +132,14 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    [UIView animateWithDuration:0.4 animations:^{
-        self.bottomConstraint.constant = 2*self.stackView.frame.size.height;
-        [self.view layoutIfNeeded];
-    }];
+    CGPoint locationPoint = [[touches anyObject] locationInView:self.shareView];
+    if (locationPoint.y < 0) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.bottomConstraint.constant = 2*self.stackView.frame.size.height;
+            [self.view layoutIfNeeded];
+        }];
+    }
+    
 }
 
 -(void)shareTapDetected{

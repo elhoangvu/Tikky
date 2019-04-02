@@ -11,4 +11,8 @@
 
 @property (nonatomic) NSMutableArray<TKFacialModelView *> *dataArray;
 
+@property (nonatomic) id viewController;
+
+@property (nonatomic) id cameraViewController;
+
 @end

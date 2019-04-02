@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TKFilterItemDelegate <NSObject>
+
+@optional
+
+-(void)didSelectFilterWithIdentifier:(NSInteger)identifier;
+
+@end
+
 @interface TKFilterCollectionViewCell : TKStickerCollectionViewCellBase
 
 @property (nonatomic) UIImageView *imageView;
@@ -17,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) UILabel *nameLabel;
 
 - (instancetype)initWithImage:(UIImageView *)image;
+
+@property (nonatomic) id<TKFilterItemDelegate> delegate;
 
 @end
 

@@ -32,6 +32,10 @@
     [self.rootView setOpaque:NO];
     [_rootView setBackgroundColor:[UIColor clearColor]];
     _rootView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    self.rootView.viewController = self;
+    self.rootView.cameraViewController = self.cameraController;
+
     [self.view addSubview:_rootView];
     
 #if ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING
@@ -42,7 +46,6 @@
     [[self.rootView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:1.0] setActive:YES];
     [[self.rootView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:1.0] setActive:YES];
     
-    [_rootView setViewController:self];
     [_rootView bringSubviewToFront:_rootView];
     [_rootView bringSubviewToFront:_rootView.topMenuView];
     [_rootView bringSubviewToFront:_rootView.bottomMenuView];
@@ -50,7 +53,7 @@
 
 - (void)setCameraController:(id)cameraController {
     _cameraController = cameraController;
-    self.rootView.topMenuView.delegate = cameraController;
+    self.rootView.cameraViewController = self.cameraController;
 }
 
 #pragma TKBottomItemDelegate
@@ -81,6 +84,26 @@
             }];
         }
     } else if ([nameItem isEqualToString:@"capture"]) {
+        if ([self.rootView.bottomMenuView class] == [TKMainBottomMenu class]) {
+            TKMainBottomMenu *mainMenu = (TKMainBottomMenu *)self.rootView.bottomMenuView;
+            mainMenu.delegate = self.cameraController;
+            if (mainMenu.captureType == capture) {
+                if ([mainMenu.delegate respondsToSelector:@selector(didCapturePhoto)]) {
+                    [mainMenu.delegate didCapturePhoto];
+                }
+            } else if (mainMenu.captureType == startvideo) {
+                if ([mainMenu.delegate respondsToSelector:@selector(didActionVideoWithType:)]) {
+                    [mainMenu.delegate didActionVideoWithType:startvideo];
+                    [mainMenu setCaptureType:stopvideo];
+                }
+            } else if (mainMenu.captureType == stopvideo) {
+                if ([mainMenu.delegate respondsToSelector:@selector(didActionVideoWithType:)]) {
+                    [mainMenu.delegate didActionVideoWithType:stopvideo];
+                    [mainMenu setCaptureType:startvideo];
+                }
+            }
+        }
+        
         
     } else if ([nameItem isEqualToString:@"filter"]) {
         [self.rootView setBottomMenuViewWithBottomMenuType:FilterMenu];
