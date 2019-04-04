@@ -11,4 +11,8 @@
 
 @property (nonatomic) NSMutableArray<TKFilterModelView *> *dataArray;
 
+@property (nonatomic) id viewController;
+
+@property (nonatomic) id cameraViewController;
+
 @end

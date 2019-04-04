@@ -52,4 +52,8 @@
     return self;
 }
 
+- (void)setCameraViewController:(id)cameraViewController {
+    self.filterCollectionView.cameraViewController = cameraViewController;
+}
+
 @end

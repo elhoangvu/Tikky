@@ -34,10 +34,6 @@
     return self;
 }
 
-- (NSInteger)numberOfSections {
-    return 1;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     self =  [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
@@ -46,6 +42,7 @@
         [self setShowsHorizontalScrollIndicator:NO];
         self.dataArray = [[TKSampleDataPool sharedInstance] filterModelViewList];
         self.dataSource = self;
+        self.delegate = self;
         [self registerClass:[TKFilterCollectionViewCell class] forCellWithReuseIdentifier:@"filter_cell"];
     }
     return self;
@@ -63,12 +60,18 @@
     TKFilterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"filter_cell" forIndexPath:indexPath];
     if (cell) {
         cell.imageView.image = ((TKFilterModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
+        cell.delegate = self.cameraViewController;
     }
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height * 0.8);
+#pragma UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    TKFilterCollectionViewCell *cell = (TKFilterCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell.delegate respondsToSelector:@selector(didSelectFilterWithIdentifier:)]) {
+        [cell.delegate didSelectFilterWithIdentifier:self.dataArray[indexPath.row].identifier];
+    }
 }
 
 @end

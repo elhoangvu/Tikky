@@ -7,7 +7,6 @@
 //
 
 #import "TKFrameCollectionView.h"
-#import "TKFrameCollectionViewCell.h"
 
 @interface TKFrameCollectionView()<UICollectionViewDataSource>
 
@@ -22,14 +21,18 @@
         [self setShowsVerticalScrollIndicator:NO];
         self.backgroundColor = [UIColor whiteColor];
         self.dataSource = self;
+        self.delegate = self;
         [self registerClass:[TKFrameCollectionViewCell class] forCellWithReuseIdentifier:@"frame_cell"];
     }
     return self;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (collectionView == self) {
-        NSLog(@"%d", indexPath.row);
+    TKFrameCollectionViewCell *cell = (TKFrameCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (cell) {
+        if ([cell.delegate respondsToSelector:@selector(didSelectFrameWithIdentifier:)]) {
+            [cell.delegate didSelectFrameWithIdentifier:self.dataArray[indexPath.row].identifier];
+        }
     }
 }
 
@@ -44,6 +47,7 @@
     TKFrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"frame_cell" forIndexPath:indexPath];
     if (cell) {
         cell.imageView.image = ((TKFrameModelView *)[self.dataArray objectAtIndex:indexPath.row]).thumbImageView.image;
+        cell.delegate = self.cameraViewController;
     }
     return cell;
 }

@@ -31,7 +31,10 @@ TKStickerPreviewerDelegate,
 TKStickerCollectionViewCellDelegate,
 TKTopItemDelegate,
 TKFacialItemDelegate,
-TKButtonCaptureVideoDelegate
+TKButtonCaptureVideoDelegate,
+TKFilterItemDelegate,
+TKStickerItemDelegate,
+TKFrameItemDelegate
 > {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
@@ -155,7 +158,7 @@ TKButtonCaptureVideoDelegate
     [_tikkyEngine.stickerPreviewer.view addGestureRecognizer:tapGesture];
 #endif
     
-    _guiViewController = [GUIViewController new];
+    _guiViewController =[[GUIViewController alloc] init];
     _guiViewController.view.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_guiViewController.view];
     _guiViewController.cameraController = self;
@@ -302,6 +305,25 @@ TKButtonCaptureVideoDelegate
         NSLog(@"stop video");
     }
     
+}
+
+#pragma TKFilterItemDelegate
+
+-(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
+    NSLog(@"tap filter item");
+}
+
+#pragma TKStickerItemDelegate
+
+-(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
+    NSLog(@"tap sticker item");
+}
+
+
+#pragma TKFrameItemDelegate
+
+-(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
+    NSLog(@"tap frame item");
 }
 
 @end

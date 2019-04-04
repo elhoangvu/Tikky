@@ -30,8 +30,6 @@
         [[_imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor] setActive:YES];
         [[_imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
         [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor] setActive:YES];
-        [[_imageView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
-
 //        [[_nameLabel.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
 //        [[_nameLabel.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
 //        [[_nameLabel.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];

@@ -10,6 +10,9 @@
 #import "TKStickerCollectionView.h"
 #import "TKSampleDataPool.h"
 #import "TKStickerModel.h"
+#import "TKTypeSelectionCollectionViewCell.h"
+#import "TKTypeStickerCollectionView.h"
+#import "TKFrameCollectionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,9 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UICollectionView *selectionView;
 
-@property (nonatomic) UICollectionView *stickerCollectionView;
-
-
+@property (nonatomic) TKStickerCollectionViewBase *stickerCollectionView;
 
 
 @end

@@ -46,8 +46,8 @@
 
         [self setBottomMenuViewWithBottomMenuType:MainMenu];
         
-        [[self.topMenuView.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0] setActive:YES];
-        [[self.topMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor constant:0.0] setActive:YES];
+        [[self.topMenuView.topAnchor constraintEqualToAnchor:self.topAnchor] setActive:YES];
+        [[self.topMenuView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
         [[self.topMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[self.topMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.2] setActive:YES];
         

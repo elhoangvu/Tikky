@@ -7,7 +7,6 @@
 //
 
 #import "TKStickerCollectionView.h"
-#import "TKStickerCollectionViewCell.h"
 
 @interface TKStickerCollectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -21,15 +20,10 @@
         self.dataArray = [[TKSampleDataPool sharedInstance] stickerModelViewList];
         [self setShowsVerticalScrollIndicator:NO];
         self.dataSource = self;
+        self.delegate = self;
         [self registerClass:[TKStickerCollectionViewCell class] forCellWithReuseIdentifier:@"sticker_cell"];
     }
     return self;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (collectionView == self) {
-        
-    }
 }
 
 #pragma UICollectionViewDataSource
@@ -46,7 +40,16 @@
     TKStickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"sticker_cell" forIndexPath:indexPath];
     if (cell) {
         cell.imageView.image = ((TKStickerModelView *)self.dataArray[indexPath.row]).thumbImageView.image;
+        cell.delegate = self.cameraViewController;
     }
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    TKStickerCollectionViewCell *cell = (TKStickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if ([cell.delegate respondsToSelector:@selector(didSelectStickerWithIdentifier:)]) {
+        [cell.delegate didSelectStickerWithIdentifier:self.dataArray[indexPath.row].identifier];
+    }
 }
 @end

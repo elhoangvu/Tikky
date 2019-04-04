@@ -21,8 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSMutableArray<TKModelViewObject *> *dataArray;
 
-@property (nonatomic) id<TKStickerCellClick> delegate;
+@property (nonatomic, weak) id cameraViewController;
 
+@property (nonatomic, weak) id viewController;
 
 @end
 

@@ -7,9 +7,7 @@
 //
 
 #import "TKStickerBottomMenu.h"
-#import "TKTypeSelectionCollectionViewCell.h"
-#import "TKTypeStickerCollectionView.h"
-#import "TKFrameCollectionView.h"
+
 
 @interface TKStickerBottomMenu()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -62,6 +60,7 @@
     [[self.selectionView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
     [[self.selectionView.topAnchor constraintEqualToAnchor:self.topAnchor] setActive:YES];
      [_collectionDictionary setValue:self.stickerCollectionView forKey:@"sticker"];
+    self.stickerCollectionView.cameraViewController = self.cameraViewController;
 
     [self.selectionView registerClass:[TKTypeSelectionCollectionViewCell class] forCellWithReuseIdentifier:@"type_cell"];
 }
@@ -69,6 +68,12 @@
 - (void)setViewController:(id)viewController {
     [super setViewController:viewController];
     _delegate = viewController;
+}
+
+- (void)setCameraViewController:(id)cameraViewController {
+    [super setCameraViewController:cameraViewController];
+    self.stickerCollectionView.cameraViewController = self.cameraViewController;
+    [self.stickerCollectionView reloadData];
 }
 
 #pragma UICollectionViewDataSource
@@ -101,15 +106,16 @@
         switch (indexPath.row) {
             case 0: {
                 [self.stickerCollectionView setHidden:YES];
-                self.stickerCollectionView = [_collectionDictionary objectForKey:@"sticker"];
+                self.stickerCollectionView = [self.collectionDictionary objectForKey:@"sticker"];
                 [self.stickerCollectionView setHidden:NO];
                 break;
             }
             case 1: {
                 [self.stickerCollectionView setHidden:YES];
                 if ([_collectionDictionary objectForKey:@"frame"]) {
-                    self.stickerCollectionView = [_collectionDictionary objectForKey:@"frame"];
+                    self.stickerCollectionView = [self.collectionDictionary objectForKey:@"frame"];
                     [self.stickerCollectionView setHidden:NO];
+                    self.stickerCollectionView.cameraViewController = self.cameraViewController;
                 } else {
                     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
                     UICollectionView *frameCollectionView = [[TKFrameCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
@@ -122,7 +128,8 @@
                     [[frameCollectionView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
                     [[frameCollectionView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.8] setActive:YES];
                     self.stickerCollectionView = frameCollectionView;
-                    [_collectionDictionary setValue:frameCollectionView forKey:@"frame"];
+                    [self.collectionDictionary setValue:frameCollectionView forKey:@"frame"];
+                    self.stickerCollectionView.cameraViewController = self.cameraViewController;
                 }
                 break;
             }
@@ -135,12 +142,7 @@
             default:
                 break;
         }
-        self.stickerCollectionView.delegate = self;
-    } else {
-        if ([((TKStickerCollectionViewBase *)collectionView).delegate respondsToSelector:@selector(cellClickWith:)]) {
-                [((TKStickerCollectionViewBase *)collectionView).delegate cellClickWith:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).identifier andType:((TKModelObject *)[((TKStickerCollectionViewBase *)collectionView).dataArray objectAtIndex:indexPath.row]).type];
-        }
-    };
+    }
 }
 
 @end

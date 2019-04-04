@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TKSampleDataPool.h"
 #import "TKStickerCollectionViewBase.h"
+#import "TKStickerCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
