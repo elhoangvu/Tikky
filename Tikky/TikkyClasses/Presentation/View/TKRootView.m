@@ -64,6 +64,7 @@
 - (void)setCameraViewController:(id)cameraViewController {
     self.bottomMenuView.cameraViewController = cameraViewController;
     self.topMenuView.cameraViewController = cameraViewController;
+    self.topMenuView.delegate = cameraViewController;
     _cameraViewController = cameraViewController;
 }
 

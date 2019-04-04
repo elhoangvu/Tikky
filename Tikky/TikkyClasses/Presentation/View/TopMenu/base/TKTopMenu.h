@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id cameraViewController;
 
 @property (nonatomic, weak) id viewController;
+
 @property (nonatomic, strong) NSArray *items;
 
 @end
