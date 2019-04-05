@@ -31,7 +31,7 @@
     TKFrameCollectionViewCell *cell = (TKFrameCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if (cell) {
         if ([cell.delegate respondsToSelector:@selector(didSelectFrameWithIdentifier:)]) {
-            [cell.delegate didSelectFrameWithIdentifier:self.dataArray[indexPath.row].identifier];
+            [cell.delegate didSelectFrameWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
         }
     }
 }

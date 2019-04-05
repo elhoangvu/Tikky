@@ -286,11 +286,6 @@ TKFrameItemDelegate
     [((TKCamera *)_imageInput) swapCamera];
 }
 
-#pragma TKFacialItemDelegate
--(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap facial item!");
-}
-
 #pragma getMenuWithMenuType
 
 
@@ -307,23 +302,28 @@ TKFrameItemDelegate
     
 }
 
+#pragma TKFacialItemDelegate
+-(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
+    NSLog(@"tap facial item! %ld", (long)identifier);
+}
+
 #pragma TKFilterItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap filter item");
+    NSLog(@"tap filter item %ld", (long)identifier);
 }
 
 #pragma TKStickerItemDelegate
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap sticker item");
+    NSLog(@"tap sticker item %ld", (long)identifier);
 }
 
 
 #pragma TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap frame item");
+    NSLog(@"tap frame item %ld", (long)identifier);
 }
 
 @end

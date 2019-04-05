@@ -49,7 +49,7 @@
     TKStickerCollectionViewCell *cell = (TKStickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
     if ([cell.delegate respondsToSelector:@selector(didSelectStickerWithIdentifier:)]) {
-        [cell.delegate didSelectStickerWithIdentifier:self.dataArray[indexPath.row].identifier];
+        [cell.delegate didSelectStickerWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
     }
 }
 @end

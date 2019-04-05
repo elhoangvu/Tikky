@@ -70,7 +70,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     TKFilterCollectionViewCell *cell = (TKFilterCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if ([cell.delegate respondsToSelector:@selector(didSelectFilterWithIdentifier:)]) {
-        [cell.delegate didSelectFilterWithIdentifier:self.dataArray[indexPath.row].identifier];
+        [cell.delegate didSelectFilterWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
     }
 }
 
