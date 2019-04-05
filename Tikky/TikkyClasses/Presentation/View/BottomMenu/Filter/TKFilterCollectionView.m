@@ -11,6 +11,8 @@
 
 @interface TKFilterCollectionView() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic) TKFilterCollectionViewCell *currentCell;
+
 @end
 
 @implementation TKFilterCollectionView
@@ -71,6 +73,20 @@
     TKFilterCollectionViewCell *cell = (TKFilterCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if ([cell.delegate respondsToSelector:@selector(didSelectFilterWithIdentifier:)]) {
         [cell.delegate didSelectFilterWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            if (self.currentCell) {
+                self.currentCell.imageView.transform = CGAffineTransformIdentity;
+                self.currentCell.layer.borderWidth = 0;
+                if (self.currentCell == cell) return;
+            }
+            // animate it to the identity transform (100% scale)
+            cell.imageView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+            cell.layer.borderWidth = 3.0f;
+            cell.layer.borderColor = [UIColor purpleColor].CGColor;
+        } completion:^(BOOL finished){
+            // if you want to do something once the animation finishes, put it here
+            self.currentCell = cell;
+        }];
     }
 }
 
