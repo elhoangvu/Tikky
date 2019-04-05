@@ -10,6 +10,8 @@
 
 @interface TKStickerCollectionView()<UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (nonatomic) TKStickerCollectionViewCell *currentCell;
+
 @end
 
 @implementation TKStickerCollectionView
@@ -49,7 +51,13 @@
     TKStickerCollectionViewCell *cell = (TKStickerCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     
     if ([cell.delegate respondsToSelector:@selector(didSelectStickerWithIdentifier:)]) {
-        [cell.delegate didSelectStickerWithIdentifier:self.dataArray[indexPath.row].identifier];
+        [cell.delegate didSelectStickerWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
+        cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            cell.imageView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){
+            // if you want to do something once the animation finishes, put it here
+        }];
     }
 }
 @end

@@ -30,6 +30,7 @@
         [self setBackgroundColor:[UIColor blackColor]];
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
         [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+        layout.sectionInset = UIEdgeInsetsMake(10, 5, 10, 5);
         _filterCollectionView=[[TKFilterCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
         [self addSubview:self.filterCollectionView];
         

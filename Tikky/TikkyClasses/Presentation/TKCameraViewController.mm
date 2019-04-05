@@ -288,7 +288,7 @@ TKFrameItemDelegate
 
 #pragma TKFacialItemDelegate
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap facial item!");
+    NSLog(@"tap facial item! %ld", (long)identifier);
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier)];
 }
 
@@ -312,8 +312,8 @@ TKFrameItemDelegate
 #pragma TKFilterItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap filter item");
-    NSString* filterName = [_filters objectAtIndex:2];
+    NSLog(@"tap filter item %ld", (long)identifier);
+    NSString* filterName = [_filters objectAtIndex:identifier];
     TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
     [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
     _lastFilter = filter;
@@ -322,15 +322,15 @@ TKFrameItemDelegate
 #pragma TKStickerItemDelegate
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap sticker item");
+    NSLog(@"tap sticker item %ld", (long)identifier);
 }
 
 
 #pragma TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap frame item");
-    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(1)];
+    NSLog(@"tap frame item %ld", (long)identifier);
+   [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(1)];
 }
 
 @end

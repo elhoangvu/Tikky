@@ -10,6 +10,8 @@
 
 @interface TKFrameCollectionView()<UICollectionViewDataSource>
 
+@property (nonatomic) TKFrameCollectionViewCell *currentCell;
+
 @end
 
 @implementation TKFrameCollectionView
@@ -31,7 +33,22 @@
     TKFrameCollectionViewCell *cell = (TKFrameCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if (cell) {
         if ([cell.delegate respondsToSelector:@selector(didSelectFrameWithIdentifier:)]) {
-            [cell.delegate didSelectFrameWithIdentifier:self.dataArray[indexPath.row].identifier];
+            [cell.delegate didSelectFrameWithIdentifier:self.dataArray[indexPath.row].identifier.integerValue];
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                if (self.currentCell) {
+                    self.currentCell.imageView.transform = CGAffineTransformIdentity;
+                    self.currentCell.layer.borderWidth = 0;
+                    if (self.currentCell == cell) return;
+                }
+                // animate it to the identity transform (100% scale)
+                cell.imageView.transform = CGAffineTransformMakeScale(0.8, 0.8);
+                cell.layer.borderWidth = 3.0f;
+                cell.layer.borderColor = [UIColor purpleColor].CGColor;
+            } completion:^(BOOL finished){
+                // if you want to do something once the animation finishes, put it here
+                self.currentCell = cell;
+            }];
+            
         }
     }
 }
