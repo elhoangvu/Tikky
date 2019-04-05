@@ -24,6 +24,8 @@
 
 #import "FeatureDefinition.h"
 
+#import "TKDefinition.h"
+
 @interface TKCameraViewController ()
 <
 TKBottomItemDelegate,
@@ -289,7 +291,11 @@ TKFrameItemDelegate
 #pragma TKFacialItemDelegate
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap facial item! %ld", (long)identifier);
-    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier)];
+    if (identifier < 0 && identifier >= _facialStickers->size()) {
+        NSLog(@"vulh > Facial stickers' identifier is out of range!!!");
+        return;
+    }
+    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier-1)];
 }
 
 #pragma getMenuWithMenuType
@@ -313,7 +319,11 @@ TKFrameItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap filter item %ld", (long)identifier);
-    NSString* filterName = [_filters objectAtIndex:identifier];
+    if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
+        NSLog(@"vulh > Filters' identifier is out of range!!!");
+        return;
+    }
+    NSString* filterName = [TKSampleDataPool.sharedInstance.orderedIndexFilterArray objectAtIndex:identifier-1];
     TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
     [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
     _lastFilter = filter;
@@ -323,6 +333,11 @@ TKFrameItemDelegate
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap sticker item %ld", (long)identifier);
+    if (identifier < 0 && identifier >= _frameStickers->size()) {
+        NSLog(@"vulh > Static stickers' identifier is out of range!!!");
+        return;
+    }
+    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:identifier-1]];
 }
 
 
@@ -330,7 +345,12 @@ TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap frame item %ld", (long)identifier);
-   [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(1)];
+    if (identifier < 0 && identifier >= _frameStickers->size()) {
+        NSLog(@"vulh > Frame stickers' identifier is out of range!!!");
+        return;
+    }
+    [_tikkyEngine.stickerPreviewer removeAllFrameStickers];
+   [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(identifier-1)];
 }
 
 @end

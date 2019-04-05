@@ -74,7 +74,7 @@
     [_facialModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:2] andType:@"facial" andThumbnailPath:@"sticker-fox-thumb"]];
     [_facialModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:3] andType:@"facial" andThumbnailPath:@"sticker-flag-vn-thumb"]];
     [_facialModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andType:@"facial" andThumbnailPath:@"sticker-nonla-hat-thumb"]];
-    [_facialModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andType:@"facial" andThumbnailPath:@"sticker-cat-1-thumb"]];
+    [_facialModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andType:@"facial" andThumbnailPath:@"sticker-cat-thumb"]];
 }
 
 - (void)initStickerModelList {
@@ -113,7 +113,7 @@
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-1971"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-B & W"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"modal-brooklyn"]];
-    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-charcoal"]];
+    [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-western"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-clarity"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-club"]];
     [_filterModelList addObject:[[TKFilterModel alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailPath:@"model-elizabeth"]];
@@ -357,9 +357,9 @@
     
     _facialStickers->push_back(stickers1);
     _facialStickers->push_back(stickers2);
+    _facialStickers->push_back(stickers5);
     _facialStickers->push_back(stickers3);
     _facialStickers->push_back(stickers4);
-    _facialStickers->push_back(stickers5);
 }
 
 - (void)initFrameStickerList {
@@ -500,7 +500,7 @@
                            @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
                            @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
                            };
-    
+    _orderedIndexFilterArray = [NSMutableArray arrayWithObjects:@"GLITCH", @"SNOWDROP",@"XPROLL", @"AMARO", @"LOMOFI", @"LORDKELVIN", @"HEFE", @"SUTRO", @"1977", @"BRANNAN", @"EARLYBIRD", @"RISE", @"SIERRA", @"WALDEN", @"VALENCIA", @"HUDSON", @"INKWELL", @"TOASTER", @"BEAUTY", @"DEFAULT", nil];
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];
     __weak __typeof(self)weakSelf = self;
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString* _Nonnull key, NSDictionary*  _Nonnull value, BOOL * _Nonnull stop) {
@@ -540,7 +540,7 @@
     [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-dog-thumb" ofType:@"png"]]]]];
     [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:2] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-fox-thumb" ofType:@"png"]]]]];
     [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:3] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-flag-vn-thumb" ofType:@"png"]]]]];
-    [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-non-la-thumb" ofType:@"png"]]]]];
+    [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-nonla-hat-thumb" ofType:@"png"]]]]];
     [_facialModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andType:@"facial" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"sticker-cat-thumb" ofType:@"png"]]]]];
 }
 
@@ -577,7 +577,7 @@
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:1] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:2] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-B & W" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:3] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"modal-brooklyn" ofType:@"png"]]]]];
-    [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-charcoal" ofType:@"png"]]]]];
+    [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:4] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-western" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:5] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:6] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];
     [_filterModelViewList addObject:[[TKFacialModelView alloc] initWithIdentifier:[[NSNumber alloc] initWithInt:7] andType:@"filter" andThumbnailImage:[[UIImageView alloc] initWithImage:[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"model-1971" ofType:@"png"]]]]];

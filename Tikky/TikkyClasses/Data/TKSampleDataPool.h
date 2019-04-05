@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSMutableDictionary* filterResources;
 
+@property (nonatomic, readonly) NSMutableArray* orderedIndexFilterArray;
+
 + (instancetype)sharedInstance;
 
 - (void *)facialStickers;
