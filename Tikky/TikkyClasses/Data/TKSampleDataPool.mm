@@ -443,8 +443,7 @@
 
 - (void)initfilterResources {
 
-    NSDictionary* dic = @{ @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
-                           @"GLITCH"     : @{ @"class" : @"GPUImageGlitchFilter"     },
+    NSDictionary* dic = @{ @"GLITCH"     : @{ @"class" : @"GPUImageGlitchFilter"     },
                            @"SNOWDROP"   : @{ @"class" : @"GPUImageSnowFilter"       },
 //                           @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
 //                           @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
@@ -499,6 +498,7 @@
                            @"INKWELL"    : @{ @"class" : @"IFInkwellFilter"     },
                            @"TOASTER"    : @{ @"class" : @"IFToasterFilter"     },
                            @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
+                           @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
                            };
     
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];

@@ -289,6 +289,7 @@ TKFrameItemDelegate
 #pragma TKFacialItemDelegate
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap facial item!");
+    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier)];
 }
 
 #pragma getMenuWithMenuType
@@ -296,6 +297,7 @@ TKFrameItemDelegate
 
 -(void)didCapturePhoto {
     NSLog(@"capture!");
+    [self capturePhoto];
 }
 
 -(void)didActionVideoWithType:(CaptureButtonType)type {
@@ -311,6 +313,10 @@ TKFrameItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap filter item");
+    NSString* filterName = [_filters objectAtIndex:2];
+    TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+    [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+    _lastFilter = filter;
 }
 
 #pragma TKStickerItemDelegate
@@ -324,6 +330,7 @@ TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap frame item");
+    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(1)];
 }
 
 @end
