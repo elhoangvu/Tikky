@@ -35,6 +35,7 @@
 -(void)setUp {
     UICollectionViewFlowLayout *layout1=[[UICollectionViewFlowLayout alloc] init];
     UICollectionViewFlowLayout *layout2=[[UICollectionViewFlowLayout alloc] init];
+    layout1.minimumInteritemSpacing = ([[UIScreen mainScreen] bounds].size.width - self.typeSelection.count * 50) / (self.typeSelection.count + 1);
     _selectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout1];
     _stickerCollectionView = [[TKStickerCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout2];
     
@@ -192,6 +193,7 @@
         }
     }
 }
+
 
 
 @end
