@@ -26,7 +26,8 @@
     self = [super init];
     if (self) {
         _collectionDictionary = [NSMutableDictionary new];
-        _typeSelection = @[@"Sticker", @"Frame", @"Text", @"Drawing"];
+        _typeSelection = @[@"Sticker", @"Frame"];
+//        _typeSelection = @[@"Sticker", @"Frame", @"Text", @"Drawing"];
         [self setUp];
     }
     return self;
@@ -121,7 +122,6 @@
                     UICollectionView *frameCollectionView = [[TKFrameCollectionView alloc] initWithFrame:self.frame collectionViewLayout:layout];
                     
                     [self addSubview:frameCollectionView];
-                    frameCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
                     frameCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
                     [[frameCollectionView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
                     [[frameCollectionView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];

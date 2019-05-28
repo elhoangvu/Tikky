@@ -428,10 +428,12 @@
         NSString* path = [NSBundle.mainBundle pathForResource:fileName ofType:nil];
         NSString* luaPath = [NSBundle.mainBundle pathForResource:luaName ofType:nil];
         TKSticker fsticker;
+        if (path != nil && luaPath != nil) {
         fsticker.path = path.UTF8String;
         fsticker.luaComponentPath = luaPath.UTF8String;
         fsticker.allowChanges = NO;
         fstickers1.push_back(fsticker);
+        }
     }
     
     std::vector<TKSticker> fstickers2;
