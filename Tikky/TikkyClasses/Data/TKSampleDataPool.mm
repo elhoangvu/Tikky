@@ -9,11 +9,17 @@
 #import "TKSampleDataPool.h"
 #import "GPUImage.h"
 #import "StickerScene.h"
+#import "FMDB.h"
+#import "TKStickerEntity.h"
 
 @interface TKSampleDataPool () {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
 }
+
+@property (nonatomic) NSMutableArray* frameSticker_v2;
+@property (nonatomic) NSMutableArray* facialSticker_v2;
+@property (nonatomic) NSMutableArray* commonSticker_v2;
 
 @end
 
@@ -35,6 +41,10 @@
         return nil;
     }
     
+    _frameSticker_v2 = [NSMutableArray array];
+    _facialSticker_v2 = [NSMutableArray array];
+    _commonSticker_v2 = [NSMutableArray array];
+    
     [self initfilterResources];
     [self initStickerList];
     [self initFilterList];
@@ -51,15 +61,61 @@
     [self initFacialModelViewList];
     
     [self initFacialStickerList];
-
-    [GPUImageContrastFilter load];
-    [GPUImageLevelsFilter load];
-    [GPUImageSaturationFilter load];
-    [GPUImageBrightnessFilter load];
-    [GPUImageGammaFilter load];
-    [GPUImageFilter load];
-    
+    [self loadAllData];
+    _facialSticker_v2;
+    _frameSticker_v2;
+    _commonSticker_v2;
     return self;
+}
+
+- (void)loadAllData {
+    NSString* dbPath = [NSBundle.mainBundle pathForResource:@"tikky" ofType:@"db"];
+    FMDatabase* db = [FMDatabase databaseWithPath:dbPath];
+    if (![db open]) {
+        db = nil;
+        return;
+    }
+    
+    FMResultSet* s = [db executeQuery:@"SELECT * FROM sticker"];
+    while ([s next]) {
+        NSUInteger sid = [s intForColumn:@"id"];
+        NSString* category = [s stringForColumn:@"category"];
+        BOOL isBundle = [s boolForColumn:@"isbundle"];
+        NSString* name = [s stringForColumn:@"name"];
+        NSUInteger type = [s intForColumn:@"type"];
+        NSUInteger stickerCount = [s intForColumn:@"stickercount"];
+        NSString* thumbnail = [NSString stringWithFormat:@"%@-thumbnail.png", name];
+        
+        NSString* fetchLandmarkQuery = [NSString stringWithFormat:@"SELECT * FROM facialsticker WHERE id = %lu", (unsigned long)sid];
+        FMResultSet* sLandmarks = [db executeQuery:fetchLandmarkQuery];
+        NSMutableDictionary* landmarks = [[NSMutableDictionary alloc] init];
+        while ([sLandmarks next]) {
+            NSUInteger subid = [sLandmarks intForColumn:@"subid"];
+            NSUInteger lmk = [sLandmarks intForColumn:@"landmark"];
+            if (![landmarks objectForKey:@(subid)]) {
+                NSMutableArray* lmks = [NSMutableArray arrayWithObject:@(lmk)];
+                [landmarks setObject:lmks forKey:@(subid)];
+            } else {
+                NSMutableArray* landmarkArr = (NSMutableArray *)[landmarks objectForKey:@(subid)];
+                [landmarkArr addObject:@(lmk)];
+            }
+        }
+        
+        TKStickerEntity* sticker;
+        switch (type) {
+            case TKStickerTypeFace:
+                sticker = [[TKFaceStickerEntity alloc] initWithID:sid category:category name:name thumbnail:thumbnail isBundle:isBundle count:stickerCount type:TKStickerTypeFace landmarks:landmarks];
+                [_facialSticker_v2 addObject:sticker];
+                break;
+            case TKStickerTypeFrame:
+                sticker = [[TKFaceStickerEntity alloc] initWithID:sid category:category name:name thumbnail:thumbnail isBundle:isBundle count:stickerCount type:TKStickerTypeFrame];
+                [_frameSticker_v2 addObject:sticker];
+            default:
+                sticker = [[TKFaceStickerEntity alloc] initWithID:sid category:category name:name thumbnail:thumbnail isBundle:isBundle count:stickerCount type:TKStickerTypeCommmon];
+                [_commonSticker_v2 addObject:sticker];
+                break;
+        }
+    }
 }
 
 - (void)initFilterList {
