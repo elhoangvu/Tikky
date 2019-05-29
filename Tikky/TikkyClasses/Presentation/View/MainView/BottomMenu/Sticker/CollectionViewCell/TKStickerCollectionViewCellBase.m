@@ -10,4 +10,12 @@
 
 @implementation TKStickerCollectionViewCellBase
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _isSelected = NO;
+    }
+    return self;
+}
 @end

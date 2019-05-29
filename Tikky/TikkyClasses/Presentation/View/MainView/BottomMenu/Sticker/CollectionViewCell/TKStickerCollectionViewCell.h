@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier;
 
+-(void)didDeselectStickerWithIdentifier:(NSInteger)identifier;
+
+
 @end
 
 @interface TKStickerCollectionViewCell : TKStickerCollectionViewCellBase

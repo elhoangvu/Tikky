@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier;
 
+-(void)didDeselectFrameWithIdentifier:(NSInteger)identifier;
+
+
 @end
 
 @interface TKFrameCollectionViewCell : TKStickerCollectionViewCellBase

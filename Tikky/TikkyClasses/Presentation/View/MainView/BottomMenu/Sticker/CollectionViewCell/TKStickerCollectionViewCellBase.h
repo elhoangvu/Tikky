@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TKStickerCollectionViewCellBase : UICollectionViewCell
 
+@property (nonatomic) BOOL isSelected;
 @end
 
 NS_ASSUME_NONNULL_END
