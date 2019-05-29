@@ -11,5 +11,6 @@
 
 #import "GPUImageSnowFilter.h"
 #import "GPUImageGlitchFilter.h"
+#import "GPUImageRainDropEffectFilter.h"
 
 #endif /* TKEffectFilter_h */

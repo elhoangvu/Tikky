@@ -221,6 +221,8 @@
 		114482892292E74400A61CF5 /* aquaman.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B72292E74300A61CF5 /* aquaman.png */; };
 		1144828A2292E74400A61CF5 /* tonystark.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B82292E74300A61CF5 /* tonystark.png */; };
 		11C67991229F066D0054C5A1 /* TKGalleryUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67990229F066C0054C5A1 /* TKGalleryUtilities.m */; };
+		11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */; };
+		11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */; };
 		11DBE5A9229D7A5800718133 /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11DBE4F2229D7A5700718133 /* TikkyEngine.mm */; };
 		11DBE5AA229D7A5800718133 /* TKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DBE4F8229D7A5700718133 /* TKPhoto.m */; };
 		11DBE5AB229D7A5800718133 /* TKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DBE4F9229D7A5700718133 /* TKVideo.m */; };
@@ -733,6 +735,10 @@
 		114481B82292E74300A61CF5 /* tonystark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tonystark.png; sourceTree = "<group>"; };
 		11C6798F229F066C0054C5A1 /* TKGalleryUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGalleryUtilities.h; sourceTree = "<group>"; };
 		11C67990229F066C0054C5A1 /* TKGalleryUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGalleryUtilities.m; sourceTree = "<group>"; };
+		11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropEffectFilter.m; sourceTree = "<group>"; };
+		11C6799F229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropEffectFilter.h; sourceTree = "<group>"; };
+		11C679A0229F09EA0054C5A1 /* GPUImageRainDropFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropFilter.h; sourceTree = "<group>"; };
+		11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropFilter.m; sourceTree = "<group>"; };
 		11DBE4F2229D7A5700718133 /* TikkyEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TikkyEngine.mm; sourceTree = "<group>"; };
 		11DBE4F3229D7A5700718133 /* TKImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
 		11DBE4F4229D7A5700718133 /* Tikky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tikky.h; sourceTree = "<group>"; };
@@ -2302,6 +2308,10 @@
 		B74C9AD0224BE9670061DAA4 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				11C6799F229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.h */,
+				11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */,
+				11C679A0229F09EA0054C5A1 /* GPUImageRainDropFilter.h */,
+				11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */,
 				B7136DC8224AA1EA00CF2FE8 /* GPUImageSnowFilter.h */,
 				B7136DC9224AA1EA00CF2FE8 /* GPUImageSnowFilter.m */,
 				B71A8D8D2230A06D00E1FC58 /* GPUImageGlitchFilter.h */,
@@ -2934,6 +2944,7 @@
 				11DBE5DC229D7A5800718133 /* TKStickerCollectionViewCellBase.m in Sources */,
 				11DBE5BD229D7A5800718133 /* TKSampleDataPool.mm in Sources */,
 				B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */,
+				11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */,
 				11DBE5C1229D7A5800718133 /* UIView+RCEssentials.m in Sources */,
 				B74C9AC0224BE94B0061DAA4 /* IFRiseFilter.m in Sources */,
 				11DBE5D9229D7A5800718133 /* TKFacialBottomMenu.m in Sources */,
@@ -2943,6 +2954,7 @@
 				B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */,
 				11DBE5EF229D7A5800718133 /* GUIViewController.m in Sources */,
 				11DBE5D1229D7A5800718133 /* TKBottomEditView.m in Sources */,
+				11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */,
 				11DBE5C7229D7A5800718133 /* TKStickerModelView.m in Sources */,
 				B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */,
 				B74C9ACB224BE94B0061DAA4 /* IFSutroFilter.m in Sources */,

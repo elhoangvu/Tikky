@@ -202,7 +202,7 @@ TKFrameItemDelegate
 
 - (void)capturePhoto {
     cocos2d::Director::getInstance()->pause();
-    __weak __typeof(self)weakSelf = self;
+ 
     [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         cocos2d::Director::getInstance()->resume();
         [TKGalleryUtilities saveImageToGalleryWithImage:[UIImage imageWithData:processedJPEG]];

@@ -61,10 +61,10 @@
     [self initFacialModelViewList];
     
     [self initFacialStickerList];
-    [self loadAllData];
-    _facialSticker_v2;
-    _frameSticker_v2;
-    _commonSticker_v2;
+//    [self loadAllData];
+//    _facialSticker_v2;
+//    _frameSticker_v2;
+//    _commonSticker_v2;
     return self;
 }
 
@@ -503,6 +503,7 @@
 
     NSDictionary* dic = @{ @"GLITCH"     : @{ @"class" : @"GPUImageGlitchFilter"     },
                            @"SNOWDROP"   : @{ @"class" : @"GPUImageSnowFilter"       },
+                           @"RAINDROP"   : @{ @"class" : @"GPUImageRainDropEffectFilter"},
 //                           @"BRIGHTNESS" : @{ @"class" : @"GPUImageBrightnessFilter" },
 //                           @"SATURATION" : @{ @"class" : @"GPUImageSaturationFilter" },
 //                           @"CONTRAST"   : @{ @"class" : @"GPUImageContrastFilter"   },
@@ -558,7 +559,7 @@
                            @"BEAUTY"     : @{ @"class" : @"LFGPUImageBeautyFilter" },
                            @"DEFAULT"    : @{ @"class" : @"GPUImageFilter"           },
                            };
-    _orderedIndexFilterArray = [NSMutableArray arrayWithObjects:@"GLITCH", @"SNOWDROP",@"XPROLL", @"AMARO", @"LOMOFI", @"LORDKELVIN", @"HEFE", @"SUTRO", @"1977", @"BRANNAN", @"EARLYBIRD", @"RISE", @"SIERRA", @"WALDEN", @"VALENCIA", @"HUDSON", @"INKWELL", @"TOASTER", @"BEAUTY", @"DEFAULT", nil];
+    _orderedIndexFilterArray = [NSMutableArray arrayWithObjects:@"GLITCH", @"SNOWDROP", @"RAINDROP", @"XPROLL", @"AMARO", @"LOMOFI", @"LORDKELVIN", @"HEFE", @"SUTRO", @"1977", @"BRANNAN", @"EARLYBIRD", @"RISE", @"SIERRA", @"WALDEN", @"VALENCIA", @"HUDSON", @"INKWELL", @"TOASTER", @"BEAUTY", @"DEFAULT", nil];
     _filterResources = [NSMutableDictionary dictionaryWithCapacity:dic.allKeys.count];
     __weak __typeof(self)weakSelf = self;
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString* _Nonnull key, NSDictionary*  _Nonnull value, BOOL * _Nonnull stop) {
