@@ -14,6 +14,8 @@
 
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier;
 
+-(void)didDeselectFacialWithIdentifier:(NSInteger)identifier;
+
 @end
 
 NS_ASSUME_NONNULL_BEGIN

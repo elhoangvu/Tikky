@@ -202,9 +202,12 @@
 }
 
 - (void)editTapDetected{
+<<<<<<< HEAD:Tikky/TikkyClasses/Presentation/ViewController/EditViewController.mm
     NSLog(@"edit Tap on imageview");
     _editView = TikkyEngine.sharedInstance.view;
     [TikkyEngine.sharedInstance.imageFilter removeAllFilter];
+=======
+>>>>>>> ui5:Tikky/TikkyClasses/Presentation/ViewController/EditViewController.m
     
     TKImageInput* input = TikkyEngine.sharedInstance.imageFilter.input;
     TKPhoto* photo = [[TKPhoto alloc] initWithImage:self.imageView.image];
@@ -285,6 +288,7 @@
 #pragma TKFilterItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
+<<<<<<< HEAD:Tikky/TikkyClasses/Presentation/ViewController/EditViewController.mm
     NSLog(@"tap edit filter item %ld", (long)identifier);
     if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
         NSLog(@"vulh > Filters' identifier is out of range!!!");
@@ -304,6 +308,16 @@
     }
     
     _isEdited = YES;
+=======
+    //    if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
+    //        NSLog(@"vulh > Filters' identifier is out of range!!!");
+    //        return;
+    //    }
+    //    NSString* filterName = [TKSampleDataPool.sharedInstance.orderedIndexFilterArray objectAtIndex:identifier-1];
+    //    TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+    //    [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+    //    _lastFilter = filter;
+>>>>>>> ui5:Tikky/TikkyClasses/Presentation/ViewController/EditViewController.m
 }
 
 -(void)didDeselectFilterWithIdentifier:(NSInteger)identifier {

@@ -266,12 +266,16 @@ TKFrameItemDelegate
 
 #pragma TKFacialItemDelegate
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap facial item! %ld", (long)identifier);
     if (identifier < 0 && identifier >= _facialStickers->size()) {
         NSLog(@"vulh > Facial stickers' identifier is out of range!!!");
         return;
     }
     [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier-1)];
+}
+
+-(void)didDeselectFacialWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect facial");
+
 }
 
 #pragma getMenuWithMenuType
@@ -294,7 +298,6 @@ TKFrameItemDelegate
 #pragma TKFilterItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap filter item %ld", (long)identifier);
     if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
         NSLog(@"vulh > Filters' identifier is out of range!!!");
         return;
@@ -305,10 +308,14 @@ TKFrameItemDelegate
     _lastFilter = filter;
 }
 
+-(void)didDeselectFilterWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect filter");
+
+}
+
 #pragma TKStickerItemDelegate
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap sticker item %ld", (long)identifier);
     if (identifier < 0 && identifier >= _frameStickers->size()) {
         NSLog(@"vulh > Static stickers' identifier is out of range!!!");
         return;
@@ -316,17 +323,25 @@ TKFrameItemDelegate
     [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:identifier-1]];
 }
 
+-(void)didDeselectStickerWithIdentifier:(NSInteger)identifier {
+    
+}
+
 
 #pragma TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap frame item %ld", (long)identifier);
     if (identifier < 0 && identifier >= _frameStickers->size()) {
         NSLog(@"vulh > Frame stickers' identifier is out of range!!!");
         return;
     }
     [_tikkyEngine.stickerPreviewer removeAllFrameStickers];
    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(identifier-1)];
+}
+
+-(void)didDeselectFrameWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect frame");
+
 }
 
 @end
