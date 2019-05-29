@@ -181,13 +181,11 @@
 }
 
 - (void)deleteTapDetected{
-    NSLog(@"edit Tap on imageview");
     
     
 }
 
 - (void)editTapDetected{
-    NSLog(@"edit Tap on imageview");
     
     [self setBottomEditViewIsHidden:NO];
     [UIView animateWithDuration:0.5 animations:^{
@@ -197,7 +195,6 @@
 }
 
 - (void)shareTapDetected{
-    NSLog(@"single Tap on imageview");
 
     [self setShareViewIsHidden:NO];
 }
@@ -246,7 +243,6 @@
 #pragma TKFilterItemDelegate
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap edit filter item %ld", (long)identifier);
     //    if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
     //        NSLog(@"vulh > Filters' identifier is out of range!!!");
     //        return;
@@ -257,10 +253,14 @@
     //    _lastFilter = filter;
 }
 
+-(void)didDeselectFilterWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect filter");
+    
+}
+
 #pragma TKStickerItemDelegate
 
 -(void)didSelectStickerWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap edit sticker item %ld", (long)identifier);
     //    if (identifier < 0 && identifier >= _frameStickers->size()) {
     //        NSLog(@"vulh > Static stickers' identifier is out of range!!!");
     //        return;
@@ -268,11 +268,15 @@
     //    [_tikkyEngine.stickerPreviewer newStaticStickerWithPath:[_stickers objectAtIndex:identifier-1]];
 }
 
+-(void)didDeselectStickerWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect filter");
+
+}
+
 
 #pragma TKFrameItemDelegate
 
 -(void)didSelectFrameWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap edit frame item %ld", (long)identifier);
     //    if (identifier < 0 && identifier >= _frameStickers->size()) {
     //        NSLog(@"vulh > Frame stickers' identifier is out of range!!!");
     //        return;
@@ -281,14 +285,23 @@
     //    [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(identifier-1)];
 }
 
+-(void)didDeselectFrameWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect frame");
+
+}
+
 #pragma TKFacialItemDelegate
 -(void)didSelectFacialWithIdentifier:(NSInteger)identifier {
-    NSLog(@"tap edit facial item! %ld", (long)identifier);
     //    if (identifier < 0 && identifier >= _facialStickers->size()) {
     //        NSLog(@"vulh > Facial stickers' identifier is out of range!!!");
     //        return;
     //    }
     //    [_tikkyEngine.stickerPreviewer newFacialStickerWithStickers:_facialStickers->at(identifier-1)];
+}
+
+-(void)didDeselectFacialWithIdentifier:(NSInteger)identifier {
+    NSLog(@"deselect facial");
+
 }
 
 
