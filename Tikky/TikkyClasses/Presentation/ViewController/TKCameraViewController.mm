@@ -26,6 +26,10 @@
 
 #import "TKDefinition.h"
 
+#import "TKNotification.h"
+
+#import "TKGalleryUtilities.h"
+
 @interface TKCameraViewController ()
 <
 TKBottomItemDelegate,
@@ -79,6 +83,21 @@ TKFrameItemDelegate
     
     [self setUpUI];
     [self.view setMultipleTouchEnabled:YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(editViewControllerWillDismiss:)
+                                                 name:kEditViewControllerWillDismiss
+                                               object:nil];
+    
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
 }
 
@@ -150,6 +169,21 @@ TKFrameItemDelegate
 #endif
 }
 
+- (void)editViewControllerWillDismiss:(NSNotification *)notification {
+    if (self.view != _tikkyEngine.view.superview) {
+        [self.view addSubview:_tikkyEngine.view];
+        [_tikkyEngine.imageFilter setInput:_imageInput];
+        [_tikkyEngine.imageFilter.view setFrame:self.view.frame];
+    }
+    
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+#if ENDABLE_CAMERA
+        [((TKCamera *)_imageInput) startCameraCapture];
+#endif
+    } else if ([_imageInput isKindOfClass:TKPhoto.class]) {
+        [(TKPhoto *)_imageInput processImageWithCompletionHandler:nil];
+    }
+}
 
 -(void)setUpUI {
     [self.view addSubview:_tikkyEngine.view];
@@ -166,71 +200,13 @@ TKFrameItemDelegate
     _guiViewController.cameraController = self;
 }
 
-- (void)writeVideoToLibraryWithURL:(NSURL *)url {
-    if (![url isFileURL]) {
-        NSLog(@">>>> HV > URL is not the file url");
-        return;
-    }
-
-    unsigned long long fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:url.path error:nil] fileSize];
-    NSLog(@">>>> HV > URL is the file url with size: %llu", fileSize);
-    __weak __typeof(self)weakSelf = self;
-    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        NSMutableArray* assets = [[NSMutableArray alloc] init];
-        PHAssetChangeRequest* assetRequest;
-        @autoreleasepool {
-            assetRequest = [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:url];
-            [assets addObject:assetRequest.placeholderForCreatedAsset];
-        }
-        
-        [weakSelf writeAssetsToAlbum:assets];
-    } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@">>>> HV > Save video failed with code: %@", error.description);
-        }
-    }];
-}
-
 - (void)capturePhoto {
     cocos2d::Director::getInstance()->pause();
     __weak __typeof(self)weakSelf = self;
     [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
         cocos2d::Director::getInstance()->resume();
-        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-            NSMutableArray* assets = [[NSMutableArray alloc] init];
-            PHAssetChangeRequest* assetRequest;
-            @autoreleasepool {
-                assetRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageWithData:processedJPEG]];
-                [assets addObject:assetRequest.placeholderForCreatedAsset];
-            }
-            
-            [weakSelf writeAssetsToAlbum:assets];
-        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-            //            if (block) {
-            //                block(error);
-            //            }
-            
-        }];
+        [TKGalleryUtilities saveImageToGalleryWithImage:[UIImage imageWithData:processedJPEG]];
     }];
-}
-
-- (void)writeAssetsToAlbum:(NSMutableArray *)assets {
-    __block PHAssetCollectionChangeRequest* assetCollectionRequest = nil;
-    PHFetchResult* result = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-    [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        PHAssetCollection* collection = (PHAssetCollection*)obj;
-        if ([collection isKindOfClass:[PHAssetCollection class]]) {
-            if ([[collection localizedTitle] isEqualToString:@"Tikky"]) {
-                assetCollectionRequest = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
-                [assetCollectionRequest addAssets:assets];
-                *stop = YES;
-            }
-        }
-    }];
-    if (assetCollectionRequest == nil) {
-        assetCollectionRequest = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:@"Tikky"];
-        [assetCollectionRequest addAssets:assets];
-    }
 }
 
 

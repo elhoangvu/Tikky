@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) UIImageView *imageView;
 
+@property (nonatomic) UIView* editView;
+
 @property (nonatomic) UIImageView *shareButton;
 
 @property (nonatomic) UIImageView *editButton;

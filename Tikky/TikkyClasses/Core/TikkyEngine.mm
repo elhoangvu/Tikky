@@ -46,6 +46,8 @@
                              UIScreen.mainScreen.bounds.size.height);
     
     _view = [[UIView alloc] initWithFrame:rect];
+    [_view setOpaque:NO];
+    [_view setBackgroundColor:UIColor.clearColor];
     
     [_imageFilter.view setFrame:rect];
     _imageFilter.delegate = self;

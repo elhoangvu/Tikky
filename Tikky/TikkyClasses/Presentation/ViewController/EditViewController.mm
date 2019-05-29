@@ -11,6 +11,9 @@
 #import "TKBottomEditView.h"
 #import "TKFacialCollectionViewCell.h"
 #import "TKFilterCollectionViewCell.h"
+#import "Tikky.h"
+#import "TKNotification.h"
+#import "TKGalleryUtilities.h"
 
 @interface EditViewController () <UIGestureRecognizerDelegate, TKShareViewDataSource, TKFilterItemDelegate, TKStickerItemDelegate, TKFrameItemDelegate, TKFacialItemDelegate, TKBottomEditMenuItemDelegate>
 
@@ -24,13 +27,17 @@
 
 @property (nonatomic) TKShareView *shareView;
 
-
+@property (nonatomic) BOOL isEdited;
 
 @property (nonatomic) UIPanGestureRecognizer *panGestureRecognize;
 
 @property (nonatomic) UIImageView *backButton;
 
 @property (nonatomic) TKBottomEditView *bottomEditView;
+
+@property (nonatomic) TKFilter* lastFilter;
+
+@property (nonatomic) UIImage* lastProcessImage;
 
 @end
 
@@ -46,18 +53,12 @@
 {
     self = [super init];
     if (self) {
+        _isEdited = NO;
+        
         _imageView = [UIImageView new];
         
         [self.view addSubview:_imageView];
-        
-        _imageView.translatesAutoresizingMaskIntoConstraints = NO;
-        [[_imageView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor] setActive:YES];
-        _heightImageView = [_imageView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor];
-        [_heightImageView setActive:YES];
-        [[_imageView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor] setActive:YES];
-        [[_imageView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.8] setActive:true];
-        _imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.view layoutIfNeeded];
+        [self layoutMainView:_imageView];
         
         _stackView = [UIStackView new];
         [self.view addSubview:_stackView];
@@ -152,8 +153,7 @@
         [[_backButton.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:0.1] setActive:YES];
         [_backButton setUserInteractionEnabled:YES];
         [_backButton addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoBack)]];
-        
-        
+    
     }
     return self;
 }
@@ -167,8 +167,24 @@
     return self;
 }
 
+- (void)layoutMainView:(UIView *)view {
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [[view.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor] setActive:YES];
+    _heightImageView = [view.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor];
+    [_heightImageView setActive:YES];
+    [[view.widthAnchor constraintEqualToAnchor:self.view.widthAnchor] setActive:YES];
+    [[view.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:0.8] setActive:true];
+    view.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view layoutIfNeeded];
+}
+
 -(void)gotoBack {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEditViewControllerWillDismiss object:nil];
+    [TikkyEngine.sharedInstance.imageFilter removeAllFilter];
+    __weak __typeof(self)weakSelf = self;
+    [self dismissViewControllerAnimated:YES completion:^{
+        [weakSelf.editView setHidden:NO];
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -188,11 +204,36 @@
 
 - (void)editTapDetected{
     NSLog(@"edit Tap on imageview");
+    _editView = TikkyEngine.sharedInstance.view;
+    [TikkyEngine.sharedInstance.imageFilter removeAllFilter];
     
+    TKImageInput* input = TikkyEngine.sharedInstance.imageFilter.input;
+    TKPhoto* photo = [[TKPhoto alloc] initWithImage:self.imageView.image];
+    
+    if ([input isKindOfClass:TKCamera.class]) {
+        TKCamera* camera = (TKCamera *)input;
+        [camera stopCameraCapture];
+    }
+    [TikkyEngine.sharedInstance.imageFilter setInput:photo];
+
     [self setBottomEditViewIsHidden:NO];
+    
+    __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         self.heightImageView.constant = -2*self.deleteButton.bounds.size.height;
         [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        [weakSelf.editView setHidden:NO];
+        [weakSelf.imageView setHidden:YES];
+        [weakSelf.view addSubview:weakSelf.editView];
+        [weakSelf.view sendSubviewToBack:weakSelf.editView];
+        UIImageView *iv = weakSelf.imageView;
+        CGSize imageSize = iv.image.size;
+        CGFloat imageScale = fminf(CGRectGetWidth(iv.bounds)/imageSize.width, CGRectGetHeight(iv.bounds)/imageSize.height);
+        CGSize scaledImageSize = CGSizeMake(imageSize.width*imageScale, imageSize.height*imageScale);
+        CGRect imageFrame = CGRectMake(roundf(0.5f*(CGRectGetWidth(iv.bounds)-scaledImageSize.width)), roundf(0.5f*(CGRectGetHeight(iv.bounds)-scaledImageSize.height)), roundf(scaledImageSize.width), roundf(scaledImageSize.height));
+        [TikkyEngine.sharedInstance.imageFilter.view setFrame:imageFrame];
+        [photo processImage];
     }];
 }
 
@@ -247,14 +288,24 @@
 
 -(void)didSelectFilterWithIdentifier:(NSInteger)identifier {
     NSLog(@"tap edit filter item %ld", (long)identifier);
-    //    if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
-    //        NSLog(@"vulh > Filters' identifier is out of range!!!");
-    //        return;
-    //    }
-    //    NSString* filterName = [TKSampleDataPool.sharedInstance.orderedIndexFilterArray objectAtIndex:identifier-1];
-    //    TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
-    //    [_tikkyEngine.imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
-    //    _lastFilter = filter;
+    if (identifier < 0 && identifier >= TKSampleDataPool.sharedInstance.orderedIndexFilterArray.count) {
+        NSLog(@"vulh > Filters' identifier is out of range!!!");
+        return;
+    }
+    NSString* filterName = [TKSampleDataPool.sharedInstance.orderedIndexFilterArray objectAtIndex:identifier-1];
+    TKFilter* filter = [[TKFilter alloc] initWithName:filterName];
+    TKImageFilter* imageFilter = TikkyEngine.sharedInstance.imageFilter;
+    [imageFilter replaceFilter:_lastFilter withFilter:filter addNewFilterIfNotExist:YES];
+    _lastFilter = filter;
+    GPUImageFilter* gpufilter = (GPUImageFilter *)_lastFilter.sharedObject;
+    if ([imageFilter.input isKindOfClass:TKPhoto.class]) {
+        TKPhoto* photo = (TKPhoto *)imageFilter.input;
+        [gpufilter useNextFrameForImageCapture];
+        [photo processImage];
+        _lastProcessImage = [gpufilter imageFromCurrentFramebuffer];
+    }
+    
+    _isEdited = YES;
 }
 
 #pragma TKStickerItemDelegate
@@ -298,12 +349,50 @@
     if (isEnable) {
         
     } else {
-        [self setBottomEditViewIsHidden:YES];
-        [UIView animateWithDuration:0.5 animations:^{
-            self.heightImageView.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
+        TKImageInput* input = TikkyEngine.sharedInstance.imageFilter.input;
+        if ([input isKindOfClass:TKPhoto.class]) {
+            TKPhoto* photo = (TKPhoto *)input;
+            __weak __typeof(self)weakSelf = self;
+
+            if (_lastProcessImage) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    weakSelf.imageView.image = weakSelf.lastProcessImage;
+                    [weakSelf.imageView setHidden:NO];
+                    [weakSelf.editView setHidden:YES];
+                    [weakSelf setBottomEditViewIsHidden:YES];
+                    [UIView animateWithDuration:0.5 animations:^{
+                        weakSelf.heightImageView.constant = 0;
+                        [weakSelf.view layoutIfNeeded];
+                    } completion:^(BOOL finished) {
+                        if (weakSelf.isEdited) {
+                            [TKGalleryUtilities saveImageToGalleryWithImage:weakSelf.imageView.image];
+                        }
+                    }];
+                });
+            } else {
+                [photo processImageUpToFilter:_lastFilter withCompletionHandler:^(UIImage *processedImage) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (processedImage) {
+                            weakSelf.imageView.image = processedImage;
+                        }
+
+                        [weakSelf.imageView setHidden:NO];
+                        [weakSelf.editView setHidden:YES];
+                        [weakSelf setBottomEditViewIsHidden:YES];
+                        [UIView animateWithDuration:0.5 animations:^{
+                            weakSelf.heightImageView.constant = 0;
+                            [weakSelf.view layoutIfNeeded];
+                        } completion:^(BOOL finished) {
+                            if (weakSelf.isEdited) {
+                                [TKGalleryUtilities saveImageToGalleryWithImage:weakSelf.imageView.image];
+                            }
+                        }];
+                    });
+                }];
+            }
+        }
     }
 }
+
 
 @end

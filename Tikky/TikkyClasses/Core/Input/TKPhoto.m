@@ -126,12 +126,12 @@
 
 - (BOOL)processImageWithCompletionHandler:(void (^)(void))completion {
     BOOL processed = [_picture processImageWithCompletionHandler:completion];
-    GPUImageFilter* filter = [[GPUImageFilter alloc] init];
-    [_picture addTarget:filter];
     
     if (_processedImage) {
         _photoOutputCallback ? _photoOutputCallback(_processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
     } else {
+        GPUImageFilter* filter = [[GPUImageFilter alloc] init];
+        [_picture addTarget:filter];
         __weak __typeof(self)weakSelf = self;
         [_picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
             weakSelf.processedImage = processedImage;
@@ -142,9 +142,23 @@
     return processed;
 }
 
-- (void)processImageUpToFilter:(GPUImageOutput<GPUImageInput> *)finalFilterInChain
+- (void)processImageUpToFilter:(TKFilter *)finalFilterInChain
          withCompletionHandler:(void (^)(UIImage *processedImage))block {
-    [_picture processImageUpToFilter:finalFilterInChain withCompletionHandler:block];
+    GPUImageOutput<GPUImageInput>* finalFilter = (GPUImageFilterGroup *)finalFilterInChain.sharedObject;
+
+    [_picture processImageUpToFilter:finalFilter withCompletionHandler:^(UIImage *processedImage) {
+        if (block) {
+            block(processedImage);
+        }
+    }];
+}
+
+- (void)processImage {
+    [_picture processImage];
+}
+
+- (UIImage *)processedImage {
+    return _processedImage;
 }
 
 - (NSObject *)sharedObject {
