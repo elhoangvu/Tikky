@@ -6,7 +6,7 @@
 //  Copyright © 2019 Le Hoang Vu. All rights reserved.
 //
 
-#import "CustomHeaderViewCollectionReusableView.h"
+#import "CustomHeaderView.h"
 
 @implementation CustomHeaderViewCollectionReusableView
 

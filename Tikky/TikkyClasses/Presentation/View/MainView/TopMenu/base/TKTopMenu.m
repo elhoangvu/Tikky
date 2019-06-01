@@ -31,11 +31,13 @@
 {
     self = [super init];
     if (self) {
-        _items = @[[[TKTopMenuItem alloc] initWithName:@"more"],
-                   [[TKTopMenuItem alloc] initWithName:@"raito"],
-                   [[TKTopMenuItem alloc] initWithName:@"time"],
-                   [[TKTopMenuItem alloc] initWithName:@"flash"],
-                   [[TKTopMenuItem alloc] initWithName:@"reverse"],];
+//        _items = @[[[TKTopMenuItem alloc] initWithName:@"more"],
+//                   [[TKTopMenuItem alloc] initWithName:@"raito"],
+//                   [[TKTopMenuItem alloc] initWithName:@"time"],
+//                   [[TKTopMenuItem alloc] initWithName:@"flash"],
+//                   [[TKTopMenuItem alloc] initWithName:@"reverse"],];
+        
+        _items = @[[[TKTopMenuItem alloc] initWithName:@"reverse"],];
         
         UIStackView *stackView = [UIStackView new];
         stackView.axis = UILayoutConstraintAxisHorizontal;
