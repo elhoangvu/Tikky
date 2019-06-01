@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString *type;
 
+@property (nonatomic) BOOL isSelected;
+
 @end
 
 NS_ASSUME_NONNULL_END
