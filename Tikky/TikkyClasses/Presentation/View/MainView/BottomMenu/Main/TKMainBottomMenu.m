@@ -32,6 +32,11 @@
                    [[TKMainBottomMenuItem alloc] initWithName:@"frame"],
                    [[TKMainBottomMenuItem alloc] initWithName:@"filter"],];
         
+        _items = @[[[TKMainBottomMenuItem alloc] initWithName:@"emoji"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"capture"],
+                   [[TKMainBottomMenuItem alloc] initWithName:@"filter"],];
+
+        
         _images = @[[[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"capture" ofType:@"png"]],
                 [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rec-start-button" ofType:@"png"]],
                 [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rec-stop-button" ofType:@"png"]]];

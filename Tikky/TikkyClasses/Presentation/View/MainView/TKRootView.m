@@ -42,7 +42,7 @@
         
         
         [self addSubview:_topMenuView];
-        [self addSubview:_horizontalPageView];
+//        [self addSubview:_horizontalPageView];
 
         [self setBottomMenuViewWithBottomMenuType:MainMenu];
         
@@ -51,12 +51,12 @@
         [[self.topMenuView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
         [[self.topMenuView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.2] setActive:YES];
         
-        [[_horizontalPageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
-        [[_horizontalPageView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
-        [[_horizontalPageView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
-        [[_horizontalPageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.065] setActive:YES];
-        [self bringSubviewToFront:self.horizontalPageView];
-        [_horizontalPageView updateConstraints];
+//        [[_horizontalPageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
+//        [[_horizontalPageView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
+//        [[_horizontalPageView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
+//        [[_horizontalPageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.065] setActive:YES];
+//        [self bringSubviewToFront:self.horizontalPageView];
+//        [_horizontalPageView updateConstraints];
     }
     return self;
 }

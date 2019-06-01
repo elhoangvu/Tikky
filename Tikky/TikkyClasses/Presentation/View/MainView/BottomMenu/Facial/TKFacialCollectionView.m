@@ -90,6 +90,8 @@
         if (cell.isSelected) {
             if ([cell.delegate respondsToSelector:@selector(didDeselectFacialWithIdentifier:)]) {
                 [cell.delegate didDeselectFacialWithIdentifier:cellViewModel.identifier.integerValue];
+                
+                
                 [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self cellLayoutIsSelected:self.currentCell isSelected:NO];
                 } completion:^(BOOL finished){
@@ -100,24 +102,28 @@
         } else {
             if ([cell.delegate respondsToSelector:@selector(didSelectFacialWithIdentifier:)]) {
                 [cell.delegate didSelectFacialWithIdentifier:cellViewModel.identifier.integerValue];
+                
+                TKFacialCollectionViewCell *tempCell = self.currentCell;
+                TKModelViewObject *tempViewModel = self.currentCellViewModel;
+                
+                self.currentCell = cell;
+                self.currentCellViewModel = cellViewModel;
                 [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    if (self.currentCell != cell) {
-                        [self cellLayoutIsSelected:self.currentCell isSelected:NO];
+                    if (tempCell != cell) {
+                        [self cellLayoutIsSelected:tempCell isSelected:NO];
                     }
                     // animate it to the identity transform (100% scale)
                     [self cellLayoutIsSelected:cell isSelected:YES];
 
                 } completion:^(BOOL finished){
                     // if you want to do something once the animation finishes, put it here
-                    if (self.currentCell != cell) {
-                        [self setStateCell:self.currentCell isSelect:NO withModelView:self.currentCellViewModel];
-                    }
-                    if ([self.currentCell.delegate respondsToSelector:@selector(didDeselectFacialWithIdentifier:)]) {
-                        [self.currentCell.delegate didDeselectFacialWithIdentifier:self.currentCellViewModel.identifier.integerValue];
+                    if (tempCell != cell) {
+                        [self setStateCell:tempCell isSelect:NO withModelView:tempViewModel];
+                        if ([tempCell.delegate respondsToSelector:@selector(didDeselectFacialWithIdentifier:)]) {
+                            [tempCell.delegate didDeselectFacialWithIdentifier:tempViewModel.identifier.integerValue];
+                        }
                     }
                     [self setStateCell:cell isSelect:YES withModelView:cellViewModel];
-                    self.currentCell = cell;
-                    self.currentCellViewModel = cellViewModel;
                 }];
             }
         }
