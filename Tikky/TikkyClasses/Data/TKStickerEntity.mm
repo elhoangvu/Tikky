@@ -18,17 +18,36 @@
                   isBundle:(BOOL)isBundle
                      count:(NSUInteger)count
                       type:(TKStickerType)type {
-    if (!(self = [super init])) {
+    if (!(self = [super initWithID:sid
+                          caterory:category
+                              name:name
+                         thumbnail:thumbnail
+                          isBundle:isBundle
+                              type:TKEntityTypeSticker])) {
         return nil;
     }
-    
-    _sid = sid;
-    _category = category;
-    _name = name;
-    _thumbnail = thumbnail;
-    _isBundle = isBundle;
+
     _count = count;
-    _type = type;
+    _stickerType = type;
+    
+    return self;
+}
+
+- (instancetype)initWithID:(NSUInteger)sid
+                  category:(NSString *)category
+                      name:(NSString*)name
+                 thumbnail:(NSString *)thumbnail
+                  isBundle:(BOOL)isBundle
+                     count:(NSUInteger)count {
+    if (!(self = [self initWithID:sid
+                         category:category
+                             name:name
+                        thumbnail:thumbnail
+                         isBundle:isBundle
+                            count:count
+                             type:TKStickerTypeUnknown])) {
+        return nil;
+    }
     
     return self;
 }
@@ -49,15 +68,20 @@
                  thumbnail:(NSString *)thumbnail
                   isBundle:(BOOL)isBundle
                      count:(NSUInteger)count
-                      type:(TKStickerType)type
                  landmarks:(NSDictionary *)landmarks {
-    if (!(self = [super initWithID:sid category:category name:name thumbnail:thumbnail isBundle:isBundle count:count type:type])) {
+    if (!(self = [super initWithID:sid
+                          category:category
+                              name:name
+                         thumbnail:thumbnail
+                          isBundle:isBundle
+                             count:count
+                              type:TKStickerTypeFace])) {
         return nil;
     }
     
     _landmarks = landmarks;
     
-    for (NSUInteger i = 1; i <= count; i++) {
+    for (NSUInteger i = 0; i < count; i++) {
         NSString* fileName = [NSString stringWithFormat:@"%@-%lu.png", name, (unsigned long)i];
         NSString* luaName = [NSString stringWithFormat:@"%@-%lu.lua", name, (unsigned long)i];
         NSString* path;
@@ -107,12 +131,23 @@
 
 @implementation TKFrameStickerEntity
 
-- (instancetype)initWithID:(NSUInteger)sid category:(NSString *)category name:(NSString *)name thumbnail:(NSString *)thumbnail isBundle:(BOOL)isBundle count:(NSUInteger)count type:(TKStickerType)type {
-    if (!(self = [super initWithID:sid category:category name:name thumbnail:thumbnail isBundle:isBundle count:count type:type])) {
+- (instancetype)initWithID:(NSUInteger)sid
+                  category:(NSString *)category
+                      name:(NSString *)name
+                 thumbnail:(NSString *)thumbnail
+                  isBundle:(BOOL)isBundle
+                     count:(NSUInteger)count {
+    if (!(self = [super initWithID:sid
+                          category:category
+                              name:name
+                         thumbnail:thumbnail
+                          isBundle:isBundle
+                             count:count
+                              type:TKStickerTypeFrame])) {
         return nil;
     }
     
-    for (NSInteger i = 1; i <= count; i++) {
+    for (NSInteger i = 0; i < count; i++) {
         NSString* fileName = [NSString stringWithFormat:@"%@-%ld.png", name, (long)i];
         NSString* luaName = [NSString stringWithFormat:@"%@-%ld.lua", name, (long)i];
         NSString* path;
@@ -130,8 +165,18 @@
         }
         
         TKSticker fsticker;
-        fsticker.path = path.UTF8String;
-        fsticker.luaComponentPath = luaPath.UTF8String;
+        if (path) {
+            fsticker.path = path.UTF8String;
+        } else {
+            NSAssert(NO, @"vulh");
+        }
+        
+        if (luaPath) {
+            fsticker.luaComponentPath = luaPath.UTF8String;
+        } else {
+            NSAssert(NO, @"vulh");
+        }
+        
         fsticker.allowChanges = NO;
         _frameStickers.push_back(fsticker);
     }

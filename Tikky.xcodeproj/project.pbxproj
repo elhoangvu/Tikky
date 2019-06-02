@@ -73,23 +73,23 @@
 		114481F52292E74300A61CF5 /* lookup-linda.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481132292E74300A61CF5 /* lookup-linda.png */; };
 		114481F62292E74300A61CF5 /* lookup-hipster.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481142292E74300A61CF5 /* lookup-hipster.png */; };
 		114481F72292E74300A61CF5 /* lookup-1971.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481152292E74300A61CF5 /* lookup-1971.png */; };
-		114481F82292E74300A61CF5 /* sticker-dog-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481182292E74300A61CF5 /* sticker-dog-4.lua */; };
-		114481F92292E74300A61CF5 /* sticker-dog-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481192292E74300A61CF5 /* sticker-dog-4.png */; };
-		114481FA2292E74300A61CF5 /* sticker-dog-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811A2292E74300A61CF5 /* sticker-dog-1.lua */; };
-		114481FB2292E74300A61CF5 /* sticker-dog-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811B2292E74300A61CF5 /* sticker-dog-1.png */; };
-		114481FC2292E74300A61CF5 /* sticker-dog-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811C2292E74300A61CF5 /* sticker-dog-2.lua */; };
-		114481FD2292E74300A61CF5 /* sticker-dog-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811D2292E74300A61CF5 /* sticker-dog-2.png */; };
-		114481FE2292E74300A61CF5 /* sticker-dog-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811E2292E74300A61CF5 /* sticker-dog-3.png */; };
-		114481FF2292E74300A61CF5 /* sticker-dog-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811F2292E74300A61CF5 /* sticker-dog-3.lua */; };
+		114481F82292E74300A61CF5 /* sticker-dog-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481182292E74300A61CF5 /* sticker-dog-3.lua */; };
+		114481F92292E74300A61CF5 /* sticker-dog-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481192292E74300A61CF5 /* sticker-dog-3.png */; };
+		114481FA2292E74300A61CF5 /* sticker-dog-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811A2292E74300A61CF5 /* sticker-dog-0.lua */; };
+		114481FB2292E74300A61CF5 /* sticker-dog-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811B2292E74300A61CF5 /* sticker-dog-0.png */; };
+		114481FC2292E74300A61CF5 /* sticker-dog-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811C2292E74300A61CF5 /* sticker-dog-1.lua */; };
+		114481FD2292E74300A61CF5 /* sticker-dog-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811D2292E74300A61CF5 /* sticker-dog-1.png */; };
+		114481FE2292E74300A61CF5 /* sticker-dog-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811E2292E74300A61CF5 /* sticker-dog-2.png */; };
+		114481FF2292E74300A61CF5 /* sticker-dog-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811F2292E74300A61CF5 /* sticker-dog-2.lua */; };
 		114482002292E74300A61CF5 /* sticker-dog-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481202292E74300A61CF5 /* sticker-dog-thumb.png */; };
-		114482012292E74300A61CF5 /* sticker-fox-4.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481222292E74300A61CF5 /* sticker-fox-4.lua */; };
-		114482022292E74300A61CF5 /* sticker-fox-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481232292E74300A61CF5 /* sticker-fox-4.png */; };
-		114482032292E74300A61CF5 /* sticker-fox-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481242292E74300A61CF5 /* sticker-fox-3.png */; };
-		114482042292E74300A61CF5 /* sticker-fox-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481252292E74300A61CF5 /* sticker-fox-3.lua */; };
-		114482052292E74300A61CF5 /* sticker-fox-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481262292E74300A61CF5 /* sticker-fox-2.lua */; };
-		114482062292E74300A61CF5 /* sticker-fox-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481272292E74300A61CF5 /* sticker-fox-2.png */; };
-		114482072292E74300A61CF5 /* sticker-fox-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481282292E74300A61CF5 /* sticker-fox-1.lua */; };
-		114482082292E74300A61CF5 /* sticker-fox-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481292292E74300A61CF5 /* sticker-fox-1.png */; };
+		114482012292E74300A61CF5 /* sticker-fox-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481222292E74300A61CF5 /* sticker-fox-3.lua */; };
+		114482022292E74300A61CF5 /* sticker-fox-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481232292E74300A61CF5 /* sticker-fox-3.png */; };
+		114482032292E74300A61CF5 /* sticker-fox-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481242292E74300A61CF5 /* sticker-fox-2.png */; };
+		114482042292E74300A61CF5 /* sticker-fox-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481252292E74300A61CF5 /* sticker-fox-2.lua */; };
+		114482052292E74300A61CF5 /* sticker-fox-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481262292E74300A61CF5 /* sticker-fox-1.lua */; };
+		114482062292E74300A61CF5 /* sticker-fox-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481272292E74300A61CF5 /* sticker-fox-1.png */; };
+		114482072292E74300A61CF5 /* sticker-fox-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481282292E74300A61CF5 /* sticker-fox-0.lua */; };
+		114482082292E74300A61CF5 /* sticker-fox-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481292292E74300A61CF5 /* sticker-fox-0.png */; };
 		114482092292E74300A61CF5 /* sticker-fox-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144812A2292E74300A61CF5 /* sticker-fox-thumb.png */; };
 		1144820A2292E74300A61CF5 /* sticker-flag-vn-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144812C2292E74300A61CF5 /* sticker-flag-vn-thumb.png */; };
 		1144820B2292E74300A61CF5 /* sticker-flag-vn-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144812D2292E74300A61CF5 /* sticker-flag-vn-1.png */; };
@@ -97,15 +97,15 @@
 		1144820D2292E74300A61CF5 /* sticker-flag-vn-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144812F2292E74300A61CF5 /* sticker-flag-vn-0.lua */; };
 		1144820E2292E74300A61CF5 /* sticker-flag-vn-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481302292E74300A61CF5 /* sticker-flag-vn-0.png */; };
 		1144820F2292E74300A61CF5 /* sticker-nonla-hat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481322292E74300A61CF5 /* sticker-nonla-hat-thumb.png */; };
-		114482102292E74300A61CF5 /* sticker-nonla-hat.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481332292E74300A61CF5 /* sticker-nonla-hat.png */; };
-		114482112292E74300A61CF5 /* sticker-nonla-hat.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481342292E74300A61CF5 /* sticker-nonla-hat.lua */; };
+		114482102292E74300A61CF5 /* sticker-nonla-hat-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481332292E74300A61CF5 /* sticker-nonla-hat-0.png */; };
+		114482112292E74300A61CF5 /* sticker-nonla-hat-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481342292E74300A61CF5 /* sticker-nonla-hat-0.lua */; };
 		114482122292E74300A61CF5 /* sticker-cat-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481362292E74300A61CF5 /* sticker-cat-thumb.png */; };
-		114482132292E74300A61CF5 /* sticker-cat-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481372292E74300A61CF5 /* sticker-cat-1.lua */; };
-		114482142292E74300A61CF5 /* sticker-cat-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481382292E74300A61CF5 /* sticker-cat-1.png */; };
-		114482152292E74300A61CF5 /* sticker-cat-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481392292E74300A61CF5 /* sticker-cat-3.png */; };
-		114482162292E74300A61CF5 /* sticker-cat-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144813A2292E74300A61CF5 /* sticker-cat-3.lua */; };
-		114482172292E74300A61CF5 /* sticker-cat-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144813B2292E74300A61CF5 /* sticker-cat-2.lua */; };
-		114482182292E74300A61CF5 /* sticker-cat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144813C2292E74300A61CF5 /* sticker-cat-2.png */; };
+		114482132292E74300A61CF5 /* sticker-cat-0.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481372292E74300A61CF5 /* sticker-cat-0.lua */; };
+		114482142292E74300A61CF5 /* sticker-cat-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481382292E74300A61CF5 /* sticker-cat-0.png */; };
+		114482152292E74300A61CF5 /* sticker-cat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481392292E74300A61CF5 /* sticker-cat-2.png */; };
+		114482162292E74300A61CF5 /* sticker-cat-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144813A2292E74300A61CF5 /* sticker-cat-2.lua */; };
+		114482172292E74300A61CF5 /* sticker-cat-1.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144813B2292E74300A61CF5 /* sticker-cat-1.lua */; };
+		114482182292E74300A61CF5 /* sticker-cat-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144813C2292E74300A61CF5 /* sticker-cat-1.png */; };
 		114482192292E74300A61CF5 /* frame-flower-shakura-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144813F2292E74300A61CF5 /* frame-flower-shakura-3.png */; };
 		1144821A2292E74300A61CF5 /* frame-flower-shakura-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481402292E74300A61CF5 /* frame-flower-shakura-3.lua */; };
 		1144821B2292E74300A61CF5 /* frame-flower-shakura-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481412292E74300A61CF5 /* frame-flower-shakura-2.lua */; };
@@ -220,6 +220,38 @@
 		114482882292E74400A61CF5 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B52292E74300A61CF5 /* recyclingbin.png */; };
 		114482892292E74400A61CF5 /* aquaman.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B72292E74300A61CF5 /* aquaman.png */; };
 		1144828A2292E74400A61CF5 /* tonystark.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B82292E74300A61CF5 /* tonystark.png */; };
+		11A21E2C22A30EA80062CECE /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DED22A30EA80062CECE /* TikkyEngine.mm */; };
+		11A21E2D22A30EA80062CECE /* TKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF322A30EA80062CECE /* TKPhoto.m */; };
+		11A21E2E22A30EA80062CECE /* TKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF422A30EA80062CECE /* TKVideo.m */; };
+		11A21E2F22A30EA80062CECE /* TKImageInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF722A30EA80062CECE /* TKImageInput.m */; };
+		11A21E3022A30EA80062CECE /* TKCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF822A30EA80062CECE /* TKCamera.m */; };
+		11A21E3122A30EA80062CECE /* TKFilterProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DFC22A30EA80062CECE /* TKFilterProperty.m */; };
+		11A21E3222A30EA80062CECE /* TKFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DFD22A30EA80062CECE /* TKFilter.m */; };
+		11A21E3322A30EA80062CECE /* TKStickerPreviewer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DFE22A30EA80062CECE /* TKStickerPreviewer.mm */; };
+		11A21E3422A30EA80062CECE /* TKImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DFF22A30EA80062CECE /* TKImageFilter.m */; };
+		11A21E3522A30EA80062CECE /* TKFilterCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E0022A30EA80062CECE /* TKFilterCreator.m */; };
+		11A21E3622A30EA80062CECE /* TKGalleryUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */; };
+		11A21E3722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E0722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m */; };
+		11A21E3822A30EA80062CECE /* UIDevice+DeviceName.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E0822A30EA80062CECE /* UIDevice+DeviceName.m */; };
+		11A21E3922A30EA80062CECE /* UIView+Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E0C22A30EA80062CECE /* UIView+Delegate.m */; };
+		11A21E3A22A30EA80062CECE /* OpenCVUtilities.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1022A30EA80062CECE /* OpenCVUtilities.mm */; };
+		11A21E3B22A30EA80062CECE /* TKFacialLandmarkUtilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1322A30EA80062CECE /* TKFacialLandmarkUtilities.cpp */; };
+		11A21E3C22A30EA80062CECE /* TKTextureUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1622A30EA80062CECE /* TKTextureUtilities.c */; };
+		11A21E3D22A30EA80062CECE /* TKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1722A30EA80062CECE /* TKUtilities.m */; };
+		11A21E3E22A30EA80062CECE /* TKSNFacebookSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1A22A30EA80062CECE /* TKSNFacebookSDK.m */; };
+		11A21E3F22A30EA80062CECE /* TKSNUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E1D22A30EA80062CECE /* TKSNUserInfo.m */; };
+		11A21E4022A30EA80062CECE /* TKSocialNetworkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E2022A30EA80062CECE /* TKSocialNetworkSDK.m */; };
+		11A21E4122A30EA80062CECE /* TKSampleDataPool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E2622A30EA80062CECE /* TKSampleDataPool.mm */; };
+		11A21E4222A30EA80062CECE /* TKStickerEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E2722A30EA80062CECE /* TKStickerEntity.mm */; };
+		11A21E4322A30EA80062CECE /* TKCameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E2B22A30EA80062CECE /* TKCameraViewController.mm */; };
+		11A21E4622A3A2930062CECE /* TKDataAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E4522A3A2920062CECE /* TKDataAdapter.m */; };
+		11A21E4922A3A3FB0062CECE /* TKFilterEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E4822A3A3FB0062CECE /* TKFilterEntity.m */; };
+		11A21E4C22A3A52E0062CECE /* TKCommonEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E4B22A3A52E0062CECE /* TKCommonEntity.m */; };
+		11A21E4F22A3DB460062CECE /* TKEditorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21E4E22A3DB460062CECE /* TKEditorViewController.mm */; };
+		11A9BD9A22A3F3ED006B50CA /* TKEditItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BD9922A3F3ED006B50CA /* TKEditItemViewModel.m */; };
+		11A9BDA922A4067A006B50CA /* TKEditItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */; };
+		11A9BDAC22A40DCC006B50CA /* TKMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */; };
+		11A9BDAF22A44DBE006B50CA /* TKFeatureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */; };
 		11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */; };
 		11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */; };
 		11C67A7D229F0D6D0054C5A1 /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679BA229F0D6C0054C5A1 /* TikkyEngine.mm */; };
@@ -245,61 +277,7 @@
 		11C67A91229F0D6D0054C5A1 /* TKSocialNetworkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679ED229F0D6C0054C5A1 /* TKSocialNetworkSDK.m */; };
 		11C67A92229F0D6D0054C5A1 /* TKSampleDataPool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679F3229F0D6C0054C5A1 /* TKSampleDataPool.mm */; };
 		11C67A93229F0D6D0054C5A1 /* TKStickerEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679F4229F0D6C0054C5A1 /* TKStickerEntity.mm */; };
-		11C67A94229F0D6D0054C5A1 /* TKPhotosPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679F9229F0D6C0054C5A1 /* TKPhotosPickerViewController.m */; };
-		11C67A95229F0D6D0054C5A1 /* TKPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679FB229F0D6C0054C5A1 /* TKPHAsset.m */; };
-		11C67A96229F0D6D0054C5A1 /* TKPhotopickerDataSourcesProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679FC229F0D6D0054C5A1 /* TKPhotopickerDataSourcesProtocol.m */; };
-		11C67A97229F0D6D0054C5A1 /* CustomDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679FE229F0D6D0054C5A1 /* CustomDataSource.m */; };
-		11C67A98229F0D6D0054C5A1 /* CustomHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A00229F0D6D0054C5A1 /* CustomHeaderView.m */; };
-		11C67A99229F0D6D0054C5A1 /* RCEasyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A07229F0D6D0054C5A1 /* RCEasyTipView.m */; };
-		11C67A9A229F0D6D0054C5A1 /* UIView+RCEssentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A08229F0D6D0054C5A1 /* UIView+RCEssentials.m */; };
-		11C67A9B229F0D6D0054C5A1 /* UIBarItem+RCBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A09229F0D6D0054C5A1 /* UIBarItem+RCBarItem.m */; };
-		11C67A9C229F0D6D0054C5A1 /* RCEasyTipViewIDGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A0A229F0D6D0054C5A1 /* RCEasyTipViewIDGenerator.m */; };
-		11C67A9D229F0D6D0054C5A1 /* TKModelViewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A0E229F0D6D0054C5A1 /* TKModelViewObject.m */; };
-		11C67A9E229F0D6D0054C5A1 /* TKFrameModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A0F229F0D6D0054C5A1 /* TKFrameModelView.m */; };
-		11C67A9F229F0D6D0054C5A1 /* TKFilterModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A12229F0D6D0054C5A1 /* TKFilterModelView.m */; };
-		11C67AA0229F0D6D0054C5A1 /* TKStickerModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A13229F0D6D0054C5A1 /* TKStickerModelView.m */; };
-		11C67AA1229F0D6D0054C5A1 /* TKFacialModelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A16229F0D6D0054C5A1 /* TKFacialModelView.m */; };
-		11C67AA2229F0D6D0054C5A1 /* TKFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A1B229F0D6D0054C5A1 /* TKFilterModel.m */; };
-		11C67AA3229F0D6D0054C5A1 /* TKModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A1C229F0D6D0054C5A1 /* TKModelObject.m */; };
-		11C67AA4229F0D6D0054C5A1 /* TKFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A1E229F0D6D0054C5A1 /* TKFrameModel.m */; };
-		11C67AA5229F0D6D0054C5A1 /* TKStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A1F229F0D6D0054C5A1 /* TKStickerModel.m */; };
-		11C67AA6229F0D6D0054C5A1 /* TKFacialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A23229F0D6D0054C5A1 /* TKFacialModel.m */; };
-		11C67AA7229F0D6D0054C5A1 /* TKTopEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A26229F0D6D0054C5A1 /* TKTopEditView.m */; };
-		11C67AA8229F0D6D0054C5A1 /* TKEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A28229F0D6D0054C5A1 /* TKEditView.m */; };
-		11C67AA9229F0D6D0054C5A1 /* TKSelectionBottomMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A2A229F0D6D0054C5A1 /* TKSelectionBottomMenuCollectionViewCell.m */; };
-		11C67AAA229F0D6D0054C5A1 /* TKBottomEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A2E229F0D6D0054C5A1 /* TKBottomEditView.m */; };
-		11C67AAB229F0D6D0054C5A1 /* TKHorizontalPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A30229F0D6D0054C5A1 /* TKHorizontalPageView.m */; };
-		11C67AAC229F0D6D0054C5A1 /* TKPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A31229F0D6D0054C5A1 /* TKPageCollectionViewCell.m */; };
-		11C67AAD229F0D6D0054C5A1 /* TKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A35229F0D6D0054C5A1 /* TKShareView.m */; };
-		11C67AAE229F0D6D0054C5A1 /* TKTopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A3B229F0D6D0054C5A1 /* TKTopMenu.m */; };
-		11C67AAF229F0D6D0054C5A1 /* TKTopSubViewMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A3C229F0D6D0054C5A1 /* TKTopSubViewMenu.m */; };
-		11C67AB0229F0D6D0054C5A1 /* TKTopSubMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A3D229F0D6D0054C5A1 /* TKTopSubMenuItem.m */; };
-		11C67AB1229F0D6D0054C5A1 /* TKTopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A3E229F0D6D0054C5A1 /* TKTopMenuItem.m */; };
-		11C67AB2229F0D6D0054C5A1 /* TKFacialBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A45229F0D6D0054C5A1 /* TKFacialBottomMenu.m */; };
-		11C67AB3229F0D6D0054C5A1 /* TKFacialCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A46229F0D6D0054C5A1 /* TKFacialCollectionViewCell.m */; };
-		11C67AB4229F0D6D0054C5A1 /* TKFacialCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A4A229F0D6D0054C5A1 /* TKFacialCollectionView.m */; };
-		11C67AB5229F0D6D0054C5A1 /* TKStickerCollectionViewCellBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A4E229F0D6D0054C5A1 /* TKStickerCollectionViewCellBase.m */; };
-		11C67AB6229F0D6D0054C5A1 /* TKTypeSelectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A50229F0D6D0054C5A1 /* TKTypeSelectionCollectionViewCell.m */; };
-		11C67AB7229F0D6D0054C5A1 /* TKFrameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A51229F0D6D0054C5A1 /* TKFrameCollectionViewCell.m */; };
-		11C67AB8229F0D6D0054C5A1 /* TKStickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A54229F0D6D0054C5A1 /* TKStickerCollectionViewCell.m */; };
-		11C67AB9229F0D6D0054C5A1 /* TKFrameCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A57229F0D6D0054C5A1 /* TKFrameCollectionView.m */; };
-		11C67ABA229F0D6D0054C5A1 /* TKTypeStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A58229F0D6D0054C5A1 /* TKTypeStickerCollectionView.m */; };
-		11C67ABB229F0D6D0054C5A1 /* TKStickerCollectionViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A59229F0D6D0054C5A1 /* TKStickerCollectionViewBase.m */; };
-		11C67ABC229F0D6D0054C5A1 /* TKStickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A5A229F0D6D0054C5A1 /* TKStickerCollectionView.m */; };
-		11C67ABD229F0D6D0054C5A1 /* TKStickerBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A5F229F0D6D0054C5A1 /* TKStickerBottomMenu.m */; };
-		11C67ABE229F0D6D0054C5A1 /* TKFilterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A62229F0D6D0054C5A1 /* TKFilterCollectionViewCell.m */; };
-		11C67ABF229F0D6D0054C5A1 /* TKFilterCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A64229F0D6D0054C5A1 /* TKFilterCollectionView.m */; };
-		11C67AC0229F0D6D0054C5A1 /* TKFilterBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A66229F0D6D0054C5A1 /* TKFilterBottomMenu.m */; };
-		11C67AC1229F0D6D0054C5A1 /* TKMainBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A68229F0D6D0054C5A1 /* TKMainBottomMenuItem.m */; };
-		11C67AC2229F0D6D0054C5A1 /* TKMainBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A69229F0D6D0054C5A1 /* TKMainBottomMenu.m */; };
-		11C67AC3229F0D6D0054C5A1 /* TKBottomMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A6F229F0D6D0054C5A1 /* TKBottomMenu.m */; };
-		11C67AC4229F0D6D0054C5A1 /* TKBottomMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A70229F0D6D0054C5A1 /* TKBottomMenuItem.m */; };
-		11C67AC5229F0D6D0054C5A1 /* TKRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A71229F0D6D0054C5A1 /* TKRootView.m */; };
-		11C67AC6229F0D6D0054C5A1 /* TKBottomMenuFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A73229F0D6D0054C5A1 /* TKBottomMenuFactory.m */; };
-		11C67AC7229F0D6D0054C5A1 /* EditViewController.mm.orig in Resources */ = {isa = PBXBuildFile; fileRef = 11C67A76229F0D6D0054C5A1 /* EditViewController.mm.orig */; };
-		11C67AC8229F0D6D0054C5A1 /* EditViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A77229F0D6D0054C5A1 /* EditViewController.mm */; };
-		11C67AC9229F0D6D0054C5A1 /* GUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A79229F0D6D0054C5A1 /* GUIViewController.m */; };
-		11C67ACA229F0D6D0054C5A1 /* TKCameraViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C67A7B229F0D6D0054C5A1 /* TKCameraViewController.mm */; };
+		11CCDB8F22A3F1080025C2E1 /* TKEditItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CCDB8E22A3F1080025C2E1 /* TKEditItemView.m */; };
 		11DBE603229DAAA800718133 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DBE5F5229DAAA800718133 /* done.png */; };
 		11DBE604229DAAA800718133 /* sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DBE602229DAAA800718133 /* sticker.png */; };
 		11E5020C229C5BF5005C83A3 /* tikky.db in Resources */ = {isa = PBXBuildFile; fileRef = 11E5020B229C5BF5005C83A3 /* tikky.db */; };
@@ -591,23 +569,23 @@
 		114481132292E74300A61CF5 /* lookup-linda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-linda.png"; sourceTree = "<group>"; };
 		114481142292E74300A61CF5 /* lookup-hipster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-hipster.png"; sourceTree = "<group>"; };
 		114481152292E74300A61CF5 /* lookup-1971.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lookup-1971.png"; sourceTree = "<group>"; };
-		114481182292E74300A61CF5 /* sticker-dog-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-4.lua"; sourceTree = "<group>"; };
-		114481192292E74300A61CF5 /* sticker-dog-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-4.png"; sourceTree = "<group>"; };
-		1144811A2292E74300A61CF5 /* sticker-dog-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-1.lua"; sourceTree = "<group>"; };
-		1144811B2292E74300A61CF5 /* sticker-dog-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-1.png"; sourceTree = "<group>"; };
-		1144811C2292E74300A61CF5 /* sticker-dog-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-2.lua"; sourceTree = "<group>"; };
-		1144811D2292E74300A61CF5 /* sticker-dog-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-2.png"; sourceTree = "<group>"; };
-		1144811E2292E74300A61CF5 /* sticker-dog-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-3.png"; sourceTree = "<group>"; };
-		1144811F2292E74300A61CF5 /* sticker-dog-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-3.lua"; sourceTree = "<group>"; };
+		114481182292E74300A61CF5 /* sticker-dog-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-3.lua"; sourceTree = "<group>"; };
+		114481192292E74300A61CF5 /* sticker-dog-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-3.png"; sourceTree = "<group>"; };
+		1144811A2292E74300A61CF5 /* sticker-dog-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-0.lua"; sourceTree = "<group>"; };
+		1144811B2292E74300A61CF5 /* sticker-dog-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-0.png"; sourceTree = "<group>"; };
+		1144811C2292E74300A61CF5 /* sticker-dog-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-1.lua"; sourceTree = "<group>"; };
+		1144811D2292E74300A61CF5 /* sticker-dog-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-1.png"; sourceTree = "<group>"; };
+		1144811E2292E74300A61CF5 /* sticker-dog-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-2.png"; sourceTree = "<group>"; };
+		1144811F2292E74300A61CF5 /* sticker-dog-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-2.lua"; sourceTree = "<group>"; };
 		114481202292E74300A61CF5 /* sticker-dog-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-thumb.png"; sourceTree = "<group>"; };
-		114481222292E74300A61CF5 /* sticker-fox-4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-4.lua"; sourceTree = "<group>"; };
-		114481232292E74300A61CF5 /* sticker-fox-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-4.png"; sourceTree = "<group>"; };
-		114481242292E74300A61CF5 /* sticker-fox-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-3.png"; sourceTree = "<group>"; };
-		114481252292E74300A61CF5 /* sticker-fox-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-3.lua"; sourceTree = "<group>"; };
-		114481262292E74300A61CF5 /* sticker-fox-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-2.lua"; sourceTree = "<group>"; };
-		114481272292E74300A61CF5 /* sticker-fox-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-2.png"; sourceTree = "<group>"; };
-		114481282292E74300A61CF5 /* sticker-fox-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-1.lua"; sourceTree = "<group>"; };
-		114481292292E74300A61CF5 /* sticker-fox-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-1.png"; sourceTree = "<group>"; };
+		114481222292E74300A61CF5 /* sticker-fox-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-3.lua"; sourceTree = "<group>"; };
+		114481232292E74300A61CF5 /* sticker-fox-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-3.png"; sourceTree = "<group>"; };
+		114481242292E74300A61CF5 /* sticker-fox-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-2.png"; sourceTree = "<group>"; };
+		114481252292E74300A61CF5 /* sticker-fox-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-2.lua"; sourceTree = "<group>"; };
+		114481262292E74300A61CF5 /* sticker-fox-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-1.lua"; sourceTree = "<group>"; };
+		114481272292E74300A61CF5 /* sticker-fox-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-1.png"; sourceTree = "<group>"; };
+		114481282292E74300A61CF5 /* sticker-fox-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-0.lua"; sourceTree = "<group>"; };
+		114481292292E74300A61CF5 /* sticker-fox-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-0.png"; sourceTree = "<group>"; };
 		1144812A2292E74300A61CF5 /* sticker-fox-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-thumb.png"; sourceTree = "<group>"; };
 		1144812C2292E74300A61CF5 /* sticker-flag-vn-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-flag-vn-thumb.png"; sourceTree = "<group>"; };
 		1144812D2292E74300A61CF5 /* sticker-flag-vn-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-flag-vn-1.png"; sourceTree = "<group>"; };
@@ -615,15 +593,15 @@
 		1144812F2292E74300A61CF5 /* sticker-flag-vn-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-flag-vn-0.lua"; sourceTree = "<group>"; };
 		114481302292E74300A61CF5 /* sticker-flag-vn-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-flag-vn-0.png"; sourceTree = "<group>"; };
 		114481322292E74300A61CF5 /* sticker-nonla-hat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-nonla-hat-thumb.png"; sourceTree = "<group>"; };
-		114481332292E74300A61CF5 /* sticker-nonla-hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-nonla-hat.png"; sourceTree = "<group>"; };
-		114481342292E74300A61CF5 /* sticker-nonla-hat.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-nonla-hat.lua"; sourceTree = "<group>"; };
+		114481332292E74300A61CF5 /* sticker-nonla-hat-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-nonla-hat-0.png"; sourceTree = "<group>"; };
+		114481342292E74300A61CF5 /* sticker-nonla-hat-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-nonla-hat-0.lua"; sourceTree = "<group>"; };
 		114481362292E74300A61CF5 /* sticker-cat-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-thumb.png"; sourceTree = "<group>"; };
-		114481372292E74300A61CF5 /* sticker-cat-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-1.lua"; sourceTree = "<group>"; };
-		114481382292E74300A61CF5 /* sticker-cat-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-1.png"; sourceTree = "<group>"; };
-		114481392292E74300A61CF5 /* sticker-cat-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-3.png"; sourceTree = "<group>"; };
-		1144813A2292E74300A61CF5 /* sticker-cat-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-3.lua"; sourceTree = "<group>"; };
-		1144813B2292E74300A61CF5 /* sticker-cat-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-2.lua"; sourceTree = "<group>"; };
-		1144813C2292E74300A61CF5 /* sticker-cat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-2.png"; sourceTree = "<group>"; };
+		114481372292E74300A61CF5 /* sticker-cat-0.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-0.lua"; sourceTree = "<group>"; };
+		114481382292E74300A61CF5 /* sticker-cat-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-0.png"; sourceTree = "<group>"; };
+		114481392292E74300A61CF5 /* sticker-cat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-2.png"; sourceTree = "<group>"; };
+		1144813A2292E74300A61CF5 /* sticker-cat-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-2.lua"; sourceTree = "<group>"; };
+		1144813B2292E74300A61CF5 /* sticker-cat-1.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-cat-1.lua"; sourceTree = "<group>"; };
+		1144813C2292E74300A61CF5 /* sticker-cat-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-cat-1.png"; sourceTree = "<group>"; };
 		1144813F2292E74300A61CF5 /* frame-flower-shakura-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame-flower-shakura-3.png"; sourceTree = "<group>"; };
 		114481402292E74300A61CF5 /* frame-flower-shakura-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-3.lua"; sourceTree = "<group>"; };
 		114481412292E74300A61CF5 /* frame-flower-shakura-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "frame-flower-shakura-2.lua"; sourceTree = "<group>"; };
@@ -738,6 +716,76 @@
 		114481B52292E74300A61CF5 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		114481B72292E74300A61CF5 /* aquaman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aquaman.png; sourceTree = "<group>"; };
 		114481B82292E74300A61CF5 /* tonystark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tonystark.png; sourceTree = "<group>"; };
+		11A21DED22A30EA80062CECE /* TikkyEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TikkyEngine.mm; sourceTree = "<group>"; };
+		11A21DEE22A30EA80062CECE /* TKImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
+		11A21DEF22A30EA80062CECE /* Tikky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tikky.h; sourceTree = "<group>"; };
+		11A21DF022A30EA80062CECE /* TKFilterCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterCreator.h; sourceTree = "<group>"; };
+		11A21DF222A30EA80062CECE /* TKImageInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageInput.h; sourceTree = "<group>"; };
+		11A21DF322A30EA80062CECE /* TKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPhoto.m; sourceTree = "<group>"; };
+		11A21DF422A30EA80062CECE /* TKVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKVideo.m; sourceTree = "<group>"; };
+		11A21DF522A30EA80062CECE /* TKCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCamera.h; sourceTree = "<group>"; };
+		11A21DF622A30EA80062CECE /* TKPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPhoto.h; sourceTree = "<group>"; };
+		11A21DF722A30EA80062CECE /* TKImageInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKImageInput.m; sourceTree = "<group>"; };
+		11A21DF822A30EA80062CECE /* TKCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCamera.m; sourceTree = "<group>"; };
+		11A21DF922A30EA80062CECE /* TKVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVideo.h; sourceTree = "<group>"; };
+		11A21DFA22A30EA80062CECE /* TKGalleryUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGalleryUtilities.h; sourceTree = "<group>"; };
+		11A21DFB22A30EA80062CECE /* TikkyEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TikkyEngine.h; sourceTree = "<group>"; };
+		11A21DFC22A30EA80062CECE /* TKFilterProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterProperty.m; sourceTree = "<group>"; };
+		11A21DFD22A30EA80062CECE /* TKFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilter.m; sourceTree = "<group>"; };
+		11A21DFE22A30EA80062CECE /* TKStickerPreviewer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerPreviewer.mm; sourceTree = "<group>"; };
+		11A21DFF22A30EA80062CECE /* TKImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKImageFilter.m; sourceTree = "<group>"; };
+		11A21E0022A30EA80062CECE /* TKFilterCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFilterCreator.m; sourceTree = "<group>"; };
+		11A21E0122A30EA80062CECE /* TKStickerPreviewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerPreviewer.h; sourceTree = "<group>"; };
+		11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGalleryUtilities.m; sourceTree = "<group>"; };
+		11A21E0322A30EA80062CECE /* TKFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilter.h; sourceTree = "<group>"; };
+		11A21E0422A30EA80062CECE /* TKFilterProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFilterProperty.h; sourceTree = "<group>"; };
+		11A21E0522A30EA80062CECE /* FeatureDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureDefinition.h; sourceTree = "<group>"; };
+		11A21E0722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CVPixelBufferRefConverter.m"; sourceTree = "<group>"; };
+		11A21E0822A30EA80062CECE /* UIDevice+DeviceName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceName.m"; sourceTree = "<group>"; };
+		11A21E0922A30EA80062CECE /* UIView+Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Delegate.h"; sourceTree = "<group>"; };
+		11A21E0A22A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CVPixelBufferRefConverter.h"; sourceTree = "<group>"; };
+		11A21E0B22A30EA80062CECE /* opencv+parallel_for_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "opencv+parallel_for_.h"; sourceTree = "<group>"; };
+		11A21E0C22A30EA80062CECE /* UIView+Delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Delegate.m"; sourceTree = "<group>"; };
+		11A21E0D22A30EA80062CECE /* UIDevice+DeviceName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceName.h"; sourceTree = "<group>"; };
+		11A21E0F22A30EA80062CECE /* TKFacialLandmarkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFacialLandmarkUtilities.h; sourceTree = "<group>"; };
+		11A21E1022A30EA80062CECE /* OpenCVUtilities.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVUtilities.mm; sourceTree = "<group>"; };
+		11A21E1122A30EA80062CECE /* TKTextureUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextureUtilities.h; sourceTree = "<group>"; };
+		11A21E1222A30EA80062CECE /* TKUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUtilities.h; sourceTree = "<group>"; };
+		11A21E1322A30EA80062CECE /* TKFacialLandmarkUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKFacialLandmarkUtilities.cpp; sourceTree = "<group>"; };
+		11A21E1422A30EA80062CECE /* TKDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDefinition.h; sourceTree = "<group>"; };
+		11A21E1522A30EA80062CECE /* OpenCVUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVUtilities.h; sourceTree = "<group>"; };
+		11A21E1622A30EA80062CECE /* TKTextureUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKTextureUtilities.c; sourceTree = "<group>"; };
+		11A21E1722A30EA80062CECE /* TKUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUtilities.m; sourceTree = "<group>"; };
+		11A21E1A22A30EA80062CECE /* TKSNFacebookSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSNFacebookSDK.m; sourceTree = "<group>"; };
+		11A21E1B22A30EA80062CECE /* TKSNFacebookSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSNFacebookSDK.h; sourceTree = "<group>"; };
+		11A21E1D22A30EA80062CECE /* TKSNUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSNUserInfo.m; sourceTree = "<group>"; };
+		11A21E1E22A30EA80062CECE /* TKSNUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSNUserInfo.h; sourceTree = "<group>"; };
+		11A21E2022A30EA80062CECE /* TKSocialNetworkSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSocialNetworkSDK.m; sourceTree = "<group>"; };
+		11A21E2122A30EA80062CECE /* SocialNetworkSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialNetworkSDK.h; sourceTree = "<group>"; };
+		11A21E2222A30EA80062CECE /* TKSocialNetworkSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSocialNetworkSDK.h; sourceTree = "<group>"; };
+		11A21E2422A30EA80062CECE /* TKStickerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStickerEntity.h; sourceTree = "<group>"; };
+		11A21E2522A30EA80062CECE /* TKSampleDataPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSampleDataPool.h; sourceTree = "<group>"; };
+		11A21E2622A30EA80062CECE /* TKSampleDataPool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKSampleDataPool.mm; sourceTree = "<group>"; };
+		11A21E2722A30EA80062CECE /* TKStickerEntity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKStickerEntity.mm; sourceTree = "<group>"; };
+		11A21E2922A30EA80062CECE /* TKCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCameraViewController.h; sourceTree = "<group>"; };
+		11A21E2A22A30EA80062CECE /* TKNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNotification.h; sourceTree = "<group>"; };
+		11A21E2B22A30EA80062CECE /* TKCameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKCameraViewController.mm; sourceTree = "<group>"; };
+		11A21E4422A3A2920062CECE /* TKDataAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDataAdapter.h; sourceTree = "<group>"; };
+		11A21E4522A3A2920062CECE /* TKDataAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDataAdapter.m; sourceTree = "<group>"; };
+		11A21E4722A3A3FB0062CECE /* TKFilterEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFilterEntity.h; sourceTree = "<group>"; };
+		11A21E4822A3A3FB0062CECE /* TKFilterEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFilterEntity.m; sourceTree = "<group>"; };
+		11A21E4A22A3A52E0062CECE /* TKCommonEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCommonEntity.h; sourceTree = "<group>"; };
+		11A21E4B22A3A52E0062CECE /* TKCommonEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCommonEntity.m; sourceTree = "<group>"; };
+		11A21E4D22A3DB460062CECE /* TKEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEditorViewController.h; sourceTree = "<group>"; };
+		11A21E4E22A3DB460062CECE /* TKEditorViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKEditorViewController.mm; sourceTree = "<group>"; };
+		11A9BD9822A3F3ED006B50CA /* TKEditItemViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEditItemViewModel.h; sourceTree = "<group>"; };
+		11A9BD9922A3F3ED006B50CA /* TKEditItemViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEditItemViewModel.m; sourceTree = "<group>"; };
+		11A9BDA722A4067A006B50CA /* TKEditItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEditItemCollectionViewCell.h; sourceTree = "<group>"; };
+		11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEditItemCollectionViewCell.m; sourceTree = "<group>"; };
+		11A9BDAA22A40DCC006B50CA /* TKMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		11A9BDAD22A44DBE006B50CA /* TKFeatureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFeatureManager.h; sourceTree = "<group>"; };
+		11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFeatureManager.m; sourceTree = "<group>"; };
 		11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropEffectFilter.m; sourceTree = "<group>"; };
 		11C6799F229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropEffectFilter.h; sourceTree = "<group>"; };
 		11C679A0229F09EA0054C5A1 /* GPUImageRainDropFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropFilter.h; sourceTree = "<group>"; };
@@ -904,6 +952,8 @@
 		11C67A7A229F0D6D0054C5A1 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		11C67A7B229F0D6D0054C5A1 /* TKCameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKCameraViewController.mm; sourceTree = "<group>"; };
 		11C67A7C229F0D6D0054C5A1 /* GUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIViewController.h; sourceTree = "<group>"; };
+		11CCDB8D22A3F1080025C2E1 /* TKEditItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEditItemView.h; sourceTree = "<group>"; };
+		11CCDB8E22A3F1080025C2E1 /* TKEditItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEditItemView.m; sourceTree = "<group>"; };
 		11DBE5F5229DAAA800718133 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
 		11DBE602229DAAA800718133 /* sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker.png; sourceTree = "<group>"; };
 		11E501EC229C467B005C83A3 /* fmdb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fmdb.xcodeproj; path = fmdb/fmdb.xcodeproj; sourceTree = "<group>"; };
@@ -1272,14 +1322,14 @@
 		114481172292E74300A61CF5 /* sticker-dog */ = {
 			isa = PBXGroup;
 			children = (
-				114481182292E74300A61CF5 /* sticker-dog-4.lua */,
-				114481192292E74300A61CF5 /* sticker-dog-4.png */,
-				1144811A2292E74300A61CF5 /* sticker-dog-1.lua */,
-				1144811B2292E74300A61CF5 /* sticker-dog-1.png */,
-				1144811C2292E74300A61CF5 /* sticker-dog-2.lua */,
-				1144811D2292E74300A61CF5 /* sticker-dog-2.png */,
-				1144811E2292E74300A61CF5 /* sticker-dog-3.png */,
-				1144811F2292E74300A61CF5 /* sticker-dog-3.lua */,
+				114481182292E74300A61CF5 /* sticker-dog-3.lua */,
+				114481192292E74300A61CF5 /* sticker-dog-3.png */,
+				1144811A2292E74300A61CF5 /* sticker-dog-0.lua */,
+				1144811B2292E74300A61CF5 /* sticker-dog-0.png */,
+				1144811C2292E74300A61CF5 /* sticker-dog-1.lua */,
+				1144811D2292E74300A61CF5 /* sticker-dog-1.png */,
+				1144811E2292E74300A61CF5 /* sticker-dog-2.png */,
+				1144811F2292E74300A61CF5 /* sticker-dog-2.lua */,
 				114481202292E74300A61CF5 /* sticker-dog-thumb.png */,
 			);
 			path = "sticker-dog";
@@ -1288,14 +1338,14 @@
 		114481212292E74300A61CF5 /* sticker-fox */ = {
 			isa = PBXGroup;
 			children = (
-				114481222292E74300A61CF5 /* sticker-fox-4.lua */,
-				114481232292E74300A61CF5 /* sticker-fox-4.png */,
-				114481242292E74300A61CF5 /* sticker-fox-3.png */,
-				114481252292E74300A61CF5 /* sticker-fox-3.lua */,
-				114481262292E74300A61CF5 /* sticker-fox-2.lua */,
-				114481272292E74300A61CF5 /* sticker-fox-2.png */,
-				114481282292E74300A61CF5 /* sticker-fox-1.lua */,
-				114481292292E74300A61CF5 /* sticker-fox-1.png */,
+				114481222292E74300A61CF5 /* sticker-fox-3.lua */,
+				114481232292E74300A61CF5 /* sticker-fox-3.png */,
+				114481242292E74300A61CF5 /* sticker-fox-2.png */,
+				114481252292E74300A61CF5 /* sticker-fox-2.lua */,
+				114481262292E74300A61CF5 /* sticker-fox-1.lua */,
+				114481272292E74300A61CF5 /* sticker-fox-1.png */,
+				114481282292E74300A61CF5 /* sticker-fox-0.lua */,
+				114481292292E74300A61CF5 /* sticker-fox-0.png */,
 				1144812A2292E74300A61CF5 /* sticker-fox-thumb.png */,
 			);
 			path = "sticker-fox";
@@ -1317,8 +1367,8 @@
 			isa = PBXGroup;
 			children = (
 				114481322292E74300A61CF5 /* sticker-nonla-hat-thumb.png */,
-				114481332292E74300A61CF5 /* sticker-nonla-hat.png */,
-				114481342292E74300A61CF5 /* sticker-nonla-hat.lua */,
+				114481332292E74300A61CF5 /* sticker-nonla-hat-0.png */,
+				114481342292E74300A61CF5 /* sticker-nonla-hat-0.lua */,
 			);
 			path = "sticker-nonla-hat";
 			sourceTree = "<group>";
@@ -1327,12 +1377,12 @@
 			isa = PBXGroup;
 			children = (
 				114481362292E74300A61CF5 /* sticker-cat-thumb.png */,
-				114481372292E74300A61CF5 /* sticker-cat-1.lua */,
-				114481382292E74300A61CF5 /* sticker-cat-1.png */,
-				114481392292E74300A61CF5 /* sticker-cat-3.png */,
-				1144813A2292E74300A61CF5 /* sticker-cat-3.lua */,
-				1144813B2292E74300A61CF5 /* sticker-cat-2.lua */,
-				1144813C2292E74300A61CF5 /* sticker-cat-2.png */,
+				114481372292E74300A61CF5 /* sticker-cat-0.lua */,
+				114481382292E74300A61CF5 /* sticker-cat-0.png */,
+				114481392292E74300A61CF5 /* sticker-cat-2.png */,
+				1144813A2292E74300A61CF5 /* sticker-cat-2.lua */,
+				1144813B2292E74300A61CF5 /* sticker-cat-1.lua */,
+				1144813C2292E74300A61CF5 /* sticker-cat-1.png */,
 			);
 			path = "sticker-cat";
 			sourceTree = "<group>";
@@ -1527,6 +1577,165 @@
 				114481B82292E74300A61CF5 /* tonystark.png */,
 			);
 			path = PhotoDemo;
+			sourceTree = "<group>";
+		};
+		11A21DEB22A30EA80062CECE /* TikkyClasses */ = {
+			isa = PBXGroup;
+			children = (
+				11A21DEF22A30EA80062CECE /* Tikky.h */,
+				11A21DEC22A30EA80062CECE /* Core */,
+				11A21E0522A30EA80062CECE /* FeatureDefinition.h */,
+				11A21E0622A30EA80062CECE /* Extensions */,
+				11A21E0E22A30EA80062CECE /* Utilities */,
+				11A21E1822A30EA80062CECE /* SocialNetworkSDK */,
+				11A21E2322A30EA80062CECE /* Data */,
+				11A21E2822A30EA80062CECE /* Presentation */,
+				11A9BDAD22A44DBE006B50CA /* TKFeatureManager.h */,
+				11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */,
+			);
+			path = TikkyClasses;
+			sourceTree = "<group>";
+		};
+		11A21DEC22A30EA80062CECE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				11A21DED22A30EA80062CECE /* TikkyEngine.mm */,
+				11A21DEE22A30EA80062CECE /* TKImageFilter.h */,
+				11A21DF022A30EA80062CECE /* TKFilterCreator.h */,
+				11A21DF122A30EA80062CECE /* Input */,
+				11A21DFA22A30EA80062CECE /* TKGalleryUtilities.h */,
+				11A21DFB22A30EA80062CECE /* TikkyEngine.h */,
+				11A21DFC22A30EA80062CECE /* TKFilterProperty.m */,
+				11A21DFD22A30EA80062CECE /* TKFilter.m */,
+				11A21DFE22A30EA80062CECE /* TKStickerPreviewer.mm */,
+				11A21DFF22A30EA80062CECE /* TKImageFilter.m */,
+				11A21E0022A30EA80062CECE /* TKFilterCreator.m */,
+				11A21E0122A30EA80062CECE /* TKStickerPreviewer.h */,
+				11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */,
+				11A21E0322A30EA80062CECE /* TKFilter.h */,
+				11A21E0422A30EA80062CECE /* TKFilterProperty.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		11A21DF122A30EA80062CECE /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				11A21DF222A30EA80062CECE /* TKImageInput.h */,
+				11A21DF322A30EA80062CECE /* TKPhoto.m */,
+				11A21DF422A30EA80062CECE /* TKVideo.m */,
+				11A21DF522A30EA80062CECE /* TKCamera.h */,
+				11A21DF622A30EA80062CECE /* TKPhoto.h */,
+				11A21DF722A30EA80062CECE /* TKImageInput.m */,
+				11A21DF822A30EA80062CECE /* TKCamera.m */,
+				11A21DF922A30EA80062CECE /* TKVideo.h */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		11A21E0622A30EA80062CECE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E0722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m */,
+				11A21E0822A30EA80062CECE /* UIDevice+DeviceName.m */,
+				11A21E0922A30EA80062CECE /* UIView+Delegate.h */,
+				11A21E0A22A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.h */,
+				11A21E0B22A30EA80062CECE /* opencv+parallel_for_.h */,
+				11A21E0C22A30EA80062CECE /* UIView+Delegate.m */,
+				11A21E0D22A30EA80062CECE /* UIDevice+DeviceName.h */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11A21E0E22A30EA80062CECE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E0F22A30EA80062CECE /* TKFacialLandmarkUtilities.h */,
+				11A21E1022A30EA80062CECE /* OpenCVUtilities.mm */,
+				11A21E1122A30EA80062CECE /* TKTextureUtilities.h */,
+				11A21E1222A30EA80062CECE /* TKUtilities.h */,
+				11A21E1322A30EA80062CECE /* TKFacialLandmarkUtilities.cpp */,
+				11A21E1422A30EA80062CECE /* TKDefinition.h */,
+				11A21E1522A30EA80062CECE /* OpenCVUtilities.h */,
+				11A21E1622A30EA80062CECE /* TKTextureUtilities.c */,
+				11A21E1722A30EA80062CECE /* TKUtilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		11A21E1822A30EA80062CECE /* SocialNetworkSDK */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E1922A30EA80062CECE /* FacebookSDK */,
+				11A21E1C22A30EA80062CECE /* Model */,
+				11A21E1F22A30EA80062CECE /* Base */,
+			);
+			path = SocialNetworkSDK;
+			sourceTree = "<group>";
+		};
+		11A21E1922A30EA80062CECE /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E1A22A30EA80062CECE /* TKSNFacebookSDK.m */,
+				11A21E1B22A30EA80062CECE /* TKSNFacebookSDK.h */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		11A21E1C22A30EA80062CECE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E1D22A30EA80062CECE /* TKSNUserInfo.m */,
+				11A21E1E22A30EA80062CECE /* TKSNUserInfo.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11A21E1F22A30EA80062CECE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E2022A30EA80062CECE /* TKSocialNetworkSDK.m */,
+				11A21E2122A30EA80062CECE /* SocialNetworkSDK.h */,
+				11A21E2222A30EA80062CECE /* TKSocialNetworkSDK.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		11A21E2322A30EA80062CECE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E2422A30EA80062CECE /* TKStickerEntity.h */,
+				11A21E2722A30EA80062CECE /* TKStickerEntity.mm */,
+				11A21E2522A30EA80062CECE /* TKSampleDataPool.h */,
+				11A21E2622A30EA80062CECE /* TKSampleDataPool.mm */,
+				11A21E4422A3A2920062CECE /* TKDataAdapter.h */,
+				11A21E4522A3A2920062CECE /* TKDataAdapter.m */,
+				11A21E4722A3A3FB0062CECE /* TKFilterEntity.h */,
+				11A21E4822A3A3FB0062CECE /* TKFilterEntity.m */,
+				11A21E4A22A3A52E0062CECE /* TKCommonEntity.h */,
+				11A21E4B22A3A52E0062CECE /* TKCommonEntity.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		11A21E2822A30EA80062CECE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				11A21E2A22A30EA80062CECE /* TKNotification.h */,
+				11A21E2922A30EA80062CECE /* TKCameraViewController.h */,
+				11A21E2B22A30EA80062CECE /* TKCameraViewController.mm */,
+				11A21E4D22A3DB460062CECE /* TKEditorViewController.h */,
+				11A21E4E22A3DB460062CECE /* TKEditorViewController.mm */,
+				11CCDB8D22A3F1080025C2E1 /* TKEditItemView.h */,
+				11CCDB8E22A3F1080025C2E1 /* TKEditItemView.m */,
+				11A9BD9822A3F3ED006B50CA /* TKEditItemViewModel.h */,
+				11A9BD9922A3F3ED006B50CA /* TKEditItemViewModel.m */,
+				11A9BDA722A4067A006B50CA /* TKEditItemCollectionViewCell.h */,
+				11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */,
+				11A9BDAA22A40DCC006B50CA /* TKMenuCollectionViewCell.h */,
+				11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		11C679B8229F0D6C0054C5A1 /* TikkyClasses */ = {
@@ -2177,6 +2386,7 @@
 		B70BD43A2196C634000A4EBF /* Tikky */ = {
 			isa = PBXGroup;
 			children = (
+				11A21DEB22A30EA80062CECE /* TikkyClasses */,
 				114480D12292E74300A61CF5 /* Resources */,
 				B751913D21BA71C200F64A21 /* ExternalFrameworkClasses */,
 				B70BD48A2196C90F000A4EBF /* Prefix.pch */,
@@ -2650,14 +2860,14 @@
 				114480CF2292E62B00A61CF5 /* haar_facedetection2.xml in Resources */,
 				114482802292E74400A61CF5 /* frame.png in Resources */,
 				114481CC2292E74300A61CF5 /* sticker-xmas-hat-5.png in Resources */,
-				114482182292E74300A61CF5 /* sticker-cat-2.png in Resources */,
+				114482182292E74300A61CF5 /* sticker-cat-1.png in Resources */,
 				114481F52292E74300A61CF5 /* lookup-linda.png in Resources */,
 				114481E32292E74300A61CF5 /* lookup-b _ w.png in Resources */,
 				114481E52292E74300A61CF5 /* lookup-solar.png in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				1144824F2292E74400A61CF5 /* frame-flower-peony-8.png in Resources */,
-				114481F92292E74300A61CF5 /* sticker-dog-4.png in Resources */,
-				114482072292E74300A61CF5 /* sticker-fox-1.lua in Resources */,
+				114481F92292E74300A61CF5 /* sticker-dog-3.png in Resources */,
+				114482072292E74300A61CF5 /* sticker-fox-0.lua in Resources */,
 				114481D52292E74300A61CF5 /* sticker-xmas-hat-3.png in Resources */,
 				114481C72292E74300A61CF5 /* sticker-xmas-hat-2-thumb.png in Resources */,
 				114482322292E74300A61CF5 /* frame-lotus-0.png in Resources */,
@@ -2676,7 +2886,7 @@
 				114482592292E74400A61CF5 /* model-elizabeth.png in Resources */,
 				114482772292E74400A61CF5 /* photo.png in Resources */,
 				114482752292E74400A61CF5 /* raito.png in Resources */,
-				114482042292E74300A61CF5 /* sticker-fox-3.lua in Resources */,
+				114482042292E74300A61CF5 /* sticker-fox-2.lua in Resources */,
 				1144820E2292E74300A61CF5 /* sticker-flag-vn-0.png in Resources */,
 				1144826E2292E74400A61CF5 /* model-feel.png in Resources */,
 				114481DC2292E74300A61CF5 /* lookup-polaroid.png in Resources */,
@@ -2698,8 +2908,8 @@
 				114481ED2292E74300A61CF5 /* lookup-summer.png in Resources */,
 				114482502292E74400A61CF5 /* frame-flower-peony-8.lua in Resources */,
 				1144824E2292E74400A61CF5 /* frame-flower-peony-thumb.png in Resources */,
-				114482062292E74300A61CF5 /* sticker-fox-2.png in Resources */,
-				114482032292E74300A61CF5 /* sticker-fox-3.png in Resources */,
+				114482062292E74300A61CF5 /* sticker-fox-1.png in Resources */,
+				114482032292E74300A61CF5 /* sticker-fox-2.png in Resources */,
 				1144825B2292E74400A61CF5 /* modal-brooklyn.png in Resources */,
 				114482092292E74300A61CF5 /* sticker-fox-thumb.png in Resources */,
 				1144827A2292E74400A61CF5 /* twitter.png in Resources */,
@@ -2708,14 +2918,14 @@
 				B70BD4432196C634000A4EBF /* Main.storyboard in Resources */,
 				114482312292E74300A61CF5 /* frame-flower-shakura-thumb.png in Resources */,
 				1144821A2292E74300A61CF5 /* frame-flower-shakura-3.lua in Resources */,
-				114482132292E74300A61CF5 /* sticker-cat-1.lua in Resources */,
-				114482082292E74300A61CF5 /* sticker-fox-1.png in Resources */,
+				114482132292E74300A61CF5 /* sticker-cat-0.lua in Resources */,
+				114482082292E74300A61CF5 /* sticker-fox-0.png in Resources */,
 				1144828A2292E74400A61CF5 /* tonystark.png in Resources */,
 				114482272292E74300A61CF5 /* frame-flower-shakura-7.lua in Resources */,
-				114481FD2292E74300A61CF5 /* sticker-dog-2.png in Resources */,
+				114481FD2292E74300A61CF5 /* sticker-dog-1.png in Resources */,
 				114481EA2292E74300A61CF5 /* lookup-amatorka.png in Resources */,
 				114481D42292E74300A61CF5 /* sticker-xmas-hat-2.png in Resources */,
-				114482052292E74300A61CF5 /* sticker-fox-2.lua in Resources */,
+				114482052292E74300A61CF5 /* sticker-fox-1.lua in Resources */,
 				1144822D2292E74300A61CF5 /* frame-flower-shakura-8.lua in Resources */,
 				114481E72292E74300A61CF5 /* lookup-elizabeth.png in Resources */,
 				114481F02292E74300A61CF5 /* lookup-run.png in Resources */,
@@ -2727,7 +2937,7 @@
 				114482432292E74400A61CF5 /* frame-flower-peony-7.lua in Resources */,
 				114481E92292E74300A61CF5 /* lookup-gotham.png in Resources */,
 				1144821B2292E74300A61CF5 /* frame-flower-shakura-2.lua in Resources */,
-				114482012292E74300A61CF5 /* sticker-fox-4.lua in Resources */,
+				114482012292E74300A61CF5 /* sticker-fox-3.lua in Resources */,
 				114481F12292E74300A61CF5 /* lookup-fashion.png in Resources */,
 				114482122292E74300A61CF5 /* sticker-cat-thumb.png in Resources */,
 				114481E22292E74300A61CF5 /* lookup-saha.png in Resources */,
@@ -2745,15 +2955,14 @@
 				114482572292E74400A61CF5 /* model_normal.jpg in Resources */,
 				114481DA2292E74300A61CF5 /* lookup-charcoal.png in Resources */,
 				114482562292E74400A61CF5 /* model-gray.png in Resources */,
-				114482172292E74300A61CF5 /* sticker-cat-2.lua in Resources */,
-				114481FB2292E74300A61CF5 /* sticker-dog-1.png in Resources */,
+				114482172292E74300A61CF5 /* sticker-cat-1.lua in Resources */,
+				114481FB2292E74300A61CF5 /* sticker-dog-0.png in Resources */,
 				1144822E2292E74300A61CF5 /* frame-flower-shakura-11.png in Resources */,
 				114482482292E74400A61CF5 /* frame-flower-peony-3.lua in Resources */,
 				1144827D2292E74400A61CF5 /* rec-start-button.png in Resources */,
 				114481EB2292E74300A61CF5 /* lookup-guardian.png in Resources */,
 				114481CA2292E74300A61CF5 /* sticker-xmas-santa.png in Resources */,
 				114480D02292E62B00A61CF5 /* haar_facedetection.xml in Resources */,
-				11C67AC7229F0D6D0054C5A1 /* EditViewController.mm.orig in Resources */,
 				114482602292E74400A61CF5 /* model-floyd.png in Resources */,
 				114482702292E74400A61CF5 /* model-club.png in Resources */,
 				114481B92292E74300A61CF5 /* sticker-xmas-hat-thumb.png in Resources */,
@@ -2764,9 +2973,9 @@
 				1144827F2292E74400A61CF5 /* delete.png in Resources */,
 				114482212292E74300A61CF5 /* frame-flower-shakura-5.png in Resources */,
 				11DBE604229DAAA800718133 /* sticker.png in Resources */,
-				114481FC2292E74300A61CF5 /* sticker-dog-2.lua in Resources */,
+				114481FC2292E74300A61CF5 /* sticker-dog-1.lua in Resources */,
 				1144825F2292E74400A61CF5 /* model-hudson.png in Resources */,
-				114481F82292E74300A61CF5 /* sticker-dog-4.lua in Resources */,
+				114481F82292E74300A61CF5 /* sticker-dog-3.lua in Resources */,
 				114482452292E74400A61CF5 /* frame-flower-peony-6.png in Resources */,
 				114481D72292E74300A61CF5 /* sticker-astronaut.png in Resources */,
 				1144827E2292E74400A61CF5 /* share.png in Resources */,
@@ -2790,12 +2999,12 @@
 				114482652292E74400A61CF5 /* model-polaroid.png in Resources */,
 				114482742292E74400A61CF5 /* emoji.png in Resources */,
 				114481E42292E74300A61CF5 /* lookup-vintage.png in Resources */,
-				114481FF2292E74300A61CF5 /* sticker-dog-3.lua in Resources */,
+				114481FF2292E74300A61CF5 /* sticker-dog-2.lua in Resources */,
 				114481D12292E74300A61CF5 /* sticker-xmas-hat-8-thumb.png in Resources */,
 				1144821F2292E74300A61CF5 /* frame-flower-shakura-1.lua in Resources */,
 				114482462292E74400A61CF5 /* frame-flower-peony-2.png in Resources */,
-				114481FE2292E74300A61CF5 /* sticker-dog-3.png in Resources */,
-				114482152292E74300A61CF5 /* sticker-cat-3.png in Resources */,
+				114481FE2292E74300A61CF5 /* sticker-dog-2.png in Resources */,
+				114482152292E74300A61CF5 /* sticker-cat-2.png in Resources */,
 				1144820F2292E74300A61CF5 /* sticker-nonla-hat-thumb.png in Resources */,
 				1144824D2292E74400A61CF5 /* frame-flower-peony-0.png in Resources */,
 				1144826D2292E74400A61CF5 /* model-romance.png in Resources */,
@@ -2804,7 +3013,7 @@
 				114482632292E74400A61CF5 /* model-summer.png in Resources */,
 				114481D32292E74300A61CF5 /* sticker-xmas-red-gift-thumb.png in Resources */,
 				114482522292E74400A61CF5 /* model-guardian.png in Resources */,
-				114482102292E74300A61CF5 /* sticker-nonla-hat.png in Resources */,
+				114482102292E74300A61CF5 /* sticker-nonla-hat-0.png in Resources */,
 				1144822F2292E74300A61CF5 /* frame-flower-shakura-11.lua in Resources */,
 				1144824C2292E74400A61CF5 /* frame-flower-peony-0.lua in Resources */,
 				1144826C2292E74400A61CF5 /* model-solar.png in Resources */,
@@ -2815,7 +3024,7 @@
 				114482822292E74400A61CF5 /* edit.png in Resources */,
 				114482352292E74300A61CF5 /* frame-lotus-1.png in Resources */,
 				114481D92292E74300A61CF5 /* sticker-panda.png in Resources */,
-				114482162292E74300A61CF5 /* sticker-cat-3.lua in Resources */,
+				114482162292E74300A61CF5 /* sticker-cat-2.lua in Resources */,
 				114482002292E74300A61CF5 /* sticker-dog-thumb.png in Resources */,
 				B70ABB2A2201C66000B1F89A /* manual.html in Resources */,
 				1144823E2292E74400A61CF5 /* frame-flower-peony-4.png in Resources */,
@@ -2834,7 +3043,7 @@
 				114481F42292E74300A61CF5 /* lookup-mono cool.png in Resources */,
 				114482712292E74400A61CF5 /* model-seven.png in Resources */,
 				114482292292E74300A61CF5 /* frame-flower-shakura-9.png in Resources */,
-				114482022292E74300A61CF5 /* sticker-fox-4.png in Resources */,
+				114482022292E74300A61CF5 /* sticker-fox-3.png in Resources */,
 				114482762292E74400A61CF5 /* 10s.png in Resources */,
 				114481E02292E74300A61CF5 /* lookup-seven.png in Resources */,
 				114482622292E74400A61CF5 /* model-fashion.png in Resources */,
@@ -2849,7 +3058,7 @@
 				1144822A2292E74300A61CF5 /* frame-flower-shakura-10.lua in Resources */,
 				114481CF2292E74300A61CF5 /* sticker-xmas-hat-7.png in Resources */,
 				114481BB2292E74300A61CF5 /* sticker-xmas-santa-thumb.png in Resources */,
-				114482142292E74300A61CF5 /* sticker-cat-1.png in Resources */,
+				114482142292E74300A61CF5 /* sticker-cat-0.png in Resources */,
 				114481F62292E74300A61CF5 /* lookup-hipster.png in Resources */,
 				114482782292E74400A61CF5 /* cross.png in Resources */,
 				114482512292E74400A61CF5 /* model-1971.png in Resources */,
@@ -2858,8 +3067,8 @@
 				114482222292E74300A61CF5 /* frame-flower-shakura-5.lua in Resources */,
 				114482582292E74400A61CF5 /* model-indigo.png in Resources */,
 				114482792292E74400A61CF5 /* filter.png in Resources */,
-				114481FA2292E74300A61CF5 /* sticker-dog-1.lua in Resources */,
-				114482112292E74300A61CF5 /* sticker-nonla-hat.lua in Resources */,
+				114481FA2292E74300A61CF5 /* sticker-dog-0.lua in Resources */,
+				114482112292E74300A61CF5 /* sticker-nonla-hat-0.lua in Resources */,
 				11E5020C229C5BF5005C83A3 /* tikky.db in Resources */,
 				114482442292E74400A61CF5 /* frame-flower-peony-6.lua in Resources */,
 				114482362292E74300A61CF5 /* frame-lotus-2.lua in Resources */,
@@ -2873,133 +3082,112 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C67AAC229F0D6D0054C5A1 /* TKPageCollectionViewCell.m in Sources */,
-				11C67AB3229F0D6D0054C5A1 /* TKFacialCollectionViewCell.m in Sources */,
+				11A21E4C22A3A52E0062CECE /* TKCommonEntity.m in Sources */,
+				11A21E3922A30EA80062CECE /* UIView+Delegate.m in Sources */,
 				11C67A92229F0D6D0054C5A1 /* TKSampleDataPool.mm in Sources */,
 				11C67A84229F0D6D0054C5A1 /* TKStickerPreviewer.mm in Sources */,
-				11C67AAA229F0D6D0054C5A1 /* TKBottomEditView.m in Sources */,
 				11C67A86229F0D6D0054C5A1 /* TKFilterCreator.m in Sources */,
 				B74C9AC5224BE94B0061DAA4 /* IFToasterFilter.m in Sources */,
-				11C67A9A229F0D6D0054C5A1 /* UIView+RCEssentials.m in Sources */,
 				11C67A8C229F0D6D0054C5A1 /* TKFacialLandmarkUtilities.cpp in Sources */,
 				B74C9ABB224BE94B0061DAA4 /* IFBrannanFilter.m in Sources */,
 				B71B138421B9C1A900DE1796 /* GPUImageLUTFilter.m in Sources */,
-				11C67AA7229F0D6D0054C5A1 /* TKTopEditView.m in Sources */,
-				11C67A95229F0D6D0054C5A1 /* TKPHAsset.m in Sources */,
 				B753FD37220550B500D805BB /* LFGPUImageBeautyFilter.m in Sources */,
+				11A9BD9A22A3F3ED006B50CA /* TKEditItemViewModel.m in Sources */,
+				11A21E3222A30EA80062CECE /* TKFilter.m in Sources */,
+				11A21E3D22A30EA80062CECE /* TKUtilities.m in Sources */,
 				B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */,
 				11C67A7E229F0D6D0054C5A1 /* TKPhoto.m in Sources */,
-				11C67AC1229F0D6D0054C5A1 /* TKMainBottomMenuItem.m in Sources */,
 				B74C9AC9224BE94B0061DAA4 /* IFLordKelvinFilter.m in Sources */,
 				B74C9AC4224BE94B0061DAA4 /* IFValenciaFilter.m in Sources */,
-				11C67AC4229F0D6D0054C5A1 /* TKBottomMenuItem.m in Sources */,
 				B74C9AC6224BE94B0061DAA4 /* IFInkwellFilter.m in Sources */,
+				11A21E3322A30EA80062CECE /* TKStickerPreviewer.mm in Sources */,
 				11C67A80229F0D6D0054C5A1 /* TKImageInput.m in Sources */,
+				11A21E4F22A3DB460062CECE /* TKEditorViewController.mm in Sources */,
+				11A21E2D22A30EA80062CECE /* TKPhoto.m in Sources */,
 				B74C9AC7224BE94B0061DAA4 /* IFAmaroFilter.m in Sources */,
-				11C67AC8229F0D6D0054C5A1 /* EditViewController.mm in Sources */,
 				B74C9ACC224BE94B0061DAA4 /* IFHefeFilter.m in Sources */,
 				B75C333F21B432C2006BEED5 /* TapGestureRecognizer.cpp in Sources */,
 				B75C334121B432C2006BEED5 /* PinchGestureRecognizer.cpp in Sources */,
 				B74C9ABA224BE94B0061DAA4 /* GPUImageSixInputFilter.m in Sources */,
-				11C67ACA229F0D6D0054C5A1 /* TKCameraViewController.mm in Sources */,
+				11A9BDAC22A40DCC006B50CA /* TKMenuCollectionViewCell.m in Sources */,
 				11C67A81229F0D6D0054C5A1 /* TKCamera.m in Sources */,
-				11C67AA8229F0D6D0054C5A1 /* TKEditView.m in Sources */,
-				11C67AB4229F0D6D0054C5A1 /* TKFacialCollectionView.m in Sources */,
-				11C67AB7229F0D6D0054C5A1 /* TKFrameCollectionViewCell.m in Sources */,
+				11A9BDA922A4067A006B50CA /* TKEditItemCollectionViewCell.m in Sources */,
+				11A21E4022A30EA80062CECE /* TKSocialNetworkSDK.m in Sources */,
+				11A21E4322A30EA80062CECE /* TKCameraViewController.mm in Sources */,
 				11C67A8B229F0D6D0054C5A1 /* OpenCVUtilities.mm in Sources */,
-				11C67AA9229F0D6D0054C5A1 /* TKSelectionBottomMenuCollectionViewCell.m in Sources */,
+				11A21E2F22A30EA80062CECE /* TKImageInput.m in Sources */,
 				11C67A7D229F0D6D0054C5A1 /* TikkyEngine.mm in Sources */,
 				B70ABB2C2201C66000B1F89A /* feature_descriptor.cpp in Sources */,
 				B70BD44B2196C636000A4EBF /* main.m in Sources */,
 				11C67A8F229F0D6D0054C5A1 /* TKSNFacebookSDK.m in Sources */,
 				11C67A7F229F0D6D0054C5A1 /* TKVideo.m in Sources */,
-				11C67AB0229F0D6D0054C5A1 /* TKTopSubMenuItem.m in Sources */,
 				B71A8D8F2230A06D00E1FC58 /* GPUImageFilter+GPUVector2.m in Sources */,
 				B75C334221B432C2006BEED5 /* LongPressGestureRecognizer.cpp in Sources */,
 				B74C9ABF224BE94B0061DAA4 /* IFEarlybirdFilter.m in Sources */,
+				11A21E3A22A30EA80062CECE /* OpenCVUtilities.mm in Sources */,
 				B70BD48D2196C913000A4EBF /* StickerScene.cpp in Sources */,
-				11C67AB8229F0D6D0054C5A1 /* TKStickerCollectionViewCell.m in Sources */,
-				11C67ABD229F0D6D0054C5A1 /* TKStickerBottomMenu.m in Sources */,
-				11C67A97229F0D6D0054C5A1 /* CustomDataSource.m in Sources */,
+				11A21E3E22A30EA80062CECE /* TKSNFacebookSDK.m in Sources */,
 				B75C333E21B432C2006BEED5 /* PanGestureRecognizer.cpp in Sources */,
-				11C67ABB229F0D6D0054C5A1 /* TKStickerCollectionViewBase.m in Sources */,
 				B70ABB272201C66000B1F89A /* hog.c in Sources */,
 				B74C9AC3224BE94B0061DAA4 /* IFHudsonFilter.m in Sources */,
-				11C67AB6229F0D6D0054C5A1 /* TKTypeSelectionCollectionViewCell.m in Sources */,
 				B74C9ACE224BE94B0061DAA4 /* IFNashvilleFilter.m in Sources */,
+				11A21E4122A30EA80062CECE /* TKSampleDataPool.mm in Sources */,
+				11A21E3422A30EA80062CECE /* TKImageFilter.m in Sources */,
 				B70BD48E2196C913000A4EBF /* CCAppDelegate.cpp in Sources */,
-				11C67AB5229F0D6D0054C5A1 /* TKStickerCollectionViewCellBase.m in Sources */,
-				11C67AA6229F0D6D0054C5A1 /* TKFacialModel.m in Sources */,
-				11C67AA3229F0D6D0054C5A1 /* TKModelObject.m in Sources */,
 				B74C9AB9224BE94B0061DAA4 /* GPUImageFiveInputFilter.m in Sources */,
-				11C67ABA229F0D6D0054C5A1 /* TKTypeStickerCollectionView.m in Sources */,
-				11C67AA0229F0D6D0054C5A1 /* TKStickerModelView.m in Sources */,
 				B75279D621A2001F00A59714 /* GPUImageStickerFilter.mm in Sources */,
 				B7137D5822020858004BF34B /* TKFacialLandmarkDetector.mm in Sources */,
 				B7136DCA224AA1EA00CF2FE8 /* GPUImageSnowFilter.m in Sources */,
 				B70ABB302201C66000B1F89A /* ldmarkmodel.cpp in Sources */,
-				11C67A9E229F0D6D0054C5A1 /* TKFrameModelView.m in Sources */,
 				B70ABB2B2201C66000B1F89A /* helper.cpp in Sources */,
 				B74C9ABD224BE94B0061DAA4 /* IFWaldenFilter.m in Sources */,
 				B75C334021B432C2006BEED5 /* GestureRecognizerUtils.cpp in Sources */,
+				11A21E4622A3A2930062CECE /* TKDataAdapter.m in Sources */,
+				11A9BDAF22A44DBE006B50CA /* TKFeatureManager.m in Sources */,
 				B74C9AC8224BE94B0061DAA4 /* IFXproIIFilter.m in Sources */,
+				11A21E3522A30EA80062CECE /* TKFilterCreator.m in Sources */,
 				11C67A87229F0D6D0054C5A1 /* TKGalleryUtilities.m in Sources */,
-				11C67AA5229F0D6D0054C5A1 /* TKStickerModel.m in Sources */,
 				11C67A89229F0D6D0054C5A1 /* UIDevice+DeviceName.m in Sources */,
-				11C67A98229F0D6D0054C5A1 /* CustomHeaderView.m in Sources */,
 				B70BD4952196C91D000A4EBF /* Cocos2dxGameController.mm in Sources */,
+				11A21E2E22A30EA80062CECE /* TKVideo.m in Sources */,
 				11C67A8A229F0D6D0054C5A1 /* UIView+Delegate.m in Sources */,
 				B74C9ACA224BE94B0061DAA4 /* IFLomofiFilter.m in Sources */,
-				11C67AB2229F0D6D0054C5A1 /* TKFacialBottomMenu.m in Sources */,
+				11A21E3722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m in Sources */,
 				11C67A8E229F0D6D0054C5A1 /* TKUtilities.m in Sources */,
 				B74C9ACD224BE94B0061DAA4 /* IFNormalFilter.m in Sources */,
 				B74C9ABC224BE94B0061DAA4 /* IF1977Filter.m in Sources */,
-				11C67AAF229F0D6D0054C5A1 /* TKTopSubViewMenu.m in Sources */,
 				B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */,
+				11A21E4222A30EA80062CECE /* TKStickerEntity.mm in Sources */,
+				11A21E4922A3A3FB0062CECE /* TKFilterEntity.m in Sources */,
 				11C67A85229F0D6D0054C5A1 /* TKImageFilter.m in Sources */,
 				11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */,
-				11C67A96229F0D6D0054C5A1 /* TKPhotopickerDataSourcesProtocol.m in Sources */,
-				11C67AC3229F0D6D0054C5A1 /* TKBottomMenu.m in Sources */,
-				11C67AC6229F0D6D0054C5A1 /* TKBottomMenuFactory.m in Sources */,
-				11C67AC2229F0D6D0054C5A1 /* TKMainBottomMenu.m in Sources */,
 				B74C9AC0224BE94B0061DAA4 /* IFRiseFilter.m in Sources */,
+				11CCDB8F22A3F1080025C2E1 /* TKEditItemView.m in Sources */,
 				B74C9ABE224BE94B0061DAA4 /* IFSierraFilter.m in Sources */,
 				B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */,
-				11C67AAD229F0D6D0054C5A1 /* TKShareView.m in Sources */,
-				11C67ABF229F0D6D0054C5A1 /* TKFilterCollectionView.m in Sources */,
-				11C67A94229F0D6D0054C5A1 /* TKPhotosPickerViewController.m in Sources */,
-				11C67A9D229F0D6D0054C5A1 /* TKModelViewObject.m in Sources */,
+				11A21E3B22A30EA80062CECE /* TKFacialLandmarkUtilities.cpp in Sources */,
 				11C67A82229F0D6D0054C5A1 /* TKFilterProperty.m in Sources */,
 				11C67A88229F0D6D0054C5A1 /* UIImage+CVPixelBufferRefConverter.m in Sources */,
 				11C67A8D229F0D6D0054C5A1 /* TKTextureUtilities.c in Sources */,
-				11C67ABE229F0D6D0054C5A1 /* TKFilterCollectionViewCell.m in Sources */,
+				11A21E3122A30EA80062CECE /* TKFilterProperty.m in Sources */,
 				11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */,
-				11C67A9C229F0D6D0054C5A1 /* RCEasyTipViewIDGenerator.m in Sources */,
-				11C67AA2229F0D6D0054C5A1 /* TKFilterModel.m in Sources */,
-				11C67AC0229F0D6D0054C5A1 /* TKFilterBottomMenu.m in Sources */,
+				11A21E3C22A30EA80062CECE /* TKTextureUtilities.c in Sources */,
 				B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */,
-				11C67A99229F0D6D0054C5A1 /* RCEasyTipView.m in Sources */,
 				11C67A90229F0D6D0054C5A1 /* TKSNUserInfo.m in Sources */,
-				11C67AAE229F0D6D0054C5A1 /* TKTopMenu.m in Sources */,
-				11C67AAB229F0D6D0054C5A1 /* TKHorizontalPageView.m in Sources */,
-				11C67AC9229F0D6D0054C5A1 /* GUIViewController.m in Sources */,
-				11C67AC5229F0D6D0054C5A1 /* TKRootView.m in Sources */,
-				11C67AB1229F0D6D0054C5A1 /* TKTopMenuItem.m in Sources */,
+				11A21E3822A30EA80062CECE /* UIDevice+DeviceName.m in Sources */,
 				11C67A91229F0D6D0054C5A1 /* TKSocialNetworkSDK.m in Sources */,
 				B74C9ACB224BE94B0061DAA4 /* IFSutroFilter.m in Sources */,
-				11C67ABC229F0D6D0054C5A1 /* TKStickerCollectionView.m in Sources */,
 				B74C9AC2224BE94B0061DAA4 /* IFImageFilter.m in Sources */,
-				11C67A9F229F0D6D0054C5A1 /* TKFilterModelView.m in Sources */,
 				B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */,
+				11A21E3622A30EA80062CECE /* TKGalleryUtilities.m in Sources */,
 				B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */,
 				B7137D532201FE44004BF34B /* SDM.mm in Sources */,
-				11C67A9B229F0D6D0054C5A1 /* UIBarItem+RCBarItem.m in Sources */,
+				11A21E2C22A30EA80062CECE /* TikkyEngine.mm in Sources */,
+				11A21E3F22A30EA80062CECE /* TKSNUserInfo.m in Sources */,
+				11A21E3022A30EA80062CECE /* TKCamera.m in Sources */,
 				11C67A83229F0D6D0054C5A1 /* TKFilter.m in Sources */,
 				11C67A93229F0D6D0054C5A1 /* TKStickerEntity.mm in Sources */,
-				11C67AA1229F0D6D0054C5A1 /* TKFacialModelView.m in Sources */,
-				11C67AA4229F0D6D0054C5A1 /* TKFrameModel.m in Sources */,
 				B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */,
-				11C67AB9229F0D6D0054C5A1 /* TKFrameCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

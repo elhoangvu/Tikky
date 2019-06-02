@@ -8,22 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TKCommonEntity.h"
+
 typedef NS_ENUM(NSUInteger, TKStickerType) {
     TKStickerTypeFace,
     TKStickerTypeFrame,
-    TKStickerTypeCommmon
+    TKStickerTypeCommmon,
+    TKStickerTypeUnknown
 };
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKStickerEntity : NSObject
+@interface TKStickerEntity : TKCommonEntity
 
-@property (nonatomic, readonly) NSUInteger sid;
-@property (nonatomic, readonly) NSString* category;
-@property (nonatomic, readonly) NSString* name;
-@property (nonatomic, readonly) NSString* thumbnail;
-@property (nonatomic, readonly) BOOL isBundle;
-@property (nonatomic, readonly) TKStickerType type;
+@property (nonatomic, readonly) TKStickerType stickerType;
 @property (nonatomic, readonly) NSUInteger count;
 
 - (instancetype)initWithID:(NSUInteger)sid
@@ -33,6 +31,13 @@ NS_ASSUME_NONNULL_BEGIN
                   isBundle:(BOOL)isBundle
                      count:(NSUInteger)count
                       type:(TKStickerType)type;
+
+- (instancetype)initWithID:(NSUInteger)sid
+                  category:(NSString *)category
+                      name:(NSString*)name
+                 thumbnail:(NSString *)thumbnail
+                  isBundle:(BOOL)isBundle
+                     count:(NSUInteger)count;
 
 @end
 
@@ -46,7 +51,6 @@ NS_ASSUME_NONNULL_BEGIN
                  thumbnail:(NSString *)thumbnail
                   isBundle:(BOOL)isBundle
                      count:(NSUInteger)count
-                      type:(TKStickerType)type
                  landmarks:(NSDictionary *)landmarks;
 
 - (void *)facialSticker;

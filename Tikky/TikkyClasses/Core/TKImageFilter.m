@@ -44,7 +44,7 @@
         return nil;
     }
     
-    _filterList = TKSampleDataPool.sharedInstance.filterResources;
+//    _filterList = TKSampleDataPool.sharedInstance.filterResources;
     
     self.input = input;
     
