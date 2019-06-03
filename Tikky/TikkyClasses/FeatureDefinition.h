@@ -9,12 +9,12 @@
 #ifndef FeatureDefinition_h
 #define FeatureDefinition_h
 
-#define ENDABLE_FB_SHARE_TEST 0
+#define ENABLE_FB_SHARE_TEST 0
 
-#define ENDABLE_STICKER_TEST  0
+#define ENABLE_STICKER_TEST  0
 
-#define ENDABLE_CAMERA        1
+#define ENABLE_CAMERA        1
 
-#define ENDABLE_BACKGROUND_VIEW_FOR_UI_TESTING 0
+#define ENABLE_BACKGROUND_VIEW_FOR_UI_TESTING 0
 
 #endif /* FeatureDefinition_h */

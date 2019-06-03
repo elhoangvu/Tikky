@@ -32,7 +32,7 @@
 
 - (instancetype)init
 {
-    if (!(self = [self initWithInput:[[TKCamera alloc] init] filter:@"default"])) {
+    if (!(self = [self initWithInput:[[TKPhoto alloc] init] filter:@"default"])) {
         return nil;
     }
     
@@ -55,7 +55,7 @@
     
     _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];
     _gpuimageCropFilter = [[GPUImageCropFilter alloc] init];
-    _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *) input.sharedObject output:_gpuimageView];
+    _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *)input.sharedObject output:_gpuimageView];
     return self;
 }
 

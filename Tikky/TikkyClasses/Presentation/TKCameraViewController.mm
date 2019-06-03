@@ -97,7 +97,7 @@ TKStickerPreviewerDelegate
 #endif
     
     // <!-- Test FB SDK
-#if ENDABLE_FB_SHARE_TEST
+#if ENABLE_FB_SHARE_TEST
     NSString* url = [NSBundle.mainBundle pathForResource:@"tonystark" ofType:@"png"];
 
     UIImage* img = [UIImage imageWithContentsOfFile:url];
@@ -128,7 +128,7 @@ TKStickerPreviewerDelegate
 #endif
     
     // <!-- Test capture
-#if ENDABLE_STICKER_TEST
+#if ENABLE_STICKER_TEST
     long rand1 = (long)arc4random_uniform((unsigned int)_frameStickers->size());
     long rand2 = (long)arc4random_uniform((unsigned int)_facialStickers->size());
     [_tikkyEngine.stickerPreviewer newFrameStickerWithStickers:_frameStickers->at(rand1)];

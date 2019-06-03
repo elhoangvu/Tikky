@@ -45,8 +45,6 @@
     
     self.backgroundColor = UIColor.whiteColor;
     
-    [self layoutIfNeeded];
-    
     return self;
 }
 

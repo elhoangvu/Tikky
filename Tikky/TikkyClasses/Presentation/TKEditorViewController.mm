@@ -30,13 +30,25 @@ TKEditItemViewDelegate
 
 @property (nonatomic) TKEditItemView* editView;
 
-@property (nonatomic) UIView* headerView;
+@property (nonatomic) UIButton* closeButton;
+
+@property (nonatomic) UIButton* shareButton;
 
 @property (nonatomic) NSArray* menuFeatureObjects;
 
 @property (nonatomic) UIView* photoView;
 
 @property (nonatomic) CGFloat menuHeight;
+
+@property (nonatomic) CGSize menuItemSize;
+
+@property (nonatomic) UIButton* saveButton;
+
+@property (nonatomic) CGFloat itemSpacing;
+
+@property (nonatomic) CGFloat headerViewHieght;
+
+@property (nonatomic) CGFloat collectionViewWidth;
 
 @end
 
@@ -45,6 +57,7 @@ TKEditItemViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     _menuFeatureObjects = TKFeatureManager.sharedInstance.editMenuFeatureObjects;
+    _itemSpacing = 5;
     [self setUpMenuCollectionView];
     /////
     NSString* imagePath = [NSBundle.mainBundle pathForResource:@"aquaman" ofType:@"png"];
@@ -56,18 +69,56 @@ TKEditItemViewDelegate
     
     _photoView = TikkyEngine.sharedInstance.imageFilter.view;
     CGRect mainViewRect = UIScreen.mainScreen.bounds;
-    CGRect photoFrame = CGRectMake(0, 30, mainViewRect.size.width, mainViewRect.size.height-_menuHeight-30-5);
+    _headerViewHieght = 40;
+    CGRect photoFrame = CGRectMake(0, _headerViewHieght, mainViewRect.size.width, mainViewRect.size.height-_headerViewHieght-_menuHeight);
     [_photoView setFrame:photoFrame];
 
     [self.view addSubview:_photoView];
     
     [self setUpEditView];
-    
+    [self setUpButtons];
+    [self setUpHeaderView];
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+}
+
+- (void)setUpHeaderView {
+    CGRect closeFrame = CGRectMake(_headerViewHieght*0.25, _headerViewHieght*0.25, _headerViewHieght*0.5, _headerViewHieght*0.5);
+    _closeButton = [[UIButton alloc] initWithFrame:closeFrame];
+    NSString* closePath = [NSBundle.mainBundle pathForResource:@"cross" ofType:@"png"];
+    UIImage* closeImage = [UIImage imageWithContentsOfFile:closePath];
+    [_closeButton setImage:closeImage forState:UIControlStateNormal];
+    [self.view addSubview:_closeButton];
+    
+    CGSize mainSize = UIScreen.mainScreen.bounds.size;
+    _shareButton = [[UIButton alloc] initWithFrame:closeFrame];
+    [_shareButton setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [_shareButton setTitle:@"Share" forState:(UIControlStateNormal)];
+    [_shareButton sizeToFit];
+    [_shareButton.titleLabel setTextAlignment:(NSTextAlignmentCenter)];
+    [_shareButton.titleLabel setFont:[_shareButton.titleLabel.font fontWithSize:15]];
+    CGRect shareFrame = _shareButton.frame;
+    shareFrame.origin.y = 0;
+    shareFrame.origin.x = mainSize.width - _headerViewHieght*0.25 - shareFrame.size.width;
+    shareFrame.size.height = _headerViewHieght;
+    [_shareButton setFrame:shareFrame];
+    [self.view addSubview:_shareButton];
+}
+
+- (void)setUpButtons {
+    CGSize mainSize = UIScreen.mainScreen.bounds.size;
+    CGRect frame = CGRectMake(mainSize.width-_menuItemSize.width, mainSize.height-_menuHeight+(_menuHeight-_menuItemSize.height)/2.0, _menuItemSize.width-_itemSpacing, _menuItemSize.height);
+    _saveButton = [[UIButton alloc] initWithFrame:frame];
+    [_saveButton setBackgroundColor:UIColor.whiteColor];
+    [_saveButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [_saveButton setTitle:@"Save" forState:(UIControlStateNormal)];
+    [_saveButton setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    
+    [self.view addSubview:_saveButton];
 }
 
 - (void)setUpEditView {
     CGRect frame = _menuCollectionView.frame;
+    frame.size.width = UIScreen.mainScreen.bounds.size.width;
     frame.origin.y = UIScreen.mainScreen.bounds.size.height;
     _editView = [[TKEditItemView alloc] initWithFrame:frame];
     _editView.delegate = self;
@@ -81,11 +132,13 @@ TKEditItemViewDelegate
     _menuHeight = 0.3*mainViewRect.size.width;
     UICollectionViewFlowLayout* collectionLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionLayout.itemSize = CGSizeMake(0.75*_menuHeight, 0.9*_menuHeight);
+    _menuItemSize = collectionLayout.itemSize;
     collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    collectionLayout.minimumInteritemSpacing = 5;
-    collectionLayout.minimumLineSpacing = 5;
+    collectionLayout.minimumInteritemSpacing = _itemSpacing;
+    collectionLayout.minimumLineSpacing = _itemSpacing;
 
-    CGRect menuFrame = CGRectMake(0, mainViewRect.size.height - _menuHeight, mainViewRect.size.width, _menuHeight);
+    _collectionViewWidth = mainViewRect.size.width - _menuItemSize.width - _itemSpacing;
+    CGRect menuFrame = CGRectMake(0, mainViewRect.size.height - _menuHeight, _collectionViewWidth, _menuHeight);
     _menuCollectionView = [[UICollectionView alloc] initWithFrame:menuFrame collectionViewLayout:collectionLayout];
     _menuCollectionView.delegate = self;
     _menuCollectionView.dataSource = self;
@@ -135,10 +188,14 @@ TKEditItemViewDelegate
     CGRect editFrame = _editView.frame;
     CGRect menuFrame = editFrame;
     editFrame.origin.y = editFrame.origin.y - _menuHeight;
+    editFrame.size.width = UIScreen.mainScreen.bounds.size.width;
+    CGRect saveButtonFrame = _saveButton.frame;
+    saveButtonFrame.origin.y = menuFrame.origin.y;
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.25 animations:^{
         [weakSelf.editView setFrame:editFrame];
         [weakSelf.menuCollectionView setFrame:menuFrame];
+        [weakSelf.saveButton setFrame:saveButtonFrame];
     }];
 }
 
@@ -161,11 +218,19 @@ TKEditItemViewDelegate
     CGRect editFrame = _menuCollectionView.frame;
     CGRect menuFrame = editFrame;
     menuFrame.origin.y = menuFrame.origin.y - _menuHeight;
+    menuFrame.size.width = _collectionViewWidth;
+    CGRect saveButtonFrame = _saveButton.frame;
+    saveButtonFrame.origin.y = menuFrame.origin.y;
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.25 animations:^{
         [weakSelf.editView setFrame:editFrame];
         [weakSelf.menuCollectionView setFrame:menuFrame];
+        [weakSelf.saveButton setFrame:saveButtonFrame];
     }];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end
