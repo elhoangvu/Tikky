@@ -134,17 +134,49 @@
     return stickerEntities;
 }
 
-
-- (NSArray *)loadAllFilters {
+- (NSArray *)loadAllFiltersWithType:(TKFilterType)type {
+    if (![_db open]) {
+        _db = nil;
+        return nil;
+    }
+    
     NSMutableArray* filterEntities = [NSMutableArray array];
+    
+    NSString* query;
+    if (type == TKFilterTypeUnknown) {
+        query = [NSString stringWithFormat:@"SELECT * FROM filter"];
+    } else {
+        query = [NSString stringWithFormat:@"SELECT * FROM filter WHERE type = %ld", type];
+    }
+    
+    FMResultSet* s = [_db executeQuery:query];
+    while ([s next]) {
+        NSUInteger sid = [s intForColumn:@"id"];
+        NSString* subid = [s stringForColumn:@"subid"];
+        NSString* category = [s stringForColumn:@"category"];
+        BOOL isBundle = [s boolForColumn:@"isbundle"];
+        NSString* name = [s stringForColumn:@"name"];
+        NSString* thumbnail = [s stringForColumn:@"thumbnail"];
+        NSUInteger type = [s intForColumn:@"type"];
+        
+        TKFilterEntity* filter = [[TKFilterEntity alloc] initWithID:sid filterID:subid caterory:category name:name thumbnail:thumbnail isBundle:isBundle type:type];
+        [filterEntities addObject:filter];
+    }
     
     return filterEntities;
 }
 
+
+- (NSArray *)loadAllFilters {
+    return [self loadAllFiltersWithType:(TKFilterTypeUnknown)];
+}
+
 - (NSArray *)loadAllEffects {
-    NSMutableArray* effectEntities = [NSMutableArray array];
-    
-    return effectEntities;
+    return [self loadAllFiltersWithType:(TKFilterTypeEffect)];
+}
+
+- (NSArray *)loadAllColorFilters {
+    return [self loadAllFiltersWithType:(TKFilterTypeColorFilter)];
 }
 
 + (NSString *)stickerDirectoryForResource {

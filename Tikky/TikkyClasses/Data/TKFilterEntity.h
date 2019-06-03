@@ -10,9 +10,28 @@
 
 #import "TKCommonEntity.h"
 
+typedef NS_ENUM(NSUInteger, TKFilterType) {
+    TKFilterTypeEffect = 0,
+    TKFilterTypeColorFilter,
+    TKFilterTypeFaceFilter,
+    TKFilterTypeUnknown
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TKFilterEntity : TKCommonEntity
+
+@property (nonatomic) TKFilterType filterType;
+
+@property (nonatomic) NSString* filterID;
+
+- (instancetype)initWithID:(NSUInteger)cid
+                  filterID:(NSString *)filterID
+                  caterory:(NSString *)category
+                      name:(NSString *)name
+                 thumbnail:(NSString *)thumbnail
+                  isBundle:(BOOL)isBundle
+                      type:(TKFilterType)type;
 
 @end
 

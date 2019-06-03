@@ -10,10 +10,19 @@
 
 @implementation TKFilterEntity
 
-- (instancetype)initWithID:(NSUInteger)cid caterory:(NSString *)category name:(NSString *)name thumbnail:(NSString *)thumbnail isBundle:(BOOL)isBundle type:(TKEntityType)type {
+- (instancetype)initWithID:(NSUInteger)cid
+                  filterID:(NSString *)filterID
+                  caterory:(NSString *)category
+                      name:(NSString *)name
+                 thumbnail:(NSString *)thumbnail
+                  isBundle:(BOOL)isBundle
+                      type:(TKFilterType)type {
     if (!(self = [super initWithID:cid caterory:category name:name thumbnail:thumbnail isBundle:isBundle type:TKEntityTypeFilter])) {
         return nil;
     }
+    
+    _filterID = filterID;
+    _filterType = type;
     
     return self;
 }

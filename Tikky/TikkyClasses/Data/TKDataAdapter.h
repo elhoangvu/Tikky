@@ -18,10 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedIntance;
 
-- (NSArray *)loadAllFilters;
-
-- (NSArray *)loadAllEffects;
-
 - (NSArray *)loadAllFacialStickers;
 
 - (NSArray *)loadAllFrameStickers;
@@ -29,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)loadAllCommonStickers;
 
 - (NSArray *)loadAllStickers;
+
+- (NSArray *)loadAllFilters;
+
+- (NSArray *)loadAllEffects;
+
+- (NSArray *)loadAllFiltersWithType:(TKFilterType)type;
+
+- (NSArray *)loadAllColorFilters;
 
 + (NSString *)stickerDirectoryForResource;
 

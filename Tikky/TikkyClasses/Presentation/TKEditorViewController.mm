@@ -173,7 +173,7 @@ TKEditItemViewDelegate
     } else if (indexPath.row == TKFeatureTypeFrameSticker) {
         loadedData = [TKDataAdapter.sharedIntance loadAllFrameStickers];
     } else if (indexPath.row == TKFeatureTypeFilter) {
-        loadedData = [TKDataAdapter.sharedIntance loadAllFilters];
+        loadedData = [TKDataAdapter.sharedIntance loadAllColorFilters];
     } else if (indexPath.row == TKFeatureTypeCommonSticker) {
         loadedData = [TKDataAdapter.sharedIntance loadAllCommonStickers];
     }
