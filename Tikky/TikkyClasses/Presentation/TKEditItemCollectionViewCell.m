@@ -16,6 +16,8 @@
 
 @property (nonatomic) UIImageView* imageView;
 
+@property (nonatomic) UILabel* title;
+
 @end
 
 @implementation TKEditItemCollectionViewCell
@@ -36,9 +38,21 @@
     _imageView.translatesAutoresizingMaskIntoConstraints = NO;
     [[_imageView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
     [[_imageView.topAnchor constraintEqualToAnchor:self.topAnchor] setActive:YES];
-    [[_imageView.rightAnchor constraintEqualToAnchor:self.rightAnchor] setActive:YES];
-    [[_imageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
+    [[_imageView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
+    [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:frame.size.width/frame.size.height] setActive:YES];
     _imageView.layer.borderColor = UIColor.cyanColor.CGColor;
+    
+    _title = [[UILabel alloc] init];
+    [_title setFont:[_title.font fontWithSize:12]];
+    [_title setTextColor:UIColor.blackColor];
+    [self addSubview:_title];
+    
+    _title.translatesAutoresizingMaskIntoConstraints = NO;
+    [[_title.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
+    [[_title.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
+    [[_title.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:1.0-frame.size.width/frame.size.height] setActive:YES];
+    [[_title.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
+    [_title setTextAlignment:(NSTextAlignmentCenter)];
     
     return self;
 }
@@ -50,11 +64,11 @@
 - (void)setViewModel:(TKEditItemViewModel *)viewModel {
     _viewModel = viewModel;
     _imageView.image = viewModel.thumbnail;
-    [self bringSubviewToFront:_imageView];
     
     if (viewModel.entity.type == TKEntityTypeSticker) {
         _imageView.layer.cornerRadius = self.frame.size.height*0.1;
     } else {
+        [_title setText:viewModel.entity.name];
         _imageView.layer.cornerRadius = self.frame.size.height*0.1;
     }
     if (_viewModel.isSelected) {
@@ -86,6 +100,7 @@
 
 - (void)prepareForReuse {
     self.imageView.layer.borderWidth = 0.0;
+    [_title setText:@""];
 }
 
 @end

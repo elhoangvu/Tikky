@@ -20,4 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 void runSynchronouslyOnRenderQueue(void (^block)(void));
 
+void runAsynchronouslyOnRenderQueue(void (^block)(void));
+
 NS_ASSUME_NONNULL_END

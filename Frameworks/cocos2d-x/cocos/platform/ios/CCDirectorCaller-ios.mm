@@ -152,9 +152,9 @@ static id s_sharedDirectorCaller;
             }
             
             [EAGLContext setCurrentContext: cocos2dxContext];
-            
             CFTimeInterval dt = ((CADisplayLink*)displayLink).timestamp - lastDisplayTime;
             lastDisplayTime = ((CADisplayLink*)displayLink).timestamp;
+            
             director->mainLoop(dt);
         // <!-- TIKKY-ADD
         });

@@ -68,7 +68,9 @@
     _glview->setDesignResolutionSize(designResolutionSize.width*widthRatio, designResolutionSize.height*heightRatio, ResolutionPolicy::NO_BORDER);
     //        [eaglView setFrame:CGRectMake(0, -(frame.size.height-frame.size.width*4/3)/2, frame.size.width, frame.size.height)];
     [_eaglView setFrame:frame];
-    cocos2d::Director::getInstance()->getRunningScene()->onEnter();
+    if (cocos2d::Director::getInstance() && cocos2d::Director::getInstance()->getRunningScene()) {
+        cocos2d::Director::getInstance()->getRunningScene()->onEnter();
+    }
 }
 
 - (void)runWithCocos2dxScene:(void *)cocos2dxScene {

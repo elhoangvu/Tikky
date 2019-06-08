@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11374DF522AC294000CF1D27 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11374DF322AC294000CF1D27 /* FBSDKShareKit.framework */; };
+		11374DF622AC294000CF1D27 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11374DF422AC294000CF1D27 /* FBSDKCoreKit.framework */; };
+		11374DF822AC2CB000CF1D27 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11374DF722AC2CB000CF1D27 /* FBSDKLoginKit.framework */; };
 		114480CE2292E62B00A61CF5 /* landmark-model.bin in Resources */ = {isa = PBXBuildFile; fileRef = 114480CB2292E62B00A61CF5 /* landmark-model.bin */; };
 		114480CF2292E62B00A61CF5 /* haar_facedetection2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 114480CC2292E62B00A61CF5 /* haar_facedetection2.xml */; };
 		114480D02292E62B00A61CF5 /* haar_facedetection.xml in Resources */ = {isa = PBXBuildFile; fileRef = 114480CD2292E62B00A61CF5 /* haar_facedetection.xml */; };
@@ -219,9 +222,6 @@
 		114482882292E74400A61CF5 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B52292E74300A61CF5 /* recyclingbin.png */; };
 		114482892292E74400A61CF5 /* aquaman.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B72292E74300A61CF5 /* aquaman.png */; };
 		1144828A2292E74400A61CF5 /* tonystark.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B82292E74300A61CF5 /* tonystark.png */; };
-		116F587122A8F1C6007448AC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */; };
-		116F587222A8F1C6007448AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */; };
-		116F587322A8F1C6007448AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */; };
 		11A21E2C22A30EA80062CECE /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DED22A30EA80062CECE /* TikkyEngine.mm */; };
 		11A21E2D22A30EA80062CECE /* TKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF322A30EA80062CECE /* TKPhoto.m */; };
 		11A21E2E22A30EA80062CECE /* TKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF422A30EA80062CECE /* TKVideo.m */; };
@@ -540,6 +540,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11374DF322AC294000CF1D27 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = FacebookSDKs/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		11374DF422AC294000CF1D27 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = FacebookSDKs/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		11374DF722AC2CB000CF1D27 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDKs/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		114480CB2292E62B00A61CF5 /* landmark-model.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "landmark-model.bin"; sourceTree = "<group>"; };
 		114480CC2292E62B00A61CF5 /* haar_facedetection2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haar_facedetection2.xml; sourceTree = "<group>"; };
 		114480CD2292E62B00A61CF5 /* haar_facedetection.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haar_facedetection.xml; sourceTree = "<group>"; };
@@ -752,9 +755,6 @@
 		114481B52292E74300A61CF5 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		114481B72292E74300A61CF5 /* aquaman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aquaman.png; sourceTree = "<group>"; };
 		114481B82292E74300A61CF5 /* tonystark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tonystark.png; sourceTree = "<group>"; };
-		116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		11A21DED22A30EA80062CECE /* TikkyEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TikkyEngine.mm; sourceTree = "<group>"; };
 		11A21DEE22A30EA80062CECE /* TKImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
 		11A21DEF22A30EA80062CECE /* Tikky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tikky.h; sourceTree = "<group>"; };
@@ -1234,11 +1234,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116F587122A8F1C6007448AC /* FBSDKShareKit.framework in Frameworks */,
-				116F587222A8F1C6007448AC /* FBSDKCoreKit.framework in Frameworks */,
-				116F587322A8F1C6007448AC /* FBSDKLoginKit.framework in Frameworks */,
 				11E5020D229C61FE005C83A3 /* libFMDB-IOS.a in Frameworks */,
 				B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */,
+				11374DF822AC2CB000CF1D27 /* FBSDKLoginKit.framework in Frameworks */,
+				11374DF622AC294000CF1D27 /* FBSDKCoreKit.framework in Frameworks */,
 				B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */,
 				B70BD46A2196C768000A4EBF /* UIKit.framework in Frameworks */,
 				B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */,
@@ -1261,6 +1260,7 @@
 				B70BD4702196C77B000A4EBF /* libz.tbd in Frameworks */,
 				B70ABAD52201C26A00B1F89A /* opencv2.framework in Frameworks */,
 				B70BD46E2196C774000A4EBF /* OpenGLES.framework in Frameworks */,
+				11374DF522AC294000CF1D27 /* FBSDKShareKit.framework in Frameworks */,
 				B70BD4622196C74F000A4EBF /* libiconv.tbd in Frameworks */,
 				B70BD4602196C748000A4EBF /* CoreText.framework in Frameworks */,
 				B70BD45E2196C73B000A4EBF /* libcocos2d iOS.a in Frameworks */,
@@ -1683,21 +1683,21 @@
 			children = (
 				11A21DED22A30EA80062CECE /* TikkyEngine.mm */,
 				11A21DEE22A30EA80062CECE /* TKImageFilter.h */,
+				11A21DFF22A30EA80062CECE /* TKImageFilter.m */,
 				11A21DF022A30EA80062CECE /* TKFilterCreator.h */,
-				11A21DF122A30EA80062CECE /* Input */,
 				11A21DFA22A30EA80062CECE /* TKGalleryUtilities.h */,
 				11A21DFB22A30EA80062CECE /* TikkyEngine.h */,
-				11A21DFC22A30EA80062CECE /* TKFilterProperty.m */,
 				11A21DFD22A30EA80062CECE /* TKFilter.m */,
 				11A21DFE22A30EA80062CECE /* TKStickerPreviewer.mm */,
-				11A21DFF22A30EA80062CECE /* TKImageFilter.m */,
 				11A21E0022A30EA80062CECE /* TKFilterCreator.m */,
 				11A21E0122A30EA80062CECE /* TKStickerPreviewer.h */,
 				11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */,
 				11A21E0322A30EA80062CECE /* TKFilter.h */,
 				11A21E0422A30EA80062CECE /* TKFilterProperty.h */,
+				11A21DFC22A30EA80062CECE /* TKFilterProperty.m */,
 				11B001E022A6FA460067A665 /* TKEffectFilter.h */,
 				11B001E122A6FA460067A665 /* TKEffectFilter.m */,
+				11A21DF122A30EA80062CECE /* Input */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2538,9 +2538,9 @@
 		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */,
-				116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */,
-				116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */,
+				11374DF722AC2CB000CF1D27 /* FBSDKLoginKit.framework */,
+				11374DF422AC294000CF1D27 /* FBSDKCoreKit.framework */,
+				11374DF322AC294000CF1D27 /* FBSDKShareKit.framework */,
 				11E501EC229C467B005C83A3 /* fmdb.xcodeproj */,
 				B773F8D3222B15EF00F6FB7E /* AddressBook.framework */,
 				B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */,
@@ -3532,7 +3532,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKShareKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKLoginKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3552,8 +3555,11 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 					"$(PROJECT_DIR)/Frameworks/fmdb/src/fmdb",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKShareKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKLoginKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3564,7 +3570,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -3587,7 +3596,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKShareKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKLoginKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Tikky/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -3607,8 +3619,11 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
 					"$(PROJECT_DIR)/Frameworks/fmdb/src/fmdb",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKShareKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKLoginKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				INFOPLIST_FILE = Tikky/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3619,7 +3634,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Frameworks/FacebookSDKs-iOS-4.40.0",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs/FBSDKCoreKit",
+					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";

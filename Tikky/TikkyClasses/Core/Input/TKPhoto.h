@@ -25,6 +25,6 @@
 - (void)processImage;
 - (BOOL)processImageWithCompletionHandler:(void (^)(void))completion;
 - (void)processImageUpToFilter:(TKFilter *)finalFilterInChain withCompletionHandler:(void (^)(UIImage *processedImage))block;
-- (UIImage *)processedImage;
+- (UIImage *)defaultImage;
 
 @end

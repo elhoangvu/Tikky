@@ -52,7 +52,7 @@
     _gpuimageView = [[GPUImageView alloc] init];
     [_gpuimageView setBackgroundColorRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     _gpuimageView.delegate = self;
-    [_gpuimageView setFillMode:(kGPUImageFillModePreserveAspectRatioAndFill)];
+    [_gpuimageView setFillMode:(kGPUImageFillModePreserveAspectRatio)];
     view = _gpuimageView;
     
     _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];

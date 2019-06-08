@@ -16,7 +16,7 @@
 
 @property (nonatomic) void (^photoOutputCallback)(CVPixelBufferRef, TKImageInputOrientaion, BOOL);
 
-@property (nonatomic) UIImage* processedImage;
+@property (nonatomic) UIImage* defaultImage;
 
 @end
 
@@ -28,8 +28,6 @@
     if (!(self = [super init])) {
         return nil;
     }
-    
-    _processedImage = nil;
     
     return self;
 }
@@ -49,6 +47,7 @@
         return nil;
     }
     
+    _defaultImage = newImageSource;
     _picture = [[GPUImagePicture alloc] initWithImage:newImageSource];
     
     return self;
@@ -69,6 +68,7 @@
         return nil;
     }
     
+    _defaultImage = newImageSource;
     _picture = [[GPUImagePicture alloc] initWithImage:newImageSource smoothlyScaleOutput:smoothlyScaleOutput];
     
     return self;
@@ -89,6 +89,7 @@
         return nil;
     }
     
+    _defaultImage =  newImageSource;
     _picture = [[GPUImagePicture alloc] initWithImage:newImageSource removePremultiplication:removePremultiplication];
     
     return self;
@@ -109,6 +110,7 @@
         return nil;
     }
     
+    _defaultImage = newImageSource;
     _picture = [[GPUImagePicture alloc] initWithImage:newImageSource smoothlyScaleOutput:smoothlyScaleOutput removePremultiplication:removePremultiplication];
     
     return self;
@@ -127,14 +129,14 @@
 - (BOOL)processImageWithCompletionHandler:(void (^)(void))completion {
     BOOL processed = [_picture processImageWithCompletionHandler:completion];
     
-    if (_processedImage) {
-        _photoOutputCallback ? _photoOutputCallback(_processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
+    if (_defaultImage) {
+        _photoOutputCallback ? _photoOutputCallback(_defaultImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
     } else {
         GPUImageFilter* filter = [[GPUImageFilter alloc] init];
         [_picture addTarget:filter];
         __weak __typeof(self)weakSelf = self;
         [_picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
-            weakSelf.processedImage = processedImage;
+            weakSelf.defaultImage = processedImage;
             [weakSelf.picture removeTarget:filter];
             weakSelf.photoOutputCallback ? weakSelf.photoOutputCallback(processedImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
         }];
@@ -157,8 +159,8 @@
     [_picture processImage];
 }
 
-- (UIImage *)processedImage {
-    return _processedImage;
+- (UIImage *)defaultImage {
+    return _defaultImage;
 }
 
 - (NSObject *)sharedObject {

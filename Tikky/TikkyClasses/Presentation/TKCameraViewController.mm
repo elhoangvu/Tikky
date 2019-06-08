@@ -188,6 +188,7 @@ TKEditorViewControllerDelegate
 
 -(void)setUpUI {
     [self.view addSubview:_tikkyEngine.view];
+    [_tikkyEngine.view setFrame:UIScreen.mainScreen.bounds];
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
     [tapGesture setNumberOfTapsRequired:1];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -344,6 +345,7 @@ TKEditorViewControllerDelegate
         
         __weak __typeof(self)weakSelf = self;
         [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+            [((TKCamera *)weakSelf.imageInput) stopCameraCapture];
             [weakSelf.tikkyEngine.stickerPreviewer resume];
             [weakSelf.tikkyEngine.imageFilter removeAllFilter];
             if (processedJPEG) {
@@ -371,6 +373,9 @@ TKEditorViewControllerDelegate
     _editorVC = nil;
     [_tikkyEngine.imageFilter setInput:_imageInput];
     [_tikkyEngine.imageFilter removeAllFilter];
+    [_tikkyEngine.stickerPreviewer removeAllFrameStickers];
+    [_tikkyEngine.stickerPreviewer removeAllFacialStickers];
+    [_tikkyEngine.stickerPreviewer removeAllStaticStickers];
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     if ([_imageInput isKindOfClass:TKCamera.class]) {

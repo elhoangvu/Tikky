@@ -7,7 +7,7 @@
     <key>FacebookAdvertiserIDCollectionEnabled</key>
     <false/>
     <key>FacebookAutoInitEnabled</key>
-    <false/>
+    <true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

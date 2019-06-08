@@ -93,8 +93,8 @@ UICollectionViewDataSource
     CGFloat height = self.frame.size.height;
     collectionLayout.itemSize = CGSizeMake(0.465*height, 0.62*height);
     collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    collectionLayout.minimumInteritemSpacing = 10;
-    collectionLayout.minimumLineSpacing = 10;
+    collectionLayout.minimumInteritemSpacing = 15;
+    collectionLayout.minimumLineSpacing = 15;
     
     CGRect menuFrame = CGRectMake(0, self.frame.size.height - height, self.frame.size.width, 0.7*height);
     _editItemCollectionView = [[UICollectionView alloc] initWithFrame:menuFrame collectionViewLayout:collectionLayout];

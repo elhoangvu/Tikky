@@ -67,6 +67,10 @@ SocialNetworkSDKDelegate
 
 @property (nonatomic) UIImage* lastPickedImage;
 
+@property (nonatomic) BOOL isEdited;
+
+@property (nonatomic) BOOL isEditing;
+
 @end
 
 @implementation TKEditorViewController
@@ -84,19 +88,35 @@ SocialNetworkSDKDelegate
 //    [_photo processImage];
     ////
 //    NSAssert([_photo isKindOfClass:TKPhoto.class], @"TKPhoto is required!");
-    
+    _isEdited = NO;
+    _isEditing = NO;
     CGRect mainViewRect = UIScreen.mainScreen.bounds;
     _menuHeight = 0.3*mainViewRect.size.width;
     _photoView = TikkyEngine.sharedInstance.view;
     _headerViewHieght = 40;
     CGRect photoFrame = CGRectMake(0, _headerViewHieght, mainViewRect.size.width, mainViewRect.size.height-_headerViewHieght-_menuHeight);
+    _photo = (TKPhoto *)_imageFilter.input;
+    UIImage* image = _photo.defaultImage;
+    CGSize imageSize = image.size;
+    CGFloat ratio = imageSize.width/imageSize.height;
+    CGSize actualImageSize;
+    if (ratio > 1.0) {
+        actualImageSize = CGSizeMake(photoFrame.size.width, photoFrame.size.width*1.0/ratio);
+        photoFrame.origin.y += (photoFrame.size.height - actualImageSize.height)*0.5;
+        photoFrame.size.height = actualImageSize.height;
+    } else {
+        actualImageSize = CGSizeMake(photoFrame.size.height*ratio, photoFrame.size.height);
+        photoFrame.origin.x += (mainViewRect.size.width - actualImageSize.width)*0.5;
+        photoFrame.size.width = actualImageSize.width;
+    }
+    
     [TikkyEngine.sharedInstance.stickerPreviewer pause];
     [TikkyEngine.sharedInstance.imageFilter.view setFrame:photoFrame];
     [TikkyEngine.sharedInstance.stickerPreviewer.view setFrame:photoFrame];
     
     [TikkyEngine.sharedInstance.stickerPreviewer resume];
     [self.view addSubview:_photoView];
-    _photo = (TKPhoto *)_imageFilter.input;
+    
     TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
     [self.imageFilter addFilter:filter];
     __weak __typeof(self)weakSelf = self;
@@ -268,6 +288,15 @@ SocialNetworkSDKDelegate
     }
     
     [self.imageFilter removeAllFilter];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
+    
+    if (!_isEdited) {
+        [self animationWhenPresentingMenu];
+        return;
+    }
+    _isEditing = NO;
     if (_lastPickedImage) {
         self.photo = [[TKPhoto alloc] initWithImage:self.lastPickedImage];
         [self.imageFilter setInput:self.photo];
@@ -291,6 +320,8 @@ SocialNetworkSDKDelegate
         [self animationWhenPresentingMenu];
         return;
     }
+    _isEdited = YES;
+    _isEditing = NO;
     self.photo = [[TKPhoto alloc] initWithImage:_lastProcessedImage];
     [self.imageFilter setInput:self.photo];
     [self.imageFilter removeAllFilter];
@@ -300,13 +331,15 @@ SocialNetworkSDKDelegate
 }
 
 - (void)editItemView:(TKEditItemView *)editItemView didSelectItem:(nonnull TKEditItemViewModel *)item atIndex:(NSUInteger)index {
-    if (_lastProcessedImage) {
+    if (_lastProcessedImage && !_isEditing) {
         _lastPickedImage = _lastProcessedImage;
     }
+    _isEditing = YES;
     __weak __typeof(self)weakSelf = self;
     [_imageFilters enumerateObjectsUsingBlock:^(TKCommonEntity*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.cid == item.entity.cid) {
             if (obj.type == TKEntityTypeFilter) {
+                weakSelf.isEdited = YES;
                 TKFilterEntity* filterEntity = (TKFilterEntity *)obj;
                 TKFilter* filter = [[TKFilter alloc] initWithName:filterEntity.filterID];
                 [filter randomTime];

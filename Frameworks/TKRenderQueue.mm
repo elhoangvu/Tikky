@@ -39,3 +39,10 @@ void runSynchronouslyOnRenderQueue(void (^block)(void))
     
     dispatch_sync(renderQueue, block);
 }
+
+void runAsynchronouslyOnRenderQueue(void (^block)(void))
+{
+    dispatch_queue_t renderQueue = TKRenderQueue.sharedInstance.renderQueue;
+    
+    dispatch_async(renderQueue, block);
+}
