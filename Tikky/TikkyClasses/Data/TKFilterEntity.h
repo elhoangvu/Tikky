@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) TKFilterType filterType;
 
+@property (nonatomic) Class filterClass;
+
 @property (nonatomic) NSString* filterID;
 
 - (instancetype)initWithID:(NSUInteger)cid
@@ -31,7 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
                       name:(NSString *)name
                  thumbnail:(NSString *)thumbnail
                   isBundle:(BOOL)isBundle
-                      type:(TKFilterType)type;
+                      type:(TKFilterType)type
+               filterClass:(Class)filterClass;
 
 @end
 

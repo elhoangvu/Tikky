@@ -138,6 +138,14 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
     _stickerScene->setMaxFaceNum(maxFaceNum);
 }
 
+- (void)pause {
+    cocos2d::Director::getInstance()->pause();
+}
+
+- (void)resume {
+    cocos2d::Director::getInstance()->resume();
+}
+
 @end
 
 

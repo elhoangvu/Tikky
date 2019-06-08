@@ -18,6 +18,7 @@
 #import "LFGPUImageBeautyFilter.h"
 #import "TKEffectFilter.h"
 #import "InstaFilters.h"
+#import "TKDataAdapter.h"
 
 @implementation TKFilterCreator
 
@@ -35,28 +36,19 @@
     if (!filterString || [filterString isEqualToString:@""]) {
         return nil;
     }
-//    NSDictionary* filterResource = TKSampleDataPool.sharedInstance.filterResources;
-    
+
     NSString* uppercaseFilter = filterString.uppercaseString;
-//    NSDictionary* filterDic = [filterResource objectForKey:uppercaseFilter];
-//    NSString* filterClass = [filterDic objectForKey:@"class"];
-//    if (!filterClass || [filterClass isEqualToString:@""]) {
-//        return nil;
-//    }
+    NSArray* filters = [TKDataAdapter.sharedIntance loadAllFiltersWithType:(TKFilterTypeUnknown)];
     
-    GPUImageFilter* filterInstance = nil;
-//    if ([filterClass isEqualToString:@"GPUImageLUTFilter"]) {
-//        NSString* imagePath = [filterDic objectForKey:@"imagePath"];
-//        GPUImageLUTFilter* lutFilter = (GPUImageLUTFilter *)[NSClassFromString(filterClass) alloc];
-//        NSData* imageData = [NSData dataWithContentsOfFile:imagePath];
-//        UIImage* image = [UIImage imageWithData:imageData];
-//        if (image) {
-//            filterInstance = (GPUImageFilter *)[lutFilter initWithLookupImage:image];
-//        }
-//    } else {
-//        Class filterClass_ = NSClassFromString([NSString stringWithFormat:@"%@", filterClass]);
-//        filterInstance = (GPUImageFilter *)[[filterClass_ alloc] init];
-//    }
+    __block Class filterClass;
+    [filters enumerateObjectsUsingBlock:^(TKFilterEntity*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.filterID.uppercaseString isEqualToString:uppercaseFilter]) {
+            filterClass = obj.filterClass;
+            *stop = YES;
+        }
+    }];
+
+    GPUImageFilter* filterInstance = (GPUImageFilter *)[[filterClass alloc] init];
     
     return filterInstance;
 }

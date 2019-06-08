@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class TKEditorViewController;
+
+@protocol TKEditorViewControllerDelegate <NSObject>
+
+- (void)didTapCloseButtonAtEditorViewController:(TKEditorViewController *)editorVC;
+
+- (void)didTapShareButtonAtEditorViewController:(TKEditorViewController *)editorVC;
+
+@end
+
 @interface TKEditorViewController : UIViewController
+
+@property (nonatomic, weak) id<TKEditorViewControllerDelegate> delegate;
 
 @end
 

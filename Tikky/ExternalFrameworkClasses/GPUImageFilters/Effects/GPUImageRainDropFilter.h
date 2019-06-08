@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) BOOL stillImage;
 
+- (void)randomTime;
+
 @end
 
 NS_ASSUME_NONNULL_END

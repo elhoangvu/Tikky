@@ -63,8 +63,10 @@ NSString *const kGPUImageSnowFragmentShaderString = SHADER_STRING
     
     vec2 r = vec2(1.0, iResolution.y / iResolution.x);
     vec2 uv = textureCoordinate.xy;
-    float val = fractalblobnoise(r * uv * (iResolution.x/400.0), iResolution.x/50.0);
-    gl_FragColor = mix(texture2D(inputImageTexture, uv), vec4(1.0), vec4(val));
+    float val = fractalblobnoise(r * uv * (iResolution.x/400.), iResolution.x/50.);
+     vec4 color = texture2D(inputImageTexture, uv);
+
+    gl_FragColor = mix(color, vec4(1.0), vec4(val));
  }
 );
 
@@ -140,6 +142,10 @@ NSString *const kGPUImageSnowFragmentShaderString = SHADER_STRING
 
 - (void)dealloc {
     [_displayLink invalidate];
+}
+
+- (void)randomTime {
+    self.timeDelta = 1.0/self.speed * (rand() % 10000);
 }
 
 @end

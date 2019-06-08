@@ -26,9 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSArray<TKEditItemViewModel *>* viewModels;
 
+@property (nonatomic) NSString* title;
+
 @property (nonatomic) id<TKEditItemViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)reset;
 
 @end
 
@@ -42,9 +46,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)editItemView:(TKEditItemView *)editItemView didSelectItem:(TKEditItemViewModel *)item atIndex:(NSUInteger)index;
 
-- (void)didCloseEditItemView:(TKEditItemView *)editItemView;
+- (void)editItemView:(TKEditItemView *)editItemView didDeselectItem:(TKEditItemViewModel *)item atIndex:(NSUInteger)index;
 
-- (void)didDoneEditItemView:(TKEditItemView *)editItemView;
+- (void)didCloseEditItemView:(TKEditItemView *)editItemView withoutEditing:(BOOL)withoutEditing;
+
+- (void)didDoneEditItemView:(TKEditItemView *)editItemView withoutEditing:(BOOL)withoutEditing;
 
 @end
 

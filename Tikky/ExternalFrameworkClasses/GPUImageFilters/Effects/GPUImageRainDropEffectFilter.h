@@ -8,9 +8,13 @@
 
 #import "GPUImageFilterGroup.h"
 
+#import "GPUImageEffectFilterProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GPUImageRainDropEffectFilter : GPUImageFilterGroup
+@interface GPUImageRainDropEffectFilter : GPUImageFilterGroup <GPUImageEffectFilterProtocol>
+
+- (void)randomTime;
 
 @end
 

@@ -18,9 +18,13 @@
     }
     
     _entity = entity;
+    _isSelected = NO;
     
     if (entity.isBundle) {
         NSString* path = [NSBundle.mainBundle pathForResource:entity.thumbnail ofType:nil];
+        if (!path) {
+            path = [NSBundle.mainBundle pathForResource:@"filter-default.jpg" ofType:nil];
+        }
         _thumbnail = [UIImage imageWithContentsOfFile:path];
     } else {
         NSString* path;

@@ -36,4 +36,8 @@
     return self;
 }
 
+- (void)randomTime {
+    [_rainDropFilter randomTime];
+}
+
 @end

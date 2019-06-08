@@ -19,4 +19,6 @@
 
 - (BOOL)bindingFilterObj:(NSObject *)filterObject withPropertyList:(NSArray<TKFilterProperty *>*)propertyList;
 
+- (void)randomTime;
+
 @end

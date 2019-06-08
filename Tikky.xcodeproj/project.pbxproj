@@ -81,7 +81,6 @@
 		114481FD2292E74300A61CF5 /* sticker-dog-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811D2292E74300A61CF5 /* sticker-dog-1.png */; };
 		114481FE2292E74300A61CF5 /* sticker-dog-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1144811E2292E74300A61CF5 /* sticker-dog-2.png */; };
 		114481FF2292E74300A61CF5 /* sticker-dog-2.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1144811F2292E74300A61CF5 /* sticker-dog-2.lua */; };
-		114482002292E74300A61CF5 /* sticker-dog-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481202292E74300A61CF5 /* sticker-dog-thumb.png */; };
 		114482012292E74300A61CF5 /* sticker-fox-3.lua in Resources */ = {isa = PBXBuildFile; fileRef = 114481222292E74300A61CF5 /* sticker-fox-3.lua */; };
 		114482022292E74300A61CF5 /* sticker-fox-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481232292E74300A61CF5 /* sticker-fox-3.png */; };
 		114482032292E74300A61CF5 /* sticker-fox-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481242292E74300A61CF5 /* sticker-fox-2.png */; };
@@ -205,7 +204,7 @@
 		114482792292E74400A61CF5 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A52292E74300A61CF5 /* filter.png */; };
 		1144827A2292E74400A61CF5 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A62292E74300A61CF5 /* twitter.png */; };
 		1144827B2292E74400A61CF5 /* 3s.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A72292E74300A61CF5 /* 3s.png */; };
-		1144827C2292E74400A61CF5 /* reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A82292E74300A61CF5 /* reverse.png */; };
+		1144827C2292E74400A61CF5 /* swap.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A82292E74300A61CF5 /* swap.png */; };
 		1144827D2292E74400A61CF5 /* rec-start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481A92292E74300A61CF5 /* rec-start-button.png */; };
 		1144827E2292E74400A61CF5 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481AA2292E74300A61CF5 /* share.png */; };
 		1144827F2292E74400A61CF5 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481AB2292E74300A61CF5 /* delete.png */; };
@@ -220,6 +219,9 @@
 		114482882292E74400A61CF5 /* recyclingbin.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B52292E74300A61CF5 /* recyclingbin.png */; };
 		114482892292E74400A61CF5 /* aquaman.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B72292E74300A61CF5 /* aquaman.png */; };
 		1144828A2292E74400A61CF5 /* tonystark.png in Resources */ = {isa = PBXBuildFile; fileRef = 114481B82292E74300A61CF5 /* tonystark.png */; };
+		116F587122A8F1C6007448AC /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */; };
+		116F587222A8F1C6007448AC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */; };
+		116F587322A8F1C6007448AC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */; };
 		11A21E2C22A30EA80062CECE /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DED22A30EA80062CECE /* TikkyEngine.mm */; };
 		11A21E2D22A30EA80062CECE /* TKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF322A30EA80062CECE /* TKPhoto.m */; };
 		11A21E2E22A30EA80062CECE /* TKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A21DF422A30EA80062CECE /* TKVideo.m */; };
@@ -252,6 +254,9 @@
 		11A9BDA922A4067A006B50CA /* TKEditItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */; };
 		11A9BDAC22A40DCC006B50CA /* TKMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */; };
 		11A9BDAF22A44DBE006B50CA /* TKFeatureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */; };
+		11B001D722A6C3260067A665 /* filter-default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B001D622A6C3260067A665 /* filter-default.jpg */; };
+		11B001DB22A6C65A0067A665 /* demo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B001DA22A6C65A0067A665 /* demo4.jpg */; };
+		11B001E222A6FA460067A665 /* TKEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B001E122A6FA460067A665 /* TKEffectFilter.m */; };
 		11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */; };
 		11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */; };
 		11C67A7D229F0D6D0054C5A1 /* TikkyEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679BA229F0D6C0054C5A1 /* TikkyEngine.mm */; };
@@ -277,6 +282,41 @@
 		11C67A91229F0D6D0054C5A1 /* TKSocialNetworkSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679ED229F0D6C0054C5A1 /* TKSocialNetworkSDK.m */; };
 		11C67A92229F0D6D0054C5A1 /* TKSampleDataPool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679F3229F0D6C0054C5A1 /* TKSampleDataPool.mm */; };
 		11C67A93229F0D6D0054C5A1 /* TKStickerEntity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C679F4229F0D6C0054C5A1 /* TKStickerEntity.mm */; };
+		11CC5D0322A7E6440026296C /* bitexco2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5CF622A7E6440026296C /* bitexco2.jpg */; };
+		11CC5D3D22A7FF2F0026296C /* filter-xproii.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2A22A7FF2B0026296C /* filter-xproii.jpg */; };
+		11CC5D3E22A7FF2F0026296C /* filter-brannan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2B22A7FF2B0026296C /* filter-brannan.jpg */; };
+		11CC5D3F22A7FF2F0026296C /* filter-1977.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2C22A7FF2C0026296C /* filter-1977.jpg */; };
+		11CC5D4022A7FF2F0026296C /* filter-hefe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2D22A7FF2C0026296C /* filter-hefe.jpg */; };
+		11CC5D4122A7FF2F0026296C /* filter-rise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2E22A7FF2C0026296C /* filter-rise.jpg */; };
+		11CC5D4222A7FF2F0026296C /* filter-walden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2F22A7FF2C0026296C /* filter-walden.jpg */; };
+		11CC5D4322A7FF2F0026296C /* filter-sierra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3022A7FF2C0026296C /* filter-sierra.jpg */; };
+		11CC5D4422A7FF2F0026296C /* effect-rain-drop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3122A7FF2D0026296C /* effect-rain-drop.jpg */; };
+		11CC5D4522A7FF2F0026296C /* filter-early-bird.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3222A7FF2D0026296C /* filter-early-bird.jpg */; };
+		11CC5D4622A7FF2F0026296C /* filter-lord-kelvin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3322A7FF2D0026296C /* filter-lord-kelvin.jpg */; };
+		11CC5D4722A7FF2F0026296C /* filter-sutro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3422A7FF2D0026296C /* filter-sutro.jpg */; };
+		11CC5D4822A7FF2F0026296C /* filter-hudson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3522A7FF2E0026296C /* filter-hudson.jpg */; };
+		11CC5D4922A7FF2F0026296C /* filter-toaster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3622A7FF2E0026296C /* filter-toaster.jpg */; };
+		11CC5D4A22A7FF2F0026296C /* filter-lomofi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3722A7FF2E0026296C /* filter-lomofi.jpg */; };
+		11CC5D4B22A7FF2F0026296C /* filter-amaro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3822A7FF2E0026296C /* filter-amaro.jpg */; };
+		11CC5D4C22A7FF2F0026296C /* filter-inkwell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3922A7FF2F0026296C /* filter-inkwell.jpg */; };
+		11CC5D4D22A7FF2F0026296C /* filter-valencia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3A22A7FF2F0026296C /* filter-valencia.jpg */; };
+		11CC5D4E22A7FF2F0026296C /* effect-glitch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3B22A7FF2F0026296C /* effect-glitch.jpg */; };
+		11CC5D4F22A7FF2F0026296C /* effect-snow-drop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D3C22A7FF2F0026296C /* effect-snow-drop.jpg */; };
+		11CC5D5222A811A60026296C /* TKCameraGUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CC5D5122A811A60026296C /* TKCameraGUIView.m */; };
+		11CC5D5522A814BA0026296C /* UIImage+NSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CC5D5422A814BA0026296C /* UIImage+NSBundle.m */; };
+		11CC5D6322A8A1F10026296C /* done-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5722A8A1ED0026296C /* done-white.png */; };
+		11CC5D6422A8A1F10026296C /* effect-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5822A8A1EE0026296C /* effect-gray.png */; };
+		11CC5D6522A8A1F10026296C /* emoji-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5922A8A1EE0026296C /* emoji-gray.png */; };
+		11CC5D6622A8A1F10026296C /* capture-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5A22A8A1EF0026296C /* capture-white.png */; };
+		11CC5D6722A8A1F10026296C /* done-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5B22A8A1EF0026296C /* done-gray.png */; };
+		11CC5D6822A8A1F10026296C /* save-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5C22A8A1EF0026296C /* save-gray.png */; };
+		11CC5D6922A8A1F10026296C /* effect-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5D22A8A1F00026296C /* effect-white.png */; };
+		11CC5D6A22A8A1F10026296C /* close-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5E22A8A1F00026296C /* close-white.png */; };
+		11CC5D6B22A8A1F10026296C /* filter-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D5F22A8A1F00026296C /* filter-gray.png */; };
+		11CC5D6C22A8A1F10026296C /* save-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D6022A8A1F10026296C /* save-white.png */; };
+		11CC5D6D22A8A1F10026296C /* close-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D6122A8A1F10026296C /* close-gray.png */; };
+		11CC5D6E22A8A1F10026296C /* deco-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D6222A8A1F10026296C /* deco-gray.png */; };
+		11CC5D7022A8A2240026296C /* sticker-dog-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D6F22A8A2240026296C /* sticker-dog-thumb.png */; };
 		11CCDB8F22A3F1080025C2E1 /* TKEditItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CCDB8E22A3F1080025C2E1 /* TKEditItemView.m */; };
 		11DBE603229DAAA800718133 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DBE5F5229DAAA800718133 /* done.png */; };
 		11DBE604229DAAA800718133 /* sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DBE602229DAAA800718133 /* sticker.png */; };
@@ -355,9 +395,6 @@
 		B75C334321B432C2006BEED5 /* SwipeGestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333921B432C2006BEED5 /* SwipeGestureRecognizer.cpp */; };
 		B75C334421B432C2006BEED5 /* GestureRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */; };
 		B767ED9421B5763C00CE264A /* StickerEditController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B75C332921B4064F006BEED5 /* StickerEditController.cpp */; };
-		B773F7C7222B0EC900F6FB7E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */; };
-		B773F7C8222B0EC900F6FB7E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */; };
-		B773F7C9222B0EC900F6FB7E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */; };
 		B773F8D2222B15EA00F6FB7E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */; };
 		B773F8D4222B15EF00F6FB7E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B773F8D3222B15EF00F6FB7E /* AddressBook.framework */; };
 		B7B8523E21C04C4F005A3F3B /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B8523721C0490B005A3F3B /* libluacocos2d iOS.a */; };
@@ -577,7 +614,6 @@
 		1144811D2292E74300A61CF5 /* sticker-dog-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-1.png"; sourceTree = "<group>"; };
 		1144811E2292E74300A61CF5 /* sticker-dog-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-2.png"; sourceTree = "<group>"; };
 		1144811F2292E74300A61CF5 /* sticker-dog-2.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-dog-2.lua"; sourceTree = "<group>"; };
-		114481202292E74300A61CF5 /* sticker-dog-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-dog-thumb.png"; sourceTree = "<group>"; };
 		114481222292E74300A61CF5 /* sticker-fox-3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sticker-fox-3.lua"; sourceTree = "<group>"; };
 		114481232292E74300A61CF5 /* sticker-fox-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-3.png"; sourceTree = "<group>"; };
 		114481242292E74300A61CF5 /* sticker-fox-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sticker-fox-2.png"; sourceTree = "<group>"; };
@@ -701,7 +737,7 @@
 		114481A52292E74300A61CF5 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		114481A62292E74300A61CF5 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		114481A72292E74300A61CF5 /* 3s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3s.png; sourceTree = "<group>"; };
-		114481A82292E74300A61CF5 /* reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverse.png; sourceTree = "<group>"; };
+		114481A82292E74300A61CF5 /* swap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swap.png; sourceTree = "<group>"; };
 		114481A92292E74300A61CF5 /* rec-start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rec-start-button.png"; sourceTree = "<group>"; };
 		114481AA2292E74300A61CF5 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		114481AB2292E74300A61CF5 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
@@ -716,6 +752,9 @@
 		114481B52292E74300A61CF5 /* recyclingbin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recyclingbin.png; sourceTree = "<group>"; };
 		114481B72292E74300A61CF5 /* aquaman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aquaman.png; sourceTree = "<group>"; };
 		114481B82292E74300A61CF5 /* tonystark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tonystark.png; sourceTree = "<group>"; };
+		116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		11A21DED22A30EA80062CECE /* TikkyEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TikkyEngine.mm; sourceTree = "<group>"; };
 		11A21DEE22A30EA80062CECE /* TKImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKImageFilter.h; sourceTree = "<group>"; };
 		11A21DEF22A30EA80062CECE /* Tikky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tikky.h; sourceTree = "<group>"; };
@@ -786,6 +825,11 @@
 		11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		11A9BDAD22A44DBE006B50CA /* TKFeatureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFeatureManager.h; sourceTree = "<group>"; };
 		11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFeatureManager.m; sourceTree = "<group>"; };
+		11B001D622A6C3260067A665 /* filter-default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-default.jpg"; sourceTree = "<group>"; };
+		11B001DA22A6C65A0067A665 /* demo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo4.jpg; sourceTree = "<group>"; };
+		11B001DC22A6F8D00067A665 /* GPUImageEffectFilterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageEffectFilterProtocol.h; sourceTree = "<group>"; };
+		11B001E022A6FA460067A665 /* TKEffectFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEffectFilter.h; sourceTree = "<group>"; };
+		11B001E122A6FA460067A665 /* TKEffectFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEffectFilter.m; sourceTree = "<group>"; };
 		11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropEffectFilter.m; sourceTree = "<group>"; };
 		11C6799F229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropEffectFilter.h; sourceTree = "<group>"; };
 		11C679A0229F09EA0054C5A1 /* GPUImageRainDropFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropFilter.h; sourceTree = "<group>"; };
@@ -952,6 +996,43 @@
 		11C67A7A229F0D6D0054C5A1 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		11C67A7B229F0D6D0054C5A1 /* TKCameraViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TKCameraViewController.mm; sourceTree = "<group>"; };
 		11C67A7C229F0D6D0054C5A1 /* GUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIViewController.h; sourceTree = "<group>"; };
+		11CC5CF622A7E6440026296C /* bitexco2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bitexco2.jpg; sourceTree = "<group>"; };
+		11CC5D2A22A7FF2B0026296C /* filter-xproii.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-xproii.jpg"; sourceTree = "<group>"; };
+		11CC5D2B22A7FF2B0026296C /* filter-brannan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-brannan.jpg"; sourceTree = "<group>"; };
+		11CC5D2C22A7FF2C0026296C /* filter-1977.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-1977.jpg"; sourceTree = "<group>"; };
+		11CC5D2D22A7FF2C0026296C /* filter-hefe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-hefe.jpg"; sourceTree = "<group>"; };
+		11CC5D2E22A7FF2C0026296C /* filter-rise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-rise.jpg"; sourceTree = "<group>"; };
+		11CC5D2F22A7FF2C0026296C /* filter-walden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-walden.jpg"; sourceTree = "<group>"; };
+		11CC5D3022A7FF2C0026296C /* filter-sierra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-sierra.jpg"; sourceTree = "<group>"; };
+		11CC5D3122A7FF2D0026296C /* effect-rain-drop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "effect-rain-drop.jpg"; sourceTree = "<group>"; };
+		11CC5D3222A7FF2D0026296C /* filter-early-bird.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-early-bird.jpg"; sourceTree = "<group>"; };
+		11CC5D3322A7FF2D0026296C /* filter-lord-kelvin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-lord-kelvin.jpg"; sourceTree = "<group>"; };
+		11CC5D3422A7FF2D0026296C /* filter-sutro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-sutro.jpg"; sourceTree = "<group>"; };
+		11CC5D3522A7FF2E0026296C /* filter-hudson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-hudson.jpg"; sourceTree = "<group>"; };
+		11CC5D3622A7FF2E0026296C /* filter-toaster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-toaster.jpg"; sourceTree = "<group>"; };
+		11CC5D3722A7FF2E0026296C /* filter-lomofi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-lomofi.jpg"; sourceTree = "<group>"; };
+		11CC5D3822A7FF2E0026296C /* filter-amaro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-amaro.jpg"; sourceTree = "<group>"; };
+		11CC5D3922A7FF2F0026296C /* filter-inkwell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-inkwell.jpg"; sourceTree = "<group>"; };
+		11CC5D3A22A7FF2F0026296C /* filter-valencia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-valencia.jpg"; sourceTree = "<group>"; };
+		11CC5D3B22A7FF2F0026296C /* effect-glitch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "effect-glitch.jpg"; sourceTree = "<group>"; };
+		11CC5D3C22A7FF2F0026296C /* effect-snow-drop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "effect-snow-drop.jpg"; sourceTree = "<group>"; };
+		11CC5D5022A811A60026296C /* TKCameraGUIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCameraGUIView.h; sourceTree = "<group>"; };
+		11CC5D5122A811A60026296C /* TKCameraGUIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCameraGUIView.m; sourceTree = "<group>"; };
+		11CC5D5322A814BA0026296C /* UIImage+NSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+NSBundle.h"; sourceTree = "<group>"; };
+		11CC5D5422A814BA0026296C /* UIImage+NSBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSBundle.m"; sourceTree = "<group>"; };
+		11CC5D5722A8A1ED0026296C /* done-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-white.png"; sourceTree = "<group>"; };
+		11CC5D5822A8A1EE0026296C /* effect-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "effect-gray.png"; sourceTree = "<group>"; };
+		11CC5D5922A8A1EE0026296C /* emoji-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoji-gray.png"; sourceTree = "<group>"; };
+		11CC5D5A22A8A1EF0026296C /* capture-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "capture-white.png"; sourceTree = "<group>"; };
+		11CC5D5B22A8A1EF0026296C /* done-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-gray.png"; sourceTree = "<group>"; };
+		11CC5D5C22A8A1EF0026296C /* save-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-gray.png"; sourceTree = "<group>"; };
+		11CC5D5D22A8A1F00026296C /* effect-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "effect-white.png"; sourceTree = "<group>"; };
+		11CC5D5E22A8A1F00026296C /* close-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-white.png"; sourceTree = "<group>"; };
+		11CC5D5F22A8A1F00026296C /* filter-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-gray.png"; sourceTree = "<group>"; };
+		11CC5D6022A8A1F10026296C /* save-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save-white.png"; sourceTree = "<group>"; };
+		11CC5D6122A8A1F10026296C /* close-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-gray.png"; sourceTree = "<group>"; };
+		11CC5D6222A8A1F10026296C /* deco-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deco-gray.png"; sourceTree = "<group>"; };
+		11CC5D6F22A8A2240026296C /* sticker-dog-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sticker-dog-thumb.png"; path = "../../../../../Zalo Received Files/Stickers/sticker-dog-thumb.png"; sourceTree = "<group>"; };
 		11CCDB8D22A3F1080025C2E1 /* TKEditItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEditItemView.h; sourceTree = "<group>"; };
 		11CCDB8E22A3F1080025C2E1 /* TKEditItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEditItemView.m; sourceTree = "<group>"; };
 		11DBE5F5229DAAA800718133 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
@@ -1139,9 +1220,6 @@
 		B75C333B21B432C2006BEED5 /* GestureRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GestureRecognizer.cpp; sourceTree = "<group>"; };
 		B75C333C21B432C2006BEED5 /* SwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeGestureRecognizer.h; sourceTree = "<group>"; };
 		B75C333D21B432C2006BEED5 /* TapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGestureRecognizer.h; sourceTree = "<group>"; };
-		B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4.40.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B773F8D3222B15EF00F6FB7E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
@@ -1156,6 +1234,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116F587122A8F1C6007448AC /* FBSDKShareKit.framework in Frameworks */,
+				116F587222A8F1C6007448AC /* FBSDKCoreKit.framework in Frameworks */,
+				116F587322A8F1C6007448AC /* FBSDKLoginKit.framework in Frameworks */,
 				11E5020D229C61FE005C83A3 /* libFMDB-IOS.a in Frameworks */,
 				B70BD46C2196C76F000A4EBF /* CoreGraphics.framework in Frameworks */,
 				B70BD4682196C762000A4EBF /* Foundation.framework in Frameworks */,
@@ -1163,9 +1244,6 @@
 				B70BD4722196C782000A4EBF /* QuartzCore.framework in Frameworks */,
 				B773F8D4222B15EF00F6FB7E /* AddressBook.framework in Frameworks */,
 				B773F8D2222B15EA00F6FB7E /* CoreLocation.framework in Frameworks */,
-				B773F7C7222B0EC900F6FB7E /* FBSDKLoginKit.framework in Frameworks */,
-				B773F7C8222B0EC900F6FB7E /* FBSDKCoreKit.framework in Frameworks */,
-				B773F7C9222B0EC900F6FB7E /* FBSDKShareKit.framework in Frameworks */,
 				B7B8524021C04C9C005A3F3B /* CFNetwork.framework in Frameworks */,
 				B70BD4662196C75B000A4EBF /* CoreMotion.framework in Frameworks */,
 				B70BD4642196C754000A4EBF /* Security.framework in Frameworks */,
@@ -1195,6 +1273,7 @@
 		114480D12292E74300A61CF5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				11B001C922A6C3120067A665 /* Thumbnail */,
 				114480D22292E74300A61CF5 /* Demo */,
 				114480F22292E74300A61CF5 /* Stickers */,
 				114480F72292E74300A61CF5 /* Lookups */,
@@ -1210,6 +1289,8 @@
 		114480D22292E74300A61CF5 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				11CC5CF622A7E6440026296C /* bitexco2.jpg */,
+				11B001DA22A6C65A0067A665 /* demo4.jpg */,
 				114480D32292E74300A61CF5 /* decoration */,
 			);
 			path = Demo;
@@ -1330,7 +1411,7 @@
 				1144811D2292E74300A61CF5 /* sticker-dog-1.png */,
 				1144811E2292E74300A61CF5 /* sticker-dog-2.png */,
 				1144811F2292E74300A61CF5 /* sticker-dog-2.lua */,
-				114481202292E74300A61CF5 /* sticker-dog-thumb.png */,
+				11CC5D6F22A8A2240026296C /* sticker-dog-thumb.png */,
 			);
 			path = "sticker-dog";
 			sourceTree = "<group>";
@@ -1534,6 +1615,7 @@
 		1144819D2292E74300A61CF5 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				11CC5D5622A8A1E20026296C /* new-flow */,
 				11DBE5F5229DAAA800718133 /* done.png */,
 				11DBE602229DAAA800718133 /* sticker.png */,
 				1144819E2292E74300A61CF5 /* flash.png */,
@@ -1546,7 +1628,7 @@
 				114481A52292E74300A61CF5 /* filter.png */,
 				114481A62292E74300A61CF5 /* twitter.png */,
 				114481A72292E74300A61CF5 /* 3s.png */,
-				114481A82292E74300A61CF5 /* reverse.png */,
+				114481A82292E74300A61CF5 /* swap.png */,
 				114481A92292E74300A61CF5 /* rec-start-button.png */,
 				114481AA2292E74300A61CF5 /* share.png */,
 				114481AB2292E74300A61CF5 /* delete.png */,
@@ -1614,6 +1696,8 @@
 				11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */,
 				11A21E0322A30EA80062CECE /* TKFilter.h */,
 				11A21E0422A30EA80062CECE /* TKFilterProperty.h */,
+				11B001E022A6FA460067A665 /* TKEffectFilter.h */,
+				11B001E122A6FA460067A665 /* TKEffectFilter.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1643,6 +1727,8 @@
 				11A21E0B22A30EA80062CECE /* opencv+parallel_for_.h */,
 				11A21E0C22A30EA80062CECE /* UIView+Delegate.m */,
 				11A21E0D22A30EA80062CECE /* UIDevice+DeviceName.h */,
+				11CC5D5322A814BA0026296C /* UIImage+NSBundle.h */,
+				11CC5D5422A814BA0026296C /* UIImage+NSBundle.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1734,8 +1820,37 @@
 				11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */,
 				11A9BDAA22A40DCC006B50CA /* TKMenuCollectionViewCell.h */,
 				11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */,
+				11CC5D5022A811A60026296C /* TKCameraGUIView.h */,
+				11CC5D5122A811A60026296C /* TKCameraGUIView.m */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		11B001C922A6C3120067A665 /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				11B001D622A6C3260067A665 /* filter-default.jpg */,
+				11CC5D3B22A7FF2F0026296C /* effect-glitch.jpg */,
+				11CC5D3122A7FF2D0026296C /* effect-rain-drop.jpg */,
+				11CC5D3C22A7FF2F0026296C /* effect-snow-drop.jpg */,
+				11CC5D2C22A7FF2C0026296C /* filter-1977.jpg */,
+				11CC5D3822A7FF2E0026296C /* filter-amaro.jpg */,
+				11CC5D2B22A7FF2B0026296C /* filter-brannan.jpg */,
+				11CC5D3222A7FF2D0026296C /* filter-early-bird.jpg */,
+				11CC5D2D22A7FF2C0026296C /* filter-hefe.jpg */,
+				11CC5D3522A7FF2E0026296C /* filter-hudson.jpg */,
+				11CC5D3922A7FF2F0026296C /* filter-inkwell.jpg */,
+				11CC5D3722A7FF2E0026296C /* filter-lomofi.jpg */,
+				11CC5D3322A7FF2D0026296C /* filter-lord-kelvin.jpg */,
+				11CC5D2E22A7FF2C0026296C /* filter-rise.jpg */,
+				11CC5D3022A7FF2C0026296C /* filter-sierra.jpg */,
+				11CC5D3422A7FF2D0026296C /* filter-sutro.jpg */,
+				11CC5D3622A7FF2E0026296C /* filter-toaster.jpg */,
+				11CC5D3A22A7FF2F0026296C /* filter-valencia.jpg */,
+				11CC5D2F22A7FF2C0026296C /* filter-walden.jpg */,
+				11CC5D2A22A7FF2B0026296C /* filter-xproii.jpg */,
+			);
+			path = Thumbnail;
 			sourceTree = "<group>";
 		};
 		11C679B8229F0D6C0054C5A1 /* TikkyClasses */ = {
@@ -2180,6 +2295,25 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		11CC5D5622A8A1E20026296C /* new-flow */ = {
+			isa = PBXGroup;
+			children = (
+				11CC5D5A22A8A1EF0026296C /* capture-white.png */,
+				11CC5D6122A8A1F10026296C /* close-gray.png */,
+				11CC5D5E22A8A1F00026296C /* close-white.png */,
+				11CC5D6222A8A1F10026296C /* deco-gray.png */,
+				11CC5D5B22A8A1EF0026296C /* done-gray.png */,
+				11CC5D5722A8A1ED0026296C /* done-white.png */,
+				11CC5D5822A8A1EE0026296C /* effect-gray.png */,
+				11CC5D5D22A8A1F00026296C /* effect-white.png */,
+				11CC5D5922A8A1EE0026296C /* emoji-gray.png */,
+				11CC5D5F22A8A1F00026296C /* filter-gray.png */,
+				11CC5D5C22A8A1EF0026296C /* save-gray.png */,
+				11CC5D6022A8A1F10026296C /* save-white.png */,
+			);
+			path = "new-flow";
+			sourceTree = "<group>";
+		};
 		11E501ED229C467B005C83A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2404,12 +2538,12 @@
 		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				116F586F22A8F1C5007448AC /* FBSDKCoreKit.framework */,
+				116F587022A8F1C6007448AC /* FBSDKLoginKit.framework */,
+				116F586E22A8F1C5007448AC /* FBSDKShareKit.framework */,
 				11E501EC229C467B005C83A3 /* fmdb.xcodeproj */,
 				B773F8D3222B15EF00F6FB7E /* AddressBook.framework */,
 				B773F8D1222B15EA00F6FB7E /* CoreLocation.framework */,
-				B773F7C5222B0EC800F6FB7E /* FBSDKCoreKit.framework */,
-				B773F7C4222B0EC800F6FB7E /* FBSDKLoginKit.framework */,
-				B773F7C6222B0EC800F6FB7E /* FBSDKShareKit.framework */,
 				B7FE3F072216B7AD00A82D93 /* TKRenderQueue.h */,
 				B7FE3F082216B7AD00A82D93 /* TKRenderQueue.mm */,
 				B70ABAD62201C66000B1F89A /* SDM */,
@@ -2550,6 +2684,7 @@
 				B71A8D8D2230A06D00E1FC58 /* GPUImageGlitchFilter.h */,
 				B71A8D8E2230A06D00E1FC58 /* GPUImageGlitchFilter.m */,
 				B74C9AD4224BEC820061DAA4 /* TKEffectFilter.h */,
+				11B001DC22A6F8D00067A665 /* GPUImageEffectFilterProtocol.h */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -2854,16 +2989,21 @@
 				1144821E2292E74300A61CF5 /* frame-flower-shakura-0.lua in Resources */,
 				114480CE2292E62B00A61CF5 /* landmark-model.bin in Resources */,
 				1144821D2292E74300A61CF5 /* frame-flower-shakura-0.png in Resources */,
+				11CC5D4922A7FF2F0026296C /* filter-toaster.jpg in Resources */,
 				114481BE2292E74300A61CF5 /* sticker-xmas-hat-8.png in Resources */,
 				114481BD2292E74300A61CF5 /* sticker-xmas-red-gift.png in Resources */,
 				114482692292E74400A61CF5 /* model-robinson.png in Resources */,
 				114480CF2292E62B00A61CF5 /* haar_facedetection2.xml in Resources */,
 				114482802292E74400A61CF5 /* frame.png in Resources */,
+				11CC5D4E22A7FF2F0026296C /* effect-glitch.jpg in Resources */,
 				114481CC2292E74300A61CF5 /* sticker-xmas-hat-5.png in Resources */,
 				114482182292E74300A61CF5 /* sticker-cat-1.png in Resources */,
 				114481F52292E74300A61CF5 /* lookup-linda.png in Resources */,
 				114481E32292E74300A61CF5 /* lookup-b _ w.png in Resources */,
 				114481E52292E74300A61CF5 /* lookup-solar.png in Resources */,
+				11CC5D3D22A7FF2F0026296C /* filter-xproii.jpg in Resources */,
+				11CC5D6E22A8A1F10026296C /* deco-gray.png in Resources */,
+				11CC5D4122A7FF2F0026296C /* filter-rise.jpg in Resources */,
 				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				1144824F2292E74400A61CF5 /* frame-flower-peony-8.png in Resources */,
 				114481F92292E74300A61CF5 /* sticker-dog-3.png in Resources */,
@@ -2871,18 +3011,21 @@
 				114481D52292E74300A61CF5 /* sticker-xmas-hat-3.png in Resources */,
 				114481C72292E74300A61CF5 /* sticker-xmas-hat-2-thumb.png in Resources */,
 				114482322292E74300A61CF5 /* frame-lotus-0.png in Resources */,
+				11CC5D4A22A7FF2F0026296C /* filter-lomofi.jpg in Resources */,
 				114481DD2292E74300A61CF5 /* lookup-clarity.png in Resources */,
 				1144824A2292E74400A61CF5 /* frame-flower-peony-1.png in Resources */,
 				114482192292E74300A61CF5 /* frame-flower-shakura-3.png in Resources */,
 				1144823C2292E74300A61CF5 /* frame-leaves-1.png in Resources */,
 				1144822B2292E74300A61CF5 /* frame-flower-shakura-10.png in Resources */,
 				114482382292E74300A61CF5 /* frame-lotus-thumb.png in Resources */,
+				11CC5D4822A7FF2F0026296C /* filter-hudson.jpg in Resources */,
 				B74C9AC1224BE94B0061DAA4 /* GPUImage.InstagramFilter.bundle in Resources */,
 				114481BA2292E74300A61CF5 /* sticker-xmas-hat-6-thumb.png in Resources */,
 				114482662292E74400A61CF5 /* model-clarity.png in Resources */,
 				114482852292E74400A61CF5 /* rec-stop-button.png in Resources */,
 				114482282292E74300A61CF5 /* frame-flower-shakura-7.png in Resources */,
 				114481CE2292E74300A61CF5 /* sticker-xmas-reindeer-thumb.png in Resources */,
+				11CC5D4022A7FF2F0026296C /* filter-hefe.jpg in Resources */,
 				114482592292E74400A61CF5 /* model-elizabeth.png in Resources */,
 				114482772292E74400A61CF5 /* photo.png in Resources */,
 				114482752292E74400A61CF5 /* raito.png in Resources */,
@@ -2891,8 +3034,10 @@
 				1144826E2292E74400A61CF5 /* model-feel.png in Resources */,
 				114481DC2292E74300A61CF5 /* lookup-polaroid.png in Resources */,
 				114482472292E74400A61CF5 /* frame-flower-peony-2.lua in Resources */,
+				11CC5D4D22A7FF2F0026296C /* filter-valencia.jpg in Resources */,
 				114481DE2292E74300A61CF5 /* lookup-robinson.png in Resources */,
 				114482862292E74400A61CF5 /* 15s.png in Resources */,
+				11CC5D4622A7FF2F0026296C /* filter-lord-kelvin.jpg in Resources */,
 				114482332292E74300A61CF5 /* frame-lotus-0.lua in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				114482882292E74400A61CF5 /* recyclingbin.png in Resources */,
@@ -2901,9 +3046,11 @@
 				114481DF2292E74300A61CF5 /* lookup-feel.png in Resources */,
 				114481CD2292E74300A61CF5 /* sticker-xmas-hat-5-thumb.png in Resources */,
 				114482202292E74300A61CF5 /* frame-flower-shakura-1.png in Resources */,
+				11CC5D7022A8A2240026296C /* sticker-dog-thumb.png in Resources */,
 				114481BF2292E74300A61CF5 /* sticker-xmas-hat-7-thumb.png in Resources */,
 				114481C92292E74300A61CF5 /* sticker-xmas-pink-gift.png in Resources */,
 				1144825A2292E74400A61CF5 /* model-sutro.png in Resources */,
+				11CC5D6422A8A1F10026296C /* effect-gray.png in Resources */,
 				114481C62292E74300A61CF5 /* sticker-xmas-pink-gift-thumb.png in Resources */,
 				114481ED2292E74300A61CF5 /* lookup-summer.png in Resources */,
 				114482502292E74400A61CF5 /* frame-flower-peony-8.lua in Resources */,
@@ -2923,25 +3070,30 @@
 				1144828A2292E74400A61CF5 /* tonystark.png in Resources */,
 				114482272292E74300A61CF5 /* frame-flower-shakura-7.lua in Resources */,
 				114481FD2292E74300A61CF5 /* sticker-dog-1.png in Resources */,
+				11CC5D4F22A7FF2F0026296C /* effect-snow-drop.jpg in Resources */,
 				114481EA2292E74300A61CF5 /* lookup-amatorka.png in Resources */,
 				114481D42292E74300A61CF5 /* sticker-xmas-hat-2.png in Resources */,
 				114482052292E74300A61CF5 /* sticker-fox-1.lua in Resources */,
 				1144822D2292E74300A61CF5 /* frame-flower-shakura-8.lua in Resources */,
 				114481E72292E74300A61CF5 /* lookup-elizabeth.png in Resources */,
 				114481F02292E74300A61CF5 /* lookup-run.png in Resources */,
+				11CC5D4B22A7FF2F0026296C /* filter-amaro.jpg in Resources */,
 				114481D22292E74300A61CF5 /* sticker-xmas-hat-3-thumb.png in Resources */,
 				114482372292E74300A61CF5 /* frame-lotus-2.png in Resources */,
 				114482232292E74300A61CF5 /* frame-flower-shakura-4.lua in Resources */,
 				114481D02292E74300A61CF5 /* sticker-xmas-hat-6.png in Resources */,
+				11CC5D4C22A7FF2F0026296C /* filter-inkwell.jpg in Resources */,
 				114482872292E74400A61CF5 /* 5s.png in Resources */,
 				114482432292E74400A61CF5 /* frame-flower-peony-7.lua in Resources */,
 				114481E92292E74300A61CF5 /* lookup-gotham.png in Resources */,
 				1144821B2292E74300A61CF5 /* frame-flower-shakura-2.lua in Resources */,
+				11B001DB22A6C65A0067A665 /* demo4.jpg in Resources */,
 				114482012292E74300A61CF5 /* sticker-fox-3.lua in Resources */,
 				114481F12292E74300A61CF5 /* lookup-fashion.png in Resources */,
 				114482122292E74300A61CF5 /* sticker-cat-thumb.png in Resources */,
 				114481E22292E74300A61CF5 /* lookup-saha.png in Resources */,
 				1144820B2292E74300A61CF5 /* sticker-flag-vn-1.png in Resources */,
+				11CC5D4722A7FF2F0026296C /* filter-sutro.jpg in Resources */,
 				114482642292E74400A61CF5 /* model-run.png in Resources */,
 				1144825D2292E74400A61CF5 /* model-fresh.png in Resources */,
 				114482682292E74400A61CF5 /* model-mental.png in Resources */,
@@ -2952,18 +3104,22 @@
 				114482722292E74400A61CF5 /* flash.png in Resources */,
 				114481EF2292E74300A61CF5 /* lookup-gypsy.png in Resources */,
 				1144823A2292E74300A61CF5 /* frame-leaves-0.lua in Resources */,
+				11CC5D6B22A8A1F10026296C /* filter-gray.png in Resources */,
 				114482572292E74400A61CF5 /* model_normal.jpg in Resources */,
 				114481DA2292E74300A61CF5 /* lookup-charcoal.png in Resources */,
 				114482562292E74400A61CF5 /* model-gray.png in Resources */,
+				11CC5D3E22A7FF2F0026296C /* filter-brannan.jpg in Resources */,
 				114482172292E74300A61CF5 /* sticker-cat-1.lua in Resources */,
 				114481FB2292E74300A61CF5 /* sticker-dog-0.png in Resources */,
 				1144822E2292E74300A61CF5 /* frame-flower-shakura-11.png in Resources */,
 				114482482292E74400A61CF5 /* frame-flower-peony-3.lua in Resources */,
+				11CC5D4422A7FF2F0026296C /* effect-rain-drop.jpg in Resources */,
 				1144827D2292E74400A61CF5 /* rec-start-button.png in Resources */,
 				114481EB2292E74300A61CF5 /* lookup-guardian.png in Resources */,
 				114481CA2292E74300A61CF5 /* sticker-xmas-santa.png in Resources */,
 				114480D02292E62B00A61CF5 /* haar_facedetection.xml in Resources */,
 				114482602292E74400A61CF5 /* model-floyd.png in Resources */,
+				11CC5D6322A8A1F10026296C /* done-white.png in Resources */,
 				114482702292E74400A61CF5 /* model-club.png in Resources */,
 				114481B92292E74300A61CF5 /* sticker-xmas-hat-thumb.png in Resources */,
 				114481E82292E74300A61CF5 /* lookup-fresh.png in Resources */,
@@ -2972,6 +3128,7 @@
 				114482892292E74400A61CF5 /* aquaman.png in Resources */,
 				1144827F2292E74400A61CF5 /* delete.png in Resources */,
 				114482212292E74300A61CF5 /* frame-flower-shakura-5.png in Resources */,
+				11CC5D6522A8A1F10026296C /* emoji-gray.png in Resources */,
 				11DBE604229DAAA800718133 /* sticker.png in Resources */,
 				114481FC2292E74300A61CF5 /* sticker-dog-1.lua in Resources */,
 				1144825F2292E74400A61CF5 /* model-hudson.png in Resources */,
@@ -2986,6 +3143,7 @@
 				114481CB2292E74300A61CF5 /* sticker-xmas-hat-4.png in Resources */,
 				1144820C2292E74300A61CF5 /* sticker-flag-vn-1.lua in Resources */,
 				114481F32292E74300A61CF5 /* lookup-gray.png in Resources */,
+				11CC5D6622A8A1F10026296C /* capture-white.png in Resources */,
 				114482422292E74400A61CF5 /* frame-flower-peony-7.png in Resources */,
 				114482302292E74300A61CF5 /* frame-flower-shakura-8.png in Resources */,
 				114482542292E74400A61CF5 /* model-linda.png in Resources */,
@@ -2996,6 +3154,7 @@
 				11DBE603229DAAA800718133 /* done.png in Resources */,
 				1144820D2292E74300A61CF5 /* sticker-flag-vn-0.lua in Resources */,
 				1144823B2292E74300A61CF5 /* frame-leaves-0.png in Resources */,
+				11CC5D4222A7FF2F0026296C /* filter-walden.jpg in Resources */,
 				114482652292E74400A61CF5 /* model-polaroid.png in Resources */,
 				114482742292E74400A61CF5 /* emoji.png in Resources */,
 				114481E42292E74300A61CF5 /* lookup-vintage.png in Resources */,
@@ -3004,13 +3163,16 @@
 				1144821F2292E74300A61CF5 /* frame-flower-shakura-1.lua in Resources */,
 				114482462292E74400A61CF5 /* frame-flower-peony-2.png in Resources */,
 				114481FE2292E74300A61CF5 /* sticker-dog-2.png in Resources */,
+				11CC5D6722A8A1F10026296C /* done-gray.png in Resources */,
 				114482152292E74300A61CF5 /* sticker-cat-2.png in Resources */,
+				11CC5D0322A7E6440026296C /* bitexco2.jpg in Resources */,
 				1144820F2292E74300A61CF5 /* sticker-nonla-hat-thumb.png in Resources */,
 				1144824D2292E74400A61CF5 /* frame-flower-peony-0.png in Resources */,
 				1144826D2292E74400A61CF5 /* model-romance.png in Resources */,
 				1144826F2292E74400A61CF5 /* model-vintage.png in Resources */,
 				114481DB2292E74300A61CF5 /* lookup-indigo.png in Resources */,
 				114482632292E74400A61CF5 /* model-summer.png in Resources */,
+				11CC5D6A22A8A1F10026296C /* close-white.png in Resources */,
 				114481D32292E74300A61CF5 /* sticker-xmas-red-gift-thumb.png in Resources */,
 				114482522292E74400A61CF5 /* model-guardian.png in Resources */,
 				114482102292E74300A61CF5 /* sticker-nonla-hat-0.png in Resources */,
@@ -3019,13 +3181,14 @@
 				1144826C2292E74400A61CF5 /* model-solar.png in Resources */,
 				114481C52292E74300A61CF5 /* sticker-xmas-hat-4-thumb.png in Resources */,
 				114482612292E74400A61CF5 /* model-gypsy.png in Resources */,
-				1144827C2292E74400A61CF5 /* reverse.png in Resources */,
+				1144827C2292E74400A61CF5 /* swap.png in Resources */,
 				114481E62292E74300A61CF5 /* lookup-mental.png in Resources */,
 				114482822292E74400A61CF5 /* edit.png in Resources */,
+				11CC5D6922A8A1F10026296C /* effect-white.png in Resources */,
+				11CC5D4322A7FF2F0026296C /* filter-sierra.jpg in Resources */,
 				114482352292E74300A61CF5 /* frame-lotus-1.png in Resources */,
 				114481D92292E74300A61CF5 /* sticker-panda.png in Resources */,
 				114482162292E74300A61CF5 /* sticker-cat-2.lua in Resources */,
-				114482002292E74300A61CF5 /* sticker-dog-thumb.png in Resources */,
 				B70ABB2A2201C66000B1F89A /* manual.html in Resources */,
 				1144823E2292E74400A61CF5 /* frame-flower-peony-4.png in Resources */,
 				114482492292E74400A61CF5 /* frame-flower-peony-3.png in Resources */,
@@ -3035,6 +3198,7 @@
 				1144822C2292E74300A61CF5 /* frame-flower-shakura-9.lua in Resources */,
 				114482732292E74400A61CF5 /* time.png in Resources */,
 				114482672292E74400A61CF5 /* model-B & W.png in Resources */,
+				11CC5D6C22A8A1F10026296C /* save-white.png in Resources */,
 				114482252292E74300A61CF5 /* frame-flower-shakura-6.png in Resources */,
 				114481EE2292E74300A61CF5 /* lookup-floyd.png in Resources */,
 				114481C82292E74300A61CF5 /* sticker-xmas-violet-gift-thumb.png in Resources */,
@@ -3043,6 +3207,8 @@
 				114481F42292E74300A61CF5 /* lookup-mono cool.png in Resources */,
 				114482712292E74400A61CF5 /* model-seven.png in Resources */,
 				114482292292E74300A61CF5 /* frame-flower-shakura-9.png in Resources */,
+				11CC5D3F22A7FF2F0026296C /* filter-1977.jpg in Resources */,
+				11CC5D6D22A8A1F10026296C /* close-gray.png in Resources */,
 				114482022292E74300A61CF5 /* sticker-fox-3.png in Resources */,
 				114482762292E74400A61CF5 /* 10s.png in Resources */,
 				114481E02292E74300A61CF5 /* lookup-seven.png in Resources */,
@@ -3054,6 +3220,7 @@
 				114481BC2292E74300A61CF5 /* sticker-xmas-snowman.png in Resources */,
 				114481F22292E74300A61CF5 /* lookup-brooklyn.png in Resources */,
 				114482832292E74400A61CF5 /* more.png in Resources */,
+				11CC5D4522A7FF2F0026296C /* filter-early-bird.jpg in Resources */,
 				1144823F2292E74400A61CF5 /* frame-flower-peony-4.lua in Resources */,
 				1144822A2292E74300A61CF5 /* frame-flower-shakura-10.lua in Resources */,
 				114481CF2292E74300A61CF5 /* sticker-xmas-hat-7.png in Resources */,
@@ -3062,7 +3229,9 @@
 				114481F62292E74300A61CF5 /* lookup-hipster.png in Resources */,
 				114482782292E74400A61CF5 /* cross.png in Resources */,
 				114482512292E74400A61CF5 /* model-1971.png in Resources */,
+				11B001D722A6C3260067A665 /* filter-default.jpg in Resources */,
 				114482412292E74400A61CF5 /* frame-flower-peony-5.png in Resources */,
+				11CC5D6822A8A1F10026296C /* save-gray.png in Resources */,
 				114482552292E74400A61CF5 /* model-mono cool.png in Resources */,
 				114482222292E74300A61CF5 /* frame-flower-shakura-5.lua in Resources */,
 				114482582292E74400A61CF5 /* model-indigo.png in Resources */,
@@ -3114,6 +3283,7 @@
 				11A9BDA922A4067A006B50CA /* TKEditItemCollectionViewCell.m in Sources */,
 				11A21E4022A30EA80062CECE /* TKSocialNetworkSDK.m in Sources */,
 				11A21E4322A30EA80062CECE /* TKCameraViewController.mm in Sources */,
+				11CC5D5222A811A60026296C /* TKCameraGUIView.m in Sources */,
 				11C67A8B229F0D6D0054C5A1 /* OpenCVUtilities.mm in Sources */,
 				11A21E2F22A30EA80062CECE /* TKImageInput.m in Sources */,
 				11C67A7D229F0D6D0054C5A1 /* TikkyEngine.mm in Sources */,
@@ -3166,12 +3336,14 @@
 				B74C9ABE224BE94B0061DAA4 /* IFSierraFilter.m in Sources */,
 				B753FD38220550B500D805BB /* LFGPUImageEmptyFilter.m in Sources */,
 				11A21E3B22A30EA80062CECE /* TKFacialLandmarkUtilities.cpp in Sources */,
+				11CC5D5522A814BA0026296C /* UIImage+NSBundle.m in Sources */,
 				11C67A82229F0D6D0054C5A1 /* TKFilterProperty.m in Sources */,
 				11C67A88229F0D6D0054C5A1 /* UIImage+CVPixelBufferRefConverter.m in Sources */,
 				11C67A8D229F0D6D0054C5A1 /* TKTextureUtilities.c in Sources */,
 				11A21E3122A30EA80062CECE /* TKFilterProperty.m in Sources */,
 				11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */,
 				11A21E3C22A30EA80062CECE /* TKTextureUtilities.c in Sources */,
+				11B001E222A6FA460067A665 /* TKEffectFilter.m in Sources */,
 				B71A8D902230A06D00E1FC58 /* GPUImageGlitchFilter.m in Sources */,
 				11C67A90229F0D6D0054C5A1 /* TKSNUserInfo.m in Sources */,
 				11A21E3822A30EA80062CECE /* UIDevice+DeviceName.m in Sources */,

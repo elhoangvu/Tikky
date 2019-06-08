@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) TKCommonEntity* entity;
 
+@property (nonatomic) BOOL isSelected;
+
 - (instancetype)initWithCommonEntity:(TKCommonEntity *)entity;
 
 @end

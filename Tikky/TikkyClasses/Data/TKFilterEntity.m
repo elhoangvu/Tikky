@@ -16,13 +16,15 @@
                       name:(NSString *)name
                  thumbnail:(NSString *)thumbnail
                   isBundle:(BOOL)isBundle
-                      type:(TKFilterType)type {
+                      type:(TKFilterType)type
+               filterClass:(Class)filterClass {
     if (!(self = [super initWithID:cid caterory:category name:name thumbnail:thumbnail isBundle:isBundle type:TKEntityTypeFilter])) {
         return nil;
     }
     
     _filterID = filterID;
     _filterType = type;
+    _filterClass = filterClass;
     
     return self;
 }

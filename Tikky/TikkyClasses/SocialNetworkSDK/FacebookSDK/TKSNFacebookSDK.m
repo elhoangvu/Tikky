@@ -89,7 +89,7 @@
     }
     
     BOOL isURL = YES;
-    if (assetClass == UIImage.class) {
+    if ([assetClass isKindOfClass:UIImage.class]) {
         isURL = NO;
     }
     
@@ -110,7 +110,16 @@
     
     fbSharePhotoContent.photos = fbPhotos;
     fbSharePhotoContent.hashtag = [FBSDKHashtag hashtagWithString:hashtagString];
-    [FBSDKShareDialog showFromViewController:showedViewController withContent:fbSharePhotoContent delegate:self];
+    FBSDKShareDialog* fbSDKDialog = [[FBSDKShareDialog alloc] init];
+    fbSDKDialog.fromViewController = showedViewController;
+    fbSDKDialog.shareContent = fbSharePhotoContent;
+    fbSDKDialog.delegate = self;
+//    FBSDKShareDialog* fbSDKDialog = [FBSDKShareDialog dialogWithViewController:nil withContent:fbSharePhotoContent delegate:self];
+//    fbSDKDialog = [FBSDKShareDialog showFromViewController:showedViewController withContent:fbSharePhotoContent delegate:self];
+//    [fbSDKDialog show];
+    
+//    [FBSDKShareDialog showFromViewController:showedViewController withContent:fbSharePhotoContent delegate:self];
+//    [FBSDKShareAPI shareWithContent:showedViewController delegate:self];
     _currentDelegate = delegate;
 }
 

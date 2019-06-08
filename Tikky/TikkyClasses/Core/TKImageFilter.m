@@ -32,7 +32,8 @@
 
 - (instancetype)init
 {
-    if (!(self = [self initWithInput:[[TKPhoto alloc] init] filter:@"default"])) {
+//    if (!(self = [self initWithInput:[[TKPhoto alloc] init] filter:@"default"])) {
+    if (!(self = [self initWithInput:[[TKCamera alloc] init] filter:@"default"])) {
         return nil;
     }
     
@@ -49,8 +50,9 @@
     self.input = input;
     
     _gpuimageView = [[GPUImageView alloc] init];
+    [_gpuimageView setBackgroundColorRed:1.0 green:1.0 blue:1.0 alpha:1.0];
     _gpuimageView.delegate = self;
-//    [_gpuimageView setFillMode:(kGPUImageFillModePreserveAspectRatioAndFill)];
+    [_gpuimageView setFillMode:(kGPUImageFillModePreserveAspectRatioAndFill)];
     view = _gpuimageView;
     
     _gpuimageStickerFilter = [[GPUImageStickerFilter alloc] init];

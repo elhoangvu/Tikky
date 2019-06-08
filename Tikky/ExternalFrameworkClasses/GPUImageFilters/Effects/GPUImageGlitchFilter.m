@@ -252,4 +252,8 @@ NSString *const kGPUImageGlitchFragmentShaderString = SHADER_STRING
     [_displayLink invalidate];
 }
 
+- (void)randomTime {
+    self.time = 1.0/self.fps * (rand() % 10000);
+}
+
 @end

@@ -8,13 +8,17 @@
 
 #import "GPUImageFilter+GPUVector2.h"
 
+#import "GPUImageEffectFilterProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GPUImageGlitchFilter : GPUImageFilter
+@interface GPUImageGlitchFilter : GPUImageFilter <GPUImageEffectFilterProtocol>
 
 @property (nonatomic) NSInteger fps;
 
 @property (nonatomic) BOOL stillImage;
+
+- (void)randomTime;
 
 @end
 

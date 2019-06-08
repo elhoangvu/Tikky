@@ -69,7 +69,7 @@
     if (type == TKStickerTypeUnknown) {
         query = [NSString stringWithFormat:@"SELECT * FROM sticker"];
     } else {
-        query = [NSString stringWithFormat:@"SELECT * FROM sticker WHERE type = %ld", type];
+        query = [NSString stringWithFormat:@"SELECT * FROM sticker WHERE type = %lu", (unsigned long)type];
     }
     
     FMResultSet* s = [_db executeQuery:query];
@@ -146,7 +146,7 @@
     if (type == TKFilterTypeUnknown) {
         query = [NSString stringWithFormat:@"SELECT * FROM filter"];
     } else {
-        query = [NSString stringWithFormat:@"SELECT * FROM filter WHERE type = %ld", type];
+        query = [NSString stringWithFormat:@"SELECT * FROM filter WHERE type = %lu", (unsigned long)type];
     }
     
     FMResultSet* s = [_db executeQuery:query];
@@ -158,8 +158,17 @@
         NSString* name = [s stringForColumn:@"name"];
         NSString* thumbnail = [s stringForColumn:@"thumbnail"];
         NSUInteger type = [s intForColumn:@"type"];
+        NSString* filterClass = [s stringForColumn:@"class"];
+        Class class = NSClassFromString(filterClass);
         
-        TKFilterEntity* filter = [[TKFilterEntity alloc] initWithID:sid filterID:subid caterory:category name:name thumbnail:thumbnail isBundle:isBundle type:type];
+        TKFilterEntity* filter = [[TKFilterEntity alloc] initWithID:sid
+                                                           filterID:subid
+                                                           caterory:category
+                                                               name:name
+                                                          thumbnail:thumbnail
+                                                           isBundle:isBundle
+                                                               type:type
+                                                        filterClass:class];
         [filterEntities addObject:filter];
     }
     

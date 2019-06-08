@@ -13,7 +13,7 @@
 
 #define ENABLE_STICKER_TEST  0
 
-#define ENABLE_CAMERA        1
+#define ENABLE_CAMERA        1 
 
 #define ENABLE_BACKGROUND_VIEW_FOR_UI_TESTING 0
 

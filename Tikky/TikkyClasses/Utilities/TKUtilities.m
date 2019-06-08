@@ -27,3 +27,22 @@ void swizzleInstanceMethod(Class swizzledClass, SEL originalSelector, SEL swizzl
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+
+@implementation TKUtilities
+
++ (UIImage *)imageFromBundleWithName:(NSString *)name {
+    NSString* path = [NSBundle.mainBundle pathForResource:name ofType:nil];
+    UIImage* image;
+    if (path) {
+        image = [UIImage imageWithContentsOfFile:path];
+    } else {
+        path = [NSBundle.mainBundle pathForResource:@"default" ofType:nil];
+        if (path) {
+            image = [UIImage imageWithContentsOfFile:path];
+        }
+    }
+    
+    return image;
+}
+
+@end

@@ -279,4 +279,8 @@ NSString *const kGPUImageRainDropFragmentShaderString = SHADER_STRING
     [_displayLink invalidate];
 }
 
+- (void)randomTime {
+    self.timeDelta = 1.0/self.speed * (rand() % 10000);
+}
+
 @end

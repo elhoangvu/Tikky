@@ -28,13 +28,13 @@
 }
 
 - (void)delegate_setFrame:(CGRect)frame {
-    [self delegate_setFrame:frame];
-    
     if (self.delegate) {
         if ([self.delegate respondsToSelector:@selector(view:setFrame:)]) {
             [self.delegate view:self setFrame:frame];
         }
     }
+    
+    [self delegate_setFrame:frame];
 }
 
 @end

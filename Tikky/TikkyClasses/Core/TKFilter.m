@@ -8,6 +8,7 @@
 
 #import "TKFilter.h"
 #import "TKFilterCreator.h"
+#import "GPUImageEffectFilterProtocol.h"
 
 @interface TKFilter ()
 
@@ -42,6 +43,14 @@
     _sharedObject = _filter;
     
     return YES;
+}
+
+- (void)randomTime {
+    Protocol* effectFilterProtocol = @protocol(GPUImageEffectFilterProtocol);
+    if ([self.sharedObject conformsToProtocol:effectFilterProtocol]) {
+        id<GPUImageEffectFilterProtocol> effectFilter = (id<GPUImageEffectFilterProtocol>)self.sharedObject;
+        [effectFilter randomTime];
+    }
 }
 
 @end

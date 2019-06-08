@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) TKEditItemViewModel* viewModel;
 
+- (void)didSelectCell;
+
+- (void)didDeselectCell;
+
 @end
 
 NS_ASSUME_NONNULL_END

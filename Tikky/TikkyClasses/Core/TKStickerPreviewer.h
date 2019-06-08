@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeAllStaticStickers;
 - (void)removeAllFacialStickers;
 
+- (void)pause;
+- (void)resume;
 
 - (CGSize)getPreviewerDesignedSize;
 

@@ -14,6 +14,7 @@
 #import "TKImageFilter.h"
 #import "TKImageInput.h"
 #import "TKFilter.h"
+#import "TKEffectFilter.h"
 #import "TKCamera.h"
 #import "TKVideo.h"
 #import "TKPhoto.h"

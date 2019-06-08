@@ -30,9 +30,15 @@
 
 #import "TKGalleryUtilities.h"
 
+#import "TKCameraGUIView.h"
+
+#import "TKEditorViewController.h"
+
 @interface TKCameraViewController ()
 <
-TKStickerPreviewerDelegate
+TKStickerPreviewerDelegate,
+TKCameraGUIViewDelegate,
+TKEditorViewControllerDelegate
 > {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
@@ -49,6 +55,10 @@ TKStickerPreviewerDelegate
 
 @property (nonatomic) BOOL isTouchStickerBegan;
 
+@property (nonatomic) TKCameraGUIView* cameraGUIView;
+
+@property (nonatomic) TKEditorViewController* editorVC;
+
 @end
 
 @implementation TKCameraViewController
@@ -59,7 +69,7 @@ TKStickerPreviewerDelegate
 //    _stickers = TKSampleDataPool.sharedInstance.stickerList;
 //    _filters = TKSampleDataPool.sharedInstance.filterList;
 
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
     _imageInput = _tikkyEngine.imageFilter.input;
@@ -71,6 +81,8 @@ TKStickerPreviewerDelegate
 //    _frameStickers = (std::vector<std::vector<TKSticker>>*)TKSampleDataPool.sharedInstance.frameStickers;
     
     [self setUpUI];
+    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
+    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     [self.view setMultipleTouchEnabled:YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -92,8 +104,10 @@ TKStickerPreviewerDelegate
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-#if ENDABLE_CAMERA
-    [((TKCamera *)_imageInput) startCameraCapture];
+#if ENABLE_CAMERA
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+        [((TKCamera *)_imageInput) startCameraCapture];
+    }
 #endif
     
     // <!-- Test FB SDK
@@ -111,7 +125,7 @@ TKStickerPreviewerDelegate
 #endif
     // Test FB SDK -->
     
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
     static BOOL isSetupAudio = true;
     if (!isSetupAudio) {
         // Record video setup
@@ -123,8 +137,6 @@ TKStickerPreviewerDelegate
         isSetupAudio = YES;
     }
     
-    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
-    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
 #endif
     
     // <!-- Test capture
@@ -151,7 +163,7 @@ TKStickerPreviewerDelegate
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
     if ([_imageInput isKindOfClass:TKCamera.class]) {
         [((TKCamera *)_imageInput) stopCameraCapture];
     }
@@ -166,7 +178,7 @@ TKStickerPreviewerDelegate
     }
     
     if ([_imageInput isKindOfClass:TKCamera.class]) {
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
         [((TKCamera *)_imageInput) startCameraCapture];
 #endif
     } else if ([_imageInput isKindOfClass:TKPhoto.class]) {
@@ -179,16 +191,21 @@ TKStickerPreviewerDelegate
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStickerPreviewerView:)];
     [tapGesture setNumberOfTapsRequired:1];
     [tapGesture setNumberOfTouchesRequired:1];
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
     [_tikkyEngine.stickerPreviewer.view addGestureRecognizer:tapGesture];
 #endif
+    
+    _cameraGUIView = [[TKCameraGUIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    _cameraGUIView.delegate = self;
+    [self.view addSubview:_cameraGUIView];
 }
 
 - (void)capturePhoto {
-    cocos2d::Director::getInstance()->pause();
+    [_tikkyEngine.stickerPreviewer pause];
  
+    __weak __typeof(self)weakSelf = self;
     [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
-        cocos2d::Director::getInstance()->resume();
+        [weakSelf.tikkyEngine.stickerPreviewer resume];
         [TKGalleryUtilities saveImageToGalleryWithImage:[UIImage imageWithData:processedJPEG]];
     }];
 }
@@ -225,7 +242,7 @@ TKStickerPreviewerDelegate
     _isTouchStickerBegan = YES;
 }
 
-#if ENDABLE_CAMERA
+#if ENABLE_CAMERA
 - (void)didTapStickerPreviewerView:(UITapGestureRecognizer *)tapGesture {
     if (tapGesture.state == UIGestureRecognizerStateEnded) {
         if (!_isTouchStickerBegan) {
@@ -315,6 +332,50 @@ TKStickerPreviewerDelegate
 -(void)didDeselectFrameWithIdentifier:(NSInteger)identifier {
     NSLog(@"deselect frame");
 
+}
+
+#pragma mark - TKCameraGUIViewDelegate
+
+- (void)didTapCaptureButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView {
+    static BOOL shouldCapture = YES;
+    if (shouldCapture) {
+        shouldCapture = NO;
+        [_tikkyEngine.stickerPreviewer pause];
+        
+        __weak __typeof(self)weakSelf = self;
+        [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
+            [weakSelf.tikkyEngine.stickerPreviewer resume];
+            [weakSelf.tikkyEngine.imageFilter removeAllFilter];
+            if (processedJPEG) {
+                UIImage* image = [UIImage imageWithData:processedJPEG];
+                TKPhoto* photo = [[TKPhoto alloc] initWithImage:image smoothlyScaleOutput:YES];
+                [weakSelf.tikkyEngine.imageFilter setInput:photo];
+                weakSelf.editorVC = [[TKEditorViewController alloc] init];
+                [weakSelf presentViewController:weakSelf.editorVC animated:YES completion:nil];
+                weakSelf.editorVC.delegate = self;
+            }
+            shouldCapture = YES;
+    //        [TKGalleryUtilities saveImageToGalleryWithImage:[UIImage imageWithData:processedJPEG]];
+        }];
+    }
+}
+
+- (void)didTapSwapButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView {
+    [((TKCamera *)_imageInput) swapCamera];
+}
+
+- (void)didTapCloseButtonAtEditorViewController:(TKEditorViewController *)editorVC {
+    [self.view addSubview:_tikkyEngine.view];
+    [self.view sendSubviewToBack:_tikkyEngine.view];
+    [_tikkyEngine.view setFrame:UIScreen.mainScreen.bounds];
+    _editorVC = nil;
+    [_tikkyEngine.imageFilter setInput:_imageInput];
+    [_tikkyEngine.imageFilter removeAllFilter];
+    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
+    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+        [(TKCamera *)_imageInput startCameraCapture];
+    }
 }
 
 @end
