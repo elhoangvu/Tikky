@@ -71,6 +71,8 @@ SocialNetworkSDKDelegate
 
 @property (nonatomic) BOOL isEditing;
 
+@property (nonatomic) TKEntityType lastEditType;
+
 @end
 
 @implementation TKEditorViewController
@@ -94,6 +96,7 @@ SocialNetworkSDKDelegate
     _menuHeight = 0.3*mainViewRect.size.width;
     _photoView = TikkyEngine.sharedInstance.view;
     _headerViewHieght = 40;
+    _lastEditType = TKEntityTypeUnknown;
     CGRect photoFrame = CGRectMake(0, _headerViewHieght, mainViewRect.size.width, mainViewRect.size.height-_headerViewHieght-_menuHeight);
     _photo = (TKPhoto *)_imageFilter.input;
     UIImage* image = _photo.defaultImage;
@@ -109,6 +112,7 @@ SocialNetworkSDKDelegate
         photoFrame.origin.x += (mainViewRect.size.width - actualImageSize.width)*0.5;
         photoFrame.size.width = actualImageSize.width;
     }
+    
     
     [TikkyEngine.sharedInstance.stickerPreviewer pause];
     [TikkyEngine.sharedInstance.imageFilter.view setFrame:photoFrame];
@@ -128,6 +132,7 @@ SocialNetworkSDKDelegate
             [weakSelf.imageFilter setInput:weakSelf.photo];
         }
         [weakSelf.imageFilter removeFilter:filter];
+        
     }];
 //    [_photo processImage];
     [self setUpMenuCollectionView];
@@ -317,16 +322,45 @@ SocialNetworkSDKDelegate
 
 - (void)didDoneEditItemView:(TKEditItemView *)editItemView withoutEditing:(BOOL)withoutEditing {
     if (withoutEditing) {
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
         [self animationWhenPresentingMenu];
         return;
     }
     _isEdited = YES;
     _isEditing = NO;
-    self.photo = [[TKPhoto alloc] initWithImage:_lastProcessedImage];
-    [self.imageFilter setInput:self.photo];
-    [self.imageFilter removeAllFilter];
-    _lastPickedImage = _lastProcessedImage;
-
+    
+    if (_lastEditType == TKEntityTypeSticker) {
+        __weak __typeof(self)weakSelf = self;
+        [self.photo processImageUpToFilter:nil withCompletionHandler:^(UIImage *processedImage) {
+            weakSelf.lastProcessedImage = processedImage;
+            weakSelf.photo = [[TKPhoto alloc] initWithImage:weakSelf.lastProcessedImage];
+            [weakSelf.imageFilter setInput:weakSelf.photo];
+            [weakSelf.imageFilter removeAllFilter];
+            
+            TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
+            [self.imageFilter addFilter:filter];
+            [self.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
+                if (processedImage) {
+                    weakSelf.lastProcessedImage = processedImage;
+                    weakSelf.lastPickedImage = weakSelf.lastProcessedImage;
+                    weakSelf.photo = [[TKPhoto alloc] initWithImage:processedImage];
+                    [weakSelf.imageFilter setInput:weakSelf.photo];
+                }
+                [weakSelf.imageFilter removeAllFilter];
+            }];
+            
+        }];
+    } else {
+        self.photo = [[TKPhoto alloc] initWithImage:_lastProcessedImage];
+        [self.imageFilter setInput:self.photo];
+        [self.imageFilter removeAllFilter];
+        _lastPickedImage = _lastProcessedImage;
+    }
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
     [self animationWhenPresentingMenu];
 }
 
@@ -349,12 +383,14 @@ SocialNetworkSDKDelegate
                 [weakSelf.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
                     weakSelf.lastProcessedImage = processedImage;
                 }];
+                weakSelf.lastEditType = TKEntityTypeFilter;
             } else if (obj.type == TKEntityTypeSticker) {
                 TKStickerEntity* stickerEntity = (TKStickerEntity *)obj;
                 if (stickerEntity.stickerType == TKStickerTypeFace) {
                     TKFaceStickerEntity* faceEntitty = (TKFaceStickerEntity *)stickerEntity;
                     std::vector<TKSticker>* facialStickers = (std::vector<TKSticker> *)faceEntitty.facialSticker;
                     [TikkyEngine.sharedInstance.stickerPreviewer newFacialStickerWithStickers:*facialStickers];
+                    [weakSelf.photo processImageForFacialFeatureWithCompletionHandler:nil];
                 } else if (stickerEntity.stickerType == TKStickerTypeFrame) {
                     TKFrameStickerEntity* frameEntitty = (TKFrameStickerEntity *)stickerEntity;
                     std::vector<TKSticker>* frameStickers = (std::vector<TKSticker> *)frameEntitty.frameStickers;
@@ -365,6 +401,7 @@ SocialNetworkSDKDelegate
                 } else {
                     
                 }
+                _lastEditType = TKEntityTypeSticker;
             }
             *stop = YES;
         }

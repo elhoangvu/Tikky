@@ -10,7 +10,11 @@
 #import "TKImageInput.h"
 #import "TKFilter.h"
 
+@protocol TKPhotoDelegate;
+
 @interface TKPhoto : TKImageInput
+
+@property (nonatomic, weak) id<TKPhotoDelegate> delegate;
 
 - (instancetype)initWithURL:(NSURL *)url;
 - (instancetype)initWithImage:(UIImage *)newImageSource;
@@ -24,7 +28,14 @@
 
 - (void)processImage;
 - (BOOL)processImageWithCompletionHandler:(void (^)(void))completion;
+- (BOOL)processImageForFacialFeatureWithCompletionHandler:(void (^)(void))completion;
 - (void)processImageUpToFilter:(TKFilter *)finalFilterInChain withCompletionHandler:(void (^)(UIImage *processedImage))block;
 - (UIImage *)defaultImage;
+
+@end
+
+@protocol TKPhotoDelegate <NSObject>
+
+- (void)photo:(TKPhoto *)photo prepareToProcessPhotoWithPhotoObject:(NSObject *)object completionHandler:(void (^)(UIImage* image))block;
 
 @end

@@ -59,6 +59,8 @@ void rotate(cv::Mat& src, double angle, cv::Mat& dst)
 + (void)rotateImage:(cv::Mat &)src angle:(float)angle dst:(cv::Mat &)dst {
     NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
     if (angle == 0) {
+        NSTimeInterval end = [NSDate timeIntervalSinceReferenceDate];
+        NSLog(@">>>> HV > rotation time: %f", end - start);
         dst = src.clone();
         return;
     }

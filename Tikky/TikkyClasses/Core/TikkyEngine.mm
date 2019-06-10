@@ -135,25 +135,31 @@
                 [OpenCVUtilities rotateImage:img angle:rotation dst:rotatedImage];
                 /////////
 
+                BOOL isPhoto = NO;
                 if ([weakSelf.imageFilter.input isKindOfClass:TKPhoto.class]) {
                     newDetection = YES;
+                    isPhoto = YES;
                 }
-                weakSelf.facialLandmarkDetector.isLandmarkDebugger = NO;
+                weakSelf.facialLandmarkDetector.isLandmarkDebugger = YES;
 //                [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage newDetection:newDetection];
                 [weakSelf.facialLandmarkDetector detectLandmarksWithImage:rotatedImage
                                                              newDetection:newDetection
                                                              sortFaceRect:YES
                                                                completion:^(float ** _Nullable landmarks, int faceNum) {
                     CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-                    
+//                    UIImage* image = MatToUIImage(rotatedImage);
                     if (faceNum == 0) {
                         [weakSelf.stickerPreviewer notifyNoFaceDetected];
                     } else {
-                        CGSize previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                        CGSize previewerSize;
+                        if (isPhoto) {
+                            previewerSize = weakSelf.stickerPreviewer.view.frame.size;
+                        } else {
+                            previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                        }
                         CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
-                        float widthScale = previewerSize.width/imgSize.width;
-                        float heightScale = previewerSize.height/imgSize.height;
-                        
+                        float widthScale = previewerSize.width/imgSize.width * cocos2d::Director::getInstance()->getOpenGLView()->getScaleX();
+                        float heightScale = previewerSize.height/imgSize.height * cocos2d::Director::getInstance()->getOpenGLView()->getScaleY();
                         NSLog(@">>>> HV > face: %d", faceNum);
                         
                         flipLandmarks(landmarks, NUMBER_OF_LANDMARKS, faceNum, flipHorizontal, true, imgSize.width, imgSize.height, widthScale, heightScale);

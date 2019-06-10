@@ -153,7 +153,7 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture) {
     TKRectTexture tkRectTexture;
     tkRectTexture.textureID = tkccTexture.textureID;
     tkRectTexture.position[3] = {
-        tkccTexture.positionsInScene.bottomright.x*2.0f - 1.0f,
+        (tkccTexture.positionsInScene.bottomright.x*2.0f - 1.0f),
         (1.0f - tkccTexture.positionsInScene.bottomright.y)*2.0f - 1.0f,
         1.0f
     };

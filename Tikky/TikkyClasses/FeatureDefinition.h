@@ -17,4 +17,6 @@
 
 #define ENABLE_BACKGROUND_VIEW_FOR_UI_TESTING 0
 
+#define ENABLE_FACIAL_STICKER_TEST 0
+
 #endif /* FeatureDefinition_h */

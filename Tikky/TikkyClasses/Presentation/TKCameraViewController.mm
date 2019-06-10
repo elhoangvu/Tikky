@@ -34,6 +34,8 @@
 
 #import "TKEditorViewController.h"
 
+#import "TKStickerEntity.h"
+
 @interface TKCameraViewController ()
 <
 TKStickerPreviewerDelegate,
@@ -108,6 +110,14 @@ TKEditorViewControllerDelegate
     if ([_imageInput isKindOfClass:TKCamera.class]) {
         [((TKCamera *)_imageInput) startCameraCapture];
     }
+#endif
+    
+#if ENABLE_FACIAL_STICKER_TEST
+    NSArray* faces = [TKDataAdapter.sharedIntance loadAllFacialStickers];
+    TKFaceStickerEntity* entity = [faces objectAtIndex:0];
+    
+    std::vector<TKSticker>* facialStickers = (std::vector<TKSticker> *)entity.facialSticker;
+    [TikkyEngine.sharedInstance.stickerPreviewer newFacialStickerWithStickers:*facialStickers];
 #endif
     
     // <!-- Test FB SDK

@@ -129,12 +129,21 @@
 - (BOOL)processImageWithCompletionHandler:(void (^)(void))completion {
     BOOL processed = [_picture processImageWithCompletionHandler:completion];
     
+    [self processImageForFacialFeatureWithCompletionHandler:completion];
+    return processed;
+}
+
+- (BOOL)processImageForFacialFeatureWithCompletionHandler:(void (^)(void))completion {
+    BOOL processed = NO;
+    
     if (_defaultImage) {
+        processed = YES;
         _photoOutputCallback ? _photoOutputCallback(_defaultImage.CVPixelBufferRef, TKImageInputOrientaionDown, NO) : nil;
     } else {
         GPUImageFilter* filter = [[GPUImageFilter alloc] init];
         [_picture addTarget:filter];
         __weak __typeof(self)weakSelf = self;
+        [_picture useNextFrameForImageCapture];
         [_picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
             weakSelf.defaultImage = processedImage;
             [weakSelf.picture removeTarget:filter];
@@ -146,13 +155,9 @@
 
 - (void)processImageUpToFilter:(TKFilter *)finalFilterInChain
          withCompletionHandler:(void (^)(UIImage *processedImage))block {
-    GPUImageOutput<GPUImageInput>* finalFilter = (GPUImageFilterGroup *)finalFilterInChain.sharedObject;
-
-    [_picture processImageUpToFilter:finalFilter withCompletionHandler:^(UIImage *processedImage) {
-        if (block) {
-            block(processedImage);
-        }
-    }];
+    if (_delegate && [_delegate respondsToSelector:@selector(photo:prepareToProcessPhotoWithPhotoObject:completionHandler:)]) {
+        [_delegate photo:self prepareToProcessPhotoWithPhotoObject:_picture completionHandler:block];
+    }
 }
 
 - (void)processImage {

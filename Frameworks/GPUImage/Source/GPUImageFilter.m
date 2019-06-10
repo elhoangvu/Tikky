@@ -308,7 +308,7 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
 
     [self setUniformsForProgramAtIndex:0];
     
-    glClearColor(backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha);
+    glClearColor(1.0, backgroundColorGreen, backgroundColorBlue, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
 
 	glActiveTexture(GL_TEXTURE2);

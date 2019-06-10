@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSUInteger, TKEntityType) {
     TKEntityTypeSticker,
-    TKEntityTypeFilter
+    TKEntityTypeFilter,
+    TKEntityTypeUnknown
 };
 
 NS_ASSUME_NONNULL_BEGIN

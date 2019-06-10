@@ -14,8 +14,13 @@
 #import "TKVideo.h"
 #import "TKPhoto.h"
 #import "UIView+Delegate.h"
+#import "IFImageFilter.h"
 
-@interface TKImageFilter () <TKCameraDelegate, UIViewDelegate>
+@interface TKImageFilter () <
+TKCameraDelegate,
+UIViewDelegate,
+TKPhotoDelegate
+>
 
 @property (nonatomic) GPUImageFilterPipeline* filterPipeline;
 @property (nonatomic) GPUImageView* gpuimageView;
@@ -59,6 +64,78 @@
     _gpuimageCropFilter = [[GPUImageCropFilter alloc] init];
     _filterPipeline = [[GPUImageFilterPipeline alloc] initWithOrderedFilters:[NSArray array] input:(GPUImageOutput *)input.sharedObject output:_gpuimageView];
     return self;
+}
+
+- (void)photo:(TKPhoto *)photo prepareToProcessPhotoWithPhotoObject:(NSObject *)object completionHandler:(void (^)(UIImage *))block {
+    if (!_datasource || ![_datasource respondsToSelector:@selector(additionalTexturesForImageFilter:)]) {
+        return;
+    }
+    
+    _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
+    GPUImagePicture* picture = (GPUImagePicture *)object;
+    if (photo && [_input isKindOfClass:TKPhoto.class]) {
+        __weak __typeof(self)weakSelf = self;
+        if (_additionalTexture && _additionalTexture.length > 0) {
+            __block BOOL isEmpty = NO;
+            GPUImageOutput<GPUImageInput>* filter;
+            if (_filterPipeline.filters.count == 0) {
+                UIImage* image = photo.defaultImage;
+                GPUImagePicture* picture2 = [[GPUImagePicture alloc] initWithImage:image];
+//                GPUImageFilter* defFilter = [[GPUImageFilter alloc] init];
+                
+                [picture2 useNextFrameForImageCapture];
+                [picture2 processImage];
+                GPUImageStickerFilter* sticker = [[GPUImageStickerFilter alloc] init];
+                [sticker setTextureStickers:_additionalTexture];
+                [picture2 addTarget:sticker];
+                GPUImageRGBFilter* rgb = [[GPUImageRGBFilter alloc] init];
+                [sticker addTarget:rgb];
+                [picture2 processImageUpToFilter:rgb withCompletionHandler:^(UIImage *processedImage) {
+                    if (block) {
+                        block(processedImage);
+                    }
+                }];
+
+//                filter = defFilter;
+                isEmpty = YES;
+            } else {
+                [_gpuimageStickerFilter setTextureStickers:_additionalTexture];
+                [_filterPipeline.filters.lastObject addTarget:_gpuimageStickerFilter];
+                filter = _gpuimageStickerFilter;
+            }
+        
+//            [picture useNextFrameForImageCapture];
+//            [picture processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
+//                if (isEmpty) {
+//                    [weakSelf.filterPipeline removeAllFilters];
+//                    [picture removeTarget:filter];
+//                } else {
+//                    [weakSelf.filterPipeline.filters.lastObject removeTarget:weakSelf.gpuimageStickerFilter];
+//                }
+//
+//                if (block) {
+//                    block(processedImage);
+//                }
+//            }];
+        } else {
+            GPUImageFilter* subFilter = (GPUImageFilter *)_filterPipeline.filters.lastObject;
+            if (!subFilter) {
+                subFilter = [[GPUImageRGBFilter alloc] init];
+                [picture addTarget:subFilter];
+            }
+            __weak __typeof(self)weakSelf = self;
+            [picture useNextFrameForImageCapture];
+            [picture processImageUpToFilter:subFilter withCompletionHandler:^(UIImage *processedImage) {
+                if (!weakSelf.filterPipeline.filters.lastObject) {
+                    [picture removeTarget:subFilter];
+                }
+                
+                if (block) {
+                    block(processedImage);
+                }
+            }];
+        }
+    }
 }
 
 - (void)camera:(TKCamera *)camera prepareToCapturePhotoWithCameraObject:(NSObject *)object completionHandler:(void (^)(NSData *, NSError *))block {
@@ -157,8 +234,11 @@
     _filterPipeline.input = input_;
     _input = input;
     if ([_input isKindOfClass:TKCamera.class]) {
-        TKCamera* camera = (TKCamera *)input;
+        TKCamera* camera = (TKCamera *)_input;
         camera.delegate = self;
+    } else if ([_input isKindOfClass:TKPhoto.class]) {
+        TKPhoto* photo = (TKPhoto *)_input;
+        photo.delegate = self;
     }
     [_filterPipeline refreshFilters];
     if (_delegate || [_delegate respondsToSelector:@selector(imageFilter:didChangeInput:)]) {
