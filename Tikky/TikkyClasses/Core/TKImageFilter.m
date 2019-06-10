@@ -74,7 +74,7 @@ TKPhotoDelegate
     _additionalTexture = [_datasource additionalTexturesForImageFilter:self];
     GPUImagePicture* picture = (GPUImagePicture *)object;
     if (photo && [_input isKindOfClass:TKPhoto.class]) {
-        __weak __typeof(self)weakSelf = self;
+//        __weak __typeof(self)weakSelf = self;
         if (_additionalTexture && _additionalTexture.length > 0) {
             __block BOOL isEmpty = NO;
             GPUImageOutput<GPUImageInput>* filter;

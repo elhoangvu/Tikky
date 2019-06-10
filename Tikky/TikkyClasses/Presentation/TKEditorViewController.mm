@@ -115,8 +115,9 @@ SocialNetworkSDKDelegate
     
     
     [TikkyEngine.sharedInstance.stickerPreviewer pause];
-    [TikkyEngine.sharedInstance.imageFilter.view setFrame:photoFrame];
-    [TikkyEngine.sharedInstance.stickerPreviewer.view setFrame:photoFrame];
+//    [TikkyEngine.sharedInstance.imageFilter.view setFrame:photoFrame];
+//    [TikkyEngine.sharedInstance.stickerPreviewer.view setFrame:photoFrame];
+    [TikkyEngine.sharedInstance.view setFrame:photoFrame];
     
     [TikkyEngine.sharedInstance.stickerPreviewer resume];
     [self.view addSubview:_photoView];

@@ -184,7 +184,7 @@
 
 - (void)view:(UIView *)view setFrame:(CGRect)frame {
     CGRect newframe = CGRectMake(0, 0, frame.size.width, frame.size.height);
-    [_imageFilter.view setFrame:frame];
+    [_imageFilter.view setFrame:newframe];
     [_cocos2dxGameController setFrame:newframe];
 }
 
