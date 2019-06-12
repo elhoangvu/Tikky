@@ -82,6 +82,10 @@ TKNotificationViewControllerDelegate
 
 @property (nonatomic) dispatch_queue_t processQueue;
 
+@property (nonatomic) UIActivityIndicatorView* indicatorView;
+
+@property (nonatomic) UIView* indicatorContentView;
+
 @end
 
 @implementation TKEditorViewController
@@ -151,6 +155,28 @@ TKNotificationViewControllerDelegate
     [self setUpButtons];
     [self setUpHeaderView];
     self.view.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    
+    _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhiteLarge)];
+    
+    CGSize indiSize = CGSizeMake(mainViewRect.size.width*0.2, mainViewRect.size.width*0.2);
+    CGRect indiFrame = CGRectMake((mainViewRect.size.width-indiSize.width)*0.5, (mainViewRect.size.height-indiSize.height)*0.5, indiSize.width, indiSize.height);
+    _indicatorContentView = [[UIView alloc] initWithFrame:indiFrame];
+    [self.view addSubview:_indicatorContentView];
+    
+    [_indicatorContentView addSubview:_indicatorView];
+    _indicatorContentView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    _indicatorContentView.layer.cornerRadius = indiSize.height*0.25;
+    _indicatorContentView.clipsToBounds = YES;
+    
+//    CGRect iFrame = CGRectMake((indiSize.width-_indicatorView.frame.size.width)*0.5, (indiSize.height-_indicatorView.frame.size.height)*0.5, _indicatorView.frame.size.width, _indicatorView.frame.size.height);
+    
+    _indicatorView.translatesAutoresizingMaskIntoConstraints = NO;
+    [[_indicatorView.centerXAnchor constraintEqualToAnchor:_indicatorContentView.centerXAnchor] setActive:YES];
+    [[_indicatorView.centerYAnchor constraintEqualToAnchor:_indicatorContentView.centerYAnchor] setActive:YES];
+    [[_indicatorView.widthAnchor constraintEqualToAnchor:_indicatorContentView.widthAnchor] setActive:YES];
+    [[_indicatorView.heightAnchor constraintEqualToAnchor:_indicatorContentView.heightAnchor] setActive:YES];
+    [_indicatorContentView setHidden:YES];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -158,7 +184,7 @@ TKNotificationViewControllerDelegate
 }
 
 - (void)setUpHeaderView {
-    CGRect closeFrame = CGRectMake(_headerViewHieght*0.25, _headerViewHieght*0.25, _headerViewHieght*0.5, _headerViewHieght*0.5);
+    CGRect closeFrame = CGRectMake(_headerViewHieght*0.15, _headerViewHieght*0.15, _headerViewHieght*0.7, _headerViewHieght*0.7);
     _closeButton = [[UIButton alloc] initWithFrame:closeFrame];
     NSString* closePath = [NSBundle.mainBundle pathForResource:@"close-gray" ofType:@"png"];
     UIImage* closeImage = [UIImage imageWithContentsOfFile:closePath];
@@ -257,6 +283,23 @@ TKNotificationViewControllerDelegate
     if (indexPath.row == TKFeatureTypeEffect) {
         _imageFilters = [TKDataAdapter.sharedIntance loadAllEffects];
     } else if (indexPath.row == TKFeatureTypeFaceSticker) {
+        TikkyEngine.sharedInstance.stickerPreviewer.enableFacialStickerForTestingDetector = YES;
+        if ([_photo processImageForFacialFeatureWithCompletionHandler:nil]) {
+            TikkyEngine.sharedInstance.stickerPreviewer.enableFacialStickerForTestingDetector = NO;
+            if (!TikkyEngine.sharedInstance.facialLandmarkDetector.lastDetectedLandmarks) {
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No Faces Detected In The Photo."
+                                                                                         message:@"Try again with another photo!"
+                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+
+                UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:nil];
+                [alertController addAction:actionOk];
+                [self presentViewController:alertController animated:YES completion:nil];
+                return;
+            }
+        }
+        
         _imageFilters = [TKDataAdapter.sharedIntance loadAllFacialStickers];
     } else if (indexPath.row == TKFeatureTypeFrameSticker) {
         _imageFilters = [TKDataAdapter.sharedIntance loadAllFrameStickers];
@@ -308,7 +351,8 @@ TKNotificationViewControllerDelegate
             notificationVC.rightButtonName = @"Done";
             notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.35);
             notificationVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-            [weakSelf presentViewController:notificationVC animated:YES completion:nil];
+            notificationVC.delegate = self;
+            [weakSelf presentViewController:notificationVC animated:NO completion:nil];
         });
     }];
 }
@@ -348,6 +392,7 @@ TKNotificationViewControllerDelegate
         }];
     }
     [self animationWhenPresentingMenu];
+//    [TikkyEngine.sharedInstance.stickerPreviewer pause];
 }
 
 - (void)didDoneEditItemView:(TKEditItemView *)editItemView withoutEditing:(BOOL)withoutEditing {
@@ -392,6 +437,7 @@ TKNotificationViewControllerDelegate
     [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
     [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
     [self animationWhenPresentingMenu];
+//    [TikkyEngine.sharedInstance.stickerPreviewer pause];
 }
 
 - (void)editItemView:(TKEditItemView *)editItemView didSelectItem:(nonnull TKEditItemViewModel *)item atIndex:(NSUInteger)index {
@@ -416,6 +462,7 @@ TKNotificationViewControllerDelegate
                     }];
                     weakSelf.lastEditType = TKEntityTypeFilter;
                 } else if (obj.type == TKEntityTypeSticker) {
+//                    [TikkyEngine.sharedInstance.stickerPreviewer resume];
                     TKStickerEntity* stickerEntity = (TKStickerEntity *)obj;
                     if (stickerEntity.stickerType == TKStickerTypeFace) {
                         TKFaceStickerEntity* faceEntitty = (TKFaceStickerEntity *)stickerEntity;
@@ -498,8 +545,12 @@ TKNotificationViewControllerDelegate
     if (_delegate && [_delegate respondsToSelector:@selector(didTapShareButtonAtEditorViewController:)]) {
         [_delegate didTapShareButtonAtEditorViewController:self];
     }
+    [_indicatorContentView setHidden:NO];
+    [_indicatorView startAnimating];
     NSArray* photos = [NSArray arrayWithObject:_lastProcessedImage];
-    [TKSNFacebookSDK.sharedInstance sharePhotoWithPhoto:photos caption:@"123" userGenerated:YES hashtagString:@"#Tikky" showedViewController:self delegate:self];
+    [TKSNFacebookSDK.sharedInstance sharePhotoWithPhoto:photos caption:@"" userGenerated:YES hashtagString:@"#Tikky" showedViewController:self delegate:self];
+    [_indicatorContentView setHidden:YES];
+    [_indicatorView stopAnimating];
 }
 
 - (void)socialNetworkSDK:(TKSocialNetworkSDK *)socialNetworkSDK didCompleteWithResults:(NSDictionary *)results {
@@ -514,10 +565,12 @@ TKNotificationViewControllerDelegate
 #pragma mark - TKNotificationViewControllerDelegate
 
 - (void)didTapLeftButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
+    [self dismissViewControllerAnimated:NO completion:nil];
     [self didTapShareButton:nil];
 }
 
 - (void)didTapRightButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
+    [self dismissViewControllerAnimated:NO completion:nil];
     [self didTapCloseButton:nil];
 }
 

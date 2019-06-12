@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) StickerScene* stickerScene;
 @property (nonatomic, weak) id<TKStickerPreviewerDelegate> delegate;
 @property (nonatomic, readonly) BOOL enableFacialSticker;
+@property (nonatomic) BOOL enableFacialStickerForTestingDetector;
 @property (nonatomic) int maxFaceNum;
 
 - (instancetype)initWithStickerScene:(StickerScene * _Nonnull)stickerScene

@@ -356,7 +356,7 @@ TKEditorViewControllerDelegate
         __weak __typeof(self)weakSelf = self;
         [((TKCamera *)_imageInput) capturePhotoAsJPEGWithCompletionHandler:^(NSData *processedJPEG, NSError *error) {
             [((TKCamera *)weakSelf.imageInput) stopCameraCapture];
-            [weakSelf.tikkyEngine.stickerPreviewer resume];
+//            [weakSelf.tikkyEngine.stickerPreviewer resume];
             [weakSelf.tikkyEngine.imageFilter removeAllFilter];
             if (processedJPEG) {
                 UIImage* image = [UIImage imageWithData:processedJPEG];
@@ -377,6 +377,7 @@ TKEditorViewControllerDelegate
 }
 
 - (void)didTapCloseButtonAtEditorViewController:(TKEditorViewController *)editorVC {
+    [TikkyEngine.sharedInstance.stickerPreviewer pause];
     [self.view addSubview:_tikkyEngine.view];
     [self.view sendSubviewToBack:_tikkyEngine.view];
     [_tikkyEngine.view setFrame:UIScreen.mainScreen.bounds];
@@ -386,11 +387,12 @@ TKEditorViewControllerDelegate
     [_tikkyEngine.stickerPreviewer removeAllFrameStickers];
     [_tikkyEngine.stickerPreviewer removeAllFacialStickers];
     [_tikkyEngine.stickerPreviewer removeAllStaticStickers];
-    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
-    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     if ([_imageInput isKindOfClass:TKCamera.class]) {
         [(TKCamera *)_imageInput startCameraCapture];
     }
+    TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
+    [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
+//    [TikkyEngine.sharedInstance.stickerPreviewer resume];
 }
 
 @end

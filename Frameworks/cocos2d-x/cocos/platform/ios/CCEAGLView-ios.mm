@@ -74,6 +74,7 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 #import "platform/ios/CCGLViewImpl-ios.h"
 #import "platform/ios/CCES2Renderer-ios.h"
 #import "platform/ios/OpenGL_Internal-ios.h"
+#import "TKRenderQueue.h"
 
 //CLASS IMPLEMENTATIONS:
 
@@ -260,23 +261,27 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
         return;
     }
     
-    [renderer_ resizeFromLayer:(CAEAGLLayer*)self.layer];
-    size_ = [renderer_ backingSize];
-
-    // Issue #914 #924
-//     Director *director = [Director sharedDirector];
-//     [director reshapeProjection:size_];
-    cocos2d::Size size;
-    size.width = size_.width;
-    size.height = size_.height;
-    //cocos2d::Director::getInstance()->reshapeProjection(size);
-
-    // Avoid flicker. Issue #350
-    //[director performSelectorOnMainThread:@selector(drawScene) withObject:nil waitUntilDone:YES];
-    if ([NSThread isMainThread])
-    {
-        cocos2d::Director::getInstance()->drawScene();
-    }
+    runSynchronouslyOnRenderQueue(^{
+        [renderer_ resizeFromLayer:(CAEAGLLayer*)self.layer];
+        size_ = [renderer_ backingSize];
+        
+        // Issue #914 #924
+        //     Director *director = [Director sharedDirector];
+        //     [director reshapeProjection:size_];
+        cocos2d::Size size;
+        size.width = size_.width;
+        size.height = size_.height;
+        //cocos2d::Director::getInstance()->reshapeProjection(size);
+        
+        // Avoid flicker. Issue #350
+        //[director performSelectorOnMainThread:@selector(drawScene) withObject:nil waitUntilDone:YES];
+//        if ([NSThread isMainThread])
+//        {
+            cocos2d::Director::getInstance()->drawScene();
+//        }
+    });
+    
+    
 }
 
 - (void) swapBuffers

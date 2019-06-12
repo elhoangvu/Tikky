@@ -80,6 +80,8 @@
             cocos2d::Director::getInstance()->getTextureCache()->addImageAsync(sticker.path, nullptr);
         }
     }];
+    
+//    cocos2d::Director::getInstance()->setDisplayStats(false);
     return self;
 }
 
@@ -97,7 +99,7 @@
     __weak __typeof(self)weakSelf = self;
     __block BOOL newDetection = YES;
     [_imageFilter.input trackImageDataOutput:^(CVPixelBufferRef _Nonnull imageBuffer, TKImageInputOrientaion orientation, BOOL flipHorizontal) {
-        if (weakSelf.stickerPreviewer.enableFacialSticker) {
+        if (weakSelf.stickerPreviewer.enableFacialSticker || weakSelf.stickerPreviewer.enableFacialStickerForTestingDetector) {
             dispatch_sync(weakSelf.facialStickerRenderQueue, ^{
                 newDetection = NO;
                 CVPixelBufferLockBaseAddress(imageBuffer, 0);
@@ -156,24 +158,26 @@
                                                              newDetection:newDetection
                                                              sortFaceRect:YES
                                                                completion:^(float ** _Nullable landmarks, int faceNum) {
-                    CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-//                    UIImage* image = MatToUIImage(rotatedImage);
-                    if (faceNum == 0) {
-                        [weakSelf.stickerPreviewer notifyNoFaceDetected];
-                    } else {
-                        CGSize previewerSize;
-                        if (isPhoto) {
-                            previewerSize = weakSelf.stickerPreviewer.view.frame.size;
+                    if (weakSelf.stickerPreviewer.enableFacialSticker) {
+                        CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
+    //                    UIImage* image = MatToUIImage(rotatedImage);
+                        if (faceNum == 0) {
+                            [weakSelf.stickerPreviewer notifyNoFaceDetected];
                         } else {
-                            previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                            CGSize previewerSize;
+                            if (isPhoto) {
+                                previewerSize = weakSelf.stickerPreviewer.view.frame.size;
+                            } else {
+                                previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
+                            }
+                            CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
+                            float widthScale = previewerSize.width/imgSize.width * cocos2d::Director::getInstance()->getOpenGLView()->getScaleX();
+                            float heightScale = previewerSize.height/imgSize.height * cocos2d::Director::getInstance()->getOpenGLView()->getScaleY();
+                            NSLog(@">>>> HV > face: %d", faceNum);
+                            
+                            flipLandmarks(landmarks, NUMBER_OF_LANDMARKS, faceNum, flipHorizontal, true, imgSize.width, imgSize.height, widthScale, heightScale);
+                            [weakSelf.stickerPreviewer updateFacialLandmarks:landmarks landmarkNum:NUMBER_OF_LANDMARKS faceNum:faceNum];
                         }
-                        CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
-                        float widthScale = previewerSize.width/imgSize.width * cocos2d::Director::getInstance()->getOpenGLView()->getScaleX();
-                        float heightScale = previewerSize.height/imgSize.height * cocos2d::Director::getInstance()->getOpenGLView()->getScaleY();
-                        NSLog(@">>>> HV > face: %d", faceNum);
-                        
-                        flipLandmarks(landmarks, NUMBER_OF_LANDMARKS, faceNum, flipHorizontal, true, imgSize.width, imgSize.height, widthScale, heightScale);
-                        [weakSelf.stickerPreviewer updateFacialLandmarks:landmarks landmarkNum:NUMBER_OF_LANDMARKS faceNum:faceNum];
                     }
                 }];
                 

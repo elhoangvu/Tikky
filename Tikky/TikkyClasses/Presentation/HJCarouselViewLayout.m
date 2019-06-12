@@ -115,7 +115,7 @@
         case HJCarouselAnimCoverFlow: {
             CATransform3D transform = CATransform3DIdentity;
             transform.m34 = -1.0/400.0f;
-            transform = CATransform3DRotate(transform, 0.75*ratio * M_PI_4, 1, 0, 0);
+            transform = CATransform3DRotate(transform, 0.6*ratio * M_PI_4, 1, 0, 0);
             attributes.transform3D = transform;
         }
             break;

@@ -254,8 +254,9 @@ void Director::setDefaultValues(void)
     _oldAnimationInterval = _animationInterval = 1.0 / fps;
 
     // Display FPS
-    _displayStats = conf->getValue("cocos2d.x.display_fps", Value(false)).asBool();
-
+//    _displayStats = conf->getValue("cocos2d.x.display_fps", Value(false)).asBool();
+    _displayStats = false;
+    
     // GL projection
     std::string projection = conf->getValue("cocos2d.x.gl.projection", Value("3d")).asString();
     if (projection == "3d")
@@ -1307,13 +1308,16 @@ void Director::showStats()
     if (_displayStats && _FPSLabel && _drawnBatchesLabel && _drawnVerticesLabel)
     {
         char buffer[30] = {0};
-
+        // TIKKY-ADD
+        buffer[0] = ' ';
+        buffer[1] = '\0';
+        // TIKKY-ADD
         // Probably we don't need this anymore since
         // the framerate is using a low-pass filter
         // to make the FPS stable
         if (_accumDt > CC_DIRECTOR_STATS_INTERVAL)
         {
-            sprintf(buffer, "%.1f / %.3f", _frames / _accumDt, _secondsPerFrame);
+//            sprintf(buffer, "%.1f / %.3f", _frames / _accumDt, _secondsPerFrame);
             _FPSLabel->setString(buffer);
             _accumDt = 0;
             _frames = 0;
@@ -1322,13 +1326,13 @@ void Director::showStats()
         auto currentCalls = (unsigned long)_renderer->getDrawnBatches();
         auto currentVerts = (unsigned long)_renderer->getDrawnVertices();
         if( currentCalls != prevCalls ) {
-            sprintf(buffer, "GL calls:%6lu", currentCalls);
+//            sprintf(buffer, "GL calls:%6lu", currentCalls);
             _drawnBatchesLabel->setString(buffer);
             prevCalls = currentCalls;
         }
 
         if( currentVerts != prevVerts) {
-            sprintf(buffer, "GL verts:%6lu", currentVerts);
+//            sprintf(buffer, "GL verts:%6lu", currentVerts);
             _drawnVerticesLabel->setString(buffer);
             prevVerts = currentVerts;
         }
@@ -1360,9 +1364,12 @@ void Director::getFPSImageData(unsigned char** datapointer, ssize_t* length)
 void Director::createStatsLabel()
 {
     Texture2D *texture = nullptr;
-    std::string fpsString = "00.0";
-    std::string drawBatchString = "000";
-    std::string drawVerticesString = "00000";
+//    std::string fpsString = "00.0";
+//    std::string drawBatchString = "000";
+//    std::string drawVerticesString = "00000";
+    std::string fpsString = " ";
+    std::string drawBatchString = " ";
+    std::string drawVerticesString = " ";
     if (_FPSLabel)
     {
         fpsString = _FPSLabel->getString();

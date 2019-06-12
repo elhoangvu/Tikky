@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) BOOL isLandmarkDebugger;
 
+@property (nonatomic) BOOL lastDetectedLandmarks;
+
 - (void)detectLandmarksWithImage:(cv::Mat &)image
                     newDetection:(BOOL)newDetection
                     sortFaceRect:(BOOL)sortFaceRect

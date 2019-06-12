@@ -9,6 +9,9 @@
 #import "TKStickerPreviewer.h"
 #include "TKTextureUtilities.h"
 #include "cocos2d.h"
+#import "platform/ios/CCDirectorCaller-ios.h"
+
+#import "platform/ios/CCEAGLView-ios.h"
 
 using namespace cocos2d;
 
@@ -140,10 +143,12 @@ TKRectTexture convertTKCCTextureToTKRectTexture(TKCCTexture tkccTexture);
 
 - (void)pause {
     cocos2d::Director::getInstance()->pause();
+//    [CCDirectorCaller.sharedDirectorCaller stopMainLoop];
 }
 
 - (void)resume {
     cocos2d::Director::getInstance()->resume();
+//    [(__bridge CCEAGLView*)cocos2d::Director::getInstance()->getOpenGLView()->getEAGLView() layoutSubviews];
 }
 
 @end

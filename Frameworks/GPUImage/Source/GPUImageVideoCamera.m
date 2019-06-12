@@ -815,6 +815,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
 
 - (void)convertYUVToRGBOutput;
 {
+    glFinish();
+    [GPUImageContext useImageProcessingContext];
     [GPUImageContext setActiveShaderProgram:yuvConversionProgram];
 
     int rotatedImageBufferWidth = imageBufferWidth, rotatedImageBufferHeight = imageBufferHeight;

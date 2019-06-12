@@ -297,8 +297,10 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
         return;
     }
     
+    glFinish();
+    [GPUImageContext useImageProcessingContext];
     [GPUImageContext setActiveShaderProgram:filterProgram];
-
+    
     outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO] textureOptions:self.outputTextureOptions onlyTexture:NO];
     [outputFramebuffer activateFramebuffer];
     if (usingNextFrameForImageCapture)

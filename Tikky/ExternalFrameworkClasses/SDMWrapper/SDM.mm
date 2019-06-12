@@ -30,6 +30,7 @@ static SDM* instace = nil;
         return nil;
     }
     
+    self.lastDetectedLandmarks = NO;
     NSString* haarPath = [NSBundle.mainBundle pathForResource:@"haar_facedetection" ofType:@"xml"];
     NSString* modelPath = [NSBundle.mainBundle pathForResource:@"landmark-model" ofType:@"bin"];
     _modelt = new ldmarkmodel([haarPath UTF8String]);
@@ -90,13 +91,14 @@ static SDM* instace = nil;
         prevShape = *_currentShape;
     }
     if (ret == SDM_ERROR_FACENO) {
+        self.lastDetectedLandmarks = NO;
         prevShape = *_currentShape;
         if (completion) {
             completion(landmarks, facenum);
         }
         return;
     }
-    
+    self.lastDetectedLandmarks = YES;
 //    cv::Vec3d eav;
 //    _modelt->EstimateHeadPose((*_currentShape)[0], eav);
 //    _modelt->drawPose(image, (*_currentShape)[0], 50);

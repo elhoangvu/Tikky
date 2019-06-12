@@ -12,6 +12,8 @@
 
 #import "HJCarouselViewLayout.h"
 
+#import "TKStickerEntity.h"
+
 #define kEditItemCellIdentifier @"tikky.edititemcell"
 
 @interface TKEditItemView ()
@@ -68,11 +70,11 @@ UIScrollViewDelegate
 //    if (_datasource && [_datasource respondsToSelector:@selector(viewModelsForEditItemView:type:)]) {
 //        _viewModels = [_datasource viewModelsForEditItemView:self type:type];
 //    }
-    CGRect itemPathFrame = CGRectMake(frame.size.width*0.5 - _itemSize.height*0.5+_itemSize.height*0.0725, frame.size.height*0.09, _itemSize.height*0.85, _itemSize.height*0.85);
+    CGRect itemPathFrame = CGRectMake(frame.size.width*0.5 - _itemSize.height*0.5+_itemSize.height*0.055, frame.size.height*0.065, _itemSize.height*0.9, _itemSize.height*0.9);
     _itemPathView = [[UIView alloc] initWithFrame:itemPathFrame];
     [self addSubview:_itemPathView];
     _itemPathView.layer.borderColor = UIColor.grayColor.CGColor;
-    _itemPathView.layer.borderWidth = 5.0;
+    _itemPathView.layer.borderWidth = 8.0;
     _itemPathView.clipsToBounds = YES;
     _itemPathView.layer.cornerRadius = _itemPathView.frame.size.height*0.5;
     _itemPathView.userInteractionEnabled = NO;
@@ -104,8 +106,16 @@ UIScrollViewDelegate
 
 - (void)setViewModels:(NSArray<TKEditItemViewModel *> *)viewModels {
     _viewModels = viewModels;
-
+    TKEditItemViewModel* viewModel = [_viewModels objectAtIndex:1];
     [_editItemCollectionView reloadData];
+    if (viewModel.entity.type == TKEntityTypeSticker) {
+        TKStickerEntity* sticker = (TKStickerEntity *)viewModel.entity;
+        if (sticker.stickerType == TKStickerTypeFrame) {
+            _itemPathView.layer.cornerRadius = _itemPathView.frame.size.height*0.2;
+            return;
+        }
+    }
+    _itemPathView.layer.cornerRadius = _itemPathView.frame.size.height*0.5;
 }
 
 - (void)setUpCollectionView {
@@ -159,10 +169,7 @@ UIScrollViewDelegate
     TKEditItemViewModel* viewModel = [_viewModels objectAtIndex:indexPath.row];
     [cell setViewModel:viewModel];
     
-    NSIndexPath* curIndexPath = [self curIndexPath];
-    TKEditItemViewModel* curViewModel = [_viewModels objectAtIndex:curIndexPath.row];
-    [_titleLabel setText:curViewModel.entity.name];
-    NSLog(@"vulh3 +++++++> %@", curViewModel.entity.name);
+    [self updateTittle];
     return cell;
 }
 
@@ -174,6 +181,7 @@ UIScrollViewDelegate
     if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didSelectItem:atIndex:)]) {
         [_delegate editItemView:self didSelectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
     }
+    [self updateTittle];
 //    if (currentModel.isSelected) {
 //        if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didDeselectItem:atIndex:)]) {
 //            [_delegate editItemView:self didDeselectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
@@ -195,8 +203,19 @@ UIScrollViewDelegate
     _prevIndex = indexPath.row;
 }
 
+- (void)updateTittle {
+    TKEditItemViewModel* viewModel = [_viewModels objectAtIndex:1];
+    if (viewModel.entity.type != TKEntityTypeSticker) {
+        NSIndexPath* curIndexPath = [self curIndexPath];
+        TKEditItemViewModel* curViewModel = [_viewModels objectAtIndex:curIndexPath.row];
+        [_titleLabel setText:curViewModel.entity.name];
+//        NSLog(@"vulh3 +++++++> %@", curViewModel.entity.name);
+    }
+}
+
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSLog(@"vulh3 --------------> end scroll1");
+    [self updateTittle];
 //    _isScrolling = NO;
 }
 

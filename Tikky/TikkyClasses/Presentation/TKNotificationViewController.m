@@ -26,6 +26,8 @@
 
 @property (nonatomic) UIView* bottomView;
 
+@property (nonatomic) CGRect containerFrame;
+
 @end
 
 @implementation TKNotificationViewController
@@ -40,6 +42,7 @@
     CGSize mainSize = UIScreen.mainScreen.bounds.size;
     CGSize containerSize = _contentSize;
     CGRect containerFrame = CGRectMake((mainSize.width - containerSize.width)*0.5, (mainSize.height - containerSize.height)*0.5, containerSize.width, containerSize.height);
+    _containerFrame = containerFrame;
     _containerView = [[UIView alloc] initWithFrame:containerFrame];
     _containerView.layer.cornerRadius = 20.0f;
     _containerView.clipsToBounds = YES;
@@ -99,7 +102,7 @@
     _leftButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_leftButton setTitle:_leftButtonName forState:(UIControlStateNormal)];
     [_leftButton setTitleColor:buttonColor forState:(UIControlStateNormal)];
-    [_leftButton addTarget:self action:@selector(didTapLeftButton:) forControlEvents:(UIControlEventTouchUpOutside)];
+    [_leftButton addTarget:self action:@selector(didTapLeftButton:) forControlEvents:(UIControlEventTouchUpInside)];
     [_bottomView addSubview:_leftButton];
     
     //right button
@@ -109,7 +112,7 @@
     _rightButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_rightButton setTitle:_rightButtonName forState:(UIControlStateNormal)];
     [_rightButton setTitleColor:buttonColor forState:(UIControlStateNormal)];
-    [_rightButton addTarget:self action:@selector(didTapRightButton:) forControlEvents:(UIControlEventTouchUpOutside)];
+    [_rightButton addTarget:self action:@selector(didTapRightButton:) forControlEvents:(UIControlEventTouchUpInside)];
     [_bottomView addSubview:_rightButton];
     
     // section line
@@ -134,6 +137,31 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    CGRect frame = _containerFrame;
+    frame.origin.y = UIScreen.mainScreen.bounds.size.height;
+    [_containerView setFrame:frame];
+
+    __weak __typeof(self)weakSelf = self;
+    [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
+        [weakSelf.containerView setFrame:weakSelf.containerFrame];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    CGRect frame = _containerFrame;
+    frame.origin.y = UIScreen.mainScreen.bounds.size.height;
+    
+    __weak __typeof(self)weakSelf = self;
+    [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
+        [weakSelf.containerView setFrame:frame];
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (BOOL)prefersStatusBarHidden {

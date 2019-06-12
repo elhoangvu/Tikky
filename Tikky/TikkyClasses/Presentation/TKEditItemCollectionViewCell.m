@@ -10,6 +10,8 @@
 
 #import "TKFilterEntity.h"
 
+#import "TKStickerEntity.h"
+
 #include <pthread.h>
 
 @interface TKEditItemCollectionViewCell () {
@@ -44,7 +46,7 @@
 //    [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:frame.size.width/frame.size.height] setActive:YES];
     [[_imageView.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.85] setActive:YES];
     _imageView.layer.borderColor = UIColor.cyanColor.CGColor;
-    _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
+//    _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
 //    _title = [[UILabel alloc] init];
 //    [_title setFont:[_title.font fontWithSize:12]];
 //    [_title setTextColor:UIColor.blackColor];
@@ -68,20 +70,14 @@
     _viewModel = viewModel;
     _imageView.image = viewModel.thumbnail;
     
-//    if (viewModel.entity.type == TKEntityTypeFilter) {
-//        TKFilterEntity* filter = (TKFilterEntity *)viewModel.entity;
-//        if (true || filter.filterType == TKFilterTypeEffect) {
-//            _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
-//        } else {
-//            _imageView.layer.cornerRadius = _imageView.frame.size.height*0.1;
-//        }
-//    } else {
-////        [_title setText:viewModel.entity.name];
-//        _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
-//    }
-//    if (_viewModel.isSelected) {
-//        self.imageView.layer.borderWidth = 2.0;
-//    }
+    if (viewModel.entity.type == TKEntityTypeSticker) {
+        TKStickerEntity* filter = (TKStickerEntity *)viewModel.entity;
+        if (filter.stickerType == TKStickerTypeFrame) {
+            _imageView.layer.cornerRadius = _imageView.frame.size.height*0.2;
+            return;
+        }
+    }
+    _imageView.layer.cornerRadius = 0;
 }
 
 - (void)didSelectCell {
