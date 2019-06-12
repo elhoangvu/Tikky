@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/TKEditorViewController.mm"
-            timestampString = "581883658.953981"
+            timestampString = "581999946.629827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
             landmarkName = "-didDoneEditItemView:withoutEditing:"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,13 +57,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tikky/TikkyClasses/Presentation/TKEditorViewController.mm"
-            timestampString = "581883658.954039"
+            filePath = "Tikky/TikkyClasses/Presentation/HJCarouselViewLayout.m"
+            timestampString = "581999946.6356829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "-didDoneEditItemView:withoutEditing:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-layoutAttributesForElementsInRect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Presentation/HJCarouselViewLayout.m"
+            timestampString = "581999946.635929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-layoutAttributesForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tikky/TikkyClasses/Presentation/HJCarouselViewLayout.m"
+            timestampString = "581999946.6361229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-collectionViewContentSize"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

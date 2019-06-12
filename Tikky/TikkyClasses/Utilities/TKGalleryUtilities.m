@@ -12,7 +12,14 @@
 @implementation TKGalleryUtilities
 
 + (void)saveImageToGalleryWithImage:(UIImage *)image {
+    [self.class saveImageToGalleryWithImage:image completion:nil];
+}
+
++ (void)saveImageToGalleryWithImage:(UIImage *)image completion:(void (^)(BOOL success, NSError* error))completion {
     if (!image) {
+        if (completion) {
+            completion(NO, [NSError errorWithDomain:@"TIKK.GALLERY" code:-1 userInfo:nil]);
+        }
         return;
     }
     
@@ -26,10 +33,9 @@
         
         [self.class writeAssetsToAlbum:assets];
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        //            if (block) {
-        //                block(error);
-        //            }
-        
+        if (completion) {
+            completion(success, error);
+        }
     }];
 }
 

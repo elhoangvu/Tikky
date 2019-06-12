@@ -21,11 +21,15 @@
     _isSelected = NO;
     
     if (entity.isBundle) {
-        NSString* path = [NSBundle.mainBundle pathForResource:entity.thumbnail ofType:nil];
-        if (!path) {
-            path = [NSBundle.mainBundle pathForResource:@"filter-default.jpg" ofType:nil];
+        if (entity.thumbnail) {
+            NSString* path = [NSBundle.mainBundle pathForResource:entity.thumbnail ofType:nil];
+            if (!path) {
+                path = [NSBundle.mainBundle pathForResource:@"filter-default.jpg" ofType:nil];
+            }
+            if (path) {
+                _thumbnail = [UIImage imageWithContentsOfFile:path];
+            }
         }
-        _thumbnail = [UIImage imageWithContentsOfFile:path];
     } else {
         NSString* path;
         if (entity.type == TKEntityTypeSticker) {
@@ -33,8 +37,10 @@
         } else if (entity.type == TKEntityTypeFilter) {
             path = TKDataAdapter.filterThumbnailDirectoryForResource;
         }
-        path = [NSString stringWithFormat:@"%@/%@", path, entity.thumbnail];
-        _thumbnail = [UIImage imageWithContentsOfFile:path];
+        if (path && entity.thumbnail) {
+            path = [NSString stringWithFormat:@"%@/%@", path, entity.thumbnail];
+            _thumbnail = [UIImage imageWithContentsOfFile:path];
+        }
     }
     
     return self;

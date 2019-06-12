@@ -10,12 +10,16 @@
 
 #import "TKEditItemCollectionViewCell.h"
 
+#import "HJCarouselViewLayout.h"
+
 #define kEditItemCellIdentifier @"tikky.edititemcell"
 
 @interface TKEditItemView ()
 <
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout,
+UIScrollViewDelegate
 >
 
 @property (nonatomic) UICollectionView* editItemCollectionView;
@@ -34,6 +38,12 @@ UICollectionViewDataSource
 
 @property (nonatomic) BOOL isEditing;
 
+@property (nonatomic) UIView* itemPathView;
+
+@property (nonatomic) CGSize itemSize;
+
+@property (nonatomic) BOOL isScrolling;
+
 @end
 
 @implementation TKEditItemView
@@ -43,7 +53,7 @@ UICollectionViewDataSource
         return nil;
     }
     
-    _footerHeight = frame.size.height*0.3;
+    _footerHeight = frame.size.height*0.25;
     CGRect titleFrame = CGRectMake(0, frame.size.height - _footerHeight, frame.size.width, _footerHeight);
     _titleLabel = [[UILabel alloc] initWithFrame:titleFrame];
     [_titleLabel setTextAlignment:(NSTextAlignmentCenter)];
@@ -54,9 +64,18 @@ UICollectionViewDataSource
     [self setUpCollectionView];
     [self setUpButtons];
     _isEditing = NO;
+    _isScrolling = NO;
 //    if (_datasource && [_datasource respondsToSelector:@selector(viewModelsForEditItemView:type:)]) {
 //        _viewModels = [_datasource viewModelsForEditItemView:self type:type];
 //    }
+    CGRect itemPathFrame = CGRectMake(frame.size.width*0.5 - _itemSize.height*0.5+_itemSize.height*0.0725, frame.size.height*0.09, _itemSize.height*0.85, _itemSize.height*0.85);
+    _itemPathView = [[UIView alloc] initWithFrame:itemPathFrame];
+    [self addSubview:_itemPathView];
+    _itemPathView.layer.borderColor = UIColor.grayColor.CGColor;
+    _itemPathView.layer.borderWidth = 5.0;
+    _itemPathView.clipsToBounds = YES;
+    _itemPathView.layer.cornerRadius = _itemPathView.frame.size.height*0.5;
+    _itemPathView.userInteractionEnabled = NO;
     
     return self;
 }
@@ -85,18 +104,24 @@ UICollectionViewDataSource
 
 - (void)setViewModels:(NSArray<TKEditItemViewModel *> *)viewModels {
     _viewModels = viewModels;
+
     [_editItemCollectionView reloadData];
 }
 
 - (void)setUpCollectionView {
-    UICollectionViewFlowLayout* collectionLayout = [[UICollectionViewFlowLayout alloc] init];
+    HJCarouselViewLayout* collectionLayout = [[HJCarouselViewLayout alloc] initWithAnim:HJCarouselAnimCoverFlow];
+//    UICollectionViewFlowLayout* collectionLayout = [[UICollectionViewFlowLayout alloc] init];
+//    UICollectionViewFlowLayout* collectionLayout = layout;
     CGFloat height = self.frame.size.height;
-    collectionLayout.itemSize = CGSizeMake(0.465*height, 0.62*height);
+    _itemSize = CGSizeMake(0.68*height, 0.68*height);
+    collectionLayout.itemSize = _itemSize;
     collectionLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    collectionLayout.minimumInteritemSpacing = 15;
-    collectionLayout.minimumLineSpacing = 15;
+    collectionLayout.visibleCount = 20;
+//    collectionLayout.minimumInteritemSpacing = 15;
+//    collectionLayout.minimumLineSpacing = 15;
     
-    CGRect menuFrame = CGRectMake(0, self.frame.size.height - height, self.frame.size.width, 0.7*height);
+    CGRect menuFrame = CGRectMake(0, self.frame.size.height - height, self.frame.size.width, 0.75*height);
+    
     _editItemCollectionView = [[UICollectionView alloc] initWithFrame:menuFrame collectionViewLayout:collectionLayout];
     _editItemCollectionView.delegate = self;
     _editItemCollectionView.dataSource = self;
@@ -132,39 +157,123 @@ UICollectionViewDataSource
     TKEditItemCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:kEditItemCellIdentifier forIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
     cell.backgroundColor = UIColor.clearColor;
     TKEditItemViewModel* viewModel = [_viewModels objectAtIndex:indexPath.row];
- 
     [cell setViewModel:viewModel];
+    
+    NSIndexPath* curIndexPath = [self curIndexPath];
+    TKEditItemViewModel* curViewModel = [_viewModels objectAtIndex:curIndexPath.row];
+    [_titleLabel setText:curViewModel.entity.name];
+    NSLog(@"vulh3 +++++++> %@", curViewModel.entity.name);
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    TKEditItemCollectionViewCell* cell = (TKEditItemCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-
-    TKEditItemViewModel* currentModel = [_viewModels objectAtIndex:indexPath.row];
-    if (currentModel.isSelected) {
-        if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didDeselectItem:atIndex:)]) {
-            [_delegate editItemView:self didDeselectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
-        }
-        
-        [cell didDeselectCell];
-    } else {
-        if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didSelectItem:atIndex:)]) {
-            [_delegate editItemView:self didSelectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
-        }
-        
-        [cell didSelectCell];
-        _isEditing = YES;
-        if (indexPath && _prevIndex != indexPath.row) {
-            [self _deselectPrevCell];
-        }
+//    TKEditItemCollectionViewCell* cell = (TKEditItemCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//
+//    TKEditItemViewModel* currentModel = [_viewModels objectAtIndex:indexPath.row];
+    _isEditing = YES;
+    if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didSelectItem:atIndex:)]) {
+        [_delegate editItemView:self didSelectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
     }
+//    if (currentModel.isSelected) {
+//        if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didDeselectItem:atIndex:)]) {
+//            [_delegate editItemView:self didDeselectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
+//        }
+//
+//        [cell didDeselectCell];
+//    } else {
+//        if (_delegate && [_delegate respondsToSelector:@selector(editItemView:didSelectItem:atIndex:)]) {
+//            [_delegate editItemView:self didSelectItem:[self.viewModels objectAtIndex:indexPath.row] atIndex:indexPath.row];
+//        }
+//
+//        [cell didSelectCell];
+//        _isEditing = YES;
+//        if (indexPath && _prevIndex != indexPath.row) {
+//            [self _deselectPrevCell];
+//        }
+//    }
     
     _prevIndex = indexPath.row;
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    NSLog(@"vulh3 --------------> end scroll1");
+//    _isScrolling = NO;
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
+    NSLog(@"vulh3 --------------> end scroll2");
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    NSLog(@"vulh3 --------------> end scroll77777");
+}
+
+- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView {
+    NSLog(@"vulh3 --------------> end scroll3");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"vulh3 --------------> end scroll4");
+    NSIndexPath* indexPath = [self curIndexPath];
+    [self collectionView:_editItemCollectionView didSelectItemAtIndexPath:indexPath];
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    NSLog(@"vulh3 --------------> end 999999999");
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
+
+- (NSIndexPath *)curIndexPath {
+    NSArray *indexPaths = [self.editItemCollectionView indexPathsForVisibleItems];
+    NSIndexPath *curIndexPath = nil;
+    NSInteger curzIndex = 0;
+    for (NSIndexPath *path in indexPaths.objectEnumerator) {
+        UICollectionViewLayoutAttributes *attributes = [self.editItemCollectionView layoutAttributesForItemAtIndexPath:path];
+        if (!curIndexPath) {
+            curIndexPath = path;
+            curzIndex = attributes.zIndex;
+            continue;
+        }
+        if (attributes.zIndex > curzIndex) {
+            curIndexPath = path;
+            curzIndex = attributes.zIndex;
+        }
+    }
+    return curIndexPath;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSIndexPath *curIndexPath = [self curIndexPath];
+//    if (indexPath.row == curIndexPath.row) {
+//        return YES;
+//    }
+//
+//    if (_isScrolling) {
+//        return NO;
+//    }
+//    _isScrolling = YES;
+
+    NSLog(@"vulh3 +++++>");
+    NSIndexPath* curIndexPath = [self curIndexPath];
+    TKEditItemViewModel* curViewModel = [_viewModels objectAtIndex:curIndexPath.row];
+    [_titleLabel setText:curViewModel.entity.name];
+    [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+//    [self collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    
+    return YES;
+}
+
+
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+//    return 20;
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    return 20;
+//}
 
 - (void)_deselectPrevCell {
     NSIndexPath* prevIndexPath = [NSIndexPath indexPathForItem:_prevIndex inSection:0];

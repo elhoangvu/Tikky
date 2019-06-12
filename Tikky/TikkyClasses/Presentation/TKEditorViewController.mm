@@ -18,9 +18,15 @@
 
 #import "TKSocialNetworkSDK.h"
 
+#import "TKGalleryUtilities.h"
+
+#import "TKNotificationViewController.h"
+
 //#import "TKU"
 
 #define kMenuCellIdentifier @"tikky.menucell"
+
+#define kNonItemID 696969
 
 @interface TKEditorViewController ()
 <
@@ -28,7 +34,8 @@ UICollectionViewDelegate,
 UICollectionViewDataSource,
 //TKEditItemViewDatasource,
 TKEditItemViewDelegate,
-SocialNetworkSDKDelegate
+SocialNetworkSDKDelegate,
+TKNotificationViewControllerDelegate
 >
 
 @property (nonatomic) UICollectionView* menuCollectionView;
@@ -73,6 +80,8 @@ SocialNetworkSDKDelegate
 
 @property (nonatomic) TKEntityType lastEditType;
 
+@property (nonatomic) dispatch_queue_t processQueue;
+
 @end
 
 @implementation TKEditorViewController
@@ -90,10 +99,11 @@ SocialNetworkSDKDelegate
 //    [_photo processImage];
     ////
 //    NSAssert([_photo isKindOfClass:TKPhoto.class], @"TKPhoto is required!");
+    _processQueue = dispatch_queue_create("com.tikky.processqueue", DISPATCH_QUEUE_SERIAL);
     _isEdited = NO;
     _isEditing = NO;
     CGRect mainViewRect = UIScreen.mainScreen.bounds;
-    _menuHeight = 0.3*mainViewRect.size.width;
+    _menuHeight = 0.35*mainViewRect.size.width;
     _photoView = TikkyEngine.sharedInstance.view;
     _headerViewHieght = 40;
     _lastEditType = TKEntityTypeUnknown;
@@ -256,6 +266,9 @@ SocialNetworkSDKDelegate
         _imageFilters = [TKDataAdapter.sharedIntance loadAllCommonStickers];
     }
     
+    TKCommonEntity* commonEntity = [[TKCommonEntity alloc] initWithID:kNonItemID caterory:@"" name:@"" thumbnail:@"" isBundle:YES type:(TKEntityTypeUnknown)];
+    TKEditItemViewModel* viewModel = [[TKEditItemViewModel alloc] initWithCommonEntity:commonEntity];
+    [viewModels addObject:viewModel];
     for (TKStickerEntity* entity in _imageFilters) {
         TKEditItemViewModel* viewModel = [[TKEditItemViewModel alloc] initWithCommonEntity:entity];
         [viewModels addObject:viewModel];
@@ -281,7 +294,23 @@ SocialNetworkSDKDelegate
 }
 
 - (void)didTapSaveButton:(UIButton *)button {
-    
+    __weak __typeof(self)weakSelf = self;
+    [TKGalleryUtilities saveImageToGalleryWithImage:_lastPickedImage completion:^(BOOL success, NSError * _Nonnull error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            TKNotificationViewController* notificationVC = [[TKNotificationViewController alloc] init];
+            notificationVC.topTitle = @"Save image to gallery";
+            if (success) {
+                notificationVC.type = TKNotificationTypeSuccess;
+            } else {
+                notificationVC.type = TKNotificationTypeFailture;
+            }
+            notificationVC.leftButtonName = @"Share Image";
+            notificationVC.rightButtonName = @"Done";
+            notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.35);
+            notificationVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            [weakSelf presentViewController:notificationVC animated:YES completion:nil];
+        });
+    }];
 }
 
 
@@ -373,37 +402,40 @@ SocialNetworkSDKDelegate
     __weak __typeof(self)weakSelf = self;
     [_imageFilters enumerateObjectsUsingBlock:^(TKCommonEntity*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.cid == item.entity.cid) {
-            if (obj.type == TKEntityTypeFilter) {
-                weakSelf.isEdited = YES;
-                TKFilterEntity* filterEntity = (TKFilterEntity *)obj;
-                TKFilter* filter = [[TKFilter alloc] initWithName:filterEntity.filterID];
-                [filter randomTime];
-                
-                [weakSelf.imageFilter removeAllFilter];
-                [weakSelf.imageFilter addFilter:filter];
-                [weakSelf.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
-                    weakSelf.lastProcessedImage = processedImage;
-                }];
-                weakSelf.lastEditType = TKEntityTypeFilter;
-            } else if (obj.type == TKEntityTypeSticker) {
-                TKStickerEntity* stickerEntity = (TKStickerEntity *)obj;
-                if (stickerEntity.stickerType == TKStickerTypeFace) {
-                    TKFaceStickerEntity* faceEntitty = (TKFaceStickerEntity *)stickerEntity;
-                    std::vector<TKSticker>* facialStickers = (std::vector<TKSticker> *)faceEntitty.facialSticker;
-                    [TikkyEngine.sharedInstance.stickerPreviewer newFacialStickerWithStickers:*facialStickers];
-                    [weakSelf.photo processImageForFacialFeatureWithCompletionHandler:nil];
-                } else if (stickerEntity.stickerType == TKStickerTypeFrame) {
-                    TKFrameStickerEntity* frameEntitty = (TKFrameStickerEntity *)stickerEntity;
-                    std::vector<TKSticker>* frameStickers = (std::vector<TKSticker> *)frameEntitty.frameStickers;
-                    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
-                    [TikkyEngine.sharedInstance.stickerPreviewer newFrameStickerWithStickers:*frameStickers];
-                } else if (stickerEntity.stickerType == TKStickerTypeCommmon) {
-                    TKCommonStickerEntity* commonEntitty = (TKCommonStickerEntity *)stickerEntity;
-                } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (obj.type == TKEntityTypeFilter) {
+                    weakSelf.isEdited = YES;
+                    TKFilterEntity* filterEntity = (TKFilterEntity *)obj;
+                    TKFilter* filter = [[TKFilter alloc] initWithName:filterEntity.filterID];
+                    [filter randomTime];
                     
+                    [weakSelf.imageFilter removeAllFilter];
+                    [weakSelf.imageFilter addFilter:filter];
+                    [weakSelf.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
+                        weakSelf.lastProcessedImage = processedImage;
+                    }];
+                    weakSelf.lastEditType = TKEntityTypeFilter;
+                } else if (obj.type == TKEntityTypeSticker) {
+                    TKStickerEntity* stickerEntity = (TKStickerEntity *)obj;
+                    if (stickerEntity.stickerType == TKStickerTypeFace) {
+                        TKFaceStickerEntity* faceEntitty = (TKFaceStickerEntity *)stickerEntity;
+                        std::vector<TKSticker>* facialStickers = (std::vector<TKSticker> *)faceEntitty.facialSticker;
+                        [TikkyEngine.sharedInstance.stickerPreviewer newFacialStickerWithStickers:*facialStickers];
+                        [weakSelf.photo processImageForFacialFeatureWithCompletionHandler:nil];
+                    } else if (stickerEntity.stickerType == TKStickerTypeFrame) {
+                        TKFrameStickerEntity* frameEntitty = (TKFrameStickerEntity *)stickerEntity;
+                        std::vector<TKSticker>* frameStickers = (std::vector<TKSticker> *)frameEntitty.frameStickers;
+                        [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+                        [TikkyEngine.sharedInstance.stickerPreviewer newFrameStickerWithStickers:*frameStickers];
+                    } else if (stickerEntity.stickerType == TKStickerTypeCommmon) {
+                        TKCommonStickerEntity* commonEntitty = (TKCommonStickerEntity *)stickerEntity;
+                    } else {
+                        
+                    }
+                    weakSelf.lastEditType = TKEntityTypeSticker;
                 }
-                _lastEditType = TKEntityTypeSticker;
-            }
+            });
+            
             *stop = YES;
         }
     }];
@@ -477,6 +509,16 @@ SocialNetworkSDKDelegate
     
     [self dismissViewControllerAnimated:YES completion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - TKNotificationViewControllerDelegate
+
+- (void)didTapLeftButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
+    [self didTapShareButton:nil];
+}
+
+- (void)didTapRightButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
+    [self didTapCloseButton:nil];
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "TKEditItemCollectionViewCell.h"
 
+#import "TKFilterEntity.h"
+
 #include <pthread.h>
 
 @interface TKEditItemCollectionViewCell () {
@@ -16,7 +18,7 @@
 
 @property (nonatomic) UIImageView* imageView;
 
-@property (nonatomic) UILabel* title;
+//@property (nonatomic) UILabel* title;
 
 @end
 
@@ -36,23 +38,24 @@
     [self addSubview:_imageView];
 
     _imageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [[_imageView.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
-    [[_imageView.topAnchor constraintEqualToAnchor:self.topAnchor] setActive:YES];
-    [[_imageView.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
-    [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:frame.size.width/frame.size.height] setActive:YES];
+    [[_imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor] setActive:YES];
+    [[_imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor] setActive:YES];
+    [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.85] setActive:YES];
+//    [[_imageView.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:frame.size.width/frame.size.height] setActive:YES];
+    [[_imageView.widthAnchor constraintEqualToAnchor:self.heightAnchor multiplier:0.85] setActive:YES];
     _imageView.layer.borderColor = UIColor.cyanColor.CGColor;
-    
-    _title = [[UILabel alloc] init];
-    [_title setFont:[_title.font fontWithSize:12]];
-    [_title setTextColor:UIColor.blackColor];
-    [self addSubview:_title];
-    
-    _title.translatesAutoresizingMaskIntoConstraints = NO;
-    [[_title.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
-    [[_title.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
-    [[_title.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:1.0-frame.size.width/frame.size.height] setActive:YES];
-    [[_title.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
-    [_title setTextAlignment:(NSTextAlignmentCenter)];
+    _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
+//    _title = [[UILabel alloc] init];
+//    [_title setFont:[_title.font fontWithSize:12]];
+//    [_title setTextColor:UIColor.blackColor];
+//    [self addSubview:_title];
+//
+//    _title.translatesAutoresizingMaskIntoConstraints = NO;
+//    [[_title.widthAnchor constraintEqualToAnchor:self.widthAnchor] setActive:YES];
+//    [[_title.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
+//    [[_title.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:1.0-frame.size.width/frame.size.height] setActive:YES];
+//    [[_title.leftAnchor constraintEqualToAnchor:self.leftAnchor] setActive:YES];
+//    [_title setTextAlignment:(NSTextAlignmentCenter)];
     
     return self;
 }
@@ -65,15 +68,20 @@
     _viewModel = viewModel;
     _imageView.image = viewModel.thumbnail;
     
-    if (viewModel.entity.type == TKEntityTypeSticker) {
-        _imageView.layer.cornerRadius = self.frame.size.height*0.1;
-    } else {
-        [_title setText:viewModel.entity.name];
-        _imageView.layer.cornerRadius = self.frame.size.height*0.1;
-    }
-    if (_viewModel.isSelected) {
-        self.imageView.layer.borderWidth = 2.0;
-    }
+//    if (viewModel.entity.type == TKEntityTypeFilter) {
+//        TKFilterEntity* filter = (TKFilterEntity *)viewModel.entity;
+//        if (true || filter.filterType == TKFilterTypeEffect) {
+//            _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
+//        } else {
+//            _imageView.layer.cornerRadius = _imageView.frame.size.height*0.1;
+//        }
+//    } else {
+////        [_title setText:viewModel.entity.name];
+//        _imageView.layer.cornerRadius = _imageView.frame.size.height*0.5;
+//    }
+//    if (_viewModel.isSelected) {
+//        self.imageView.layer.borderWidth = 2.0;
+//    }
 }
 
 - (void)didSelectCell {
@@ -88,19 +96,19 @@
 }
 
 - (void)didDeselectCell {
-    pthread_mutex_lock(&_lock);
-    __weak __typeof(self)weakSelf = self;
-    [UIView animateWithDuration:0.1 animations:^{
-        weakSelf.imageView.layer.borderWidth = 0.0;
-    } completion:^(BOOL finished) {
-        weakSelf.viewModel.isSelected = NO;
-        pthread_mutex_unlock(&self->_lock);
-    }];
+//    pthread_mutex_lock(&_lock);
+//    __weak __typeof(self)weakSelf = self;
+//    [UIView animateWithDuration:0.1 animations:^{
+//        weakSelf.imageView.layer.borderWidth = 0.0;
+//    } completion:^(BOOL finished) {
+//        weakSelf.viewModel.isSelected = NO;
+//        pthread_mutex_unlock(&self->_lock);
+//    }];
 }
 
 - (void)prepareForReuse {
     self.imageView.layer.borderWidth = 0.0;
-    [_title setText:@""];
+//    [_title setText:@""];
 }
 
 @end

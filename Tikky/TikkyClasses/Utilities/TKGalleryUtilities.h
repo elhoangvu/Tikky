@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)saveImageToGalleryWithImage:(UIImage *)image;
 
++ (void)saveImageToGalleryWithImage:(UIImage *)image completion:(void (^ _Nullable)(BOOL success, NSError* error))completion;
+
 + (void)writeVideoToLibraryWithURL:(NSURL *)url;
 
 @end

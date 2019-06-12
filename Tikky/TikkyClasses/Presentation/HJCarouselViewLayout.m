@@ -36,11 +36,11 @@
     if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
         _viewHeight = CGRectGetHeight(self.collectionView.frame);
         _itemHeight = self.itemSize.height;
-        self.collectionView.contentInset = UIEdgeInsetsMake((_viewHeight - _itemHeight) / 2, 0, (_viewHeight - _itemHeight) / 2, 0);
+        self.collectionView.contentInset = UIEdgeInsetsMake((_viewHeight - _itemHeight)*0.5, 0, (_viewHeight - _itemHeight)*0.5, 0);
     } else {
         _viewHeight = CGRectGetWidth(self.collectionView.frame);
         _itemHeight = self.itemSize.width;
-        self.collectionView.contentInset = UIEdgeInsetsMake(0, (_viewHeight - _itemHeight) / 2, 0, (_viewHeight - _itemHeight) / 2);
+        self.collectionView.contentInset = UIEdgeInsetsMake(0, (_viewHeight - _itemHeight)*0.5, 0, (_viewHeight - _itemHeight)*0.5);
     }
 }
 
@@ -96,15 +96,15 @@
                 attributes.transform = CGAffineTransformIdentity;
                 CGRect rect = attributes.frame;
                 if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-                    rect.origin.x = CGRectGetWidth(self.collectionView.frame) / 2 - _itemSize.width * scale / 2;
+                    rect.origin.x = CGRectGetWidth(self.collectionView.frame) / 2 - self.itemSize.width * scale / 2;
                     rect.origin.y = centerY - _itemHeight * scale / 2;
-                    rect.size.width = _itemSize.width * scale;
+                    rect.size.width = self.itemSize.width * scale;
                     CGFloat param = delta / (_itemHeight / 2);
                     rect.size.height = _itemHeight * scale * (1 - param) + sin(0.25 * M_PI_2) * _itemHeight * INTERSPACEPARAM * 2 * param;
                 } else {
                     rect.origin.x = centerY - _itemHeight * scale / 2;
-                    rect.origin.y = CGRectGetHeight(self.collectionView.frame) / 2 - _itemSize.height * scale / 2;
-                    rect.size.height = _itemSize.height * scale;
+                    rect.origin.y = CGRectGetHeight(self.collectionView.frame) / 2 - self.itemSize.height * scale / 2;
+                    rect.size.height = self.itemSize.height * scale;
                     CGFloat param = delta / (_itemHeight / 2);
                     rect.size.width = _itemHeight * scale * (1 - param) + sin(0.25 * M_PI_2) * _itemHeight * INTERSPACEPARAM * 2 * param;
                 }
@@ -115,7 +115,7 @@
         case HJCarouselAnimCoverFlow: {
             CATransform3D transform = CATransform3DIdentity;
             transform.m34 = -1.0/400.0f;
-            transform = CATransform3DRotate(transform, ratio * M_PI_4, 1, 0, 0);
+            transform = CATransform3DRotate(transform, 0.75*ratio * M_PI_4, 1, 0, 0);
             attributes.transform3D = transform;
         }
             break;

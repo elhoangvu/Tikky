@@ -16,6 +16,8 @@
 #include <opencv2/highgui/ios.h>
 #import "TKPhoto.h"
 #include "TKFacialLandmarkUtilities.h"
+#import "TKDataAdapter.h"
+#import "StickerScene.h"
 
 @interface TikkyEngine () <TKImageFilterDatasource, TKImageFilterDelegate, UIViewDelegate> {
     Cocos2dxGameController* _cocos2dxGameController;
@@ -70,6 +72,14 @@
     _facialStickerRenderQueue = dispatch_queue_create("TKFacialLandmarkRenderQueue", nil);
     [self refeshTKImageInput];
     
+    NSArray* frames = [TKDataAdapter.sharedIntance loadAllFrameStickers];
+    [frames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        TKFrameStickerEntity* frame = (TKFrameStickerEntity *)obj;
+        std::vector<TKSticker>* frameSticker = (std::vector<TKSticker> *)frame.frameStickers;
+        for (auto sticker : *frameSticker) {
+            cocos2d::Director::getInstance()->getTextureCache()->addImageAsync(sticker.path, nullptr);
+        }
+    }];
     return self;
 }
 

@@ -260,6 +260,8 @@
 		11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */; };
 		11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */; };
 		11C9C4CF22AED584002CB9D2 /* HJCarouselViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4C122AED583002CB9D2 /* HJCarouselViewLayout.m */; };
+		11C9C4D222B033B3002CB9D2 /* TKNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4D122B033B3002CB9D2 /* TKNotificationViewController.m */; };
+		11C9C4D422B03E50002CB9D2 /* img-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 11C9C4D322B03E50002CB9D2 /* img-success.png */; };
 		11CC5D0322A7E6440026296C /* bitexco2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5CF622A7E6440026296C /* bitexco2.jpg */; };
 		11CC5D3D22A7FF2F0026296C /* filter-xproii.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2A22A7FF2B0026296C /* filter-xproii.jpg */; };
 		11CC5D3E22A7FF2F0026296C /* filter-brannan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11CC5D2B22A7FF2B0026296C /* filter-brannan.jpg */; };
@@ -814,6 +816,9 @@
 		11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropFilter.m; sourceTree = "<group>"; };
 		11C9C4C122AED583002CB9D2 /* HJCarouselViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCarouselViewLayout.m; sourceTree = "<group>"; };
 		11C9C4CE22AED584002CB9D2 /* HJCarouselViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCarouselViewLayout.h; sourceTree = "<group>"; };
+		11C9C4D022B033B2002CB9D2 /* TKNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKNotificationViewController.h; sourceTree = "<group>"; };
+		11C9C4D122B033B3002CB9D2 /* TKNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKNotificationViewController.m; sourceTree = "<group>"; };
+		11C9C4D322B03E50002CB9D2 /* img-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-success.png"; sourceTree = "<group>"; };
 		11CC5CF622A7E6440026296C /* bitexco2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bitexco2.jpg; sourceTree = "<group>"; };
 		11CC5D2A22A7FF2B0026296C /* filter-xproii.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-xproii.jpg"; sourceTree = "<group>"; };
 		11CC5D2B22A7FF2B0026296C /* filter-brannan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "filter-brannan.jpg"; sourceTree = "<group>"; };
@@ -1424,6 +1429,7 @@
 		1144819C2292E74300A61CF5 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				11C9C4D322B03E50002CB9D2 /* img-success.png */,
 				1144819D2292E74300A61CF5 /* GUI */,
 				114481B42292E74300A61CF5 /* StickerUI */,
 			);
@@ -1503,13 +1509,11 @@
 				11A21DEE22A30EA80062CECE /* TKImageFilter.h */,
 				11A21DFF22A30EA80062CECE /* TKImageFilter.m */,
 				11A21DF022A30EA80062CECE /* TKFilterCreator.h */,
-				11A21DFA22A30EA80062CECE /* TKGalleryUtilities.h */,
 				11A21DFB22A30EA80062CECE /* TikkyEngine.h */,
 				11A21DFD22A30EA80062CECE /* TKFilter.m */,
 				11A21DFE22A30EA80062CECE /* TKStickerPreviewer.mm */,
 				11A21E0022A30EA80062CECE /* TKFilterCreator.m */,
 				11A21E0122A30EA80062CECE /* TKStickerPreviewer.h */,
-				11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */,
 				11A21E0322A30EA80062CECE /* TKFilter.h */,
 				11A21E0422A30EA80062CECE /* TKFilterProperty.h */,
 				11A21DFC22A30EA80062CECE /* TKFilterProperty.m */,
@@ -1554,6 +1558,8 @@
 		11A21E0E22A30EA80062CECE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				11A21DFA22A30EA80062CECE /* TKGalleryUtilities.h */,
+				11A21E0222A30EA80062CECE /* TKGalleryUtilities.m */,
 				11A21E0F22A30EA80062CECE /* TKFacialLandmarkUtilities.h */,
 				11A21E1022A30EA80062CECE /* OpenCVUtilities.mm */,
 				11A21E1122A30EA80062CECE /* TKTextureUtilities.h */,
@@ -1642,6 +1648,8 @@
 				11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */,
 				11CC5D5022A811A60026296C /* TKCameraGUIView.h */,
 				11CC5D5122A811A60026296C /* TKCameraGUIView.m */,
+				11C9C4D022B033B2002CB9D2 /* TKNotificationViewController.h */,
+				11C9C4D122B033B3002CB9D2 /* TKNotificationViewController.m */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -2592,6 +2600,7 @@
 				114482622292E74400A61CF5 /* model-fashion.png in Resources */,
 				114481C22292E74300A61CF5 /* sticker-xmas-violet-gift.png in Resources */,
 				114482532292E74400A61CF5 /* model-western.png in Resources */,
+				11C9C4D422B03E50002CB9D2 /* img-success.png in Resources */,
 				1144824B2292E74400A61CF5 /* frame-flower-peony-1.lua in Resources */,
 				114481EC2292E74300A61CF5 /* lookup-western.png in Resources */,
 				114481BC2292E74300A61CF5 /* sticker-xmas-snowman.png in Resources */,
@@ -2689,6 +2698,7 @@
 				11A21E3722A30EA80062CECE /* UIImage+CVPixelBufferRefConverter.m in Sources */,
 				B74C9ACD224BE94B0061DAA4 /* IFNormalFilter.m in Sources */,
 				B74C9ABC224BE94B0061DAA4 /* IF1977Filter.m in Sources */,
+				11C9C4D222B033B3002CB9D2 /* TKNotificationViewController.m in Sources */,
 				B7FE3F092216B7AD00A82D93 /* TKRenderQueue.mm in Sources */,
 				11A21E4222A30EA80062CECE /* TKStickerEntity.mm in Sources */,
 				11A21E4922A3A3FB0062CECE /* TKFilterEntity.m in Sources */,
