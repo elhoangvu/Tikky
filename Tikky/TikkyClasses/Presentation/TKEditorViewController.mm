@@ -308,10 +308,18 @@ TKNotificationViewControllerDelegate
     } else if (indexPath.row == TKFeatureTypeCommonSticker) {
         _imageFilters = [TKDataAdapter.sharedIntance loadAllCommonStickers];
     }
+
+    TKCommonEntity* commonEntity;
+    if (indexPath.row == TKFeatureTypeFrameSticker) {
+        commonEntity = [[TKCommonEntity alloc] initWithID:kNonItemID caterory:@"" name:@"None" thumbnail:@"default-squad-thumb.png" isBundle:YES type:(TKEntityTypeUnknown)];
+        
+    } else {
+        commonEntity = [[TKCommonEntity alloc] initWithID:kNonItemID caterory:@"" name:@"None" thumbnail:@"default-circle-thumb.png" isBundle:YES type:(TKEntityTypeUnknown)];
+    }
     
-    TKCommonEntity* commonEntity = [[TKCommonEntity alloc] initWithID:kNonItemID caterory:@"" name:@"" thumbnail:@"" isBundle:YES type:(TKEntityTypeUnknown)];
     TKEditItemViewModel* viewModel = [[TKEditItemViewModel alloc] initWithCommonEntity:commonEntity];
     [viewModels addObject:viewModel];
+    
     for (TKStickerEntity* entity in _imageFilters) {
         TKEditItemViewModel* viewModel = [[TKEditItemViewModel alloc] initWithCommonEntity:entity];
         [viewModels addObject:viewModel];
@@ -433,14 +441,31 @@ TKNotificationViewControllerDelegate
         [self.imageFilter removeAllFilter];
         _lastPickedImage = _lastProcessedImage;
     }
-    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
-    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
-    [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
+
     [self animationWhenPresentingMenu];
 //    [TikkyEngine.sharedInstance.stickerPreviewer pause];
 }
 
 - (void)editItemView:(TKEditItemView *)editItemView didSelectItem:(nonnull TKEditItemViewModel *)item atIndex:(NSUInteger)index {
+    if (index == 0) {
+        [self.imageFilter removeAllFilter];
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
+        [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
+        TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
+        [self.imageFilter addFilter:filter];
+        __weak __typeof(self)weakSelf = self;
+        [self.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
+            if (processedImage) {
+                weakSelf.lastProcessedImage = processedImage;
+                weakSelf.lastPickedImage = weakSelf.lastProcessedImage;
+                weakSelf.photo = [[TKPhoto alloc] initWithImage:processedImage];
+                [weakSelf.imageFilter setInput:weakSelf.photo];
+            }
+            [weakSelf.imageFilter removeAllFilter];
+        }];
+        return;
+    }
     if (_lastProcessedImage && !_isEditing) {
         _lastPickedImage = _lastProcessedImage;
     }

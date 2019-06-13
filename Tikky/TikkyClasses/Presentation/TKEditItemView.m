@@ -73,7 +73,7 @@ UIScrollViewDelegate
     CGRect itemPathFrame = CGRectMake(frame.size.width*0.5 - _itemSize.height*0.5+_itemSize.height*0.055, frame.size.height*0.065, _itemSize.height*0.9, _itemSize.height*0.9);
     _itemPathView = [[UIView alloc] initWithFrame:itemPathFrame];
     [self addSubview:_itemPathView];
-    _itemPathView.layer.borderColor = UIColor.grayColor.CGColor;
+    _itemPathView.layer.borderColor = [UIColor colorWithRed:221.0/255.0 green:221.0/255.0 blue:221.0/255.0 alpha:1.0].CGColor;
     _itemPathView.layer.borderWidth = 8.0;
     _itemPathView.clipsToBounds = YES;
     _itemPathView.layer.cornerRadius = _itemPathView.frame.size.height*0.5;
@@ -275,10 +275,7 @@ UIScrollViewDelegate
 //    }
 //    _isScrolling = YES;
 
-    NSLog(@"vulh3 +++++>");
-    NSIndexPath* curIndexPath = [self curIndexPath];
-    TKEditItemViewModel* curViewModel = [_viewModels objectAtIndex:curIndexPath.row];
-    [_titleLabel setText:curViewModel.entity.name];
+    [self updateTittle];
     [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
 //    [self collectionView:collectionView didSelectItemAtIndexPath:indexPath];
     

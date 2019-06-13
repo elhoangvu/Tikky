@@ -28,6 +28,8 @@ static CCAppDelegate s_sharedApplication;
     cocosApp->initGLContextAttrs();
     cocos2d::GLViewImpl::convertAttrs();
     
+//    [UIApplication.sharedApplication setStatusBarHidden:YES];
+    
     return YES;
 }
 
