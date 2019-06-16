@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSString* rightButtonName;
 
+@property (nonatomic) NSString* subTitle;
+
 @property (nonatomic) CGSize contentSize;
 
 @property (nonatomic) TKNotificationType type;

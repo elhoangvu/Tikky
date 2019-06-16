@@ -18,6 +18,8 @@
 
 @property (nonatomic) UILabel* bottomTitleLabel;
 
+@property (nonatomic) UILabel* subTitleLabel;
+
 @property (nonatomic) UIImageView* contentImageView;
 
 @property (nonatomic) UIButton* rightButton;
@@ -83,12 +85,29 @@
     }
     _bottomTitleLabel.font = [UIFont boldSystemFontOfSize:20];
 
-    [_bottomTitleLabel setTextColor:[UIColor colorWithRed:66.0/255.0 green:176.0/255.0 blue:109.0/255.0 alpha:1.0]];
+    if (_type == TKNotificationTypeSuccess) {
+        [_bottomTitleLabel setTextColor:[UIColor colorWithRed:66.0/255.0 green:176.0/255.0 blue:109.0/255.0 alpha:1.0]];
+    } else {
+        [_bottomTitleLabel setTextColor:[UIColor colorWithRed:192.0/255.0 green:57.0/255.0 blue:43.0/255.0 alpha:1.0]];
+    }
+    
     [_bottomTitleLabel setTextAlignment:(NSTextAlignmentCenter)];
     [_containerView addSubview:_bottomTitleLabel];
     
+    // subtitle
+    CGRect subFrame = CGRectMake(0, bottomFrame.origin.y + bottomFrame.size.height*0.75, containerSize.width, containerSize.height*0.15);
+    _subTitleLabel = [[UILabel alloc] initWithFrame:subFrame];
+    _subTitleLabel.font = [UIFont systemFontOfSize:14];
+    [_subTitleLabel setTextAlignment:(NSTextAlignmentCenter)];
+    _subTitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _subTitleLabel.numberOfLines = 2;
+    if (self.subTitle) {
+        [_subTitleLabel setText:self.subTitle];
+    }
+    [_containerView addSubview:_subTitleLabel];
+    
     // bottom
-    CGFloat bottomHeight = containerSize.height*0.2;
+    CGFloat bottomHeight = containerSize.width*0.2;
     CGRect bottomViewFrame = CGRectMake(0, containerSize.height-bottomHeight, containerSize.width, bottomHeight);
     _bottomView = [[UIView alloc] initWithFrame:bottomViewFrame];
     _bottomView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.02];
@@ -96,7 +115,13 @@
     
     UIColor* buttonColor = [UIColor colorWithRed:29.0/255.0 green:161.0/255.0 blue:242.0/255.0 alpha:1.0];
     // left button
-    CGRect leftFrame = CGRectMake(0, 0, bottomViewFrame.size.width*0.5, bottomViewFrame.size.height);
+    CGFloat leftWidth;
+    if (!_rightButtonName || [_rightButtonName isEqualToString:@""]) {
+        leftWidth = bottomViewFrame.size.width;
+    } else {
+        leftWidth = bottomViewFrame.size.width*0.5;
+    }
+    CGRect leftFrame = CGRectMake(0, 0, leftWidth, bottomViewFrame.size.height);
     _leftButton = [[UIButton alloc] initWithFrame:leftFrame];
     [_leftButton.titleLabel setTextAlignment:(NSTextAlignmentCenter)];
     _leftButton.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -106,21 +131,25 @@
     [_bottomView addSubview:_leftButton];
     
     //right button
-    CGRect rigthFrame = CGRectMake(bottomViewFrame.size.width*0.5, 0, bottomViewFrame.size.width*0.5, bottomViewFrame.size.height);
-    _rightButton = [[UIButton alloc] initWithFrame:rigthFrame];
-    [_rightButton.titleLabel setTextAlignment:(NSTextAlignmentCenter)];
-    _rightButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_rightButton setTitle:_rightButtonName forState:(UIControlStateNormal)];
-    [_rightButton setTitleColor:buttonColor forState:(UIControlStateNormal)];
-    [_rightButton addTarget:self action:@selector(didTapRightButton:) forControlEvents:(UIControlEventTouchUpInside)];
-    [_bottomView addSubview:_rightButton];
+    if (_rightButtonName) {
+        CGRect rigthFrame = CGRectMake(bottomViewFrame.size.width*0.5, 0, bottomViewFrame.size.width*0.5, bottomViewFrame.size.height);
+        _rightButton = [[UIButton alloc] initWithFrame:rigthFrame];
+        [_rightButton.titleLabel setTextAlignment:(NSTextAlignmentCenter)];
+        _rightButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        [_rightButton setTitle:_rightButtonName forState:(UIControlStateNormal)];
+        [_rightButton setTitleColor:buttonColor forState:(UIControlStateNormal)];
+        [_rightButton addTarget:self action:@selector(didTapRightButton:) forControlEvents:(UIControlEventTouchUpInside)];
+        [_bottomView addSubview:_rightButton];
+    }
     
     // section line
-    CGSize lineSize = CGSizeMake(2.0, bottomViewFrame.size.height*0.8);
-    CGRect lineFrame = CGRectMake((bottomViewFrame.size.width - lineSize.width)*0.5, (bottomViewFrame.size.height-lineSize.height)*0.5, lineSize.width, lineSize.height);
-    UIView* sectionLine = [[UIView alloc] initWithFrame:lineFrame];
-    sectionLine.backgroundColor = UIColor.whiteColor;
-    [_bottomView addSubview:sectionLine];
+    if (_leftButton && _rightButton) {
+        CGSize lineSize = CGSizeMake(2.0, bottomViewFrame.size.height*0.8);
+        CGRect lineFrame = CGRectMake((bottomViewFrame.size.width - lineSize.width)*0.5, (bottomViewFrame.size.height-lineSize.height)*0.5, lineSize.width, lineSize.height);
+        UIView* sectionLine = [[UIView alloc] initWithFrame:lineFrame];
+        sectionLine.backgroundColor = UIColor.whiteColor;
+        [_bottomView addSubview:sectionLine];
+    }
 }
 
 - (void)didTapLeftButton:(UIButton *)button {

@@ -165,7 +165,7 @@
                                                                  newDetection:newDetection
                                                                  sortFaceRect:YES
                                                                    completion:^(float ** _Nullable landmarks, int faceNum) {
-                        if (weakSelf.stickerPreviewer.enableFacialSticker) {
+//                        if (weakSelf.stickerPreviewer.enableFacialSticker) {
                             CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
         //                    UIImage* image = MatToUIImage(rotatedImage);
                             if (faceNum == 0) {
@@ -190,7 +190,7 @@
                                 }
                                 [weakSelf.stickerPreviewer updateFacialLandmarks:landmarks landmarkNum:NUMBER_OF_LANDMARKS faceNum:faceNum];
                             }
-                        }
+//                        }
                     }];
                     
                 });

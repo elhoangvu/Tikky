@@ -13,6 +13,7 @@
 		114480CE2292E62B00A61CF5 /* landmark-model.bin in Resources */ = {isa = PBXBuildFile; fileRef = 114480CB2292E62B00A61CF5 /* landmark-model.bin */; };
 		114480CF2292E62B00A61CF5 /* haar_facedetection2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 114480CC2292E62B00A61CF5 /* haar_facedetection2.xml */; };
 		114480D02292E62B00A61CF5 /* haar_facedetection.xml in Resources */ = {isa = PBXBuildFile; fileRef = 114480CD2292E62B00A61CF5 /* haar_facedetection.xml */; };
+		1169249322B2200F0011B13B /* img-failure.png in Resources */ = {isa = PBXBuildFile; fileRef = 1169249222B2200F0011B13B /* img-failure.png */; };
 		116ADDAB22B159B70035BD00 /* demo4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 116ADCA122B159B70035BD00 /* demo4.jpg */; };
 		116ADDAC22B159B70035BD00 /* bitexco2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 116ADCA222B159B70035BD00 /* bitexco2.jpg */; };
 		116ADDAD22B159B70035BD00 /* filter-1977.png in Resources */ = {isa = PBXBuildFile; fileRef = 116ADCA422B159B70035BD00 /* filter-1977.png */; };
@@ -255,7 +256,6 @@
 		B70BD43D2196C634000A4EBF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B70BD43C2196C634000A4EBF /* AppDelegate.mm */; };
 		B70BD4432196C634000A4EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4412196C634000A4EBF /* Main.storyboard */; };
 		B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4442196C636000A4EBF /* Assets.xcassets */; };
-		B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */; };
 		B70BD44B2196C636000A4EBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B70BD44A2196C636000A4EBF /* main.m */; };
 		B70BD45E2196C73B000A4EBF /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD45B2196C6EA000A4EBF /* libcocos2d iOS.a */; };
 		B70BD4602196C748000A4EBF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70BD45F2196C748000A4EBF /* CoreText.framework */; };
@@ -466,6 +466,7 @@
 		114480CB2292E62B00A61CF5 /* landmark-model.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "landmark-model.bin"; sourceTree = "<group>"; };
 		114480CC2292E62B00A61CF5 /* haar_facedetection2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haar_facedetection2.xml; sourceTree = "<group>"; };
 		114480CD2292E62B00A61CF5 /* haar_facedetection.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haar_facedetection.xml; sourceTree = "<group>"; };
+		1169249222B2200F0011B13B /* img-failure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "img-failure.png"; path = "../../../../../Downloads/img-failure.png"; sourceTree = "<group>"; };
 		116ADCA122B159B70035BD00 /* demo4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo4.jpg; sourceTree = "<group>"; };
 		116ADCA222B159B70035BD00 /* bitexco2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bitexco2.jpg; sourceTree = "<group>"; };
 		116ADCA422B159B70035BD00 /* filter-1977.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-1977.png"; sourceTree = "<group>"; };
@@ -818,7 +819,6 @@
 		B70BD43C2196C634000A4EBF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		B70BD4422196C634000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B70BD4442196C636000A4EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B70BD4472196C636000A4EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B70BD4492196C636000A4EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B70BD44A2196C636000A4EBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "cocos2d-x/build/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
@@ -1252,6 +1252,7 @@
 		116ADD6122B159B70035BD00 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1169249222B2200F0011B13B /* img-failure.png */,
 				116ADD6222B159B70035BD00 /* img-success.png */,
 				116ADD6322B159B70035BD00 /* GUI */,
 				116ADD8922B159B70035BD00 /* StickerUI */,
@@ -1712,7 +1713,6 @@
 				B70BD43C2196C634000A4EBF /* AppDelegate.mm */,
 				B70BD4412196C634000A4EBF /* Main.storyboard */,
 				B70BD4442196C636000A4EBF /* Assets.xcassets */,
-				B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */,
 				B70BD4492196C636000A4EBF /* Info.plist */,
 				B70BD44A2196C636000A4EBF /* main.m */,
 			);
@@ -2204,6 +2204,7 @@
 				116ADDC422B159B70035BD00 /* lookup-charcoal.png in Resources */,
 				116ADDC622B159B70035BD00 /* lookup-polaroid.png in Resources */,
 				116ADE6522B159B70035BD00 /* save-gray.png in Resources */,
+				1169249322B2200F0011B13B /* img-failure.png in Resources */,
 				116ADDF822B159B70035BD00 /* sticker-flag-vn-0.png in Resources */,
 				116ADE8A22B1A5DF0035BD00 /* default-squad-thumb.png in Resources */,
 				116ADE2222B159B70035BD00 /* frame-lotus-thumb.png in Resources */,
@@ -2214,7 +2215,6 @@
 				116ADE6922B159B70035BD00 /* effect-white.png in Resources */,
 				116ADE2322B159B70035BD00 /* frame-leaves-thumb.png in Resources */,
 				116ADDC722B159B70035BD00 /* lookup-clarity.png in Resources */,
-				B70BD4482196C636000A4EBF /* LaunchScreen.storyboard in Resources */,
 				116ADDB522B159B70035BD00 /* filter-toaster.png in Resources */,
 				116ADE3422B159B70035BD00 /* frame-flower-peony-1.png in Resources */,
 				116ADE7022B159B70035BD00 /* done.png in Resources */,
@@ -2500,14 +2500,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B70BD4462196C636000A4EBF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B70BD4472196C636000A4EBF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2680,7 +2672,10 @@
 					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"${PROJECT_DIR}/Frameworks/FacebookSDKs/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.Camera.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
@@ -2745,7 +2740,10 @@
 					"$(PROJECT_DIR)/Frameworks/FacebookSDKs",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"${PROJECT_DIR}/Frameworks/FacebookSDKs/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tikky.Camera.v2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;

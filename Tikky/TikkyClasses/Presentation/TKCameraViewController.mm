@@ -36,11 +36,14 @@
 
 #import "TKStickerEntity.h"
 
+#import "TKNotificationViewController.h"
+
 @interface TKCameraViewController ()
 <
 TKStickerPreviewerDelegate,
 TKCameraGUIViewDelegate,
-TKEditorViewControllerDelegate
+TKEditorViewControllerDelegate,
+TKNotificationViewControllerDelegate
 > {
     std::vector<std::vector<TKSticker>>* _facialStickers;
     std::vector<std::vector<TKSticker>>* _frameStickers;
@@ -61,16 +64,21 @@ TKEditorViewControllerDelegate
 
 @property (nonatomic) TKEditorViewController* editorVC;
 
+@property (nonatomic) dispatch_group_t cameraPermissionGroup;
+
+@property (nonatomic) TKNotificationViewController* notificationVC;
+
 @end
 
 @implementation TKCameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isTouchStickerBegan = NO;
-//    _stickers = TKSampleDataPool.sharedInstance.stickerList;
-//    _filters = TKSampleDataPool.sharedInstance.filterList;
+    self.view.backgroundColor = UIColor.whiteColor;
 
+    _isTouchStickerBegan = NO;
+    _cameraPermissionGroup = dispatch_group_create();
+    
 #if ENABLE_CAMERA
     _tikkyEngine = TikkyEngine.sharedInstance;
     _tikkyEngine.stickerPreviewer.delegate = self;
@@ -101,11 +109,37 @@ TKEditorViewControllerDelegate
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    __weak __typeof(self)weakSelf = self;
     
+//    dispatch_group_enter(_cameraPermissionGroup);
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (granted) {
+                if (weakSelf.notificationVC) {
+                    [weakSelf.notificationVC dismissViewControllerAnimated:YES completion:nil];
+                }
+                //            dispatch_group_leave(weakSelf.cameraPermissionGroup);
+            } else {
+                weakSelf.notificationVC = [[TKNotificationViewController alloc] init];
+                weakSelf.notificationVC.topTitle = @"Active your phone's camera";
+                weakSelf.notificationVC.type = TKNotificationTypeFailture;
+                weakSelf.notificationVC.leftButtonName = @"Setting";
+                weakSelf.notificationVC.subTitle = @"Go to Setting\nto enable camera permission.";
+                weakSelf.notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.45);
+                
+                weakSelf.notificationVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+                weakSelf.notificationVC.delegate = self;
+                [weakSelf presentViewController:weakSelf.notificationVC animated:NO completion:nil];
+            }
+        });
+        
+    }];
+//    dispatch_group_wait(_cameraPermissionGroup, DISPATCH_TIME_FOREVER);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
 #if ENABLE_CAMERA
     if ([_imageInput isKindOfClass:TKCamera.class]) {
         [((TKCamera *)_imageInput) startCameraCapture];
@@ -168,6 +202,14 @@ TKEditorViewControllerDelegate
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [((TKPhoto*)weakSelf.imageInput) processImageWithCompletionHandler:nil];
 //    });
+    
+}
+
+- (void)didTapLeftButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
+- (void)didTapRightButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
     
 }
 

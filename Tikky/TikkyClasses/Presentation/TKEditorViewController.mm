@@ -22,6 +22,8 @@
 
 #import "TKNotificationViewController.h"
 
+#import <Photos/Photos.h>
+
 //#import "TKU"
 
 #define kMenuCellIdentifier @"tikky.menucell"
@@ -352,12 +354,29 @@ TKNotificationViewControllerDelegate
             notificationVC.topTitle = @"Save image to gallery";
             if (success) {
                 notificationVC.type = TKNotificationTypeSuccess;
+                notificationVC.leftButtonName = @"Share Image";
+                notificationVC.rightButtonName = @"Done";
+                notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.35);
             } else {
+                if (button != nil) {
+                    __block PHAuthorizationStatus authStatus = PHAuthorizationStatusNotDetermined;
+                    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                        authStatus = status;
+                        if (status == PHAuthorizationStatusAuthorized) {
+                            [notificationVC dismissViewControllerAnimated:NO completion:nil];
+                            [weakSelf didTapSaveButton:nil];
+                        } else {
+                            
+                        }
+                    }];
+                }
                 notificationVC.type = TKNotificationTypeFailture;
+                notificationVC.leftButtonName = @"Setting";
+                notificationVC.rightButtonName = @"Close";
+                notificationVC.subTitle = @"Go to Setting\nto enable gallery permission.";
+                notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.45);
             }
-            notificationVC.leftButtonName = @"Share Image";
-            notificationVC.rightButtonName = @"Done";
-            notificationVC.contentSize = CGSizeMake(self.view.frame.size.width*0.6, self.view.frame.size.height*0.35);
+
             notificationVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
             notificationVC.delegate = self;
             [weakSelf presentViewController:notificationVC animated:NO completion:nil];
@@ -417,23 +436,25 @@ TKNotificationViewControllerDelegate
     if (_lastEditType == TKEntityTypeSticker) {
         __weak __typeof(self)weakSelf = self;
         [self.photo processImageUpToFilter:nil withCompletionHandler:^(UIImage *processedImage) {
-            weakSelf.lastProcessedImage = processedImage;
-            weakSelf.photo = [[TKPhoto alloc] initWithImage:weakSelf.lastProcessedImage];
-            [weakSelf.imageFilter setInput:weakSelf.photo];
-            [weakSelf.imageFilter removeAllFilter];
-            
-            TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
-            [self.imageFilter addFilter:filter];
-            [self.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
-                if (processedImage) {
-                    weakSelf.lastProcessedImage = processedImage;
-                    weakSelf.lastPickedImage = weakSelf.lastProcessedImage;
-                    weakSelf.photo = [[TKPhoto alloc] initWithImage:processedImage];
-                    [weakSelf.imageFilter setInput:weakSelf.photo];
-                }
+            if (processedImage) {
+                weakSelf.lastProcessedImage = processedImage;
+                weakSelf.lastPickedImage = weakSelf.lastProcessedImage;
+                weakSelf.photo = [[TKPhoto alloc] initWithImage:weakSelf.lastProcessedImage];
+                [weakSelf.imageFilter setInput:weakSelf.photo];
                 [weakSelf.imageFilter removeAllFilter];
-            }];
-            
+                
+    //            TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
+    //            [self.imageFilter addFilter:filter];
+                [self.photo processImageUpToFilter:nil withCompletionHandler:^(UIImage *processedImage) {
+                    if (processedImage) {
+                        weakSelf.lastProcessedImage = processedImage;
+                        weakSelf.lastPickedImage = weakSelf.lastProcessedImage;
+                        weakSelf.photo = [[TKPhoto alloc] initWithImage:processedImage];
+                        [weakSelf.imageFilter setInput:weakSelf.photo];
+                    }
+                    [weakSelf.imageFilter removeAllFilter];
+                }];
+            }
         }];
     } else {
         self.photo = [[TKPhoto alloc] initWithImage:_lastProcessedImage];
@@ -441,7 +462,9 @@ TKNotificationViewControllerDelegate
         [self.imageFilter removeAllFilter];
         _lastPickedImage = _lastProcessedImage;
     }
-
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFrameStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllFacialStickers];
+    [TikkyEngine.sharedInstance.stickerPreviewer removeAllStaticStickers];
     [self animationWhenPresentingMenu];
 //    [TikkyEngine.sharedInstance.stickerPreviewer pause];
 }
@@ -574,11 +597,15 @@ TKNotificationViewControllerDelegate
     [_indicatorView startAnimating];
     NSArray* photos = [NSArray arrayWithObject:_lastProcessedImage];
     [TKSNFacebookSDK.sharedInstance sharePhotoWithPhoto:photos caption:@"" userGenerated:YES hashtagString:@"#Tikky" showedViewController:self delegate:self];
+}
+
+- (void)stopIndicator {
     [_indicatorContentView setHidden:YES];
     [_indicatorView stopAnimating];
 }
 
 - (void)socialNetworkSDK:(TKSocialNetworkSDK *)socialNetworkSDK didCompleteWithResults:(NSDictionary *)results {
+    [self stopIndicator];
     if (_delegate && [_delegate respondsToSelector:@selector(didTapCloseButtonAtEditorViewController:)]) {
         [_delegate didTapCloseButtonAtEditorViewController:self];
     }
@@ -587,16 +614,34 @@ TKNotificationViewControllerDelegate
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)socialNetworkSDKDidCancel:(TKSocialNetworkSDK *)socialNetworkSDK {
+    [self stopIndicator];
+}
+
+- (void)socialNetworkSDK:(TKSocialNetworkSDK *)socialNetworkSDK didFailWithError:(NSError *)error {
+    [self stopIndicator];
+}
+
 #pragma mark - TKNotificationViewControllerDelegate
 
 - (void)didTapLeftButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
     [self dismissViewControllerAnimated:NO completion:nil];
-    [self didTapShareButton:nil];
+    [self stopIndicator];
+
+    if (notificationVC.type == TKNotificationTypeFailture) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    } else {
+        [self didTapShareButton:nil];
+    }
 }
 
 - (void)didTapRightButtonWithNotificationViewController:(TKNotificationViewController *)notificationVC {
     [self dismissViewControllerAnimated:NO completion:nil];
-    [self didTapCloseButton:nil];
+    [self stopIndicator];
+    
+    if (notificationVC.type == TKNotificationTypeSuccess) {
+        [self didTapCloseButton:nil];
+    }
 }
 
 @end

@@ -41,22 +41,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tikky/TikkyClasses/Presentation/TKEditorViewController.mm"
-            timestampString = "582070256.618844"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "-didDoneEditItemView:withoutEditing:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Tikky/TikkyClasses/Presentation/HJCarouselViewLayout.m"
             timestampString = "582070256.618933"
             startingColumnNumber = "9223372036854775807"
@@ -96,6 +80,22 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "-collectionViewContentSize"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Frameworks/SDM/ldmarkmodel.cpp"
+            timestampString = "582094692.238927"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "ldmarkmodel::loadFaceDetModelFile(std::string filePath)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
