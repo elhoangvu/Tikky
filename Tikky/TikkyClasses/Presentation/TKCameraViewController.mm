@@ -389,7 +389,7 @@ TKNotificationViewControllerDelegate
 
 #pragma mark - TKCameraGUIViewDelegate
 
-- (void)didTapCaptureButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView {
+- (void)didTapCaptureButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView {
     static BOOL shouldCapture = YES;
     if (shouldCapture) {
         shouldCapture = NO;
@@ -414,7 +414,7 @@ TKNotificationViewControllerDelegate
     }
 }
 
-- (void)didTapSwapButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView {
+- (void)didTapSwapButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView {
     [((TKCamera *)_imageInput) swapCamera];
 }
 
@@ -435,6 +435,29 @@ TKNotificationViewControllerDelegate
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
 //    [TikkyEngine.sharedInstance.stickerPreviewer resume];
+}
+
+- (void)didTapBeautyButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView isOnMode:(BOOL)isOnMode {
+    if (isOnMode) {
+        TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
+        [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
+    } else {
+        [_tikkyEngine.imageFilter removeAllFilter];
+    }
+}
+
+- (void)didTapFlashButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView withMode:(AVCaptureFlashMode)mode {
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+        TKCamera* camera = (TKCamera *)_imageInput;
+        [camera setFlashMode:mode];
+    }
+}
+
+- (void)didTapInCameraGUIView:(TKCameraGUIView *)cameraGUIView atPoint:(CGPoint)point {
+    if ([_imageInput isKindOfClass:TKCamera.class]) {
+        TKCamera* camera = (TKCamera *)_imageInput;
+        [camera focusAtPoint:point inFrame:cameraGUIView.frame];
+    }
 }
 
 @end

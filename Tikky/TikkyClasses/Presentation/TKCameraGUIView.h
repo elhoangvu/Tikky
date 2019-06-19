@@ -14,9 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKCameraGUIViewDelegate <NSObject>
 
-- (void)didTapCaptureButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView;
+- (void)didTapCaptureButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView;
 
-- (void)didTapSwapButtonAtCameraGUIView:(TKCameraGUIView *)cameraGUIView;
+- (void)didTapSwapButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView;
+
+- (void)didTapFlashButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView withMode:(AVCaptureFlashMode)mode;
+
+- (void)didTapBeautyButtonInCameraGUIView:(TKCameraGUIView *)cameraGUIView isOnMode:(BOOL)isOnMode;
+
+- (void)didTapInCameraGUIView:(TKCameraGUIView *)cameraGUIView atPoint:(CGPoint)point;
 
 @end
 

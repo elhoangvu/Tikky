@@ -27,6 +27,7 @@
 @property (nonatomic) BOOL enableAudioForVideoRecording;
 @property (nonatomic, readonly) BOOL isFrontCamera;
 @property (nonatomic, copy) NSString* captureSessionPreset;
+@property (nonatomic) AVCaptureFlashMode flashMode;
 //@property (nonatomic) TKCameraCaptureSessionRatio captureSessionRatio;
 
 - (instancetype)initWithSessionPreset:(NSString *)sessionPreset cameraPosition:(AVCaptureDevicePosition)cameraPosition;

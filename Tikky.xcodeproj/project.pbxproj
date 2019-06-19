@@ -233,7 +233,17 @@
 		11A9BDA922A4067A006B50CA /* TKEditItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDA822A4067A006B50CA /* TKEditItemCollectionViewCell.m */; };
 		11A9BDAC22A40DCC006B50CA /* TKMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */; };
 		11A9BDAF22A44DBE006B50CA /* TKFeatureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */; };
+		11AE467622BA87C4000CAD5F /* flash-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AE466522BA87C3000CAD5F /* flash-on.png */; };
+		11AE467722BA87C4000CAD5F /* beauty-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AE467222BA87C3000CAD5F /* beauty-on.png */; };
+		11AE467822BA87C4000CAD5F /* beauty-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AE467322BA87C3000CAD5F /* beauty-off.png */; };
+		11AE467922BA87C4000CAD5F /* flash-auto.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AE467422BA87C3000CAD5F /* flash-auto.png */; };
+		11AE467A22BA87C4000CAD5F /* flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 11AE467522BA87C3000CAD5F /* flash-off.png */; };
 		11B001E222A6FA460067A665 /* TKEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B001E122A6FA460067A665 /* TKEffectFilter.m */; };
+		11B531E822B699F0004B1B95 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B531DA22B699EF004B1B95 /* 2.jpg */; };
+		11B531E922B699F0004B1B95 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B531E722B699EF004B1B95 /* 1.jpg */; };
+		11B531EC22B69BA6004B1B95 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B531EA22B69BA5004B1B95 /* 3.jpg */; };
+		11B531ED22B69BA6004B1B95 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B531EB22B69BA6004B1B95 /* 4.jpg */; };
+		11B531EF22B6A453004B1B95 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 11B531EE22B6A452004B1B95 /* 5.jpg */; };
 		11C679A2229F09EB0054C5A1 /* GPUImageRainDropEffectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */; };
 		11C679A3229F09EB0054C5A1 /* GPUImageRainDropFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C679A1229F09EB0054C5A1 /* GPUImageRainDropFilter.m */; };
 		11C9C4CF22AED584002CB9D2 /* HJCarouselViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4C122AED583002CB9D2 /* HJCarouselViewLayout.m */; };
@@ -725,9 +735,19 @@
 		11A9BDAB22A40DCC006B50CA /* TKMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		11A9BDAD22A44DBE006B50CA /* TKFeatureManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKFeatureManager.h; sourceTree = "<group>"; };
 		11A9BDAE22A44DBE006B50CA /* TKFeatureManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKFeatureManager.m; sourceTree = "<group>"; };
+		11AE466522BA87C3000CAD5F /* flash-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flash-on.png"; path = "../../../../../Zalo Received Files/icon/flash-on.png"; sourceTree = "<group>"; };
+		11AE467222BA87C3000CAD5F /* beauty-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beauty-on.png"; path = "../../../../../Zalo Received Files/icon/beauty-on.png"; sourceTree = "<group>"; };
+		11AE467322BA87C3000CAD5F /* beauty-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beauty-off.png"; path = "../../../../../Zalo Received Files/icon/beauty-off.png"; sourceTree = "<group>"; };
+		11AE467422BA87C3000CAD5F /* flash-auto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flash-auto.png"; path = "../../../../../Zalo Received Files/icon/flash-auto.png"; sourceTree = "<group>"; };
+		11AE467522BA87C3000CAD5F /* flash-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flash-off.png"; path = "../../../../../Zalo Received Files/icon/flash-off.png"; sourceTree = "<group>"; };
 		11B001DC22A6F8D00067A665 /* GPUImageEffectFilterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUImageEffectFilterProtocol.h; sourceTree = "<group>"; };
 		11B001E022A6FA460067A665 /* TKEffectFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKEffectFilter.h; sourceTree = "<group>"; };
 		11B001E122A6FA460067A665 /* TKEffectFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKEffectFilter.m; sourceTree = "<group>"; };
+		11B531DA22B699EF004B1B95 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpg; path = "../../../../Zalo Received Files/photo/2.jpg"; sourceTree = "<group>"; };
+		11B531E722B699EF004B1B95 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = "../../../../Zalo Received Files/photo/1.jpg"; sourceTree = "<group>"; };
+		11B531EA22B69BA5004B1B95 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 3.jpg; path = "../../../../Zalo Received Files/3/3.jpg"; sourceTree = "<group>"; };
+		11B531EB22B69BA6004B1B95 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = "../../../../Zalo Received Files/3/4.jpg"; sourceTree = "<group>"; };
+		11B531EE22B6A452004B1B95 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = "../../../../Zalo Received Files/5.jpg"; sourceTree = "<group>"; };
 		11C6799E229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageRainDropEffectFilter.m; sourceTree = "<group>"; };
 		11C6799F229F09EA0054C5A1 /* GPUImageRainDropEffectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropEffectFilter.h; sourceTree = "<group>"; };
 		11C679A0229F09EA0054C5A1 /* GPUImageRainDropFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageRainDropFilter.h; sourceTree = "<group>"; };
@@ -992,6 +1012,11 @@
 		116ADC8122B159B70035BD00 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				11B531EE22B6A452004B1B95 /* 5.jpg */,
+				11B531EA22B69BA5004B1B95 /* 3.jpg */,
+				11B531EB22B69BA6004B1B95 /* 4.jpg */,
+				11B531E722B699EF004B1B95 /* 1.jpg */,
+				11B531DA22B699EF004B1B95 /* 2.jpg */,
 				116ADCA122B159B70035BD00 /* demo4.jpg */,
 				116ADCA222B159B70035BD00 /* bitexco2.jpg */,
 			);
@@ -1263,6 +1288,11 @@
 		116ADD6322B159B70035BD00 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				11AE467322BA87C3000CAD5F /* beauty-off.png */,
+				11AE467222BA87C3000CAD5F /* beauty-on.png */,
+				11AE467422BA87C3000CAD5F /* flash-auto.png */,
+				11AE467522BA87C3000CAD5F /* flash-off.png */,
+				11AE466522BA87C3000CAD5F /* flash-on.png */,
 				116ADD6422B159B70035BD00 /* flash.png */,
 				116ADD6522B159B70035BD00 /* time.png */,
 				116ADD6622B159B70035BD00 /* emoji.png */,
@@ -1722,6 +1752,7 @@
 		B70BD4512196C6AC000A4EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */,
 				11374DF722AC2CB000CF1D27 /* FBSDKLoginKit.framework */,
 				11374DF422AC294000CF1D27 /* FBSDKCoreKit.framework */,
 				11374DF322AC294000CF1D27 /* FBSDKShareKit.framework */,
@@ -1733,7 +1764,6 @@
 				B70ABAD62201C66000B1F89A /* SDM */,
 				B70ABAD42201C26900B1F89A /* opencv2.framework */,
 				B7B8522C21C0490B005A3F3B /* cocos2d_lua_bindings.xcodeproj */,
-				B70BD4522196C6EA000A4EBF /* cocos2d_libs.xcodeproj */,
 				B70BD4792196C7C7000A4EBF /* GPUImage.xcodeproj */,
 				B70ABACE2201AE8E00B1F89A /* CoreMedia.framework */,
 				B70ABACC2201AE8700B1F89A /* Accelerate.framework */,
@@ -2182,6 +2212,8 @@
 				116ADDCE22B159B70035BD00 /* lookup-vintage.png in Resources */,
 				116ADE6A22B159B70035BD00 /* capture-white.png in Resources */,
 				116ADDB422B159B70035BD00 /* filter-walden.png in Resources */,
+				11AE467A22BA87C4000CAD5F /* flash-off.png in Resources */,
+				11AE467922BA87C4000CAD5F /* flash-auto.png in Resources */,
 				116ADE6022B159B70035BD00 /* raito.png in Resources */,
 				116ADDDD22B159B70035BD00 /* lookup-gray.png in Resources */,
 				116ADE8222B159B70035BD00 /* aquaman.png in Resources */,
@@ -2207,6 +2239,7 @@
 				1169249322B2200F0011B13B /* img-failure.png in Resources */,
 				116ADDF822B159B70035BD00 /* sticker-flag-vn-0.png in Resources */,
 				116ADE8A22B1A5DF0035BD00 /* default-squad-thumb.png in Resources */,
+				11AE467722BA87C4000CAD5F /* beauty-on.png in Resources */,
 				116ADE2222B159B70035BD00 /* frame-lotus-thumb.png in Resources */,
 				116ADDF622B159B70035BD00 /* sticker-flag-vn-1.lua in Resources */,
 				116ADDFB22B159B70035BD00 /* sticker-nonla-hat-0.png in Resources */,
@@ -2266,17 +2299,21 @@
 				116ADDB322B159B70035BD00 /* filter-lord-kelvin.png in Resources */,
 				116ADE6D22B159B70035BD00 /* emoji-gray.png in Resources */,
 				116ADE3922B159B70035BD00 /* frame-flower-peony-8.png in Resources */,
+				11AE467822BA87C4000CAD5F /* beauty-off.png in Resources */,
 				116ADE6322B159B70035BD00 /* filter-gray.png in Resources */,
 				116ADE0022B159B70035BD00 /* sticker-cat-1.png in Resources */,
+				11B531EC22B69BA6004B1B95 /* 3.jpg in Resources */,
 				116ADDBE22B159B70035BD00 /* filter-hefe.png in Resources */,
 				116ADDB122B159B70035BD00 /* effect-snow-drop.png in Resources */,
 				116ADE8022B159B70035BD00 /* 5s.png in Resources */,
 				116ADDCB22B159B70035BD00 /* lookup-selena.png in Resources */,
+				11B531E922B699F0004B1B95 /* 1.jpg in Resources */,
 				116ADE2C22B159B70035BD00 /* frame-flower-peony-7.png in Resources */,
 				116ADDF422B159B70035BD00 /* sticker-flag-vn-thumb.png in Resources */,
 				116ADE2622B159B70035BD00 /* frame-leaves-1.png in Resources */,
 				116ADDC322B159B70035BD00 /* sticker-panda.png in Resources */,
 				116ADE3722B159B70035BD00 /* frame-flower-peony-0.png in Resources */,
+				11B531ED22B69BA6004B1B95 /* 4.jpg in Resources */,
 				116ADE0622B159B70035BD00 /* frame-flower-shakura-2.png in Resources */,
 				116ADDDB22B159B70035BD00 /* lookup-fashion.png in Resources */,
 				116ADDF222B159B70035BD00 /* sticker-fox-1.png in Resources */,
@@ -2287,6 +2324,7 @@
 				B74C9AC1224BE94B0061DAA4 /* GPUImage.InstagramFilter.bundle in Resources */,
 				116ADE3222B159B70035BD00 /* frame-flower-peony-3.lua in Resources */,
 				116ADDB722B159B70035BD00 /* filter-sutro.png in Resources */,
+				11B531EF22B6A453004B1B95 /* 5.jpg in Resources */,
 				116ADE2922B159B70035BD00 /* frame-flower-peony-4.lua in Resources */,
 				116ADE7822B159B70035BD00 /* frame.png in Resources */,
 				116ADE1822B159B70035BD00 /* frame-flower-shakura-11.png in Resources */,
@@ -2311,6 +2349,7 @@
 				116ADDEB22B159B70035BD00 /* sticker-fox-3.png in Resources */,
 				116ADDE522B159B70035BD00 /* sticker-dog-0.lua in Resources */,
 				116ADE3122B159B70035BD00 /* frame-flower-peony-2.lua in Resources */,
+				11B531E822B699F0004B1B95 /* 2.jpg in Resources */,
 				116ADE7922B159B70035BD00 /* capture.png in Resources */,
 				116ADE2722B159B70035BD00 /* frame-leaves-1.lua in Resources */,
 				116ADDC222B159B70035BD00 /* sticker-funny-king.png in Resources */,
@@ -2324,6 +2363,7 @@
 				116ADDE922B159B70035BD00 /* sticker-dog-3.lua in Resources */,
 				116ADDC522B159B70035BD00 /* lookup-indigo.png in Resources */,
 				116ADE6222B159B70035BD00 /* done-gray.png in Resources */,
+				11AE467622BA87C4000CAD5F /* flash-on.png in Resources */,
 				B70BD4452196C636000A4EBF /* Assets.xcassets in Resources */,
 				116ADE0A22B159B70035BD00 /* frame-flower-shakura-1.png in Resources */,
 				116ADE2422B159B70035BD00 /* frame-leaves-0.lua in Resources */,
@@ -2642,13 +2682,13 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external",
 					"$(SRCROOT)/Frameworks/cocos2d-x/extensions",
-					"$(inherited)",
 					"$(SRCROOT)/Frameworks/GPUImage/Resources",
 					"$(SRCROOT)/Frameworks/GPUImage/Source",
 					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS",
 					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS/Framework",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/luajit/include",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
+					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/fmdb/src/fmdb",
@@ -2710,13 +2750,13 @@
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/chipmunk/include/chipmunk",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external",
 					"$(SRCROOT)/Frameworks/cocos2d-x/extensions",
-					"$(inherited)",
 					"$(SRCROOT)/Frameworks/GPUImage/Resources",
 					"$(SRCROOT)/Frameworks/GPUImage/Source",
 					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS",
 					"$(SRCROOT)/Frameworks/GPUImage/Source/iOS/Framework",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/luajit/include",
 					"$(SRCROOT)/Frameworks/cocos2d-x/external/lua/tolua",
+					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks/SDM/include",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/fmdb/src/fmdb",

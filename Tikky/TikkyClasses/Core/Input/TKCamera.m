@@ -168,6 +168,25 @@
     }
 }
 
+- (AVCaptureFlashMode)flashMode {
+    AVCaptureDevice* device = _camera.inputCamera;
+    return device.flashMode;
+}
+
+- (void)setFlashMode:(AVCaptureFlashMode)flashMode {
+    AVCaptureDevice* device = _camera.inputCamera;
+    
+    if ([device isFlashModeSupported:flashMode]) {
+        AVCaptureSession* session = _camera.captureSession;
+        [session beginConfiguration];
+        NSError* error;
+        [device lockForConfiguration:&error];
+        [device setFlashMode:flashMode];
+        [device unlockForConfiguration];
+        [session commitConfiguration];
+    }
+}
+
 - (void)capturePhotoAsJPEGWithCompletionHandler:(void (^)(NSData *processedJPEG, NSError *error))block; {
     if (!block) {
         return;
