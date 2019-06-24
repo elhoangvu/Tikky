@@ -10,11 +10,24 @@
 #import "TKImageInput.h"
 #import "TKFilter.h"
 
+typedef NS_ENUM(NSUInteger, TKPhotoRotationMode) {
+    TKPhotoRotationModeNoRotation,
+    TKPhotoRotationModeRotateLeft,
+    TKPhotoRotationModeRotateRight,
+    TKPhotoRotationModeFlipVertical,
+    TKPhotoRotationModeFlipHorizonal,
+    TKPhotoRotationModeRotateRightFlipVertical,
+    TKPhotoRotationModeRotateRightFlipHorizontal,
+    TKPhotoRotationModeRotate180
+};
+
 @protocol TKPhotoDelegate;
 
 @interface TKPhoto : TKImageInput
 
 @property (nonatomic, weak) id<TKPhotoDelegate> delegate;
+
+@property (nonatomic) TKPhotoRotationMode photoRotationMode;
 
 - (instancetype)initWithURL:(NSURL *)url;
 - (instancetype)initWithImage:(UIImage *)newImageSource;

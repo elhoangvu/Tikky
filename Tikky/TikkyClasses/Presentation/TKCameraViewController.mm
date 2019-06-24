@@ -68,6 +68,12 @@ TKNotificationViewControllerDelegate
 
 @property (nonatomic) TKNotificationViewController* notificationVC;
 
+@property (nonatomic) BOOL isEditing;
+
+@property (nonatomic) CGAffineTransform lastCameraTransform;
+
+@property (nonatomic) UIDeviceOrientation lastCameraOrientation;
+
 @end
 
 @implementation TKCameraViewController
@@ -76,6 +82,7 @@ TKNotificationViewControllerDelegate
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
 
+    _isEditing = NO;
     _isTouchStickerBegan = NO;
     _cameraPermissionGroup = dispatch_group_create();
     
@@ -94,11 +101,6 @@ TKNotificationViewControllerDelegate
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
     [self.view setMultipleTouchEnabled:YES];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(editViewControllerWillDismiss:)
-                                                 name:kEditViewControllerWillDismiss
-                                               object:nil];
     
 }
 
@@ -262,15 +264,6 @@ TKNotificationViewControllerDelegate
         [TKGalleryUtilities saveImageToGalleryWithImage:[UIImage imageWithData:processedJPEG]];
     }];
 }
-
-
-// For ios6, use supportedInterfaceOrientations & shouldAutorotate instead
-#ifdef __IPHONE_6_0
-- (NSUInteger) supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
-#endif
-
 - (BOOL)shouldAutorotate {
     return YES;
 }
@@ -279,6 +272,97 @@ TKNotificationViewControllerDelegate
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    if (_isEditing) {
+        return;
+    }
+    [_tikkyEngine.view setHidden:NO];
+    UIInterfaceOrientation orientation = UIInterfaceOrientationPortrait;
+    CGSize currentSize = self.view.bounds.size;
+    if (currentSize.width < size.width)
+        orientation = UIInterfaceOrientationLandscapeLeft;
+    
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//    [self willRotateToInterfaceOrientation:orientation duration:coordinator.transitionDuration];
+//#pragma clang diagnostic pop
+    __weak typeof(self) weakSelf = self;
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        CGAffineTransform deltaTransform = coordinator.targetTransform;
+        CGFloat deltaAngle = atan2f(deltaTransform.b, deltaTransform.a);
+        
+        CGFloat currentRotation = [[weakSelf.tikkyEngine.view.layer valueForKeyPath:@"transform.rotation.z"] floatValue];
+        
+        
+        // Adding a small value to the rotation angle forces the animation to occur in a the desired direction, preventing an issue where the view would appear to rotate 2PI radians during a rotation from LandscapeRight -> LandscapeLeft.
+        currentRotation += -1 * deltaAngle + 0.0001;
+        
+        [weakSelf.tikkyEngine.view.layer setValue:@(currentRotation) forKeyPath:@"transform.rotation.z"];
+//        [weakSelf.cameraGUIView.layer setValue:@(currentRotation) forKey:@"transform.rotation.z"];
+        
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//        [self willAnimateRotationToInterfaceOrientation:orientation duration:coordinator.transitionDuration];
+//#pragma clang diagnostic pop
+        
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        // Integralize the transform to undo the extra 0.0001 added to the rotation angle.
+        CGAffineTransform currentTransform = weakSelf.tikkyEngine.view.transform;
+        
+        currentTransform.a = round(currentTransform.a);
+        currentTransform.b = round(currentTransform.b);
+        currentTransform.c = round(currentTransform.c);
+        currentTransform.d = round(currentTransform.d);
+        weakSelf.tikkyEngine.view.transform = currentTransform;
+        weakSelf.cameraGUIView.transform = currentTransform;
+        weakSelf.lastCameraTransform = currentTransform;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [self didRotateFromInterfaceOrientation:orientation];
+#pragma clang diagnostic pop
+        
+    }];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    if (_isEditing) {
+        return;
+    }
+    
+    static BOOL isFirstLayout = YES;
+
+    self.tikkyEngine.view.center = CGPointMake(CGRectGetMidX(UIScreen.mainScreen.bounds), CGRectGetMidY(UIScreen.mainScreen.bounds));
+    self.cameraGUIView.center = CGPointMake(CGRectGetMidX(UIScreen.mainScreen.bounds), CGRectGetMidY(UIScreen.mainScreen.bounds));
+    if (isFirstLayout) {
+        CGFloat rotation = 0;
+        if (UIDevice.currentDevice.orientation == UIDeviceOrientationLandscapeLeft) {
+            rotation = -1.5706963705062866;
+        } else if (UIDevice.currentDevice.orientation == UIDeviceOrientationLandscapeRight) {
+            rotation = 1.5706963705062866;
+        } else {
+            isFirstLayout = NO;
+            return;
+        }
+
+        [self.tikkyEngine.view.layer setValue:@(rotation) forKeyPath:@"transform.rotation.z"];
+        [self.cameraGUIView.layer setValue:@(rotation) forKey:@"transform.rotation.z"];
+        CGAffineTransform currentTransform = self.tikkyEngine.view.transform;
+
+        currentTransform.a = round(currentTransform.a);
+        currentTransform.b = round(currentTransform.b);
+        currentTransform.c = round(currentTransform.c);
+        currentTransform.d = round(currentTransform.d);
+        self.tikkyEngine.view.transform = currentTransform;
+        self.cameraGUIView.transform = currentTransform;
+    }
+    isFirstLayout = NO;
+}
+
 
 #pragma mark -
 #pragma mark TKStickerPreviewerDelegate
@@ -403,8 +487,11 @@ TKNotificationViewControllerDelegate
             if (processedJPEG) {
                 UIImage* image = [UIImage imageWithData:processedJPEG];
                 TKPhoto* photo = [[TKPhoto alloc] initWithImage:image smoothlyScaleOutput:YES];
+                [weakSelf.tikkyEngine.imageFilter removeAllFilter];
                 [weakSelf.tikkyEngine.imageFilter setInput:photo];
                 weakSelf.editorVC = [[TKEditorViewController alloc] init];
+                weakSelf.isEditing = YES;
+                weakSelf.lastCameraOrientation = UIDevice.currentDevice.orientation;
                 [weakSelf presentViewController:weakSelf.editorVC animated:YES completion:nil];
                 weakSelf.editorVC.delegate = self;
             }
@@ -419,10 +506,24 @@ TKNotificationViewControllerDelegate
 }
 
 - (void)didTapCloseButtonAtEditorViewController:(TKEditorViewController *)editorVC {
+     _isEditing = NO;
     [TikkyEngine.sharedInstance.stickerPreviewer pause];
+
     [self.view addSubview:_tikkyEngine.view];
     [self.view sendSubviewToBack:_tikkyEngine.view];
-    [_tikkyEngine.view setFrame:UIScreen.mainScreen.bounds];
+    
+    CGRect cameraFrame = UIScreen.mainScreen.bounds;
+//    if (orientation != _lastCameraOrientation
+//        && ((orientation != UIDeviceOrientationLandscapeRight && _lastCameraOrientation != UIDeviceOrientationLandscapeLeft)
+//            || (orientation != UIDeviceOrientationLandscapeLeft && _lastCameraOrientation != UIDeviceOrientationLandscapeRight))) {
+//
+//        CGFloat cWidth = cameraFrame.size.width;
+//        cameraFrame.size.width = cameraFrame.size.height;
+//        cameraFrame.size.height = cWidth;
+//    }
+    
+    [_tikkyEngine.view setFrame:cameraFrame];
+    
     _editorVC = nil;
     [_tikkyEngine.imageFilter setInput:_imageInput];
     [_tikkyEngine.imageFilter removeAllFilter];
@@ -434,6 +535,16 @@ TKNotificationViewControllerDelegate
     }
     TKFilter* filter = [[TKFilter alloc] initWithName:@"BEAUTY"];
     [_tikkyEngine.imageFilter replaceFilter:nil withFilter:filter addNewFilterIfNotExist:YES];
+    CGAffineTransform zeroTransform = CGAffineTransformMake(0, 0, 0, 0, 0, 0);
+    if (!CGAffineTransformEqualToTransform(zeroTransform, _lastCameraTransform)) {
+        _tikkyEngine.view.transform = _lastCameraTransform;
+    }
+    
+    UIDeviceOrientation orientation = UIDevice.currentDevice.orientation;
+    if ((_lastCameraOrientation == UIDeviceOrientationLandscapeRight || _lastCameraOrientation == UIDeviceOrientationLandscapeLeft)
+        && (orientation == UIDeviceOrientationPortrait || orientation == UIDeviceOrientationPortraitUpsideDown)) {
+        [_tikkyEngine.view setHidden:YES];
+    }
 //    [TikkyEngine.sharedInstance.stickerPreviewer resume];
 }
 

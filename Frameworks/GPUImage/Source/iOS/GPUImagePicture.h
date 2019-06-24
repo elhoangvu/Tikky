@@ -10,6 +10,8 @@
     dispatch_semaphore_t imageUpdateSemaphore;
 }
 
+@property (nonatomic) GPUImageRotationMode preferImageRotation;
+
 // Initialization and teardown
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithImage:(UIImage *)newImageSource;

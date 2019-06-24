@@ -76,6 +76,10 @@ void setColorConversion709( GLfloat conversionMatrix[9] );
 
 @property(nonatomic, assign) id<GPUImageVideoCameraDelegate> delegate;
 
+// <!-TIKKY-
+@property (nonatomic) UIInterfaceOrientation preferCapturedImageOrientation;
+// -TIKKY->
+
 /// @name Initialization and teardown
 
 /** Begin a capture session

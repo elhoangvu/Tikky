@@ -178,6 +178,7 @@
                                     previewerSize = [weakSelf.stickerPreviewer getPreviewerDesignedSize];
                                 }
                                 CGSize imgSize = CGSizeMake(rotatedImage.cols, rotatedImage.rows);
+
                                 float widthScale = previewerSize.width/imgSize.width * cocos2d::Director::getInstance()->getOpenGLView()->getScaleX();
                                 float heightScale = previewerSize.height/imgSize.height * cocos2d::Director::getInstance()->getOpenGLView()->getScaleY();
                                 NSLog(@">>>> HV > face: %d", faceNum);

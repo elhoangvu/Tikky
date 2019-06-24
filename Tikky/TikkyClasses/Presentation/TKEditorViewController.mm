@@ -97,6 +97,8 @@ TKNotificationViewControllerDelegate
     _menuFeatureObjects = TKFeatureManager.sharedInstance.editMenuFeatureObjects;
     _itemSpacing = 5;
     _imageFilter = TikkyEngine.sharedInstance.imageFilter;
+    [TikkyEngine.sharedInstance.view.layer setValue:@(0) forKeyPath:@"transform.rotation.z"];
+
     /////
 //    NSString* imagePath = [NSBundle.mainBundle pathForResource:@"demo4" ofType:@"jpg"];
 //    UIImage* image = [UIImage imageWithContentsOfFile:imagePath];
@@ -109,6 +111,11 @@ TKNotificationViewControllerDelegate
     _isEdited = NO;
     _isEditing = NO;
     CGRect mainViewRect = UIScreen.mainScreen.bounds;
+    if (mainViewRect.size.width > mainViewRect.size.height) {
+        CGFloat mWidth = mainViewRect.size.width;
+        mainViewRect.size.width = mainViewRect.size.height;
+        mainViewRect.size.height = mWidth;
+    }
     _menuHeight = 0.35*mainViewRect.size.width;
     _photoView = TikkyEngine.sharedInstance.view;
     _headerViewHieght = 40;
@@ -133,7 +140,9 @@ TKNotificationViewControllerDelegate
     [TikkyEngine.sharedInstance.stickerPreviewer pause];
 //    [TikkyEngine.sharedInstance.imageFilter.view setFrame:photoFrame];
 //    [TikkyEngine.sharedInstance.stickerPreviewer.view setFrame:photoFrame];
-    [TikkyEngine.sharedInstance.view setFrame:photoFrame];
+    
+//    TikkyEngine.sharedInstance.view.center = CGPointMake(photoFrame.origin.x + photoFrame.size.width*0.5, photoFrame.origin.y + photoFrame.size.height*0.5);
+    [_photoView setFrame:photoFrame];
     
     [TikkyEngine.sharedInstance.stickerPreviewer resume];
     [self.view addSubview:_photoView];
@@ -141,6 +150,9 @@ TKNotificationViewControllerDelegate
     TKFilter* filter = [[TKFilter alloc] initWithName:@"DEFAULT"];
     [self.imageFilter addFilter:filter];
     __weak __typeof(self)weakSelf = self;
+    UIImage* imagePhoto = self.photo.defaultImage;
+    TKPhotoRotationMode rotationMode = [self rotationWithImageOrientation:imagePhoto.imageOrientation];
+    [self.photo setPhotoRotationMode:rotationMode];
     [self.photo processImageUpToFilter:filter withCompletionHandler:^(UIImage *processedImage) {
         if (processedImage) {
             weakSelf.lastProcessedImage = processedImage;
@@ -185,6 +197,19 @@ TKNotificationViewControllerDelegate
     [super viewDidAppear:animated];
 }
 
+- (TKPhotoRotationMode)rotationWithImageOrientation:(UIImageOrientation)imageOrientation {
+    TKPhotoRotationMode rotationMode = TKPhotoRotationModeNoRotation;
+    if (imageOrientation == UIImageOrientationLeft) {
+        rotationMode = TKPhotoRotationModeRotateLeft;
+    } else if (imageOrientation == UIImageOrientationRight) {
+        rotationMode = TKPhotoRotationModeRotateRight;
+    } else {
+        rotationMode = TKPhotoRotationModeNoRotation;
+    }
+    
+    return rotationMode;
+}
+
 - (void)setUpHeaderView {
     CGRect closeFrame = CGRectMake(_headerViewHieght*0.15, _headerViewHieght*0.15, _headerViewHieght*0.7, _headerViewHieght*0.7);
     _closeButton = [[UIButton alloc] initWithFrame:closeFrame];
@@ -195,6 +220,11 @@ TKNotificationViewControllerDelegate
     [self.view addSubview:_closeButton];
     
     CGSize mainSize = UIScreen.mainScreen.bounds.size;
+    if (mainSize.width > mainSize.height) {
+        CGFloat mWidth = mainSize.width;
+        mainSize.width = mainSize.height;
+        mainSize.height = mWidth;
+    }
     _shareButton = [[UIButton alloc] initWithFrame:closeFrame];
     [_shareButton setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [_shareButton setTitle:@"Share" forState:(UIControlStateNormal)];
@@ -234,8 +264,14 @@ TKNotificationViewControllerDelegate
 
 - (void)setUpEditView {
     CGRect frame = _menuCollectionView.frame;
-    frame.size.width = UIScreen.mainScreen.bounds.size.width;
-    frame.origin.y = UIScreen.mainScreen.bounds.size.height;
+    CGSize mainSize = UIScreen.mainScreen.bounds.size;
+    if (mainSize.width > mainSize.height) {
+        CGFloat mWidth = mainSize.width;
+        mainSize.width = mainSize.height;
+        mainSize.height = mWidth;
+    }
+    frame.size.width = mainSize.width;
+    frame.origin.y = mainSize.height;
     _editView = [[TKEditItemView alloc] initWithFrame:frame];
     _editView.delegate = self;
 //    _editView.datasource = self;
@@ -245,6 +281,11 @@ TKNotificationViewControllerDelegate
 
 - (void)setUpMenuCollectionView {
     CGRect mainViewRect = UIScreen.mainScreen.bounds;
+    if (mainViewRect.size.width > mainViewRect.size.height) {
+        CGFloat mWidth = mainViewRect.size.width;
+        mainViewRect.size.width = mainViewRect.size.height;
+        mainViewRect.size.height = mWidth;
+    }
     UICollectionViewFlowLayout* collectionLayout = [[UICollectionViewFlowLayout alloc] init];
     collectionLayout.itemSize = CGSizeMake(0.675*_menuHeight, 0.9*_menuHeight);
     _menuItemSize = collectionLayout.itemSize;
@@ -642,6 +683,14 @@ TKNotificationViewControllerDelegate
     if (notificationVC.type == TKNotificationTypeSuccess) {
         [self didTapCloseButton:nil];
     }
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

@@ -1,5 +1,11 @@
 #import "GPUImagePicture.h"
 
+#import "GPUImageView.h"
+
+@interface GPUImagePicture ()
+
+@end
+
 @implementation GPUImagePicture
 
 #pragma mark -
@@ -50,6 +56,9 @@
 
 - (id)initWithImage:(UIImage *)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput;
 {
+//    UIImageOrientation imgOrientation = newImageSource.imageOrientation;
+//    [self updateRotationWithImageOrientation:imgOrientation];
+    
     return [self initWithCGImage:[newImageSource CGImage] smoothlyScaleOutput:smoothlyScaleOutput];
 }
 
@@ -60,6 +69,9 @@
 
 - (id)initWithImage:(UIImage *)newImageSource removePremultiplication:(BOOL)removePremultiplication;
 {
+//    UIImageOrientation imgOrientation = newImageSource.imageOrientation;
+//    [self updateRotationWithImageOrientation:imgOrientation];
+    
     return [self initWithCGImage:[newImageSource CGImage] smoothlyScaleOutput:NO removePremultiplication:removePremultiplication];
 }
 
@@ -70,6 +82,9 @@
 
 - (id)initWithImage:(UIImage *)newImageSource smoothlyScaleOutput:(BOOL)smoothlyScaleOutput removePremultiplication:(BOOL)removePremultiplication;
 {
+//    UIImageOrientation imgOrientation = newImageSource.imageOrientation;
+//    [self updateRotationWithImageOrientation:imgOrientation];
+    
     return [self initWithCGImage:[newImageSource CGImage] smoothlyScaleOutput:smoothlyScaleOutput removePremultiplication:removePremultiplication];
 }
 
@@ -326,7 +341,7 @@
         {
             NSInteger indexOfObject = [targets indexOfObject:currentTarget];
             NSInteger textureIndexOfTarget = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
-            
+            [currentTarget setInputRotation:_preferImageRotation atIndex:textureIndexOfTarget];
             [currentTarget setCurrentlyReceivingMonochromeInput:NO];
             [currentTarget setInputSize:pixelSizeOfImage atIndex:textureIndexOfTarget];
             [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
@@ -367,5 +382,15 @@
         [newTarget newFrameReadyAtTime:kCMTimeIndefinite atIndex:textureLocation];
     }
 }
+
+//- (void)updateRotationWithImageOrientation:(UIImageOrientation)imageOrientation {
+//    if (imageOrientation == UIImageOrientationLeft) {
+//        _imageRotation = kGPUImageRotateLeft;
+//    } else if (imageOrientation == UIImageOrientationRight) {
+//        _imageRotation = kGPUImageRotateRight;
+//    } else {
+//        _imageRotation = kGPUImageNoRotation;
+//    }
+//}
 
 @end

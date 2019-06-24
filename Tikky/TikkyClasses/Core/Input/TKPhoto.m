@@ -176,4 +176,12 @@
     _photoOutputCallback = callbackBlock;
 }
 
+- (TKPhotoRotationMode)photoRotationMode {
+    return (TKPhotoRotationMode)_picture.preferImageRotation;
+}
+
+- (void)setPhotoRotationMode:(TKPhotoRotationMode)photoRotationMode {
+    _picture.preferImageRotation = (GPUImageRotationMode)photoRotationMode;
+}
+
 @end
